@@ -1,0 +1,264 @@
+[
+  {
+    "artist": "Martin Garrix",
+    "title": "Carry You",
+    "video_id": "bz6taI5pDl0",
+    "source_url": "https://www.youtube.com/watch?v=bz6taI5pDl0",
+    "youtube_music_url": "https://music.youtube.com/watch?v=bz6taI5pDl0",
+    "source_ref": {
+      "namespace": "youtube-video",
+      "id": "bz6taI5pDl0"
+    },
+    "recording_id": "269d5524-61f5-4002-8cd5-03c1c9409edd",
+    "isrc": "NLM5S2402145",
+    "musicbrainz_duration_ms": 215905,
+    "version_note": "Original (not extended/instrumental); video 3:36 vs MB 3:35.9",
+    "review_status": "strong",
+    "source_verified": false,
+    "human_verified": false,
+    "owner_playback_confirmed": true,
+    "distinct_not_substituted": [
+      "f92f13af extended",
+      "ae863b7c instrumental",
+      "79fc2a4a Galactixx bootleg excluded"
+    ]
+  },
+  {
+    "artist": "I Hate Models",
+    "title": "Daydream",
+    "video_id": "U6EjUIefwiw",
+    "source_url": "https://www.youtube.com/watch?v=U6EjUIefwiw",
+    "youtube_music_url": "https://music.youtube.com/watch?v=U6EjUIefwiw",
+    "source_ref": {
+      "namespace": "youtube-video",
+      "id": "U6EjUIefwiw"
+    },
+    "recording_id": "913efff7-8996-476c-aeda-d46e474c1998",
+    "isrc": "ITDY21600111",
+    "musicbrainz_duration_ms": 463000,
+    "version_note": "Original; video 7:44 vs MB 7:43",
+    "review_status": "strong",
+    "source_verified": false,
+    "human_verified": false,
+    "owner_playback_confirmed": true
+  },
+  {
+    "artist": "A Little Sound",
+    "title": "Back To Back (B2B)",
+    "video_id": "HYCG79PxgFc",
+    "source_url": "https://www.youtube.com/watch?v=HYCG79PxgFc",
+    "youtube_music_url": "https://music.youtube.com/watch?v=HYCG79PxgFc",
+    "source_ref": {
+      "namespace": "youtube-video",
+      "id": "HYCG79PxgFc"
+    },
+    "recording_id": "a03b6af0-9492-4e59-823e-af926615acbb",
+    "isrc": "GBCEN2300173",
+    "musicbrainz_duration_ms": 175595,
+    "version_note": "Original; video 2:56 vs MB 2:55.6",
+    "review_status": "strong",
+    "source_verified": false,
+    "human_verified": false,
+    "owner_playback_confirmed": true,
+    "caveat": "Duplicate MB recording 487aebf5-fef6-4ccd-a948-03f28de7977a (175547 ms, no ISRC); ISRC-bearing record chosen, duplicate unresolved.",
+    "distinct_not_substituted": [
+      "487aebf5-fef6-4ccd-a948-03f28de7977a duplicate"
+    ]
+  },
+  {
+    "artist": "A Little Sound",
+    "title": "Breathe",
+    "video_id": "Rv550gn6y8k",
+    "source_url": "https://www.youtube.com/watch?v=Rv550gn6y8k",
+    "youtube_music_url": "https://music.youtube.com/watch?v=Rv550gn6y8k",
+    "source_ref": {
+      "namespace": "youtube-video",
+      "id": "Rv550gn6y8k"
+    },
+    "recording_id": null,
+    "isrc": null,
+    "musicbrainz_duration_ms": null,
+    "version_note": "Official UKF video 3:33 (213s)",
+    "review_status": "version_unresolved",
+    "source_verified": false,
+    "human_verified": false,
+    "owner_playback_confirmed": true,
+    "caveat": "MB has 31e07c93 (217931 ms) and 9864b42b (217000 ms); video is 4-5s shorter, so an edit cannot be excluded. No recording_id recorded.",
+    "distinct_not_substituted": [
+      "31e07c93-7bdc-471b-bae9-9dcedff71cb6",
+      "9864b42b-b8d1-4acb-a198-494c9825ebb1"
+    ]
+  },
+  {
+    "artist": "A Little Sound",
+    "title": "Weed & Wine (Relax, Rewind)",
+    "video_id": "_M5O_ED_1aI",
+    "source_url": "https://www.youtube.com/watch?v=_M5O_ED_1aI",
+    "youtube_music_url": "https://music.youtube.com/watch?v=_M5O_ED_1aI",
+    "source_ref": {
+      "namespace": "youtube-video",
+      "id": "_M5O_ED_1aI"
+    },
+    "recording_id": "de589bdc-1982-47a3-9cfc-0b681d733f88",
+    "isrc": "GBPWR2200076",
+    "musicbrainz_duration_ms": 184000,
+    "version_note": "Friction & A Little Sound; video 3:04 vs MB 3:04",
+    "review_status": "good_pending_playback",
+    "source_verified": true,
+    "human_verified": true,
+    "owner_playback_confirmed": true,
+    "caveat": "Duplicate MB 41c55c3b (no ISRC).",
+    "owner_approval_evidence": "Owner message in assistant session 2026-10-29: 'Approved the run and played all four; include all four' (also recorded on PR #9)"
+  },
+  {
+    "artist": "A Little Sound",
+    "title": "Confide",
+    "video_id": "WimivlmnA9I",
+    "source_url": "https://www.youtube.com/watch?v=WimivlmnA9I",
+    "youtube_music_url": "https://music.youtube.com/watch?v=WimivlmnA9I",
+    "source_ref": {
+      "namespace": "youtube-video",
+      "id": "WimivlmnA9I"
+    },
+    "recording_id": "41296eed-864e-4c19-8ea9-1045350b4b3d",
+    "isrc": "GX2E32100010",
+    "musicbrainz_duration_ms": 268378,
+    "version_note": "Technimatic ft. A Little Sound; video 4:30 vs MB 4:28",
+    "review_status": "good_pending_playback",
+    "source_verified": true,
+    "human_verified": true,
+    "owner_playback_confirmed": true,
+    "caveat": "~1.6 s video/MB difference, likely rounding.",
+    "owner_approval_evidence": "Owner message in assistant session 2026-10-29: 'Approved the run and played all four; include all four' (also recorded on PR #9)"
+  },
+  {
+    "artist": "A Little Sound",
+    "title": "Overload",
+    "video_id": "8I-QJlFSJdM",
+    "source_url": "https://www.youtube.com/watch?v=8I-QJlFSJdM",
+    "youtube_music_url": "https://music.youtube.com/watch?v=8I-QJlFSJdM",
+    "source_ref": {
+      "namespace": "youtube-video",
+      "id": "8I-QJlFSJdM"
+    },
+    "recording_id": "13d4b9db-dd16-44e2-90ea-5c21abccd004",
+    "isrc": null,
+    "musicbrainz_duration_ms": 219000,
+    "version_note": "Annix ft. A Little Sound; video 3:40 vs MB 3:39",
+    "review_status": "good_pending_playback",
+    "source_verified": true,
+    "human_verified": true,
+    "owner_playback_confirmed": true,
+    "caveat": "No ISRC on MB record.",
+    "owner_approval_evidence": "Owner message in assistant session 2026-10-29: 'Approved the run and played all four; include all four' (also recorded on PR #9)"
+  },
+  {
+    "artist": "KI/KI",
+    "title": "5 Mins Of Acid",
+    "video_id": "wtnrLTqmUKI",
+    "source_url": "https://www.youtube.com/watch?v=wtnrLTqmUKI",
+    "youtube_music_url": "https://music.youtube.com/watch?v=wtnrLTqmUKI",
+    "source_ref": {
+      "namespace": "youtube-video",
+      "id": "wtnrLTqmUKI"
+    },
+    "recording_id": "f68a2298-bbd6-4d0a-af79-723486bcaee6",
+    "isrc": "NLF712404789",
+    "musicbrainz_duration_ms": 300000,
+    "version_note": "Full 5:00 version (official music video, Armada)",
+    "review_status": "strong",
+    "source_verified": false,
+    "human_verified": false,
+    "owner_playback_confirmed": true,
+    "distinct_not_substituted": [
+      "0da85e26-4d71-485f-8a6e-da63333af8c1 duplicate 300s no ISRC",
+      "4659a2bc-86c0-4d0d-b888-200fddf75c98 distinct 190s edit"
+    ]
+  },
+  {
+    "artist": "ACRAZE",
+    "title": "Do It To It",
+    "video_id": "bnA7yJkAG30",
+    "source_url": "https://www.youtube.com/watch?v=bnA7yJkAG30",
+    "youtube_music_url": "https://music.youtube.com/watch?v=bnA7yJkAG30",
+    "source_ref": {
+      "namespace": "youtube-video",
+      "id": "bnA7yJkAG30"
+    },
+    "recording_id": "3fc73c64-59e3-451e-a95d-f48c9a4e4c14",
+    "isrc": "QZFPL2100100",
+    "musicbrainz_duration_ms": 157890,
+    "version_note": "feat. Cherish; video 2:38 vs MB 2:37.9",
+    "review_status": "strong",
+    "source_verified": false,
+    "human_verified": false,
+    "owner_playback_confirmed": true,
+    "distinct_not_substituted": [
+      "NEUS remix excluded from this slot"
+    ]
+  },
+  {
+    "artist": "CID",
+    "title": "Night Service Only",
+    "video_id": "Scc4CRVroPo",
+    "source_url": "https://www.youtube.com/watch?v=Scc4CRVroPo",
+    "youtube_music_url": "https://music.youtube.com/watch?v=Scc4CRVroPo",
+    "source_ref": {
+      "namespace": "youtube-video",
+      "id": "Scc4CRVroPo"
+    },
+    "recording_id": null,
+    "isrc": null,
+    "musicbrainz_duration_ms": null,
+    "version_note": "Official video edit (190 s, Spinnin')",
+    "review_status": "no_mb_match_source_id_only",
+    "source_verified": false,
+    "human_verified": false,
+    "owner_playback_confirmed": true,
+    "caveat": "Only MB hits are the extended mix d43a90a2 (228623 ms, NLZ541900863) and a radio episode; neither substituted. No ISRC for this edit.",
+    "distinct_not_substituted": [
+      "d43a90a2-1692-4d80-88f8-bd4ac76a5300 extended, not substituted"
+    ]
+  },
+  {
+    "artist": "Vastive",
+    "title": "Slaughter",
+    "video_id": "Ve_LOVTzbxM",
+    "source_url": "https://www.youtube.com/watch?v=Ve_LOVTzbxM",
+    "youtube_music_url": "https://music.youtube.com/watch?v=Ve_LOVTzbxM",
+    "source_ref": {
+      "namespace": "youtube-video",
+      "id": "Ve_LOVTzbxM"
+    },
+    "recording_id": "4965aa1b-7fef-451b-91e1-46c50273b678",
+    "isrc": "CA6D22400407",
+    "musicbrainz_duration_ms": 188667,
+    "version_note": "Sullivan King & Vastive (Monstercat 2024-07-26); distributor video 3:09 vs label 3:08 / MB 188.667 s",
+    "review_status": "strong_with_rounding_note",
+    "source_verified": false,
+    "human_verified": false,
+    "owner_playback_confirmed": true,
+    "caveat": "Sub-second display/container rounding; duration alone is not audio-match proof. Owner confirmed correct video."
+  },
+  {
+    "artist": "Benda",
+    "title": "Poison Control",
+    "video_id": "oXhWSs0mRH4",
+    "source_url": "https://www.youtube.com/watch?v=oXhWSs0mRH4",
+    "youtube_music_url": "https://music.youtube.com/watch?v=oXhWSs0mRH4",
+    "source_ref": {
+      "namespace": "youtube-video",
+      "id": "oXhWSs0mRH4"
+    },
+    "recording_id": "a85eff19-fa58-4b21-9695-b06943e80669",
+    "isrc": "QM24S2203642",
+    "musicbrainz_duration_ms": 158367,
+    "version_note": "Candidate; exact videos.list metadata not yet fetched",
+    "review_status": "owner_approved_pending_video_metadata",
+    "source_verified": false,
+    "human_verified": true,
+    "owner_playback_confirmed": true,
+    "owner_approval_evidence": "Owner message in assistant session 2026-10-29: 'Approved the run and played all four; include all four' (also recorded on PR #9)",
+    "remaining": "Source verification blocked until exact videos.list metadata (title/channel/duration ~2:38) is fetched."
+  }
+]

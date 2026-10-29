@@ -18,9 +18,19 @@ from .quota import Budget
 YT_API = "https://www.googleapis.com/youtube/v3"
 MARKER = "edc-listening-room:pilot-m1-v1"
 TITLE = "EDC Orlando 2026 — Pilot M1 (Unofficial)"
+PREVIEW_MARKER = "edc-listening-room:preview-v1"
+PREVIEW_TITLE = "EDC Orlando 2026 — Private listening preview (unranked, unofficial)"
+_MBID = re.compile(r"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
 
 
-def validated_manifest(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def validated_manifest(rows: list[dict[str, Any]], *, preview: bool = False) -> list[dict[str, Any]]:
+    """Validate a reviewed manifest.
+
+    M1 rows need a canonical recording_id. A separate unranked preview may instead
+    carry an explicit provider-namespaced source_ref (never a fabricated MBID), a
+    version note, and independent source_verified / human_verified flags. Preview
+    rows may not carry rank or score fields.
+    """
     if not isinstance(rows, list) or not 1 <= len(rows) <= 16:
         raise ValueError("Expected between one and 16 pilot tracks")
     seen: set[str] = set()
@@ -30,7 +40,19 @@ def validated_manifest(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
             raise ValueError("Video IDs must be valid and unique")
         if not row.get("human_verified") is True:
             raise ValueError("All pilot playlist items require human_verified=true")
-        if not row.get("artist") or not row.get("title") or not row.get("recording_id"):
+        if not row.get("artist") or not row.get("title"):
+            raise ValueError("Each playlist item needs artist and title")
+        if preview:
+            ref = row.get("source_ref")
+            if not isinstance(ref, dict) or ref.get("namespace") != "youtube-video" or ref.get("id") != video:
+                raise ValueError("Preview items need source_ref {namespace: youtube-video, id: video_id}")
+            if row.get("source_verified") is not True or not str(row.get("version_note", "")).strip():
+                raise ValueError("Preview items need source_verified=true and a version_note")
+            if row.get("recording_id") is not None and not _MBID.fullmatch(str(row["recording_id"])):
+                raise ValueError("recording_id, when present, must be a real MusicBrainz UUID")
+            if any(k in row for k in ("rank", "score")):
+                raise ValueError("Preview is unranked: rank/score fields are not allowed")
+        elif not row.get("recording_id"):
             raise ValueError("Each playlist item needs artist, title and recording_id")
         seen.add(video)
     return rows
@@ -78,7 +100,7 @@ class YouTube:
             raise RuntimeError("YouTube API request failed (HTTP " + str(e.code) +
                                ", operation " + operation + "); reconcile state before retry.") from None
 
-    def my_pilot_playlists(self) -> list[dict]:
+    def my_pilot_playlists(self, marker: str = MARKER) -> list[dict]:
         marker_matches: list[dict] = []
         token = None
         for _ in range(20):
@@ -87,7 +109,7 @@ class YouTube:
                 args["pageToken"] = token
             data = self.request("playlists", args)
             marker_matches.extend(x for x in data.get("items", [])
-                                  if MARKER in x.get("snippet", {}).get("description", ""))
+                                  if marker in x.get("snippet", {}).get("description", ""))
             token = data.get("nextPageToken")
             if not token:
                 return marker_matches
@@ -108,12 +130,13 @@ class YouTube:
                 return items
         raise RuntimeError("Pilot playlist has too many items; manual reconciliation required")
 
-    def publish_private_pilot(self, manifest: list[dict]) -> dict:
-        records = validated_manifest(manifest)
+    def publish_private_pilot(self, manifest: list[dict], *, preview: bool = False) -> dict:
+        records = validated_manifest(manifest, preview=preview)
+        marker, title = (PREVIEW_MARKER, PREVIEW_TITLE) if preview else (MARKER, TITLE)
         if os.getenv("EDC_ENABLE_WRITES") != "1" or os.getenv("EDC_PILOT_APPROVED") != "1":
             raise RuntimeError("Live writes require EDC_ENABLE_WRITES=1 and EDC_PILOT_APPROVED=1")
         self.quota.preflight_pilot(len(records), will_create=True)
-        playlists = self.my_pilot_playlists()
+        playlists = self.my_pilot_playlists(marker)
         if len(playlists) > 1:
             raise RuntimeError("Multiple matching pilot playlists; manual reconciliation required")
         if playlists:
@@ -122,8 +145,8 @@ class YouTube:
                 raise RuntimeError("Pilot playlist is not private: refusing to modify it")
         else:
             created = self.request("playlists", {"part": "snippet,status"}, method="POST", body={
-                "snippet": {"title": TITLE,
-                            "description": MARKER + " | Experimental playlist; unofficial festival guide"},
+                "snippet": {"title": title,
+                            "description": marker + " | Experimental playlist; unofficial festival guide"},
                 "status": {"privacyStatus": "private"},
             })
             playlist_id = created["id"]
