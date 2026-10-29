@@ -1,6 +1,8 @@
 """Bounded read-only evidence collection; never approves a candidate."""
 import json
 import os
+import hashlib
+from datetime import datetime, timezone
 from pathlib import Path
 
 from .musicbrainz import MusicBrainz
@@ -12,7 +14,7 @@ def quoted(value):
     return '"' + value.replace('\\', '\\\\').replace('"', '\\"') + '"'
 
 
-def collect(mb, yt, artists, recordings, videos, output):
+def collect(mb, yt, artists, recordings, videos, output, youtube_cache=None):
     if len(artists) != 8 or len(recordings) != 41 or len(videos) > 16:
         raise ValueError('Expected the fixed eight-artist, 41-recording pilot pool')
     report = {'artist_relationships': {}, 'recording_searches': {},
@@ -41,6 +43,7 @@ def collect(mb, yt, artists, recordings, videos, output):
             report[section][key] = mb.get(path, params)
         except RuntimeError as exc:
             report['errors']['musicbrainz'] = str(exc)
+            report['failed_lookup'] = {'section': section, 'key': key}
             # The client already exhausted bounded retries. Stop this provider;
             # cached successes are reused on the next approved run.
             save()
@@ -54,8 +57,23 @@ def collect(mb, yt, artists, recordings, videos, output):
                            {'part': 'snippet', 'q': 'Benda ' + title + ' official audio',
                             'type': 'video', 'maxResults': 5}))
     for key, endpoint, params in operations:
+        cache_file = None
+        if youtube_cache is not None:
+            youtube_cache.mkdir(parents=True, exist_ok=True)
+            today = datetime.now(timezone.utc).date().isoformat()
+            digest = hashlib.sha256(json.dumps([today, endpoint, params], sort_keys=True).encode()).hexdigest()
+            cache_file = youtube_cache / (digest + '.json')
+        if cache_file is not None and cache_file.is_file():
+            report['youtube'][key] = json.loads(cache_file.read_text())
+            report.setdefault('youtube_cache_hits', []).append(key)
+            save()
+            continue
         try:
             report['youtube'][key] = yt.request(endpoint, params)
+            if cache_file is not None:
+                temporary = cache_file.with_suffix('.tmp')
+                temporary.write_text(json.dumps(report['youtube'][key]))
+                temporary.replace(cache_file)
         except RuntimeError as exc:
             report['errors'][key] = str(exc)
             save()
@@ -63,6 +81,8 @@ def collect(mb, yt, artists, recordings, videos, output):
         save()
     report['complete'] = (not report['errors'] and
                           len(report['recording_searches']) == 41)
+    report['pending_recordings'] = [r['candidate_id'] for r in recordings
+                                    if r['candidate_id'] not in report['recording_searches']]
     save()
     return report
 
@@ -79,9 +99,22 @@ def main():
     report = collect(mb, yt, read('pilot/identity-review.json')['artists'],
                      read('pilot/recording-candidates.json'),
                      read('pilot/video-review-candidates.json'),
-                     Path('.state/evidence/report.json'))
+                     Path('.state/evidence/report.json'), Path('.cache/evidence-youtube'))
     print('Evidence saved; no candidates approved; no playlist writes.')
     print('YouTube general:', report['youtube_general_used'], 'search:', report['youtube_search_used'])
+    summary = ('## Pilot evidence collection\n\n'
+               + ('Collection complete; review still required.' if report['complete'] else 'PARTIAL — not approved for playlist execution.')
+               + '\n\nRecording searches collected: ' + str(len(report['recording_searches'])) + '/41'
+               + '\n\nPending: ' + ', '.join(report['pending_recordings'])
+               + '\n\nProvider errors: ' + json.dumps(report['errors'])
+               + '\n\nFailed lookup: ' + json.dumps(report.get('failed_lookup'))
+               + '\n\nYouTube quota this attempt: general ' + str(report['youtube_general_used'])
+               + ', search ' + str(report['youtube_search_used'])
+               + '. Playlist writes: 0. Paid services: $0.\n')
+    if os.environ.get('GITHUB_STEP_SUMMARY'):
+        with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as handle:
+            handle.write(summary)
+    print(summary)
     if not report['complete']:
         raise SystemExit('Partial evidence preserved. Review provider errors before retry.')
 

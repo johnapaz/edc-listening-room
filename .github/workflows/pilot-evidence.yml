@@ -33,9 +33,13 @@ jobs:
           python-version: '3.12'
       - uses: actions/cache/restore@v4
         with:
-          path: .cache/musicbrainz
-          key: musicbrainz-evidence-v1-${{ github.run_id }}-${{ github.run_attempt }}
-          restore-keys: musicbrainz-evidence-v1-
+          path: |
+            .cache/musicbrainz
+            .cache/evidence-youtube
+          key: pilot-evidence-v2-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            pilot-evidence-v2-
+            musicbrainz-evidence-v1-
       - name: Collect fixed pilot pool without writes
         run: python -m edc.evidence
       - uses: actions/upload-artifact@v4
@@ -48,5 +52,7 @@ jobs:
       - uses: actions/cache/save@v4
         if: always()
         with:
-          path: .cache/musicbrainz
-          key: musicbrainz-evidence-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            .cache/musicbrainz
+            .cache/evidence-youtube
+          key: pilot-evidence-v2-${{ github.run_id }}-${{ github.run_attempt }}

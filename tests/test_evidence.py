@@ -54,3 +54,21 @@ class EvidenceTests(unittest.TestCase):
         self.assertEqual(len(mb.calls), 1)
         self.assertFalse(result['complete'])
         self.assertIn('musicbrainz', result['errors'])
+        self.assertEqual(result['failed_lookup']['key'], '0')
+        self.assertEqual(len(result['pending_recordings']), 41)
+
+    def test_recovery_reuses_completed_youtube_requests(self):
+        artists = [{'name': str(i), 'musicbrainz_candidate_id': str(i)} for i in range(8)]
+        tracks = [{'candidate_id': str(i), 'title': 'Song', 'pilot_artist': 'Artist'} for i in range(41)]
+        with tempfile.TemporaryDirectory() as directory:
+            folder = Path(directory)
+            collect(FakeMB(True), FakeYT(), artists, tracks, [{'video_id': 'example'}],
+                    folder / 'first.json', folder / 'cache')
+            yt = FakeYT()
+            result = collect(FakeMB(), yt, artists, tracks, [{'video_id': 'example'}],
+                             folder / 'second.json', folder / 'cache')
+            self.assertEqual(yt.calls, [])
+            self.assertEqual(result['youtube_general_used'], 0)
+            self.assertEqual(result['youtube_search_used'], 0)
+            self.assertEqual(len(result['youtube_cache_hits']), 3)
+            self.assertTrue(result['complete'])
