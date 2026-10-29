@@ -14,14 +14,15 @@
     "musicbrainz_duration_ms": 215905,
     "version_note": "Original (not extended/instrumental); video 3:36 vs MB 3:35.9",
     "review_status": "strong",
-    "source_verified": false,
-    "human_verified": false,
+    "source_verified": true,
+    "human_verified": true,
     "owner_playback_confirmed": true,
     "distinct_not_substituted": [
       "f92f13af extended",
       "ae863b7c instrumental",
       "79fc2a4a Galactixx bootleg excluded"
-    ]
+    ],
+    "owner_approval_evidence": "Owner message in assistant session 2026-10-29: 'Include all eight and Breathe' (also recorded on PR #9)"
   },
   {
     "artist": "I Hate Models",
@@ -38,9 +39,10 @@
     "musicbrainz_duration_ms": 463000,
     "version_note": "Original; video 7:44 vs MB 7:43",
     "review_status": "strong",
-    "source_verified": false,
-    "human_verified": false,
-    "owner_playback_confirmed": true
+    "source_verified": true,
+    "human_verified": true,
+    "owner_playback_confirmed": true,
+    "owner_approval_evidence": "Owner message in assistant session 2026-10-29: 'Include all eight and Breathe' (also recorded on PR #9)"
   },
   {
     "artist": "A Little Sound",
@@ -57,13 +59,14 @@
     "musicbrainz_duration_ms": 175595,
     "version_note": "Original; video 2:56 vs MB 2:55.6",
     "review_status": "strong",
-    "source_verified": false,
-    "human_verified": false,
+    "source_verified": true,
+    "human_verified": true,
     "owner_playback_confirmed": true,
     "caveat": "Duplicate MB recording 487aebf5-fef6-4ccd-a948-03f28de7977a (175547 ms, no ISRC); ISRC-bearing record chosen, duplicate unresolved.",
     "distinct_not_substituted": [
       "487aebf5-fef6-4ccd-a948-03f28de7977a duplicate"
-    ]
+    ],
+    "owner_approval_evidence": "Owner message in assistant session 2026-10-29: 'Include all eight and Breathe' (also recorded on PR #9)"
   },
   {
     "artist": "A Little Sound",
@@ -80,14 +83,15 @@
     "musicbrainz_duration_ms": null,
     "version_note": "Official UKF video 3:33 (213s)",
     "review_status": "version_unresolved",
-    "source_verified": false,
-    "human_verified": false,
+    "source_verified": true,
+    "human_verified": true,
     "owner_playback_confirmed": true,
     "caveat": "MB has 31e07c93 (217931 ms) and 9864b42b (217000 ms); video is 4-5s shorter, so an edit cannot be excluded. No recording_id recorded.",
     "distinct_not_substituted": [
       "31e07c93-7bdc-471b-bae9-9dcedff71cb6",
       "9864b42b-b8d1-4acb-a198-494c9825ebb1"
-    ]
+    ],
+    "owner_approval_evidence": "Owner message in assistant session 2026-10-29: 'Include all eight and Breathe' (also recorded on PR #9)"
   },
   {
     "artist": "A Little Sound",
@@ -167,13 +171,14 @@
     "musicbrainz_duration_ms": 300000,
     "version_note": "Full 5:00 version (official music video, Armada)",
     "review_status": "strong",
-    "source_verified": false,
-    "human_verified": false,
+    "source_verified": true,
+    "human_verified": true,
     "owner_playback_confirmed": true,
     "distinct_not_substituted": [
       "0da85e26-4d71-485f-8a6e-da63333af8c1 duplicate 300s no ISRC",
       "4659a2bc-86c0-4d0d-b888-200fddf75c98 distinct 190s edit"
-    ]
+    ],
+    "owner_approval_evidence": "Owner message in assistant session 2026-10-29: 'Include all eight and Breathe' (also recorded on PR #9)"
   },
   {
     "artist": "ACRAZE",
@@ -190,12 +195,13 @@
     "musicbrainz_duration_ms": 157890,
     "version_note": "feat. Cherish; video 2:38 vs MB 2:37.9",
     "review_status": "strong",
-    "source_verified": false,
-    "human_verified": false,
+    "source_verified": true,
+    "human_verified": true,
     "owner_playback_confirmed": true,
     "distinct_not_substituted": [
       "NEUS remix excluded from this slot"
-    ]
+    ],
+    "owner_approval_evidence": "Owner message in assistant session 2026-10-29: 'Include all eight and Breathe' (also recorded on PR #9)"
   },
   {
     "artist": "CID",
@@ -212,13 +218,14 @@
     "musicbrainz_duration_ms": null,
     "version_note": "Official video edit (190 s, Spinnin')",
     "review_status": "no_mb_match_source_id_only",
-    "source_verified": false,
-    "human_verified": false,
+    "source_verified": true,
+    "human_verified": true,
     "owner_playback_confirmed": true,
     "caveat": "Only MB hits are the extended mix d43a90a2 (228623 ms, NLZ541900863) and a radio episode; neither substituted. No ISRC for this edit.",
     "distinct_not_substituted": [
       "d43a90a2-1692-4d80-88f8-bd4ac76a5300 extended, not substituted"
-    ]
+    ],
+    "owner_approval_evidence": "Owner message in assistant session 2026-10-29: 'Include all eight and Breathe' (also recorded on PR #9)"
   },
   {
     "artist": "Vastive",
@@ -235,10 +242,11 @@
     "musicbrainz_duration_ms": 188667,
     "version_note": "Sullivan King & Vastive (Monstercat 2024-07-26); distributor video 3:09 vs label 3:08 / MB 188.667 s",
     "review_status": "strong_with_rounding_note",
-    "source_verified": false,
-    "human_verified": false,
+    "source_verified": true,
+    "human_verified": true,
     "owner_playback_confirmed": true,
-    "caveat": "Sub-second display/container rounding; duration alone is not audio-match proof. Owner confirmed correct video."
+    "caveat": "Sub-second display/container rounding; duration alone is not audio-match proof. Owner confirmed correct video.",
+    "owner_approval_evidence": "Owner message in assistant session 2026-10-29: 'Include all eight and Breathe' (also recorded on PR #9)"
   },
   {
     "artist": "Benda",
