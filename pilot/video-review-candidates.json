@@ -7,7 +7,10 @@
     "status": "official_channel_or_label_search_candidate",
     "human_verified": false,
     "playback_verified": false,
-    "recording_id": null
+    "recording_id": null,
+    "youtube_music_url": "https://music.youtube.com/watch?v=bz6taI5pDl0",
+    "source_verified": false,
+    "remaining_uncertainty": "Inherited search candidate; uploader, exact version, canonical recording identity and playback remain unverified"
   },
   {
     "artist": "I Hate Models",
@@ -17,7 +20,10 @@
     "status": "official_channel_or_label_search_candidate",
     "human_verified": false,
     "playback_verified": false,
-    "recording_id": null
+    "recording_id": null,
+    "youtube_music_url": "https://music.youtube.com/watch?v=U6EjUIefwiw",
+    "source_verified": false,
+    "remaining_uncertainty": "Inherited search candidate; uploader, exact version, canonical recording identity and playback remain unverified"
   },
   {
     "artist": "KI/KI",
@@ -27,7 +33,10 @@
     "status": "official_channel_or_label_search_candidate",
     "human_verified": false,
     "playback_verified": false,
-    "recording_id": null
+    "recording_id": null,
+    "youtube_music_url": "https://music.youtube.com/watch?v=wtnrLTqmUKI",
+    "source_verified": false,
+    "remaining_uncertainty": "Inherited search candidate; uploader, exact version, canonical recording identity and playback remain unverified"
   },
   {
     "artist": "ACRAZE",
@@ -37,7 +46,10 @@
     "status": "official_channel_or_label_search_candidate",
     "human_verified": false,
     "playback_verified": false,
-    "recording_id": null
+    "recording_id": null,
+    "youtube_music_url": "https://music.youtube.com/watch?v=bnA7yJkAG30",
+    "source_verified": false,
+    "remaining_uncertainty": "Inherited search candidate; uploader, exact version, canonical recording identity and playback remain unverified"
   },
   {
     "artist": "CID",
@@ -47,7 +59,10 @@
     "status": "official_channel_or_label_search_candidate",
     "human_verified": false,
     "playback_verified": false,
-    "recording_id": null
+    "recording_id": null,
+    "youtube_music_url": "https://music.youtube.com/watch?v=Scc4CRVroPo",
+    "source_verified": false,
+    "remaining_uncertainty": "Inherited search candidate; uploader, exact version, canonical recording identity and playback remain unverified"
   },
   {
     "artist": "Vastive",
@@ -57,6 +72,101 @@
     "status": "official_channel_or_label_search_candidate",
     "human_verified": false,
     "playback_verified": false,
-    "recording_id": null
+    "recording_id": null,
+    "youtube_music_url": "https://music.youtube.com/watch?v=Ve_LOVTzbxM",
+    "source_verified": false,
+    "remaining_uncertainty": "Inherited search candidate; uploader, exact version, canonical recording identity and playback remain unverified",
+    "credited_artists": [
+      "Sullivan King",
+      "Vastive"
+    ]
+  },
+  {
+    "artist": "A Little Sound",
+    "title": "Back To Back (B2B)",
+    "credited_artists": [
+      "A Little Sound"
+    ],
+    "video_id": "HYCG79PxgFc",
+    "source_url": "https://www.youtube.com/watch?v=HYCG79PxgFc",
+    "evidence_url": "https://ukf.com/discover/artists/a-little-sound/",
+    "youtube_music_url": "https://music.youtube.com/watch?v=HYCG79PxgFc",
+    "status": "publisher_direct_video_link",
+    "source_verified": true,
+    "human_verified": false,
+    "playback_verified": false,
+    "recording_id": null,
+    "remaining_uncertainty": "UKF explicitly links this video and title; destination retrieval failed. Exact recording/version and current uploader metadata need verification."
+  },
+  {
+    "artist": "A Little Sound",
+    "title": "Breathe",
+    "credited_artists": [
+      "A Little Sound"
+    ],
+    "video_id": "Rv550gn6y8k",
+    "source_url": "https://www.youtube.com/watch?v=Rv550gn6y8k",
+    "evidence_url": "https://ukf.com/discover/artists/a-little-sound/",
+    "youtube_music_url": "https://music.youtube.com/watch?v=Rv550gn6y8k",
+    "status": "publisher_direct_video_link",
+    "source_verified": true,
+    "human_verified": false,
+    "playback_verified": false,
+    "recording_id": null,
+    "remaining_uncertainty": "UKF explicitly links this video and title; destination retrieval failed. Exact recording/version and current uploader metadata need verification."
+  },
+  {
+    "artist": "A Little Sound",
+    "title": "Weed & Wine",
+    "credited_artists": [
+      "Friction",
+      "A Little Sound"
+    ],
+    "video_id": "_M5O_ED_1aI",
+    "source_url": "https://www.youtube.com/watch?v=_M5O_ED_1aI",
+    "evidence_url": "https://ukf.com/discover/artists/a-little-sound/",
+    "youtube_music_url": "https://music.youtube.com/watch?v=_M5O_ED_1aI",
+    "status": "publisher_direct_video_link",
+    "source_verified": true,
+    "human_verified": false,
+    "playback_verified": false,
+    "recording_id": null,
+    "remaining_uncertainty": "UKF explicitly links this video and title; destination retrieval failed. Exact recording/version and current uploader metadata need verification."
+  },
+  {
+    "artist": "A Little Sound",
+    "title": "Confide",
+    "credited_artists": [
+      "Technimatic",
+      "A Little Sound"
+    ],
+    "video_id": "WimivlmnA9I",
+    "source_url": "https://www.youtube.com/watch?v=WimivlmnA9I",
+    "evidence_url": "https://ukf.com/discover/artists/a-little-sound/",
+    "youtube_music_url": "https://music.youtube.com/watch?v=WimivlmnA9I",
+    "status": "publisher_direct_video_link",
+    "source_verified": true,
+    "human_verified": false,
+    "playback_verified": false,
+    "recording_id": null,
+    "remaining_uncertainty": "UKF explicitly links this video and title; destination retrieval failed. Exact recording/version and current uploader metadata need verification."
+  },
+  {
+    "artist": "A Little Sound",
+    "title": "Overload",
+    "credited_artists": [
+      "Annix",
+      "A Little Sound"
+    ],
+    "video_id": "8I-QJlFSJdM",
+    "source_url": "https://www.youtube.com/watch?v=8I-QJlFSJdM",
+    "evidence_url": "https://ukf.com/discover/artists/a-little-sound/",
+    "youtube_music_url": "https://music.youtube.com/watch?v=8I-QJlFSJdM",
+    "status": "publisher_direct_video_link",
+    "source_verified": true,
+    "human_verified": false,
+    "playback_verified": false,
+    "recording_id": null,
+    "remaining_uncertainty": "UKF explicitly links this video and title; destination retrieval failed. Exact recording/version and current uploader metadata need verification."
   }
 ]
