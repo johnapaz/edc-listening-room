@@ -1,0 +1,41 @@
+name: YouTube OAuth preflight (read-only)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: youtube-pilot-private
+  cancel-in-progress: false
+jobs:
+  preflight:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: youtube-pilot
+    env:
+      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refresh OAuth and verify authenticated YouTube access
+        run: |
+          python - <<'PY'
+          from edc.youtube import access_token_from_secrets, YouTube
+          from edc.quota import Budget
+          import os
+          names = ("GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET", "GOOGLE_REFRESH_TOKEN")
+          missing = [name for name in names if not os.environ.get(name)]
+          if missing:
+              raise SystemExit("Missing environment secrets: " + ", ".join(missing))
+          token = access_token_from_secrets()
+          quota = Budget(remaining_general=1, remaining_search=0, maximum_general_per_run=1)
+          result = YouTube(token, quota).request("channels", {"part": "id", "mine": "true"})
+          if not result.get("items"):
+              raise SystemExit("OAuth succeeded, but no YouTube channel returned. Check account/channel setup.")
+          print("PASS: OAuth refresh and authenticated YouTube channel lookup.")
+          print("General quota used: " + str(quota.used_general) + "; searches: 0; playlist writes: 0.")
+          PY
