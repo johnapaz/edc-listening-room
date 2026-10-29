@@ -2,11 +2,17 @@ name: Pilot evidence collection (read-only)
 on:
   workflow_dispatch:
     inputs:
+      provider:
+        description: Provider to collect (recovery defaults to MusicBrainz only)
+        type: choice
+        options: [musicbrainz, youtube, both]
+        default: musicbrainz
+        required: true
       remaining_general:
-        description: Verified daily remaining general quota
+        description: Verified daily remaining general quota (0 for MusicBrainz only)
         required: true
       remaining_search:
-        description: Verified daily remaining search quota (at least 2)
+        description: Search quota (0; this workflow no longer searches)
         required: true
 permissions:
   contents: read
@@ -24,6 +30,7 @@ jobs:
       GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
       GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
       EDC_CONTACT_EMAIL: ${{ secrets.EDC_CONTACT_EMAIL }}
+      EDC_EVIDENCE_PROVIDER: ${{ inputs.provider }}
       EDC_REMAINING_GENERAL: ${{ inputs.remaining_general }}
       EDC_REMAINING_SEARCH: ${{ inputs.remaining_search }}
     steps:
@@ -33,9 +40,13 @@ jobs:
           python-version: '3.12'
       - uses: actions/cache/restore@v4
         with:
-          path: .cache/musicbrainz
-          key: musicbrainz-evidence-v1-${{ github.run_id }}-${{ github.run_attempt }}
-          restore-keys: musicbrainz-evidence-v1-
+          path: |
+            .cache/musicbrainz
+            .cache/evidence-youtube
+          key: pilot-evidence-v2-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            pilot-evidence-v2-
+            musicbrainz-evidence-v1-
       - name: Collect fixed pilot pool without writes
         run: python -m edc.evidence
       - uses: actions/upload-artifact@v4
@@ -48,5 +59,7 @@ jobs:
       - uses: actions/cache/save@v4
         if: always()
         with:
-          path: .cache/musicbrainz
-          key: musicbrainz-evidence-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            .cache/musicbrainz
+            .cache/evidence-youtube
+          key: pilot-evidence-v2-${{ github.run_id }}-${{ github.run_attempt }}
