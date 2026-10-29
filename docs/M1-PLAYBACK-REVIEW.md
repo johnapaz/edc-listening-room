@@ -69,3 +69,17 @@ Resume assistant research from the stored unresolved rows after MusicBrainz reco
 - https://music.apple.com/us/song/1699049290
 - https://music.apple.com/us/song/1830441261
 - https://musicbrainz.org/artist/3e1f2ee4-16be-4406-bf18-6173840cf2b1/relationships
+
+## Practical fallback plan (owner follow-up)
+
+Recommended: pursue a small, unranked listening preview while keeping M1 and bulk ingestion blocked. Use official artist/label release pages and distributor-provided track identifiers (ISRC or exact store track IDs, explicitly namespaced) when MusicBrainz is unavailable. Keep the MBID crosswalk unresolved; never relabel a store ID as a MusicBrainz ID. This changes the documented MB-first pilot contract, so implement it in a separately reviewable change before automated execution. Verify full artist credits, version, upload provenance, scope and human playback regardless of identifier provider.
+
+Immediate fallback requiring no OAuth or code change: the owner can manually create a private YouTube Music preview from individually checked links. This is a listening aid, not an M1 pass or ordered API-readback demonstration. The assistant must finish independent source research; the owner should not have to resolve database identities.
+
+If Benda remains unresolved, a seven-artist preview may help listening now, but must be labeled partial and cannot pass eight-artist coverage. Popularity ranking stays deferred until legitimate source metrics and licensing are available. No fabricated rankings or public release.
+
+Owner confirms no GitHub environment exists. Browser setup begins at Settings → Environments → New environment → name `youtube-pilot` → Configure environment. Subsequent steps restrict it to main and configure owner review before adding secrets. Never enable Prevent self-review if the sole owner must both dispatch and approve.
+
+PR #4 remains a draft research checkpoint. No merge is currently requested; merging research later would not approve tracks, authorize a playlist write, or declare M1 complete.
+
+For explicit new-tab links, use [M1-PLAYBACK-CHECKLIST.html](M1-PLAYBACK-CHECKLIST.html) opened as an HTML file. Its external links use target="_blank" and rel="noopener noreferrer". GitHub Markdown and chat link rendering cannot reliably enforce new-tab behavior; Ctrl+click (Windows) or Cmd+click (Mac) works there.
