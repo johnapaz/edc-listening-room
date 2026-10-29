@@ -104,10 +104,11 @@
     "musicbrainz_duration_ms": 184000,
     "version_note": "Friction & A Little Sound; video 3:04 vs MB 3:04",
     "review_status": "good_pending_playback",
-    "source_verified": false,
-    "human_verified": false,
-    "owner_playback_confirmed": false,
-    "caveat": "Duplicate MB 41c55c3b (no ISRC). Owner playback not yet confirmed."
+    "source_verified": true,
+    "human_verified": true,
+    "owner_playback_confirmed": true,
+    "caveat": "Duplicate MB 41c55c3b (no ISRC).",
+    "owner_approval_evidence": "Owner message in assistant session 2026-10-29: 'Approved the run and played all four; include all four' (also recorded on PR #9)"
   },
   {
     "artist": "A Little Sound",
@@ -124,10 +125,11 @@
     "musicbrainz_duration_ms": 268378,
     "version_note": "Technimatic ft. A Little Sound; video 4:30 vs MB 4:28",
     "review_status": "good_pending_playback",
-    "source_verified": false,
-    "human_verified": false,
-    "owner_playback_confirmed": false,
-    "caveat": "~1.6 s difference, likely rounding. Owner playback not yet confirmed."
+    "source_verified": true,
+    "human_verified": true,
+    "owner_playback_confirmed": true,
+    "caveat": "~1.6 s video/MB difference, likely rounding.",
+    "owner_approval_evidence": "Owner message in assistant session 2026-10-29: 'Approved the run and played all four; include all four' (also recorded on PR #9)"
   },
   {
     "artist": "A Little Sound",
@@ -144,10 +146,11 @@
     "musicbrainz_duration_ms": 219000,
     "version_note": "Annix ft. A Little Sound; video 3:40 vs MB 3:39",
     "review_status": "good_pending_playback",
-    "source_verified": false,
-    "human_verified": false,
-    "owner_playback_confirmed": false,
-    "caveat": "No ISRC on MB record. Owner playback not yet confirmed."
+    "source_verified": true,
+    "human_verified": true,
+    "owner_playback_confirmed": true,
+    "caveat": "No ISRC on MB record.",
+    "owner_approval_evidence": "Owner message in assistant session 2026-10-29: 'Approved the run and played all four; include all four' (also recorded on PR #9)"
   },
   {
     "artist": "KI/KI",
@@ -251,10 +254,11 @@
     "isrc": "QM24S2203642",
     "musicbrainz_duration_ms": 158367,
     "version_note": "Candidate; exact videos.list metadata not yet fetched",
-    "review_status": "pending_video_metadata",
+    "review_status": "owner_approved_pending_video_metadata",
     "source_verified": false,
-    "human_verified": false,
-    "owner_playback_confirmed": false,
-    "caveat": "Needs YouTube metadata (title/channel/duration ~2:38) and owner playback/inclusion."
+    "human_verified": true,
+    "owner_playback_confirmed": true,
+    "owner_approval_evidence": "Owner message in assistant session 2026-10-29: 'Approved the run and played all four; include all four' (also recorded on PR #9)",
+    "remaining": "Source verification blocked until exact videos.list metadata (title/channel/duration ~2:38) is fetched."
   }
 ]
