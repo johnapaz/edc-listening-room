@@ -31,3 +31,6 @@ EXIT (organizer) identifies the artist as Guillaume Labadie; MB f9a4de7f has a L
 ## Update after owner response
 - MB-only recovery run [40966874986](https://github.com/johnapaz/edc-listening-room/actions/runs/40966874986): COLLECTION_COMPLETE, 41/41 recording searches, no provider errors, YouTube 0/0, writes 0, $0. The three Vastive results are in the run artifact; they do not affect the preview and are not yet reviewed.
 - Owner played and approved inclusion of Weed & Wine, Confide, Overload and Poison Control. Poison Control still lacks fetched video metadata, so `source_verified` stays false for it. The other eight rows are not yet approved for inclusion (the eight played tracks and Breathe await an explicit answer).
+
+## Update: inclusion approvals complete
+Owner approved the eight already-played tracks plus Breathe (message: "Include all eight and Breathe; quota is 9,000 remaining"). All 12 rows now have `human_verified=true`; 11 have `source_verified=true`. Poison Control awaits exact video metadata (YouTube-only evidence run, 0 searches, ≤1 general unit, against the declared 9,000 remaining). Breathe and Night Service Only keep their version caveats; Breathe has no recording_id.
