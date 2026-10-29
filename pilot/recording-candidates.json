@@ -10,7 +10,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:martin-garrix:gravity",
@@ -23,7 +31,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:martin-garrix:smile",
@@ -36,7 +52,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:martin-garrix:wherever-you-are",
@@ -49,7 +73,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:martin-garrix:carry-you",
@@ -62,7 +94,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:i-hate-models:warehouse-memories",
@@ -71,11 +111,26 @@
     "source_url": "https://artsrecordings.bandcamp.com/album/warehouse-memories",
     "status": "source_listed_candidate",
     "recording_id": null,
-    "credited_artists_verified": false,
-    "version_verified": false,
+    "credited_artists_verified": true,
+    "version_verified": true,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "source_supports_in_scope; canonical_match_pending",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ],
+    "credited_artists": [
+      "I Hate Models"
+    ],
+    "credit_evidence_url": "https://artsrecordings.bandcamp.com/track/warehouse-memories",
+    "version_note": "Original track; distinct from Emmanuel remix on same release",
+    "duration_seconds": 446,
+    "source_recording_url": "https://artsrecordings.bandcamp.com/track/warehouse-memories"
   },
   {
     "candidate_id": "pilot:i-hate-models:daydream",
@@ -84,11 +139,26 @@
     "source_url": "https://artsrecordings.bandcamp.com/album/warehouse-memories",
     "status": "source_listed_candidate",
     "recording_id": null,
-    "credited_artists_verified": false,
-    "version_verified": false,
+    "credited_artists_verified": true,
+    "version_verified": true,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "source_supports_in_scope; canonical_match_pending",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ],
+    "credited_artists": [
+      "I Hate Models"
+    ],
+    "credit_evidence_url": "https://artsrecordings.bandcamp.com/track/daydream",
+    "version_note": "Warehouse Memories original release track",
+    "duration_seconds": 463,
+    "source_recording_url": "https://artsrecordings.bandcamp.com/track/daydream"
   },
   {
     "candidate_id": "pilot:i-hate-models:shades-of-night",
@@ -97,11 +167,26 @@
     "source_url": "https://artsrecordings.bandcamp.com/album/warehouse-memories",
     "status": "source_listed_candidate",
     "recording_id": null,
-    "credited_artists_verified": false,
-    "version_verified": false,
+    "credited_artists_verified": true,
+    "version_verified": true,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "source_supports_in_scope; canonical_match_pending",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ],
+    "credited_artists": [
+      "I Hate Models"
+    ],
+    "credit_evidence_url": "https://artsrecordings.bandcamp.com/track/shades-of-night",
+    "version_note": "Warehouse Memories original release track",
+    "duration_seconds": 374,
+    "source_recording_url": "https://artsrecordings.bandcamp.com/track/shades-of-night"
   },
   {
     "candidate_id": "pilot:i-hate-models:two-steps-from-heaven",
@@ -110,11 +195,25 @@
     "source_url": "https://disco-inferno.bandcamp.com/album/disco-inferno-01",
     "status": "source_listed_candidate",
     "recording_id": null,
-    "credited_artists_verified": false,
+    "credited_artists_verified": true,
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "source_supports_in_scope; canonical_match_pending",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ],
+    "credited_artists": [
+      "I Hate Models"
+    ],
+    "credit_evidence_url": "https://disco-inferno.bandcamp.com/album/disco-inferno-01",
+    "version_note": "Track 1 original release",
+    "duration_seconds": 567
   },
   {
     "candidate_id": "pilot:i-hate-models:sad-groove",
@@ -123,11 +222,25 @@
     "source_url": "https://disco-inferno.bandcamp.com/album/disco-inferno-01",
     "status": "source_listed_candidate",
     "recording_id": null,
-    "credited_artists_verified": false,
+    "credited_artists_verified": true,
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "source_supports_in_scope; canonical_match_pending",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ],
+    "credited_artists": [
+      "I Hate Models"
+    ],
+    "credit_evidence_url": "https://disco-inferno.bandcamp.com/album/disco-inferno-01",
+    "version_note": "Track 2 original release",
+    "duration_seconds": 496
   },
   {
     "candidate_id": "pilot:a-little-sound:back-to-back--b2b-",
@@ -136,11 +249,25 @@
     "source_url": "https://ukf.com/discover/artists/a-little-sound/",
     "status": "source_listed_candidate",
     "recording_id": null,
-    "credited_artists_verified": false,
+    "credited_artists_verified": true,
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "source_supports_in_scope; canonical_match_pending",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ],
+    "credited_artists": [
+      "A Little Sound"
+    ],
+    "credit_evidence_url": "https://ukf.com/discover/artists/a-little-sound/",
+    "version_note": "Standalone song; B2B in title is not a full DJ mix",
+    "duration_seconds": null
   },
   {
     "candidate_id": "pilot:a-little-sound:breathe",
@@ -149,11 +276,25 @@
     "source_url": "https://ukf.com/discover/artists/a-little-sound/",
     "status": "source_listed_candidate",
     "recording_id": null,
-    "credited_artists_verified": false,
+    "credited_artists_verified": true,
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "source_supports_in_scope; canonical_match_pending",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ],
+    "credited_artists": [
+      "A Little Sound"
+    ],
+    "credit_evidence_url": "https://ukf.com/discover/artists/a-little-sound/",
+    "version_note": "Version of linked upload still needs checking",
+    "duration_seconds": null
   },
   {
     "candidate_id": "pilot:a-little-sound:weed---wine",
@@ -162,11 +303,26 @@
     "source_url": "https://ukf.com/discover/artists/a-little-sound/",
     "status": "source_listed_candidate",
     "recording_id": null,
-    "credited_artists_verified": false,
+    "credited_artists_verified": true,
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "source_supports_in_scope; canonical_match_pending",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ],
+    "credited_artists": [
+      "Friction",
+      "A Little Sound"
+    ],
+    "credit_evidence_url": "https://ukf.com/discover/artists/a-little-sound/",
+    "version_note": "A Little Sound is featured vocalist",
+    "duration_seconds": null
   },
   {
     "candidate_id": "pilot:a-little-sound:confide",
@@ -175,11 +331,26 @@
     "source_url": "https://ukf.com/discover/artists/a-little-sound/",
     "status": "source_listed_candidate",
     "recording_id": null,
-    "credited_artists_verified": false,
+    "credited_artists_verified": true,
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "source_supports_in_scope; canonical_match_pending",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ],
+    "credited_artists": [
+      "Technimatic",
+      "A Little Sound"
+    ],
+    "credit_evidence_url": "https://ukf.com/discover/artists/a-little-sound/",
+    "version_note": "A Little Sound is featured vocalist",
+    "duration_seconds": null
   },
   {
     "candidate_id": "pilot:a-little-sound:overload",
@@ -188,11 +359,26 @@
     "source_url": "https://ukf.com/discover/artists/a-little-sound/",
     "status": "source_listed_candidate",
     "recording_id": null,
-    "credited_artists_verified": false,
+    "credited_artists_verified": true,
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "source_supports_in_scope; canonical_match_pending",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ],
+    "credited_artists": [
+      "Annix",
+      "A Little Sound"
+    ],
+    "credit_evidence_url": "https://ukf.com/discover/artists/a-little-sound/",
+    "version_note": "A Little Sound is featured vocalist",
+    "duration_seconds": null
   },
   {
     "candidate_id": "pilot:ki-ki:here-with-me",
@@ -205,7 +391,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:ki-ki:going-existential-in-the-rave",
@@ -218,7 +412,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:ki-ki:can-t-stop-loving-you",
@@ -231,7 +433,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:ki-ki:put-your-bassline",
@@ -240,11 +450,26 @@
     "source_url": "https://kislashki.bandcamp.com/music",
     "status": "source_listed_candidate",
     "recording_id": null,
-    "credited_artists_verified": false,
+    "credited_artists_verified": true,
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "source_supports_in_scope; canonical_match_pending",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ],
+    "credited_artists": [
+      "Armin van Buuren",
+      "KI/KI"
+    ],
+    "credit_evidence_url": "https://kislashki.bandcamp.com/album/put-your-bassline",
+    "version_note": "Release credit verified; specific mix still pending",
+    "duration_seconds": null
   },
   {
     "candidate_id": "pilot:ki-ki:what-s-a-girl-to-do-in--25",
@@ -257,7 +482,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:ki-ki:5-mins-of-acid",
@@ -270,7 +503,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:acraze:do-it-to-it",
@@ -283,7 +524,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:acraze:believe",
@@ -296,7 +545,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:acraze:take-me-away",
@@ -309,7 +566,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:acraze:heard-it-like-this",
@@ -322,7 +587,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:acraze:apple-cider",
@@ -335,7 +608,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:cid:no-",
@@ -348,7 +629,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:cid:us",
@@ -361,7 +650,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:cid:sweet-memories",
@@ -374,7 +671,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:cid:secrets",
@@ -387,7 +692,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:cid:night-service-only",
@@ -400,7 +713,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:benda:break-shit--feat--blupill-",
@@ -413,7 +734,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:benda:bone-breaker",
@@ -422,11 +751,25 @@
     "source_url": "https://music.apple.com/us/artist/benda/80055906",
     "status": "source_listed_candidate",
     "recording_id": null,
-    "credited_artists_verified": false,
+    "credited_artists_verified": true,
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "source_supports_in_scope; canonical_match_pending",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ],
+    "credited_artists": [
+      "Benda"
+    ],
+    "credit_evidence_url": "https://music.apple.com/us/song/1699049290",
+    "version_note": "Beat the Block standalone track; reject Mixed DJ-set excerpts",
+    "duration_seconds": null
   },
   {
     "candidate_id": "pilot:benda:poison-control",
@@ -439,7 +782,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:benda:waterbenda",
@@ -452,7 +803,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:benda:free-smoke",
@@ -461,11 +820,25 @@
     "source_url": "https://music.apple.com/us/album/free-smoke-single/1830441260",
     "status": "source_listed_candidate",
     "recording_id": null,
-    "credited_artists_verified": false,
+    "credited_artists_verified": true,
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "source_supports_in_scope; canonical_match_pending",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ],
+    "credited_artists": [
+      "Benda"
+    ],
+    "credit_evidence_url": "https://music.apple.com/us/song/1830441261",
+    "version_note": "2020-01-17 single; 2025-looking catalog ID is not release year",
+    "duration_seconds": null
   },
   {
     "candidate_id": "pilot:vastive:slaughter",
@@ -474,11 +847,26 @@
     "source_url": "https://www.monstercat.com/release/742779553713",
     "status": "source_listed_candidate",
     "recording_id": null,
-    "credited_artists_verified": false,
+    "credited_artists_verified": true,
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "source_supports_in_scope; canonical_match_pending",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ],
+    "credited_artists": [
+      "Sullivan King",
+      "Vastive"
+    ],
+    "credit_evidence_url": "https://www.monstercat.com/release/742779553713",
+    "version_note": "Original single released 2024-07-26",
+    "duration_seconds": 188
   },
   {
     "candidate_id": "pilot:vastive:die-by-my-hand",
@@ -487,11 +875,27 @@
     "source_url": "https://www.monstercat.com/release/742779546258",
     "status": "source_listed_candidate",
     "recording_id": null,
-    "credited_artists_verified": false,
+    "credited_artists_verified": true,
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "source_supports_in_scope; canonical_match_pending",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ],
+    "credited_artists": [
+      "Sullivan King",
+      "Vastive",
+      "Taylor Barber of Left To Suffer"
+    ],
+    "credit_evidence_url": "https://www.monstercat.com/release/742779546258",
+    "version_note": "Thrones of Blood track 2; featured artist retained",
+    "duration_seconds": 192
   },
   {
     "candidate_id": "pilot:vastive:under-my-skin",
@@ -504,7 +908,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:vastive:barking-at-thunder",
@@ -517,7 +929,15 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   },
   {
     "candidate_id": "pilot:vastive:cut",
@@ -530,6 +950,14 @@
     "version_verified": false,
     "human_verified": false,
     "playback_verified": false,
-    "score": null
+    "score": null,
+    "reviewed_on": "2026-10-29",
+    "scope_status": "hold_pending_recording_and_credit_evidence",
+    "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
+    "remaining_checks": [
+      "canonical recording MBID/ISRC",
+      "complete release artist credits",
+      "exact edition match to video"
+    ]
   }
 ]
