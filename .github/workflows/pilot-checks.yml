@@ -1,0 +1,25 @@
+name: Pilot checks
+on:
+  push:
+    branches: [main, feature/m1-pilot]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile sources
+        run: python -m compileall -q edc tests
+      - name: Run deterministic tests (zero network)
+        run: python -m unittest discover -s tests -v
+      - name: Verify research is dry-run by default
+        run: python -m edc.cli research
