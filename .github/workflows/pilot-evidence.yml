@@ -1,0 +1,52 @@
+name: Pilot evidence collection (read-only)
+on:
+  workflow_dispatch:
+    inputs:
+      remaining_general:
+        description: Verified daily remaining general quota
+        required: true
+      remaining_search:
+        description: Verified daily remaining search quota (at least 2)
+        required: true
+permissions:
+  contents: read
+concurrency:
+  group: youtube-pilot-private
+  cancel-in-progress: false
+jobs:
+  evidence:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: youtube-pilot
+    env:
+      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+      EDC_CONTACT_EMAIL: ${{ secrets.EDC_CONTACT_EMAIL }}
+      EDC_REMAINING_GENERAL: ${{ inputs.remaining_general }}
+      EDC_REMAINING_SEARCH: ${{ inputs.remaining_search }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/cache/restore@v4
+        with:
+          path: .cache/musicbrainz
+          key: musicbrainz-evidence-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: musicbrainz-evidence-v1-
+      - name: Collect fixed pilot pool without writes
+        run: python -m edc.evidence
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pilot-source-evidence
+          path: .state/evidence/
+          if-no-files-found: warn
+          retention-days: 7
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: .cache/musicbrainz
+          key: musicbrainz-evidence-v1-${{ github.run_id }}-${{ github.run_attempt }}
