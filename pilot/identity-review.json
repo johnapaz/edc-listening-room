@@ -1,71 +1,151 @@
 {
   "reviewed_on": "2026-10-29",
   "research_run": 40946898441,
-  "reviewer": "assistant_source_review_not_owner_signoff",
+  "reviewer": "assistant_evidence_review_owner_signoff_pending",
   "artists": [
     {
       "name": "Martin Garrix",
       "official_identity_source": "https://martingarrix.com/official-channels/",
       "identity_status": "intended_performer_source_identified",
       "musicbrainz_candidate_id": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
-      "musicbrainz_status": "candidate_pending_crosslink",
-      "human_approved": false
+      "musicbrainz_status": "evidence_corroborated_pending_owner_identity_signoff",
+      "human_approved": false,
+      "musicbrainz_crosslink_review": {
+        "status": "corroborated",
+        "evidence_urls": [
+          "https://musicbrainz.org/artist/3e1f2ee4-16be-4406-bf18-6173840cf2b1/relationships",
+          "https://martingarrix.com/music/"
+        ],
+        "reason": "MusicBrainz official homepage martingarrix.com, label STMPD RCRDS and identity Martijn Garritsen match official artist site.",
+        "reviewed_on": "2026-10-29",
+        "method": "independent_identity_evidence_not_search_rank"
+      }
     },
     {
       "name": "I Hate Models",
       "official_identity_source": "https://www.ihatemodelsmusic.com/",
       "identity_status": "intended_performer_source_identified",
       "musicbrainz_candidate_id": "f9a4de7f-d3c6-4de8-8892-7aca52610edd",
-      "musicbrainz_status": "candidate_pending_crosslink",
-      "human_approved": false
+      "musicbrainz_status": "evidence_corroborated_pending_owner_identity_signoff",
+      "human_approved": false,
+      "musicbrainz_crosslink_review": {
+        "status": "corroborated",
+        "evidence_urls": [
+          "https://www.setlist.fm/setlists/i-hate-models-1bc1fd98.html",
+          "https://artsrecordings.bandcamp.com/album/warehouse-memories"
+        ],
+        "reason": "Independent concert database crosslinks the same MBID to performing techno artist; ARTS label release independently credits I Hate Models.",
+        "reviewed_on": "2026-10-29",
+        "method": "independent_identity_evidence_not_search_rank"
+      }
     },
     {
       "name": "A Little Sound",
       "official_identity_source": "https://www.insomniac.com/music/artists/a-little-sound/",
       "identity_status": "intended_performer_source_identified",
       "musicbrainz_candidate_id": "c1df97ad-3114-448b-aceb-52f21f22de01",
-      "musicbrainz_status": "candidate_pending_crosslink",
-      "human_approved": false
+      "musicbrainz_status": "evidence_corroborated_pending_owner_identity_signoff",
+      "human_approved": false,
+      "musicbrainz_crosslink_review": {
+        "status": "corroborated",
+        "evidence_urls": [
+          "https://www.setlist.fm/setlists/a-little-sound-3f929df.html",
+          "https://ukf.com/discover/artists/a-little-sound/"
+        ],
+        "reason": "Independent concert database supplies exact MBID; UKF artist page corroborates drum and bass vocalist and recordings.",
+        "reviewed_on": "2026-10-29",
+        "method": "independent_identity_evidence_not_search_rank"
+      }
     },
     {
       "name": "KI/KI",
       "official_identity_source": "https://www.kislashki.com/",
       "identity_status": "intended_performer_source_identified",
       "musicbrainz_candidate_id": "eaf2a4cb-75eb-4e9c-989e-13be6b96a76a",
-      "musicbrainz_status": "hold_inconsistent_description",
-      "human_approved": false
+      "musicbrainz_status": "corroborated_with_description_conflict_pending_owner_identity_signoff",
+      "human_approved": false,
+      "musicbrainz_crosslink_review": {
+        "status": "corroborated_with_metadata_conflict",
+        "evidence_urls": [
+          "https://www.setlist.fm/setlists/kiki-6bfc2aca.html",
+          "https://kislashki.bandcamp.com/album/here-with-me"
+        ],
+        "reason": "Independent concert database links exact MBID to KI/KI live performances, including EDC-associated appearances; self-controlled slash Bandcamp confirms Amsterdam electronic producer and name. MusicBrainz prior 'vocalist' disambiguation is inconsistent and must not be propagated as a factual biography. Obtain MB relationship/description correction before claiming database metadata fully clean.",
+        "reviewed_on": "2026-10-29",
+        "method": "independent_identity_evidence_not_search_rank"
+      }
     },
     {
       "name": "ACRAZE",
       "official_identity_source": "https://www.acrazemusic.com/about",
       "identity_status": "intended_performer_source_identified",
       "musicbrainz_candidate_id": "e21e0137-b42d-44a5-abd6-c6ac160d0d7d",
-      "musicbrainz_status": "crosschecked_name_and_official_homepage",
-      "human_approved": false
+      "musicbrainz_status": "evidence_corroborated_pending_owner_identity_signoff",
+      "human_approved": false,
+      "musicbrainz_crosslink_review": {
+        "status": "corroborated",
+        "evidence_urls": [
+          "https://www.acrazemusic.com/about",
+          "https://musicbrainz.org/release/d471047a-40d8-4fd0-9cef-f6f55dae5014"
+        ],
+        "reason": "Official bio identifies Charlie Duncker and Cherish collaboration; MusicBrainz record/release credits Charles Duncker and ACRAZE. Original candidate homepage corroboration retained.",
+        "reviewed_on": "2026-10-29",
+        "method": "independent_identity_evidence_not_search_rank"
+      }
     },
     {
       "name": "CID",
       "official_identity_source": "https://cidmusic.com/artist/cid/",
       "identity_status": "intended_performer_source_identified",
       "musicbrainz_candidate_id": "c0efb1ee-e36f-4d52-971a-bd8ffec15442",
-      "musicbrainz_status": "crosschecked_legal_name_Carlos_Cid",
-      "human_approved": false
+      "musicbrainz_status": "evidence_corroborated_pending_owner_identity_signoff",
+      "human_approved": false,
+      "musicbrainz_crosslink_review": {
+        "status": "corroborated",
+        "evidence_urls": [
+          "https://cidmusic.com/night-service-only/",
+          "https://music.apple.com/us/song/1829723398"
+        ],
+        "reason": "CID-owned label/imprint and Apple track credit identify Carlos Cid; MusicBrainz candidate legal-name evidence retained.",
+        "reviewed_on": "2026-10-29",
+        "method": "independent_identity_evidence_not_search_rank"
+      }
     },
     {
       "name": "Benda",
       "official_identity_source": "https://www.insomniac.com/music/artists/benda/",
       "identity_status": "intended_performer_source_identified",
       "musicbrainz_candidate_id": "40682644-d458-4325-831b-98d9cba5957f",
-      "musicbrainz_status": "candidate_pending_crosslink",
-      "human_approved": false
+      "musicbrainz_status": "evidence_corroborated_pending_owner_identity_signoff",
+      "human_approved": false,
+      "musicbrainz_crosslink_review": {
+        "status": "corroborated",
+        "evidence_urls": [
+          "https://www.monstercat.com/artist/benda",
+          "https://musicbrainz.org/artist/40682644-d458-4325-831b-98d9cba5957f?all=1&va=1"
+        ],
+        "reason": "Monstercat identifies producer as Niv Ben-David; the same legal name is displayed on proposed MusicBrainz artist, plus bass releases.",
+        "reviewed_on": "2026-10-29",
+        "method": "independent_identity_evidence_not_search_rank"
+      }
     },
     {
       "name": "Vastive",
       "official_identity_source": "https://www.vastivemusic.com/",
       "identity_status": "intended_performer_source_identified",
       "musicbrainz_candidate_id": "1c8daf2a-2e63-4a49-8f87-76abf1b93f6f",
-      "musicbrainz_status": "candidate_pending_crosslink",
-      "human_approved": false
+      "musicbrainz_status": "evidence_corroborated_pending_owner_identity_signoff",
+      "human_approved": false,
+      "musicbrainz_crosslink_review": {
+        "status": "corroborated",
+        "evidence_urls": [
+          "https://www.setlist.fm/setlists/vastive-1bf0a1d4.html",
+          "https://www.monstercat.com/artist/vastive"
+        ],
+        "reason": "Independent concert database crosslinks exact MBID and live appearances; Monstercat identifies Vastive as the bass producer on credited releases.",
+        "reviewed_on": "2026-10-29",
+        "method": "independent_identity_evidence_not_search_rank"
+      }
     }
   ],
   "excluded_candidates": [
