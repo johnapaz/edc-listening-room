@@ -1,0 +1,2094 @@
+{
+  "run_url": "https://github.com/johnapaz/edc-listening-room/actions/runs/40961296885",
+  "attempt": 1,
+  "error": {
+    "musicbrainz": "MusicBrainz returned HTTP 503"
+  },
+  "quota": {
+    "youtube_general": 1,
+    "youtube_search": 2
+  },
+  "artists": {
+    "Martin Garrix": {
+      "mbid": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+      "aliases": [
+        "Area21",
+        "GRX",
+        "Martijn Garritsen",
+        "Martin Garrix",
+        "Ytram",
+        "マーティン・ギャリックス"
+      ],
+      "description": "",
+      "relationships": [
+        {
+          "type": "allmusic",
+          "url": "https://www.allmusic.com/artist/mn0003011915"
+        },
+        {
+          "type": "discogs",
+          "url": "https://www.discogs.com/artist/3003250"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://audiomack.com/martin-garrix"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://music.migu.cn/v3/music/artist/1001064196"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://open.spotify.com/artist/60d24wfXkVzDSfLS6hyCjZ"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://play.anghami.com/artist/93840"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://www.boomplay.com/artists/2080340"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://www.deezer.com/artist/3968561"
+        },
+        {
+          "type": "image",
+          "url": "https://commons.wikimedia.org/wiki/File:Martin_Garrix_2013.jpg"
+        },
+        {
+          "type": "IMDb",
+          "url": "https://www.imdb.com/name/nm5242450/"
+        },
+        {
+          "type": "IMDb",
+          "url": "https://www.imdb.com/name/nm6424186/"
+        },
+        {
+          "type": "last.fm",
+          "url": "https://www.last.fm/music/Martin+Garrix"
+        },
+        {
+          "type": "lyrics",
+          "url": "http://muzikum.eu/en/122-13847/martin-garrix/lyrics.html"
+        },
+        {
+          "type": "lyrics",
+          "url": "https://genius.com/artists/Martin-garrix"
+        },
+        {
+          "type": "myspace",
+          "url": "https://myspace.com/martingarrixmusic"
+        },
+        {
+          "type": "official homepage",
+          "url": "https://martingarrix.com/"
+        },
+        {
+          "type": "online community",
+          "url": "http://equipboard.com/pros/martin-garrix"
+        },
+        {
+          "type": "other databases",
+          "url": "https://jaxsta.com/profile/59a4732a-f947-423e-8b86-b096d08433e4"
+        },
+        {
+          "type": "other databases",
+          "url": "http://id.loc.gov/authorities/names/n2016050557"
+        },
+        {
+          "type": "other databases",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb16759885t"
+        },
+        {
+          "type": "other databases",
+          "url": "https://d-nb.info/gnd/1099995302"
+        },
+        {
+          "type": "other databases",
+          "url": "https://id.oclc.org/worldcat/entity/E39PBJq74JMVj9J7bbccwwpQMP"
+        },
+        {
+          "type": "other databases",
+          "url": "https://imvdb.com/n/martin-garrix"
+        },
+        {
+          "type": "other databases",
+          "url": "https://rateyourmusic.com/artist/martin_garrix"
+        },
+        {
+          "type": "other databases",
+          "url": "https://www.goodreads.com/author/show/18741707"
+        },
+        {
+          "type": "other databases",
+          "url": "https://www.librarything.com/author/garrixmartin"
+        },
+        {
+          "type": "other databases",
+          "url": "https://www.livefans.jp/artists/81065"
+        },
+        {
+          "type": "other databases",
+          "url": "https://www.musik-sammler.de/artist/389553/"
+        },
+        {
+          "type": "other databases",
+          "url": "https://www.muziekweb.nl/Link/M00000402717/POPULAR/"
+        },
+        {
+          "type": "other databases",
+          "url": "https://www.themoviedb.org/person/1569717"
+        },
+        {
+          "type": "other databases",
+          "url": "https://www.whosampled.com/Martin-Garrix/"
+        },
+        {
+          "type": "other databases",
+          "url": "https://www.worldcat.org/identities/lccn-n2016050557"
+        },
+        {
+          "type": "other databases",
+          "url": "http://www.maniadb.com/artist/425047"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://itunes.apple.com/nl/nartist/id430932944"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://mora.jp/artist/469414/"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://music.bugs.co.kr/artist/80143425"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://nl.7digital.com/artist/martin-garrix"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://volumo.com/artist/62801-martin-garrix?si=BTS2WCBNhSaSGm_f"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://www.beatport.com/artist/martin-garrix/185928"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://www.genie.co.kr/detail/artistInfo?xxnm=80230302"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://www.junodownload.com/artists/Martin+Garrix/"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://www.melon.com/artist/detail.htm?artistId=714465"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://www.qobuz.com/nl-nl/interpreter/martin-garrix/974660"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://www.traxsource.com/artist/81491"
+        },
+        {
+          "type": "purchase for mail-order",
+          "url": "https://www.cdjapan.co.jp/person/700620538"
+        },
+        {
+          "type": "purchase for mail-order",
+          "url": "https://www.yesasia.com/0-aid3662056-0-bpt.47-en/list.html"
+        },
+        {
+          "type": "secondhandsongs",
+          "url": "https://secondhandsongs.com/artist/108047"
+        },
+        {
+          "type": "setlistfm",
+          "url": "https://www.setlist.fm/setlists/wd-23dd8c1f.html"
+        },
+        {
+          "type": "social network",
+          "url": "https://twitter.com/martingarrix"
+        },
+        {
+          "type": "social network",
+          "url": "https://vk.ru/martingarrix"
+        },
+        {
+          "type": "social network",
+          "url": "https://www.facebook.com/275648462478015"
+        },
+        {
+          "type": "social network",
+          "url": "https://www.instagram.com/martingarrix/"
+        },
+        {
+          "type": "social network",
+          "url": "https://www.mixcloud.com/MartinGarrix/"
+        },
+        {
+          "type": "social network",
+          "url": "https://www.tiktok.com/@martingarrix"
+        },
+        {
+          "type": "songkick",
+          "url": "https://www.songkick.com/artists/5003643"
+        },
+        {
+          "type": "soundcloud",
+          "url": "https://soundcloud.com/martingarrix"
+        },
+        {
+          "type": "streaming",
+          "url": "https://gb.napster.com/artist/martin-garrix"
+        },
+        {
+          "type": "streaming",
+          "url": "https://music.amazon.com/artists/B004VJJSHW"
+        },
+        {
+          "type": "streaming",
+          "url": "https://music.apple.com/nl/artist/430932944"
+        },
+        {
+          "type": "streaming",
+          "url": "https://music.bugs.co.kr/artist/80143425"
+        },
+        {
+          "type": "streaming",
+          "url": "https://open.qobuz.com/artist/974660"
+        },
+        {
+          "type": "streaming",
+          "url": "https://tidal.com/artist/4715335"
+        },
+        {
+          "type": "streaming",
+          "url": "https://tidal.com/artist/82081131"
+        },
+        {
+          "type": "streaming",
+          "url": "https://www.genie.co.kr/detail/artistInfo?xxnm=80230302"
+        },
+        {
+          "type": "streaming",
+          "url": "https://www.melon.com/artist/detail.htm?artistId=714465"
+        },
+        {
+          "type": "streaming",
+          "url": "https://web.napster.com/artist/art.71017014"
+        },
+        {
+          "type": "ticketing",
+          "url": "https://www.livenation.co.uk/artist-455699"
+        },
+        {
+          "type": "ticketing",
+          "url": "https://www.ticketmaster.co.uk/artist/1923024"
+        },
+        {
+          "type": "VIAF",
+          "url": "http://viaf.org/viaf/309560485"
+        },
+        {
+          "type": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q14544318"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UC5H_KXkPbEsGs0tFt8R35mA"
+        },
+        {
+          "type": "youtube music",
+          "url": "https://music.youtube.com/channel/UCqJnSdHjKtfsrHi9aI-9d3g"
+        }
+      ]
+    },
+    "I Hate Models": {
+      "mbid": "f9a4de7f-d3c6-4de8-8892-7aca52610edd",
+      "aliases": [
+        "Guillaume Labadie"
+      ],
+      "description": "techno producer",
+      "relationships": [
+        {
+          "type": "discogs",
+          "url": "https://www.discogs.com/artist/5176527"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://open.spotify.com/artist/0KqSULB80ft2H3aFg6kJmN"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://www.deezer.com/artist/11199104"
+        },
+        {
+          "type": "other databases",
+          "url": "https://ra.co/dj/ihatemodels"
+        },
+        {
+          "type": "other databases",
+          "url": "https://rateyourmusic.com/artist/i_hate_models"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://www.beatport.com/artist/i-hate-models/556508"
+        },
+        {
+          "type": "social network",
+          "url": "https://www.facebook.com/I-Hate-Models-1507720959521404"
+        },
+        {
+          "type": "social network",
+          "url": "https://www.instagram.com/ihatemodels1/"
+        },
+        {
+          "type": "soundcloud",
+          "url": "https://soundcloud.com/ihatemodels"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UC6qQOTx9LuKMC5p2dbjmSRg"
+        }
+      ]
+    },
+    "A Little Sound": {
+      "mbid": "c1df97ad-3114-448b-aceb-52f21f22de01",
+      "aliases": [
+        "Abbie Morgan",
+        "Abigail Kate Morgan",
+        "Abigail Prior"
+      ],
+      "description": "female vocalist",
+      "relationships": [
+        {
+          "type": "discogs",
+          "url": "https://www.discogs.com/artist/7488149"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://open.spotify.com/artist/1Jv2F8VFJsSr2XKte0vpbQ"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://www.deezer.com/artist/58002962"
+        },
+        {
+          "type": "official homepage",
+          "url": "https://www.alittlesound.uk/"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://itunes.apple.com/us/artist/id1456662331"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://open.qobuz.com/artist/7238852"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://www.beatport.com/artist/a-little-sound/845069"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://www.junodownload.com/artists/A+Little+Sound/releases/"
+        },
+        {
+          "type": "social network",
+          "url": "https://www.facebook.com/alittlesounduk"
+        },
+        {
+          "type": "social network",
+          "url": "https://www.instagram.com/alittlesounduk/"
+        },
+        {
+          "type": "soundcloud",
+          "url": "https://soundcloud.com/alittlesounduk"
+        },
+        {
+          "type": "streaming",
+          "url": "https://open.qobuz.com/artist/7238852"
+        },
+        {
+          "type": "streaming",
+          "url": "https://tidal.com/artist/10887118"
+        },
+        {
+          "type": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q119307117"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCmWZJWJwzAQznFplUTID-Fw"
+        }
+      ]
+    },
+    "KI/KI": {
+      "mbid": "eaf2a4cb-75eb-4e9c-989e-13be6b96a76a",
+      "aliases": [
+        "Kiki Wesselo"
+      ],
+      "description": "NL based EDM vocallist.",
+      "relationships": [
+        {
+          "type": "biography",
+          "url": "https://web.archive.org/web/20220812174042/https://www.pukkelpop.be/en/bands/kiki/"
+        },
+        {
+          "type": "discogs",
+          "url": "https://www.discogs.com/artist/11581082"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://music.youtube.com/channel/UCOF44ILBLOIlhz-Pz2iTK_g"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://open.spotify.com/artist/0UMs6dTf23FC2fHc40fXNS"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://www.deezer.com/artist/176145177"
+        },
+        {
+          "type": "other databases",
+          "url": "https://ra.co/dj/ki-ki"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://www.beatport.com/artist/kiki/1069135"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://www.qobuz.com/us-en/interpreter/kiki-9/14823711"
+        },
+        {
+          "type": "setlistfm",
+          "url": "https://www.setlist.fm/setlists/kiki-6bfc2aca.html"
+        },
+        {
+          "type": "social network",
+          "url": "https://www.facebook.com/ki.slash.ki"
+        },
+        {
+          "type": "social network",
+          "url": "https://www.instagram.com/ki.slash.ki/"
+        },
+        {
+          "type": "soundcloud",
+          "url": "https://soundcloud.com/ki_slash_ki"
+        },
+        {
+          "type": "streaming",
+          "url": "https://music.apple.com/be/artist/1532800043"
+        },
+        {
+          "type": "streaming",
+          "url": "https://music.apple.com/gb/artist/1532800043"
+        },
+        {
+          "type": "streaming",
+          "url": "https://tidal.com/artist/33163905"
+        },
+        {
+          "type": "streaming",
+          "url": "https://www.qobuz.com/us-en/interpreter/kiki-9/14823711"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCOF44ILBLOIlhz-Pz2iTK_g"
+        }
+      ]
+    },
+    "ACRAZE": {
+      "mbid": "e21e0137-b42d-44a5-abd6-c6ac160d0d7d",
+      "aliases": [
+        "Charles Duncker",
+        "Charles Dunker",
+        "Charlie Duncker",
+        "Charlie Dunker"
+      ],
+      "description": "DJ/Producer",
+      "relationships": [
+        {
+          "type": "allmusic",
+          "url": "https://www.allmusic.com/artist/mn0003861834"
+        },
+        {
+          "type": "biography",
+          "url": "https://www.insomniac.com/music/artists/acraze/"
+        },
+        {
+          "type": "crowdfunding",
+          "url": "https://www.cameo.com/acraze"
+        },
+        {
+          "type": "discogs",
+          "url": "https://www.discogs.com/artist/10144249"
+        },
+        {
+          "type": "discogs",
+          "url": "https://www.discogs.com/artist/10283017"
+        },
+        {
+          "type": "fanpage",
+          "url": "https://edm.fandom.com/wiki/Acraze"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://open.spotify.com/artist/4pnp4w9g30yLfVIAFnZMRd"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://www.deezer.com/artist/12869727"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://www.deezer.com/artist/267055402"
+        },
+        {
+          "type": "IMDb",
+          "url": "https://www.imdb.com/name/nm13404145/"
+        },
+        {
+          "type": "last.fm",
+          "url": "https://www.last.fm/music/ACRAZE+feat.+Goodboys"
+        },
+        {
+          "type": "lyrics",
+          "url": "https://genius.com/artists/Acraze"
+        },
+        {
+          "type": "official homepage",
+          "url": "https://www.acrazemusic.com/"
+        },
+        {
+          "type": "other databases",
+          "url": "https://rateyourmusic.com/artist/acraze"
+        },
+        {
+          "type": "other databases",
+          "url": "https://www.whosampled.com/ACRAZE/"
+        },
+        {
+          "type": "other databases",
+          "url": "https://www.whosampled.com/Charles-Duncker/"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://open.qobuz.com/artist/3908025"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://www.beatport.com/artist/acraze/711513"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://itunes.apple.com/us/artist/id1262931166"
+        },
+        {
+          "type": "secondhandsongs",
+          "url": "https://secondhandsongs.com/artist/203424"
+        },
+        {
+          "type": "social network",
+          "url": "https://twitter.com/acraze___"
+        },
+        {
+          "type": "social network",
+          "url": "https://www.facebook.com/MusicAcraze"
+        },
+        {
+          "type": "social network",
+          "url": "https://www.instagram.com/acraze_/"
+        },
+        {
+          "type": "social network",
+          "url": "https://www.linkedin.com/in/charles-duncker-296b29162"
+        },
+        {
+          "type": "soundcloud",
+          "url": "https://soundcloud.com/acraze-3"
+        },
+        {
+          "type": "streaming",
+          "url": "https://us.napster.com/artist/acraze"
+        },
+        {
+          "type": "streaming",
+          "url": "https://music.amazon.com/artists/B0746G7HH6"
+        },
+        {
+          "type": "streaming",
+          "url": "https://music.apple.com/us/artist/1262931166"
+        },
+        {
+          "type": "streaming",
+          "url": "https://open.qobuz.com/artist/3908025"
+        },
+        {
+          "type": "streaming",
+          "url": "https://play.google.com/music/m/A3swsgbymzcajqspqiasix3ry5i?play=1"
+        },
+        {
+          "type": "streaming",
+          "url": "https://tidal.com/artist/9313737"
+        },
+        {
+          "type": "streaming",
+          "url": "https://www.iheart.com/artist/radio-Acraze-32009570?autoplay=true"
+        },
+        {
+          "type": "streaming",
+          "url": "https://www.pandora.com/artist/acraze/ARnkkgpdKjg5rg6"
+        },
+        {
+          "type": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q109626428"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCEp8UzRGiCw_qx_mc3Fzspg"
+        },
+        {
+          "type": "youtube music",
+          "url": "https://music.youtube.com/channel/UCGo9kyx07ixlhU9lzTM2HnA"
+        }
+      ]
+    },
+    "CID": {
+      "mbid": "c0efb1ee-e36f-4d52-971a-bd8ffec15442",
+      "aliases": [
+        "Carlos Cid"
+      ],
+      "description": "electronic producer",
+      "relationships": [
+        {
+          "type": "discogs",
+          "url": "https://www.discogs.com/artist/1343705"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://open.spotify.com/artist/4FCzCS0KEgb0rgySWINItO"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://www.deezer.com/artist/3267911"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://www.beatport.com/artist/cid/98876"
+        },
+        {
+          "type": "social network",
+          "url": "https://twitter.com/CIDmusic"
+        },
+        {
+          "type": "social network",
+          "url": "https://www.facebook.com/CIDofficial"
+        },
+        {
+          "type": "soundcloud",
+          "url": "https://soundcloud.com/cidmusic"
+        },
+        {
+          "type": "streaming",
+          "url": "https://music.apple.com/us/artist/443666401"
+        },
+        {
+          "type": "streaming",
+          "url": "https://tidal.com/artist/38323759"
+        },
+        {
+          "type": "streaming",
+          "url": "https://tidal.com/artist/4969227"
+        }
+      ]
+    },
+    "Benda": {
+      "mbid": "40682644-d458-4325-831b-98d9cba5957f",
+      "aliases": [
+        "Niv Ben-David"
+      ],
+      "description": "dubstep dj",
+      "relationships": [
+        {
+          "type": "free streaming",
+          "url": "https://open.spotify.com/artist/0md3NIXueJZSFZ82HMu26M"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://www.deezer.com/artist/4409825"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://open.qobuz.com/artist/1070022"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://www.beatport.com/artist/benda/515370"
+        },
+        {
+          "type": "social network",
+          "url": "https://twitter.com/BendaMusic"
+        },
+        {
+          "type": "social network",
+          "url": "https://www.facebook.com/Benda"
+        },
+        {
+          "type": "soundcloud",
+          "url": "https://soundcloud.com/bendamusic"
+        },
+        {
+          "type": "streaming",
+          "url": "https://music.apple.com/us/artist/80055906"
+        },
+        {
+          "type": "streaming",
+          "url": "https://open.qobuz.com/artist/1070022"
+        },
+        {
+          "type": "streaming",
+          "url": "https://tidal.com/artist/5458392"
+        }
+      ]
+    },
+    "Vastive": {
+      "mbid": "1c8daf2a-2e63-4a49-8f87-76abf1b93f6f",
+      "aliases": [
+        "Samuel Vargas"
+      ],
+      "description": "",
+      "relationships": [
+        {
+          "type": "discogs",
+          "url": "https://www.discogs.com/artist/8071751"
+        },
+        {
+          "type": "fanpage",
+          "url": "https://monstercat.fandom.com/wiki/Vastive"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://open.spotify.com/artist/5dqKDhDTrjMvSExBmfMNeH"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://www.deezer.com/artist/10715087"
+        },
+        {
+          "type": "free streaming",
+          "url": "https://www.monstercat.com/artist/vastive"
+        },
+        {
+          "type": "official homepage",
+          "url": "https://www.vastivemusic.com/"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://open.qobuz.com/artist/3781196"
+        },
+        {
+          "type": "purchase for download",
+          "url": "https://www.beatport.com/artist/vastive/570607"
+        },
+        {
+          "type": "social network",
+          "url": "https://twitter.com/vastiveofficial"
+        },
+        {
+          "type": "social network",
+          "url": "https://www.facebook.com/VastiveOfficial"
+        },
+        {
+          "type": "social network",
+          "url": "https://www.instagram.com/vastiveofficial/"
+        },
+        {
+          "type": "soundcloud",
+          "url": "https://soundcloud.com/vastive"
+        },
+        {
+          "type": "streaming",
+          "url": "https://music.apple.com/ca/artist/1134769928"
+        },
+        {
+          "type": "streaming",
+          "url": "https://music.apple.com/gb/artist/1134769928"
+        },
+        {
+          "type": "streaming",
+          "url": "https://music.apple.com/us/artist/1134769928"
+        },
+        {
+          "type": "streaming",
+          "url": "https://open.qobuz.com/artist/3781196"
+        },
+        {
+          "type": "streaming",
+          "url": "https://player.monstercat.app/artist/vastive"
+        },
+        {
+          "type": "streaming",
+          "url": "https://tidal.com/artist/7994303"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/@vastive"
+        }
+      ]
+    }
+  },
+  "recording_searches": {
+    "pilot:martin-garrix:told-you-so": [
+      {
+        "mbid": "14123d9b-2d23-4ac7-ba59-2c779e6d68a1",
+        "title": "Told You So",
+        "duration_ms": 187031,
+        "credits": [
+          {
+            "name": "Martin Garrix",
+            "artist_id": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+            "joinphrase": " & "
+          },
+          {
+            "name": "Jex",
+            "artist_id": "26cfeada-d795-4cf4-9542-99a1792c1d2e",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "NLM5S2402334"
+        ]
+      },
+      {
+        "mbid": "c4aaccd6-b5e2-40a8-a54f-5811be84ba5f",
+        "title": "Told You So - Brooks Remix",
+        "duration_ms": 183000,
+        "credits": [
+          {
+            "name": "Martin Garrix",
+            "artist_id": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": []
+      },
+      {
+        "mbid": "cfd1d5c0-dbc8-483e-8ae3-25259928f702",
+        "title": "Told You So - Merow Remix",
+        "duration_ms": 223000,
+        "credits": [
+          {
+            "name": "Martin Garrix",
+            "artist_id": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": []
+      },
+      {
+        "mbid": "3eb8ba4d-e49c-4bee-9fd8-70b80205292e",
+        "title": "Told You So - Skytech Remix",
+        "duration_ms": 138000,
+        "credits": [
+          {
+            "name": "Martin Garrix",
+            "artist_id": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": []
+      },
+      {
+        "mbid": "7d4f0e0e-aaf6-4ac6-9924-70d26f52afbf",
+        "title": "Told You So - Alexander Merlin Remix",
+        "duration_ms": 138000,
+        "credits": [
+          {
+            "name": "Martin Garrix",
+            "artist_id": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": []
+      }
+    ],
+    "pilot:martin-garrix:gravity": [
+      {
+        "mbid": "74977119-6718-4daa-a7b1-76e05b5b3bc5",
+        "title": "Gravity",
+        "duration_ms": 285472,
+        "credits": [
+          {
+            "name": "Martin Garrix",
+            "artist_id": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+            "joinphrase": ", "
+          },
+          {
+            "name": "Sem Vox",
+            "artist_id": "45a9ba96-5d23-4e3a-835f-0b22423d2231",
+            "joinphrase": " & "
+          },
+          {
+            "name": "Jaimes",
+            "artist_id": "e13d83b6-d940-4984-b4a8-b7f01031bc32",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "NLM5S2402316"
+        ]
+      },
+      {
+        "mbid": "e866aa70-e152-4177-91c8-63eb3e562063",
+        "title": "Gravity (instrumental mix)",
+        "duration_ms": 285472,
+        "credits": [
+          {
+            "name": "Martin Garrix",
+            "artist_id": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+            "joinphrase": ", "
+          },
+          {
+            "name": "Sem Vox",
+            "artist_id": "45a9ba96-5d23-4e3a-835f-0b22423d2231",
+            "joinphrase": " & "
+          },
+          {
+            "name": "Jaimes",
+            "artist_id": "e13d83b6-d940-4984-b4a8-b7f01031bc32",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "NLM5S2402325"
+        ]
+      },
+      {
+        "mbid": "c6275bfb-6efe-49c0-841f-3dc45c1f292f",
+        "title": "Gravity (extended mix)",
+        "duration_ms": 345354,
+        "credits": [
+          {
+            "name": "Martin Garrix",
+            "artist_id": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+            "joinphrase": " & "
+          },
+          {
+            "name": "Sem Vox",
+            "artist_id": "45a9ba96-5d23-4e3a-835f-0b22423d2231",
+            "joinphrase": " feat. "
+          },
+          {
+            "name": "Jaimes",
+            "artist_id": "e13d83b6-d940-4984-b4a8-b7f01031bc32",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "NLM5S2402317"
+        ]
+      }
+    ],
+    "pilot:martin-garrix:smile": [
+      {
+        "mbid": "fb01ec71-13ad-4b06-b1c3-e209f49b404c",
+        "title": "Smile",
+        "duration_ms": 192000,
+        "credits": [
+          {
+            "name": "Martin Garrix",
+            "artist_id": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+            "joinphrase": " feat. "
+          },
+          {
+            "name": "Carolina Liar",
+            "artist_id": "8a4bd6ab-acd4-4f1b-b1c6-bee1cee43fff",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "NLM5S2402252"
+        ]
+      }
+    ],
+    "pilot:martin-garrix:wherever-you-are": [
+      {
+        "mbid": "5e88292f-0f15-46bb-b303-df7f7f1eba93",
+        "title": "Wherever You Are",
+        "duration_ms": 207992,
+        "credits": [
+          {
+            "name": "Martin Garrix",
+            "artist_id": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+            "joinphrase": ", "
+          },
+          {
+            "name": "DubVision",
+            "artist_id": "0b33f22d-b4b6-400e-90af-c593e0f395b6",
+            "joinphrase": " & "
+          },
+          {
+            "name": "Shaun Farrugia",
+            "artist_id": "31bba525-a339-4df8-aac2-aa972e350e81",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "NLM5S2402226"
+        ]
+      },
+      {
+        "mbid": "5a583731-ce8d-48cc-aca8-b193a3fc5115",
+        "title": "Wherever You Are",
+        "duration_ms": 143000,
+        "credits": [
+          {
+            "name": "DubVision",
+            "artist_id": "0b33f22d-b4b6-400e-90af-c593e0f395b6",
+            "joinphrase": " & "
+          },
+          {
+            "name": "Martin Garrix",
+            "artist_id": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+            "joinphrase": " feat. "
+          },
+          {
+            "name": "Shaun Farrugia",
+            "artist_id": "31bba525-a339-4df8-aac2-aa972e350e81",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "US23A8401941"
+        ]
+      },
+      {
+        "mbid": "f8fdc698-8bb2-4e09-bc0a-666210254fd5",
+        "title": "Wherever You Are (extended mix)",
+        "duration_ms": 283582,
+        "credits": [
+          {
+            "name": "Martin Garrix",
+            "artist_id": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+            "joinphrase": ", "
+          },
+          {
+            "name": "DubVision",
+            "artist_id": "0b33f22d-b4b6-400e-90af-c593e0f395b6",
+            "joinphrase": " & "
+          },
+          {
+            "name": "Shaun Farrugia",
+            "artist_id": "31bba525-a339-4df8-aac2-aa972e350e81",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "NLM5S2402227"
+        ]
+      }
+    ],
+    "pilot:martin-garrix:carry-you": [
+      {
+        "mbid": "269d5524-61f5-4002-8cd5-03c1c9409edd",
+        "title": "Carry You",
+        "duration_ms": 215905,
+        "credits": [
+          {
+            "name": "Martin Garrix",
+            "artist_id": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+            "joinphrase": ", "
+          },
+          {
+            "name": "Third ≡ Party",
+            "artist_id": "580f4a91-b75b-4e63-ae8d-38485ac1bb78",
+            "joinphrase": " & "
+          },
+          {
+            "name": "Oaks",
+            "artist_id": "03d16c97-50b5-4f30-a73e-871c8fdc922a",
+            "joinphrase": " feat. "
+          },
+          {
+            "name": "Declan J Donovan",
+            "artist_id": "74710ebf-3afd-4f4c-9280-a401a47136ae",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "NLM5S2402145"
+        ]
+      },
+      {
+        "mbid": "ae863b7c-8990-4dd1-b281-5fa63f3074ce",
+        "title": "Carry You (instrumental mix)",
+        "duration_ms": 215906,
+        "credits": [
+          {
+            "name": "Martin Garrix",
+            "artist_id": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+            "joinphrase": ", "
+          },
+          {
+            "name": "Third ≡ Party",
+            "artist_id": "580f4a91-b75b-4e63-ae8d-38485ac1bb78",
+            "joinphrase": " & "
+          },
+          {
+            "name": "Oaks",
+            "artist_id": "03d16c97-50b5-4f30-a73e-871c8fdc922a",
+            "joinphrase": " feat. "
+          },
+          {
+            "name": "Declan J Donovan",
+            "artist_id": "74710ebf-3afd-4f4c-9280-a401a47136ae",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "NLM5S2402147"
+        ]
+      },
+      {
+        "mbid": "f92f13af-8bbd-4ac6-9438-e4b53723150e",
+        "title": "Carry You (extended mix)",
+        "duration_ms": 253700,
+        "credits": [
+          {
+            "name": "Martin Garrix",
+            "artist_id": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+            "joinphrase": " & "
+          },
+          {
+            "name": "Third ≡ Party",
+            "artist_id": "580f4a91-b75b-4e63-ae8d-38485ac1bb78",
+            "joinphrase": " feat. "
+          },
+          {
+            "name": "Oaks",
+            "artist_id": "03d16c97-50b5-4f30-a73e-871c8fdc922a",
+            "joinphrase": " & "
+          },
+          {
+            "name": "Declan J Donovan",
+            "artist_id": "74710ebf-3afd-4f4c-9280-a401a47136ae",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "NLM5S2402146"
+        ]
+      },
+      {
+        "mbid": "33a6dce7-5a47-440b-acb0-4f73d5e4e617",
+        "title": "Carry You (extended instrumental mix)",
+        "duration_ms": 253700,
+        "credits": [
+          {
+            "name": "Martin Garrix",
+            "artist_id": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+            "joinphrase": " & "
+          },
+          {
+            "name": "Third ≡ Party",
+            "artist_id": "580f4a91-b75b-4e63-ae8d-38485ac1bb78",
+            "joinphrase": " feat. "
+          },
+          {
+            "name": "Oaks",
+            "artist_id": "03d16c97-50b5-4f30-a73e-871c8fdc922a",
+            "joinphrase": " & "
+          },
+          {
+            "name": "Declan J Donovan",
+            "artist_id": "74710ebf-3afd-4f4c-9280-a401a47136ae",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "NLM5S2402148"
+        ]
+      },
+      {
+        "mbid": "79fc2a4a-20ba-4a86-929d-7654dcf66d01",
+        "title": "Carry You (Galactixx bootleg) (dj mix)",
+        "duration_ms": 157000,
+        "credits": [
+          {
+            "name": "Martin Garrix",
+            "artist_id": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+            "joinphrase": ", "
+          },
+          {
+            "name": "Third ≡ Party",
+            "artist_id": "580f4a91-b75b-4e63-ae8d-38485ac1bb78",
+            "joinphrase": " & "
+          },
+          {
+            "name": "Oaks",
+            "artist_id": "03d16c97-50b5-4f30-a73e-871c8fdc922a",
+            "joinphrase": " feat. "
+          },
+          {
+            "name": "Declan J Donovan",
+            "artist_id": "74710ebf-3afd-4f4c-9280-a401a47136ae",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": []
+      }
+    ],
+    "pilot:i-hate-models:warehouse-memories": [
+      {
+        "mbid": "d1169a28-473f-4220-8fdf-2775fddf8005",
+        "title": "Warehouse Memories",
+        "duration_ms": 446000,
+        "credits": [
+          {
+            "name": "I Hate Models",
+            "artist_id": "f9a4de7f-d3c6-4de8-8892-7aca52610edd",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "ITDY21600109"
+        ]
+      },
+      {
+        "mbid": "453dac36-6406-4c59-8a90-d9f3f05f6990",
+        "title": "Warehouse Memories (Emmanuel AKNF remix)",
+        "duration_ms": 335000,
+        "credits": [
+          {
+            "name": "I Hate Models",
+            "artist_id": "f9a4de7f-d3c6-4de8-8892-7aca52610edd",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "ITDY21600110"
+        ]
+      }
+    ],
+    "pilot:i-hate-models:daydream": [
+      {
+        "mbid": "913efff7-8996-476c-aeda-d46e474c1998",
+        "title": "Daydream",
+        "duration_ms": 463000,
+        "credits": [
+          {
+            "name": "I Hate Models",
+            "artist_id": "f9a4de7f-d3c6-4de8-8892-7aca52610edd",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "ITDY21600111"
+        ]
+      }
+    ],
+    "pilot:i-hate-models:shades-of-night": [
+      {
+        "mbid": "ed98d882-8eca-429d-98c2-997f5e51b8ac",
+        "title": "Shades of Night",
+        "duration_ms": 374000,
+        "credits": [
+          {
+            "name": "I Hate Models",
+            "artist_id": "f9a4de7f-d3c6-4de8-8892-7aca52610edd",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "ITDY21600112"
+        ]
+      }
+    ],
+    "pilot:i-hate-models:two-steps-from-heaven": [
+      {
+        "mbid": "de55b5d1-d938-4b60-bf69-d8ba7bf55505",
+        "title": "Two Steps From Heaven",
+        "duration_ms": 567268,
+        "credits": [
+          {
+            "name": "I Hate Models",
+            "artist_id": "f9a4de7f-d3c6-4de8-8892-7aca52610edd",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "SE3JM2100101"
+        ]
+      }
+    ],
+    "pilot:i-hate-models:sad-groove": [
+      {
+        "mbid": "fead08c4-9bf2-40bb-a3e4-c269fa504e96",
+        "title": "Sad Groove",
+        "duration_ms": 496555,
+        "credits": [
+          {
+            "name": "I Hate Models",
+            "artist_id": "f9a4de7f-d3c6-4de8-8892-7aca52610edd",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "SE3JM2100102"
+        ]
+      }
+    ],
+    "pilot:a-little-sound:back-to-back--b2b-": [
+      {
+        "mbid": "a03b6af0-9492-4e59-823e-af926615acbb",
+        "title": "Back to Back (B2B)",
+        "duration_ms": 175595,
+        "credits": [
+          {
+            "name": "A Little Sound",
+            "artist_id": "c1df97ad-3114-448b-aceb-52f21f22de01",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "GBCEN2300173"
+        ]
+      },
+      {
+        "mbid": "487aebf5-fef6-4ccd-a948-03f28de7977a",
+        "title": "Back To Back (B2B)",
+        "duration_ms": 175547,
+        "credits": [
+          {
+            "name": "A Little Sound",
+            "artist_id": "c1df97ad-3114-448b-aceb-52f21f22de01",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": []
+      }
+    ],
+    "pilot:a-little-sound:breathe": [
+      {
+        "mbid": "31e07c93-7bdc-471b-bae9-9dcedff71cb6",
+        "title": "Breathe",
+        "duration_ms": 217931,
+        "credits": [
+          {
+            "name": "A Little Sound",
+            "artist_id": "c1df97ad-3114-448b-aceb-52f21f22de01",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": []
+      },
+      {
+        "mbid": "9864b42b-b8d1-4acb-a198-494c9825ebb1",
+        "title": "Breathe",
+        "duration_ms": 217000,
+        "credits": [
+          {
+            "name": "A Little Sound",
+            "artist_id": "c1df97ad-3114-448b-aceb-52f21f22de01",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": []
+      }
+    ],
+    "pilot:a-little-sound:weed---wine": [
+      {
+        "mbid": "41c55c3b-dd9b-42d7-bdb2-835df9ced63f",
+        "title": "Weed & Wine (Relax, Rewind)",
+        "duration_ms": 184000,
+        "credits": [
+          {
+            "name": "Friction",
+            "artist_id": "6bab48a1-c3e0-4160-b574-f99fc7dfad9f",
+            "joinphrase": " & "
+          },
+          {
+            "name": "A Little Sound",
+            "artist_id": "c1df97ad-3114-448b-aceb-52f21f22de01",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": []
+      },
+      {
+        "mbid": "de589bdc-1982-47a3-9cfc-0b681d733f88",
+        "title": "Weed & Wine (Relax, Rewind)",
+        "duration_ms": 184000,
+        "credits": [
+          {
+            "name": "Friction",
+            "artist_id": "6bab48a1-c3e0-4160-b574-f99fc7dfad9f",
+            "joinphrase": " & "
+          },
+          {
+            "name": "A Little Sound",
+            "artist_id": "c1df97ad-3114-448b-aceb-52f21f22de01",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "GBPWR2200076"
+        ]
+      }
+    ],
+    "pilot:a-little-sound:confide": [
+      {
+        "mbid": "41296eed-864e-4c19-8ea9-1045350b4b3d",
+        "title": "Confide",
+        "duration_ms": 268378,
+        "credits": [
+          {
+            "name": "Technimatic",
+            "artist_id": "a1bf0206-d71f-47bd-bdc4-ac3e007668e6",
+            "joinphrase": " ft. "
+          },
+          {
+            "name": "A Little Sound",
+            "artist_id": "c1df97ad-3114-448b-aceb-52f21f22de01",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "GX2E32100010"
+        ]
+      }
+    ],
+    "pilot:a-little-sound:overload": [
+      {
+        "mbid": "13d4b9db-dd16-44e2-90ea-5c21abccd004",
+        "title": "Overload",
+        "duration_ms": 219000,
+        "credits": [
+          {
+            "name": "Annix",
+            "artist_id": "b7c65173-4a6c-4add-b468-7e16c0833038",
+            "joinphrase": " feat. "
+          },
+          {
+            "name": "A Little Sound",
+            "artist_id": "c1df97ad-3114-448b-aceb-52f21f22de01",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": []
+      }
+    ],
+    "pilot:ki-ki:here-with-me": [
+      {
+        "mbid": "8ade8c65-e535-41e3-a48b-d3864e94d129",
+        "title": "Here With Me",
+        "duration_ms": 199865,
+        "credits": [
+          {
+            "name": "KI/KI",
+            "artist_id": "eaf2a4cb-75eb-4e9c-989e-13be6b96a76a",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "USA2P2640372"
+        ]
+      }
+    ],
+    "pilot:ki-ki:going-existential-in-the-rave": [
+      {
+        "mbid": "73b57305-d522-409b-b0f9-7f10f2b6213e",
+        "title": "Going Existential in the Rave",
+        "duration_ms": 187297,
+        "credits": [
+          {
+            "name": "KI/KI",
+            "artist_id": "eaf2a4cb-75eb-4e9c-989e-13be6b96a76a",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "USA2P2631846"
+        ]
+      },
+      {
+        "mbid": "ab06210e-063b-4f22-a71d-3cbd60ae8acc",
+        "title": "Going Existential in the Rave",
+        "duration_ms": 230946,
+        "credits": [
+          {
+            "name": "KI/KI",
+            "artist_id": "eaf2a4cb-75eb-4e9c-989e-13be6b96a76a",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "US23A9237806"
+        ]
+      }
+    ],
+    "pilot:ki-ki:can-t-stop-loving-you": [
+      {
+        "mbid": "6323cb02-74b8-4867-a867-049b0b424975",
+        "title": "Can't Stop Loving You",
+        "duration_ms": 205106,
+        "credits": [
+          {
+            "name": "KI/KI",
+            "artist_id": "eaf2a4cb-75eb-4e9c-989e-13be6b96a76a",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "USA2P2563361"
+        ]
+      }
+    ],
+    "pilot:ki-ki:put-your-bassline": [
+      {
+        "mbid": "6c0b464d-de4d-4e90-b25a-09bc3c967d97",
+        "title": "Put Your Bassline",
+        "duration_ms": 151233,
+        "credits": [
+          {
+            "name": "Armin van Buuren",
+            "artist_id": "477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df",
+            "joinphrase": " × "
+          },
+          {
+            "name": "KI/KI",
+            "artist_id": "eaf2a4cb-75eb-4e9c-989e-13be6b96a76a",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "NLF712506632"
+        ]
+      },
+      {
+        "mbid": "516bee13-59ee-4403-94d3-7bcd1243f4c0",
+        "title": "Put Your Bassline (mixed)",
+        "duration_ms": 72914,
+        "credits": [
+          {
+            "name": "Armin van Buuren",
+            "artist_id": "477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df",
+            "joinphrase": " & "
+          },
+          {
+            "name": "KI/KI",
+            "artist_id": "eaf2a4cb-75eb-4e9c-989e-13be6b96a76a",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "NLF712507384"
+        ]
+      },
+      {
+        "mbid": "b328626d-7ff6-473d-9d4e-4aef3e8f9498",
+        "title": "Put Your Bassline (extended mix)",
+        "duration_ms": 273699,
+        "credits": [
+          {
+            "name": "Armin van Buuren",
+            "artist_id": "477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df",
+            "joinphrase": " × "
+          },
+          {
+            "name": "KI/KI",
+            "artist_id": "eaf2a4cb-75eb-4e9c-989e-13be6b96a76a",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "NLF712506633"
+        ]
+      }
+    ],
+    "pilot:ki-ki:what-s-a-girl-to-do-in--25": [
+      {
+        "mbid": "a06625e5-aa24-47a7-80ed-7fd87bdd1505",
+        "title": "What’s a Girl to Do in ’25",
+        "duration_ms": 218364,
+        "credits": [
+          {
+            "name": "KI/KI",
+            "artist_id": "eaf2a4cb-75eb-4e9c-989e-13be6b96a76a",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "US23A9943781"
+        ]
+      },
+      {
+        "mbid": "3218781d-f1b7-436b-ac3e-f4fac6892838",
+        "title": "What’s a Girl to Do in ‘25",
+        "duration_ms": 148048,
+        "credits": [
+          {
+            "name": "KI/KI",
+            "artist_id": "eaf2a4cb-75eb-4e9c-989e-13be6b96a76a",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "USA2P2544761"
+        ]
+      },
+      {
+        "mbid": "1e84b121-c5d6-4879-a234-8a5ac1226820",
+        "title": "What's a Girl to Do in '25 (extended)",
+        "duration_ms": 269000,
+        "credits": [
+          {
+            "name": "KI/KI",
+            "artist_id": "eaf2a4cb-75eb-4e9c-989e-13be6b96a76a",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "USA2P2546584"
+        ]
+      }
+    ],
+    "pilot:ki-ki:5-mins-of-acid": [
+      {
+        "mbid": "f68a2298-bbd6-4d0a-af79-723486bcaee6",
+        "title": "5 Mins of Acid",
+        "duration_ms": 300000,
+        "credits": [
+          {
+            "name": "KI/KI",
+            "artist_id": "eaf2a4cb-75eb-4e9c-989e-13be6b96a76a",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "NLF712404789"
+        ]
+      },
+      {
+        "mbid": "4659a2bc-86c0-4d0d-b888-200fddf75c98",
+        "title": "5 Mins of Acid",
+        "duration_ms": 190000,
+        "credits": [
+          {
+            "name": "KI/KI",
+            "artist_id": "eaf2a4cb-75eb-4e9c-989e-13be6b96a76a",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "NLF712503411"
+        ]
+      },
+      {
+        "mbid": "0da85e26-4d71-485f-8a6e-da63333af8c1",
+        "title": "5 Mins of Acid",
+        "duration_ms": 300000,
+        "credits": [
+          {
+            "name": "KI/KI",
+            "artist_id": "eaf2a4cb-75eb-4e9c-989e-13be6b96a76a",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": []
+      }
+    ],
+    "pilot:acraze:do-it-to-it": [
+      {
+        "mbid": "4cd37cb4-5eb8-47ce-b404-bf36c180c42f",
+        "title": "Do It to It (NEUS remix)",
+        "duration_ms": 215452,
+        "credits": [
+          {
+            "name": "ACRAZE",
+            "artist_id": "e21e0137-b42d-44a5-abd6-c6ac160d0d7d",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": []
+      },
+      {
+        "mbid": "64e40d94-2f09-4d19-924f-b11693569185",
+        "title": "Do It To It",
+        "duration_ms": 143000,
+        "credits": [
+          {
+            "name": "ACRAZE",
+            "artist_id": "e21e0137-b42d-44a5-abd6-c6ac160d0d7d",
+            "joinphrase": " feat. "
+          },
+          {
+            "name": "Cherish",
+            "artist_id": "e82500a8-70ce-46ad-a028-b0690420d560",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": []
+      },
+      {
+        "mbid": "3fc73c64-59e3-451e-a95d-f48c9a4e4c14",
+        "title": "Do It to It",
+        "duration_ms": 157890,
+        "credits": [
+          {
+            "name": "ACRAZE",
+            "artist_id": "e21e0137-b42d-44a5-abd6-c6ac160d0d7d",
+            "joinphrase": " feat. "
+          },
+          {
+            "name": "Cherish",
+            "artist_id": "e82500a8-70ce-46ad-a028-b0690420d560",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "QZFPL2100100"
+        ]
+      },
+      {
+        "mbid": "36185156-aa12-4d65-8e89-cc19deecdc81",
+        "title": "Do It to It",
+        "duration_ms": 111000,
+        "credits": [
+          {
+            "name": "ACRAZE",
+            "artist_id": "e21e0137-b42d-44a5-abd6-c6ac160d0d7d",
+            "joinphrase": " feat. "
+          },
+          {
+            "name": "Cherish",
+            "artist_id": "e82500a8-70ce-46ad-a028-b0690420d560",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "US23A9039092"
+        ]
+      },
+      {
+        "mbid": "677cf54c-4d1e-49ba-b6c6-74d6f427ec93",
+        "title": "Do It to It",
+        "duration_ms": 171000,
+        "credits": [
+          {
+            "name": "ACRAZE",
+            "artist_id": "e21e0137-b42d-44a5-abd6-c6ac160d0d7d",
+            "joinphrase": " feat. "
+          },
+          {
+            "name": "Cherish",
+            "artist_id": "e82500a8-70ce-46ad-a028-b0690420d560",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": []
+      }
+    ],
+    "pilot:acraze:believe": [
+      {
+        "mbid": "ee1efc90-bc09-4dee-a1eb-ea46ecc78057",
+        "title": "Believe",
+        "duration_ms": 188709,
+        "credits": [
+          {
+            "name": "ACRAZE",
+            "artist_id": "e21e0137-b42d-44a5-abd6-c6ac160d0d7d",
+            "joinphrase": " feat. "
+          },
+          {
+            "name": "Goodboys",
+            "artist_id": "59ffa494-f0de-4744-80ee-d26d4eb92e57",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "USUM72218110"
+        ]
+      },
+      {
+        "mbid": "4adc6bdd-8da6-4964-b9cf-924d1677cab7",
+        "title": "Believe (radio)",
+        "duration_ms": 186000,
+        "credits": [
+          {
+            "name": "ACRAZE",
+            "artist_id": "e21e0137-b42d-44a5-abd6-c6ac160d0d7d",
+            "joinphrase": " Fe. "
+          },
+          {
+            "name": "Goodboys",
+            "artist_id": "59ffa494-f0de-4744-80ee-d26d4eb92e57",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": []
+      },
+      {
+        "mbid": "47e81984-2470-4b52-840b-474bb0687cdb",
+        "title": "Believe (extended mix)",
+        "duration_ms": 263000,
+        "credits": [
+          {
+            "name": "ACRAZE",
+            "artist_id": "e21e0137-b42d-44a5-abd6-c6ac160d0d7d",
+            "joinphrase": " feat. "
+          },
+          {
+            "name": "Goodboys",
+            "artist_id": "59ffa494-f0de-4744-80ee-d26d4eb92e57",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": []
+      },
+      {
+        "mbid": "01325b63-78cd-42b9-ad1f-2c4215e949c7",
+        "title": "Believe (Galantis remix radio)",
+        "duration_ms": null,
+        "credits": [
+          {
+            "name": "ACRAZE",
+            "artist_id": "e21e0137-b42d-44a5-abd6-c6ac160d0d7d",
+            "joinphrase": " Fe. "
+          },
+          {
+            "name": "Goodboys",
+            "artist_id": "59ffa494-f0de-4744-80ee-d26d4eb92e57",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": []
+      },
+      {
+        "mbid": "1704e700-0687-4434-a445-493cc32b23d8",
+        "title": "Believe (Galantis extended mix)",
+        "duration_ms": 228000,
+        "credits": [
+          {
+            "name": "ACRAZE",
+            "artist_id": "e21e0137-b42d-44a5-abd6-c6ac160d0d7d",
+            "joinphrase": " Fe. "
+          },
+          {
+            "name": "Goodboys",
+            "artist_id": "59ffa494-f0de-4744-80ee-d26d4eb92e57",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": []
+      }
+    ],
+    "pilot:acraze:take-me-away": [
+      {
+        "mbid": "93332233-54ad-4fd1-8068-622ec1f3fd00",
+        "title": "Take Me Away",
+        "duration_ms": 179000,
+        "credits": [
+          {
+            "name": "ACRAZE",
+            "artist_id": "e21e0137-b42d-44a5-abd6-c6ac160d0d7d",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "USUM72301826"
+        ]
+      },
+      {
+        "mbid": "9f9cf667-68f5-47d2-ba3b-fb07da839a28",
+        "title": "Take Me Away (extended mix)",
+        "duration_ms": 322197,
+        "credits": [
+          {
+            "name": "ACRAZE",
+            "artist_id": "e21e0137-b42d-44a5-abd6-c6ac160d0d7d",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "USUM72301825"
+        ]
+      }
+    ],
+    "pilot:acraze:heard-it-like-this": [
+      {
+        "mbid": "aac1b5b1-1cd8-47cf-985a-cf93f6f27daf",
+        "title": "Heard It Like This",
+        "duration_ms": 220461,
+        "credits": [
+          {
+            "name": "ACRAZE",
+            "artist_id": "e21e0137-b42d-44a5-abd6-c6ac160d0d7d",
+            "joinphrase": " & "
+          },
+          {
+            "name": "Joey Valence & Brae",
+            "artist_id": "93a4d03b-4f0e-42da-ae0b-a62876e46071",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "USUM72314619"
+        ]
+      },
+      {
+        "mbid": "c852a52a-057a-461f-b939-71f7ffb100be",
+        "title": "Heard It Like This (extended mix)",
+        "duration_ms": 365302,
+        "credits": [
+          {
+            "name": "ACRAZE",
+            "artist_id": "e21e0137-b42d-44a5-abd6-c6ac160d0d7d",
+            "joinphrase": " & "
+          },
+          {
+            "name": "Joey Valence and Brae",
+            "artist_id": "93a4d03b-4f0e-42da-ae0b-a62876e46071",
+            "joinphrase": ""
+          }
+        ],
+        "isrcs": [
+          "USUM72314617"
+        ]
+      }
+    ]
+  },
+  "videos": [
+    {
+      "video_id": "bz6taI5pDl0",
+      "title": "Carry You",
+      "channel": "Martin Garrix - Topic",
+      "channel_id": "UCqJnSdHjKtfsrHi9aI-9d3g",
+      "duration": "PT3M36S",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=bz6taI5pDl0"
+    },
+    {
+      "video_id": "U6EjUIefwiw",
+      "title": "Daydream",
+      "channel": "I Hate Models - Topic",
+      "channel_id": "UCLbghrmYY2iY4RKitpIbc7Q",
+      "duration": "PT7M44S",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=U6EjUIefwiw"
+    },
+    {
+      "video_id": "wtnrLTqmUKI",
+      "title": "KI/KI - 5 Mins Of Acid (Official Music Video)",
+      "channel": "Armada Music TV",
+      "channel_id": "UCGZXYc32ri4D0gSLPf2pZXQ",
+      "duration": "PT5M",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=wtnrLTqmUKI"
+    },
+    {
+      "video_id": "bnA7yJkAG30",
+      "title": "Do It To It",
+      "channel": "ACRAZE - Topic",
+      "channel_id": "UCGo9kyx07ixlhU9lzTM2HnA",
+      "duration": "PT2M38S",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=bnA7yJkAG30"
+    },
+    {
+      "video_id": "Scc4CRVroPo",
+      "title": "CID - Night Service Only (Official Music Video)",
+      "channel": "Spinnin' Records",
+      "channel_id": "UCpDJl2EmP7Oh90Vylx0dZtA",
+      "duration": "PT3M10S",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=Scc4CRVroPo"
+    },
+    {
+      "video_id": "Ve_LOVTzbxM",
+      "title": "Slaughter",
+      "channel": "Sullivan King - Topic",
+      "channel_id": "UCvdPESf68FLyNm9UU8wUbcQ",
+      "duration": "PT3M9S",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=Ve_LOVTzbxM"
+    },
+    {
+      "video_id": "HYCG79PxgFc",
+      "title": "A Little Sound - Back To Back (B2B)",
+      "channel": "UKF Drum & Bass",
+      "channel_id": "UCr8oc-LOaApCXWLjL7vdsgw",
+      "duration": "PT2M56S",
+      "licensed_content": false,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=HYCG79PxgFc"
+    },
+    {
+      "video_id": "Rv550gn6y8k",
+      "title": "A Little Sound - Breathe (Official Music Video)",
+      "channel": "UKF Drum & Bass",
+      "channel_id": "UCr8oc-LOaApCXWLjL7vdsgw",
+      "duration": "PT3M33S",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=Rv550gn6y8k"
+    },
+    {
+      "video_id": "_M5O_ED_1aI",
+      "title": "Friction  - Weed & Wine (ft. A Little Sound)",
+      "channel": "UKF Drum & Bass",
+      "channel_id": "UCr8oc-LOaApCXWLjL7vdsgw",
+      "duration": "PT3M4S",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=_M5O_ED_1aI"
+    },
+    {
+      "video_id": "WimivlmnA9I",
+      "title": "Technimatic - Confide (ft. A Little Sound)",
+      "channel": "UKF Drum & Bass",
+      "channel_id": "UCr8oc-LOaApCXWLjL7vdsgw",
+      "duration": "PT4M30S",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=WimivlmnA9I"
+    },
+    {
+      "video_id": "8I-QJlFSJdM",
+      "title": "Annix - Overload (ft. A Little Sound)",
+      "channel": "UKF Drum & Bass",
+      "channel_id": "UCr8oc-LOaApCXWLjL7vdsgw",
+      "duration": "PT3M40S",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=8I-QJlFSJdM"
+    }
+  ],
+  "benda_candidate": {
+    "video_id": "oXhWSs0mRH4",
+    "youtube_music_url": "https://music.youtube.com/watch?v=oXhWSs0mRH4",
+    "title": "Poison Control",
+    "channel": "Benda - Topic",
+    "channel_id": "UCiAO-tBx1IUd-TOyz5qToYw",
+    "source_evidence": "Search snippet identifies Stem Disintermedia distribution, Benda artist credit and 2022-08-17 release. Exact videos.list metadata and owner playback remain pending.",
+    "human_verified": false,
+    "playback_verified": false
+  }
+}
