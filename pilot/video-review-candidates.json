@@ -6,11 +6,23 @@
     "source_url": "https://www.youtube.com/watch?v=bz6taI5pDl0",
     "status": "official_channel_or_label_search_candidate",
     "human_verified": false,
-    "playback_verified": false,
+    "playback_verified": true,
     "recording_id": null,
     "youtube_music_url": "https://music.youtube.com/watch?v=bz6taI5pDl0",
-    "source_verified": false,
-    "remaining_uncertainty": "Inherited search candidate; uploader, exact version, canonical recording identity and playback remain unverified"
+    "source_verified": true,
+    "remaining_uncertainty": "Inherited search candidate; uploader, exact version, canonical recording identity and playback remain unverified",
+    "metadata_evidence": {
+      "video_id": "bz6taI5pDl0",
+      "title": "Carry You",
+      "channel": "Martin Garrix - Topic",
+      "channel_id": "UCqJnSdHjKtfsrHi9aI-9d3g",
+      "duration": "PT3M36S",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=bz6taI5pDl0"
+    },
+    "owner_reported_correct_video": true,
+    "owner_evidence_url": "https://github.com/johnapaz/edc-listening-room/commit/86e781b5624e56fff0fd8b10fb017f55512e4574"
   },
   {
     "artist": "I Hate Models",
@@ -19,11 +31,23 @@
     "source_url": "https://www.youtube.com/watch?v=U6EjUIefwiw",
     "status": "official_channel_or_label_search_candidate",
     "human_verified": false,
-    "playback_verified": false,
+    "playback_verified": true,
     "recording_id": null,
     "youtube_music_url": "https://music.youtube.com/watch?v=U6EjUIefwiw",
-    "source_verified": false,
-    "remaining_uncertainty": "Inherited search candidate; uploader, exact version, canonical recording identity and playback remain unverified"
+    "source_verified": true,
+    "remaining_uncertainty": "Inherited search candidate; uploader, exact version, canonical recording identity and playback remain unverified",
+    "metadata_evidence": {
+      "video_id": "U6EjUIefwiw",
+      "title": "Daydream",
+      "channel": "I Hate Models - Topic",
+      "channel_id": "UCLbghrmYY2iY4RKitpIbc7Q",
+      "duration": "PT7M44S",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=U6EjUIefwiw"
+    },
+    "owner_reported_correct_video": true,
+    "owner_evidence_url": "https://github.com/johnapaz/edc-listening-room/commit/86e781b5624e56fff0fd8b10fb017f55512e4574"
   },
   {
     "artist": "KI/KI",
@@ -32,11 +56,23 @@
     "source_url": "https://www.youtube.com/watch?v=wtnrLTqmUKI",
     "status": "official_channel_or_label_search_candidate",
     "human_verified": false,
-    "playback_verified": false,
+    "playback_verified": true,
     "recording_id": null,
     "youtube_music_url": "https://music.youtube.com/watch?v=wtnrLTqmUKI",
-    "source_verified": false,
-    "remaining_uncertainty": "Inherited search candidate; uploader, exact version, canonical recording identity and playback remain unverified"
+    "source_verified": true,
+    "remaining_uncertainty": "Inherited search candidate; uploader, exact version, canonical recording identity and playback remain unverified",
+    "metadata_evidence": {
+      "video_id": "wtnrLTqmUKI",
+      "title": "KI/KI - 5 Mins Of Acid (Official Music Video)",
+      "channel": "Armada Music TV",
+      "channel_id": "UCGZXYc32ri4D0gSLPf2pZXQ",
+      "duration": "PT5M",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=wtnrLTqmUKI"
+    },
+    "owner_reported_correct_video": true,
+    "owner_evidence_url": "https://github.com/johnapaz/edc-listening-room/commit/86e781b5624e56fff0fd8b10fb017f55512e4574"
   },
   {
     "artist": "ACRAZE",
@@ -45,11 +81,23 @@
     "source_url": "https://www.youtube.com/watch?v=bnA7yJkAG30",
     "status": "official_channel_or_label_search_candidate",
     "human_verified": false,
-    "playback_verified": false,
+    "playback_verified": true,
     "recording_id": null,
     "youtube_music_url": "https://music.youtube.com/watch?v=bnA7yJkAG30",
-    "source_verified": false,
-    "remaining_uncertainty": "Inherited search candidate; uploader, exact version, canonical recording identity and playback remain unverified"
+    "source_verified": true,
+    "remaining_uncertainty": "Inherited search candidate; uploader, exact version, canonical recording identity and playback remain unverified",
+    "metadata_evidence": {
+      "video_id": "bnA7yJkAG30",
+      "title": "Do It To It",
+      "channel": "ACRAZE - Topic",
+      "channel_id": "UCGo9kyx07ixlhU9lzTM2HnA",
+      "duration": "PT2M38S",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=bnA7yJkAG30"
+    },
+    "owner_reported_correct_video": true,
+    "owner_evidence_url": "https://github.com/johnapaz/edc-listening-room/commit/86e781b5624e56fff0fd8b10fb017f55512e4574"
   },
   {
     "artist": "CID",
@@ -58,11 +106,23 @@
     "source_url": "https://www.youtube.com/watch?v=Scc4CRVroPo",
     "status": "official_channel_or_label_search_candidate",
     "human_verified": false,
-    "playback_verified": false,
+    "playback_verified": true,
     "recording_id": null,
     "youtube_music_url": "https://music.youtube.com/watch?v=Scc4CRVroPo",
-    "source_verified": false,
-    "remaining_uncertainty": "Inherited search candidate; uploader, exact version, canonical recording identity and playback remain unverified"
+    "source_verified": true,
+    "remaining_uncertainty": "Inherited search candidate; uploader, exact version, canonical recording identity and playback remain unverified",
+    "metadata_evidence": {
+      "video_id": "Scc4CRVroPo",
+      "title": "CID - Night Service Only (Official Music Video)",
+      "channel": "Spinnin' Records",
+      "channel_id": "UCpDJl2EmP7Oh90Vylx0dZtA",
+      "duration": "PT3M10S",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=Scc4CRVroPo"
+    },
+    "owner_reported_correct_video": true,
+    "owner_evidence_url": "https://github.com/johnapaz/edc-listening-room/commit/86e781b5624e56fff0fd8b10fb017f55512e4574"
   },
   {
     "artist": "Vastive",
@@ -71,15 +131,27 @@
     "source_url": "https://www.youtube.com/watch?v=Ve_LOVTzbxM",
     "status": "official_channel_or_label_search_candidate",
     "human_verified": false,
-    "playback_verified": false,
+    "playback_verified": true,
     "recording_id": null,
     "youtube_music_url": "https://music.youtube.com/watch?v=Ve_LOVTzbxM",
-    "source_verified": false,
+    "source_verified": true,
     "remaining_uncertainty": "Inherited search candidate; uploader, exact version, canonical recording identity and playback remain unverified",
     "credited_artists": [
       "Sullivan King",
       "Vastive"
-    ]
+    ],
+    "metadata_evidence": {
+      "video_id": "Ve_LOVTzbxM",
+      "title": "Slaughter",
+      "channel": "Sullivan King - Topic",
+      "channel_id": "UCvdPESf68FLyNm9UU8wUbcQ",
+      "duration": "PT3M9S",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=Ve_LOVTzbxM"
+    },
+    "owner_reported_correct_video": true,
+    "owner_evidence_url": "https://github.com/johnapaz/edc-listening-room/commit/86e781b5624e56fff0fd8b10fb017f55512e4574"
   },
   {
     "artist": "A Little Sound",
@@ -94,9 +166,21 @@
     "status": "publisher_direct_video_link",
     "source_verified": true,
     "human_verified": false,
-    "playback_verified": false,
+    "playback_verified": true,
     "recording_id": null,
-    "remaining_uncertainty": "UKF explicitly links this video and title; destination retrieval failed. Exact recording/version and current uploader metadata need verification."
+    "remaining_uncertainty": "UKF explicitly links this video and title; destination retrieval failed. Exact recording/version and current uploader metadata need verification.",
+    "metadata_evidence": {
+      "video_id": "HYCG79PxgFc",
+      "title": "A Little Sound - Back To Back (B2B)",
+      "channel": "UKF Drum & Bass",
+      "channel_id": "UCr8oc-LOaApCXWLjL7vdsgw",
+      "duration": "PT2M56S",
+      "licensed_content": false,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=HYCG79PxgFc"
+    },
+    "owner_reported_correct_video": true,
+    "owner_evidence_url": "https://github.com/johnapaz/edc-listening-room/commit/86e781b5624e56fff0fd8b10fb017f55512e4574"
   },
   {
     "artist": "A Little Sound",
@@ -111,9 +195,21 @@
     "status": "publisher_direct_video_link",
     "source_verified": true,
     "human_verified": false,
-    "playback_verified": false,
+    "playback_verified": true,
     "recording_id": null,
-    "remaining_uncertainty": "UKF explicitly links this video and title; destination retrieval failed. Exact recording/version and current uploader metadata need verification."
+    "remaining_uncertainty": "UKF explicitly links this video and title; destination retrieval failed. Exact recording/version and current uploader metadata need verification.",
+    "metadata_evidence": {
+      "video_id": "Rv550gn6y8k",
+      "title": "A Little Sound - Breathe (Official Music Video)",
+      "channel": "UKF Drum & Bass",
+      "channel_id": "UCr8oc-LOaApCXWLjL7vdsgw",
+      "duration": "PT3M33S",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=Rv550gn6y8k"
+    },
+    "owner_reported_correct_video": true,
+    "owner_evidence_url": "https://github.com/johnapaz/edc-listening-room/commit/86e781b5624e56fff0fd8b10fb017f55512e4574"
   },
   {
     "artist": "A Little Sound",
@@ -131,7 +227,17 @@
     "human_verified": false,
     "playback_verified": false,
     "recording_id": null,
-    "remaining_uncertainty": "UKF explicitly links this video and title; destination retrieval failed. Exact recording/version and current uploader metadata need verification."
+    "remaining_uncertainty": "UKF explicitly links this video and title; destination retrieval failed. Exact recording/version and current uploader metadata need verification.",
+    "metadata_evidence": {
+      "video_id": "_M5O_ED_1aI",
+      "title": "Friction  - Weed & Wine (ft. A Little Sound)",
+      "channel": "UKF Drum & Bass",
+      "channel_id": "UCr8oc-LOaApCXWLjL7vdsgw",
+      "duration": "PT3M4S",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=_M5O_ED_1aI"
+    }
   },
   {
     "artist": "A Little Sound",
@@ -149,7 +255,17 @@
     "human_verified": false,
     "playback_verified": false,
     "recording_id": null,
-    "remaining_uncertainty": "UKF explicitly links this video and title; destination retrieval failed. Exact recording/version and current uploader metadata need verification."
+    "remaining_uncertainty": "UKF explicitly links this video and title; destination retrieval failed. Exact recording/version and current uploader metadata need verification.",
+    "metadata_evidence": {
+      "video_id": "WimivlmnA9I",
+      "title": "Technimatic - Confide (ft. A Little Sound)",
+      "channel": "UKF Drum & Bass",
+      "channel_id": "UCr8oc-LOaApCXWLjL7vdsgw",
+      "duration": "PT4M30S",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=WimivlmnA9I"
+    }
   },
   {
     "artist": "A Little Sound",
@@ -167,6 +283,31 @@
     "human_verified": false,
     "playback_verified": false,
     "recording_id": null,
-    "remaining_uncertainty": "UKF explicitly links this video and title; destination retrieval failed. Exact recording/version and current uploader metadata need verification."
+    "remaining_uncertainty": "UKF explicitly links this video and title; destination retrieval failed. Exact recording/version and current uploader metadata need verification.",
+    "metadata_evidence": {
+      "video_id": "8I-QJlFSJdM",
+      "title": "Annix - Overload (ft. A Little Sound)",
+      "channel": "UKF Drum & Bass",
+      "channel_id": "UCr8oc-LOaApCXWLjL7vdsgw",
+      "duration": "PT3M40S",
+      "licensed_content": true,
+      "metadata_returned": true,
+      "source_url": "https://www.youtube.com/watch?v=8I-QJlFSJdM"
+    }
+  },
+  {
+    "video_id": "oXhWSs0mRH4",
+    "youtube_music_url": "https://music.youtube.com/watch?v=oXhWSs0mRH4",
+    "title": "Poison Control",
+    "channel": "Benda - Topic",
+    "channel_id": "UCiAO-tBx1IUd-TOyz5qToYw",
+    "source_evidence": "Search snippet identifies Stem Disintermedia distribution, Benda artist credit and 2022-08-17 release. Exact videos.list metadata and owner playback remain pending.",
+    "human_verified": false,
+    "playback_verified": false,
+    "artist": "Benda",
+    "source_url": "https://www.youtube.com/watch?v=oXhWSs0mRH4",
+    "status": "distributor_search_candidate_requires_video_metadata_and_playback",
+    "recording_id": null,
+    "source_verified": false
   }
 ]

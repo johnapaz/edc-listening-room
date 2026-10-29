@@ -18,7 +18,9 @@
       "canonical recording MBID/ISRC",
       "complete release artist credits",
       "exact edition match to video"
-    ]
+    ],
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885
   },
   {
     "candidate_id": "pilot:martin-garrix:gravity",
@@ -39,7 +41,9 @@
       "canonical recording MBID/ISRC",
       "complete release artist credits",
       "exact edition match to video"
-    ]
+    ],
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885
   },
   {
     "candidate_id": "pilot:martin-garrix:smile",
@@ -60,7 +64,9 @@
       "canonical recording MBID/ISRC",
       "complete release artist credits",
       "exact edition match to video"
-    ]
+    ],
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885
   },
   {
     "candidate_id": "pilot:martin-garrix:wherever-you-are",
@@ -81,7 +87,9 @@
       "canonical recording MBID/ISRC",
       "complete release artist credits",
       "exact edition match to video"
-    ]
+    ],
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885
   },
   {
     "candidate_id": "pilot:martin-garrix:carry-you",
@@ -89,9 +97,9 @@
     "title": "Carry You",
     "source_url": "https://martingarrix.com/music/",
     "status": "source_listed_candidate",
-    "recording_id": null,
-    "credited_artists_verified": false,
-    "version_verified": false,
+    "recording_id": "269d5524-61f5-4002-8cd5-03c1c9409edd",
+    "credited_artists_verified": true,
+    "version_verified": true,
     "human_verified": false,
     "playback_verified": false,
     "score": null,
@@ -99,10 +107,22 @@
     "scope_status": "hold_pending_recording_and_credit_evidence",
     "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
     "remaining_checks": [
-      "canonical recording MBID/ISRC",
-      "complete release artist credits",
-      "exact edition match to video"
-    ]
+      "artist identity gate where unresolved",
+      "human inclusion approval and playback for any unreviewed video"
+    ],
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885,
+    "isrcs": [
+      "NLM5S2402145"
+    ],
+    "credited_artists": [
+      "Martin Garrix",
+      "Third ≡ Party",
+      "Oaks",
+      "Declan J Donovan"
+    ],
+    "recording_match_reason": "Original title, complete artist credit and duration agree with inspected label release or distributor video; distinct remixes, instrumentals and extended edits are not substituted.",
+    "recording_source_url": "https://musicbrainz.org/recording/269d5524-61f5-4002-8cd5-03c1c9409edd"
   },
   {
     "candidate_id": "pilot:i-hate-models:warehouse-memories",
@@ -110,7 +130,7 @@
     "title": "Warehouse Memories",
     "source_url": "https://artsrecordings.bandcamp.com/album/warehouse-memories",
     "status": "source_listed_candidate",
-    "recording_id": null,
+    "recording_id": "d1169a28-473f-4220-8fdf-2775fddf8005",
     "credited_artists_verified": true,
     "version_verified": true,
     "human_verified": false,
@@ -120,9 +140,8 @@
     "scope_status": "source_supports_in_scope; canonical_match_pending",
     "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
     "remaining_checks": [
-      "canonical recording MBID/ISRC",
-      "complete release artist credits",
-      "exact edition match to video"
+      "artist identity gate where unresolved",
+      "human inclusion approval and playback for any unreviewed video"
     ],
     "credited_artists": [
       "I Hate Models"
@@ -130,7 +149,14 @@
     "credit_evidence_url": "https://artsrecordings.bandcamp.com/track/warehouse-memories",
     "version_note": "Original track; distinct from Emmanuel remix on same release",
     "duration_seconds": 446,
-    "source_recording_url": "https://artsrecordings.bandcamp.com/track/warehouse-memories"
+    "source_recording_url": "https://artsrecordings.bandcamp.com/track/warehouse-memories",
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885,
+    "isrcs": [
+      "ITDY21600109"
+    ],
+    "recording_match_reason": "Original title, complete artist credit and duration agree with inspected label release or distributor video; distinct remixes, instrumentals and extended edits are not substituted.",
+    "recording_source_url": "https://musicbrainz.org/recording/d1169a28-473f-4220-8fdf-2775fddf8005"
   },
   {
     "candidate_id": "pilot:i-hate-models:daydream",
@@ -138,7 +164,7 @@
     "title": "Daydream",
     "source_url": "https://artsrecordings.bandcamp.com/album/warehouse-memories",
     "status": "source_listed_candidate",
-    "recording_id": null,
+    "recording_id": "913efff7-8996-476c-aeda-d46e474c1998",
     "credited_artists_verified": true,
     "version_verified": true,
     "human_verified": false,
@@ -148,9 +174,8 @@
     "scope_status": "source_supports_in_scope; canonical_match_pending",
     "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
     "remaining_checks": [
-      "canonical recording MBID/ISRC",
-      "complete release artist credits",
-      "exact edition match to video"
+      "artist identity gate where unresolved",
+      "human inclusion approval and playback for any unreviewed video"
     ],
     "credited_artists": [
       "I Hate Models"
@@ -158,7 +183,14 @@
     "credit_evidence_url": "https://artsrecordings.bandcamp.com/track/daydream",
     "version_note": "Warehouse Memories original release track",
     "duration_seconds": 463,
-    "source_recording_url": "https://artsrecordings.bandcamp.com/track/daydream"
+    "source_recording_url": "https://artsrecordings.bandcamp.com/track/daydream",
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885,
+    "isrcs": [
+      "ITDY21600111"
+    ],
+    "recording_match_reason": "Original title, complete artist credit and duration agree with inspected label release or distributor video; distinct remixes, instrumentals and extended edits are not substituted.",
+    "recording_source_url": "https://musicbrainz.org/recording/913efff7-8996-476c-aeda-d46e474c1998"
   },
   {
     "candidate_id": "pilot:i-hate-models:shades-of-night",
@@ -166,7 +198,7 @@
     "title": "Shades Of Night",
     "source_url": "https://artsrecordings.bandcamp.com/album/warehouse-memories",
     "status": "source_listed_candidate",
-    "recording_id": null,
+    "recording_id": "ed98d882-8eca-429d-98c2-997f5e51b8ac",
     "credited_artists_verified": true,
     "version_verified": true,
     "human_verified": false,
@@ -176,9 +208,8 @@
     "scope_status": "source_supports_in_scope; canonical_match_pending",
     "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
     "remaining_checks": [
-      "canonical recording MBID/ISRC",
-      "complete release artist credits",
-      "exact edition match to video"
+      "artist identity gate where unresolved",
+      "human inclusion approval and playback for any unreviewed video"
     ],
     "credited_artists": [
       "I Hate Models"
@@ -186,7 +217,14 @@
     "credit_evidence_url": "https://artsrecordings.bandcamp.com/track/shades-of-night",
     "version_note": "Warehouse Memories original release track",
     "duration_seconds": 374,
-    "source_recording_url": "https://artsrecordings.bandcamp.com/track/shades-of-night"
+    "source_recording_url": "https://artsrecordings.bandcamp.com/track/shades-of-night",
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885,
+    "isrcs": [
+      "ITDY21600112"
+    ],
+    "recording_match_reason": "Original title, complete artist credit and duration agree with inspected label release or distributor video; distinct remixes, instrumentals and extended edits are not substituted.",
+    "recording_source_url": "https://musicbrainz.org/recording/ed98d882-8eca-429d-98c2-997f5e51b8ac"
   },
   {
     "candidate_id": "pilot:i-hate-models:two-steps-from-heaven",
@@ -194,9 +232,9 @@
     "title": "Two Steps From Heaven",
     "source_url": "https://disco-inferno.bandcamp.com/album/disco-inferno-01",
     "status": "source_listed_candidate",
-    "recording_id": null,
+    "recording_id": "de55b5d1-d938-4b60-bf69-d8ba7bf55505",
     "credited_artists_verified": true,
-    "version_verified": false,
+    "version_verified": true,
     "human_verified": false,
     "playback_verified": false,
     "score": null,
@@ -204,16 +242,22 @@
     "scope_status": "source_supports_in_scope; canonical_match_pending",
     "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
     "remaining_checks": [
-      "canonical recording MBID/ISRC",
-      "complete release artist credits",
-      "exact edition match to video"
+      "artist identity gate where unresolved",
+      "human inclusion approval and playback for any unreviewed video"
     ],
     "credited_artists": [
       "I Hate Models"
     ],
     "credit_evidence_url": "https://disco-inferno.bandcamp.com/album/disco-inferno-01",
     "version_note": "Track 1 original release",
-    "duration_seconds": 567
+    "duration_seconds": 567,
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885,
+    "isrcs": [
+      "SE3JM2100101"
+    ],
+    "recording_match_reason": "Original title, complete artist credit and duration agree with inspected label release or distributor video; distinct remixes, instrumentals and extended edits are not substituted.",
+    "recording_source_url": "https://musicbrainz.org/recording/de55b5d1-d938-4b60-bf69-d8ba7bf55505"
   },
   {
     "candidate_id": "pilot:i-hate-models:sad-groove",
@@ -221,9 +265,9 @@
     "title": "Sad Groove",
     "source_url": "https://disco-inferno.bandcamp.com/album/disco-inferno-01",
     "status": "source_listed_candidate",
-    "recording_id": null,
+    "recording_id": "fead08c4-9bf2-40bb-a3e4-c269fa504e96",
     "credited_artists_verified": true,
-    "version_verified": false,
+    "version_verified": true,
     "human_verified": false,
     "playback_verified": false,
     "score": null,
@@ -231,16 +275,22 @@
     "scope_status": "source_supports_in_scope; canonical_match_pending",
     "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
     "remaining_checks": [
-      "canonical recording MBID/ISRC",
-      "complete release artist credits",
-      "exact edition match to video"
+      "artist identity gate where unresolved",
+      "human inclusion approval and playback for any unreviewed video"
     ],
     "credited_artists": [
       "I Hate Models"
     ],
     "credit_evidence_url": "https://disco-inferno.bandcamp.com/album/disco-inferno-01",
     "version_note": "Track 2 original release",
-    "duration_seconds": 496
+    "duration_seconds": 496,
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885,
+    "isrcs": [
+      "SE3JM2100102"
+    ],
+    "recording_match_reason": "Original title, complete artist credit and duration agree with inspected label release or distributor video; distinct remixes, instrumentals and extended edits are not substituted.",
+    "recording_source_url": "https://musicbrainz.org/recording/fead08c4-9bf2-40bb-a3e4-c269fa504e96"
   },
   {
     "candidate_id": "pilot:a-little-sound:back-to-back--b2b-",
@@ -266,8 +316,10 @@
       "A Little Sound"
     ],
     "credit_evidence_url": "https://ukf.com/discover/artists/a-little-sound/",
-    "version_note": "Standalone song; B2B in title is not a full DJ mix",
-    "duration_seconds": null
+    "version_note": "HOLD: duplicate MB IDs a03b6af0-9492-4e59-823e-af926615acbb and 487aebf5-fef6-4ccd-a948-03f28de7977a, near-identical durations; verify exact release/ISRC.",
+    "duration_seconds": null,
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885
   },
   {
     "candidate_id": "pilot:a-little-sound:breathe",
@@ -293,8 +345,10 @@
       "A Little Sound"
     ],
     "credit_evidence_url": "https://ukf.com/discover/artists/a-little-sound/",
-    "version_note": "Version of linked upload still needs checking",
-    "duration_seconds": null
+    "version_note": "HOLD: reviewed video 213 seconds vs MB candidates 217–218 seconds. Exact edit evidence required.",
+    "duration_seconds": null,
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885
   },
   {
     "candidate_id": "pilot:a-little-sound:weed---wine",
@@ -322,7 +376,9 @@
     ],
     "credit_evidence_url": "https://ukf.com/discover/artists/a-little-sound/",
     "version_note": "A Little Sound is featured vocalist",
-    "duration_seconds": null
+    "duration_seconds": null,
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885
   },
   {
     "candidate_id": "pilot:a-little-sound:confide",
@@ -350,7 +406,9 @@
     ],
     "credit_evidence_url": "https://ukf.com/discover/artists/a-little-sound/",
     "version_note": "A Little Sound is featured vocalist",
-    "duration_seconds": null
+    "duration_seconds": null,
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885
   },
   {
     "candidate_id": "pilot:a-little-sound:overload",
@@ -378,7 +436,9 @@
     ],
     "credit_evidence_url": "https://ukf.com/discover/artists/a-little-sound/",
     "version_note": "A Little Sound is featured vocalist",
-    "duration_seconds": null
+    "duration_seconds": null,
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885
   },
   {
     "candidate_id": "pilot:ki-ki:here-with-me",
@@ -399,7 +459,9 @@
       "canonical recording MBID/ISRC",
       "complete release artist credits",
       "exact edition match to video"
-    ]
+    ],
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885
   },
   {
     "candidate_id": "pilot:ki-ki:going-existential-in-the-rave",
@@ -420,7 +482,9 @@
       "canonical recording MBID/ISRC",
       "complete release artist credits",
       "exact edition match to video"
-    ]
+    ],
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885
   },
   {
     "candidate_id": "pilot:ki-ki:can-t-stop-loving-you",
@@ -441,7 +505,9 @@
       "canonical recording MBID/ISRC",
       "complete release artist credits",
       "exact edition match to video"
-    ]
+    ],
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885
   },
   {
     "candidate_id": "pilot:ki-ki:put-your-bassline",
@@ -469,7 +535,9 @@
     ],
     "credit_evidence_url": "https://kislashki.bandcamp.com/album/put-your-bassline",
     "version_note": "Release credit verified; specific mix still pending",
-    "duration_seconds": null
+    "duration_seconds": null,
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885
   },
   {
     "candidate_id": "pilot:ki-ki:what-s-a-girl-to-do-in--25",
@@ -490,7 +558,9 @@
       "canonical recording MBID/ISRC",
       "complete release artist credits",
       "exact edition match to video"
-    ]
+    ],
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885
   },
   {
     "candidate_id": "pilot:ki-ki:5-mins-of-acid",
@@ -511,7 +581,10 @@
       "canonical recording MBID/ISRC",
       "complete release artist credits",
       "exact edition match to video"
-    ]
+    ],
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885,
+    "version_note": "HOLD: 300-second official video; two full-length MB candidates. Reject 190-second edition for this video; resolve duplicate full-length IDs."
   },
   {
     "candidate_id": "pilot:acraze:do-it-to-it",
@@ -519,9 +592,9 @@
     "title": "Do It To It",
     "source_url": "https://www.acrazemusic.com/",
     "status": "source_listed_candidate",
-    "recording_id": null,
-    "credited_artists_verified": false,
-    "version_verified": false,
+    "recording_id": "3fc73c64-59e3-451e-a95d-f48c9a4e4c14",
+    "credited_artists_verified": true,
+    "version_verified": true,
     "human_verified": false,
     "playback_verified": false,
     "score": null,
@@ -529,10 +602,20 @@
     "scope_status": "hold_pending_recording_and_credit_evidence",
     "duplicate_status": "no_duplicate_candidate_title_within_pilot_artist; recording-level deduplication pending",
     "remaining_checks": [
-      "canonical recording MBID/ISRC",
-      "complete release artist credits",
-      "exact edition match to video"
-    ]
+      "artist identity gate where unresolved",
+      "human inclusion approval and playback for any unreviewed video"
+    ],
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885,
+    "isrcs": [
+      "QZFPL2100100"
+    ],
+    "credited_artists": [
+      "ACRAZE",
+      "Cherish"
+    ],
+    "recording_match_reason": "Original title, complete artist credit and duration agree with inspected label release or distributor video; distinct remixes, instrumentals and extended edits are not substituted.",
+    "recording_source_url": "https://musicbrainz.org/recording/3fc73c64-59e3-451e-a95d-f48c9a4e4c14"
   },
   {
     "candidate_id": "pilot:acraze:believe",
@@ -553,7 +636,9 @@
       "canonical recording MBID/ISRC",
       "complete release artist credits",
       "exact edition match to video"
-    ]
+    ],
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885
   },
   {
     "candidate_id": "pilot:acraze:take-me-away",
@@ -574,7 +659,9 @@
       "canonical recording MBID/ISRC",
       "complete release artist credits",
       "exact edition match to video"
-    ]
+    ],
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885
   },
   {
     "candidate_id": "pilot:acraze:heard-it-like-this",
@@ -595,7 +682,9 @@
       "canonical recording MBID/ISRC",
       "complete release artist credits",
       "exact edition match to video"
-    ]
+    ],
+    "recording_search_status": "candidates_reviewed",
+    "recording_evidence_run": 40961296885
   },
   {
     "candidate_id": "pilot:acraze:apple-cider",
