@@ -17,6 +17,7 @@ Martin Garrix (major artist, prolific collaborations), I Hate Models (techno ide
 1. Run standard-library, zero-network tests: `python -m unittest discover -s tests -v`.
 2. Inspect a no-network research plan: `python -m edc.cli research`.
 3. With a meaningful contact address configured securely as EDC_CONTACT_EMAIL, run `python -m edc.cli research --execute` to obtain up to five MusicBrainz artist identity candidates per pilot name. **Do not auto-select identities.** Cache responses and respect <=1 MusicBrainz request/sec.
+   The research workflow checkpoints each artist and uploads both candidate JSON and a `.report.json` completion report even after partial failure. Failed artists remain explicitly unresolved and the job exits unsuccessfully. Successful API responses are cached across manual runs; rerunning retries unresolved requests without re-fetching cached successes. Requests use at most three attempts with bounded backoff for HTTP 429/503 and connection failures. A complete report means lookups finished, not that identities have been approved. To refresh stale successful responses, increment the workflow cache prefix or clear its cache before a new research run.
 4. After every MBID is reviewed, query release groups via the MusicBrainz helper, retaining source references and differentiating official releases, remixes and credited performances. Canonicalize recording/version IDs. Track scope exclusions.
 5. Obtain licensed, attributed source metrics with track listeners and plays (see license gate below). A normalized snapshot can be ranked with `python -m edc.cli rank --input licensed-snapshot.json --output .state/ranking.json`. Fields per row: recording_id, title, artist_ids (list), primary_genre, genres (list), listeners (integer), plays (integer), release_date (ISO), eligible (boolean).
 6. From verified MusicBrainz recordings, prepare up to sixteen candidate rows with recording_id, title, artist. Run `python -m edc.cli match --input candidate-tracks.json` for a **no-network** plan. For live searches, add `--execute --remaining-search N` after confirming the actual remaining YouTube search quota. The output is a review-required suggestion list, never automatically approved.
@@ -68,3 +69,4 @@ Not yet implemented: full recording ingestion, licensed popularity-data collecti
 - https://developers.google.com/youtube/data/reference/rest/v3/playlistItems/list
 - https://musicbrainz.org/doc/MusicBrainz_API
 - https://www.last.fm/api/tos
+

@@ -11,7 +11,7 @@ import time
 from pathlib import Path
 from urllib.parse import urlencode, quote
 from urllib.request import Request, urlopen
-from urllib.error import HTTPError
+from urllib.error import HTTPError, URLError
 
 API = "https://musicbrainz.org/ws/2"
 
@@ -52,10 +52,22 @@ class MusicBrainz:
             except HTTPError as exc:
                 if exc.code not in (429, 503) or retry == 2:
                     raise RuntimeError("MusicBrainz returned HTTP " + str(exc.code)) from None
-                delay = (retry + 1) * 3
+                delay = min(30, max(3 * 2 ** retry, self._retry_after(exc)))
                 time.sleep(delay)
                 self._last = time.monotonic()
+            except (URLError, TimeoutError):
+                if retry == 2:
+                    raise RuntimeError("MusicBrainz connection failed after 3 attempts") from None
+                time.sleep(3 * 2 ** retry)
+                self._last = time.monotonic()
         raise RuntimeError("MusicBrainz request failed")
+
+    @staticmethod
+    def _retry_after(exc: HTTPError) -> float:
+        try:
+            return max(0, float(exc.headers.get("Retry-After", "0")))
+        except (TypeError, ValueError, AttributeError):
+            return 0
 
     def artist_candidates(self, name: str, limit: int = 5) -> list[dict]:
         # MusicBrainz Lucene exact name field. Candidate list is never an auto-match.
@@ -103,3 +115,36 @@ PILOT_ARTISTS = [
     "Martin Garrix", "I Hate Models", "A Little Sound", "KI/KI",
     "ACRAZE", "CID", "Benda", "Vastive",
 ]
+
+
+def research_artists(client: MusicBrainz, output: str) -> bool:
+    """Checkpoint each artist; cached successes resume without network calls.
+
+    Keep the candidate file compatible with existing human review. The separate
+    report distinguishes empty successful results from failed lookups.
+    """
+    out = Path(output)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    results: dict = {}
+    report: dict = {"complete": False, "artists": {}}
+
+    def checkpoint() -> None:
+        for path, data in ((out, results), (out.with_suffix(".report.json"), report)):
+            temporary = path.with_suffix(path.suffix + ".tmp")
+            temporary.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+            temporary.replace(path)
+
+    checkpoint()
+    for name in PILOT_ARTISTS:
+        try:
+            results[name] = client.artist_candidates(name)
+            report["artists"][name] = {"status": "needs_human_review", "count": len(results[name])}
+            print(name + ": " + str(len(results[name])) + " candidates; review required")
+        except RuntimeError as exc:
+            report["artists"][name] = {"status": "failed", "error": str(exc)}
+            print(name + ": lookup failed; see report and retry after service recovery")
+        checkpoint()
+    report["complete"] = all(x["status"] != "failed" for x in report["artists"].values())
+    checkpoint()
+    return report["complete"]
+

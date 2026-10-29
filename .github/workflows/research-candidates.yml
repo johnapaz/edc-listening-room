@@ -5,11 +5,15 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: musicbrainz-pilot-research
+  cancel-in-progress: false
+
 jobs:
   research:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     env:
       EDC_CONTACT_EMAIL: ${{ secrets.EDC_CONTACT_EMAIL }}
     steps:
@@ -17,11 +21,27 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Restore successful MusicBrainz responses
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/musicbrainz
+          key: musicbrainz-pilot-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: musicbrainz-pilot-v1-
       - name: Lookup only the eight pilot artists (no writes)
+        id: lookup
         run: python -m edc.cli research --execute --output .state/artist-candidates.json
       - name: Upload candidate identities for review
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: artist-identity-candidates
-          path: .state/artist-candidates.json
+          path: .state/artist-candidates*.json
+          if-no-files-found: warn
           retention-days: 7
+      - name: Preserve successful responses even after partial failure
+        if: always() && steps.lookup.outcome != 'skipped'
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/musicbrainz
+          key: musicbrainz-pilot-v1-${{ github.run_id }}-${{ github.run_attempt }}
+
