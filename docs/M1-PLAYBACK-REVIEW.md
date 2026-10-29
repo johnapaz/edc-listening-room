@@ -82,4 +82,4 @@ Owner confirms no GitHub environment exists. Browser setup begins at Settings â†
 
 PR #4 remains a draft research checkpoint. No merge is currently requested; merging research later would not approve tracks, authorize a playlist write, or declare M1 complete.
 
-For explicit new-tab links, use [M1-PLAYBACK-CHECKLIST.html](M1-PLAYBACK-CHECKLIST.html) opened as an HTML file. Its external links use target="_blank" and rel="noopener noreferrer". GitHub Markdown and chat link rendering cannot reliably enforce new-tab behavior; Ctrl+click (Windows) or Cmd+click (Mac) works there.
+Use the clickable task checklist in [PR #4](https://github.com/johnapaz/edc-listening-room/pull/4) to record playback, match review and inclusion approval separately. Ctrl+click (Windows) or Cmd+click (Mac) opens song links in a new tab.
