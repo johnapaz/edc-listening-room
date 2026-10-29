@@ -1,0 +1,51 @@
+name: Private pilot playlist (manual authorization only)
+on:
+  workflow_dispatch:
+    inputs:
+      confirmed_remaining_general:
+        description: "Verified daily remaining YouTube general quota (Cloud Console)"
+        required: true
+        default: "1000"
+      confirm_private_pilot:
+        description: "Type YES to publish ONLY the private 8-artist pilot"
+        required: true
+        default: "NO"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: youtube-pilot-private
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main' && inputs.confirm_private_pilot == 'YES'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: youtube-pilot
+    env:
+      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+      EDC_ENABLE_WRITES: "1"
+      EDC_PILOT_APPROVED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate manifest and preflight quota
+        shell: bash
+        env:
+          REMAINING: ${{ inputs.confirmed_remaining_general }}
+        run: |
+          test -f pilot/approved-tracks.json || { echo "No approved-track manifest; refusing to write"; exit 1; }
+          python -m edc.cli pilot-playlist --manifest pilot/approved-tracks.json
+          python -c 'import os; n=int(os.environ["REMAINING"]); assert 0 < n <= 10000, "Invalid quota input"'
+      - name: Create or resume private playlist with read-back
+        shell: bash
+        env:
+          REMAINING: ${{ inputs.confirmed_remaining_general }}
+        run: |
+          python -m edc.cli pilot-playlist --manifest pilot/approved-tracks.json --apply --remaining-general "$REMAINING"

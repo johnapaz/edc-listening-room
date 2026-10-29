@@ -1,0 +1,27 @@
+name: MusicBrainz pilot artist candidates (read-only)
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  research:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      EDC_CONTACT_EMAIL: ${{ secrets.EDC_CONTACT_EMAIL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Lookup only the eight pilot artists (no writes)
+        run: python -m edc.cli research --execute --output .state/artist-candidates.json
+      - name: Upload candidate identities for review
+        uses: actions/upload-artifact@v4
+        with:
+          name: artist-identity-candidates
+          path: .state/artist-candidates.json
+          retention-days: 7

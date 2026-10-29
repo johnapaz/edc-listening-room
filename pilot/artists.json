@@ -1,0 +1,21 @@
+{
+  "event": "EDC Orlando 2026",
+  "lineup_source": "https://orlando.edc.com/lineup/",
+  "status": "pilot_candidates_not_verified_or_imported",
+  "artist_names": [
+    "Martin Garrix",
+    "I Hate Models",
+    "A Little Sound",
+    "KI/KI",
+    "ACRAZE",
+    "CID",
+    "Benda",
+    "Vastive"
+  ],
+  "b2b_performances": [
+    ["ACRAZE", "CID"],
+    ["Benda", "Vastive"]
+  ],
+  "pilot_playlist_visibility": "private",
+  "target_validated_tracks": 16
+}
