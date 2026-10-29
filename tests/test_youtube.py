@@ -111,3 +111,19 @@ class PreviewContractTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+class CommittedPreviewManifestTests(unittest.TestCase):
+    def test_approved_manifest_is_gated_subset_of_review_list(self):
+        import json
+        from pathlib import Path
+        root = Path(__file__).resolve().parent.parent / "pilot"
+        approved = json.loads((root / "preview-approved.json").read_text(encoding="utf-8"))
+        review = {r["video_id"]: r for r in json.loads((root / "preview-tracks.json").read_text(encoding="utf-8"))}
+        validated_manifest(approved, preview=True)
+        for row in approved:
+            self.assertEqual(row, review[row["video_id"]])
+        held = [v for v, r in review.items() if not (r["source_verified"] and r["human_verified"])]
+        self.assertFalse(set(held) & {r["video_id"] for r in approved})
+        # Rows held back may only be appended later, so the manifest stays an exact prefix.
+        order = list(review)
+        self.assertEqual([r["video_id"] for r in approved], order[:len(approved)])

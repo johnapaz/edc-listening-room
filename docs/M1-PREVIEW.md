@@ -34,3 +34,10 @@ EXIT (organizer) identifies the artist as Guillaume Labadie; MB f9a4de7f has a L
 
 ## Update: inclusion approvals complete
 Owner approved the eight already-played tracks plus Breathe (message: "Include all eight and Breathe; quota is 9,000 remaining"). All 12 rows now have `human_verified=true`; 11 have `source_verified=true`. Poison Control awaits exact video metadata (YouTube-only evidence run, 0 searches, ≤1 general unit, against the declared 9,000 remaining). Breathe and Night Service Only keep their version caveats; Breathe has no recording_id.
+
+## Update: approved preview manifest
+`pilot/preview-approved.json` now holds the 11 rows that are both `source_verified` and owner-approved, in lineup order. Validated offline by the CLI dry run (11 IDs, at most 620 general units) and by a test requiring every row to equal its `preview-tracks.json` entry. Poison Control (oXhWSs0mRH4) is held back until its exact `videos.list` metadata is reviewed; it is last in the review list, so it can be appended later without breaking the exact-prefix resume.
+
+The approval commit (8186f9d, re-opened as PR #10 at 564f0d4) is merged into this branch, so either PR can merge first.
+
+Nothing has been written to YouTube. Publishing still needs: this PR merged, a dispatch of **Private listening preview** on main with a fresh quota reading and `YES`, and owner environment approval. Readback is automatic; actual YouTube Music playback is a separate owner check afterwards.
