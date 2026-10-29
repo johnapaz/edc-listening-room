@@ -8,6 +8,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import time
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
@@ -20,6 +21,9 @@ MARKER = "edc-listening-room:pilot-m1-v1"
 TITLE = "EDC Orlando 2026 — Pilot M1 (Unofficial)"
 PREVIEW_MARKER = "edc-listening-room:preview-v1"
 PREVIEW_TITLE = "EDC Orlando 2026 — Private listening preview (unranked, unofficial)"
+# A just-created playlist can briefly answer 404 (playlistNotFound). A 404 means
+# nothing was applied, so it is safe to retry; other errors are not retried.
+NOT_FOUND_DELAYS = (2, 4, 8, 16)
 _MBID = re.compile(r"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
 
 
@@ -78,6 +82,12 @@ def access_token_from_secrets() -> str:
     return token
 
 
+class YouTubeHTTPError(RuntimeError):
+    def __init__(self, message: str, code: int):
+        super().__init__(message)
+        self.code = code
+
+
 class YouTube:
     def __init__(self, token: str, quota: Budget):
         self.token, self.quota = token, quota
@@ -97,8 +107,22 @@ class YouTube:
                 return json.load(response)
         except HTTPError as e:
             # Do not log response bodies: server data may contain sensitive information.
-            raise RuntimeError("YouTube API request failed (HTTP " + str(e.code) +
-                               ", operation " + operation + "); reconcile state before retry.") from None
+            raise YouTubeHTTPError("YouTube API request failed (HTTP " + str(e.code) +
+                                   ", operation " + operation + "); reconcile state before retry.",
+                                   e.code) from None
+
+    def sleep(self, seconds: float) -> None:
+        time.sleep(seconds)
+
+    def retry_not_found(self, call):
+        for delay in NOT_FOUND_DELAYS:
+            try:
+                return call()
+            except YouTubeHTTPError as e:
+                if e.code != 404:
+                    raise
+                self.sleep(delay)
+        return call()
 
     def my_pilot_playlists(self, marker: str = MARKER) -> list[dict]:
         marker_matches: list[dict] = []
@@ -151,15 +175,16 @@ class YouTube:
             })
             playlist_id = created["id"]
         intended = [row["video_id"] for row in records]
-        existing = self.playlist_items(playlist_id)
+        # A playlist created in this run is empty; listing it can 404 until it propagates.
+        existing = [] if not playlists else self.playlist_items(playlist_id)
         if existing != intended[:len(existing)]:
             raise RuntimeError("Existing playlist is not an exact intended prefix; no writes made")
         for video_id in intended[len(existing):]:
-            self.request("playlistItems", {"part": "snippet"}, method="POST", body={
+            self.retry_not_found(lambda: self.request("playlistItems", {"part": "snippet"}, method="POST", body={
                 "snippet": {"playlistId": playlist_id,
                             "resourceId": {"kind": "youtube#video", "videoId": video_id}},
-            })
-        readback = self.playlist_items(playlist_id)
+            }))
+        readback = self.retry_not_found(lambda: self.playlist_items(playlist_id))
         if readback != intended:
             raise RuntimeError("Playlist read-back mismatch. Do not publish; reconcile manually.")
         return {
