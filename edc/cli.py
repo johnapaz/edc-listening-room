@@ -8,7 +8,7 @@ from pathlib import Path
 
 from .ranking import rank_tracks, balanced_discovery, top_100
 from .quota import Budget
-from .musicbrainz import MusicBrainz, PILOT_ARTISTS
+from .musicbrainz import MusicBrainz, PILOT_ARTISTS, research_artists
 from .youtube import YouTube, access_token_from_secrets, validated_manifest
 from .matching import search_suggestions
 
@@ -55,11 +55,9 @@ def main() -> None:
             print("Requires EDC_CONTACT_EMAIL and --execute; no automatic ID selection.")
             return
         client = MusicBrainz(os.environ.get("EDC_CONTACT_EMAIL", ""))
-        results = {name: client.artist_candidates(name) for name in PILOT_ARTISTS}
-        out = Path(args.output)
-        out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(json.dumps(results, indent=2, ensure_ascii=False), encoding="utf-8")
-        print("Read-only candidates saved to", out)
+        if not research_artists(client, args.output):
+            raise SystemExit("Some artist lookups failed. Partial candidates and failure report saved; rerun to resume from cache.")
+        print("Read-only candidates saved to", args.output)
     elif args.command == "match":
         rows = json.loads(Path(args.input).read_text(encoding="utf-8"))
         if not args.execute:
@@ -95,3 +93,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
