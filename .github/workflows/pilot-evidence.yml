@@ -2,11 +2,17 @@ name: Pilot evidence collection (read-only)
 on:
   workflow_dispatch:
     inputs:
+      provider:
+        description: Provider to collect (recovery defaults to MusicBrainz only)
+        type: choice
+        options: [musicbrainz, youtube, both]
+        default: musicbrainz
+        required: true
       remaining_general:
-        description: Verified daily remaining general quota
+        description: Verified daily remaining general quota (0 for MusicBrainz only)
         required: true
       remaining_search:
-        description: Verified daily remaining search quota (at least 2)
+        description: Search quota (0; this workflow no longer searches)
         required: true
 permissions:
   contents: read
@@ -24,6 +30,7 @@ jobs:
       GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
       GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
       EDC_CONTACT_EMAIL: ${{ secrets.EDC_CONTACT_EMAIL }}
+      EDC_EVIDENCE_PROVIDER: ${{ inputs.provider }}
       EDC_REMAINING_GENERAL: ${{ inputs.remaining_general }}
       EDC_REMAINING_SEARCH: ${{ inputs.remaining_search }}
     steps:

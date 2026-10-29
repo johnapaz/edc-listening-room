@@ -1,6 +1,6 @@
 # Pilot resilience and delivery plan
 
-Status: revised approach for review; execution/gate changes below are not yet implemented. No new retry is queued. Keep this with PR #8 rather than opening another planning PR.
+Status: provider isolation, durable missing-work recovery, conservative backoff, metadata-only YouTube collection and distinct partial outcomes are implemented in PR #8. Live validation is pending. The preview manifest/source-contract changes remain pending; M1 gates are unchanged. No new retry is queued. Keep this with PR #8 rather than opening another planning PR.
 
 ## Why runs keep stopping
 

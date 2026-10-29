@@ -14,13 +14,21 @@ class MusicBrainzTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             client = MusicBrainz("test@example.org", directory)
             error = HTTPError("https://musicbrainz.org", 503, "busy", {"Retry-After": "5"}, None)
-            with patch("edc.musicbrainz.urlopen", side_effect=[error, io.BytesIO(b'{"artists": []}')]) as request, patch("edc.musicbrainz.time.sleep") as sleep:
+            with patch("edc.musicbrainz.urlopen", side_effect=[error, io.BytesIO(b'{"artists": []}')]) as request, patch("edc.musicbrainz.time.sleep") as sleep, patch('edc.musicbrainz.random.uniform', return_value=0):
                 self.assertEqual(client.artist_candidates("KI/KI"), [])
                 self.assertEqual(request.call_count, 2)
                 sleep.assert_any_call(5)
             with patch("edc.musicbrainz.urlopen") as request:
                 self.assertEqual(MusicBrainz("test@example.org", directory).artist_candidates("KI/KI"), [])
                 request.assert_not_called()
+
+    def test_long_retry_after_defers_without_early_retry(self):
+        with tempfile.TemporaryDirectory() as directory:
+            error = HTTPError('url', 503, 'busy', {'Retry-After': '120'}, None)
+            with patch('edc.musicbrainz.urlopen', side_effect=error) as request:
+                with self.assertRaisesRegex(RuntimeError, 'deferred'):
+                    MusicBrainz('test@example.org', directory).artist_candidates('CID')
+                self.assertEqual(request.call_count, 1)
 
     def test_timeout_retries_are_bounded(self):
         with tempfile.TemporaryDirectory() as directory:

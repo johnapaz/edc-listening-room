@@ -2,7 +2,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from edc.evidence import collect
+from edc.evidence import collect, require_complete
 from edc.quota import Budget
 
 
@@ -33,14 +33,14 @@ class EvidenceTests(unittest.TestCase):
     def run_collection(self, fail):
         mb, yt = FakeMB(fail), FakeYT()
         artists = [{'name': str(i), 'musicbrainz_candidate_id': str(i)} for i in range(8)]
-        tracks = [{'candidate_id': str(i), 'title': 'Song', 'pilot_artist': 'Artist'} for i in range(41)]
+        tracks = [{'candidate_id': str(i), 'title': 'Song' + str(i), 'pilot_artist': 'Artist'} for i in range(41)]
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / 'report.json'
             result = collect(mb, yt, artists, tracks, [{'video_id': 'example'}], output)
             self.assertEqual(json.loads(output.read_text()), result)
-        self.assertEqual(yt.calls, ['videos', 'search', 'search'])
+        self.assertEqual(yt.calls, ['videos'])
         self.assertEqual(result['youtube_general_used'], 1)
-        self.assertEqual(result['youtube_search_used'], 2)
+        self.assertEqual(result['youtube_search_used'], 0)
         self.assertFalse(result['human_approval'])
         return mb, result
 
@@ -59,7 +59,7 @@ class EvidenceTests(unittest.TestCase):
 
     def test_recovery_reuses_completed_youtube_requests(self):
         artists = [{'name': str(i), 'musicbrainz_candidate_id': str(i)} for i in range(8)]
-        tracks = [{'candidate_id': str(i), 'title': 'Song', 'pilot_artist': 'Artist'} for i in range(41)]
+        tracks = [{'candidate_id': str(i), 'title': 'Song' + str(i), 'pilot_artist': 'Artist'} for i in range(41)]
         with tempfile.TemporaryDirectory() as directory:
             folder = Path(directory)
             collect(FakeMB(True), FakeYT(), artists, tracks, [{'video_id': 'example'}],
@@ -70,5 +70,31 @@ class EvidenceTests(unittest.TestCase):
             self.assertEqual(yt.calls, [])
             self.assertEqual(result['youtube_general_used'], 0)
             self.assertEqual(result['youtube_search_used'], 0)
-            self.assertEqual(len(result['youtube_cache_hits']), 3)
+            self.assertEqual(len(result['youtube_cache_hits']), 1)
             self.assertTrue(result['complete'])
+
+    def test_durable_seed_resumes_without_any_cache_or_youtube(self):
+        artists = [{'name': str(i), 'musicbrainz_candidate_id': str(i)} for i in range(8)]
+        tracks = [{'candidate_id': str(i), 'title': 'Song' + str(i), 'pilot_artist': 'Artist'} for i in range(41)]
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / 'report.json'
+            first = collect(FakeMB(), FakeYT(), artists, tracks, [], output, provider='musicbrainz')
+            seed = {'requests': dict(list(first['requests'].items())[:-3])}
+            mb, yt = FakeMB(), FakeYT()
+            result = collect(mb, yt, artists, tracks, [], output, provider='musicbrainz', checkpoint=seed)
+            self.assertEqual(len(mb.calls), 3)
+            self.assertEqual(yt.calls, [])
+            self.assertTrue(result['complete'])
+            failed = collect(FakeMB(True), FakeYT(), artists, tracks, [], output, provider='musicbrainz', checkpoint=seed)
+            with self.assertRaises(ValueError):
+                require_complete(failed)
+            self.assertFalse(failed['human_approval'])
+
+    def test_youtube_only_never_calls_musicbrainz(self):
+        artists = [{'name': str(i), 'musicbrainz_candidate_id': str(i)} for i in range(8)]
+        tracks = [{'candidate_id': str(i), 'title': 'Song' + str(i), 'pilot_artist': 'Artist'} for i in range(41)]
+        mb, yt = FakeMB(True), FakeYT()
+        with tempfile.TemporaryDirectory() as directory:
+            collect(mb, yt, artists, tracks, [{'video_id': 'example'}], Path(directory)/'report.json', provider='youtube')
+        self.assertEqual(mb.calls, [])
+        self.assertEqual(yt.calls, ['videos'])

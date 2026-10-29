@@ -1,15 +1,26 @@
-# Evidence recovery status — October 29, 2026
+# Evidence recovery — revised implementation
 
-Run 40961296885 attempt 2 failed after a second MusicBrainz HTTP 503. It recovered from 25 to 38 of 41 recording searches using the successful-response cache. All eight artist relationships were returned. The raw artifact for attempt 2 is 12936289108. Remaining searches: Vastive — Under My Skin, Barking At Thunder, Cut. Collection failure is not a JSON validation or merge-check failure: PR #7 and its main merge passed Pilot checks.
+Run 40961296885 attempt 2 preserved eight artist relationship responses and 38 recording-search responses before HTTP 503. They are now persisted in pilot/evidence-checkpoint.json with exact path/parameter hashes and source-run attribution. The checkpoint retains recording IDs, credits, durations, ISRCs and disambiguation plus artist aliases/relationships; nonessential release listings were omitted. These are source responses, not approved identities.
 
-Attempt 2 used 1 general YouTube unit and 2 search requests, zero playlist writes, $0 paid services. Known cumulative usage across OAuth preflight plus evidence attempts 1 and 2: 3 general units, 4 searches. The metadata/search requests were unnecessarily repeated by the recovery implementation. No further retry has been queued.
+## Implemented
 
-## Fix
+- MusicBrainz-only (default), YouTube-only and both modes. MB-only never refreshes OAuth, requires no Google credentials and spends no YouTube quota.
+- Successful committed responses are reused by exact request identity before checking local cache. Only Under My Skin, Barking At Thunder and Cut need new recording searches. Changed request parameters invalidate reuse.
+- YouTube mode does one metadata batch, including Benda video oXhWSs0mRH4 from the committed candidate list. No searches. Same-day identical metadata requests can reuse cache.
+- Two-second MB pacing; at most three attempts per unresolved request. Jittered backoff; Retry-After over 30 seconds defers the provider instead of retrying early. An exhausted request stops that provider. No automatic rerun.
+- COLLECTION_PARTIAL versus COLLECTION_COMPLETE in report/Actions summary. Saving partial evidence completes collection without claiming acceptance. require_complete rejects partial evidence; collection never sets human approval. Unexpected errors and OAuth/authentication errors still fail execution.
+- Output includes exact failed lookup, pending recording keys, new logical lookup count and per-attempt YouTube spending. No code consumes this evidence as an approved manifest.
 
-Cache successful public YouTube metadata/search responses by UTC date, endpoint and full request parameters. Restore and save that cache alongside MusicBrainz cache. Same-day, same-query recovery reuses results without spending more quota. Changes in queried IDs or date invalidate the entry. The first run of this new code has no prior YouTube cache, so can still spend up to 1 general unit and 2 searches; later same-day recovery avoids repeating successes.
+## Bounded live validation after merge
 
-Add the exact failed lookup, pending recording IDs and a visible Actions job summary. Partial provider failure continues to exit unsuccessfully: never make an incomplete collection look complete or permit dependent playlist execution.
+Dispatch Pilot evidence collection on main, provider musicbrainz, remaining_general=0, remaining_search=0. Only three logical MB requests (up to nine HTTP attempts) and zero YouTube calls are permitted by the fixed checkpoint/pool. Owner environment approval is still required.
 
-Validation: 18 no-network tests pass, including a two-run regression proving zero YouTube requests on resumed identical queries after MusicBrainz failure. Workflow YAML/cache path structure checked. Live validation of this fix remains pending merge and an explicitly approved main run.
+Then, if needed, use provider youtube with current verified general headroom and remaining_search=0 for one exact metadata lookup batch. Do not repeat the prior eight owner playback checks. Benda's new link still needs owner confirmation unless subsequently provided.
 
-Owner playback for Benda remains unconfirmed in the evidence inspected here. Previous eight-video playback is retained. No approved manifest, playlist write, public publication or bulk ingestion is enabled by this fix.
+Known cumulative spending before validation: 3 general YouTube units, 4 search requests, zero playlist writes, $0 paid services. No new live run has been dispatched.
+
+## Validation and remaining boundaries
+
+21 no-network tests pass, including durable recovery without cache, provider isolation, long Retry-After deferral and partial evidence rejecting completeness. A replay using the real committed checkpoint makes exactly three fake MB requests and zero YouTube calls. Workflow YAML validated. Live provider recovery remains unproven.
+
+The resilience plan's separate private listening preview remains a delivery milestone, not an M1 acceptance shortcut. No approved-tracks.json, alternative-ID publisher, ranked playlist, public release or bulk ingestion is enabled here. Next work after collecting the final evidence is version/credit selection and the preview manifest review.

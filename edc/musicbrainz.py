@@ -8,6 +8,9 @@ import json
 import os
 import re
 import time
+import random
+from email.utils import parsedate_to_datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlencode, quote
 from urllib.request import Request, urlopen
@@ -52,7 +55,11 @@ class MusicBrainz:
             except HTTPError as exc:
                 if exc.code not in (429, 503) or retry == 2:
                     raise RuntimeError("MusicBrainz returned HTTP " + str(exc.code)) from None
-                delay = min(30, max(3 * 2 ** retry, self._retry_after(exc)))
+                requested = self._retry_after(exc)
+                if requested > 30:
+                    raise RuntimeError('MusicBrainz deferred by Retry-After; retry no earlier than '
+                                       + str(requested) + ' seconds from this response') from None
+                delay = max(3 * 2 ** retry + random.uniform(0, 1), requested)
                 time.sleep(delay)
                 self._last = time.monotonic()
             except (URLError, TimeoutError):
@@ -67,7 +74,11 @@ class MusicBrainz:
         try:
             return max(0, float(exc.headers.get("Retry-After", "0")))
         except (TypeError, ValueError, AttributeError):
-            return 0
+            try:
+                return max(0, (parsedate_to_datetime(exc.headers['Retry-After'])
+                               - datetime.now(timezone.utc)).total_seconds())
+            except (TypeError, ValueError, AttributeError, KeyError):
+                return 0
 
     def artist_candidates(self, name: str, limit: int = 5) -> list[dict]:
         # MusicBrainz Lucene exact name field. Candidate list is never an auto-match.
