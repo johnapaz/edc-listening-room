@@ -15,13 +15,14 @@
     },
     {
       "name": "I Hate Models",
-      "official_identity_source": "https://www.ihatemodelsmusic.com/",
-      "identity_status": "intended_performer_source_identified",
+      "official_identity_source": "https://www.exitfest.org/en/i-hate-models-techno-rebel-refusing-to-conform",
+      "identity_status": "source_verified",
       "musicbrainz_candidate_id": "f9a4de7f-d3c6-4de8-8892-7aca52610edd",
-      "musicbrainz_status": "candidate_pending_crosslink",
+      "musicbrainz_status": "crosschecked_legal_name_Guillaume_Labadie",
       "human_approved": false,
       "relationship_evidence_run": 40961296885,
-      "remaining_uncertainty": "Five label track titles/durations agree with MB; exact official-account/legal-name crosslink still pending."
+      "crosscheck_reason": "Organizer EXIT page identifies I Hate Models as Guillaume Labadie (as reported at handoff; exitfest.org is not reachable from the assistant session, so owner may spot-check the page). Saved MB response f9a4de7f-d3c6-4de8-8892-7aca52610edd carries Legal name alias 'Guillaume Labadie' and disambiguation 'techno producer'.",
+      "superseded_identity_source": "https://www.ihatemodelsmusic.com/ (dubious; no longer relied on)"
     },
     {
       "name": "A Little Sound",

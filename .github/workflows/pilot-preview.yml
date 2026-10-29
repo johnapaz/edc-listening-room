@@ -1,0 +1,47 @@
+name: Private listening preview (manual authorization only)
+on:
+  workflow_dispatch:
+    inputs:
+      confirmed_remaining_general:
+        description: "Verified daily remaining YouTube general quota (Cloud Console)"
+        required: true
+      confirm_private_preview:
+        description: "Type YES to publish ONLY the private unranked preview"
+        required: true
+        default: "NO"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: youtube-pilot-private
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main' && inputs.confirm_private_preview == 'YES'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: youtube-pilot
+    env:
+      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+      EDC_ENABLE_WRITES: "1"
+      EDC_PILOT_APPROVED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate approved preview manifest (no network)
+        env:
+          REMAINING: ${{ inputs.confirmed_remaining_general }}
+        run: |
+          test -f pilot/preview-approved.json || { echo "No approved preview manifest; refusing to write"; exit 1; }
+          python -m edc.cli pilot-playlist --preview --manifest pilot/preview-approved.json
+          python -c 'import os; n=int(os.environ["REMAINING"]); assert 0 < n <= 10000, "Invalid quota input"'
+      - name: Create or resume separate private preview playlist with read-back
+        env:
+          REMAINING: ${{ inputs.confirmed_remaining_general }}
+        run: python -m edc.cli pilot-playlist --preview --manifest pilot/preview-approved.json --apply --remaining-general "$REMAINING"

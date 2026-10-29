@@ -75,5 +75,39 @@ class YouTubeTests(unittest.TestCase):
                 c.publish_private_pilot([track(1)])
             self.assertEqual(c.remote, ["Z" * 11])
 
+def preview_track(i, **kw):
+    row = track(i)
+    row.pop("recording_id")
+    row.update({"source_ref": {"namespace": "youtube-video", "id": row["video_id"]},
+                "source_verified": True, "version_note": "official video edit"})
+    row.update(kw)
+    return row
+
+class PreviewContractTests(unittest.TestCase):
+    def test_preview_accepts_source_ref_without_mbid_but_m1_does_not(self):
+        validated_manifest([preview_track(1)], preview=True)
+        with self.assertRaises(ValueError):
+            validated_manifest([preview_track(1)])
+
+    def test_preview_rejects_fake_ids_rank_and_missing_gates(self):
+        for bad in (preview_track(1, recording_id="N L Z"), preview_track(1, rank=1),
+                    preview_track(1, source_verified=False), preview_track(1, version_note=""),
+                    preview_track(1, human_verified=False),
+                    preview_track(1, source_ref={"namespace": "youtube-video", "id": "B" * 11})):
+            with self.assertRaises(ValueError):
+                validated_manifest([bad], preview=True)
+
+    def test_preview_uses_separate_private_playlist(self):
+        import unittest.mock
+        with unittest.mock.patch.dict("os.environ", {
+            "EDC_ENABLE_WRITES": "1", "EDC_PILOT_APPROVED": "1"
+        }):
+            c = FakeYouTube()
+            c.my_pilot_playlists = lambda marker="": (
+                self.assertEqual(marker, "edc-listening-room:preview-v1") or [])
+            result = c.publish_private_pilot([preview_track(1), preview_track(2)], preview=True)
+            self.assertTrue(result["readback_verified"])
+            self.assertEqual(result["visibility"], "private")
+
 if __name__ == "__main__":
     unittest.main()

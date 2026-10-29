@@ -30,6 +30,8 @@ def main() -> None:
     match.add_argument("--remaining-search", type=int, default=0, help="Confirmed remaining daily search calls")
     publish = commands.add_parser("pilot-playlist", help="Dry-run or create/read-back private YouTube pilot")
     publish.add_argument("--manifest", required=True, help="JSON list of reviewed video IDs")
+    publish.add_argument("--preview", action="store_true",
+                         help="Unranked private preview manifest using explicit source_ref IDs")
     publish.add_argument("--apply", action="store_true", help="Allow authenticated API writes with env gates")
     publish.add_argument("--remaining-general", type=int, default=0,
                          help="Confirmed remaining general daily quota from Google Cloud Console")
@@ -73,7 +75,7 @@ def main() -> None:
         print("Review candidates saved to", out, "YouTube searches:", yt.quota.used_search)
     elif args.command == "pilot-playlist":
         rows = json.loads(Path(args.manifest).read_text(encoding="utf-8"))
-        rows = validated_manifest(rows)
+        rows = validated_manifest(rows, preview=args.preview)
         if not args.apply:
             print("DRY RUN: validated", len(rows), "reviewed video IDs.")
             print("Estimated general quota:", 50 + 50 * len(rows) + 20, "units max")
@@ -87,7 +89,7 @@ def main() -> None:
         budget = Budget(remaining_general=args.remaining_general)
         budget.preflight_pilot(len(rows), will_create=True)
         client = YouTube(access_token_from_secrets(), budget)
-        result = client.publish_private_pilot(rows)
+        result = client.publish_private_pilot(rows, preview=args.preview)
         print(json.dumps(result, indent=2))
 
 
