@@ -40,8 +40,8 @@ def main() -> None:
     disc.add_argument("--remaining-general", type=int, default=0,
                       help="Confirmed remaining daily quota from Google Cloud Console (never overstate)")
     disc.add_argument("--per-act", type=int, default=3, help="Songs per act (rounds); later passes raise it")
-    disc.add_argument("--search-share", type=float, default=0.6,
-                      help="Share of today's units for searches while unsearched acts remain")
+    disc.add_argument("--remaining-searches", type=int, default=0,
+                      help="Confirmed remaining 'Search Queries per day' from Google Cloud Console")
     args = parser.parse_args()
 
     if args.command == "rank":
@@ -114,22 +114,24 @@ def run_discovery(args) -> None:
     print("Acts:", len(acts), "| still to search:", len(unsearched),
           "| playable now:", len(desired), "| review queue:", len(queue))
     if not args.apply:
-        print("DRY RUN: no API requests. Next run would search up to",
-              len(unsearched), "acts at", d.SEARCH_COST + d.VIDEOS_LIST_COST, "units each.")
+        print("DRY RUN: no API requests. Next run would search up to", len(unsearched),
+              "acts (one search plus", d.VIDEOS_LIST_COST, "general unit each).")
         return
     if not 0 < args.remaining_general <= 10000:
         raise SystemExit("Declare today's remaining quota from Google Cloud Console (1-10000)")
+    if not 0 <= args.remaining_searches <= 100:
+        raise SystemExit("Declare today's remaining search queries from Google Cloud Console (0-100)")
     if os.getenv("EDC_ENABLE_WRITES") != "1" or os.getenv("EDC_PILOT_APPROVED") != "1":
         raise SystemExit("Write gate is closed")
     units = args.remaining_general - d.RESERVE
     if units <= 0:
         raise SystemExit("Not enough quota today")
-    budget = Budget(remaining_general=args.remaining_general, remaining_search=1000,
-                    maximum_general_per_run=args.remaining_general, search_general_units=d.SEARCH_COST)
+    budget = Budget(remaining_general=args.remaining_general, remaining_search=args.remaining_searches,
+                    maximum_general_per_run=args.remaining_general)
     yt = YouTube(access_token_from_secrets(), budget)
-    search_units = int(units * args.search_share) if unsearched else 0
     try:
-        d.match_acts(yt, acts, state, per_act=args.per_act, unit_budget=search_units)
+        d.match_acts(yt, acts, state, per_act=args.per_act, max_searches=args.remaining_searches,
+                     unit_budget=units)
     finally:
         d.MATCHES_FILE.write_text(json.dumps(state, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     desired = d.publish_list(acts, state, decisions, per_act=args.per_act)

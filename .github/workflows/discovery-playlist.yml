@@ -9,10 +9,10 @@ on:
         description: "Type YES to search and update ONLY the private all-artist playlist"
         required: true
         default: "NO"
-      search_share:
-        description: "Share of today's units for artist searches while any remain"
-        required: false
-        default: "0.6"
+      confirmed_remaining_searches:
+        description: "Today's remaining 'Search Queries per day' from Cloud Console (0-100; never overstate)"
+        required: true
+        default: "0"
 
 permissions:
   contents: write   # only to save matching state to the discovery/state branch
@@ -56,8 +56,8 @@ jobs:
       - name: Search unsearched acts, then add songs breadth-first with read-back
         env:
           REMAINING: ${{ inputs.confirmed_remaining_general }}
-          SHARE: ${{ inputs.search_share }}
-        run: python -m edc.cli discovery --apply --remaining-general "$REMAINING" --search-share "$SHARE"
+          SEARCHES: ${{ inputs.confirmed_remaining_searches }}
+        run: python -m edc.cli discovery --apply --remaining-general "$REMAINING" --remaining-searches "$SEARCHES"
       - name: Save matching state (runs even if publishing failed)
         if: always()
         run: |

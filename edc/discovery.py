@@ -2,8 +2,9 @@
 
 Inputs are committed files: the lineup reference, the captured song candidates
 (data/edco-2026/discovery-candidates.json), the approved preview videos and an
-optional owner decisions file. Matching spends one search per act (100 units)
-plus one videos.list (1 unit) and matches that act's songs locally. Publishing
+optional owner decisions file. Matching spends one search per act (this project
+has a separate limit of 100 searches/day) plus one videos.list (1 general unit)
+and matches that act's songs locally. Publishing
 adds round 1 (one song per act) for every act before round 2, and so on.
 
 Owner review never blocks anything: confident matches are added, uncertain ones
@@ -26,7 +27,6 @@ DECISIONS_FILE = DATA / "match-decisions.json"
 
 MARKER = "edc-listening-room:discovery-v1"
 TITLE = "EDC Orlando 2026 — All artists (private, unranked, unofficial)"
-SEARCH_COST = 100
 VIDEOS_LIST_COST = 1
 WRITE_COST = 50
 RESERVE = 100           # left unspent for listing/read-back reads
@@ -207,28 +207,31 @@ def load_decisions(path: Path = DECISIONS_FILE) -> dict[str, str]:
     return decisions
 
 
-def match_acts(yt, acts: list[Act], state: dict, *, per_act: int, unit_budget: int) -> dict:
-    """Search acts not yet searched, in lineup order, while the unit budget allows."""
-    spent = 0
+def match_acts(yt, acts: list[Act], state: dict, *, per_act: int, max_searches: int, unit_budget: int) -> dict:
+    """Search acts not yet searched, in lineup order, within today's search count and units."""
+    searches = spent = 0
     for act in acts:
         if act.act_id in state["searched_acts"]:
             continue
         pending = [s for s in act.songs[:per_act] if s.known_video_id is None]
         if not pending:
             continue
-        if spent + SEARCH_COST + VIDEOS_LIST_COST > unit_budget:
+        if searches >= max_searches or spent + VIDEOS_LIST_COST > unit_budget:
             break
         found = yt.request("search", {"part": "snippet", "q": act.name, "type": "video", "maxResults": 50})
         ids = [i["id"]["videoId"] for i in found.get("items", []) if i.get("id", {}).get("videoId")]
-        videos = yt.request("videos", {"part": "snippet,contentDetails", "id": ",".join(ids)}).get("items", []) \
-            if ids else []
-        spent += SEARCH_COST + VIDEOS_LIST_COST
+        videos = []
+        if ids:
+            videos = yt.request("videos", {"part": "snippet,contentDetails", "id": ",".join(ids)}).get("items", [])
+            spent += VIDEOS_LIST_COST
+        searches += 1
         # Match every captured song now so deeper rounds need no further search.
         for song in act.songs:
             if song.known_video_id is None:
                 state["matches"][song.key + "@" + act.act_id] = classify(song, act.name, videos)
         state["searched_acts"].append(act.act_id)
     state["units_spent_last_run"] = spent
+    state["searches_last_run"] = searches
     return state
 
 

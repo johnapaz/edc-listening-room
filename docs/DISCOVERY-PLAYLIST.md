@@ -29,7 +29,7 @@ M1 is **not** passed by this. Public release stays gated.
 
 ## Matching and the review queue
 
-One YouTube search per act (100 units) plus one `videos.list` (1 unit); that act's captured songs are matched locally, so deeper rounds need no new search. Uploads over 12 minutes are ignored as sets.
+One YouTube search per act plus one `videos.list` (1 general unit). Cloud Console shows this project's searches under a **separate limit of 100 Search Queries per day**, not the 10,000-unit pool; that act's captured songs are matched locally, so deeper rounds need no new search. Uploads over 12 minutes are ignored as sets.
 
 | Status | Meaning | Default |
 |---|---|---|
@@ -42,10 +42,11 @@ One YouTube search per act (100 units) plus one `videos.list` (1 unit); that act
 
 ## Daily run
 
-[All-artist discovery playlist](../.github/workflows/discovery-playlist.yml) on `main`, environment-approved, once per quota day: today's remaining quota (never overstate) and `YES`. While unsearched acts remain, about 60% of the day goes to searches and the rest to adding songs; afterwards everything goes to adding. Matching state is committed to `discovery/state` even if publishing fails. Reruns resume safely.
+[All-artist discovery playlist](../.github/workflows/discovery-playlist.yml) on `main`, environment-approved, once per quota day. Enter both numbers from Cloud Console (APIs & Services → YouTube Data API v3 → Quotas & System Limits), never overstated: remaining **Queries per day** (limit 10,000) and remaining **Search Queries per day** (limit 100). Searches use the search count; adding songs uses 50 general units each. Matching state is committed to `discovery/state` even if publishing fails. Reruns resume safely.
 
-Projected: ~105 searches (~10,600 units) and ~318 songs at 3 per act (~15,900 units), about three quota days.
+Projected: ~105 searches (two days of the 100/day search limit) and ~318 songs at 3 per act (~15,900 general units, about two days at ~190 inserts/day).
 
 ## Run log
 - 2026-10-30 [41075654729](https://github.com/johnapaz/edc-listening-room/actions/runs/41075654729): stopped in the offline test step (write gates leaked into tests); no API use. Fixed in #20.
-- 2026-10-30 [41076203061](https://github.com/johnapaz/edc-listening-room/actions/runs/41076203061): about 52 act searches ran (~5,300 units), the private playlist was created, then the first insert got HTTP 409 and the run stopped. The save step's `git add` included a not-yet-existing decisions file, so **the search results were not saved** and must be repeated. Fixed: 409 is retried like 404, and only existing state files are staged (verified against a scratch remote, both first-run and update cases).
+- 2026-10-30 [41076203061](https://github.com/johnapaz/edc-listening-room/actions/runs/41076203061): 52 act searches ran (52 of the day's 100 Search Queries; the general pool showed only 1,022 units used for the whole day), the private playlist was created, then the first insert got HTTP 409 and the run stopped. The save step's `git add` included a not-yet-existing decisions file, so **the search results were not saved** and must be repeated. Fixed: 409 is retried like 404, and only existing state files are staged (verified against a scratch remote, both first-run and update cases).
+- 2026-10-30: the owner's Cloud Console reading showed searches are a separate 100/day limit. The workflow now takes the remaining search count as its own input instead of charging 100 general units per search.

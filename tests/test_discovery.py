@@ -97,8 +97,8 @@ class PublishListTests(unittest.TestCase):
 
 class FakeYT(YouTube):
     def __init__(self, units=10000, results=None):
-        super().__init__("token", Budget(remaining_general=units, remaining_search=1000,
-                                         maximum_general_per_run=units, search_general_units=100))
+        super().__init__("token", Budget(remaining_general=units, remaining_search=100,
+                                         maximum_general_per_run=units))
         self.results = results or {}
         self.playlist = None
         self.items = []
@@ -139,15 +139,19 @@ class MatchAndSyncTests(unittest.TestCase):
         acts = acts_fixture()
         yt = FakeYT(results={"Alpha": [video("VA00000001A", "One", "Alpha - Topic", 200)]})
         state = {"searched_acts": [], "matches": {}}
-        d.match_acts(yt, acts, state, per_act=3, unit_budget=100)  # less than one search+videos.list
+        d.match_acts(yt, acts, state, per_act=3, max_searches=0, unit_budget=1000)  # no searches left today
         self.assertEqual((state["searched_acts"], yt.calls), ([], []))
-        d.match_acts(yt, acts, state, per_act=3, unit_budget=202)
-        # Beta's first song is known; its second still needs a search, so both acts are searched.
-        self.assertEqual(state["searched_acts"], ["artist:a", "artist:b"])
+        d.match_acts(yt, acts, state, per_act=3, max_searches=1, unit_budget=1000)
+        self.assertEqual(state["searched_acts"], ["artist:a"])
         self.assertEqual(state["matches"]["spotify:a1@artist:a"]["status"], "matched")
-        self.assertEqual(state["units_spent_last_run"], 202)
-        d.match_acts(yt, acts, state, per_act=3, unit_budget=1000)
-        self.assertEqual(state["units_spent_last_run"], 0)
+        d.match_acts(yt, acts, state, per_act=3, max_searches=5, unit_budget=1000)
+        # Beta's first song is known; its second still needs a search.
+        self.assertEqual(state["searched_acts"], ["artist:a", "artist:b"])
+        # Beta's search found nothing, so no videos.list call was spent.
+        self.assertEqual((state["searches_last_run"], state["units_spent_last_run"]), (1, 0))
+        self.assertEqual((yt.quota.used_search, yt.quota.used_general), (2, 1))
+        d.match_acts(yt, acts, state, per_act=3, max_searches=5, unit_budget=1000)
+        self.assertEqual(state["searches_last_run"], 0)
 
     def test_sync_adds_within_budget_resumes_and_removes_rejected(self):
         desired = [{"video_id": v} for v in ("V1", "V2", "V3")]
