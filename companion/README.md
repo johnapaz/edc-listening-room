@@ -24,7 +24,7 @@ Open `http://localhost:8000/companion/`. Opening `index.html` directly via `file
 
 ## Review/acceptance checklist
 
-- [ ] Open via a local HTTP server at mobile viewport; Friday/Saturday/Sunday show 36 reference rows each, All shows 108 before filtering.
+- [ ] Open via a local HTTP server at mobile viewport; Friday/Saturday/Sunday show 36 lineup entries each, All shows 108 before filtering.
 - [ ] Search names with accents, B2B billings, and captured song titles; no HTML injection, no misleading matching status.
 - [ ] Save/unsave picks, filter My picks, reload, verify persistence; verify storage-disabled fallback.
 - [ ] Verify TBA fields and lineup conflict flags; never imply an official ordered timetable.
