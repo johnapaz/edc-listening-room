@@ -159,8 +159,16 @@ class RecoveryTests(unittest.TestCase):
         yt.request = throttled
         d.match_acts(yt, acts_fixture()[:1], state, per_act=3, max_searches=3, unit_budget=100)
         self.assertEqual(yt.quota.used_search, 3)
-        self.assertEqual(yt.sleeps, [15, 30])
+        self.assertEqual(yt.sleeps, [60, 120])
         self.assertEqual(state['searched_acts'], ['artist:a'])
+
+    def test_search_pacing_between_successful_acts(self):
+        yt = FakeYT(results={'Alpha': [video('V1', 'One', 'Alpha - Topic', 200)]})
+        state = {'searched_acts': [], 'matches': {}}
+        d.match_acts(yt, acts_fixture(), state, per_act=3, max_searches=2, unit_budget=100)
+        self.assertEqual(yt.quota.used_search, 2)
+        self.assertEqual(yt.sleeps, [10])
+        self.assertEqual(state['searched_acts'], ['artist:a', 'artist:b'])
 
     def test_known_transient_search_cannot_retry_past_declared_search_count(self):
         yt = FakeYT()
