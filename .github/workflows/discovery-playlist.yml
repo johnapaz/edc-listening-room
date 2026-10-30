@@ -1,0 +1,75 @@
+name: All-artist discovery playlist (private, daily)
+on:
+  workflow_dispatch:
+    inputs:
+      confirmed_remaining_general:
+        description: "Today's remaining YouTube quota from Cloud Console (never overstate)"
+        required: true
+      confirm_private_discovery:
+        description: "Type YES to search and update ONLY the private all-artist playlist"
+        required: true
+        default: "NO"
+      search_share:
+        description: "Share of today's units for artist searches while any remain"
+        required: false
+        default: "0.6"
+
+permissions:
+  contents: write   # only to save matching state to the discovery/state branch
+
+concurrency:
+  group: youtube-pilot-private
+  cancel-in-progress: false
+
+jobs:
+  discovery:
+    if: github.ref == 'refs/heads/main' && inputs.confirm_private_discovery == 'YES'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: youtube-pilot
+    env:
+      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+      EDC_ENABLE_WRITES: "1"
+      EDC_PILOT_APPROVED: "1"
+      STATE_BRANCH: discovery/state
+      STATE_FILES: data/edco-2026/youtube-matches.json data/edco-2026/match-decisions.json data/edco-2026/review-queue.json
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Restore matching state and owner decisions (no network to YouTube)
+        run: |
+          if git fetch origin "$STATE_BRANCH"; then
+            for f in $STATE_FILES; do
+              git show "origin/$STATE_BRANCH:$f" > "$f" 2>/dev/null || rm -f "$f"
+            done
+          fi
+          python -m unittest discover -s tests
+          python -m edc.cli discovery
+      - name: Search unsearched acts, then add songs breadth-first with read-back
+        env:
+          REMAINING: ${{ inputs.confirmed_remaining_general }}
+          SHARE: ${{ inputs.search_share }}
+        run: python -m edc.cli discovery --apply --remaining-general "$REMAINING" --search-share "$SHARE"
+      - name: Save matching state (runs even if publishing failed)
+        if: always()
+        run: |
+          mkdir -p /tmp/state
+          for f in $STATE_FILES; do [ -f "$f" ] && cp "$f" /tmp/state/; done
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git rev-parse --verify -q "origin/$STATE_BRANCH" >/dev/null; then
+            git checkout -f -B "$STATE_BRANCH" "origin/$STATE_BRANCH"
+          else
+            git checkout -f -B "$STATE_BRANCH"
+          fi
+          for f in $STATE_FILES; do [ -f "/tmp/state/$(basename "$f")" ] && cp "/tmp/state/$(basename "$f")" "$f"; done
+          git add -f $STATE_FILES 2>/dev/null || true
+          if git diff --cached --quiet; then echo "No state change"; exit 0; fi
+          git commit -m "Discovery state from run ${{ github.run_id }}"
+          git push origin "$STATE_BRANCH"
