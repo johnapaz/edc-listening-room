@@ -13,6 +13,15 @@ from .youtube import YouTube, access_token_from_secrets, validated_manifest
 from .matching import search_suggestions
 
 
+def quota_count(text: str) -> int:
+    """Whole number as typed from Cloud Console, which shows thousands separators ("8,978")."""
+    cleaned = text.strip().replace(",", "").replace(" ", "")
+    try:
+        return int(cleaned)
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"not a whole number: {text!r}") from None
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(prog="python -m edc.cli")
     commands = parser.add_subparsers(dest="command", required=True)
@@ -27,20 +36,20 @@ def main() -> None:
     match.add_argument("--input", required=True)
     match.add_argument("--output", default=".state/youtube-suggestions.json")
     match.add_argument("--execute", action="store_true", help="Read-only YouTube searches")
-    match.add_argument("--remaining-search", type=int, default=0, help="Confirmed remaining daily search calls")
+    match.add_argument("--remaining-search", type=quota_count, default=0, help="Confirmed remaining daily search calls")
     publish = commands.add_parser("pilot-playlist", help="Dry-run or create/read-back private YouTube pilot")
     publish.add_argument("--manifest", required=True, help="JSON list of reviewed video IDs")
     publish.add_argument("--preview", action="store_true",
                          help="Unranked private preview manifest using explicit source_ref IDs")
     publish.add_argument("--apply", action="store_true", help="Allow authenticated API writes with env gates")
-    publish.add_argument("--remaining-general", type=int, default=0,
+    publish.add_argument("--remaining-general", type=quota_count, default=0,
                          help="Confirmed remaining general daily quota from Google Cloud Console")
     disc = commands.add_parser("discovery", help="Private all-artist playlist: match, then publish breadth-first")
     disc.add_argument("--apply", action="store_true", help="Allow YouTube searches and private playlist writes")
-    disc.add_argument("--remaining-general", type=int, default=0,
+    disc.add_argument("--remaining-general", type=quota_count, default=0,
                       help="Confirmed remaining daily quota from Google Cloud Console (never overstate)")
     disc.add_argument("--per-act", type=int, default=3, help="Songs per act (rounds); later passes raise it")
-    disc.add_argument("--remaining-searches", type=int, default=0,
+    disc.add_argument("--remaining-searches", type=quota_count, default=0,
                       help="Confirmed remaining 'Search Queries per day' from Google Cloud Console")
     args = parser.parse_args()
 

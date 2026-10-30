@@ -1,6 +1,8 @@
+import argparse
 import unittest
 
 from edc import discovery as d
+from edc.cli import quota_count
 from edc.quota import Budget
 from edc.youtube import YouTube
 
@@ -195,3 +197,15 @@ class RealDataTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class QuotaInputTests(unittest.TestCase):
+    def test_accepts_console_thousands_separators(self):
+        self.assertEqual(quota_count("8,978"), 8978)
+        self.assertEqual(quota_count(" 10,000 "), 10000)
+        self.assertEqual(quota_count("48"), 48)
+
+    def test_rejects_non_numbers(self):
+        for bad in ("", "abc", "8.978", "-"):
+            with self.assertRaises(argparse.ArgumentTypeError):
+                quota_count(bad)
