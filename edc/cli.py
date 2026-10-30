@@ -35,6 +35,13 @@ def main() -> None:
     publish.add_argument("--apply", action="store_true", help="Allow authenticated API writes with env gates")
     publish.add_argument("--remaining-general", type=int, default=0,
                          help="Confirmed remaining general daily quota from Google Cloud Console")
+    disc = commands.add_parser("discovery", help="Private all-artist playlist: match, then publish breadth-first")
+    disc.add_argument("--apply", action="store_true", help="Allow YouTube searches and private playlist writes")
+    disc.add_argument("--remaining-general", type=int, default=0,
+                      help="Confirmed remaining daily quota from Google Cloud Console (never overstate)")
+    disc.add_argument("--per-act", type=int, default=3, help="Songs per act (rounds); later passes raise it")
+    disc.add_argument("--search-share", type=float, default=0.6,
+                      help="Share of today's units for searches while unsearched acts remain")
     args = parser.parse_args()
 
     if args.command == "rank":
@@ -73,6 +80,8 @@ def main() -> None:
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(json.dumps(matches, indent=2, ensure_ascii=False), encoding="utf-8")
         print("Review candidates saved to", out, "YouTube searches:", yt.quota.used_search)
+    elif args.command == "discovery":
+        run_discovery(args)
     elif args.command == "pilot-playlist":
         rows = json.loads(Path(args.manifest).read_text(encoding="utf-8"))
         rows = validated_manifest(rows, preview=args.preview)
@@ -91,6 +100,50 @@ def main() -> None:
         client = YouTube(access_token_from_secrets(), budget)
         result = client.publish_private_pilot(rows, preview=args.preview)
         print(json.dumps(result, indent=2))
+
+
+def run_discovery(args) -> None:
+    from . import discovery as d
+    acts = d.build_acts()
+    state = d.load_matches()
+    decisions = d.load_decisions()
+    unsearched = [a for a in acts if a.act_id not in state["searched_acts"]
+                  and any(s.known_video_id is None for s in a.songs[:args.per_act])]
+    desired = d.publish_list(acts, state, decisions, per_act=args.per_act)
+    queue = d.review_queue(state, decisions)
+    print("Acts:", len(acts), "| still to search:", len(unsearched),
+          "| playable now:", len(desired), "| review queue:", len(queue))
+    if not args.apply:
+        print("DRY RUN: no API requests. Next run would search up to",
+              len(unsearched), "acts at", d.SEARCH_COST + d.VIDEOS_LIST_COST, "units each.")
+        return
+    if not 0 < args.remaining_general <= 10000:
+        raise SystemExit("Declare today's remaining quota from Google Cloud Console (1-10000)")
+    if os.getenv("EDC_ENABLE_WRITES") != "1" or os.getenv("EDC_PILOT_APPROVED") != "1":
+        raise SystemExit("Write gate is closed")
+    units = args.remaining_general - d.RESERVE
+    if units <= 0:
+        raise SystemExit("Not enough quota today")
+    budget = Budget(remaining_general=args.remaining_general, remaining_search=1000,
+                    maximum_general_per_run=args.remaining_general, search_general_units=d.SEARCH_COST)
+    yt = YouTube(access_token_from_secrets(), budget)
+    search_units = int(units * args.search_share) if unsearched else 0
+    try:
+        d.match_acts(yt, acts, state, per_act=args.per_act, unit_budget=search_units)
+    finally:
+        d.MATCHES_FILE.write_text(json.dumps(state, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    desired = d.publish_list(acts, state, decisions, per_act=args.per_act)
+    queue = d.review_queue(state, decisions)
+    (d.DATA / "review-queue.json").write_text(json.dumps(queue, indent=1, ensure_ascii=False) + "\n",
+                                              encoding="utf-8")
+    result = d.sync_playlist(yt, desired, unit_budget=units - state["units_spent_last_run"])
+    result.update(acts_searched_this_run=len(unsearched) - len(
+        [a for a in acts if a.act_id not in state["searched_acts"]
+         and any(s.known_video_id is None for s in a.songs[:args.per_act])]),
+        review_queue=len(queue), quota_used_general=budget.used_general, searches=budget.used_search)
+    print(json.dumps(result, indent=2))
+    if not result.get("readback_verified", True):
+        raise SystemExit("Playlist read-back mismatch. Do not publish; reconcile manually.")
 
 
 if __name__ == "__main__":

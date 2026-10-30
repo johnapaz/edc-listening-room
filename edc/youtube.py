@@ -107,7 +107,7 @@ class YouTube:
 
     def request(self, endpoint: str, params: dict[str, Any], *, method: str = "GET",
                 body: dict | None = None) -> dict:
-        operation = endpoint + (".insert" if method == "POST" else ".list")
+        operation = endpoint + {"POST": ".insert", "DELETE": ".delete"}.get(method, ".list")
         self.quota.spend(operation)
         url = YT_API + "/" + endpoint + "?" + urlencode(params)
         headers = {"Authorization": "Bearer " + self.token, "Accept": "application/json"}
@@ -117,7 +117,8 @@ class YouTube:
             data = json.dumps(body).encode()
         try:
             with urlopen(Request(url, data=data, headers=headers, method=method), timeout=25) as response:
-                return json.load(response)
+                raw = response.read()
+                return json.loads(raw) if raw else {}
         except HTTPError as e:
             # Do not log response bodies: server data may contain sensitive information.
             raise YouTubeHTTPError("YouTube API request failed (HTTP " + str(e.code) +
@@ -138,14 +139,7 @@ class YouTube:
         return call()
 
     def stable_playlist_items(self, playlist_id: str) -> list[str]:
-        previous = self.retry_not_found(lambda: self.playlist_items(playlist_id))
-        for _ in range(STABLE_LISTING_ATTEMPTS):
-            self.sleep(STABLE_LISTING_GAP)
-            current = self.retry_not_found(lambda: self.playlist_items(playlist_id))
-            if current == previous:
-                return current
-            previous = current
-        raise RuntimeError("Playlist listing did not settle; no writes made. Retry later.")
+        return [video for _, video in self.stable_playlist_entries(playlist_id)]
 
     def my_pilot_playlists(self, marker: str = MARKER) -> list[dict]:
         marker_matches: list[dict] = []
@@ -162,20 +156,46 @@ class YouTube:
                 return marker_matches
         raise RuntimeError("Playlist search exceeded 20 pages; manual reconciliation required")
 
-    def playlist_items(self, playlist_id: str) -> list[str]:
-        items: list[str] = []
+    def playlist_entries(self, playlist_id: str) -> list[tuple[str, str]]:
+        """(playlist item id, video id) pairs in playlist order."""
+        entries: list[tuple[str, str]] = []
         token = None
-        for _ in range(10):
+        for _ in range(100):
             args = {"part": "snippet", "playlistId": playlist_id, "maxResults": 50}
             if token:
                 args["pageToken"] = token
             data = self.request("playlistItems", args)
             ordered = sorted(data.get("items", []), key=lambda r: r["snippet"]["position"])
-            items.extend(x["snippet"]["resourceId"]["videoId"] for x in ordered)
+            entries.extend((x.get("id", ""), x["snippet"]["resourceId"]["videoId"]) for x in ordered)
             token = data.get("nextPageToken")
             if not token:
-                return items
-        raise RuntimeError("Pilot playlist has too many items; manual reconciliation required")
+                return entries
+        raise RuntimeError("Playlist has too many items; manual reconciliation required")
+
+    def playlist_items(self, playlist_id: str) -> list[str]:
+        return [video for _, video in self.playlist_entries(playlist_id)]
+
+    def stable_playlist_entries(self, playlist_id: str) -> list[tuple[str, str]]:
+        previous = self.retry_not_found(lambda: self.playlist_entries(playlist_id))
+        for _ in range(STABLE_LISTING_ATTEMPTS):
+            self.sleep(STABLE_LISTING_GAP)
+            current = self.retry_not_found(lambda: self.playlist_entries(playlist_id))
+            if current == previous:
+                return current
+            previous = current
+        raise RuntimeError("Playlist listing did not settle; no writes made. Retry later.")
+
+    def settled_readback(self, playlist_id: str, expected: list[str]) -> list[str]:
+        readback = self.retry_not_found(lambda: self.playlist_items(playlist_id))
+        for delay in READBACK_DELAYS:
+            if readback == expected:
+                break
+            print("Read-back not yet complete:", describe_mismatch(expected, readback))
+            self.sleep(delay)
+            readback = self.retry_not_found(lambda: self.playlist_items(playlist_id))
+        if readback != expected:
+            print(describe_mismatch(expected, readback))
+        return readback
 
     def publish_private_pilot(self, manifest: list[dict], *, preview: bool = False) -> dict:
         records = validated_manifest(manifest, preview=preview)

@@ -1,0 +1,3702 @@
+{
+ "snapshot_date": "2026-10-30",
+ "kind": "source_candidates_not_publish_manifest",
+ "source": "docs/NOTION-DISCOVERY-HANDOFF-2026-10-30.md (PR #18, Codex Notion pass)",
+ "note": "Source candidates, not approvals or a publish manifest. Upsert by spotify_track_id.",
+ "rows": [
+  {
+   "spotify_track_id": "00kTtwFuoRVfFiH8wJabBu",
+   "title": "Heavy",
+   "spotify_artist_credit": "Armin van Buuren, JOA",
+   "duration_ms": 171093,
+   "lineup_artist_ids": [
+    "artist:joa"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/3rOSOkPQ5PHYOiR7mvLTMA",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8182a7efc5ee622933b8",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "00l2iaa4KrvffmlUerphhs",
+   "title": "Toll Road",
+   "spotify_artist_credit": "Know Good, Nicola",
+   "duration_ms": 180000,
+   "lineup_artist_ids": [
+    "artist:know-good"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4iogDJBJ2BO2jl8OkPrfpx",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81d5a6c9cbd2945a39e6",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "014B9aKiAvY8vwRCJc4uz1",
+   "title": "Like That",
+   "spotify_artist_credit": "Gabss, Losing Stereo",
+   "duration_ms": 324977,
+   "lineup_artist_ids": [
+    "artist:gabss"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7KMvse80vFnyE3fsoGWjaq",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81e58aaee879b5747db7",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "05XtssRLI22p8wLFIr7Vrl",
+   "title": "Heroes (we could be)",
+   "spotify_artist_credit": "Alesso, Tove Lo",
+   "duration_ms": 210013,
+   "lineup_artist_ids": [
+    "artist:alesso"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4AVFqumd2ogHFlRbKIjp1t",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81919830d72d1b3d72e9",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "06DkHLbgIlfPGxe6YDS3Ph",
+   "title": "High Class",
+   "spotify_artist_credit": "ChaseWest",
+   "duration_ms": 212558,
+   "lineup_artist_ids": [
+    "artist:chasewest"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4770WxUOyJMOJ1CHiZi2d6",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81538809ed205690498e",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "06PtUjF9NsdCYLaYag104S",
+   "title": "My Place",
+   "spotify_artist_credit": "Josh Baker, Poppy Baskcomb",
+   "duration_ms": 159615,
+   "lineup_artist_ids": [
+    "artist:josh-baker"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4zf8Awb8y1X9qwL4oiVRd6",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81699d33c77d53dafc80",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "07dAUa9SSFAVAD440AWm5y",
+   "title": "Back n Forth",
+   "spotify_artist_credit": "Öwnboss, ESSE",
+   "duration_ms": 172153,
+   "lineup_artist_ids": [
+    "artist:esse"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4PFWrk1gURzx5KuGSSLO19",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81a3a7f3ffaf85bbe392",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "08aUQAEtGYYOqcghUEuptT",
+   "title": "BEATBOX ROCKER",
+   "spotify_artist_credit": "ChaseWest, Dan Molinari",
+   "duration_ms": 216000,
+   "lineup_artist_ids": [
+    "artist:chasewest"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4770WxUOyJMOJ1CHiZi2d6",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8122b5eafeadbb18fe39",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 1
+  },
+  {
+   "spotify_track_id": "0aDKvLIttZfWCA0zFjVn92",
+   "title": "A Place You Wanna Go (Good Life)",
+   "spotify_artist_credit": "bullet tooth",
+   "duration_ms": 184791,
+   "lineup_artist_ids": [
+    "artist:bullet-tooth"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4KWIkeAdOJfvUgXSq0bEWC",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d819e8af1eb56063141fd",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "0BK6ACxpzK8nkWa3YKuunX",
+   "title": "Fancy Footwork",
+   "spotify_artist_credit": "Chris Lorenzo, Chromeo",
+   "duration_ms": 192195,
+   "lineup_artist_ids": [
+    "artist:chris-lorenzo"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7tm9Tuc70geXOOyKhtZHIj",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8119aeacc7d1a3d9ac37",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "0d2Ad8j1DftVrZENtEA0fj",
+   "title": "Down To The Bone",
+   "spotify_artist_credit": "Josh Baker, Eliza Rose",
+   "duration_ms": 171964,
+   "lineup_artist_ids": [
+    "artist:josh-baker"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8160af87cb4b852dfde2",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "0EqkUvEpUl24bXIQ6NVZRA",
+   "title": "Makina Time",
+   "spotify_artist_credit": "Dimitri Vegas & Like Mike, Marlon Hoffstadt, Dj Konik",
+   "duration_ms": 130090,
+   "lineup_artist_ids": [
+    "artist:marlon-hoffstadt"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0HHa7ZJZxUQlg5l2mB0N0f",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8150b53ee87c2fe2a261",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "0F1VAVqj021UkGntiDz4nx",
+   "title": "Feels Like You",
+   "spotify_artist_credit": "Adventure Club, Codeko",
+   "duration_ms": 202758,
+   "lineup_artist_ids": [
+    "artist:adventure-club"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81508ef2d22393c2b4fe",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "0f3P2kbpIvGdgfvXN7rIKG",
+   "title": "I Bring My Gun To The Function (with Boys Noize)",
+   "spotify_artist_credit": "Brutalismus 3000, Boys Noize",
+   "duration_ms": 190291,
+   "lineup_artist_ids": [
+    "artist:brutalismus-3000",
+    "artist:boys-noize"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8190b2dcf648ac1e7433",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "0f97n6kmc8RYUwMyialr8y",
+   "title": "Closer",
+   "spotify_artist_credit": "Bou, Slay",
+   "duration_ms": 135796,
+   "lineup_artist_ids": [
+    "artist:bou"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8160b593f0ecb8da63cf",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "0Fj8IYC9a7dVMXq3j0wOn9",
+   "title": "DIRTY SOUTH",
+   "spotify_artist_credit": "Big Florida",
+   "duration_ms": 174879,
+   "lineup_artist_ids": [
+    "artist:big-florida"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8165ad24d5fbd2565153",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "0gCVfzNzYGBk95GBLQ6US4",
+   "title": "oh my yuma!",
+   "spotify_artist_credit": "Azzecca",
+   "duration_ms": 223100,
+   "lineup_artist_ids": [
+    "artist:azzecca"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/2k5DY2QDU3kBi5DX7OQlWj",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81d9a324cb23d7b5d21a",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "0GOXlShsWOp7BQ7nt9uwUL",
+   "title": "I Don't Wanna Wait - Hardwell & Olly James Remix",
+   "spotify_artist_credit": "David Guetta, OneRepublic, Hardwell, Olly James",
+   "duration_ms": 183200,
+   "lineup_artist_ids": [
+    "artist:david-guetta",
+    "artist:hardwell"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6BrvowZBreEkXzJQMpL174",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d817c885ef4d5f976ebc6",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "0HGX3Sk2Wp4ibJDyW9hvdY",
+   "title": "Bonito",
+   "spotify_artist_credit": "Dennis Cruz",
+   "duration_ms": 195365,
+   "lineup_artist_ids": [
+    "artist:dennis-cruz"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/27mWOSZjlpmtoqsRjRwQyu",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d814b84d0ea21e26358da",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "0hSuV2otL5a1tl8pByCiAt",
+   "title": "Arrival",
+   "spotify_artist_credit": "KREAM",
+   "duration_ms": 204285,
+   "lineup_artist_ids": [
+    "artist:kream"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0DdDnziut7wOo6cAYWVZC5",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81c4a98ed1dcf14fd59a",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "0I3VFPyE1agmYzWSTx4mjl",
+   "title": "SIMPLY GROOVE - Club Mix",
+   "spotify_artist_credit": "salameh, RAJE, FLAT 22",
+   "duration_ms": 304761,
+   "lineup_artist_ids": [
+    "artist:raje"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/2dPCWh9rFrw0MyUSr3sEyQ",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d814eb309cd402da13a8b",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "0IoD88QDxy5GPip9IzlzyI",
+   "title": "Certified",
+   "spotify_artist_credit": "AYYBO",
+   "duration_ms": 216093,
+   "lineup_artist_ids": [
+    "artist:ayybo"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81b19e50c4a1af02916d",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "0K6bM8wUaxWYW5OXmnL5Wf",
+   "title": "Sensory Session",
+   "spotify_artist_credit": "Jkyl & Hyde",
+   "duration_ms": 193333,
+   "lineup_artist_ids": [
+    "artist:jkyl-hyde"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/23AH13eC6V0NB0QCkV6206",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d819b8b68c2f23e99acf5",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "0L2hJdknuaFzX2SX0e6Psm",
+   "title": "i feel lost",
+   "spotify_artist_credit": "Aaron Hibell",
+   "duration_ms": 147600,
+   "lineup_artist_ids": [
+    "artist:aaron-hibell"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6KJPsGYJN54GllYOKTleaj",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81aab849fab7ec8d6719",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "0lHAMNU8RGiIObScrsRgmP",
+   "title": "Titanium (feat. Sia)",
+   "spotify_artist_credit": "David Guetta, Sia",
+   "duration_ms": 245040,
+   "lineup_artist_ids": [
+    "artist:david-guetta"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8143adafe8bc24711da1",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "0NIIKZEed0nXPz4lHnMaZg",
+   "title": "In Your Eyes",
+   "spotify_artist_credit": "Alesso, OneRepublic",
+   "duration_ms": 216115,
+   "lineup_artist_ids": [
+    "artist:alesso"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81d5978be6309aebea13",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "0niU8VMrQzSNhrmsiLlmeS",
+   "title": "Shinjuku",
+   "spotify_artist_credit": "Franky Rizardo",
+   "duration_ms": 167905,
+   "lineup_artist_ids": [
+    "artist:franky-rizardo"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81cdb30dd32ec7630570",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "0nZUQdt97RJ429I0FuAO2r",
+   "title": "Crazy For It",
+   "spotify_artist_credit": "Rampa, Adam Port, &ME, Boys Noize, Vinson, Keinemusik",
+   "duration_ms": 250578,
+   "lineup_artist_ids": [
+    "artist:boys-noize"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/62k5LKMhymqlDNo2DWOvvv",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d813294abef62a3272632",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "0OSKN4D9kXEunDf89augTt",
+   "title": "FADED",
+   "spotify_artist_credit": "HAYLA, Nelly Furtado",
+   "duration_ms": 215649,
+   "lineup_artist_ids": [
+    "artist:hayla"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81a88622f7ebc168f91b",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "0sPP9TW0xSgke7EKBW6Gui",
+   "title": "Think of You",
+   "spotify_artist_credit": "KETTAMA, Prospa, Rohan Pinnock-Hamilton",
+   "duration_ms": 204884,
+   "lineup_artist_ids": [
+    "artist:prospa"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6HabM2PUM519iIxervGWSb",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d812e9d9ffac89f55a871",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "0SWaeRdDRyljwRH2p0lwCR",
+   "title": "Around The World (La La La)",
+   "spotify_artist_credit": "Jessica Audiffred, SampliFire",
+   "duration_ms": 217714,
+   "lineup_artist_ids": [
+    "artist:jessica-audiffred"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81dcac11f9151879d88b",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "0tAFy8LVdMQgW6A6Nq7olS",
+   "title": "Do You?",
+   "spotify_artist_credit": "TroyBoi",
+   "duration_ms": 195790,
+   "lineup_artist_ids": [
+    "artist:troyboi"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81749c6fc82904fd91b7",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "0tUGYyimvKEBLd43acJivF",
+   "title": "Pretty",
+   "spotify_artist_credit": "Kaivon, Emilia Ali",
+   "duration_ms": 221772,
+   "lineup_artist_ids": [
+    "artist:kaivon"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81feb203c9188e39b819",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "0vHfY43h0GV1lRv5wPpbJR",
+   "title": "Ghost Town",
+   "spotify_artist_credit": "Dimension, Subsonic",
+   "duration_ms": 204137,
+   "lineup_artist_ids": [
+    "artist:subsonic"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4D6frglSGSAHoK7W5rp92j",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8119b809c8b6d2bd2d7d",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "0vKM6pD1koHLvYzzI5gqNy",
+   "title": "Lose Control",
+   "spotify_artist_credit": "Omar+, bullet tooth",
+   "duration_ms": 173357,
+   "lineup_artist_ids": [
+    "artist:bullet-tooth",
+    "artist:omar-plus"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4KWIkeAdOJfvUgXSq0bEWC",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81029cfec1dce4ad5f22",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "0w7JPlp7eEQI2EKW3ayXrv",
+   "title": "Drugs From Amsterdam",
+   "spotify_artist_credit": "Mau P",
+   "duration_ms": 235785,
+   "lineup_artist_ids": [
+    "artist:mau-p"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0w1sbtZVQoK6GzV4A4OkCv",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d811ab2b1ec93ba952722",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "0WZomj99qKEzipmSQIQktM",
+   "title": "Jazz Cabbage",
+   "spotify_artist_credit": "Wooli, Cyclops",
+   "duration_ms": 172189,
+   "lineup_artist_ids": [
+    "artist:wooli"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8168b29cff0f0d076aa1",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "0Yfb937yM0d5f6os0W9IWc",
+   "title": "Spectral Bells",
+   "spotify_artist_credit": "Pegassi",
+   "duration_ms": 193907,
+   "lineup_artist_ids": [
+    "artist:pegassi"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/2A4uiWrfuBpVFugyvxAt4c",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8156a3a3fb46ef308b61",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "0YQLxSWruiFJJ42lexKQGU",
+   "title": "Surge",
+   "spotify_artist_credit": "Kompany, Kryture",
+   "duration_ms": 279724,
+   "lineup_artist_ids": [
+    "artist:kompany"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81ab994efd95d62c97ba",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "0ZZWyT8ppn9PxVe17WX2DR",
+   "title": "Reflections",
+   "spotify_artist_credit": "IDEMI",
+   "duration_ms": 187272,
+   "lineup_artist_ids": [
+    "artist:idemi"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81169d9df258770197a9",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "10pfamFYvg5ftwq6rGJrWx",
+   "title": "Can't Decide",
+   "spotify_artist_credit": "Max Dean, Luke Dean, Locky",
+   "duration_ms": 175384,
+   "lineup_artist_ids": [
+    "artist:max-dean",
+    "artist:luke-dean"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81dea51fdad97e1a09a5",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "19hfnO9fYQ5Dq4ZTSvfW24",
+   "title": "Perfect on Paper",
+   "spotify_artist_credit": "TWINSICK, EVAN GIIA",
+   "duration_ms": 157008,
+   "lineup_artist_ids": [
+    "artist:twinsick"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d812f9956ee45fc6b6e30",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "19PBU0nWYBOMzHOAxDBEcg",
+   "title": "Loaded Gun",
+   "spotify_artist_credit": "CID",
+   "duration_ms": 194883,
+   "lineup_artist_ids": [
+    "artist:cid"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d815bb345fa6a53cb5eed",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "1A0yrRs7GAe1gbCklYE6wl",
+   "title": "Green Light",
+   "spotify_artist_credit": "JOA",
+   "duration_ms": 187384,
+   "lineup_artist_ids": [
+    "artist:joa"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81c2aaaedaa58caf0056",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "1aBVDx9VjyLEk8rz8pezru",
+   "title": "Gets Like That",
+   "spotify_artist_credit": "Max Dean, Luke Dean",
+   "duration_ms": 169846,
+   "lineup_artist_ids": [
+    "artist:luke-dean",
+    "artist:max-dean"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/65TLDWbTJxYASqadmNAxvc",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d819bb094f26ef8722f9a",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "1AVZ3Q3OwCYWoKtbeW0lGu",
+   "title": "Los Angeles Freestyle",
+   "spotify_artist_credit": "KinAhau, Cole Terrazas",
+   "duration_ms": 234265,
+   "lineup_artist_ids": [
+    "artist:kinahau"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d815d8ea5ea1060a854f3",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "1CXLQhz0ii0IPCND6jMJXy",
+   "title": "STEPPIN",
+   "spotify_artist_credit": "Boogie T, Dodge & Fuski",
+   "duration_ms": 137142,
+   "lineup_artist_ids": [
+    "artist:boogie-t"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4zlw0jXUzd4dRcqI3Y1OiY",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81699c6de17420c25152",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "1eMUGMEWrvTXYWrPobq2dH",
+   "title": "Heute Nacht",
+   "spotify_artist_credit": "Maddix",
+   "duration_ms": 204444,
+   "lineup_artist_ids": [
+    "artist:maddix"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0RMeG9M8QFzss9bAbq99KA",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81f39a69dbbd561a0902",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "1gBq6c3TwyUK9gjsySA07T",
+   "title": "Override",
+   "spotify_artist_credit": "A Little Sound",
+   "duration_ms": 173211,
+   "lineup_artist_ids": [
+    "artist:a-little-sound"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81a79aa1ed0e66035e2f",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "1gV0hgMNdpSWeW7ZjSUKnX",
+   "title": "Afterhours feat. Diplo & Nina Sky",
+   "spotify_artist_credit": "TroyBoi, Diplo, Nina Sky",
+   "duration_ms": 275604,
+   "lineup_artist_ids": [
+    "artist:troyboi"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0tvpihdAsKiNnP6sWS3jUI",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81d99ae1c3b88cf30296",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "1HBiN4vgEq75YD0HFvhM7F",
+   "title": "Analog Ascent",
+   "spotify_artist_credit": "Vintage Culture, Roddy Lima",
+   "duration_ms": 197460,
+   "lineup_artist_ids": [
+    "artist:roddy-lima"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0Bg1joLOL52mJS0kf0pIDx",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8136ae33ee3f0136d7b1",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "1k8Tw09RkFSTRyYmsmZ62L",
+   "title": "NO FEAR",
+   "spotify_artist_credit": "DJ DIESEL, Jessica Audiffred, Shaquille O'Neal",
+   "duration_ms": 174400,
+   "lineup_artist_ids": [
+    "artist:dj-diesel",
+    "artist:jessica-audiffred"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/75vCyksqhYjtt5VIpc8g7u",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8120a181ff7bc2590330",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "1LOjIBinbAVfmVqqELvgLh",
+   "title": "ELECTRIC LOVE",
+   "spotify_artist_credit": "AVELLO, HXRT",
+   "duration_ms": 164307,
+   "lineup_artist_ids": [
+    "artist:avello"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d818da86cd87a07ae8cda",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "1lWiQ34sGK1i862zAFiRNW",
+   "title": "Forever 2 (Crush Mix) - Malugi Remix",
+   "spotify_artist_credit": "Confidence Man, DJ BORING, MALUGI",
+   "duration_ms": 177580,
+   "lineup_artist_ids": [
+    "artist:malugi"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/50udUOTR7dQUgyPwPuCLM6",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81f9bcd4efb306fc1a48",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "1NSWEN2D4tSseirwne0bhD",
+   "title": "Counting - Taiki Nulight Remix",
+   "spotify_artist_credit": "Hamdi, Princess Superstar, Taiki Nulight",
+   "duration_ms": 186338,
+   "lineup_artist_ids": [
+    "artist:taiki-nulight"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4QWmN97HRZya55JvxN3I5a",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8198a03bffa8b8d8ad55",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "1PqolJAHpk7lJH4jXu9ANN",
+   "title": "All I Need",
+   "spotify_artist_credit": "Subsonic",
+   "duration_ms": 220689,
+   "lineup_artist_ids": [
+    "artist:subsonic"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8134ad3fc0138e8fce34",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "1rpdapoYtP0nk1zK01FZT9",
+   "title": "Work",
+   "spotify_artist_credit": "Gabss",
+   "duration_ms": 206769,
+   "lineup_artist_ids": [
+    "artist:gabss"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7KMvse80vFnyE3fsoGWjaq",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81029b4cf6cbb00c46be",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "1SAv0E7nYW6hnP13HRWIFF",
+   "title": "Cruise Control",
+   "spotify_artist_credit": "Chef Boyarbeatz",
+   "duration_ms": 246190,
+   "lineup_artist_ids": [
+    "artist:chef-boyarbeatz"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7nSk3iFPogRCOokrMliejt",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81a7886ad979c671140d",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "1Siu5Bnrt90vtjUddXeTUg",
+   "title": "Slow Burner",
+   "spotify_artist_credit": "Interplanetary Criminal, Original Koffee",
+   "duration_ms": 212647,
+   "lineup_artist_ids": [
+    "artist:interplanetary-criminal"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81b78083f59af996d064",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "1t0HDXFC1yeCKKxWfbZ5Go",
+   "title": "Silence",
+   "spotify_artist_credit": "MEDUZA, RANI",
+   "duration_ms": 179076,
+   "lineup_artist_ids": [
+    "artist:meduza"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81fd814fd36a1710d966",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "1t2ESRg2lCWUSAU45DPSkL",
+   "title": "Work It",
+   "spotify_artist_credit": "ESSE",
+   "duration_ms": 182812,
+   "lineup_artist_ids": [
+    "artist:esse"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8161b8ecf0afacdaa045",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "1T4zdIuNLgCqGVk4jHDIVl",
+   "title": "SONG REQUEST",
+   "spotify_artist_credit": "Ray Volpe",
+   "duration_ms": 204923,
+   "lineup_artist_ids": [
+    "artist:ray-volpe"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81759c3df5808d4231c5",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "1usZa84Ap85dm9WJyFBZv5",
+   "title": "SPIRAL",
+   "spotify_artist_credit": "ISOxo, Brutalismus 3000",
+   "duration_ms": 178285,
+   "lineup_artist_ids": [
+    "artist:brutalismus-3000"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6LtXxYMIiKSy2EGHnz1f5j",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81f5b2f6fd0262a4ad64",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "1UtglVF0qRCElmVdU6bWuc",
+   "title": "Drugs I Like (AVELLO Remix)",
+   "spotify_artist_credit": "nate band, AVELLO",
+   "duration_ms": 145714,
+   "lineup_artist_ids": [
+    "artist:avello"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/1ZR5GnPw0Jkb5M4hnBwzuZ",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81e7a05bc88c3f99a9e0",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "1uyZGBnuSdTXjsvi6dKgiD",
+   "title": "Evoke",
+   "spotify_artist_credit": "CØNTRA, Saturna",
+   "duration_ms": 226027,
+   "lineup_artist_ids": [
+    "artist:contra"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/2HhHusDoCRr9pgb30XX7q2",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81e1bfb6d7d8314765de",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "1wceODcNiRPq4kwo9vh3oE",
+   "title": "Marido Dansa",
+   "spotify_artist_credit": "Franky Rizardo",
+   "duration_ms": 154153,
+   "lineup_artist_ids": [
+    "artist:franky-rizardo"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/2UgphhGSlC9QWgaZWUOCkl",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81a2a60ef6194f6533bc",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "1z1io5H0gfutwUNILCDshn",
+   "title": "Spanish Moss",
+   "spotify_artist_credit": "Of The Trees",
+   "duration_ms": 158961,
+   "lineup_artist_ids": [
+    "artist:of-the-trees"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/5V7NIXgCnX2KuQ01Bxg20c",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81b1b445e55f3b4a7c12",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "1z6pTKnrEpokcfwked9cNx",
+   "title": "I'm Not Alone - MPH Remix",
+   "spotify_artist_credit": "Calvin Harris, MPH",
+   "duration_ms": 213333,
+   "lineup_artist_ids": [
+    "artist:mph"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/62SCu33InHVq97VaWw3eof",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81d19fadc67513d633aa",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "1zmYWLvqHjxzyfXUjMftIT",
+   "title": "True Love Never Dies",
+   "spotify_artist_credit": "Cloonee, Fallon",
+   "duration_ms": 219697,
+   "lineup_artist_ids": [
+    "artist:fallon"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/73LVVE6OYOwlXlIJAFNJdR",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81b1ab22e66fa764754d",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "23Hxd8ph2vJWlXngubtyuO",
+   "title": "Feels Like Us",
+   "spotify_artist_credit": "Devault, GiGi Grombacher",
+   "duration_ms": 234545,
+   "lineup_artist_ids": [
+    "artist:devault"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/1VBAKMui4zm5MnBWNn3NbL",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8155b7f1eb6f652168af",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "248s42qe2Njb9yU99LSU88",
+   "title": "LADIES & GENTLEMEN",
+   "spotify_artist_credit": "KinAhau, WIFE MATERIAL",
+   "duration_ms": 326769,
+   "lineup_artist_ids": [
+    "artist:kinahau"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/3C7Tv0IqIGLjA9rpVaeHRB",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81e0a1f1ee1dcde76b63",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "24OeEKPQ8qqNZnPevRHxUT",
+   "title": "Red Eye (feat. TroyBoi)",
+   "spotify_artist_credit": "Justin Bieber, TroyBoi",
+   "duration_ms": 187452,
+   "lineup_artist_ids": [
+    "artist:troyboi"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0tvpihdAsKiNnP6sWS3jUI",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8177903ff24f4717f85f",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "25KN5IFew2JifHoqx5Q7Z7",
+   "title": "High Forever - Marlon Hoffstadt Remix",
+   "spotify_artist_credit": "Petite Meller, Marlon Hoffstadt",
+   "duration_ms": 229161,
+   "lineup_artist_ids": [
+    "artist:marlon-hoffstadt"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0HHa7ZJZxUQlg5l2mB0N0f",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d818b8bc7ec87abeff395",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "26SBh3qrxSkpVqLRQkcSbU",
+   "title": "Rave Therapy",
+   "spotify_artist_credit": "Maddix, Bassjackers",
+   "duration_ms": 157935,
+   "lineup_artist_ids": [
+    "artist:maddix"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0RMeG9M8QFzss9bAbq99KA",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d816491dfd94a81612440",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "273hZiLcekoS5dDMHZn0uM",
+   "title": "Turbulence",
+   "spotify_artist_credit": "SHDW, Obscure Shape",
+   "duration_ms": 272883,
+   "lineup_artist_ids": [
+    "artist:shdw"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d811ab3d4d70af72b5a00",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "28neE1gtROH3fazXOamxak",
+   "title": "Pumpin Blood",
+   "spotify_artist_credit": "TWINSICK, NONONO",
+   "duration_ms": 185745,
+   "lineup_artist_ids": [
+    "artist:twinsick"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4WfO14YgktUYkdLMrHgTeF",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81a2892ddb3cb9848bb6",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "2AJzSl2iYq7Thk2P535MwI",
+   "title": "Diet Coke",
+   "spotify_artist_credit": "Fallon",
+   "duration_ms": 155624,
+   "lineup_artist_ids": [
+    "artist:fallon"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d811d83f0f651561434af",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "2B6NPa5xN0ktAoEFXC7Ar9",
+   "title": "Whatcha Do To Me",
+   "spotify_artist_credit": "ACRAZE",
+   "duration_ms": 262153,
+   "lineup_artist_ids": [
+    "artist:acraze"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d811eb8cbceef2d1afb23",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "2dH4UWxucbsfFglVAbfNW3",
+   "title": "levitation",
+   "spotify_artist_credit": "Aaron Hibell, Felsmann + Tiley",
+   "duration_ms": 168358,
+   "lineup_artist_ids": [
+    "artist:aaron-hibell"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6KJPsGYJN54GllYOKTleaj",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d813ba195dd14423df974",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "2FFwFlkKjKBSCdVpPf38Gj",
+   "title": "Out of My Mind",
+   "spotify_artist_credit": "Joshwa",
+   "duration_ms": 204737,
+   "lineup_artist_ids": [
+    "artist:joshwa"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/1PzAgFVk9v8cxn9flrqrv5",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8186a4ddc5cbfc361ecf",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "2H43AB2EgHmUChTFL8zVZp",
+   "title": "Get Up",
+   "spotify_artist_credit": "Pegassi",
+   "duration_ms": 211862,
+   "lineup_artist_ids": [
+    "artist:pegassi"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d811cbec1e7e2a3c70e68",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "2HGWEdmzqykDOKbAxRd1JE",
+   "title": "BELIEVE",
+   "spotify_artist_credit": "ALLEYCVT, LEVEL UP",
+   "duration_ms": 161600,
+   "lineup_artist_ids": [
+    "artist:alleycvt",
+    "artist:level-up"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/1ZpDxqXS6HAvoZyCzQfKRb",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d813780aafc198cfe0201",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "2MsgPJQZMfAoDyXAfqqPZs",
+   "title": "I Feel It",
+   "spotify_artist_credit": "Kaivon",
+   "duration_ms": 166400,
+   "lineup_artist_ids": [
+    "artist:kaivon"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/55FVjkpZs1zuo3zqBgrKtC",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d816ea10ad17e8ec41d47",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "2N6EnehmF6MOH2fgnQB73d",
+   "title": "Nuclear Bass Face (feat. Boogie T)",
+   "spotify_artist_credit": "NGHTMRE, Subtronics, Boogie T",
+   "duration_ms": 195200,
+   "lineup_artist_ids": [
+    "artist:boogie-t"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4zlw0jXUzd4dRcqI3Y1OiY",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81a6a110fda3a53bef99",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "2nbye27S8Nv1JSrmxl1Ycf",
+   "title": "Slipping Away",
+   "spotify_artist_credit": "Levity, K.Flay",
+   "duration_ms": 259459,
+   "lineup_artist_ids": [
+    "artist:levity"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/1PbO7aQiVeKbGp8GYWDL9C",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81da9427ee94aaaaf4b8",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "2nWw7VrUn8Ijo45K6WIIna",
+   "title": "Vielleicht Vielleicht - Holy Priest & elMefti Remix",
+   "spotify_artist_credit": "MilleniumKid, JBS, HOLY PRIEST, elMefti",
+   "duration_ms": 169818,
+   "lineup_artist_ids": [
+    "artist:holy-priest"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/5UG2ipdnA4vk8Eevkf1s06",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d815a882ad4c5e1a1b7a0",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 1
+  },
+  {
+   "spotify_track_id": "2obGMUH9QL8cgyj6bBM58h",
+   "title": "ZIPLOCK",
+   "spotify_artist_credit": "Roddy Lima",
+   "duration_ms": 210053,
+   "lineup_artist_ids": [
+    "artist:roddy-lima"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0Bg1joLOL52mJS0kf0pIDx",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8189bfc1f5fdc0e69e08",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "2RkSAfwkNF4BnW8407DGRw",
+   "title": "Chase The Sunlight",
+   "spotify_artist_credit": "TWINSICK, Saint Raymond",
+   "duration_ms": 168347,
+   "lineup_artist_ids": [
+    "artist:twinsick"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4WfO14YgktUYkdLMrHgTeF",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d814e85c0cf2ba70ffde0",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "2rkUhGw5iWbBY1PE5AnCl8",
+   "title": "Way Too Self Aware",
+   "spotify_artist_credit": "Ian Asher",
+   "duration_ms": 156207,
+   "lineup_artist_ids": [
+    "artist:ian-asher"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/5IrxhrMyvZxzgPYrC9j2km",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81c8bdcfc294e1aba644",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "2s9Ozz6HLs785JrqpRgzVU",
+   "title": "Bones",
+   "spotify_artist_credit": "Mai iachetti",
+   "duration_ms": 236205,
+   "lineup_artist_ids": [
+    "artist:mai-iachetti"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d812883c8d263b0f284db",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "2szlu9y9Q1S0UWcolBtyNJ",
+   "title": "Twisted",
+   "spotify_artist_credit": "LAYZ, Kozmoz",
+   "duration_ms": 206400,
+   "lineup_artist_ids": [
+    "artist:layz"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/2ozQcs5XxFaj5fvA02zhwo",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81e8b6d1d38fbda2511b",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "2tlulSZdCgI5zQFQKmbjma",
+   "title": "Out Of My Mind",
+   "spotify_artist_credit": "Omar+, Ben Sterling",
+   "duration_ms": 177230,
+   "lineup_artist_ids": [
+    "artist:omar-plus"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8145bf7bf3fc16dd29e5",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "2unqiEdHtabnsbv6TJ7gCW",
+   "title": "Lose Control",
+   "spotify_artist_credit": "MEDUZA, Becky Hill, Goodboys",
+   "duration_ms": 168387,
+   "lineup_artist_ids": [
+    "artist:meduza"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0xRXCcSX89eobfrshSVdyu",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81dcaee5f4ea86951797",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "2XXOFINEkzVaszziVzRQj2",
+   "title": "Fotopaparazzi",
+   "spotify_artist_credit": "Steve Aoki, Jessica Audiffred, Jon Z",
+   "duration_ms": 140770,
+   "lineup_artist_ids": [
+    "artist:steve-aoki",
+    "artist:jessica-audiffred"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d813ca0dcf5582063841c",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "2YVizOAT1yNq7Say1AhrJR",
+   "title": "FVKVRVND",
+   "spotify_artist_credit": "Boys Noize",
+   "duration_ms": 268732,
+   "lineup_artist_ids": [
+    "artist:boys-noize"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8151af06cd0653dc86f3",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "2ZWmmrWUgDBcPSLihBMvhg",
+   "title": "Baddadan (feat. IRAH, Flowdan, Trigga & Takura)",
+   "spotify_artist_credit": "Chase & Status, Bou, Flowdan, IRAH, Trigga, Takura",
+   "duration_ms": 177291,
+   "lineup_artist_ids": [
+    "artist:bou"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/35dxfY1wywqVRUEaVuMm13",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81db973cf8f1291eb498",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "33rOFwZOk1rs9OwvHL12cF",
+   "title": "STFU",
+   "spotify_artist_credit": "T-Pain, DJ DIESEL, San Holo, NGHTMRE, Kompany, SampliFire, IVORY",
+   "duration_ms": 219428,
+   "lineup_artist_ids": [
+    "artist:dj-diesel",
+    "artist:kompany",
+    "artist:san-holo"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/75vCyksqhYjtt5VIpc8g7u",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8180a13cdce81bd06f2f",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "34cGRbu2sg9mXm8fcUWlTw",
+   "title": "Not A Problem",
+   "spotify_artist_credit": "Max Dean, Nafe Smallz, Luke Dean",
+   "duration_ms": 247272,
+   "lineup_artist_ids": [
+    "artist:luke-dean",
+    "artist:max-dean"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/65TLDWbTJxYASqadmNAxvc",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8184ae0ae8e1b7956cfc",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "35dt2bP4CcBzepyufQbvYZ",
+   "title": "Fire Fire",
+   "spotify_artist_credit": "Shimza, AR/CO, Kasango",
+   "duration_ms": 150480,
+   "lineup_artist_ids": [
+    "artist:ar-co"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7mGI9Sd66FqHjIkwzkgbG7",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81bfa081cd73e122a64f",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "39hHUnYBmyMwprzRaPODCX",
+   "title": "Free Your Mind",
+   "spotify_artist_credit": "Prospa, Cloonee, Sybil",
+   "duration_ms": 201700,
+   "lineup_artist_ids": [
+    "artist:prospa"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8171b93de1b402988173",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "39JofJHEtg8I4fSyo7Imft",
+   "title": "B.O.T.A. (Baddest Of Them All) - Edit",
+   "spotify_artist_credit": "Eliza Rose, Interplanetary Criminal",
+   "duration_ms": 226626,
+   "lineup_artist_ids": [
+    "artist:interplanetary-criminal"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6uJ51uV5rYzu1MJkC4CceI",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d813fb41fd474750ac773",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "3aTOR9GP22TN2YVvmKbk8e",
+   "title": "You Make Me Horny",
+   "spotify_artist_credit": "Nico Moreno, Laren",
+   "duration_ms": 294321,
+   "lineup_artist_ids": [
+    "artist:nico-moreno"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81b5ace5ec667567c5b2",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "3b26vJtV7KETHKtu4sxabB",
+   "title": "ONE FOR YOU",
+   "spotify_artist_credit": "ALLEYCVT, Levity",
+   "duration_ms": 152516,
+   "lineup_artist_ids": [
+    "artist:alleycvt",
+    "artist:levity"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4JxRK2gxmri7L7OWaxnVD1",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8134aca3d01b746c0898",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "3BbD2sqk7P7Rc9V0KF9o4s",
+   "title": "My Humps",
+   "spotify_artist_credit": "Joshwa, Lee Foss",
+   "duration_ms": 186124,
+   "lineup_artist_ids": [
+    "artist:joshwa"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/1PzAgFVk9v8cxn9flrqrv5",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d818ca6d7ce5238d436f1",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "3c805upue925stoIrEG8Ep",
+   "title": "RIDE",
+   "spotify_artist_credit": "Big Florida",
+   "duration_ms": 178875,
+   "lineup_artist_ids": [
+    "artist:big-florida"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7LjnXw8QLtGkt9GSwyo7aj",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d815191b4c93b096f6c6e",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "3cZajhyr8LmtPfHZ9296tj",
+   "title": "No Broke Boys",
+   "spotify_artist_credit": "Disco Lines, Tinashe",
+   "duration_ms": 163994,
+   "lineup_artist_ids": [
+    "artist:disco-lines"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81adbfa1c2d94d12733a",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "3dcWKFefG4Otjdb6ykBVcY",
+   "title": "Feel The Vibration",
+   "spotify_artist_credit": "Kanine",
+   "duration_ms": 201847,
+   "lineup_artist_ids": [
+    "artist:kanine"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81609748d493d64dae42",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "3dD9yyYTQ73SZvyOygyKva",
+   "title": "High (& Dua Lipa)",
+   "spotify_artist_credit": "Whethan, Dua Lipa",
+   "duration_ms": 196706,
+   "lineup_artist_ids": [
+    "artist:whethan"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0vqJkZ0RpLZixt3lTmD8vP",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81b28963f80adbdf25c1",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "3deZ4afG0Y4WhbSBEp97oK",
+   "title": "MONEY ON THE DASH - SPED UP",
+   "spotify_artist_credit": "Elley Duhé, Whethan",
+   "duration_ms": 116465,
+   "lineup_artist_ids": [
+    "artist:whethan"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0vqJkZ0RpLZixt3lTmD8vP",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8189a39ac71cc207e661",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "3dNDt0VLKc0xUcuTI20Q73",
+   "title": "Innocence 2025",
+   "spotify_artist_credit": "NERO, Taiki Nulight",
+   "duration_ms": 168000,
+   "lineup_artist_ids": [
+    "artist:taiki-nulight"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4QWmN97HRZya55JvxN3I5a",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8199a4ffc44f5630453c",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "3DqOJ2BoddzZpNdty3okJH",
+   "title": "RIZZ",
+   "spotify_artist_credit": "AYYBO",
+   "duration_ms": 200787,
+   "lineup_artist_ids": [
+    "artist:ayybo"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0YVquC9RaJLYFNmlJFzkTV",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81a6b7d2d9da04184e22",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "3EB2capRBxxmTvW4fxYQht",
+   "title": "Bodies",
+   "spotify_artist_credit": "Know Good, JEANLOUIS",
+   "duration_ms": 111044,
+   "lineup_artist_ids": [
+    "artist:know-good"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81078708dd1c377bd02e",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "3ebXMykcMXOcLeJ9xZ17XH",
+   "title": "Scared to Be Lonely",
+   "spotify_artist_credit": "Martin Garrix, Dua Lipa",
+   "duration_ms": 220883,
+   "lineup_artist_ids": [
+    "artist:martin-garrix"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81c59500fe0af540abd4",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "3ekLXHhFW8qI6FZDE6Xx9l",
+   "title": "One Last Breath - Remix",
+   "spotify_artist_credit": "ATLiens",
+   "duration_ms": 177777,
+   "lineup_artist_ids": [
+    "artist:atliens"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/74RET4rCZPTGzhsLjD0i3g",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8118aac6dfb29ab10bbb",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "3ftdZ6WtsQo7o5tSFI2WV5",
+   "title": "Is It All",
+   "spotify_artist_credit": "Phrva",
+   "duration_ms": 222857,
+   "lineup_artist_ids": [
+    "artist:phrva"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d813cae6adc8f82683a85",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "3G2O60rq5a77GEIwK1mVmh",
+   "title": "Make Me Yours",
+   "spotify_artist_credit": "Borgeous, Zack Martino",
+   "duration_ms": 195239,
+   "lineup_artist_ids": [
+    "artist:zack-martino"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/2US2mjK9hW7QGSBNpprlbu",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d814281fef3599b31c6f0",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "3hVySEjegjGhNCbwFBYrEk",
+   "title": "Holy Atlantis",
+   "spotify_artist_credit": "HOLY PRIEST, Netherworld",
+   "duration_ms": 116707,
+   "lineup_artist_ids": [
+    "artist:holy-priest"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/5UG2ipdnA4vk8Eevkf1s06",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81dbacd1fbaf6a24096a",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "3jDXVV12qJ0sZB3Ixp3srB",
+   "title": "RESCUE U",
+   "spotify_artist_credit": "Alison Wonderland, WINK",
+   "duration_ms": 175448,
+   "lineup_artist_ids": [
+    "artist:alison-wonderland"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/11gWrKZMBsGQWmobv3oNfW",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8169bb4bfad41726c35b",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "3JFbLpgf57vGArmdFULXNB",
+   "title": "Get Wompy",
+   "spotify_artist_credit": "SIPPY",
+   "duration_ms": 153600,
+   "lineup_artist_ids": [
+    "artist:sippy"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4LLYqe8ogaK9wC1xHlvR5S",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81c08c8fdefa593f6af4",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "3JGVhjbPvMdxKqDE7NDJEK",
+   "title": "Got To Do",
+   "spotify_artist_credit": "Disco Lines",
+   "duration_ms": 169323,
+   "lineup_artist_ids": [
+    "artist:disco-lines"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/5Kmr0b3ip8g9P2i0dLTC3Z",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81a39faee9177d776969",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "3JhgPs7rbmzLBWRvHlel8U",
+   "title": "Bad Memories",
+   "spotify_artist_credit": "MEDUZA, James Carter, Elley Duhé, FAST BOY",
+   "duration_ms": 147629,
+   "lineup_artist_ids": [
+    "artist:meduza"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0xRXCcSX89eobfrshSVdyu",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d814b9206f3f9348d7b77",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "3KO4hzcExe2SeapsmuLizY",
+   "title": "240 INTRO",
+   "spotify_artist_credit": "Adrian Mills, 240 KM/H",
+   "duration_ms": 340253,
+   "lineup_artist_ids": [
+    "artist:adrian-mills"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6H9sRmDCsXzsWK7jEg1thF",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8153ad8fd97c4c1ce7c5",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "3Mep8LVvhULlNgkn6oTLNu",
+   "title": "PEOPLE IN THE PLACE",
+   "spotify_artist_credit": "A.B.C., Silva Bumpa, Rossi.",
+   "duration_ms": 203105,
+   "lineup_artist_ids": [
+    "artist:rossi"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7itMGcVGRKS43LcTQvJitf",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8140a922e4e533344511",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "3MOECVkNshqHYTPt5DZcdN",
+   "title": "Five More Hours",
+   "spotify_artist_credit": "Deorro, Chris Brown",
+   "duration_ms": 211975,
+   "lineup_artist_ids": [
+    "artist:deorro"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6VD4UEUPvtsemqD3mmTqCR",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d817facfee74e054bfe66",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "3OgdqZIgGIqusstV9IqX6p",
+   "title": "What’s a Girl to Do in ‘25",
+   "spotify_artist_credit": "KI/KI",
+   "duration_ms": 148047,
+   "lineup_artist_ids": [
+    "artist:ki-ki"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81fabe10e828e98686d8",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "3PJo4Pq0WscWLh2h89U2Kx",
+   "title": "227kg",
+   "spotify_artist_credit": "Pegassi",
+   "duration_ms": 228571,
+   "lineup_artist_ids": [
+    "artist:pegassi"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/2A4uiWrfuBpVFugyvxAt4c",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8145ac2cdd16eb2acdf9",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "3pUz2qJe5nqZemi3hhIxMk",
+   "title": "Where You Are",
+   "spotify_artist_credit": "John Summit, HAYLA",
+   "duration_ms": 236000,
+   "lineup_artist_ids": [
+    "artist:hayla"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4yX6mpMyBGf9UfvBB8JJrc",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8137b856e9ae7f6411e4",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "3rBYmkOB8N1Z4bCa3DsdPK",
+   "title": "Love On Me",
+   "spotify_artist_credit": "Azzecca, House Of Molly",
+   "duration_ms": 147374,
+   "lineup_artist_ids": [
+    "artist:azzecca"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81c88bd7d7dda65d4098",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "3RBZG00eHECxQIgOwrLhjC",
+   "title": "Don't Stop",
+   "spotify_artist_credit": "AAT",
+   "duration_ms": 181762,
+   "lineup_artist_ids": [
+    "artist:aat"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8135af6cc35cbb4a321e",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "3sGy9TKEpZZCEgbpSMlOKK",
+   "title": "Yup - Radio Edit",
+   "spotify_artist_credit": "Fallon",
+   "duration_ms": 188500,
+   "lineup_artist_ids": [
+    "artist:fallon"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/73LVVE6OYOwlXlIJAFNJdR",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81728e93ed6012e8b4b2",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "3SoMMKpm0eB3BghB3b5wyM",
+   "title": "Big Sip",
+   "spotify_artist_credit": "SIPPY",
+   "duration_ms": 149172,
+   "lineup_artist_ids": [
+    "artist:sippy"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d814d98d9df6a4d0145e9",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "3Sy6SmgPL9NlzNoOdxUhqq",
+   "title": "Дорадура (doradura)",
+   "spotify_artist_credit": "M81!",
+   "duration_ms": 99000,
+   "lineup_artist_ids": [
+    "artist:m81"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/3bE8ejTzBABjsWxbDhUSRv",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d810b8c27fde1be589067",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "3t6829TdVyxeSSj7SJ7uWn",
+   "title": "Misery",
+   "spotify_artist_credit": "Rossi.",
+   "duration_ms": 195572,
+   "lineup_artist_ids": [
+    "artist:rossi"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7itMGcVGRKS43LcTQvJitf",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d817ebcdbc1ed0042de10",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "3TCmo9oC5hlzCGzlTFZ0u5",
+   "title": "Pull Up",
+   "spotify_artist_credit": "Discip",
+   "duration_ms": 171162,
+   "lineup_artist_ids": [
+    "artist:discip"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6K16NRv0isbkftsv5lmlMT",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81d08e78d08d8053579e",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "3TmTEN2zy0cyYMjiviWbMK",
+   "title": "I Love You.",
+   "spotify_artist_credit": "Kaivon",
+   "duration_ms": 246315,
+   "lineup_artist_ids": [
+    "artist:kaivon"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/55FVjkpZs1zuo3zqBgrKtC",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81faa24adaf3db00aa2f",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "3tVV7V3TH4jpPVvfgPILR0",
+   "title": "La Pista Es Mía",
+   "spotify_artist_credit": "Miguelle & Tons, Barbara Doza",
+   "duration_ms": 198425,
+   "lineup_artist_ids": [
+    "artist:miguelle-tons"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8153800ededa981b6e27",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "3ujrxclgI5IGFpGGcid37R",
+   "title": "God Complex",
+   "spotify_artist_credit": "GREG 99",
+   "duration_ms": 205312,
+   "lineup_artist_ids": [
+    "artist:greg-99"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/68ocQOFVB9wvLiC1C1WjYp",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d813ab689ed8a06da80d9",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "3V9Y3MU0zee8FiZYF0GDE9",
+   "title": "Devils",
+   "spotify_artist_credit": "Vastive, Left to Suffer",
+   "duration_ms": 238683,
+   "lineup_artist_ids": [
+    "artist:vastive"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8134bf46d390f9c55927",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "3VpxEo6vMpi4rQ6t2WVVkK",
+   "title": "Escape (feat. Hayla)",
+   "spotify_artist_credit": "Kx5, deadmau5, Kaskade, HAYLA",
+   "duration_ms": 240445,
+   "lineup_artist_ids": [
+    "artist:hayla",
+    "artist:kaskade"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6TQj5BFPooTa08A7pk8AQ1",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81c3a9aac6bc7a578af0",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "3wRO9Pt5iPbZTs8YT1x69Q",
+   "title": "Just A Little Bit More",
+   "spotify_artist_credit": "Mau P",
+   "duration_ms": 214038,
+   "lineup_artist_ids": [
+    "artist:mau-p"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0w1sbtZVQoK6GzV4A4OkCv",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8155aeead824628d0e39",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "3wWdJGv0iqFJRQ82Uixaiu",
+   "title": "What's a Gremlin?",
+   "spotify_artist_credit": "SIPPY",
+   "duration_ms": 140142,
+   "lineup_artist_ids": [
+    "artist:sippy"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4LLYqe8ogaK9wC1xHlvR5S",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81dc9e0dc086109ee7c1",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "3x6CEyquRREaQ9ZBbBhrGe",
+   "title": "Ghost Dance",
+   "spotify_artist_credit": "Brunello, Vargas",
+   "duration_ms": 372480,
+   "lineup_artist_ids": [
+    "artist:brunello"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d810c924fcac576b30b95",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "3XIpIZvqELq9H0xCUQI3mh",
+   "title": "Eraser",
+   "spotify_artist_credit": "SHDW, Obscure Shape",
+   "duration_ms": 301800,
+   "lineup_artist_ids": [
+    "artist:shdw"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4IyAdT9yACjgFv8Qk2eSkO",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81dcb95dd4eab93a53fc",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "3YnzLXBGOXq0I4pcfYnOcX",
+   "title": "You & Me",
+   "spotify_artist_credit": "bullet tooth, Tom Did It",
+   "duration_ms": 197819,
+   "lineup_artist_ids": [
+    "artist:bullet-tooth"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8148bd1fcd99b4531bdd",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "3Z23sDc2J9ZkmFiMStRoIp",
+   "title": "High On Me",
+   "spotify_artist_credit": "Rossi., Jazzy",
+   "duration_ms": 189767,
+   "lineup_artist_ids": [
+    "artist:rossi"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81ada1b3e58893eaf0af",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "3zW2p2IIK885aOrjfDJEXv",
+   "title": "Elevator",
+   "spotify_artist_credit": "Discip",
+   "duration_ms": 128874,
+   "lineup_artist_ids": [
+    "artist:discip"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81738b92c735c7b75f0e",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "45Q7gfiscW28MWPY9VvebZ",
+   "title": "Mirage",
+   "spotify_artist_credit": "MPH, Skrillex",
+   "duration_ms": 291971,
+   "lineup_artist_ids": [
+    "artist:mph"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/62SCu33InHVq97VaWw3eof",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81dd8683c351fe208908",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "46WqNBxyjLaxbHMM4BKTA2",
+   "title": "PUT IT DOWN - Jkyl & Hyde Remix",
+   "spotify_artist_credit": "Angrybaby, Jkyl & Hyde",
+   "duration_ms": 194782,
+   "lineup_artist_ids": [
+    "artist:jkyl-hyde"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/23AH13eC6V0NB0QCkV6206",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81bca129cda0a1386a0c",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "4Akak3MSwvkk49TVmBwjvS",
+   "title": "BALL SO HARD",
+   "spotify_artist_credit": "M81!",
+   "duration_ms": 154835,
+   "lineup_artist_ids": [
+    "artist:m81"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/3bE8ejTzBABjsWxbDhUSRv",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d817fa544e3b3a1063c12",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "4ASOMWcJUrwEpjJy4GEijz",
+   "title": "California Dreamin' (feat. High Jinx)",
+   "spotify_artist_credit": "Chris Lorenzo, High Jinx",
+   "duration_ms": 196899,
+   "lineup_artist_ids": [
+    "artist:chris-lorenzo"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7tm9Tuc70geXOOyKhtZHIj",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d814a99d0f8dfc92e6d95",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "4bRMcJ517G0Zda8VmFZCZB",
+   "title": "What I Can Do",
+   "spotify_artist_credit": "CØNTRA, Saturna",
+   "duration_ms": 195230,
+   "lineup_artist_ids": [
+    "artist:contra"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81d299dee63b85e33de0",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "4D3XVVyxjxNvZLXMhmF9x3",
+   "title": "Donnie Brasco",
+   "spotify_artist_credit": "Know Good",
+   "duration_ms": 182166,
+   "lineup_artist_ids": [
+    "artist:know-good"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4iogDJBJ2BO2jl8OkPrfpx",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d818cad38d39a2d2ffade",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "4eMuPLoETMcowDdFERoJcq",
+   "title": "No Worries if Not",
+   "spotify_artist_credit": "CØNTRA, Chef Boyarbeatz",
+   "duration_ms": 229714,
+   "lineup_artist_ids": [
+    "artist:chef-boyarbeatz",
+    "artist:contra"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7nSk3iFPogRCOokrMliejt",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8192b870e9d6d2c86dea",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "4ErKiLpGrMNHSB8xQ6UIXT",
+   "title": "SPIRAL",
+   "spotify_artist_credit": "Ravenscoon, Jessy Covets",
+   "duration_ms": 212571,
+   "lineup_artist_ids": [
+    "artist:ravenscoon"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7vfvYuEyJbh1Tf3QlOTAmZ",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d813cb233e1f1f2f89904",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 1
+  },
+  {
+   "spotify_track_id": "4G8kDpgyrmgDiILzPIUnpe",
+   "title": "BANG YOUR HEAD",
+   "spotify_artist_credit": "DJ DIESEL, Hairitage, Shaquille O'Neal",
+   "duration_ms": 204798,
+   "lineup_artist_ids": [
+    "artist:dj-diesel"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d813eb37ce1585aceed0f",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "4HTD64x2NstZsK1su3OFd6",
+   "title": "Face Your Fear",
+   "spotify_artist_credit": "Sidney Charles",
+   "duration_ms": 219354,
+   "lineup_artist_ids": [
+    "artist:sidney-charles"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81ca8ff9fd820655752d",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "4J7CKHCF3mdL4diUsmW8lq",
+   "title": "Under Control (feat. Hurts)",
+   "spotify_artist_credit": "Calvin Harris, Alesso, Hurts",
+   "duration_ms": 184280,
+   "lineup_artist_ids": [
+    "artist:alesso"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4AVFqumd2ogHFlRbKIjp1t",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81d6bc10edb67f99bbab",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "4KUvFYXZftOZQaVa3Hxato",
+   "title": "What I Came For",
+   "spotify_artist_credit": "Devault",
+   "duration_ms": 183636,
+   "lineup_artist_ids": [
+    "artist:devault"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d816a9fb9f8de916fdc24",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "4LlDviPbNd8rn1216SmDql",
+   "title": "ME V ME",
+   "spotify_artist_credit": "Benda",
+   "duration_ms": 209577,
+   "lineup_artist_ids": [
+    "artist:benda"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d814583a1f5377d161d2a",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "4MgH7JjZQAPgIBf0lrdbie",
+   "title": "Save Me",
+   "spotify_artist_credit": "Kai Wachi, Black Tiger Sex Machine",
+   "duration_ms": 196790,
+   "lineup_artist_ids": [
+    "artist:kai-wachi",
+    "artist:black-tiger-sex-machine"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81ee82d2f2386ea7ed1e",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "4nOOoo9OJbgnTBNHe5b6nD",
+   "title": "Romantika",
+   "spotify_artist_credit": "Brutalismus 3000",
+   "duration_ms": 250145,
+   "lineup_artist_ids": [
+    "artist:brutalismus-3000"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6LtXxYMIiKSy2EGHnz1f5j",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81659539d96e2bbe281b",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "4oAZsDVgeunfAxyTR782a4",
+   "title": "Hyper Rave",
+   "spotify_artist_credit": "Sidney Charles",
+   "duration_ms": 185454,
+   "lineup_artist_ids": [
+    "artist:sidney-charles"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0J6ZEXmLQfZMeHBoa4JZTH",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8148a39ed61fcb043e71",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "4orH1YqyAjXBtBr0DfsqjV",
+   "title": "Swag Surfin'",
+   "spotify_artist_credit": "Whethan",
+   "duration_ms": 228368,
+   "lineup_artist_ids": [
+    "artist:whethan"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81bbb209ed94d8217faa",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "4PzgYtLEcik1VGjbDDdqbA",
+   "title": "Heartbreak",
+   "spotify_artist_credit": "Levity",
+   "duration_ms": 154405,
+   "lineup_artist_ids": [
+    "artist:levity"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d816ba6e0fffd787722f8",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "4q1LQDKbCd6JX2EDJTRZjn",
+   "title": "Under My Skin",
+   "spotify_artist_credit": "SLANDER, Spiritbox, Vastive",
+   "duration_ms": 276153,
+   "lineup_artist_ids": [
+    "artist:slander",
+    "artist:vastive"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81169bbcc69ace9f5973",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "4QNpBfC0zvjKqPJcyqBy9W",
+   "title": "Give Me Everything (feat. Nayer)",
+   "spotify_artist_credit": "Pitbull, AFROJACK, Ne-Yo, Nayer",
+   "duration_ms": 252306,
+   "lineup_artist_ids": [
+    "artist:afrojack"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4D75GcNG95ebPtNvoNVXhz",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d818b91a5d73e9b360810",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "4QUxlbwlSBYiaTT27A5MEj",
+   "title": "In This Bih'",
+   "spotify_artist_credit": "Chris Lorenzo, Kah-Lo",
+   "duration_ms": 210923,
+   "lineup_artist_ids": [
+    "artist:chris-lorenzo"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8180a454eaef14d1779e",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "4rtz2VliXObZALpQghDO5K",
+   "title": "Till I Found You",
+   "spotify_artist_credit": "Zack Martino",
+   "duration_ms": 220542,
+   "lineup_artist_ids": [
+    "artist:zack-martino"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81f18191d2e0ddc4ec1a",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "4RV0l2NdRR6cZ6SWqneFvx",
+   "title": "Lotis Eater",
+   "spotify_artist_credit": "Boogie T",
+   "duration_ms": 256285,
+   "lineup_artist_ids": [
+    "artist:boogie-t"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81939a6ad592fb88f488",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "4SlGZwTjgOXjOK7Pqw7xGW",
+   "title": "Get Stupid",
+   "spotify_artist_credit": "GREG 99",
+   "duration_ms": 190153,
+   "lineup_artist_ids": [
+    "artist:greg-99"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d817abf78e65a86886e7c",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "4sMR8fuTzbUyzB0asxifV0",
+   "title": "Desire",
+   "spotify_artist_credit": "Ian Asher, Olly Alexander (Years & Years)",
+   "duration_ms": 158840,
+   "lineup_artist_ids": [
+    "artist:ian-asher"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8117bd80fa7081ad9297",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "4TIkSdsNSfqpuq6ZYvCjAz",
+   "title": "All You Need To Know (feat. Calle Lehmann)",
+   "spotify_artist_credit": "Gryffin, SLANDER, Calle Lehmann",
+   "duration_ms": 238337,
+   "lineup_artist_ids": [
+    "artist:slander"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/20DZAfCuP1TKZl5KcY7z3Q",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d812184e5c9e499c4c759",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "4Vdes3GjtIqdFskoWbVYnP",
+   "title": "Awake Tonight",
+   "spotify_artist_credit": "AFROJACK, Sia, David Guetta",
+   "duration_ms": 190013,
+   "lineup_artist_ids": [
+    "artist:afrojack",
+    "artist:david-guetta"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81faad72c1771b6cfffd",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "4XQqAGRG3jRH0fVmVpyOms",
+   "title": "Meet Again",
+   "spotify_artist_credit": "Kaskade, Layton Giordani, Natalie Jane",
+   "duration_ms": 206363,
+   "lineup_artist_ids": [
+    "artist:kaskade"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8163a612e4314eab0711",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "4xUtkaR5dWtESdFmniDj3K",
+   "title": "Aquarius",
+   "spotify_artist_credit": "KUKO, Adrian Mills",
+   "duration_ms": 223161,
+   "lineup_artist_ids": [
+    "artist:adrian-mills"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6H9sRmDCsXzsWK7jEg1thF",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d811a9b5cef35cbc5ed2a",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "4xWXrhg0Vwc29lbeyHZsYt",
+   "title": "Dingus",
+   "spotify_artist_credit": "Subtronics, Wooli, LEVEL UP",
+   "duration_ms": 218482,
+   "lineup_artist_ids": [
+    "artist:level-up",
+    "artist:wooli"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/1ZpDxqXS6HAvoZyCzQfKRb",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81b8adf4e6253e6afbeb",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "4YX65szuyA3cu2EGMdIrRo",
+   "title": "WIDE AWAKE",
+   "spotify_artist_credit": "me n ü, Sandro Cavazza",
+   "duration_ms": 186666,
+   "lineup_artist_ids": [
+    "artist:me-n-u"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/1hqo0TnaWxL6jVm0wdzi9f",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8188955de2c8bcc22076",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "4ZmjEc72ASdMpRVYDeF9Z7",
+   "title": "Desire",
+   "spotify_artist_credit": "Zack Martino, Spat",
+   "duration_ms": 184620,
+   "lineup_artist_ids": [
+    "artist:zack-martino"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/2US2mjK9hW7QGSBNpprlbu",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d810aa280c900e551b49b",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "4zXG4SBvsjsW0EN1mjCxaV",
+   "title": "No Broke Boys - AVELLO Remix",
+   "spotify_artist_credit": "Disco Lines, Tinashe, AVELLO",
+   "duration_ms": 164885,
+   "lineup_artist_ids": [
+    "artist:avello",
+    "artist:disco-lines"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/1ZR5GnPw0Jkb5M4hnBwzuZ",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8122a397f348e445bb38",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "508qHPYB5x0CTw2F6oILwe",
+   "title": "BAJA BLASTER",
+   "spotify_artist_credit": "GHENGAR, Big Florida",
+   "duration_ms": 243310,
+   "lineup_artist_ids": [
+    "artist:big-florida"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7LjnXw8QLtGkt9GSwyo7aj",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d819993c6d593fdef1258",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "51NH5ntx0mM6T2FZbOXETL",
+   "title": "Blow Your Mind",
+   "spotify_artist_credit": "HILLS, ESSE",
+   "duration_ms": 141984,
+   "lineup_artist_ids": [
+    "artist:esse"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4PFWrk1gURzx5KuGSSLO19",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81c1b735d64267c3916b",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "523S2SOGiZ5q1VHiiSPxbg",
+   "title": "Bad Mamma Jamma - Extended Mix",
+   "spotify_artist_credit": "itsbilly, Monoky",
+   "duration_ms": 361473,
+   "lineup_artist_ids": [
+    "artist:monoky"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/35fqprYtwqebSkrjHVXfxw",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8181898ccc3ba52c517a",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "54S9rhNgvLcu0oGNwWjTXD",
+   "title": "Hear Me Now",
+   "spotify_artist_credit": "Kaskade, Wooli, MAXINE",
+   "duration_ms": 199781,
+   "lineup_artist_ids": [
+    "artist:kaskade",
+    "artist:wooli"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/1Uyqa2sdHm1bL5JK4IC4zc",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81a4bb39e2823a4c855f",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "55Buxzkild4FXY4oYkJJkS",
+   "title": "SO DAMN GOOD",
+   "spotify_artist_credit": "ALLEYCVT",
+   "duration_ms": 198400,
+   "lineup_artist_ids": [
+    "artist:alleycvt"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d814fbeacc787235e2299",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "57508shL0obX0KUOUL8CJk",
+   "title": "Make Me - Franky Rizardo Remix",
+   "spotify_artist_credit": "Borai & Denham Audio, Franky Rizardo",
+   "duration_ms": 195692,
+   "lineup_artist_ids": [
+    "artist:franky-rizardo"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/2UgphhGSlC9QWgaZWUOCkl",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81d2a31af133e2918cce",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "58IaSaF4BJUgYPI9G2gPmC",
+   "title": "Delincuente",
+   "spotify_artist_credit": "Miguelle & Tons, Miluhska, Jambene",
+   "duration_ms": 277209,
+   "lineup_artist_ids": [
+    "artist:miguelle-tons"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/1U7nDI6jydkqHWaOtUdlkx",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81d9881eddb88227bdd4",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "58ZxB5HafuK7mZS3B3kf8y",
+   "title": "LICK IT",
+   "spotify_artist_credit": "Roddy Lima, Sarah de Warren",
+   "duration_ms": 211987,
+   "lineup_artist_ids": [
+    "artist:roddy-lima"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81d1892cc286f750657f",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "5au1dxozcN7pepkik4E4uE",
+   "title": "Get Funky",
+   "spotify_artist_credit": "AAT",
+   "duration_ms": 193384,
+   "lineup_artist_ids": [
+    "artist:aat"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/02B08CAGsMQ0y87xmg07M9",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81a792bbc27850e4a690",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "5B5onCeur5UE2jbTCCkUiK",
+   "title": "Still My Baby",
+   "spotify_artist_credit": "Cloonee, GREG 99",
+   "duration_ms": 191233,
+   "lineup_artist_ids": [
+    "artist:greg-99"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/68ocQOFVB9wvLiC1C1WjYp",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81c19430ff0d5060e91f",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "5bdKaYnig6IqBsQQqBUjHm",
+   "title": "Back It Up",
+   "spotify_artist_credit": "Josh Baker, Omar+",
+   "duration_ms": 156398,
+   "lineup_artist_ids": [
+    "artist:josh-baker",
+    "artist:omar-plus"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4zf8Awb8y1X9qwL4oiVRd6",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81889ec0e48c2c9cf4ac",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "5cR7culxUEPLhzIC0KWAH1",
+   "title": "Perdoname (feat. DyCy & Adrian Delgado)",
+   "spotify_artist_credit": "Deorro, DyCy, Adrian Delgado",
+   "duration_ms": 270053,
+   "lineup_artist_ids": [
+    "artist:deorro"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6VD4UEUPvtsemqD3mmTqCR",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81d99f86c8c5430bd617",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "5DdDbJvoaT8fqQMJkiGg4T",
+   "title": "Take Over Control (feat. Eva Simons) - Radio Edit",
+   "spotify_artist_credit": "AFROJACK, Eva Simons",
+   "duration_ms": 208620,
+   "lineup_artist_ids": [
+    "artist:afrojack"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4D75GcNG95ebPtNvoNVXhz",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8173ad49d55d19b15ab5",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "5Dvlbh5yIVJw57MM9DejLK",
+   "title": "Ocean",
+   "spotify_artist_credit": "FISHER, AR/CO",
+   "duration_ms": 196923,
+   "lineup_artist_ids": [
+    "artist:ar-co"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7mGI9Sd66FqHjIkwzkgbG7",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81ea98e3fd4616813107",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "5e4II0hLokRNiw4q2uHeL8",
+   "title": "Better With You",
+   "spotify_artist_credit": "Nico Moreno, Novah, KIMI",
+   "duration_ms": 211928,
+   "lineup_artist_ids": [
+    "artist:nico-moreno"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6fjhNhp9IoeiZpEXq9AT2S",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81eb9b8ce64d652b3788",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "5Ef5Df4m9y7X4ixO4TgBWy",
+   "title": "Push It",
+   "spotify_artist_credit": "Disco Lines, Maesic, Mason, Princess Superstar",
+   "duration_ms": 129302,
+   "lineup_artist_ids": [
+    "artist:disco-lines"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/5Kmr0b3ip8g9P2i0dLTC3Z",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d813f83b3fcca80f9a58a",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "5eYVjWYsfGUqpkzM9uef7Q",
+   "title": "Hear Me Now",
+   "spotify_artist_credit": "Alok, Bruno Martini, Zeeba",
+   "duration_ms": 192846,
+   "lineup_artist_ids": [
+    "artist:alok"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0NGAZxHanS9e0iNHpR8f2W",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81d59611e767fcccf511",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "5fF9T9SMqBKUvT06cn7kBR",
+   "title": "It's That Time",
+   "spotify_artist_credit": "Marlon Hoffstadt, DJ Daddy Trance",
+   "duration_ms": 240250,
+   "lineup_artist_ids": [
+    "artist:marlon-hoffstadt"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81c4a251defc831fd7e6",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "5fqLqeakKq58Eu05bx2si5",
+   "title": "The Spot",
+   "spotify_artist_credit": "ARTBAT, JOA",
+   "duration_ms": 298125,
+   "lineup_artist_ids": [
+    "artist:joa"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/3rOSOkPQ5PHYOiR7mvLTMA",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d819a9485ea2eb7448cc6",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "5jdGLLEA1e85jy9VYdggoP",
+   "title": "Crave You - Adventure Club Remix",
+   "spotify_artist_credit": "Flight Facilities, Adventure Club",
+   "duration_ms": 236930,
+   "lineup_artist_ids": [
+    "artist:adventure-club"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/5CdJjUi9f0cVgo9nFuJrFa",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81a9b4cfff7b8e77dca2",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "5LALKtB7ARRwCS5j06BfOf",
+   "title": "Good Girl",
+   "spotify_artist_credit": "Cloonee, Prospa, Tristan Henry",
+   "duration_ms": 181411,
+   "lineup_artist_ids": [
+    "artist:prospa"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6HabM2PUM519iIxervGWSb",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8113bb7cfa97bbc00ff1",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "5LgajY7TLsN0WzXza4Fkw8",
+   "title": "RUSH",
+   "spotify_artist_credit": "Sloth",
+   "duration_ms": 142285,
+   "lineup_artist_ids": [
+    "artist:sloth"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81228584e45cd63f49e4",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "5LOkqfRL9Wl6r7exO6Xm6P",
+   "title": "Bass Drop",
+   "spotify_artist_credit": "AAT",
+   "duration_ms": 198945,
+   "lineup_artist_ids": [
+    "artist:aat"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/02B08CAGsMQ0y87xmg07M9",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81dc8143c33c50410051",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "5MhdIizFfxEAwBczKWBzbQ",
+   "title": "Moonshine",
+   "spotify_artist_credit": "Alan Walker, Elley Duhé",
+   "duration_ms": 160344,
+   "lineup_artist_ids": [
+    "artist:alan-walker"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d819ebff4e93a05733b79",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "5O5zNr0ooHWqHWfRGYX049",
+   "title": "Wide Awake",
+   "spotify_artist_credit": "Kanine",
+   "duration_ms": 226206,
+   "lineup_artist_ids": [
+    "artist:kanine"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/1KiNUGL3r0GgyLwqYCY1yV",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d813cb445e96398a24113",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "5On7CF20MHgFOYUUlacXbf",
+   "title": "Substance",
+   "spotify_artist_credit": "Alok, SCRIPT, FAANGS",
+   "duration_ms": 160496,
+   "lineup_artist_ids": [
+    "artist:alok"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d812f9e0fed93ee91a264",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "5th3NC5g5X0DiT2nruzr85",
+   "title": "theytookmymoney",
+   "spotify_artist_credit": "salameh, RAJE, FLAT 22",
+   "duration_ms": 270001,
+   "lineup_artist_ids": [
+    "artist:raje"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/2dPCWh9rFrw0MyUSr3sEyQ",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d816d9d42fa0992f1b7c5",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "5uaHSOou5ernQBKhfVse1f",
+   "title": "Everytime",
+   "spotify_artist_credit": "IDEMI, Lustral",
+   "duration_ms": 205454,
+   "lineup_artist_ids": [
+    "artist:idemi"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/09OK5GXLbMSjg8lOb4wRVT",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d812d8ad9dac4e122564d",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "5UcnVThvFiSQKWGQDtG58z",
+   "title": "Surrender",
+   "spotify_artist_credit": "Kanine, Jem Cooke",
+   "duration_ms": 203793,
+   "lineup_artist_ids": [
+    "artist:kanine"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/1KiNUGL3r0GgyLwqYCY1yV",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81319d8ee0ccdefc3a52",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "5uxwxuFRvmwYr3rLn81k8G",
+   "title": "YOUR EYES",
+   "spotify_artist_credit": "me n ü",
+   "duration_ms": 176470,
+   "lineup_artist_ids": [
+    "artist:me-n-u"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81b09de3c0020448396d",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "5vdYKeo49iIaBRXoug9bsi",
+   "title": "Illusions",
+   "spotify_artist_credit": "Brunello",
+   "duration_ms": 411968,
+   "lineup_artist_ids": [
+    "artist:brunello"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7FZIk8RSha4GBa4ZEPuytU",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8134a265e4a8a765d4f2",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "5wBIHtGYaQDWdB4uKWcmsu",
+   "title": "SMILING/HIDING",
+   "spotify_artist_credit": "San Holo, Kompany, Allegra Miles, Underbelly, Au5",
+   "duration_ms": 234755,
+   "lineup_artist_ids": [
+    "artist:kompany",
+    "artist:san-holo"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7dtX3ykcuyVmts2HQnWgSP",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81f19f5ef3194862e834",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "5wFtmxPFbYlbukfvWjzGki",
+   "title": "Woozy",
+   "spotify_artist_credit": "WonkyWilla, Sloth",
+   "duration_ms": 120756,
+   "lineup_artist_ids": [
+    "artist:sloth"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/2R8PPmEGSs8qYtV7qlHjt4",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81159b99deb19a3e750b",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "5ZOSgH7PHnPlJijoh1bjPh",
+   "title": "Toter Schmetterling",
+   "spotify_artist_credit": "Klangkuenstler, Sant",
+   "duration_ms": 233846,
+   "lineup_artist_ids": [
+    "artist:klangkuenstler"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6H77vD9YyhyxHBTkRpbMBk",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d818d8eb6c281e867c636",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "5ZWJAsrrjXUBPv3tYxaHEN",
+   "title": "Disguise",
+   "spotify_artist_credit": "Taiki Nulight, borne",
+   "duration_ms": 193273,
+   "lineup_artist_ids": [
+    "artist:taiki-nulight"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81e4adc6d80ab4ba0926",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "67kmVaXtdmcy856hKjHb3y",
+   "title": "YAPAQUE",
+   "spotify_artist_credit": "Farruko, Greeicy, Steve Aoki",
+   "duration_ms": 237120,
+   "lineup_artist_ids": [
+    "artist:steve-aoki"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/77AiFEVeAVj2ORpC85QVJs",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d817b9de0c84fb3658baa",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "698ItKASDavgwZ3WjaWjtz",
+   "title": "Faded",
+   "spotify_artist_credit": "Alan Walker",
+   "duration_ms": 212106,
+   "lineup_artist_ids": [
+    "artist:alan-walker"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7vk5e3vY1uw9plTHJAMwjN",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d810fbcc5c440e8eb37a3",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "69LK77IjL8NtKTgpMmRuCB",
+   "title": "Brackish",
+   "spotify_artist_credit": "Of The Trees, Tape B",
+   "duration_ms": 169714,
+   "lineup_artist_ids": [
+    "artist:of-the-trees"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d811eb832c5338a64872e",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "6AJAzlq5ujQWCzzwpeGEZA",
+   "title": "Wicked Game",
+   "spotify_artist_credit": "KREAM",
+   "duration_ms": 175327,
+   "lineup_artist_ids": [
+    "artist:kream"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0DdDnziut7wOo6cAYWVZC5",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8198a030fbf97cef9c50",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "6bs1myCEARQoI7oOLxqHkp",
+   "title": "Sonne Geht Auf",
+   "spotify_artist_credit": "Klangkuenstler, Ski Aggu",
+   "duration_ms": 126538,
+   "lineup_artist_ids": [
+    "artist:klangkuenstler"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81de9204dc3869ac4794",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "6bU9aYY97cCrzsx1IKdxZG",
+   "title": "What U Doing",
+   "spotify_artist_credit": "Dennis Cruz, Leo Wood",
+   "duration_ms": 229523,
+   "lineup_artist_ids": [
+    "artist:dennis-cruz"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/27mWOSZjlpmtoqsRjRwQyu",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8184ac5cc98bd0598d39",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "6cJwVvwYpMg8PlQpJY5RwS",
+   "title": "4 Ya Mind",
+   "spotify_artist_credit": "AYYBO, Discip",
+   "duration_ms": 205546,
+   "lineup_artist_ids": [
+    "artist:ayybo",
+    "artist:discip"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6K16NRv0isbkftsv5lmlMT",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8159a08dd668d954d14a",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "6cl01mVeSioV2jTHRcGe0l",
+   "title": "Runaway",
+   "spotify_artist_credit": "Jkyl & Hyde",
+   "duration_ms": 185142,
+   "lineup_artist_ids": [
+    "artist:jkyl-hyde"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d818e8122d69c7f77691b",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "6e3aWmdRTfEm9aXQjNuVl0",
+   "title": "Wildflower",
+   "spotify_artist_credit": "Joshwa",
+   "duration_ms": 208039,
+   "lineup_artist_ids": [
+    "artist:joshwa"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d819896baf05067dff40d",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "6eVObZmZadZp8MsUtgKIur",
+   "title": "Dancer in the Dark",
+   "spotify_artist_credit": "SHDW, Obscure Shape",
+   "duration_ms": 307240,
+   "lineup_artist_ids": [
+    "artist:shdw"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4IyAdT9yACjgFv8Qk2eSkO",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81fba72af78cb64b2c43",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "6F2ckzsOmaog4Ho3S928X4",
+   "title": "THE MOB",
+   "spotify_artist_credit": "IDEMI",
+   "duration_ms": 151384,
+   "lineup_artist_ids": [
+    "artist:idemi"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/09OK5GXLbMSjg8lOb4wRVT",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81fabbead558d532b331",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "6FTveMyq8szPAloptdZ17g",
+   "title": "Science Fiction",
+   "spotify_artist_credit": "Brunello",
+   "duration_ms": 396851,
+   "lineup_artist_ids": [
+    "artist:brunello"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7FZIk8RSha4GBa4ZEPuytU",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81a0a201f625af53a5c4",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "6gLDnzjpM0AwOeh9NmmHE0",
+   "title": "Other Side",
+   "spotify_artist_credit": "Azzecca",
+   "duration_ms": 244337,
+   "lineup_artist_ids": [
+    "artist:azzecca"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/2k5DY2QDU3kBi5DX7OQlWj",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d810f8ab4e19701b4ad5d",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "6GvfH6m9biXR8bL6WW8YX7",
+   "title": "Bubbling",
+   "spotify_artist_credit": "Dennis Cruz, Patrick Luna",
+   "duration_ms": 209092,
+   "lineup_artist_ids": [
+    "artist:dennis-cruz"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d817cbd35ee8ee92de7de",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "6Gzd1wfVKRoBg9EhcC1ytq",
+   "title": "Chiggy Chiggy (feat. Inéz)",
+   "spotify_artist_credit": "MALUGI, Inéz",
+   "duration_ms": 151939,
+   "lineup_artist_ids": [
+    "artist:malugi"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/50udUOTR7dQUgyPwPuCLM6",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d814bacabf78fb065d232",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "6HQZTHthmIW0QIefnOsSh1",
+   "title": "Fiesta",
+   "spotify_artist_credit": "MPH",
+   "duration_ms": 226086,
+   "lineup_artist_ids": [
+    "artist:mph"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d816094def6174df9878b",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "6IDywtwTrAkEsmJkPSNs27",
+   "title": "Toter Schmetterling - Single Edit",
+   "spotify_artist_credit": "Klangkuenstler, Sant",
+   "duration_ms": 164615,
+   "lineup_artist_ids": [
+    "artist:klangkuenstler"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6H77vD9YyhyxHBTkRpbMBk",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81099696ff39f6a8a613",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "6KTJrH8rLM4TefZcc9XFQF",
+   "title": "Black Sheep",
+   "spotify_artist_credit": "ATLiens, GG Magree",
+   "duration_ms": 174428,
+   "lineup_artist_ids": [
+    "artist:atliens"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d812ca38cf636d812b24c",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "6L5xbckRDXIf5K1pwTaGkD",
+   "title": "Satisfaction - Hardwell & Maddix Remix",
+   "spotify_artist_credit": "David Guetta, Benny Benassi, Hardwell, Maddix",
+   "duration_ms": 204436,
+   "lineup_artist_ids": [
+    "artist:david-guetta",
+    "artist:hardwell",
+    "artist:maddix"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0RMeG9M8QFzss9bAbq99KA",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8162b0deddaf313ec8f5",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 1
+  },
+  {
+   "spotify_track_id": "6LBVBJN2rdpOADp3RozGKC",
+   "title": "LOW",
+   "spotify_artist_credit": "Hardwell, Azteck, Dr Phunk",
+   "duration_ms": 152945,
+   "lineup_artist_ids": [
+    "artist:hardwell"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8139bcafeec3dcb84866",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "6lG1GtM6FvL18EvOVQELC8",
+   "title": "Se Que Quiere",
+   "spotify_artist_credit": "KREAM, RUBACK",
+   "duration_ms": 220009,
+   "lineup_artist_ids": [
+    "artist:kream"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d814a9d1ae2d541c12299",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "6m32mRhSnHe5NuQLmNwbv9",
+   "title": "No Phone Party",
+   "spotify_artist_credit": "Gabss, Talón",
+   "duration_ms": 201230,
+   "lineup_artist_ids": [
+    "artist:gabss"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7KMvse80vFnyE3fsoGWjaq",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d810fab0cdc440752d70b",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 1
+  },
+  {
+   "spotify_track_id": "6m5LSzsU466ynNvEkxoctM",
+   "title": "Sound Of The Sunrise",
+   "spotify_artist_credit": "AR/CO, Sistek",
+   "duration_ms": 193548,
+   "lineup_artist_ids": [
+    "artist:ar-co"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81519a07f92c4b97b96b",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "6nQs7YFkvBIR3OpnAXDfLL",
+   "title": "I Need The",
+   "spotify_artist_credit": "Phrva, ero808",
+   "duration_ms": 224571,
+   "lineup_artist_ids": [
+    "artist:phrva"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/2gUjbFSv34ZRVw5qkwKTO7",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81038cdbd910858aba13",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "6Pr51Pbeeu9PXskLUBfaBf",
+   "title": "SHADES OF BLUE",
+   "spotify_artist_credit": "John Summit, Devault, Julia Church",
+   "duration_ms": 203076,
+   "lineup_artist_ids": [
+    "artist:devault"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/1VBAKMui4zm5MnBWNn3NbL",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d816e91fbfca668117995",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "6PzbQNu6gi1uIuDwVCrmUu",
+   "title": "Honestly",
+   "spotify_artist_credit": "MALUGI, Sam Harper",
+   "duration_ms": 175628,
+   "lineup_artist_ids": [
+    "artist:malugi"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8164a1d3e74bb37bf4c8",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "6qJhrI2BMuA8qHcmycD3fL",
+   "title": "TESLA",
+   "spotify_artist_credit": "Mau P",
+   "duration_ms": 186818,
+   "lineup_artist_ids": [
+    "artist:mau-p"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8158a74ffe452e72c938",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "6QvldZZ10eYgKamaWfG52b",
+   "title": "Fuck Your Sunshine (Adventure Club Remix)",
+   "spotify_artist_credit": "Łaszewo, Adventure Club",
+   "duration_ms": 224250,
+   "lineup_artist_ids": [
+    "artist:adventure-club"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/5CdJjUi9f0cVgo9nFuJrFa",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d814796d5eb5304fe817a",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "6r7FXNO57mlZCBY6PXcZZT",
+   "title": "Five Hours",
+   "spotify_artist_credit": "Deorro",
+   "duration_ms": 326887,
+   "lineup_artist_ids": [
+    "artist:deorro"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8150ba0de7f3a5281793",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "6sStFqQdlp0L4vEXk24Ms6",
+   "title": "HARDEST MFS",
+   "spotify_artist_credit": "LAYZ, RZRKT",
+   "duration_ms": 257600,
+   "lineup_artist_ids": [
+    "artist:layz"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81318da3c7f14bcb279e",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "6TAbRIua9JOTmqGMjGWe4d",
+   "title": "Raving In The Studio",
+   "spotify_artist_credit": "Aitch, Bou",
+   "duration_ms": 183771,
+   "lineup_artist_ids": [
+    "artist:bou"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/35dxfY1wywqVRUEaVuMm13",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81ba9fa8f021a8d414f5",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "6tGqADF1MUkCEwHbY6EKCr",
+   "title": "DIS FUNCTION",
+   "spotify_artist_credit": "ATLiens, Cyclops",
+   "duration_ms": 160285,
+   "lineup_artist_ids": [
+    "artist:atliens"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/74RET4rCZPTGzhsLjD0i3g",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81aab879f148be7e4c1b",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "6tTDDMmEJpyA97VNYQjjeP",
+   "title": "Windhorse",
+   "spotify_artist_credit": "Of The Trees, Sophie Marks",
+   "duration_ms": 234244,
+   "lineup_artist_ids": [
+    "artist:of-the-trees"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/5V7NIXgCnX2KuQ01Bxg20c",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d819b908fca2cebbecd51",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "6VU8WmsSE0Iz49V8BJNR2v",
+   "title": "The Other Side",
+   "spotify_artist_credit": "LEVEL UP",
+   "duration_ms": 181241,
+   "lineup_artist_ids": [
+    "artist:level-up"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d810f9754cdc89fc2216f",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "6wb61u8ayuanWSHZzle5od",
+   "title": "I Want U",
+   "spotify_artist_credit": "Alison Wonderland",
+   "duration_ms": 210017,
+   "lineup_artist_ids": [
+    "artist:alison-wonderland"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/11gWrKZMBsGQWmobv3oNfW",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d813d9152e6f6c5dfefa0",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "6we24gnTynbSBMhitlNm0U",
+   "title": "Magic Trick - Jorge Savoretti Remix",
+   "spotify_artist_credit": "Natalia Roth, Mai iachetti, Jorge Savoretti",
+   "duration_ms": 365878,
+   "lineup_artist_ids": [
+    "artist:mai-iachetti"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/575TgodOOhMtSqhGYNWAeh",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d810f87cafcd3e1983e73",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "6XtFbNwhLEQnWXaasf2mwL",
+   "title": "No Le Bajes - Radio Mix",
+   "spotify_artist_credit": "Miguelle & Tons, Dru Flecha, Imperatori",
+   "duration_ms": 174175,
+   "lineup_artist_ids": [
+    "artist:miguelle-tons"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/1U7nDI6jydkqHWaOtUdlkx",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8121bc2ffebd6cfe3f68",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "6YPXz7BFlkL9QxEmZVgPvh",
+   "title": "Peaky & Distorted",
+   "spotify_artist_credit": "RAJE",
+   "duration_ms": 192114,
+   "lineup_artist_ids": [
+    "artist:raje"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81b984cfeaf2cf76c3df",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "6Yvo3lutdPOraK0TFBQLNi",
+   "title": "Balanca",
+   "spotify_artist_credit": "Simon Kidzoo, Monoky",
+   "duration_ms": 183804,
+   "lineup_artist_ids": [
+    "artist:monoky"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/35fqprYtwqebSkrjHVXfxw",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81ff807ac972f18da643",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "6Z3cE0ZK0tmj7131PFIOeZ",
+   "title": "Yosemite",
+   "spotify_artist_credit": "KETTAMA, Interplanetary Criminal",
+   "duration_ms": 266375,
+   "lineup_artist_ids": [
+    "artist:interplanetary-criminal"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6uJ51uV5rYzu1MJkC4CceI",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d812c8dbbd089bb493e63",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "6ZWYsvOTYigBYoHMpFOyoA",
+   "title": "Forever Melancholia",
+   "spotify_artist_credit": "I Hate Models",
+   "duration_ms": 421559,
+   "lineup_artist_ids": [
+    "artist:i-hate-models"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d814b9198f206e15d080a",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "71lvGzvRiC58AeFffFmw3N",
+   "title": "Bass Rider",
+   "spotify_artist_credit": "Sidney Charles",
+   "duration_ms": 225454,
+   "lineup_artist_ids": [
+    "artist:sidney-charles"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0J6ZEXmLQfZMeHBoa4JZTH",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8165ac7bc39b410048fb",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "73dPS5EDSbo40IdutOvhJ6",
+   "title": "SPARK",
+   "spotify_artist_credit": "LAYZ",
+   "duration_ms": 142400,
+   "lineup_artist_ids": [
+    "artist:layz"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/2ozQcs5XxFaj5fvA02zhwo",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81a28621c2b4e3fc687e",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "76Lq3l4TEzt2javAjXezAr",
+   "title": "Different Side",
+   "spotify_artist_credit": "Michael Bibi, KinAhau, Audio Bullys",
+   "duration_ms": 193710,
+   "lineup_artist_ids": [
+    "artist:kinahau"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/3C7Tv0IqIGLjA9rpVaeHRB",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81c6bd90ec4f51ae9bfd",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "775PftjfvN07kkNA04F4J8",
+   "title": "STROB3",
+   "spotify_artist_credit": "M81!, ORV",
+   "duration_ms": 204800,
+   "lineup_artist_ids": [
+    "artist:m81"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/3bE8ejTzBABjsWxbDhUSRv",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81af85f6ff8e43f20e01",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 1
+  },
+  {
+   "spotify_track_id": "77tLqaiLioNxEex0BsVFEE",
+   "title": "Frontin'",
+   "spotify_artist_credit": "Chef Boyarbeatz, MYTHM",
+   "duration_ms": 226285,
+   "lineup_artist_ids": [
+    "artist:chef-boyarbeatz"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d814681fffdc7abaa1a16",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "77WI2HaRmm2no6NqSA3G2c",
+   "title": "Take It All",
+   "spotify_artist_credit": "Subsonic, Stealth",
+   "duration_ms": 226206,
+   "lineup_artist_ids": [
+    "artist:subsonic"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4D6frglSGSAHoK7W5rp92j",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8136bab7f4c5e8326b55",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "79BY6QNQu7FeL6DnaKu5wT",
+   "title": "Take Me (To The Moon)",
+   "spotify_artist_credit": "Ian Asher, D A N N Y",
+   "duration_ms": 158629,
+   "lineup_artist_ids": [
+    "artist:ian-asher"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/5IrxhrMyvZxzgPYrC9j2km",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d813fb9f9c96a84e1923f",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "7AlemQMHpofDh4RPlWGada",
+   "title": "ECHOES",
+   "spotify_artist_credit": "Ravenscoon, Hex Cougar",
+   "duration_ms": 225000,
+   "lineup_artist_ids": [
+    "artist:ravenscoon"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7vfvYuEyJbh1Tf3QlOTAmZ",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d813b9f63cbb962c0ddf5",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "7BhmwvCdQZNwuQXSHw5TzP",
+   "title": "Headlights (feat. KIDDO)",
+   "spotify_artist_credit": "Alok, Alan Walker, KIDDO",
+   "duration_ms": 158400,
+   "lineup_artist_ids": [
+    "artist:alan-walker",
+    "artist:alok"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/0NGAZxHanS9e0iNHpR8f2W",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81da8f08e46c2a2190b6",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "7C9Bcp8XgBqdetAyvp5Vms",
+   "title": "Superrich",
+   "spotify_artist_credit": "Alok, me n ü, Ten Fé",
+   "duration_ms": 179000,
+   "lineup_artist_ids": [
+    "artist:alok",
+    "artist:me-n-u"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/1hqo0TnaWxL6jVm0wdzi9f",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d815daee1e49755722522",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "7CpaMI2EEklDbPXRkc4ocR",
+   "title": "She Lyin'",
+   "spotify_artist_credit": "Malóne Morez, Monoky, Ali Story",
+   "duration_ms": 160162,
+   "lineup_artist_ids": [
+    "artist:monoky"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/35fqprYtwqebSkrjHVXfxw",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8166ad1df4cdbafa52a1",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 1
+  },
+  {
+   "spotify_track_id": "7dYWuswcYTfETp2NxUqpRn",
+   "title": "Gangsta's Paradise",
+   "spotify_artist_credit": "Coolio, HOLY PRIEST, 1 World",
+   "duration_ms": 168000,
+   "lineup_artist_ids": [
+    "artist:holy-priest"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/5UG2ipdnA4vk8Eevkf1s06",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81c2adabf3edcb13050e",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "7dZYflC0DNtTZm3DwnryUH",
+   "title": "Think About Me - JNJS Remix",
+   "spotify_artist_credit": "Natalia Roth, Mai iachetti, JNJS",
+   "duration_ms": 348653,
+   "lineup_artist_ids": [
+    "artist:mai-iachetti"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/575TgodOOhMtSqhGYNWAeh",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d814b96c5cbee8606b15c",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "7eHjjHvs8kbYKtVAVySLzw",
+   "title": "Botega Vendeta",
+   "spotify_artist_credit": "ChaseWest, Mandragora",
+   "duration_ms": 285112,
+   "lineup_artist_ids": [
+    "artist:chasewest"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/4770WxUOyJMOJ1CHiZi2d6",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81589776f1b67dac971f",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "7Ei2LsA34MJPITPv72dvZw",
+   "title": "Heaven",
+   "spotify_artist_credit": "Alison Wonderland, Ninajirachi",
+   "duration_ms": 205693,
+   "lineup_artist_ids": [
+    "artist:alison-wonderland"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81e682d6f495cc8e6544",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "7F1CiKqrY44kh5cDqwHOnx",
+   "title": "Love Is Gone - Acoustic",
+   "spotify_artist_credit": "SLANDER, Dylan Matthew",
+   "duration_ms": 176971,
+   "lineup_artist_ids": [
+    "artist:slander"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/20DZAfCuP1TKZl5KcY7z3Q",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d813ebecddc35c5627282",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "7hBUvEg6V9TQPZgLie2krb",
+   "title": "SEE YOU DROP",
+   "spotify_artist_credit": "Ray Volpe",
+   "duration_ms": 157600,
+   "lineup_artist_ids": [
+    "artist:ray-volpe"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/2K9qsrYnsu1EWt7ZQkkuXb",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d813c8b4ef867a939c870",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 2
+  },
+  {
+   "spotify_track_id": "7hFfVcwHyNWVTbLCdT4wnz",
+   "title": "Dance In The Light",
+   "spotify_artist_credit": "Nico Moreno, Sarah de Warren",
+   "duration_ms": 230886,
+   "lineup_artist_ids": [
+    "artist:nico-moreno"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/6fjhNhp9IoeiZpEXq9AT2S",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d819dacf0df30a78914f8",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "7IoTUnyyvbMEY2UuE2Tmsx",
+   "title": "Make Believe",
+   "spotify_artist_credit": "Luke Dean, Omar+",
+   "duration_ms": 185000,
+   "lineup_artist_ids": [
+    "artist:luke-dean",
+    "artist:omar-plus"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d813f944af1028e7d40a8",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "7Kmo4UQ5Co6tqtysQcLkpF",
+   "title": "set me free",
+   "spotify_artist_credit": "Aaron Hibell, Alex Wann",
+   "duration_ms": 218360,
+   "lineup_artist_ids": [
+    "artist:aaron-hibell"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81269316f4e0fda756b4",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "7kMUrgcLuIv7ODffVw27FQ",
+   "title": "REWIND",
+   "spotify_artist_credit": "Ray Volpe, Sullivan King",
+   "duration_ms": 198800,
+   "lineup_artist_ids": [
+    "artist:ray-volpe"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/2K9qsrYnsu1EWt7ZQkkuXb",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81a78663c9d702cd599f",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "7m47Go71qTMBs4kTH7U8F8",
+   "title": "Pursuit Of Happiness - Extended Steve Aoki Remix",
+   "spotify_artist_credit": "Kid Cudi, MGMT, Ratatat, Steve Aoki",
+   "duration_ms": 373546,
+   "lineup_artist_ids": [
+    "artist:steve-aoki"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/77AiFEVeAVj2ORpC85QVJs",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d817eaa03c23d4b4273f5",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "7ml6mms5SS6qahrXMYWSVw",
+   "title": "CLOSE YOUR EYES",
+   "spotify_artist_credit": "San Holo",
+   "duration_ms": 208965,
+   "lineup_artist_ids": [
+    "artist:san-holo"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81cfa4d0c12b86ed4334",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  },
+  {
+   "spotify_track_id": "7MLitWCZt9WDukjo066SfF",
+   "title": "Orgasmic - Sloth Remix",
+   "spotify_artist_credit": "WonkyWilla, Sloth",
+   "duration_ms": 149677,
+   "lineup_artist_ids": [
+    "artist:sloth"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/2R8PPmEGSs8qYtV7qlHjt4",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81648acde1e2111f3add",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "7uSupgnScNSahebyEiRitY",
+   "title": "FULL SEND",
+   "spotify_artist_credit": "Jantsen, Ravenscoon",
+   "duration_ms": 211862,
+   "lineup_artist_ids": [
+    "artist:ravenscoon"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/7vfvYuEyJbh1Tf3QlOTAmZ",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d810fb442c32f6ef3dec2",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "7wuRzfIdxpcqrCjYqNm0k2",
+   "title": "Wanna Go",
+   "spotify_artist_credit": "Phrva",
+   "duration_ms": 138857,
+   "lineup_artist_ids": [
+    "artist:phrva"
+   ],
+   "discovery_source_url": "https://open.spotify.com/embed/artist/2gUjbFSv34ZRVw5qkwKTO7",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d8189a990d9ed23a03a72",
+   "batch": "2026-10-30-three-before-five",
+   "discovery_pass": 3
+  },
+  {
+   "spotify_track_id": "7yG1WnAViThzokX5FLL24v",
+   "title": "METAVERSO",
+   "spotify_artist_credit": "Adrian Mills, Pablo185",
+   "duration_ms": 213525,
+   "lineup_artist_ids": [
+    "artist:adrian-mills"
+   ],
+   "discovery_source_url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+   "notion_track_url": "https://app.notion.com/p/4090e646ca0d81c69496f41f636c3cdd",
+   "batch": "2026-10-30-official-playlist",
+   "discovery_pass": null
+  }
+ ]
+}
