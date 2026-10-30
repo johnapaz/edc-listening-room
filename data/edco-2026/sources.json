@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-30",
+  "sources": [
+    {
+      "source_id": "lineup-text",
+      "url": "https://orlando.edc.com/lineup/",
+      "type": "organizer_html_text",
+      "local_snapshot": "sources/lineup-text-2026-10-30.json"
+    },
+    {
+      "source_id": "lineup-poster",
+      "url": "https://orlando.edc.com/lineup/",
+      "type": "organizer_poster_in_owner_screenshots",
+      "asset_url": "https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/sites/44/2026/07/07124613/edco_2026_mk_lu_lubd_soc_1080x1350_r01.png",
+      "local_snapshot": "sources/lineup-poster-2026-10-30.json"
+    },
+    {
+      "source_id": "map",
+      "url": "https://orlando.edc.com/guide/map/",
+      "type": "organizer_map_in_owner_screenshot"
+    },
+    {
+      "source_id": "hours",
+      "url": "https://orlando.edc.com/guide/hours-and-info/",
+      "type": "organizer_html_text"
+    },
+    {
+      "source_id": "stages",
+      "url": "https://orlando.edc.com/experience/stages/",
+      "type": "organizer_html_text"
+    },
+    {
+      "source_id": "faq",
+      "url": "https://orlando.edc.com/guide/faq/",
+      "type": "organizer_html_text"
+    },
+    {
+      "source_id": "world",
+      "url": "https://orlando.edc.com/experience/the-world-of-edc/",
+      "type": "owner_screenshot_context_only"
+    }
+  ],
+  "owner_screenshot_provenance": [
+    {
+      "filename": "orlando.edc.com-Festival Map  EDC Orlando -fpscreenshot.jpeg",
+      "sha256": "9df142a91c852661e17c2986ebf70aa4e4cf1a44d9a233cbca834e9d8e6c96b9",
+      "provided_on": "2026-10-30",
+      "note": "Original screenshot supplied by owner; not rehosted in this public repo."
+    },
+    {
+      "filename": "orlando.edc.com-Hours  Info  EDC Orlando -fpscreenshot.jpeg",
+      "sha256": "751aa3bdea01119e6297182bb04b4e4c438614946f684ebec71e960c3250486a",
+      "provided_on": "2026-10-30",
+      "note": "Original screenshot supplied by owner; not rehosted in this public repo."
+    },
+    {
+      "filename": "orlando.edc.com-Lineup  EDC Orlando -fpscreenshot (1).jpeg",
+      "sha256": "a096ea78a37e285c789aef6da8f6041237aef93c548223bc04c236a3cffb28b1",
+      "provided_on": "2026-10-30",
+      "note": "Original screenshot supplied by owner; not rehosted in this public repo."
+    },
+    {
+      "filename": "orlando.edc.com-Lineup  EDC Orlando -fpscreenshot.jpeg",
+      "sha256": "11e3402ed8659384be735137e63a4d48ca2986bfa5d1d98b745102ca31ead45b",
+      "provided_on": "2026-10-30",
+      "note": "Original screenshot supplied by owner; not rehosted in this public repo."
+    },
+    {
+      "filename": "orlando.edc.com-Stages  EDC Orlando -fpscreenshot.jpeg",
+      "sha256": "ace5b6e3b91f32927cc1e8e21da902f5059cc420a9c8b95e18890626a5ee1761",
+      "provided_on": "2026-10-30",
+      "note": "Original screenshot supplied by owner; not rehosted in this public repo."
+    },
+    {
+      "filename": "orlando.edc.com-The World of EDC  EDC Orlando -fpscreenshot.jpeg",
+      "sha256": "4b2fd071f5281578298aefa4676ac9ed4dfccae7781d5846d463600cc64c94db",
+      "provided_on": "2026-10-30",
+      "note": "Original screenshot supplied by owner; not rehosted in this public repo."
+    }
+  ],
+  "issues": [
+    {
+      "issue_id": "lineup-prospa-josh-baker",
+      "status": "unresolved_organizer_source_conflict",
+      "description": "Poster lists Josh Baker, Prospa, and Prospa B2B Josh Baker on Friday. HTML lists Josh Baker twice and neither Prospa entry. The two supplied screenshots agree on the poster. Neither source establishes which appearances remain current.",
+      "policy": "Keep one Josh Baker solo row, one Prospa row and one Prospa B2B Josh Baker row; flag all three. Do not treat duplicate HTML text as proof of a second solo set. Reconcile against the official 2026 timetable or a newer organizer announcement.",
+      "affected_performance_ids": [
+        "edco26:2026-11-06:josh-baker",
+        "edco26:2026-11-06:prospa",
+        "edco26:2026-11-06:prospa-b2b-josh-baker"
+      ]
+    }
+  ],
+  "normalization_notes": [
+    "Promotional YOU excluded; Discovery Project retained as a program slot with no invented artist identity.",
+    "B2B is one performance with two credited artist IDs; never create a B2B catalog artist.",
+    "Skull Machine is a billed project with explicitly named members. Its members are indexed separately; do not automatically ingest all member catalogs.",
+    "Fury with MC Dino is one performance with DJ and MC credits. AR/CO and Miguelle & Tons stay intact as named acts.",
+    "Sunset and Wholesome Riddim are set qualifiers, not additional artists, clock times, or catalog genres.",
+    "IDs use explicit local namespaces and are not MusicBrainz or YouTube identifiers.",
+    "Poster capitalization is normalized to page text where possible; punctuation and accents retained in display names.",
+    "Any future second scheduled appearance needs a new performance ID; never key timetable updates by artist ID alone."
+  ]
+}

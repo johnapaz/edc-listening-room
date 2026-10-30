@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-30",
+  "stages": [
+    {
+      "stage_id": "kinetic-field",
+      "display_name": "kineticFIELD",
+      "source_ids": [
+        "stages"
+      ],
+      "coordinates": null
+    },
+    {
+      "stage_id": "circuit-grounds",
+      "display_name": "circuitGROUNDS",
+      "source_ids": [
+        "stages"
+      ],
+      "coordinates": null
+    },
+    {
+      "stage_id": "neon-garden",
+      "display_name": "neonGARDEN",
+      "source_ids": [
+        "stages"
+      ],
+      "coordinates": null
+    },
+    {
+      "stage_id": "stereo-bloom",
+      "display_name": "stereoBLOOM",
+      "source_ids": [
+        "stages"
+      ],
+      "coordinates": null
+    },
+    {
+      "stage_id": "casa-bacardi",
+      "display_name": "CASA BACARDÍ",
+      "source_ids": [
+        "stages"
+      ],
+      "coordinates": null
+    }
+  ],
+  "map": {
+    "source_id": "map",
+    "asset_url": "https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/sites/44/2026/10/27141013/edco_2026_de_festival_map_1080x1350_r02.png",
+    "map_edition": "r02 (asset filename)",
+    "legend_labels": [
+      "First aid",
+      "Restrooms",
+      "GA+ restrooms",
+      "Accessible viewing",
+      "Water stations",
+      "Food truck",
+      "Bar",
+      "Food",
+      "Merchandise",
+      "Lockers",
+      "General store",
+      "Photo op",
+      "VIP bar",
+      "VIP food",
+      "VIP restrooms",
+      "VIP water stations",
+      "VIP upgrade",
+      "VIP concierge",
+      "VIP barber",
+      "Skydeck",
+      "Cash exchange",
+      "Consciousness group",
+      "Ground Control oasis",
+      "Charge station (powered by chargeFUZE)",
+      "Wi-Fi",
+      "Info",
+      "Lost & found",
+      "ID check",
+      "Box office / will call",
+      "Official shuttle exit (after 11:30 PM)"
+    ],
+    "other_visible_labels": [
+      "Pixel Forest",
+      "Daisy Fields",
+      "Rainbow Bazaar",
+      "Rainbow Road",
+      "Power Path",
+      "Kinetic Trail",
+      "Pixel Path",
+      "Sunshine Lane",
+      "Entrance",
+      "Official shuttle exit",
+      "Skydeck entry"
+    ],
+    "interpretation": "Legend and visible labels transcribed from supplied 2026 screenshot. No geographic coordinates, walking times, path accessibility, or artist-stage assignments inferred."
+  }
+}

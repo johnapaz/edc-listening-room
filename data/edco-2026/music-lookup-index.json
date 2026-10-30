@@ -1,0 +1,715 @@
+{
+  "schema_version": 1,
+  "snapshot_base_commit": "af92be853f4fddf12b442798b3dded9e40f7cd46",
+  "checked_on": "2026-10-30",
+  "scope": "Existing eight-artist pilot only. Discovery index, never a publish manifest.",
+  "source_file_sha256": {
+    "pilot/identity-review.json": "2137361bcc706491175ea41183e32ed278e0d7c3899bfd9f28cc81b638301754",
+    "pilot/recording-candidates.json": "2e0b7896156619fcd05e998043d788855519370e20085fbf4f633f372d1abfd4",
+    "pilot/evidence-checkpoint.json": "483e73fdf9f1fcb29948a4ce2bc638d42db5053bf4db6090fe83358ef13a9a93",
+    "pilot/evidence-reviewed.json": "f96c568a4892704c715719dd5d9afd234ba178059bcccc8baefaf5fcace80166",
+    "pilot/preview-tracks.json": "07811e543efe46d2c4b1b3eb9bc0e7729f7f119eaca66995bb119ad09bf52a32",
+    "pilot/preview-approved.json": "555a2e0f79e16267664ddfec182c1ddb0360edaa838a0cfafc87761498ea8530"
+  },
+  "counts": {
+    "pilot_artists": 8,
+    "recording_candidates": 41,
+    "known_videos": 12,
+    "approved_preview_rows": 11
+  },
+  "artists": [
+    {
+      "artist_id": "artist:martin-garrix",
+      "display_name": "Martin Garrix",
+      "identity_review_ref": "pilot/identity-review.json#/artists/0",
+      "candidate_ids": [
+        "pilot:martin-garrix:told-you-so",
+        "pilot:martin-garrix:gravity",
+        "pilot:martin-garrix:smile",
+        "pilot:martin-garrix:wherever-you-are",
+        "pilot:martin-garrix:carry-you"
+      ]
+    },
+    {
+      "artist_id": "artist:i-hate-models",
+      "display_name": "I Hate Models",
+      "identity_review_ref": "pilot/identity-review.json#/artists/1",
+      "candidate_ids": [
+        "pilot:i-hate-models:warehouse-memories",
+        "pilot:i-hate-models:daydream",
+        "pilot:i-hate-models:shades-of-night",
+        "pilot:i-hate-models:two-steps-from-heaven",
+        "pilot:i-hate-models:sad-groove"
+      ]
+    },
+    {
+      "artist_id": "artist:a-little-sound",
+      "display_name": "A Little Sound",
+      "identity_review_ref": "pilot/identity-review.json#/artists/2",
+      "candidate_ids": [
+        "pilot:a-little-sound:back-to-back--b2b-",
+        "pilot:a-little-sound:breathe",
+        "pilot:a-little-sound:weed---wine",
+        "pilot:a-little-sound:confide",
+        "pilot:a-little-sound:overload"
+      ]
+    },
+    {
+      "artist_id": "artist:ki-ki",
+      "display_name": "KI/KI",
+      "identity_review_ref": "pilot/identity-review.json#/artists/3",
+      "candidate_ids": [
+        "pilot:ki-ki:here-with-me",
+        "pilot:ki-ki:going-existential-in-the-rave",
+        "pilot:ki-ki:can-t-stop-loving-you",
+        "pilot:ki-ki:put-your-bassline",
+        "pilot:ki-ki:what-s-a-girl-to-do-in--25",
+        "pilot:ki-ki:5-mins-of-acid"
+      ]
+    },
+    {
+      "artist_id": "artist:acraze",
+      "display_name": "ACRAZE",
+      "identity_review_ref": "pilot/identity-review.json#/artists/4",
+      "candidate_ids": [
+        "pilot:acraze:do-it-to-it",
+        "pilot:acraze:believe",
+        "pilot:acraze:take-me-away",
+        "pilot:acraze:heard-it-like-this",
+        "pilot:acraze:apple-cider"
+      ]
+    },
+    {
+      "artist_id": "artist:cid",
+      "display_name": "CID",
+      "identity_review_ref": "pilot/identity-review.json#/artists/5",
+      "candidate_ids": [
+        "pilot:cid:no-",
+        "pilot:cid:us",
+        "pilot:cid:sweet-memories",
+        "pilot:cid:secrets",
+        "pilot:cid:night-service-only"
+      ]
+    },
+    {
+      "artist_id": "artist:benda",
+      "display_name": "Benda",
+      "identity_review_ref": "pilot/identity-review.json#/artists/6",
+      "candidate_ids": [
+        "pilot:benda:break-shit--feat--blupill-",
+        "pilot:benda:bone-breaker",
+        "pilot:benda:poison-control",
+        "pilot:benda:waterbenda",
+        "pilot:benda:free-smoke"
+      ]
+    },
+    {
+      "artist_id": "artist:vastive",
+      "display_name": "Vastive",
+      "identity_review_ref": "pilot/identity-review.json#/artists/7",
+      "candidate_ids": [
+        "pilot:vastive:slaughter",
+        "pilot:vastive:die-by-my-hand",
+        "pilot:vastive:under-my-skin",
+        "pilot:vastive:barking-at-thunder",
+        "pilot:vastive:cut"
+      ]
+    }
+  ],
+  "recordings": [
+    {
+      "candidate_id": "pilot:martin-garrix:told-you-so",
+      "artist_id": "artist:martin-garrix",
+      "artist": "Martin Garrix",
+      "title": "Told You So",
+      "candidate_ref": "pilot/recording-candidates.json#/0",
+      "reviewed_recording_evidence_key": "pilot:martin-garrix:told-you-so",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:martin-garrix:gravity",
+      "artist_id": "artist:martin-garrix",
+      "artist": "Martin Garrix",
+      "title": "Gravity",
+      "candidate_ref": "pilot/recording-candidates.json#/1",
+      "reviewed_recording_evidence_key": "pilot:martin-garrix:gravity",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:martin-garrix:smile",
+      "artist_id": "artist:martin-garrix",
+      "artist": "Martin Garrix",
+      "title": "Smile",
+      "candidate_ref": "pilot/recording-candidates.json#/2",
+      "reviewed_recording_evidence_key": "pilot:martin-garrix:smile",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:martin-garrix:wherever-you-are",
+      "artist_id": "artist:martin-garrix",
+      "artist": "Martin Garrix",
+      "title": "Wherever You Are",
+      "candidate_ref": "pilot/recording-candidates.json#/3",
+      "reviewed_recording_evidence_key": "pilot:martin-garrix:wherever-you-are",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:martin-garrix:carry-you",
+      "artist_id": "artist:martin-garrix",
+      "artist": "Martin Garrix",
+      "title": "Carry You",
+      "candidate_ref": "pilot/recording-candidates.json#/4",
+      "reviewed_recording_evidence_key": "pilot:martin-garrix:carry-you",
+      "preview_refs": [
+        "pilot/preview-tracks.json#/0"
+      ],
+      "known_video_ids": [
+        "bz6taI5pDl0"
+      ]
+    },
+    {
+      "candidate_id": "pilot:i-hate-models:warehouse-memories",
+      "artist_id": "artist:i-hate-models",
+      "artist": "I Hate Models",
+      "title": "Warehouse Memories",
+      "candidate_ref": "pilot/recording-candidates.json#/5",
+      "reviewed_recording_evidence_key": "pilot:i-hate-models:warehouse-memories",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:i-hate-models:daydream",
+      "artist_id": "artist:i-hate-models",
+      "artist": "I Hate Models",
+      "title": "Daydream",
+      "candidate_ref": "pilot/recording-candidates.json#/6",
+      "reviewed_recording_evidence_key": "pilot:i-hate-models:daydream",
+      "preview_refs": [
+        "pilot/preview-tracks.json#/1"
+      ],
+      "known_video_ids": [
+        "U6EjUIefwiw"
+      ]
+    },
+    {
+      "candidate_id": "pilot:i-hate-models:shades-of-night",
+      "artist_id": "artist:i-hate-models",
+      "artist": "I Hate Models",
+      "title": "Shades Of Night",
+      "candidate_ref": "pilot/recording-candidates.json#/7",
+      "reviewed_recording_evidence_key": "pilot:i-hate-models:shades-of-night",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:i-hate-models:two-steps-from-heaven",
+      "artist_id": "artist:i-hate-models",
+      "artist": "I Hate Models",
+      "title": "Two Steps From Heaven",
+      "candidate_ref": "pilot/recording-candidates.json#/8",
+      "reviewed_recording_evidence_key": "pilot:i-hate-models:two-steps-from-heaven",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:i-hate-models:sad-groove",
+      "artist_id": "artist:i-hate-models",
+      "artist": "I Hate Models",
+      "title": "Sad Groove",
+      "candidate_ref": "pilot/recording-candidates.json#/9",
+      "reviewed_recording_evidence_key": "pilot:i-hate-models:sad-groove",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:a-little-sound:back-to-back--b2b-",
+      "artist_id": "artist:a-little-sound",
+      "artist": "A Little Sound",
+      "title": "Back To Back (B2B)",
+      "candidate_ref": "pilot/recording-candidates.json#/10",
+      "reviewed_recording_evidence_key": "pilot:a-little-sound:back-to-back--b2b-",
+      "preview_refs": [
+        "pilot/preview-tracks.json#/2"
+      ],
+      "known_video_ids": [
+        "HYCG79PxgFc"
+      ]
+    },
+    {
+      "candidate_id": "pilot:a-little-sound:breathe",
+      "artist_id": "artist:a-little-sound",
+      "artist": "A Little Sound",
+      "title": "Breathe",
+      "candidate_ref": "pilot/recording-candidates.json#/11",
+      "reviewed_recording_evidence_key": "pilot:a-little-sound:breathe",
+      "preview_refs": [
+        "pilot/preview-tracks.json#/3"
+      ],
+      "known_video_ids": [
+        "Rv550gn6y8k"
+      ]
+    },
+    {
+      "candidate_id": "pilot:a-little-sound:weed---wine",
+      "artist_id": "artist:a-little-sound",
+      "artist": "A Little Sound",
+      "title": "Weed & Wine",
+      "candidate_ref": "pilot/recording-candidates.json#/12",
+      "reviewed_recording_evidence_key": "pilot:a-little-sound:weed---wine",
+      "preview_refs": [
+        "pilot/preview-tracks.json#/4"
+      ],
+      "known_video_ids": [
+        "_M5O_ED_1aI"
+      ]
+    },
+    {
+      "candidate_id": "pilot:a-little-sound:confide",
+      "artist_id": "artist:a-little-sound",
+      "artist": "A Little Sound",
+      "title": "Confide",
+      "candidate_ref": "pilot/recording-candidates.json#/13",
+      "reviewed_recording_evidence_key": "pilot:a-little-sound:confide",
+      "preview_refs": [
+        "pilot/preview-tracks.json#/5"
+      ],
+      "known_video_ids": [
+        "WimivlmnA9I"
+      ]
+    },
+    {
+      "candidate_id": "pilot:a-little-sound:overload",
+      "artist_id": "artist:a-little-sound",
+      "artist": "A Little Sound",
+      "title": "Overload",
+      "candidate_ref": "pilot/recording-candidates.json#/14",
+      "reviewed_recording_evidence_key": "pilot:a-little-sound:overload",
+      "preview_refs": [
+        "pilot/preview-tracks.json#/6"
+      ],
+      "known_video_ids": [
+        "8I-QJlFSJdM"
+      ]
+    },
+    {
+      "candidate_id": "pilot:ki-ki:here-with-me",
+      "artist_id": "artist:ki-ki",
+      "artist": "KI/KI",
+      "title": "Here With Me",
+      "candidate_ref": "pilot/recording-candidates.json#/15",
+      "reviewed_recording_evidence_key": "pilot:ki-ki:here-with-me",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:ki-ki:going-existential-in-the-rave",
+      "artist_id": "artist:ki-ki",
+      "artist": "KI/KI",
+      "title": "Going Existential In The Rave",
+      "candidate_ref": "pilot/recording-candidates.json#/16",
+      "reviewed_recording_evidence_key": "pilot:ki-ki:going-existential-in-the-rave",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:ki-ki:can-t-stop-loving-you",
+      "artist_id": "artist:ki-ki",
+      "artist": "KI/KI",
+      "title": "Can't Stop Loving You",
+      "candidate_ref": "pilot/recording-candidates.json#/17",
+      "reviewed_recording_evidence_key": "pilot:ki-ki:can-t-stop-loving-you",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:ki-ki:put-your-bassline",
+      "artist_id": "artist:ki-ki",
+      "artist": "KI/KI",
+      "title": "Put Your Bassline",
+      "candidate_ref": "pilot/recording-candidates.json#/18",
+      "reviewed_recording_evidence_key": "pilot:ki-ki:put-your-bassline",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:ki-ki:what-s-a-girl-to-do-in--25",
+      "artist_id": "artist:ki-ki",
+      "artist": "KI/KI",
+      "title": "What’s a Girl to Do in ‘25",
+      "candidate_ref": "pilot/recording-candidates.json#/19",
+      "reviewed_recording_evidence_key": "pilot:ki-ki:what-s-a-girl-to-do-in--25",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:ki-ki:5-mins-of-acid",
+      "artist_id": "artist:ki-ki",
+      "artist": "KI/KI",
+      "title": "5 Mins Of Acid",
+      "candidate_ref": "pilot/recording-candidates.json#/20",
+      "reviewed_recording_evidence_key": "pilot:ki-ki:5-mins-of-acid",
+      "preview_refs": [
+        "pilot/preview-tracks.json#/7"
+      ],
+      "known_video_ids": [
+        "wtnrLTqmUKI"
+      ]
+    },
+    {
+      "candidate_id": "pilot:acraze:do-it-to-it",
+      "artist_id": "artist:acraze",
+      "artist": "ACRAZE",
+      "title": "Do It To It",
+      "candidate_ref": "pilot/recording-candidates.json#/21",
+      "reviewed_recording_evidence_key": "pilot:acraze:do-it-to-it",
+      "preview_refs": [
+        "pilot/preview-tracks.json#/8"
+      ],
+      "known_video_ids": [
+        "bnA7yJkAG30"
+      ]
+    },
+    {
+      "candidate_id": "pilot:acraze:believe",
+      "artist_id": "artist:acraze",
+      "artist": "ACRAZE",
+      "title": "Believe",
+      "candidate_ref": "pilot/recording-candidates.json#/22",
+      "reviewed_recording_evidence_key": "pilot:acraze:believe",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:acraze:take-me-away",
+      "artist_id": "artist:acraze",
+      "artist": "ACRAZE",
+      "title": "Take Me Away",
+      "candidate_ref": "pilot/recording-candidates.json#/23",
+      "reviewed_recording_evidence_key": "pilot:acraze:take-me-away",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:acraze:heard-it-like-this",
+      "artist_id": "artist:acraze",
+      "artist": "ACRAZE",
+      "title": "Heard It Like This",
+      "candidate_ref": "pilot/recording-candidates.json#/24",
+      "reviewed_recording_evidence_key": "pilot:acraze:heard-it-like-this",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:acraze:apple-cider",
+      "artist_id": "artist:acraze",
+      "artist": "ACRAZE",
+      "title": "Apple Cider",
+      "candidate_ref": "pilot/recording-candidates.json#/25",
+      "reviewed_recording_evidence_key": "pilot:acraze:apple-cider",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:cid:no-",
+      "artist_id": "artist:cid",
+      "artist": "CID",
+      "title": "No!",
+      "candidate_ref": "pilot/recording-candidates.json#/26",
+      "reviewed_recording_evidence_key": "pilot:cid:no-",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:cid:us",
+      "artist_id": "artist:cid",
+      "artist": "CID",
+      "title": "Us",
+      "candidate_ref": "pilot/recording-candidates.json#/27",
+      "reviewed_recording_evidence_key": "pilot:cid:us",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:cid:sweet-memories",
+      "artist_id": "artist:cid",
+      "artist": "CID",
+      "title": "Sweet Memories",
+      "candidate_ref": "pilot/recording-candidates.json#/28",
+      "reviewed_recording_evidence_key": "pilot:cid:sweet-memories",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:cid:secrets",
+      "artist_id": "artist:cid",
+      "artist": "CID",
+      "title": "Secrets",
+      "candidate_ref": "pilot/recording-candidates.json#/29",
+      "reviewed_recording_evidence_key": "pilot:cid:secrets",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:cid:night-service-only",
+      "artist_id": "artist:cid",
+      "artist": "CID",
+      "title": "Night Service Only",
+      "candidate_ref": "pilot/recording-candidates.json#/30",
+      "reviewed_recording_evidence_key": "pilot:cid:night-service-only",
+      "preview_refs": [
+        "pilot/preview-tracks.json#/9"
+      ],
+      "known_video_ids": [
+        "Scc4CRVroPo"
+      ]
+    },
+    {
+      "candidate_id": "pilot:benda:break-shit--feat--blupill-",
+      "artist_id": "artist:benda",
+      "artist": "Benda",
+      "title": "Break Shit (feat. Blupill)",
+      "candidate_ref": "pilot/recording-candidates.json#/31",
+      "reviewed_recording_evidence_key": "pilot:benda:break-shit--feat--blupill-",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:benda:bone-breaker",
+      "artist_id": "artist:benda",
+      "artist": "Benda",
+      "title": "Bone Breaker",
+      "candidate_ref": "pilot/recording-candidates.json#/32",
+      "reviewed_recording_evidence_key": "pilot:benda:bone-breaker",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:benda:poison-control",
+      "artist_id": "artist:benda",
+      "artist": "Benda",
+      "title": "Poison Control",
+      "candidate_ref": "pilot/recording-candidates.json#/33",
+      "reviewed_recording_evidence_key": "pilot:benda:poison-control",
+      "preview_refs": [
+        "pilot/preview-tracks.json#/11"
+      ],
+      "known_video_ids": [
+        "oXhWSs0mRH4"
+      ]
+    },
+    {
+      "candidate_id": "pilot:benda:waterbenda",
+      "artist_id": "artist:benda",
+      "artist": "Benda",
+      "title": "Waterbenda",
+      "candidate_ref": "pilot/recording-candidates.json#/34",
+      "reviewed_recording_evidence_key": "pilot:benda:waterbenda",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:benda:free-smoke",
+      "artist_id": "artist:benda",
+      "artist": "Benda",
+      "title": "Free Smoke",
+      "candidate_ref": "pilot/recording-candidates.json#/35",
+      "reviewed_recording_evidence_key": "pilot:benda:free-smoke",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:vastive:slaughter",
+      "artist_id": "artist:vastive",
+      "artist": "Vastive",
+      "title": "Slaughter",
+      "candidate_ref": "pilot/recording-candidates.json#/36",
+      "reviewed_recording_evidence_key": "pilot:vastive:slaughter",
+      "preview_refs": [
+        "pilot/preview-tracks.json#/10"
+      ],
+      "known_video_ids": [
+        "Ve_LOVTzbxM"
+      ]
+    },
+    {
+      "candidate_id": "pilot:vastive:die-by-my-hand",
+      "artist_id": "artist:vastive",
+      "artist": "Vastive",
+      "title": "Die By My Hand",
+      "candidate_ref": "pilot/recording-candidates.json#/37",
+      "reviewed_recording_evidence_key": "pilot:vastive:die-by-my-hand",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:vastive:under-my-skin",
+      "artist_id": "artist:vastive",
+      "artist": "Vastive",
+      "title": "Under My Skin",
+      "candidate_ref": "pilot/recording-candidates.json#/38",
+      "reviewed_recording_evidence_key": "pilot:vastive:under-my-skin",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:vastive:barking-at-thunder",
+      "artist_id": "artist:vastive",
+      "artist": "Vastive",
+      "title": "Barking At Thunder",
+      "candidate_ref": "pilot/recording-candidates.json#/39",
+      "reviewed_recording_evidence_key": "pilot:vastive:barking-at-thunder",
+      "preview_refs": [],
+      "known_video_ids": []
+    },
+    {
+      "candidate_id": "pilot:vastive:cut",
+      "artist_id": "artist:vastive",
+      "artist": "Vastive",
+      "title": "Cut",
+      "candidate_ref": "pilot/recording-candidates.json#/40",
+      "reviewed_recording_evidence_key": "pilot:vastive:cut",
+      "preview_refs": [],
+      "known_video_ids": []
+    }
+  ],
+  "videos": [
+    {
+      "artist_id": "artist:martin-garrix",
+      "artist": "Martin Garrix",
+      "title": "Carry You",
+      "video_id": "bz6taI5pDl0",
+      "youtube_music_url": "https://music.youtube.com/watch?v=bz6taI5pDl0",
+      "review_ref": "pilot/preview-tracks.json#/0",
+      "approved_manifest_ref": "pilot/preview-approved.json#/0",
+      "approval_policy": "Read current referenced row; index presence is not approval or current availability."
+    },
+    {
+      "artist_id": "artist:i-hate-models",
+      "artist": "I Hate Models",
+      "title": "Daydream",
+      "video_id": "U6EjUIefwiw",
+      "youtube_music_url": "https://music.youtube.com/watch?v=U6EjUIefwiw",
+      "review_ref": "pilot/preview-tracks.json#/1",
+      "approved_manifest_ref": "pilot/preview-approved.json#/1",
+      "approval_policy": "Read current referenced row; index presence is not approval or current availability."
+    },
+    {
+      "artist_id": "artist:a-little-sound",
+      "artist": "A Little Sound",
+      "title": "Back To Back (B2B)",
+      "video_id": "HYCG79PxgFc",
+      "youtube_music_url": "https://music.youtube.com/watch?v=HYCG79PxgFc",
+      "review_ref": "pilot/preview-tracks.json#/2",
+      "approved_manifest_ref": "pilot/preview-approved.json#/2",
+      "approval_policy": "Read current referenced row; index presence is not approval or current availability."
+    },
+    {
+      "artist_id": "artist:a-little-sound",
+      "artist": "A Little Sound",
+      "title": "Breathe",
+      "video_id": "Rv550gn6y8k",
+      "youtube_music_url": "https://music.youtube.com/watch?v=Rv550gn6y8k",
+      "review_ref": "pilot/preview-tracks.json#/3",
+      "approved_manifest_ref": "pilot/preview-approved.json#/3",
+      "approval_policy": "Read current referenced row; index presence is not approval or current availability."
+    },
+    {
+      "artist_id": "artist:a-little-sound",
+      "artist": "A Little Sound",
+      "title": "Weed & Wine (Relax, Rewind)",
+      "video_id": "_M5O_ED_1aI",
+      "youtube_music_url": "https://music.youtube.com/watch?v=_M5O_ED_1aI",
+      "review_ref": "pilot/preview-tracks.json#/4",
+      "approved_manifest_ref": "pilot/preview-approved.json#/4",
+      "approval_policy": "Read current referenced row; index presence is not approval or current availability."
+    },
+    {
+      "artist_id": "artist:a-little-sound",
+      "artist": "A Little Sound",
+      "title": "Confide",
+      "video_id": "WimivlmnA9I",
+      "youtube_music_url": "https://music.youtube.com/watch?v=WimivlmnA9I",
+      "review_ref": "pilot/preview-tracks.json#/5",
+      "approved_manifest_ref": "pilot/preview-approved.json#/5",
+      "approval_policy": "Read current referenced row; index presence is not approval or current availability."
+    },
+    {
+      "artist_id": "artist:a-little-sound",
+      "artist": "A Little Sound",
+      "title": "Overload",
+      "video_id": "8I-QJlFSJdM",
+      "youtube_music_url": "https://music.youtube.com/watch?v=8I-QJlFSJdM",
+      "review_ref": "pilot/preview-tracks.json#/6",
+      "approved_manifest_ref": "pilot/preview-approved.json#/6",
+      "approval_policy": "Read current referenced row; index presence is not approval or current availability."
+    },
+    {
+      "artist_id": "artist:ki-ki",
+      "artist": "KI/KI",
+      "title": "5 Mins Of Acid",
+      "video_id": "wtnrLTqmUKI",
+      "youtube_music_url": "https://music.youtube.com/watch?v=wtnrLTqmUKI",
+      "review_ref": "pilot/preview-tracks.json#/7",
+      "approved_manifest_ref": "pilot/preview-approved.json#/7",
+      "approval_policy": "Read current referenced row; index presence is not approval or current availability."
+    },
+    {
+      "artist_id": "artist:acraze",
+      "artist": "ACRAZE",
+      "title": "Do It To It",
+      "video_id": "bnA7yJkAG30",
+      "youtube_music_url": "https://music.youtube.com/watch?v=bnA7yJkAG30",
+      "review_ref": "pilot/preview-tracks.json#/8",
+      "approved_manifest_ref": "pilot/preview-approved.json#/8",
+      "approval_policy": "Read current referenced row; index presence is not approval or current availability."
+    },
+    {
+      "artist_id": "artist:cid",
+      "artist": "CID",
+      "title": "Night Service Only",
+      "video_id": "Scc4CRVroPo",
+      "youtube_music_url": "https://music.youtube.com/watch?v=Scc4CRVroPo",
+      "review_ref": "pilot/preview-tracks.json#/9",
+      "approved_manifest_ref": "pilot/preview-approved.json#/9",
+      "approval_policy": "Read current referenced row; index presence is not approval or current availability."
+    },
+    {
+      "artist_id": "artist:vastive",
+      "artist": "Vastive",
+      "title": "Slaughter",
+      "video_id": "Ve_LOVTzbxM",
+      "youtube_music_url": "https://music.youtube.com/watch?v=Ve_LOVTzbxM",
+      "review_ref": "pilot/preview-tracks.json#/10",
+      "approved_manifest_ref": "pilot/preview-approved.json#/10",
+      "approval_policy": "Read current referenced row; index presence is not approval or current availability."
+    },
+    {
+      "artist_id": "artist:benda",
+      "artist": "Benda",
+      "title": "Poison Control",
+      "video_id": "oXhWSs0mRH4",
+      "youtube_music_url": "https://music.youtube.com/watch?v=oXhWSs0mRH4",
+      "review_ref": "pilot/preview-tracks.json#/11",
+      "approved_manifest_ref": null,
+      "approval_policy": "Read current referenced row; index presence is not approval or current availability.",
+      "additional_evidence_ref": "data/edco-2026/evidence/benda-video-metadata-40968098075.json#/video"
+    }
+  ],
+  "notion": {
+    "artists_database_url": "https://app.notion.com/p/d6bfac9fc10c4375a596989e533d0830",
+    "artists_data_source_url": "collection://34b21efc-caf1-48af-8602-86ead44e8cce",
+    "checked_on": "2026-10-30",
+    "artist_rows": 8,
+    "all_artist_rows_returned": true,
+    "status": "Only eight pilot rows currently exist; five still lack a MusicBrainz ID. Repo review is further along than this projection. No Notion changes in this session."
+  },
+  "recovered_evidence": {
+    "musicbrainz_delta": "data/edco-2026/evidence/musicbrainz-delta-40966874986.json",
+    "benda_video_metadata": "data/edco-2026/evidence/benda-video-metadata-40968098075.json",
+    "status": "source_evidence_not_approval"
+  }
+}

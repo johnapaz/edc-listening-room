@@ -1,0 +1,3290 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-30",
+  "timezone": "America/New_York",
+  "schedule_status": "day_assignments_only",
+  "performances": [
+    {
+      "performance_id": "edco26:2026-11-06:aat",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "AAT",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:aat"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:aat",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 1,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:adventure-club",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Adventure Club (Sunset Set)",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:adventure-club"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:adventure-club",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": "Sunset Set",
+      "source_order": 2,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:afrojack",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Afrojack",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:afrojack"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:afrojack",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 3,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:alesso",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Alesso (Sunset Set)",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:alesso"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:alesso",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": "Sunset Set",
+      "source_order": 4,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:azzecca",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Azzecca",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:azzecca"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:azzecca",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 5,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:benda-b2b-vastive",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Benda B2B Vastive",
+      "performance_type": "b2b",
+      "artist_ids": [
+        "artist:benda",
+        "artist:vastive"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:benda",
+          "role": "b2b_performer"
+        },
+        {
+          "artist_id": "artist:vastive",
+          "role": "b2b_performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 6,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:big-florida",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Big Florida",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:big-florida"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:big-florida",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 7,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:bou-b2b-kanine",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Bou B2B Kanine",
+      "performance_type": "b2b",
+      "artist_ids": [
+        "artist:bou",
+        "artist:kanine"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:bou",
+          "role": "b2b_performer"
+        },
+        {
+          "artist_id": "artist:kanine",
+          "role": "b2b_performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 8,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:brunello",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Brunello (Sunset Set)",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:brunello"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:brunello",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": "Sunset Set",
+      "source_order": 9,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:bullet-tooth-b2b-sidney-charles",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Bullet Tooth B2B Sidney Charles",
+      "performance_type": "b2b",
+      "artist_ids": [
+        "artist:bullet-tooth",
+        "artist:sidney-charles"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:bullet-tooth",
+          "role": "b2b_performer"
+        },
+        {
+          "artist_id": "artist:sidney-charles",
+          "role": "b2b_performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 10,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:chris-lorenzo",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Chris Lorenzo",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:chris-lorenzo"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:chris-lorenzo",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 11,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:david-guetta",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "David Guetta",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:david-guetta"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:david-guetta",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 12,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:hayla",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "HAYLA",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:hayla"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:hayla",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 13,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:idemi",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "IDEMI",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:idemi"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:idemi",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 14,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:inbal",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Inbal",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:inbal"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:inbal",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 15,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:interplanetary-criminal",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Interplanetary Criminal",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:interplanetary-criminal"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:interplanetary-criminal",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 16,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:joa",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "JOA",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:joa"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:joa",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 17,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:josh-baker",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Josh Baker",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:josh-baker"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:josh-baker",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 18,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_sources_conflict",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": [
+        "lineup-prospa-josh-baker"
+      ]
+    },
+    {
+      "performance_id": "edco26:2026-11-06:joshwa",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Joshwa",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:joshwa"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:joshwa",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 19,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:kompany",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Kompany",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:kompany"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:kompany",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 20,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:kream",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "KREAM",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:kream"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:kream",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 21,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:level-up",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Level Up",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:level-up"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:level-up",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 22,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:levity",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Levity",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:levity"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:levity",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 23,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:malugi",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "MALUGI (Sunset Set)",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:malugi"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:malugi",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": "Sunset Set",
+      "source_order": 24,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:matthias",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Matthias",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:matthias"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:matthias",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 25,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:mau-p",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Mau P",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:mau-p"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:mau-p",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 26,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:mph",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "MPH",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:mph"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:mph",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 27,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:omar-plus",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Omar+",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:omar-plus"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:omar-plus",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 28,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:pegassi",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Pegassi",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:pegassi"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:pegassi",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 29,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:prospa",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Prospa",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:prospa"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:prospa",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 30,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_sources_conflict",
+      "source_ids": [
+        "lineup-poster"
+      ],
+      "issue_ids": [
+        "lineup-prospa-josh-baker"
+      ]
+    },
+    {
+      "performance_id": "edco26:2026-11-06:prospa-b2b-josh-baker",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Prospa B2B Josh Baker",
+      "performance_type": "b2b",
+      "artist_ids": [
+        "artist:prospa",
+        "artist:josh-baker"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:prospa",
+          "role": "b2b_performer"
+        },
+        {
+          "artist_id": "artist:josh-baker",
+          "role": "b2b_performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 31,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_sources_conflict",
+      "source_ids": [
+        "lineup-poster"
+      ],
+      "issue_ids": [
+        "lineup-prospa-josh-baker"
+      ]
+    },
+    {
+      "performance_id": "edco26:2026-11-06:raje",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "RAJE",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:raje"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:raje",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 32,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:sloth",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Sloth",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:sloth"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:sloth",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 33,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:whethan",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Whethan",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:whethan"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:whethan",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 34,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:wooli",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Wooli",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:wooli"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:wooli",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 35,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:zack-martino",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Zack Martino",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:zack-martino"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:zack-martino",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 36,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:aaron-hibell",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Aaron Hibell",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:aaron-hibell"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:aaron-hibell",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 1,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:acraze-b2b-cid",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "ACRAZE B2B CID",
+      "performance_type": "b2b",
+      "artist_ids": [
+        "artist:acraze",
+        "artist:cid"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:acraze",
+          "role": "b2b_performer"
+        },
+        {
+          "artist_id": "artist:cid",
+          "role": "b2b_performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 2,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:alan-walker",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Alan Walker (Sunset Set)",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:alan-walker"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:alan-walker",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": "Sunset Set",
+      "source_order": 3,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:alison-wonderland",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Alison Wonderland",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:alison-wonderland"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:alison-wonderland",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 4,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:alleycvt",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "ALLEYCVT",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:alleycvt"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:alleycvt",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 5,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:alves",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Alves",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:alves"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:alves",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 6,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:avello",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "AVELLO",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:avello"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:avello",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 7,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:ayybo",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "AYYBO",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:ayybo"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:ayybo",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 8,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:chasewest",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "ChaseWest",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:chasewest"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:chasewest",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 9,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:dennis-cruz",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Dennis Cruz",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:dennis-cruz"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:dennis-cruz",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 10,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:devault",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Devault (Sunset Set)",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:devault"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:devault",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": "Sunset Set",
+      "source_order": 11,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:discip",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Discip",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:discip"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:discip",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 12,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:disco-lines",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Disco Lines",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:disco-lines"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:disco-lines",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 13,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:fallon",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Fallon",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:fallon"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:fallon",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 14,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:franky-rizardo",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Franky Rizardo",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:franky-rizardo"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:franky-rizardo",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 15,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:fury-with-mc-dino",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Fury with MC Dino",
+      "performance_type": "dj_with_mc",
+      "artist_ids": [
+        "artist:fury",
+        "artist:mc-dino"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:fury",
+          "role": "dj"
+        },
+        {
+          "artist_id": "artist:mc-dino",
+          "role": "mc"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 16,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:gabss",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Gabss",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:gabss"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:gabss",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 17,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:greg-99",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Greg 99",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:greg-99"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:greg-99",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 18,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:jkyl-hyde",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Jkyl & Hyde",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:jkyl-hyde"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:jkyl-hyde",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 19,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:kaskade",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Kaskade",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:kaskade"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:kaskade",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 20,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:kinahau",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "KinAhau",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:kinahau"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:kinahau",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 21,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:layz",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "LAYZ",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:layz"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:layz",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 22,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:madvktm",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "MADVKTM",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:madvktm"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:madvktm",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 23,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:mai-iachetti",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Mai Iachetti",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:mai-iachetti"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:mai-iachetti",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 24,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:max-dean-b2b-luke-dean",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Max Dean B2B Luke Dean",
+      "performance_type": "b2b",
+      "artist_ids": [
+        "artist:max-dean",
+        "artist:luke-dean"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:max-dean",
+          "role": "b2b_performer"
+        },
+        {
+          "artist_id": "artist:luke-dean",
+          "role": "b2b_performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 25,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:me-n-u",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Me n ü",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:me-n-u"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:me-n-u",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 26,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:miguelle-tons",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Miguelle & Tons",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:miguelle-tons"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:miguelle-tons",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 27,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:monoky",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Monoky",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:monoky"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:monoky",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 28,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:nico-moreno",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Nico Moreno",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:nico-moreno"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:nico-moreno",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 29,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:ray-volpe",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Ray Volpe",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:ray-volpe"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:ray-volpe",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 30,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:roddy-lima",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Roddy Lima",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:roddy-lima"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:roddy-lima",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 31,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:rossi",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Rossi. (Sunset Set)",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:rossi"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:rossi",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": "Sunset Set",
+      "source_order": 32,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:skull-machine",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Skull Machine (Black Tiger Sex Machine x Kai Wachi)",
+      "performance_type": "project",
+      "artist_ids": [
+        "artist:skull-machine"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:skull-machine",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 33,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:steve-aoki",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Steve Aoki",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:steve-aoki"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:steve-aoki",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 34,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:subsonic",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Subsonic",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:subsonic"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:subsonic",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 35,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:twinsick",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Twinsick",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:twinsick"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:twinsick",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 36,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:a-little-sound",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "A Little Sound",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:a-little-sound"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:a-little-sound",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 1,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:adrian-mills",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Adrián Mills",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:adrian-mills"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:adrian-mills",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 2,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:alok",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Alok",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:alok"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:alok",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 3,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:ar-co",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "AR/CO",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:ar-co"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:ar-co",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 4,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:atliens",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "ATLiens",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:atliens"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:atliens",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 5,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:boogie-t",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Boogie T",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:boogie-t"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:boogie-t",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 6,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:boys-noize-b2b-brutalismus-3000",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Boys Noize B2B Brutalismus 3000",
+      "performance_type": "b2b",
+      "artist_ids": [
+        "artist:boys-noize",
+        "artist:brutalismus-3000"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:boys-noize",
+          "role": "b2b_performer"
+        },
+        {
+          "artist_id": "artist:brutalismus-3000",
+          "role": "b2b_performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 7,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:chef-boyarbeatz",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Chef Boyarbeatz",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:chef-boyarbeatz"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:chef-boyarbeatz",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 8,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:contra",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "CØNTRA",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:contra"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:contra",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 9,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:deorro-b2b-dj-diesel",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Deorro B2B DJ Diesel",
+      "performance_type": "b2b",
+      "artist_ids": [
+        "artist:deorro",
+        "artist:dj-diesel"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:deorro",
+          "role": "b2b_performer"
+        },
+        {
+          "artist_id": "artist:dj-diesel",
+          "role": "b2b_performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 10,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:discovery-project",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Discovery Project",
+      "performance_type": "program",
+      "artist_ids": [],
+      "credits": [],
+      "set_qualifier": null,
+      "source_order": 11,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:esse",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "ESSE",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:esse"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:esse",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 12,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:hardwell",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Hardwell",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:hardwell"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:hardwell",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 13,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:holy-priest",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Holy Priest",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:holy-priest"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:holy-priest",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 14,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:i-hate-models",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "I Hate Models",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:i-hate-models"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:i-hate-models",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 15,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:ian-asher",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Ian Asher",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:ian-asher"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:ian-asher",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 16,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:jessica-audiffred",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Jessica Audiffred",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:jessica-audiffred"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:jessica-audiffred",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 17,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:kaivon",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Kaivon",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:kaivon"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:kaivon",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 18,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:ki-ki",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "KI/KI",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:ki-ki"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:ki-ki",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 19,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:klangkuenstler",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Klangkuenstler",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:klangkuenstler"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:klangkuenstler",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 20,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:know-good",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Know Good",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:know-good"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:know-good",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 21,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:m81",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "M81!",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:m81"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:m81",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 22,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:maddix",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Maddix",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:maddix"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:maddix",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 23,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:marlon-hoffstadt",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Marlon Hoffstadt (Sunset Set)",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:marlon-hoffstadt"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:marlon-hoffstadt",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": "Sunset Set",
+      "source_order": 24,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:martin-garrix",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Martin Garrix",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:martin-garrix"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:martin-garrix",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 25,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:meduza",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Meduza",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:meduza"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:meduza",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 26,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:of-the-trees",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Of The Trees (Sunset Set)",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:of-the-trees"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:of-the-trees",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": "Sunset Set",
+      "source_order": 27,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:phrva",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "phrva",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:phrva"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:phrva",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 28,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:ravenscoon",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Ravenscoon",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:ravenscoon"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:ravenscoon",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 29,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:san-holo",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "San Holo (Wholesome Riddim Set)",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:san-holo"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:san-holo",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": "Wholesome Riddim Set",
+      "source_order": 30,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:shdw",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "SHDW",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:shdw"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:shdw",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 31,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:sippy",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Sippy",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:sippy"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:sippy",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 32,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:slander",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "SLANDER (Sunset Set)",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:slander"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:slander",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": "Sunset Set",
+      "source_order": 33,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:taiki-nulight",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Taiki Nulight",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:taiki-nulight"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:taiki-nulight",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 34,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:troyboi",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "TroyBoi",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:troyboi"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:troyboi",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 35,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-08:ultrathem",
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "display_name": "Ultrathem",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:ultrathem"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:ultrathem",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 36,
+      "source_order_is_running_order": false,
+      "stage_id": null,
+      "starts_at": null,
+      "ends_at": null,
+      "schedule_status": "set_times_unverified",
+      "schedule_source_id": null,
+      "lineup_status": "official_day_confirmed",
+      "source_ids": [
+        "lineup-text",
+        "lineup-poster"
+      ],
+      "issue_ids": []
+    }
+  ]
+}

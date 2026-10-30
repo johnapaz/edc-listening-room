@@ -1,0 +1,109 @@
+performance_id,event_date,day,display_name,performance_type,artist_ids,set_qualifier,stage_id,starts_at,ends_at,schedule_status,lineup_status
+edco26:2026-11-06:aat,2026-11-06,Friday,AAT,act,artist:aat,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:adventure-club,2026-11-06,Friday,Adventure Club (Sunset Set),act,artist:adventure-club,Sunset Set,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:afrojack,2026-11-06,Friday,Afrojack,act,artist:afrojack,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:alesso,2026-11-06,Friday,Alesso (Sunset Set),act,artist:alesso,Sunset Set,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:azzecca,2026-11-06,Friday,Azzecca,act,artist:azzecca,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:benda-b2b-vastive,2026-11-06,Friday,Benda B2B Vastive,b2b,artist:benda|artist:vastive,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:big-florida,2026-11-06,Friday,Big Florida,act,artist:big-florida,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:bou-b2b-kanine,2026-11-06,Friday,Bou B2B Kanine,b2b,artist:bou|artist:kanine,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:brunello,2026-11-06,Friday,Brunello (Sunset Set),act,artist:brunello,Sunset Set,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:bullet-tooth-b2b-sidney-charles,2026-11-06,Friday,Bullet Tooth B2B Sidney Charles,b2b,artist:bullet-tooth|artist:sidney-charles,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:chris-lorenzo,2026-11-06,Friday,Chris Lorenzo,act,artist:chris-lorenzo,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:david-guetta,2026-11-06,Friday,David Guetta,act,artist:david-guetta,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:hayla,2026-11-06,Friday,HAYLA,act,artist:hayla,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:idemi,2026-11-06,Friday,IDEMI,act,artist:idemi,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:inbal,2026-11-06,Friday,Inbal,act,artist:inbal,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:interplanetary-criminal,2026-11-06,Friday,Interplanetary Criminal,act,artist:interplanetary-criminal,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:joa,2026-11-06,Friday,JOA,act,artist:joa,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:josh-baker,2026-11-06,Friday,Josh Baker,act,artist:josh-baker,,,,,set_times_unverified,official_sources_conflict
+edco26:2026-11-06:joshwa,2026-11-06,Friday,Joshwa,act,artist:joshwa,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:kompany,2026-11-06,Friday,Kompany,act,artist:kompany,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:kream,2026-11-06,Friday,KREAM,act,artist:kream,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:level-up,2026-11-06,Friday,Level Up,act,artist:level-up,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:levity,2026-11-06,Friday,Levity,act,artist:levity,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:malugi,2026-11-06,Friday,MALUGI (Sunset Set),act,artist:malugi,Sunset Set,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:matthias,2026-11-06,Friday,Matthias,act,artist:matthias,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:mau-p,2026-11-06,Friday,Mau P,act,artist:mau-p,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:mph,2026-11-06,Friday,MPH,act,artist:mph,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:omar-plus,2026-11-06,Friday,Omar+,act,artist:omar-plus,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:pegassi,2026-11-06,Friday,Pegassi,act,artist:pegassi,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:prospa,2026-11-06,Friday,Prospa,act,artist:prospa,,,,,set_times_unverified,official_sources_conflict
+edco26:2026-11-06:prospa-b2b-josh-baker,2026-11-06,Friday,Prospa B2B Josh Baker,b2b,artist:prospa|artist:josh-baker,,,,,set_times_unverified,official_sources_conflict
+edco26:2026-11-06:raje,2026-11-06,Friday,RAJE,act,artist:raje,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:sloth,2026-11-06,Friday,Sloth,act,artist:sloth,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:whethan,2026-11-06,Friday,Whethan,act,artist:whethan,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:wooli,2026-11-06,Friday,Wooli,act,artist:wooli,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-06:zack-martino,2026-11-06,Friday,Zack Martino,act,artist:zack-martino,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:aaron-hibell,2026-11-07,Saturday,Aaron Hibell,act,artist:aaron-hibell,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:acraze-b2b-cid,2026-11-07,Saturday,ACRAZE B2B CID,b2b,artist:acraze|artist:cid,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:alan-walker,2026-11-07,Saturday,Alan Walker (Sunset Set),act,artist:alan-walker,Sunset Set,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:alison-wonderland,2026-11-07,Saturday,Alison Wonderland,act,artist:alison-wonderland,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:alleycvt,2026-11-07,Saturday,ALLEYCVT,act,artist:alleycvt,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:alves,2026-11-07,Saturday,Alves,act,artist:alves,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:avello,2026-11-07,Saturday,AVELLO,act,artist:avello,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:ayybo,2026-11-07,Saturday,AYYBO,act,artist:ayybo,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:chasewest,2026-11-07,Saturday,ChaseWest,act,artist:chasewest,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:dennis-cruz,2026-11-07,Saturday,Dennis Cruz,act,artist:dennis-cruz,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:devault,2026-11-07,Saturday,Devault (Sunset Set),act,artist:devault,Sunset Set,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:discip,2026-11-07,Saturday,Discip,act,artist:discip,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:disco-lines,2026-11-07,Saturday,Disco Lines,act,artist:disco-lines,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:fallon,2026-11-07,Saturday,Fallon,act,artist:fallon,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:franky-rizardo,2026-11-07,Saturday,Franky Rizardo,act,artist:franky-rizardo,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:fury-with-mc-dino,2026-11-07,Saturday,Fury with MC Dino,dj_with_mc,artist:fury|artist:mc-dino,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:gabss,2026-11-07,Saturday,Gabss,act,artist:gabss,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:greg-99,2026-11-07,Saturday,Greg 99,act,artist:greg-99,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:jkyl-hyde,2026-11-07,Saturday,Jkyl & Hyde,act,artist:jkyl-hyde,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:kaskade,2026-11-07,Saturday,Kaskade,act,artist:kaskade,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:kinahau,2026-11-07,Saturday,KinAhau,act,artist:kinahau,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:layz,2026-11-07,Saturday,LAYZ,act,artist:layz,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:madvktm,2026-11-07,Saturday,MADVKTM,act,artist:madvktm,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:mai-iachetti,2026-11-07,Saturday,Mai Iachetti,act,artist:mai-iachetti,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:max-dean-b2b-luke-dean,2026-11-07,Saturday,Max Dean B2B Luke Dean,b2b,artist:max-dean|artist:luke-dean,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:me-n-u,2026-11-07,Saturday,Me n ü,act,artist:me-n-u,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:miguelle-tons,2026-11-07,Saturday,Miguelle & Tons,act,artist:miguelle-tons,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:monoky,2026-11-07,Saturday,Monoky,act,artist:monoky,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:nico-moreno,2026-11-07,Saturday,Nico Moreno,act,artist:nico-moreno,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:ray-volpe,2026-11-07,Saturday,Ray Volpe,act,artist:ray-volpe,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:roddy-lima,2026-11-07,Saturday,Roddy Lima,act,artist:roddy-lima,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:rossi,2026-11-07,Saturday,Rossi. (Sunset Set),act,artist:rossi,Sunset Set,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:skull-machine,2026-11-07,Saturday,Skull Machine (Black Tiger Sex Machine x Kai Wachi),project,artist:skull-machine,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:steve-aoki,2026-11-07,Saturday,Steve Aoki,act,artist:steve-aoki,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:subsonic,2026-11-07,Saturday,Subsonic,act,artist:subsonic,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-07:twinsick,2026-11-07,Saturday,Twinsick,act,artist:twinsick,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:a-little-sound,2026-11-08,Sunday,A Little Sound,act,artist:a-little-sound,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:adrian-mills,2026-11-08,Sunday,Adrián Mills,act,artist:adrian-mills,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:alok,2026-11-08,Sunday,Alok,act,artist:alok,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:ar-co,2026-11-08,Sunday,AR/CO,act,artist:ar-co,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:atliens,2026-11-08,Sunday,ATLiens,act,artist:atliens,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:boogie-t,2026-11-08,Sunday,Boogie T,act,artist:boogie-t,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:boys-noize-b2b-brutalismus-3000,2026-11-08,Sunday,Boys Noize B2B Brutalismus 3000,b2b,artist:boys-noize|artist:brutalismus-3000,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:chef-boyarbeatz,2026-11-08,Sunday,Chef Boyarbeatz,act,artist:chef-boyarbeatz,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:contra,2026-11-08,Sunday,CØNTRA,act,artist:contra,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:deorro-b2b-dj-diesel,2026-11-08,Sunday,Deorro B2B DJ Diesel,b2b,artist:deorro|artist:dj-diesel,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:discovery-project,2026-11-08,Sunday,Discovery Project,program,,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:esse,2026-11-08,Sunday,ESSE,act,artist:esse,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:hardwell,2026-11-08,Sunday,Hardwell,act,artist:hardwell,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:holy-priest,2026-11-08,Sunday,Holy Priest,act,artist:holy-priest,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:i-hate-models,2026-11-08,Sunday,I Hate Models,act,artist:i-hate-models,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:ian-asher,2026-11-08,Sunday,Ian Asher,act,artist:ian-asher,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:jessica-audiffred,2026-11-08,Sunday,Jessica Audiffred,act,artist:jessica-audiffred,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:kaivon,2026-11-08,Sunday,Kaivon,act,artist:kaivon,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:ki-ki,2026-11-08,Sunday,KI/KI,act,artist:ki-ki,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:klangkuenstler,2026-11-08,Sunday,Klangkuenstler,act,artist:klangkuenstler,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:know-good,2026-11-08,Sunday,Know Good,act,artist:know-good,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:m81,2026-11-08,Sunday,M81!,act,artist:m81,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:maddix,2026-11-08,Sunday,Maddix,act,artist:maddix,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:marlon-hoffstadt,2026-11-08,Sunday,Marlon Hoffstadt (Sunset Set),act,artist:marlon-hoffstadt,Sunset Set,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:martin-garrix,2026-11-08,Sunday,Martin Garrix,act,artist:martin-garrix,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:meduza,2026-11-08,Sunday,Meduza,act,artist:meduza,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:of-the-trees,2026-11-08,Sunday,Of The Trees (Sunset Set),act,artist:of-the-trees,Sunset Set,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:phrva,2026-11-08,Sunday,phrva,act,artist:phrva,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:ravenscoon,2026-11-08,Sunday,Ravenscoon,act,artist:ravenscoon,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:san-holo,2026-11-08,Sunday,San Holo (Wholesome Riddim Set),act,artist:san-holo,Wholesome Riddim Set,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:shdw,2026-11-08,Sunday,SHDW,act,artist:shdw,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:sippy,2026-11-08,Sunday,Sippy,act,artist:sippy,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:slander,2026-11-08,Sunday,SLANDER (Sunset Set),act,artist:slander,Sunset Set,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:taiki-nulight,2026-11-08,Sunday,Taiki Nulight,act,artist:taiki-nulight,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:troyboi,2026-11-08,Sunday,TroyBoi,act,artist:troyboi,,,,,set_times_unverified,official_day_confirmed
+edco26:2026-11-08:ultrathem,2026-11-08,Sunday,Ultrathem,act,artist:ultrathem,,,,,set_times_unverified,official_day_confirmed
