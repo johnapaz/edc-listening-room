@@ -8,7 +8,8 @@ This repository implements a staged pipeline for official EDC Orlando artist ide
 
 - Seven connected Notion databases exist: Artists, Releases, Tracks, Genres, Playlists, Performances and Playlist Entries.
 - The eight-person pilot group and two B2B performances are registered as provisional Notion records.
-- An **11-track private, unranked listening preview exists** with exact ordered API readback ([latest result](docs/M1-PREVIEW.md#result-private-preview-published-and-read-back-2026-10-30)). Owner playback of the full playlist remains open in the committed record. This is **not an M1 pass**; bulk ingestion and public release remain blocked.
+- An **11-track private, unranked listening preview exists** with exact ordered API readback ([latest result](docs/M1-PREVIEW.md#result-private-preview-published-and-read-back-2026-10-30)). Owner playback of the full playlist remains open in the committed record. This is **not an M1 pass**; public ranked releases remain blocked; private Discovery is separately authorized.
+- A separate, approved **private all-artist Discovery release** is underway. Latest saved checkpoint (run 41087502389, state c344c82): **84 songs** in a private playlist, ordered YouTube Data API read-back verified, **41 of 106 catalog-bearing acts** searched, 65 remaining. A search-rate 429 paused further matching safely; this does **not** pass M1 or authorize public release. See [Discovery runbook](docs/DISCOVERY-PLAYLIST.md).
 - [EDCO 2026 reference pack](data/edco-2026/README.md): complete lineup transcription, day-based companion seed, hours/map/stages, source conflicts, and an index of existing music evidence. **No verified artist set times yet.**
 - [Current agent handoff](docs/EDCO-2026-HANDOFF.md) includes the three recovered MusicBrainz searches and already-fetched Benda metadata, avoiding repeat requests. Older pilot documents retain historical status text; consult their latest dated updates.
 
