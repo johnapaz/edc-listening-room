@@ -15,6 +15,10 @@ class FakeYouTube(YouTube):
         self.present = present
         self.remote = []
         self.calls = []
+        self.sleeps = []
+
+    def sleep(self, seconds):
+        self.sleeps.append(seconds)
 
     def request(self, endpoint, params, *, method="GET", body=None):
         self.quota.spend(endpoint + (".insert" if method == "POST" else ".list"))
@@ -173,3 +177,68 @@ class NewPlaylistPropagationTests(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             self.publish(c, [track(1)])
         self.assertEqual(c.sleeps, [])
+
+
+class ListingLagTests(unittest.TestCase):
+    """playlistItems.list can lag behind inserts; a stale listing must never cause duplicates."""
+
+    def lagging(self, stale_reads):
+        c = FakeYouTube()
+        base = c.request
+        c.stale = [stale_reads]
+
+        def request(endpoint, params, *, method="GET", body=None):
+            result = base(endpoint, params, method=method, body=body)
+            if endpoint == "playlistItems" and method == "GET" and c.stale[0] > 0:
+                c.stale[0] -= 1
+                result = {"items": result["items"][:-1]}
+            return result
+        c.request = request
+        return c
+
+    def publish(self, c, rows):
+        import io, contextlib, unittest.mock
+        with unittest.mock.patch.dict("os.environ", {"EDC_ENABLE_WRITES": "1", "EDC_PILOT_APPROVED": "1"}), \
+                contextlib.redirect_stdout(io.StringIO()) as out:
+            try:
+                return c.publish_private_pilot(rows), out.getvalue()
+            finally:
+                c.log = out.getvalue()
+
+    def test_lagging_readback_is_retried_until_complete(self):
+        c = self.lagging(stale_reads=2)
+        result, log = self.publish(c, [track(1), track(2), track(3)])
+        self.assertTrue(result["readback_verified"])
+        self.assertEqual(c.sleeps, [5, 10])
+        self.assertIn("Read-back not yet complete", log)
+
+    def test_persistent_readback_mismatch_fails_with_diagnostic(self):
+        c = self.lagging(stale_reads=99)
+        with self.assertRaises(RuntimeError):
+            self.publish(c, [track(1), track(2)])
+        self.assertIn("expected 2 items, found 1", c.log)
+
+    def test_resume_waits_for_stable_listing_and_never_duplicates(self):
+        c = self.lagging(stale_reads=1)
+        c.present = True
+        c.remote = [track(1)["video_id"], track(2)["video_id"]]
+        result, log = self.publish(c, [track(1), track(2), track(3)])
+        self.assertTrue(result["readback_verified"])
+        self.assertEqual(c.remote, [track(i)["video_id"] for i in (1, 2, 3)])
+        self.assertIn("found with 2 items", log)
+
+    def test_resume_refuses_when_listing_never_settles(self):
+        c = FakeYouTube(present=True)
+        c.remote = [track(1)["video_id"]]
+        reads = iter(range(100))
+        base = c.request
+
+        def request(endpoint, params, *, method="GET", body=None):
+            result = base(endpoint, params, method=method, body=body)
+            if endpoint == "playlistItems" and method == "GET" and next(reads) % 2:
+                result = {"items": []}
+            return result
+        c.request = request
+        with self.assertRaises(RuntimeError):
+            self.publish(c, [track(1), track(2)])
+        self.assertEqual(c.remote, [track(1)["video_id"]])
