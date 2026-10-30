@@ -34,7 +34,7 @@ jobs:
       EDC_ENABLE_WRITES: "1"
       EDC_PILOT_APPROVED: "1"
       STATE_BRANCH: discovery/state
-      STATE_FILES: data/edco-2026/youtube-matches.json data/edco-2026/match-decisions.json data/edco-2026/review-queue.json
+      STATE_FILES: data/edco-2026/youtube-matches.json data/edco-2026/match-decisions.json data/edco-2026/review-queue.json data/edco-2026/discovery-run-summary.json
     steps:
       - uses: actions/checkout@v4
         with:
@@ -44,11 +44,18 @@ jobs:
           python-version: '3.12'
       - name: Restore matching state and owner decisions (no network to YouTube)
         run: |
-          if git fetch origin "$STATE_BRANCH"; then
-            for f in $STATE_FILES; do
-              git show "origin/$STATE_BRANCH:$f" > "$f" 2>/dev/null || rm -f "$f"
-            done
-          fi
+          # Existing state is mandatory: a fetch failure must never start from empty.
+          git fetch origin "$STATE_BRANCH"
+          for f in $STATE_FILES; do
+            if git cat-file -e "origin/$STATE_BRANCH:$f" 2>/dev/null; then
+              git show "origin/$STATE_BRANCH:$f" > "$f"
+            else
+              rm -f "$f"
+            fi
+          done
+          test -s data/edco-2026/youtube-matches.json
+          rm -f data/edco-2026/discovery-run-summary.json
+          touch /tmp/discovery-state-restored
           # Tests never see credentials or open write gates.
           env -u GOOGLE_CLIENT_ID -u GOOGLE_CLIENT_SECRET -u GOOGLE_REFRESH_TOKEN \
               -u EDC_ENABLE_WRITES -u EDC_PILOT_APPROVED python -m unittest discover -s tests
@@ -58,9 +65,21 @@ jobs:
           REMAINING: ${{ inputs.confirmed_remaining_general }}
           SEARCHES: ${{ inputs.confirmed_remaining_searches }}
         run: python -m edc.cli discovery --apply --remaining-general "$REMAINING" --remaining-searches "$SEARCHES"
+      - name: Preserve checkpoint artifact before state branch checkout
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: discovery-checkpoint-${{ github.run_id }}
+          path: |
+            data/edco-2026/youtube-matches.json
+            data/edco-2026/match-decisions.json
+            data/edco-2026/review-queue.json
+            data/edco-2026/discovery-run-summary.json
+          retention-days: 7
       - name: Save matching state (runs even if publishing failed)
         if: always()
         run: |
+          test -f /tmp/discovery-state-restored || exit 0
           mkdir -p /tmp/state
           for f in $STATE_FILES; do [ -f "$f" ] && cp "$f" /tmp/state/; done
           git config user.name "github-actions[bot]"
@@ -81,5 +100,19 @@ jobs:
           git add -f $staged
           if git diff --cached --quiet; then echo "No state change"; exit 0; fi
           git commit -m "Discovery state from run ${{ github.run_id }}"
-          git push origin "$STATE_BRANCH"
+          if git push origin "$STATE_BRANCH"; then
+            echo "Checkpoint committed: $(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Checkpoint push FAILED; recover checkpoint artifact before any new live run." >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
           echo "Saved:$staged"
+      - name: Final workflow outcome
+        if: always()
+        env:
+          OUTCOME: ${{ job.status }}
+        run: |
+          echo "Workflow outcome: $OUTCOME. No scheduled continuation is configured." >> "$GITHUB_STEP_SUMMARY"
+          if [ ! -f /tmp/state/discovery-run-summary.json ]; then
+            echo "No new execution summary: setup, validation or input gates stopped the run. No completion claim." >> "$GITHUB_STEP_SUMMARY"
+          fi

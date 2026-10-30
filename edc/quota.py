@@ -1,5 +1,5 @@
 """Conservative YouTube quota accounting; always preflight writes."""
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 @dataclass
 class Budget:
@@ -8,9 +8,10 @@ class Budget:
     maximum_general_per_run: int = 1000
     used_general: int = 0
     used_search: int = 0
-    # Searches cost 100 units of the same daily pool; callers that track the
-    # real pool set this so a search also spends general units.
+    # Optional legacy accounting; current discovery uses the separate search bucket.
     search_general_units: int = 0
+
+    attempts: dict[str, int] = field(default_factory=dict)
 
     def spend(self, operation: str) -> None:
         if operation == "search.list":
@@ -22,12 +23,14 @@ class Budget:
                     raise RuntimeError("General quota budget exhausted; no API request made")
                 self.remaining_general -= self.search_general_units
                 self.used_general += self.search_general_units
+            self.attempts[operation] = self.attempts.get(operation, 0) + 1
             self.remaining_search -= 1
             self.used_search += 1
             return
         cost = 50 if operation in ("playlists.insert", "playlistItems.insert", "playlistItems.delete") else 1
         if self.remaining_general < cost or self.used_general + cost > self.maximum_general_per_run:
             raise RuntimeError("General quota budget exhausted; no API request made")
+        self.attempts[operation] = self.attempts.get(operation, 0) + 1
         self.remaining_general -= cost
         self.used_general += cost
 
