@@ -261,12 +261,13 @@
     "recording_id": "a85eff19-fa58-4b21-9695-b06943e80669",
     "isrc": "QM24S2203642",
     "musicbrainz_duration_ms": 158367,
-    "version_note": "Candidate; exact videos.list metadata not yet fetched",
-    "review_status": "owner_approved_pending_video_metadata",
-    "source_verified": false,
+    "version_note": "Original; official Benda - Topic auto-generated audio (Stem Disintermedia, released 2022-08-17, writer Niv Ben-David); video PT2M39S vs MB 158.367 s",
+    "review_status": "strong",
+    "source_verified": true,
     "human_verified": true,
     "owner_playback_confirmed": true,
     "owner_approval_evidence": "Owner message in assistant session 2026-10-29: 'Approved the run and played all four; include all four' (also recorded on PR #9)",
-    "remaining": "Source verification blocked until exact videos.list metadata (title/channel/duration ~2:38) is fetched."
+    "source_evidence_ref": "data/edco-2026/evidence/benda-video-metadata-40968098075.json#/video",
+    "caveat": "Duration agreement is within display rounding; it is not audio-identity proof."
   }
 ]
