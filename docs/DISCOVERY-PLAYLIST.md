@@ -45,3 +45,7 @@ One YouTube search per act (100 units) plus one `videos.list` (1 unit); that act
 [All-artist discovery playlist](../.github/workflows/discovery-playlist.yml) on `main`, environment-approved, once per quota day: today's remaining quota (never overstate) and `YES`. While unsearched acts remain, about 60% of the day goes to searches and the rest to adding songs; afterwards everything goes to adding. Matching state is committed to `discovery/state` even if publishing fails. Reruns resume safely.
 
 Projected: ~105 searches (~10,600 units) and ~318 songs at 3 per act (~15,900 units), about three quota days.
+
+## Run log
+- 2026-10-30 [41075654729](https://github.com/johnapaz/edc-listening-room/actions/runs/41075654729): stopped in the offline test step (write gates leaked into tests); no API use. Fixed in #20.
+- 2026-10-30 [41076203061](https://github.com/johnapaz/edc-listening-room/actions/runs/41076203061): about 52 act searches ran (~5,300 units), the private playlist was created, then the first insert got HTTP 409 and the run stopped. The save step's `git add` included a not-yet-existing decisions file, so **the search results were not saved** and must be repeated. Fixed: 409 is retried like 404, and only existing state files are staged (verified against a scratch remote, both first-run and update cases).

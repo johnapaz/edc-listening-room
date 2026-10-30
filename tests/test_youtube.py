@@ -175,6 +175,13 @@ class NewPlaylistPropagationTests(unittest.TestCase):
         self.assertEqual(c.remote, [])
         self.assertEqual(c.sleeps, [2, 4, 8, 16])
 
+    def test_conflict_409_is_retried(self):
+        c = self.fake(not_found=2, code=409)
+        result = self.publish(c, [track(1)])
+        self.assertTrue(result["readback_verified"])
+        self.assertEqual(c.remote, [track(1)["video_id"]])
+        self.assertEqual(c.sleeps, [2, 4])
+
     def test_other_errors_are_not_retried(self):
         c = self.fake(not_found=1, code=500)
         with self.assertRaises(RuntimeError):
