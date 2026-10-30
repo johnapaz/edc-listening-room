@@ -51,3 +51,8 @@ Fix: a playlist created in the same run is treated as empty instead of listed, a
 Run [41056777624](https://github.com/johnapaz/edc-listening-room/actions/runs/41056777624) on 7ba2f73 (owner quota reading 9,000) finished its inserts in about 7 s and then failed `Playlist read-back mismatch`. The log did not record the listing, so the playlist's actual contents are unconfirmed; the likely cause is the item listing lagging behind the inserts. Up to about 600 general units may have been spent; no searches, $0.
 
 Fix: the read-back is retried after 5, 10, 15 and 30 s; resuming an existing playlist writes nothing unless two listings 10 s apart agree (so a stale listing cannot cause duplicates); counts and the first differing position are logged. Any unexpected state (duplicates, wrong order, two marked playlists) still stops with no writes.
+
+## Result: private preview published and read back (2026-10-30)
+Re-run attempt 2 of [41056777624](https://github.com/johnapaz/edc-listening-room/actions/runs/41056777624) (code at 7ba2f73) found the existing marked private playlist and read it back as exactly the 11 manifest videos in order: `readback_verified: true`, `visibility: private`, `count: 11`, 5 general units, so no inserts in that attempt. The 11 inserts happened in attempt 1, whose read-back was stale. Playlist ID as reported by the API: `PLMNhigCmv2F0` ([YouTube Music](https://music.youtube.com/playlist?list=PLMNhigCmv2F0)).
+
+Not yet done: owner playback in YouTube Music (`playback_verified: false`); Poison Control still held pending its video metadata. This is not an M1 pass: ranking, licensing, Notion projection, public release and bulk ingestion remain open.
