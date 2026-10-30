@@ -10,13 +10,13 @@ From **repository root** (Python 3.11+):
 python -m http.server 8000
 ~~~
 
-Open \`http://localhost:8000/companion/\`. Opening \`index.html\` directly via \`file://\` is not supported because browser fetch permissions differ. No build step, install, authentication, paid service or API token is needed.
+Open `http://localhost:8000/companion/`. Opening `index.html` directly via `file://` is not supported because browser fetch permissions differ. No build step, install, authentication, paid service or API token is needed.
 
 ## Scope and data contract
 
-- Reads the existing checked-in \`data/edco-2026/{performances,artists,discovery-candidates,venues,event}.json\`; no parallel catalog, sync or public API.
+- Reads the existing checked-in `data/edco-2026/{performances,artists,discovery-candidates,venues,event}.json`; no parallel catalog, sync or public API.
 - Mobile-first lineup by Friday/Saturday/Sunday/all; search by billing, artist or candidate song title; bookmarked **performances** using browser-local storage; up to five source-captured tracks per billing with outbound Spotify links; official organizer map/FAQ.
-- All stage/time fields come only from verified schedule data. Missing values display \`Stage TBA\` and \`Time TBA\`. Listing order is **not** set order, and B2B billing stays intact. Source conflicts are flagged.
+- All stage/time fields come only from verified schedule data. Missing values display `Stage TBA` and `Time TBA`. Listing order is **not** set order, and B2B billing stays intact. Source conflicts are flagged.
 - Captured Spotify songs are discovery suggestions, **not** approved recordings, YouTube Music matches, confirmed festival setlists or playback guarantees. Do not expose the private playlist as public, and never treat this as a completed M1 acceptance.
 - Browser-local picks have no cross-device sync and may be lost when site data is cleared; no login, tracking or user data sent to a backend. No offline caching or service worker. Fetch needs HTTP connectivity to the host.
 - Preserve existing artist/performance IDs when schedule data is updated, so saved picks remain stable.
