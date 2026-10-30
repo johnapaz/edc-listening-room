@@ -142,16 +142,28 @@ def run_discovery(args) -> None:
         d.match_acts(yt, acts, state, per_act=args.per_act, max_searches=args.remaining_searches,
                      unit_budget=units)
     finally:
+        # Include attempted requests even if matching failed before its return.
+        state["units_spent_last_run"] = budget.used_general
+        state["searches_last_run"] = budget.used_search
         d.MATCHES_FILE.write_text(json.dumps(state, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+        queue = d.review_queue(state, decisions)
+        (d.DATA / "review-queue.json").write_text(json.dumps(queue, indent=1, ensure_ascii=False) + "\n",
+                                                  encoding="utf-8")
+        print(json.dumps({"matching_paused": state.get("matching_paused"),
+                          "acts_searched_total": len(state["searched_acts"]),
+                          "review_queue": len(queue), "quota_used_general": budget.used_general,
+                          "searches_attempted": budget.used_search}))
     desired = d.publish_list(acts, state, decisions, per_act=args.per_act)
-    queue = d.review_queue(state, decisions)
-    (d.DATA / "review-queue.json").write_text(json.dumps(queue, indent=1, ensure_ascii=False) + "\n",
-                                              encoding="utf-8")
-    result = d.sync_playlist(yt, desired, unit_budget=units - state["units_spent_last_run"])
+    try:
+        result = d.sync_playlist(yt, desired, unit_budget=units - state["units_spent_last_run"])
+    finally:
+        print(json.dumps({"quota_used_general": budget.used_general,
+                          "searches_attempted": budget.used_search}))
     result.update(acts_searched_this_run=len(unsearched) - len(
         [a for a in acts if a.act_id not in state["searched_acts"]
          and any(s.known_video_id is None for s in a.songs[:args.per_act])]),
-        review_queue=len(queue), quota_used_general=budget.used_general, searches=budget.used_search)
+        review_queue=len(queue), quota_used_general=budget.used_general, searches=budget.used_search,
+        matching_paused=state.get("matching_paused"))
     print(json.dumps(result, indent=2))
     if not result.get("readback_verified", True):
         raise SystemExit("Playlist read-back mismatch. Do not publish; reconcile manually.")
@@ -159,4 +171,5 @@ def run_discovery(args) -> None:
 
 if __name__ == "__main__":
     main()
+
 
