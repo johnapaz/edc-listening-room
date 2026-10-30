@@ -139,6 +139,8 @@ def run_discovery(args) -> None:
                     maximum_general_per_run=args.remaining_general)
     result = {"status": "failed", "readback_verified": False}
     initial_searched = len(state["searched_acts"])
+    state.pop("last_provider_error", None)
+    state["writes_completed_last_run"] = {"inserted": 0, "deleted": 0}
     def checkpoint():
         d.atomic_json(d.MATCHES_FILE, state)
 

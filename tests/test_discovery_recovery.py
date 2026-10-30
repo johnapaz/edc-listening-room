@@ -118,7 +118,9 @@ class RecoveryTests(unittest.TestCase):
     def test_cli_failure_still_saves_safe_summary_and_checkpoint(self):
         with tempfile.TemporaryDirectory() as folder:
             data = Path(folder)
-            state = {'searched_acts': [], 'matches': {}}
+            state = {'searched_acts': [], 'matches': {},
+                     'last_provider_error': {'reason': 'old'},
+                     'writes_completed_last_run': {'inserted': 63, 'deleted': 0}}
             args = argparse.Namespace(per_act=3, apply=True, remaining_general=1000, remaining_searches=10)
             with patch.object(d, 'DATA', data), patch.object(d, 'MATCHES_FILE', data / 'matches.json'), \
                  patch.object(d, 'build_acts', return_value=acts_fixture()), \
@@ -131,6 +133,8 @@ class RecoveryTests(unittest.TestCase):
             summary = json.loads((data / 'discovery-run-summary.json').read_text())
             self.assertEqual(summary['status'], 'failed')
             self.assertEqual(summary['attempted_requests'], {})
+            self.assertIsNone(summary['provider_error'])
+            self.assertEqual(summary['writes_completed'], {'inserted': 0, 'deleted': 0})
             self.assertTrue(summary['checkpoint_written'])
             self.assertNotIn('SECRET', json.dumps(summary))
             self.assertTrue((data / 'matches.json').exists())
