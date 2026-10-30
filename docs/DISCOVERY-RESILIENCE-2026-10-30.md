@@ -15,7 +15,7 @@ Agent: codex. Baseline main `ec52346`, merged PR #24; no open PRs at inspection.
 | Failure | Resulting behavior |
 |---|---|
 | Raw provider reason discarded | Read at most 64 KiB to parse only an allowlisted reason. Never log raw bodies, messages, URLs, headers or credentials. Unknown remains unknown. Transport failure uses status 0 (no HTTP response), operation and unknown reason. |
-| Fast requests and undifferentiated 429 handling | Pace searches by 2 seconds. At most two read retries, after 15/30 seconds, only for explicit transient 429 reasons and within both attempt allowances. Unknown/daily reasons stop searching; cached songs can still publish. Pacing is a precaution, not a diagnosed cure. |
+| Fast requests and undifferentiated 429 handling | Pace searches by 10 seconds after observed rate throttling; at most two read retries, after 60/120 seconds, only for explicit transient 429 reasons and within both attempt allowances. Unknown/daily reasons stop searching; cached songs can still publish. Pacing is a precaution, not a diagnosed cure. |
 | Successful search repeated if metadata fails | Atomically checkpoint returned video IDs before metadata lookup, then completed act matches after classification. Resume metadata from those IDs even with zero new searches. |
 | First-three-only eligibility could omit later captured songs | Search eligibility considers every captured candidate; selection still defaults to three songs per act. All candidates are matched locally from one act result set. |
 | Publisher's local estimate omitted pages and retry attempts | Use authoritative Budget deltas, count every admitted attempt by operation, and keep 100 general units outside the write allocation for read-back. The hard Budget cap applies before every real request, including retries and pagination. |
@@ -38,6 +38,12 @@ The standard unittest suite passes 66 tests and skips the optional saved-state t
 - Atomic files survive process exceptions on the runner. Git checkpoint push plus artifact provide durable recovery after ordinary failures. A forced runner termination can preclude final steps; push failure requires artifact recovery before another live run. No system can guarantee a final summary after runner loss.
 - Hard quota ceilings can stop even read-back if responses paginate excessively or repeatedly fail. Such a run is unverified, never complete, and retains its checkpoint.
 - Owner approvals and measured quota confirmations remain required. There is no automatic dispatch, recurring task, model loop or additional subscription.
+
+## Post-merge live observation and conservative mitigation (2026-10-30)
+
+First post-merge run [41087502389](https://github.com/johnapaz/edc-listening-room/actions/runs/41087502389) succeeded as a *safe pause* with 84 private playlist items (16 added), ordered API read-back true, 41 searched acts, 65 remaining, 14 attempted search requests and 817 metered general units. The provider returned `search.list HTTP 429` reason `rateLimitExceeded`. Checkpoint `discovery/state` commit `c344c82` and recovery artifact were saved. This is explicit rate throttling, not evidence of daily search-quota exhaustion.
+
+This proposed follow-up changes only request timing (2s to 10s between searches; bounded 15/30s to 60/120s on explicitly transient 429s). It is a **precautionary hypothesis**; neither the 429 cause nor provider-side resolution is proven. Conservative pacing increases runtime and may still pause; automatic retry and quota ceilings remain bounded. No further live run is authorized without newly confirmed remaining Console quota and existing environment approval.
 
 ## Minimal remaining owner work
 

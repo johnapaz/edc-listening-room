@@ -233,7 +233,7 @@ def match_acts(yt, acts: list[Act], state: dict, *, per_act: int, max_searches: 
                 if yt.quota.used_search - start_search >= max_searches:
                     break
                 if yt.quota.used_search > start_search:
-                    yt.sleep(2)  # conservative pacing, not a claimed cure for unknown 429s
+                    yt.sleep(10)  # slower request cadence; not a proven cure for provider 429
                 found = None
                 for attempt in range(3):
                     try:
@@ -249,7 +249,7 @@ def match_acts(yt, acts: list[Act], state: dict, *, per_act: int, max_searches: 
                         if (exc.reason in {"rateLimitExceeded", "userRateLimitExceeded"}
                                 and attempt < 2 and yt.quota.remaining_search > 0
                                 and yt.quota.used_search - start_search < max_searches):
-                            yt.sleep((15, 30)[attempt])
+                            yt.sleep((60, 120)[attempt])  # bounded transient rate-window backoff
                             continue
                         state["matching_paused"] = "search.list HTTP 429; retry allowance exhausted or reason unknown"
                         break
