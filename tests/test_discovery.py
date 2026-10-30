@@ -4,7 +4,7 @@ import unittest
 from edc import discovery as d
 from edc.cli import quota_count
 from edc.quota import Budget
-from edc.youtube import YouTube
+from edc.youtube import YouTube, YouTubeHTTPError
 
 
 def video(vid, title, channel, seconds):
@@ -137,6 +137,40 @@ class FakeYT(YouTube):
 
 
 class MatchAndSyncTests(unittest.TestCase):
+    def test_search_429_preserves_matches_and_still_publishes(self):
+        acts = acts_fixture()
+        yt = FakeYT(results={"Alpha": [video("VA00000001A", "One", "Alpha - Topic", 200)]})
+        original = yt.request
+
+        def request(endpoint, params, **kwargs):
+            if endpoint == "search" and params["q"] == "Beta":
+                yt.quota.spend("search.list")
+                yt.calls.append((endpoint, "GET"))
+                raise YouTubeHTTPError("search throttled", 429)
+            return original(endpoint, params, **kwargs)
+        yt.request = request
+        state = {"searched_acts": [], "matches": {}}
+        d.match_acts(yt, acts, state, per_act=3, max_searches=48, unit_budget=7900)
+        self.assertEqual(state["searched_acts"], ["artist:a"])
+        self.assertEqual((state["searches_last_run"], state["units_spent_last_run"]), (2, 1))
+        self.assertIn("429", state["matching_paused"])
+        result = d.sync_playlist(yt, d.publish_list(acts, state, {}, per_act=3), unit_budget=7899)
+        self.assertEqual((result["added"], result["readback_verified"]), (2, True))
+        self.assertEqual(yt.calls.count(("search", "GET")), 2)
+        # Cached Alpha must not be searched again, even with zero searches allowed.
+        d.match_acts(yt, acts, state, per_act=3, max_searches=0, unit_budget=1000)
+        self.assertNotIn("matching_paused", state)
+        self.assertEqual(state["searches_last_run"], 0)
+
+    def test_other_search_errors_still_fail_closed(self):
+        yt = FakeYT()
+        def request(*args, **kwargs):
+            raise YouTubeHTTPError("forbidden", 403)
+        yt.request = request
+        with self.assertRaises(YouTubeHTTPError):
+            d.match_acts(yt, acts_fixture(), {"searched_acts": [], "matches": {}},
+                         per_act=3, max_searches=1, unit_budget=1000)
+
     def test_match_respects_budget_and_resumes(self):
         acts = acts_fixture()
         yt = FakeYT(results={"Alpha": [video("VA00000001A", "One", "Alpha - Topic", 200)]})
@@ -209,3 +243,4 @@ class QuotaInputTests(unittest.TestCase):
         for bad in ("", "abc", "8.978", "-"):
             with self.assertRaises(argparse.ArgumentTypeError):
                 quota_count(bad)
+

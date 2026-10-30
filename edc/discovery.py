@@ -19,6 +19,7 @@ import unicodedata
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
+from .youtube import YouTubeHTTPError
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "edco-2026"
@@ -210,6 +211,8 @@ def load_decisions(path: Path = DECISIONS_FILE) -> dict[str, str]:
 def match_acts(yt, acts: list[Act], state: dict, *, per_act: int, max_searches: int, unit_budget: int) -> dict:
     """Search acts not yet searched, in lineup order, within today's search count and units."""
     searches = spent = 0
+    start_general, start_search = yt.quota.used_general, yt.quota.used_search
+    state.pop("matching_paused", None)
     for act in acts:
         if act.act_id in state["searched_acts"]:
             continue
@@ -218,7 +221,15 @@ def match_acts(yt, acts: list[Act], state: dict, *, per_act: int, max_searches: 
             continue
         if searches >= max_searches or spent + VIDEOS_LIST_COST > unit_budget:
             break
-        found = yt.request("search", {"part": "snippet", "q": act.name, "type": "video", "maxResults": 50})
+        try:
+            found = yt.request("search", {"part": "snippet", "q": act.name, "type": "video", "maxResults": 50})
+        except YouTubeHTTPError as exc:
+            if exc.code != 429:
+                raise
+            # Do not retry or mark this act searched. Publish cached matches;
+            # the owner can resume searching with a fresh quota reading later.
+            state["matching_paused"] = "search.list HTTP 429; no retry attempted"
+            break
         ids = [i["id"]["videoId"] for i in found.get("items", []) if i.get("id", {}).get("videoId")]
         videos = []
         if ids:
@@ -230,8 +241,8 @@ def match_acts(yt, acts: list[Act], state: dict, *, per_act: int, max_searches: 
             if song.known_video_id is None:
                 state["matches"][song.key + "@" + act.act_id] = classify(song, act.name, videos)
         state["searched_acts"].append(act.act_id)
-    state["units_spent_last_run"] = spent
-    state["searches_last_run"] = searches
+    state["units_spent_last_run"] = yt.quota.used_general - start_general
+    state["searches_last_run"] = yt.quota.used_search - start_search
     return state
 
 
@@ -330,3 +341,4 @@ def sync_playlist(yt, desired: list[dict], *, unit_budget: int, sleep=None) -> d
             "visibility": "private", "readback_verified": readback == expected,
             "count": len(expected), "added": added, "removed": removed,
             "still_to_add": remaining, "units_spent": spent}
+
