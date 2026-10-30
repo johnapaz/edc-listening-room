@@ -138,7 +138,7 @@
     const fragment = document.createDocumentFragment();
     matches.forEach(p => fragment.append(makeCard(p)));
     cards.replaceChildren(fragment);
-    count.textContent = matches.length + " set" + (matches.length === 1 ? "" : "s");
+    count.textContent = matches.length + " lineup " + (matches.length === 1 ? "entry" : "entries");
     empty.hidden = matches.length !== 0;
   }
 
