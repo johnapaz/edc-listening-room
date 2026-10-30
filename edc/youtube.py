@@ -24,6 +24,11 @@ PREVIEW_TITLE = "EDC Orlando 2026 — Private listening preview (unranked, unoff
 # A just-created playlist can briefly answer 404 (playlistNotFound). A 404 means
 # nothing was applied, so it is safe to retry; other errors are not retried.
 NOT_FOUND_DELAYS = (2, 4, 8, 16)
+# Item listings lag behind inserts. Read-back is retried until it matches, and a
+# resume only writes after two identical listings, so a stale prefix cannot cause duplicates.
+READBACK_DELAYS = (5, 10, 15, 30)
+STABLE_LISTING_GAP = 10
+STABLE_LISTING_ATTEMPTS = 3
 _MBID = re.compile(r"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
 
 
@@ -60,6 +65,14 @@ def validated_manifest(rows: list[dict[str, Any]], *, preview: bool = False) -> 
             raise ValueError("Each playlist item needs artist, title and recording_id")
         seen.add(video)
     return rows
+
+
+def describe_mismatch(intended: list[str], actual: list[str]) -> str:
+    """Public video IDs only; safe to print in workflow logs."""
+    first = next((i for i, (a, b) in enumerate(zip(intended, actual)) if a != b),
+                 min(len(intended), len(actual)))
+    return ("expected " + str(len(intended)) + " items, found " + str(len(actual)) +
+            "; first difference at position " + str(first) + "; found order: " + ",".join(actual))
 
 
 def access_token_from_secrets() -> str:
@@ -124,6 +137,16 @@ class YouTube:
                 self.sleep(delay)
         return call()
 
+    def stable_playlist_items(self, playlist_id: str) -> list[str]:
+        previous = self.retry_not_found(lambda: self.playlist_items(playlist_id))
+        for _ in range(STABLE_LISTING_ATTEMPTS):
+            self.sleep(STABLE_LISTING_GAP)
+            current = self.retry_not_found(lambda: self.playlist_items(playlist_id))
+            if current == previous:
+                return current
+            previous = current
+        raise RuntimeError("Playlist listing did not settle; no writes made. Retry later.")
+
     def my_pilot_playlists(self, marker: str = MARKER) -> list[dict]:
         marker_matches: list[dict] = []
         token = None
@@ -176,8 +199,11 @@ class YouTube:
             playlist_id = created["id"]
         intended = [row["video_id"] for row in records]
         # A playlist created in this run is empty; listing it can 404 until it propagates.
-        existing = [] if not playlists else self.playlist_items(playlist_id)
+        existing = [] if not playlists else self.stable_playlist_items(playlist_id)
+        print("Playlist", "found" if playlists else "created", "with", len(existing),
+              "items; intended", len(intended), "; inserting", max(len(intended) - len(existing), 0))
         if existing != intended[:len(existing)]:
+            print(describe_mismatch(intended, existing))
             raise RuntimeError("Existing playlist is not an exact intended prefix; no writes made")
         for video_id in intended[len(existing):]:
             self.retry_not_found(lambda: self.request("playlistItems", {"part": "snippet"}, method="POST", body={
@@ -185,7 +211,14 @@ class YouTube:
                             "resourceId": {"kind": "youtube#video", "videoId": video_id}},
             }))
         readback = self.retry_not_found(lambda: self.playlist_items(playlist_id))
+        for delay in READBACK_DELAYS:
+            if readback == intended:
+                break
+            print("Read-back not yet complete:", describe_mismatch(intended, readback))
+            self.sleep(delay)
+            readback = self.retry_not_found(lambda: self.playlist_items(playlist_id))
         if readback != intended:
+            print(describe_mismatch(intended, readback))
             raise RuntimeError("Playlist read-back mismatch. Do not publish; reconcile manually.")
         return {
             "playlist_id": playlist_id,
