@@ -41,3 +41,8 @@ Owner approved the eight already-played tracks plus Breathe (message: "Include a
 The approval commit (8186f9d, re-opened as PR #10 at 564f0d4) is merged into this branch, so either PR can merge first.
 
 Nothing has been written to YouTube. Publishing still needs: this PR merged, a dispatch of **Private listening preview** on main with a fresh quota reading and `YES`, and owner environment approval. Readback is automatic; actual YouTube Music playback is a separate owner check afterwards.
+
+## Update: first publish run failed after creating the playlist
+Run [40969909301](https://github.com/johnapaz/edc-listening-room/actions/runs/40969909301) on ab723f2 created the private preview playlist, then stopped on `HTTP 404, playlistItems.list` when listing the brand-new playlist (YouTube propagation delay). No items were added. Estimated spend: about 52 general units (one playlists.list, one playlists.insert, one failed playlistItems.list); no searches, $0. The earlier run 40969382173 on ee3430a stopped before OAuth because that commit had no manifest.
+
+Fix: a playlist created in the same run is treated as empty instead of listed, and only HTTP 404 on item inserts and read-back is retried after 2, 4, 8 and 16 s (a 404 applies nothing, so retrying cannot duplicate). Other errors still stop immediately. The next run should find the existing private playlist by its marker and resume from an empty prefix; if two marked playlists appear, the writer refuses and asks for manual reconciliation.

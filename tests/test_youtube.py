@@ -127,3 +127,49 @@ class CommittedPreviewManifestTests(unittest.TestCase):
         # Rows held back may only be appended later, so the manifest stays an exact prefix.
         order = list(review)
         self.assertEqual([r["video_id"] for r in approved], order[:len(approved)])
+
+class NewPlaylistPropagationTests(unittest.TestCase):
+    """A just-created playlist can answer 404 to playlistItems for a short time."""
+
+    def fake(self, not_found, code=404):
+        from edc.youtube import YouTubeHTTPError
+        c = FakeYouTube()
+        c.sleeps = []
+        c.sleep = c.sleeps.append
+        base = c.request
+
+        def request(endpoint, params, *, method="GET", body=None):
+            if endpoint == "playlistItems" and c.pending[0] > 0:
+                c.pending[0] -= 1
+                c.quota.spend(endpoint + (".insert" if method == "POST" else ".list"))
+                raise YouTubeHTTPError("failed", code)
+            return base(endpoint, params, method=method, body=body)
+        c.pending = [not_found]
+        c.request = request
+        return c
+
+    def publish(self, c, rows):
+        import unittest.mock
+        with unittest.mock.patch.dict("os.environ", {"EDC_ENABLE_WRITES": "1", "EDC_PILOT_APPROVED": "1"}):
+            return c.publish_private_pilot(rows)
+
+    def test_new_playlist_is_not_listed_and_transient_404_is_retried(self):
+        c = self.fake(not_found=2)
+        result = self.publish(c, [track(1), track(2)])
+        self.assertTrue(result["readback_verified"])
+        self.assertEqual(c.remote, [track(1)["video_id"], track(2)["video_id"]])
+        self.assertEqual(c.sleeps, [2, 4])
+        self.assertNotIn(("playlistItems", "GET"), c.calls[:2])
+
+    def test_persistent_404_stops_after_bounded_retries(self):
+        c = self.fake(not_found=99)
+        with self.assertRaises(RuntimeError):
+            self.publish(c, [track(1)])
+        self.assertEqual(c.remote, [])
+        self.assertEqual(c.sleeps, [2, 4, 8, 16])
+
+    def test_other_errors_are_not_retried(self):
+        c = self.fake(not_found=1, code=500)
+        with self.assertRaises(RuntimeError):
+            self.publish(c, [track(1)])
+        self.assertEqual(c.sleeps, [])
