@@ -49,7 +49,9 @@ jobs:
               git show "origin/$STATE_BRANCH:$f" > "$f" 2>/dev/null || rm -f "$f"
             done
           fi
-          python -m unittest discover -s tests
+          # Tests never see credentials or open write gates.
+          env -u GOOGLE_CLIENT_ID -u GOOGLE_CLIENT_SECRET -u GOOGLE_REFRESH_TOKEN \
+              -u EDC_ENABLE_WRITES -u EDC_PILOT_APPROVED python -m unittest discover -s tests
           python -m edc.cli discovery
       - name: Search unsearched acts, then add songs breadth-first with read-back
         env:

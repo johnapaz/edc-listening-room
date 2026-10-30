@@ -49,9 +49,12 @@ class YouTubeTests(unittest.TestCase):
             validated_manifest([track(1), track(1)])
 
     def test_writes_are_closed_by_default(self):
-        c = FakeYouTube()
-        with self.assertRaises(RuntimeError):
-            c.publish_private_pilot([track(1)])
+        import os, unittest.mock
+        closed = {k: v for k, v in os.environ.items() if k not in ("EDC_ENABLE_WRITES", "EDC_PILOT_APPROVED")}
+        with unittest.mock.patch.dict("os.environ", closed, clear=True):
+            c = FakeYouTube()
+            with self.assertRaises(RuntimeError):
+                c.publish_private_pilot([track(1)])
         self.assertEqual(c.calls, [])
 
     def test_private_publish_then_resume_without_duplicates(self):
