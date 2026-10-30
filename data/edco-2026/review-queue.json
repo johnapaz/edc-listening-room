@@ -56,6 +56,42 @@
   "decision": null
  },
  {
+  "song_key": "spotify:698ItKASDavgwZ3WjaWjtz",
+  "act_id": "artist:alan-walker",
+  "title": "Faded",
+  "credits": [
+   "Alan Walker"
+  ],
+  "spotify_duration_s": 212,
+  "status": "likely",
+  "video_id": "j3wMIogEGoU",
+  "video_title": "Only TRUE Alan Walker Fans Know These #AlanWalker #WhoIAm #Faded #Walkersjoin",
+  "channel": "Alan Walker",
+  "video_duration_s": 35,
+  "issue": "duration differs by 177 s",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:7BhmwvCdQZNwuQXSHw5TzP",
+  "act_id": "artist:alan-walker",
+  "title": "Headlights (feat. KIDDO)",
+  "credits": [
+   "Alok",
+   "Alan Walker",
+   "KIDDO"
+  ],
+  "spotify_duration_s": 158,
+  "status": "likely",
+  "video_id": "fGloYC4kV8A",
+  "video_title": "Alok, Alan Walker - Headlights (Lyrics) ft. KIDDO",
+  "channel": "The Vibe Guide",
+  "video_duration_s": 158,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
   "song_key": "spotify:0NIIKZEed0nXPz4lHnMaZg",
   "act_id": "artist:alesso",
   "title": "In Your Eyes",
@@ -87,6 +123,59 @@
   "video_title": "Alesso, Tove Lo - Heroes (Lyrics) we could be",
   "channel": "7clouds",
   "video_duration_s": 211,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:7Ei2LsA34MJPITPv72dvZw",
+  "act_id": "artist:alison-wonderland",
+  "title": "Heaven",
+  "credits": [
+   "Alison Wonderland",
+   "Ninajirachi"
+  ],
+  "spotify_duration_s": 206,
+  "status": "likely",
+  "video_id": "bdSgqZoA_Ew",
+  "video_title": "Alison Wonderland, Ninajirachi - Heaven",
+  "channel": "AlisonWonderlandVEVO",
+  "video_duration_s": 210,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:3jDXVV12qJ0sZB3Ixp3srB",
+  "act_id": "artist:alison-wonderland",
+  "title": "RESCUE U",
+  "credits": [
+   "Alison Wonderland",
+   "WINK"
+  ],
+  "spotify_duration_s": 175,
+  "status": "likely",
+  "video_id": "j-8OLbc37fg",
+  "video_title": "Alison Wonderland, WINK - RESCUE U",
+  "channel": "FMU Records",
+  "video_duration_s": 176,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:6wb61u8ayuanWSHZzle5od",
+  "act_id": "artist:alison-wonderland",
+  "title": "I Want U",
+  "credits": [
+   "Alison Wonderland"
+  ],
+  "spotify_duration_s": 210,
+  "status": "likely",
+  "video_id": "YLCm9lP-3Uk",
+  "video_title": "Alison Wonderland - I Want U (Official Video)",
+  "channel": "AlisonWonderlandVEVO",
+  "video_duration_s": 213,
   "issue": "not an official artist/Topic channel",
   "default": "added",
   "decision": null
@@ -496,6 +585,61 @@
   "decision": null
  },
  {
+  "song_key": "spotify:0WZomj99qKEzipmSQIQktM",
+  "act_id": "artist:wooli",
+  "title": "Jazz Cabbage",
+  "credits": [
+   "Wooli",
+   "Cyclops"
+  ],
+  "spotify_duration_s": 172,
+  "status": "likely",
+  "video_id": "OI180FJBJBA",
+  "video_title": "WOOLI & CYCLOPS - JAZZ CABBAGE [Official Video]",
+  "channel": "Wooli Music",
+  "video_duration_s": 173,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:4xWXrhg0Vwc29lbeyHZsYt",
+  "act_id": "artist:wooli",
+  "title": "Dingus",
+  "credits": [
+   "Subtronics",
+   "Wooli",
+   "LEVEL UP"
+  ],
+  "spotify_duration_s": 218,
+  "status": "likely",
+  "video_id": "66gDe8nDhpI",
+  "video_title": "Subtronics x Wooli x LEVEL UP - Dingus",
+  "channel": "Subtronics",
+  "video_duration_s": 227,
+  "issue": "duration differs by 9 s",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:4ZmjEc72ASdMpRVYDeF9Z7",
+  "act_id": "artist:zack-martino",
+  "title": "Desire",
+  "credits": [
+   "Zack Martino",
+   "Spat"
+  ],
+  "spotify_duration_s": 185,
+  "status": "likely",
+  "video_id": "X37CJ2l5F5g",
+  "video_title": "Desire  - Zack Martino & Spat",
+  "channel": "Music_Lab",
+  "video_duration_s": 185,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
   "song_key": "spotify:4J7CKHCF3mdL4diUsmW8lq",
   "act_id": "artist:alesso",
   "title": "Under Control (feat. Hurts)",
@@ -608,6 +752,24 @@
   "decision": null
  },
  {
+  "song_key": "spotify:3G2O60rq5a77GEIwK1mVmh",
+  "act_id": "artist:zack-martino",
+  "title": "Make Me Yours",
+  "credits": [
+   "Borgeous",
+   "Zack Martino"
+  ],
+  "spotify_duration_s": 195,
+  "status": "doubtful",
+  "video_id": "xEeH7b4yWfw",
+  "video_title": "Borgeous & Zack Martino - Make Me Yours (Official Lyric Video)",
+  "channel": "Armada Music TV",
+  "video_duration_s": 221,
+  "issue": "duration differs by 26 s",
+  "default": "skipped",
+  "decision": null
+ },
+ {
   "song_key": "spotify:3RBZG00eHECxQIgOwrLhjC",
   "act_id": "artist:aat",
   "title": "Don't Stop",
@@ -643,6 +805,34 @@
    "AAT"
   ],
   "spotify_duration_s": 199,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "pilot:acraze:apple-cider",
+  "act_id": "artist:acraze",
+  "title": "Apple Cider",
+  "credits": [
+   "ACRAZE"
+  ],
+  "spotify_duration_s": null,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:2B6NPa5xN0ktAoEFXC7Ar9",
+  "act_id": "artist:acraze",
+  "title": "Whatcha Do To Me",
+  "credits": [
+   "ACRAZE"
+  ],
+  "spotify_duration_s": 262,
   "status": "unmatched",
   "video_id": null,
   "issue": "no search result for this artist had this title",
@@ -689,6 +879,21 @@
    "David Guetta"
   ],
   "spotify_duration_s": 190,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:5MhdIizFfxEAwBczKWBzbQ",
+  "act_id": "artist:alan-walker",
+  "title": "Moonshine",
+  "credits": [
+   "Alan Walker",
+   "Elley Duhé"
+  ],
+  "spotify_duration_s": 160,
   "status": "unmatched",
   "video_id": null,
   "issue": "no search result for this artist had this title",
@@ -789,6 +994,76 @@
    "Big Florida"
   ],
   "spotify_duration_s": 243,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "pilot:cid:no-",
+  "act_id": "artist:cid",
+  "title": "No!",
+  "credits": [
+   "CID"
+  ],
+  "spotify_duration_s": null,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "pilot:cid:us",
+  "act_id": "artist:cid",
+  "title": "Us",
+  "credits": [
+   "CID"
+  ],
+  "spotify_duration_s": null,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "pilot:cid:sweet-memories",
+  "act_id": "artist:cid",
+  "title": "Sweet Memories",
+  "credits": [
+   "CID"
+  ],
+  "spotify_duration_s": null,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "pilot:cid:secrets",
+  "act_id": "artist:cid",
+  "title": "Secrets",
+  "credits": [
+   "CID"
+  ],
+  "spotify_duration_s": null,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:19PBU0nWYBOMzHOAxDBEcg",
+  "act_id": "artist:cid",
+  "title": "Loaded Gun",
+  "credits": [
+   "CID"
+  ],
+  "spotify_duration_s": 195,
   "status": "unmatched",
   "video_id": null,
   "issue": "no search result for this artist had this title",
@@ -1171,6 +1446,35 @@
    "Vastive"
   ],
   "spotify_duration_s": null,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:3dD9yyYTQ73SZvyOygyKva",
+  "act_id": "artist:whethan",
+  "title": "High (& Dua Lipa)",
+  "credits": [
+   "Whethan",
+   "Dua Lipa"
+  ],
+  "spotify_duration_s": 197,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:4rtz2VliXObZALpQghDO5K",
+  "act_id": "artist:zack-martino",
+  "title": "Till I Found You",
+  "credits": [
+   "Zack Martino"
+  ],
+  "spotify_duration_s": 221,
   "status": "unmatched",
   "video_id": null,
   "issue": "no search result for this artist had this title",

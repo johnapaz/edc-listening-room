@@ -1,0 +1,39 @@
+{
+ "playlist_id": "PLdOAWVle_qfg",
+ "youtube_music_url": "https://music.youtube.com/playlist?list=PLdOAWVle_qfg",
+ "visibility": "private",
+ "readback_verified": true,
+ "count": 84,
+ "added": 16,
+ "removed": 0,
+ "still_to_add": 0,
+ "still_to_remove": 0,
+ "units_spent": 809,
+ "status": "paused",
+ "acts_searched_this_run": 8,
+ "acts_searched_total": 41,
+ "acts_remaining": 65,
+ "review_queue": 91,
+ "quota_used_general": 817,
+ "searches_attempted": 14,
+ "attempted_requests": {
+  "search.list": 14,
+  "videos.list": 8,
+  "playlists.list": 3,
+  "playlistItems.list": 6,
+  "playlistItems.insert": 16
+ },
+ "matching_paused": "search.list HTTP 429; retry allowance exhausted or reason unknown",
+ "provider_error": {
+  "operation": "search.list",
+  "http_status": 429,
+  "reason": "rateLimitExceeded"
+ },
+ "pending_write": null,
+ "playlist_checkpoint_count": 84,
+ "writes_completed": {
+  "inserted": 16,
+  "deleted": 0
+ },
+ "checkpoint_written": true
+}

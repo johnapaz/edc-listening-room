@@ -33,7 +33,15 @@
   "artist:pegassi",
   "artist:prospa",
   "artist:raje",
-  "artist:sloth"
+  "artist:sloth",
+  "artist:whethan",
+  "artist:wooli",
+  "artist:zack-martino",
+  "artist:aaron-hibell",
+  "artist:acraze",
+  "artist:cid",
+  "artist:alan-walker",
+  "artist:alison-wonderland"
  ],
  "matches": {
   "spotify:3RBZG00eHECxQIgOwrLhjC@artist:aat": {
@@ -1589,9 +1597,512 @@
    "status": "unmatched",
    "video_id": null,
    "issue": "no search result for this artist had this title"
+  },
+  "spotify:4orH1YqyAjXBtBr0DfsqjV@artist:whethan": {
+   "song_key": "spotify:4orH1YqyAjXBtBr0DfsqjV",
+   "act_id": "artist:whethan",
+   "title": "Swag Surfin'",
+   "credits": [
+    "Whethan"
+   ],
+   "spotify_duration_s": 228,
+   "status": "matched",
+   "video_id": "fcgr6PR9E60",
+   "video_title": "Swag Surfin'",
+   "channel": "Whethan - Topic",
+   "video_duration_s": 229,
+   "issue": null
+  },
+  "spotify:3deZ4afG0Y4WhbSBEp97oK@artist:whethan": {
+   "song_key": "spotify:3deZ4afG0Y4WhbSBEp97oK",
+   "act_id": "artist:whethan",
+   "title": "MONEY ON THE DASH - SPED UP",
+   "credits": [
+    "Elley Duhé",
+    "Whethan"
+   ],
+   "spotify_duration_s": 116,
+   "status": "matched",
+   "video_id": "5D597frOWhI",
+   "video_title": "Elley Duhé & Whethan - MONEY ON THE DASH - SPED UP (Audio)",
+   "channel": "Elley Duhé",
+   "video_duration_s": 113,
+   "issue": null
+  },
+  "spotify:3dD9yyYTQ73SZvyOygyKva@artist:whethan": {
+   "song_key": "spotify:3dD9yyYTQ73SZvyOygyKva",
+   "act_id": "artist:whethan",
+   "title": "High (& Dua Lipa)",
+   "credits": [
+    "Whethan",
+    "Dua Lipa"
+   ],
+   "spotify_duration_s": 197,
+   "status": "unmatched",
+   "video_id": null,
+   "issue": "no search result for this artist had this title"
+  },
+  "spotify:0WZomj99qKEzipmSQIQktM@artist:wooli": {
+   "song_key": "spotify:0WZomj99qKEzipmSQIQktM",
+   "act_id": "artist:wooli",
+   "title": "Jazz Cabbage",
+   "credits": [
+    "Wooli",
+    "Cyclops"
+   ],
+   "spotify_duration_s": 172,
+   "status": "likely",
+   "video_id": "OI180FJBJBA",
+   "video_title": "WOOLI & CYCLOPS - JAZZ CABBAGE [Official Video]",
+   "channel": "Wooli Music",
+   "video_duration_s": 173,
+   "issue": "not an official artist/Topic channel"
+  },
+  "spotify:54S9rhNgvLcu0oGNwWjTXD@artist:wooli": {
+   "song_key": "spotify:54S9rhNgvLcu0oGNwWjTXD",
+   "act_id": "artist:wooli",
+   "title": "Hear Me Now",
+   "credits": [
+    "Kaskade",
+    "Wooli",
+    "MAXINE"
+   ],
+   "spotify_duration_s": 200,
+   "status": "matched",
+   "video_id": "KWn5FkkuYwk",
+   "video_title": "Kaskade x Wooli x MAXINE \"Hear Me Now\"",
+   "channel": "Kaskade",
+   "video_duration_s": 200,
+   "issue": null
+  },
+  "spotify:4xWXrhg0Vwc29lbeyHZsYt@artist:wooli": {
+   "song_key": "spotify:4xWXrhg0Vwc29lbeyHZsYt",
+   "act_id": "artist:wooli",
+   "title": "Dingus",
+   "credits": [
+    "Subtronics",
+    "Wooli",
+    "LEVEL UP"
+   ],
+   "spotify_duration_s": 218,
+   "status": "likely",
+   "video_id": "66gDe8nDhpI",
+   "video_title": "Subtronics x Wooli x LEVEL UP - Dingus",
+   "channel": "Subtronics",
+   "video_duration_s": 227,
+   "issue": "duration differs by 9 s"
+  },
+  "spotify:4rtz2VliXObZALpQghDO5K@artist:zack-martino": {
+   "song_key": "spotify:4rtz2VliXObZALpQghDO5K",
+   "act_id": "artist:zack-martino",
+   "title": "Till I Found You",
+   "credits": [
+    "Zack Martino"
+   ],
+   "spotify_duration_s": 221,
+   "status": "unmatched",
+   "video_id": null,
+   "issue": "no search result for this artist had this title"
+  },
+  "spotify:3G2O60rq5a77GEIwK1mVmh@artist:zack-martino": {
+   "song_key": "spotify:3G2O60rq5a77GEIwK1mVmh",
+   "act_id": "artist:zack-martino",
+   "title": "Make Me Yours",
+   "credits": [
+    "Borgeous",
+    "Zack Martino"
+   ],
+   "spotify_duration_s": 195,
+   "status": "doubtful",
+   "video_id": "xEeH7b4yWfw",
+   "video_title": "Borgeous & Zack Martino - Make Me Yours (Official Lyric Video)",
+   "channel": "Armada Music TV",
+   "video_duration_s": 221,
+   "issue": "duration differs by 26 s"
+  },
+  "spotify:4ZmjEc72ASdMpRVYDeF9Z7@artist:zack-martino": {
+   "song_key": "spotify:4ZmjEc72ASdMpRVYDeF9Z7",
+   "act_id": "artist:zack-martino",
+   "title": "Desire",
+   "credits": [
+    "Zack Martino",
+    "Spat"
+   ],
+   "spotify_duration_s": 185,
+   "status": "likely",
+   "video_id": "X37CJ2l5F5g",
+   "video_title": "Desire  - Zack Martino & Spat",
+   "channel": "Music_Lab",
+   "video_duration_s": 185,
+   "issue": "not an official artist/Topic channel"
+  },
+  "spotify:7Kmo4UQ5Co6tqtysQcLkpF@artist:aaron-hibell": {
+   "song_key": "spotify:7Kmo4UQ5Co6tqtysQcLkpF",
+   "act_id": "artist:aaron-hibell",
+   "title": "set me free",
+   "credits": [
+    "Aaron Hibell",
+    "Alex Wann"
+   ],
+   "spotify_duration_s": 218,
+   "status": "matched",
+   "video_id": "Og0A10H7YqU",
+   "video_title": "Aaron Hibell, Alex Wann - set me free (official visualiser)",
+   "channel": "Aaron Hibell",
+   "video_duration_s": 219,
+   "issue": null
+  },
+  "spotify:0L2hJdknuaFzX2SX0e6Psm@artist:aaron-hibell": {
+   "song_key": "spotify:0L2hJdknuaFzX2SX0e6Psm",
+   "act_id": "artist:aaron-hibell",
+   "title": "i feel lost",
+   "credits": [
+    "Aaron Hibell"
+   ],
+   "spotify_duration_s": 148,
+   "status": "matched",
+   "video_id": "85-so5m3CMM",
+   "video_title": "Aaron Hibell - i feel lost [official audio]",
+   "channel": "Aaron Hibell",
+   "video_duration_s": 148,
+   "issue": null
+  },
+  "spotify:2dH4UWxucbsfFglVAbfNW3@artist:aaron-hibell": {
+   "song_key": "spotify:2dH4UWxucbsfFglVAbfNW3",
+   "act_id": "artist:aaron-hibell",
+   "title": "levitation",
+   "credits": [
+    "Aaron Hibell",
+    "Felsmann + Tiley"
+   ],
+   "spotify_duration_s": 168,
+   "status": "matched",
+   "video_id": "RlmeqTs4i_w",
+   "video_title": "Aaron Hibell, Felsmann + Tiley - levitation [official audio]",
+   "channel": "Aaron Hibell",
+   "video_duration_s": 169,
+   "issue": null
+  },
+  "pilot:acraze:believe@artist:acraze": {
+   "song_key": "pilot:acraze:believe",
+   "act_id": "artist:acraze",
+   "title": "Believe",
+   "credits": [
+    "ACRAZE"
+   ],
+   "spotify_duration_s": null,
+   "status": "matched",
+   "video_id": "rht_fkVLk8I",
+   "video_title": "ACRAZE - Believe ft. Goodboys",
+   "channel": "ACRAZEVEVO",
+   "video_duration_s": 189,
+   "issue": null
+  },
+  "pilot:acraze:take-me-away@artist:acraze": {
+   "song_key": "pilot:acraze:take-me-away",
+   "act_id": "artist:acraze",
+   "title": "Take Me Away",
+   "credits": [
+    "ACRAZE"
+   ],
+   "spotify_duration_s": null,
+   "status": "matched",
+   "video_id": "bVm0ygOuiNk",
+   "video_title": "ACRAZE - Take Me Away",
+   "channel": "ACRAZEVEVO",
+   "video_duration_s": 192,
+   "issue": null
+  },
+  "pilot:acraze:heard-it-like-this@artist:acraze": {
+   "song_key": "pilot:acraze:heard-it-like-this",
+   "act_id": "artist:acraze",
+   "title": "Heard It Like This",
+   "credits": [
+    "ACRAZE"
+   ],
+   "spotify_duration_s": null,
+   "status": "matched",
+   "video_id": "UeqAebUWRQE",
+   "video_title": "ACRAZE, Joey Valence & Brae - Heard It Like This (Audio)",
+   "channel": "ACRAZEVEVO",
+   "video_duration_s": 229,
+   "issue": null
+  },
+  "pilot:acraze:apple-cider@artist:acraze": {
+   "song_key": "pilot:acraze:apple-cider",
+   "act_id": "artist:acraze",
+   "title": "Apple Cider",
+   "credits": [
+    "ACRAZE"
+   ],
+   "spotify_duration_s": null,
+   "status": "unmatched",
+   "video_id": null,
+   "issue": "no search result for this artist had this title"
+  },
+  "spotify:2B6NPa5xN0ktAoEFXC7Ar9@artist:acraze": {
+   "song_key": "spotify:2B6NPa5xN0ktAoEFXC7Ar9",
+   "act_id": "artist:acraze",
+   "title": "Whatcha Do To Me",
+   "credits": [
+    "ACRAZE"
+   ],
+   "spotify_duration_s": 262,
+   "status": "unmatched",
+   "video_id": null,
+   "issue": "no search result for this artist had this title"
+  },
+  "pilot:cid:no-@artist:cid": {
+   "song_key": "pilot:cid:no-",
+   "act_id": "artist:cid",
+   "title": "No!",
+   "credits": [
+    "CID"
+   ],
+   "spotify_duration_s": null,
+   "status": "unmatched",
+   "video_id": null,
+   "issue": "no search result for this artist had this title"
+  },
+  "pilot:cid:us@artist:cid": {
+   "song_key": "pilot:cid:us",
+   "act_id": "artist:cid",
+   "title": "Us",
+   "credits": [
+    "CID"
+   ],
+   "spotify_duration_s": null,
+   "status": "unmatched",
+   "video_id": null,
+   "issue": "no search result for this artist had this title"
+  },
+  "pilot:cid:sweet-memories@artist:cid": {
+   "song_key": "pilot:cid:sweet-memories",
+   "act_id": "artist:cid",
+   "title": "Sweet Memories",
+   "credits": [
+    "CID"
+   ],
+   "spotify_duration_s": null,
+   "status": "unmatched",
+   "video_id": null,
+   "issue": "no search result for this artist had this title"
+  },
+  "pilot:cid:secrets@artist:cid": {
+   "song_key": "pilot:cid:secrets",
+   "act_id": "artist:cid",
+   "title": "Secrets",
+   "credits": [
+    "CID"
+   ],
+   "spotify_duration_s": null,
+   "status": "unmatched",
+   "video_id": null,
+   "issue": "no search result for this artist had this title"
+  },
+  "spotify:19PBU0nWYBOMzHOAxDBEcg@artist:cid": {
+   "song_key": "spotify:19PBU0nWYBOMzHOAxDBEcg",
+   "act_id": "artist:cid",
+   "title": "Loaded Gun",
+   "credits": [
+    "CID"
+   ],
+   "spotify_duration_s": 195,
+   "status": "unmatched",
+   "video_id": null,
+   "issue": "no search result for this artist had this title"
+  },
+  "spotify:5MhdIizFfxEAwBczKWBzbQ@artist:alan-walker": {
+   "song_key": "spotify:5MhdIizFfxEAwBczKWBzbQ",
+   "act_id": "artist:alan-walker",
+   "title": "Moonshine",
+   "credits": [
+    "Alan Walker",
+    "Elley Duhé"
+   ],
+   "spotify_duration_s": 160,
+   "status": "unmatched",
+   "video_id": null,
+   "issue": "no search result for this artist had this title"
+  },
+  "spotify:698ItKASDavgwZ3WjaWjtz@artist:alan-walker": {
+   "song_key": "spotify:698ItKASDavgwZ3WjaWjtz",
+   "act_id": "artist:alan-walker",
+   "title": "Faded",
+   "credits": [
+    "Alan Walker"
+   ],
+   "spotify_duration_s": 212,
+   "status": "likely",
+   "video_id": "j3wMIogEGoU",
+   "video_title": "Only TRUE Alan Walker Fans Know These #AlanWalker #WhoIAm #Faded #Walkersjoin",
+   "channel": "Alan Walker",
+   "video_duration_s": 35,
+   "issue": "duration differs by 177 s"
+  },
+  "spotify:7BhmwvCdQZNwuQXSHw5TzP@artist:alan-walker": {
+   "song_key": "spotify:7BhmwvCdQZNwuQXSHw5TzP",
+   "act_id": "artist:alan-walker",
+   "title": "Headlights (feat. KIDDO)",
+   "credits": [
+    "Alok",
+    "Alan Walker",
+    "KIDDO"
+   ],
+   "spotify_duration_s": 158,
+   "status": "likely",
+   "video_id": "fGloYC4kV8A",
+   "video_title": "Alok, Alan Walker - Headlights (Lyrics) ft. KIDDO",
+   "channel": "The Vibe Guide",
+   "video_duration_s": 158,
+   "issue": "not an official artist/Topic channel"
+  },
+  "spotify:7Ei2LsA34MJPITPv72dvZw@artist:alison-wonderland": {
+   "song_key": "spotify:7Ei2LsA34MJPITPv72dvZw",
+   "act_id": "artist:alison-wonderland",
+   "title": "Heaven",
+   "credits": [
+    "Alison Wonderland",
+    "Ninajirachi"
+   ],
+   "spotify_duration_s": 206,
+   "status": "likely",
+   "video_id": "bdSgqZoA_Ew",
+   "video_title": "Alison Wonderland, Ninajirachi - Heaven",
+   "channel": "AlisonWonderlandVEVO",
+   "video_duration_s": 210,
+   "issue": "not an official artist/Topic channel"
+  },
+  "spotify:3jDXVV12qJ0sZB3Ixp3srB@artist:alison-wonderland": {
+   "song_key": "spotify:3jDXVV12qJ0sZB3Ixp3srB",
+   "act_id": "artist:alison-wonderland",
+   "title": "RESCUE U",
+   "credits": [
+    "Alison Wonderland",
+    "WINK"
+   ],
+   "spotify_duration_s": 175,
+   "status": "likely",
+   "video_id": "j-8OLbc37fg",
+   "video_title": "Alison Wonderland, WINK - RESCUE U",
+   "channel": "FMU Records",
+   "video_duration_s": 176,
+   "issue": "not an official artist/Topic channel"
+  },
+  "spotify:6wb61u8ayuanWSHZzle5od@artist:alison-wonderland": {
+   "song_key": "spotify:6wb61u8ayuanWSHZzle5od",
+   "act_id": "artist:alison-wonderland",
+   "title": "I Want U",
+   "credits": [
+    "Alison Wonderland"
+   ],
+   "spotify_duration_s": 210,
+   "status": "likely",
+   "video_id": "YLCm9lP-3Uk",
+   "video_title": "Alison Wonderland - I Want U (Official Video)",
+   "channel": "AlisonWonderlandVEVO",
+   "video_duration_s": 213,
+   "issue": "not an official artist/Topic channel"
   }
  },
- "matching_paused": "search.list HTTP 429; no retry attempted",
- "units_spent_last_run": 2,
- "searches_last_run": 3
+ "units_spent_last_run": 817,
+ "searches_last_run": 14,
+ "writes_completed_last_run": {
+  "inserted": 16,
+  "deleted": 0
+ },
+ "pending_search_results": {},
+ "last_provider_error": {
+  "operation": "search.list",
+  "http_status": 429,
+  "reason": "rateLimitExceeded"
+ },
+ "matching_paused": "search.list HTTP 429; retry allowance exhausted or reason unknown",
+ "playlist_id": "PLdOAWVle_qfg",
+ "confirmed_playlist_videos": [
+  "ZeaIvjoH1FY",
+  "EPo5wWmKEaI",
+  "bS9C1ipyMy8",
+  "xX8vYFSV6ek",
+  "oXhWSs0mRH4",
+  "Ve_LOVTzbxM",
+  "0oAc2uiyOeY",
+  "F6BU1_R64oM",
+  "Hjw86NcG8Bo",
+  "irDsRokzylg",
+  "c1Mwa-p25y8",
+  "M59_URXeNlc",
+  "TbYk1ib8CA8",
+  "FktDNLAobOw",
+  "-899-ptNSXo",
+  "wKnVdrVJENw",
+  "fjm9oO5CW38",
+  "iUzi0PHB1sY",
+  "Wo99IP269UE",
+  "axWlQUExPYk",
+  "Z1rnXaTV3ck",
+  "TKuMfUxW1-E",
+  "G7LVAtqPadU",
+  "rVp454wjqls",
+  "WLE7P1Ti34s",
+  "W7ThRlBDjfg",
+  "IHfelwLVzO0",
+  "gJYjbDnyx-o",
+  "bnA7yJkAG30",
+  "Scc4CRVroPo",
+  "HYCG79PxgFc",
+  "U6EjUIefwiw",
+  "wtnrLTqmUKI",
+  "bz6taI5pDl0",
+  "rjJCIu9VlgM",
+  "1ZCxXjDlaf8",
+  "QGR2oJ8lr2E",
+  "DWUbA501CO4",
+  "Dtd651AH87Y",
+  "fXnIbPmSTC0",
+  "7CUTn0q-j0w",
+  "Q_QtdTWlE3Y",
+  "Eg6P3j5wIzY",
+  "aNggrPAi5dg",
+  "BMFNN40fNp0",
+  "Kis_X0EVQhA",
+  "ZDJdynqu-i4",
+  "Ls76ISA-4hc",
+  "TOlDFkiVLdw",
+  "zGO142zWkIs",
+  "FxIO3n02jPI",
+  "c-VZY0XxxtM",
+  "ke6hDTz3OoY",
+  "8dTUarxrHrI",
+  "RFXM4RrHCRU",
+  "jBWLZ_GxWlg",
+  "wdTq2Aa8b4U",
+  "Rv550gn6y8k",
+  "kYP_jbcd3Q8",
+  "A_M-v_qsIJI",
+  "gBBfvLjtDGE",
+  "5BqjhUmldDc",
+  "_MJBvwZnVuk",
+  "ykY-5DZS_Ok",
+  "juuIhW8V1Xw",
+  "lfWqXksjQQQ",
+  "d2iWMT9lBb4",
+  "_M5O_ED_1aI",
+  "fcgr6PR9E60",
+  "OI180FJBJBA",
+  "X37CJ2l5F5g",
+  "Og0A10H7YqU",
+  "j3wMIogEGoU",
+  "bdSgqZoA_Ew",
+  "5D597frOWhI",
+  "KWn5FkkuYwk",
+  "85-so5m3CMM",
+  "rht_fkVLk8I",
+  "fGloYC4kV8A",
+  "j-8OLbc37fg",
+  "66gDe8nDhpI",
+  "RlmeqTs4i_w",
+  "bVm0ygOuiNk",
+  "YLCm9lP-3Uk"
+ ]
 }
