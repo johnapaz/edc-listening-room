@@ -11,7 +11,7 @@ import re
 import time
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
-from urllib.error import HTTPError
+from urllib.error import HTTPError, URLError
 from typing import Any
 
 from .quota import Budget
@@ -99,9 +99,29 @@ def access_token_from_secrets() -> str:
 
 
 class YouTubeHTTPError(RuntimeError):
-    def __init__(self, message: str, code: int):
+    def __init__(self, message: str, code: int, *, operation=None, reason="unknown"):
         super().__init__(message)
-        self.code = code
+        self.code, self.operation = code, operation
+        self.reason = reason if reason in SAFE_REASONS else "unknown"
+
+    def diagnostic(self):
+        return {"operation": self.operation, "http_status": self.code, "reason": self.reason}
+
+
+SAFE_REASONS = frozenset({"quotaExceeded", "dailyLimitExceeded", "rateLimitExceeded",
+                          "userRateLimitExceeded", "concurrentLimitExceeded", "forbidden",
+                          "insufficientPermissions", "authError", "playlistNotFound",
+                          "videoNotFound", "backendError", "serviceUnavailable"})
+
+
+def error_reason(error):
+    try:
+        payload = json.loads(error.read(65536))
+        reasons = payload.get("error", {}).get("errors", [])
+        return next((r["reason"] for r in reasons if isinstance(r, dict)
+                     and r.get("reason") in SAFE_REASONS), "unknown")
+    except (ValueError, AttributeError, TypeError):
+        return "unknown"
 
 
 class YouTube:
@@ -123,10 +143,13 @@ class YouTube:
                 raw = response.read()
                 return json.loads(raw) if raw else {}
         except HTTPError as e:
-            # Do not log response bodies: server data may contain sensitive information.
-            raise YouTubeHTTPError("YouTube API request failed (HTTP " + str(e.code) +
-                                   ", operation " + operation + "); reconcile state before retry.",
-                                   e.code) from None
+            reason = error_reason(e)
+            raise YouTubeHTTPError("YouTube request failed: " + operation + " HTTP " + str(e.code)
+                                   + " reason=" + reason, e.code, operation=operation,
+                                   reason=reason) from None
+        except (URLError, TimeoutError, OSError):
+            raise YouTubeHTTPError("YouTube transport failure: " + operation + "; reconcile before retry",
+                                   0, operation=operation) from None
 
     def sleep(self, seconds: float) -> None:
         time.sleep(seconds)

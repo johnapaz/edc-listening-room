@@ -117,7 +117,7 @@ def run_discovery(args) -> None:
     state = d.load_matches()
     decisions = d.load_decisions()
     unsearched = [a for a in acts if a.act_id not in state["searched_acts"]
-                  and any(s.known_video_id is None for s in a.songs[:args.per_act])]
+                  and any(s.known_video_id is None for s in a.songs)]
     desired = d.publish_list(acts, state, decisions, per_act=args.per_act)
     queue = d.review_queue(state, decisions)
     print("Acts:", len(acts), "| still to search:", len(unsearched),
@@ -137,36 +137,53 @@ def run_discovery(args) -> None:
         raise SystemExit("Not enough quota today")
     budget = Budget(remaining_general=args.remaining_general, remaining_search=args.remaining_searches,
                     maximum_general_per_run=args.remaining_general)
-    yt = YouTube(access_token_from_secrets(), budget)
+    result = {"status": "failed", "readback_verified": False}
+    initial_searched = len(state["searched_acts"])
+    def checkpoint():
+        d.atomic_json(d.MATCHES_FILE, state)
+
     try:
+        yt = YouTube(access_token_from_secrets(), budget)
         d.match_acts(yt, acts, state, per_act=args.per_act, max_searches=args.remaining_searches,
-                     unit_budget=units)
+                     unit_budget=units, checkpoint=checkpoint)
+        desired = d.publish_list(acts, state, decisions, per_act=args.per_act)
+        result = d.sync_playlist(yt, desired, unit_budget=units - budget.used_general,
+                                 state=state, checkpoint=checkpoint)
+        result["status"] = ("paused" if state.get("matching_paused") or result.get("still_to_add") or result.get("still_to_remove") or
+                            any(a.songs and a.act_id not in state["searched_acts"] for a in acts)
+                            else "complete")
+        if not result.get("readback_verified", False):
+            raise RuntimeError("Playlist read-back unverified; reconcile before continuing")
+    except Exception as exc:
+        from .youtube import YouTubeHTTPError
+        result["status"] = "failed"
+        result["error"] = exc.diagnostic() if isinstance(exc, YouTubeHTTPError) else {
+            "type": type(exc).__name__, "stop_reason": getattr(exc, "stop_reason", None)}  # never serialize arbitrary exception text
+        raise SystemExit("Discovery stopped; see safe run summary and saved checkpoint") from None
     finally:
-        # Include attempted requests even if matching failed before its return.
         state["units_spent_last_run"] = budget.used_general
         state["searches_last_run"] = budget.used_search
-        d.MATCHES_FILE.write_text(json.dumps(state, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
         queue = d.review_queue(state, decisions)
-        (d.DATA / "review-queue.json").write_text(json.dumps(queue, indent=1, ensure_ascii=False) + "\n",
-                                                  encoding="utf-8")
-        print(json.dumps({"matching_paused": state.get("matching_paused"),
-                          "acts_searched_total": len(state["searched_acts"]),
-                          "review_queue": len(queue), "quota_used_general": budget.used_general,
-                          "searches_attempted": budget.used_search}))
-    desired = d.publish_list(acts, state, decisions, per_act=args.per_act)
-    try:
-        result = d.sync_playlist(yt, desired, unit_budget=units - state["units_spent_last_run"])
-    finally:
-        print(json.dumps({"quota_used_general": budget.used_general,
-                          "searches_attempted": budget.used_search}))
-    result.update(acts_searched_this_run=len(unsearched) - len(
-        [a for a in acts if a.act_id not in state["searched_acts"]
-         and any(s.known_video_id is None for s in a.songs[:args.per_act])]),
-        review_queue=len(queue), quota_used_general=budget.used_general, searches=budget.used_search,
-        matching_paused=state.get("matching_paused"))
-    print(json.dumps(result, indent=2))
-    if not result.get("readback_verified", True):
-        raise SystemExit("Playlist read-back mismatch. Do not publish; reconcile manually.")
+        checkpoint()
+        d.atomic_json(d.DATA / "review-queue.json", queue)
+        result.update(acts_searched_this_run=len(state["searched_acts"]) - initial_searched,
+                      acts_searched_total=len(state["searched_acts"]),
+                      acts_remaining=sum(a.act_id not in state["searched_acts"] and bool(a.songs)
+                                         for a in acts),
+                      review_queue=len(queue), quota_used_general=budget.used_general,
+                      searches_attempted=budget.used_search, attempted_requests=budget.attempts,
+                      matching_paused=state.get("matching_paused"),
+                      provider_error=state.get("last_provider_error"),
+                      pending_write=state.get("pending_write"),
+                      playlist_checkpoint_count=len(state.get("confirmed_playlist_videos", [])),
+                      writes_completed=state.get("writes_completed_last_run", {}),
+                      checkpoint_written=True)
+        d.atomic_json(d.DATA / "discovery-run-summary.json", result)
+        print(json.dumps(result, indent=2))
+        summary = os.getenv("GITHUB_STEP_SUMMARY")
+        if summary:
+            with open(summary, "a", encoding="utf-8") as out:
+                out.write("## Private discovery result\n\n```json\n" + json.dumps(result, indent=2) + "\n```\n")
 
 
 if __name__ == "__main__":
