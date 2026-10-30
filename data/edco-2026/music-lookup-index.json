@@ -8,14 +8,14 @@
     "pilot/recording-candidates.json": "2e0b7896156619fcd05e998043d788855519370e20085fbf4f633f372d1abfd4",
     "pilot/evidence-checkpoint.json": "483e73fdf9f1fcb29948a4ce2bc638d42db5053bf4db6090fe83358ef13a9a93",
     "pilot/evidence-reviewed.json": "f96c568a4892704c715719dd5d9afd234ba178059bcccc8baefaf5fcace80166",
-    "pilot/preview-tracks.json": "07811e543efe46d2c4b1b3eb9bc0e7729f7f119eaca66995bb119ad09bf52a32",
-    "pilot/preview-approved.json": "555a2e0f79e16267664ddfec182c1ddb0360edaa838a0cfafc87761498ea8530"
+    "pilot/preview-tracks.json": "ea6505c6c5f125bd6345b89a10fa3a26f8d03d6049a892bdfaa6a7264bf4adfe",
+    "pilot/preview-approved.json": "ea6505c6c5f125bd6345b89a10fa3a26f8d03d6049a892bdfaa6a7264bf4adfe"
   },
   "counts": {
     "pilot_artists": 8,
     "recording_candidates": 41,
     "known_videos": 12,
-    "approved_preview_rows": 11
+    "approved_preview_rows": 12
   },
   "artists": [
     {
@@ -694,7 +694,7 @@
       "video_id": "oXhWSs0mRH4",
       "youtube_music_url": "https://music.youtube.com/watch?v=oXhWSs0mRH4",
       "review_ref": "pilot/preview-tracks.json#/11",
-      "approved_manifest_ref": null,
+      "approved_manifest_ref": "pilot/preview-approved.json#/11",
       "approval_policy": "Read current referenced row; index presence is not approval or current availability.",
       "additional_evidence_ref": "data/edco-2026/evidence/benda-video-metadata-40968098075.json#/video"
     }

@@ -14,7 +14,7 @@ Start here when building the Event Day Companion or resolving a lineup name. Rea
 | [venues.json](venues.json) | Five organizer-listed stages, official map asset, legend and visible zone labels |
 | [sources.json](sources.json) | Attribution, screenshot hashes, source conflict and normalization decisions |
 | [sources/](sources/) | Separate lineup text extraction and poster transcription, preserving the discrepancy |
-| [music-lookup-index.json](music-lookup-index.json) | Searchable pointers to 8 pilot identities, 41 song candidates and 12 known videos; 11 are in the existing approved preview manifest |
+| [music-lookup-index.json](music-lookup-index.json) | Searchable pointers to 8 pilot identities, 41 song candidates and 12 known videos; 12 are in the approved preview manifest (11 published; Poison Control appended 2026-10-30, not yet published) |
 | [evidence/](evidence/) | Recovered final 3 MusicBrainz searches and Benda video metadata from completed Actions artifacts; **unapproved evidence** |
 | [Claude handoff](../../docs/EDCO-2026-HANDOFF.md) | Current project assessment, remaining gates and the next bounded work |
 
