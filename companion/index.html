@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101225">
+  <meta name="description" content="An independent, unofficial EDC Orlando 2026 lineup and music discovery companion.">
+  <title>Listening Room · Orlando 2026</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap topbar">
+      <a class="brand" href="./" aria-label="Listening Room home"><span class="brand-mark">LR<span class="brand-dot">.</span></span><span class="brand-text">LISTENING<br>ROOM</span></a>
+      <span class="event-chip">ORLANDO <strong>2026</strong></span>
+    </div>
+    <div class="wrap hero">
+      <p class="eyebrow">YOUR FESTIVAL, YOUR SOUND</p>
+      <h1>Find your<br><em>next favorite set.</em></h1>
+      <p class="lede">Browse the EDC Orlando lineup, bookmark acts to check out, and explore source-listed music before the weekend.</p>
+      <div class="facts">
+        <span>Nov 6–8, 2026</span><span>Tinker Field · Orlando</span><span>1 PM – midnight</span>
+      </div>
+      <p class="disclaimer">Independent, unofficial guide. Not affiliated with EDC or Insomniac.</p>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="notice" aria-label="Schedule status">
+      <div><strong>Set times are not confirmed yet.</strong> Day assignments are sourced; unknown stages and times stay marked TBA. This is not a live timetable.</div>
+      <a href="https://orlando.edc.com/lineup/" target="_blank" rel="noopener noreferrer">Official lineup ↗</a>
+    </section>
+    <section class="explorer" aria-label="Explore the lineup">
+      <div class="section-intro"><div><p class="eyebrow">THE LINEUP</p><h2>Explore by day</h2></div><span id="record-count" class="record-count" role="status" aria-live="polite">Loading…</span></div>
+      <div class="toolbar">
+        <div class="days" role="group" aria-label="Filter lineup by day">
+          <button type="button" data-day="2026-11-06" aria-pressed="true">Fri <span>06</span></button>
+          <button type="button" data-day="2026-11-07" aria-pressed="false">Sat <span>07</span></button>
+          <button type="button" data-day="2026-11-08" aria-pressed="false">Sun <span>08</span></button>
+          <button type="button" data-day="all" aria-pressed="false">All</button>
+        </div>
+        <label class="search-field"><span class="visually-hidden">Search artists, sets and songs</span><input id="search" type="search" placeholder="Search artists, sets, songs…" autocomplete="off"></label>
+        <label class="saved-toggle"><input id="saved-only" type="checkbox"><span>★ My picks</span></label>
+      </div>
+      <p class="source-note" id="source-note">Loading the committed lineup snapshot…</p>
+      <div id="cards" class="card-grid" aria-live="off"></div>
+      <p id="empty" class="empty" hidden>No matching sets. Try another day or clear your filters.</p>
+      <p id="load-error" class="error" role="alert" hidden>Couldn't load the local festival data. Serve this repository over HTTP and try again.</p>
+    </section>
+    <section class="more">
+      <div><p class="eyebrow">BE READY</p><h2>Find your way around.</h2><p>Use the organizer's current festival map and FAQ for entrances, stages and changes.</p></div>
+      <div class="more-links"><a id="map-link" href="https://orlando.edc.com/guide/map/" target="_blank" rel="noopener noreferrer">Festival map ↗</a><a href="https://orlando.edc.com/guide/faq/" target="_blank" rel="noopener noreferrer">Official FAQ ↗</a></div>
+    </section>
+  </main>
+  <footer class="wrap footer"><span>LISTENING ROOM · EDCO '26</span><span>Saved picks stay in this browser only. No login or tracking.</span></footer>
+</body>
+</html>
