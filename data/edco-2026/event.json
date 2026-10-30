@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "event_id": "edco-2026",
+  "name": "EDC Orlando 2026",
+  "checked_on": "2026-10-30",
+  "timezone": "America/New_York",
+  "venue": {
+    "name": "Tinker Field",
+    "address": "287 S Tampa Ave, Orlando, FL 32805",
+    "source_id": "hours"
+  },
+  "days": [
+    {
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "opens_at": "2026-11-06T13:00:00-05:00",
+      "closes_at": "2026-11-07T00:00:00-05:00",
+      "last_entry_at": "2026-11-06T23:00:00-05:00",
+      "hours_source_id": "hours",
+      "last_entry_source_id": "faq"
+    },
+    {
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "opens_at": "2026-11-07T13:00:00-05:00",
+      "closes_at": "2026-11-08T00:00:00-05:00",
+      "last_entry_at": "2026-11-07T23:00:00-05:00",
+      "hours_source_id": "hours",
+      "last_entry_source_id": "faq"
+    },
+    {
+      "event_date": "2026-11-08",
+      "day": "Sunday",
+      "opens_at": "2026-11-08T13:00:00-05:00",
+      "closes_at": "2026-11-09T00:00:00-05:00",
+      "last_entry_at": "2026-11-08T23:00:00-05:00",
+      "hours_source_id": "hours",
+      "last_entry_source_id": "faq"
+    }
+  ],
+  "box_office": {
+    "name": "Lake Lorna Doone Park",
+    "location": "Corner of W Church St and Rio Grande, Orlando, FL 32805",
+    "hours": [
+      {
+        "date": "2026-11-05",
+        "opens_local": "12:00",
+        "closes_local": "20:00"
+      },
+      {
+        "date": "2026-11-06",
+        "opens_local": "10:00",
+        "closes_local": "23:00"
+      },
+      {
+        "date": "2026-11-07",
+        "opens_local": "12:00",
+        "closes_local": "23:00"
+      },
+      {
+        "date": "2026-11-08",
+        "opens_local": "12:00",
+        "closes_local": "23:00"
+      }
+    ],
+    "source_id": "hours"
+  },
+  "rules": {
+    "minimum_age": 18,
+    "alcohol_and_vip_minimum_age": 21,
+    "photo_id_required": true,
+    "reentry_allowed": false,
+    "source_ids": [
+      "hours",
+      "faq"
+    ]
+  },
+  "set_times": {
+    "status": "not_verified_in_checked_sources",
+    "checked_on": "2026-10-30",
+    "official_update_channels": [
+      "https://orlando.edc.com/lineup/",
+      "Insomniac app",
+      "Official EDC Orlando social channels"
+    ],
+    "source_id": "faq"
+  }
+}

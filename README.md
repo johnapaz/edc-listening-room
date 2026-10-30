@@ -4,12 +4,13 @@ Independent, unofficial festival music discovery. **Not affiliated with EDC or I
 
 This repository implements a staged pipeline for official EDC Orlando artist identities, relational Notion exploration, deterministic track discovery scores, and real YouTube Music playlists. It uses the [official lineup](https://orlando.edc.com/lineup/) as source of truth.
 
-## Status (October 29, 2026)
+## Status (October 30, 2026)
 
 - Seven connected Notion databases exist: Artists, Releases, Tracks, Genres, Playlists, Performances and Playlist Entries.
 - The eight-person pilot group and two B2B performances are registered as provisional Notion records.
-- This feature branch contains read-only MusicBrainz artist candidate search and release-group browsing, quota-bounded YouTube candidate suggestions, pure scoring, a private-playlist writer with resume and readback, and automated no-network tests.
-- **No catalog bulk import, live API pilot execution, OAuth authorization, actual playlist, or public guide publication has occurred.** The playlist writer cannot be used without human-approved IDs, OAuth credentials, explicit user confirmation and quota headroom.
+- An **11-track private, unranked listening preview exists** with exact ordered API readback ([latest result](docs/M1-PREVIEW.md#result-private-preview-published-and-read-back-2026-10-30)). Owner playback of the full playlist remains open in the committed record. This is **not an M1 pass**; bulk ingestion and public release remain blocked.
+- [EDCO 2026 reference pack](data/edco-2026/README.md): complete lineup transcription, day-based companion seed, hours/map/stages, source conflicts, and an index of existing music evidence. **No verified artist set times yet.**
+- [Current agent handoff](docs/EDCO-2026-HANDOFF.md) includes the three recovered MusicBrainz searches and already-fetched Benda metadata, avoiding repeat requests. Older pilot documents retain historical status text; consult their latest dated updates.
 
 [Notion Listening Room](https://app.notion.com/p/4080e646ca0d814287d0c3579187c102) · [Notion Pilot Contract](https://app.notion.com/p/4080e646ca0d81399702c8990cd1d8d8)
 
@@ -37,4 +38,4 @@ Read the [pilot acceptance and implementation plan](docs/M1-PILOT.md) and [brows
 
 The music metadata source and popularity metrics have distinct licensing terms. YouTube search results must be reviewed for the correct recording and availability in YouTube Music. Being present in YouTube's Data API does not prove a song can be played in YouTube Music.
 
-The present code is the **pilot foundation**, not an end-to-end production ingestion system. Completing M1 requires MusicBrainz ID review, recording candidate collection, permitted listening metrics, actual YouTube match approval, Google OAuth, a live private playlist run and a human playback test. Bulk ingestion remains blocked until this pilot passes.
+The present code is the **pilot foundation**, not an end-to-end production ingestion system. OAuth and a live private preview run now work. Completing M1 still requires full recording/version review, permitted listening metrics and licensing, deterministic ranking evidence, Notion projection/idempotence, and owner playback sign-off. Bulk ingestion remains blocked until this pilot passes.

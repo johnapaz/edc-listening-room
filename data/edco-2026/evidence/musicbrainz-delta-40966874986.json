@@ -1,0 +1,592 @@
+{
+  "schema_version": 1,
+  "source_run_url": "https://github.com/johnapaz/edc-listening-room/actions/runs/40966874986",
+  "artifact_id": 12937963450,
+  "artifact_name": "pilot-source-evidence",
+  "artifact_created_at": "2026-10-29T22:37:51Z",
+  "artifact_zip_sha256": "8da66a7f92e5041fcf0676d77f6aea1d8787bc1722bb554e22cd899093b0649b",
+  "artifact_member": "report.json",
+  "artifact_member_sha256": "51b09b8a1583b16fc8d6502b76288c8e2467fcbb5ce78b078a0f2bff41595fd7",
+  "recovered_on": "2026-10-30",
+  "source_outcome": "COLLECTION_COMPLETE",
+  "source_recording_search_count": 41,
+  "source_reported_quota": {
+    "youtube_general_used": 0,
+    "youtube_search_used": 0
+  },
+  "status": "unreviewed_source_responses_not_approval",
+  "requests": {
+    "5f359cb139976ec0774c8277482bdec9a7f352488b15726e9774ef30f60544c4": {
+      "path": "recording",
+      "params": {
+        "query": "recording:\"Under My Skin\" AND artist:\"Vastive\"",
+        "limit": "5"
+      },
+      "response": {
+        "created": "2026-10-29T22:37:40.003Z",
+        "count": 2,
+        "offset": 0,
+        "recordings": [
+          {
+            "id": "9b9e3986-468f-4643-882b-2947bec7b057",
+            "score": 100,
+            "artist-credit-id": "219cd20e-ed78-47a3-822d-ae8a796f7811",
+            "title": "Under My Skin",
+            "length": 276153,
+            "video": null,
+            "artist-credit": [
+              {
+                "joinphrase": ", ",
+                "name": "SLANDER",
+                "artist": {
+                  "id": "e33994a3-2f5c-42f5-8df1-4d23c331a4a5",
+                  "name": "SLANDER",
+                  "sort-name": "Slander",
+                  "disambiguation": "Los Angeles DJ duo",
+                  "aliases": [
+                    {
+                      "sort-name": "ILLENIUM & SLANDER",
+                      "name": "ILLENIUM & SLANDER",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    }
+                  ]
+                }
+              },
+              {
+                "joinphrase": " & ",
+                "name": "Spiritbox",
+                "artist": {
+                  "id": "9c935736-7530-41e4-b776-1dbcf534c061",
+                  "name": "Spiritbox",
+                  "sort-name": "Spiritbox",
+                  "disambiguation": "Canadian metalcore"
+                }
+              },
+              {
+                "name": "Vastive",
+                "artist": {
+                  "id": "1c8daf2a-2e63-4a49-8f87-76abf1b93f6f",
+                  "name": "Vastive",
+                  "sort-name": "Vastive",
+                  "aliases": [
+                    {
+                      "sort-name": "Vargas, Samuel",
+                      "type-id": "d4dcd0c0-b341-3612-a332-c0ce797b25cf",
+                      "name": "Samuel Vargas",
+                      "locale": "en",
+                      "type": "Legal name",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    }
+                  ]
+                }
+              }
+            ],
+            "first-release-date": "2026-06-12",
+            "releases": [
+              {
+                "id": "891421e0-45a2-45f1-98d1-7db0dc500387",
+                "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+                "artist-credit-id": "219cd20e-ed78-47a3-822d-ae8a796f7811",
+                "count": 1,
+                "title": "Under My Skin",
+                "status": "Official",
+                "artist-credit": [
+                  {
+                    "joinphrase": ", ",
+                    "name": "SLANDER",
+                    "artist": {
+                      "id": "e33994a3-2f5c-42f5-8df1-4d23c331a4a5",
+                      "name": "SLANDER",
+                      "sort-name": "Slander",
+                      "disambiguation": "Los Angeles DJ duo"
+                    }
+                  },
+                  {
+                    "joinphrase": " & ",
+                    "name": "Spiritbox",
+                    "artist": {
+                      "id": "9c935736-7530-41e4-b776-1dbcf534c061",
+                      "name": "Spiritbox",
+                      "sort-name": "Spiritbox",
+                      "disambiguation": "Canadian metalcore"
+                    }
+                  },
+                  {
+                    "name": "Vastive",
+                    "artist": {
+                      "id": "1c8daf2a-2e63-4a49-8f87-76abf1b93f6f",
+                      "name": "Vastive",
+                      "sort-name": "Vastive"
+                    }
+                  }
+                ],
+                "release-group": {
+                  "id": "48f188ce-b333-4e98-b414-03832e0c0b2e",
+                  "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                  "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                  "title": "Under My Skin",
+                  "primary-type": "Single"
+                },
+                "date": "2026-06-12",
+                "country": "XW",
+                "release-events": [
+                  {
+                    "date": "2026-06-12",
+                    "area": {
+                      "id": "525d4e18-3d00-31b9-a58b-a146a916de8f",
+                      "name": "[Worldwide]",
+                      "sort-name": "[Worldwide]",
+                      "iso-3166-1-codes": [
+                        "XW"
+                      ]
+                    }
+                  }
+                ],
+                "track-count": 1,
+                "media": [
+                  {
+                    "id": "7d820a8c-a659-4c2d-a753-30d2ca54a505",
+                    "position": 1,
+                    "format": "Digital Media",
+                    "track": [
+                      {
+                        "id": "b89ccab6-0195-4770-b111-c61eeeb0cdcf",
+                        "number": "1",
+                        "title": "Under My Skin",
+                        "length": 276153
+                      }
+                    ],
+                    "track-count": 1,
+                    "track-offset": 0
+                  }
+                ]
+              },
+              {
+                "id": "3cf996d0-c02b-4b11-9ad9-8d56a756dbce",
+                "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+                "artist-credit-id": "219cd20e-ed78-47a3-822d-ae8a796f7811",
+                "count": 1,
+                "title": "Under My Skin",
+                "status": "Official",
+                "disambiguation": "Spotify",
+                "artist-credit": [
+                  {
+                    "joinphrase": ", ",
+                    "name": "SLANDER",
+                    "artist": {
+                      "id": "e33994a3-2f5c-42f5-8df1-4d23c331a4a5",
+                      "name": "SLANDER",
+                      "sort-name": "Slander",
+                      "disambiguation": "Los Angeles DJ duo"
+                    }
+                  },
+                  {
+                    "joinphrase": " & ",
+                    "name": "Spiritbox",
+                    "artist": {
+                      "id": "9c935736-7530-41e4-b776-1dbcf534c061",
+                      "name": "Spiritbox",
+                      "sort-name": "Spiritbox",
+                      "disambiguation": "Canadian metalcore"
+                    }
+                  },
+                  {
+                    "name": "Vastive",
+                    "artist": {
+                      "id": "1c8daf2a-2e63-4a49-8f87-76abf1b93f6f",
+                      "name": "Vastive",
+                      "sort-name": "Vastive"
+                    }
+                  }
+                ],
+                "release-group": {
+                  "id": "48f188ce-b333-4e98-b414-03832e0c0b2e",
+                  "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                  "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                  "title": "Under My Skin",
+                  "primary-type": "Single"
+                },
+                "date": "2026-06-12",
+                "country": "XW",
+                "release-events": [
+                  {
+                    "date": "2026-06-12",
+                    "area": {
+                      "id": "525d4e18-3d00-31b9-a58b-a146a916de8f",
+                      "name": "[Worldwide]",
+                      "sort-name": "[Worldwide]",
+                      "iso-3166-1-codes": [
+                        "XW"
+                      ]
+                    }
+                  }
+                ],
+                "track-count": 2,
+                "media": [
+                  {
+                    "id": "103d2acc-3ddc-433f-81c7-fb88a0dcb4d7",
+                    "position": 1,
+                    "format": "Digital Media",
+                    "track": [
+                      {
+                        "id": "1113a264-3701-409a-aee9-ee58d76d18e6",
+                        "number": "1",
+                        "title": "Under My Skin",
+                        "length": 276153
+                      }
+                    ],
+                    "track-count": 2,
+                    "track-offset": 0
+                  }
+                ]
+              }
+            ],
+            "isrcs": [
+              "CA5KR2654253"
+            ]
+          },
+          {
+            "id": "c9ff641d-4a0e-45ab-98ff-1dfb8c9a36b3",
+            "score": 100,
+            "artist-credit-id": "219cd20e-ed78-47a3-822d-ae8a796f7811",
+            "title": "Under My Skin",
+            "length": 276153,
+            "video": null,
+            "artist-credit": [
+              {
+                "joinphrase": ", ",
+                "name": "SLANDER",
+                "artist": {
+                  "id": "e33994a3-2f5c-42f5-8df1-4d23c331a4a5",
+                  "name": "SLANDER",
+                  "sort-name": "Slander",
+                  "disambiguation": "Los Angeles DJ duo",
+                  "aliases": [
+                    {
+                      "sort-name": "ILLENIUM & SLANDER",
+                      "name": "ILLENIUM & SLANDER",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    }
+                  ]
+                }
+              },
+              {
+                "joinphrase": " & ",
+                "name": "Spiritbox",
+                "artist": {
+                  "id": "9c935736-7530-41e4-b776-1dbcf534c061",
+                  "name": "Spiritbox",
+                  "sort-name": "Spiritbox",
+                  "disambiguation": "Canadian metalcore"
+                }
+              },
+              {
+                "name": "Vastive",
+                "artist": {
+                  "id": "1c8daf2a-2e63-4a49-8f87-76abf1b93f6f",
+                  "name": "Vastive",
+                  "sort-name": "Vastive",
+                  "aliases": [
+                    {
+                      "sort-name": "Vargas, Samuel",
+                      "type-id": "d4dcd0c0-b341-3612-a332-c0ce797b25cf",
+                      "name": "Samuel Vargas",
+                      "locale": "en",
+                      "type": "Legal name",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    }
+                  ]
+                }
+              }
+            ],
+            "first-release-date": "2026-09-25",
+            "releases": [
+              {
+                "id": "a9668620-5440-4aa9-b313-69a343f2cdfc",
+                "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+                "artist-credit-id": "7a5bfcfd-81f3-3972-b12b-87c69f3c192e",
+                "count": 1,
+                "title": "StarDisc",
+                "status": "Official",
+                "artist-credit": [
+                  {
+                    "name": "SLANDER",
+                    "artist": {
+                      "id": "e33994a3-2f5c-42f5-8df1-4d23c331a4a5",
+                      "name": "SLANDER",
+                      "sort-name": "Slander",
+                      "disambiguation": "Los Angeles DJ duo"
+                    }
+                  }
+                ],
+                "release-group": {
+                  "id": "36f98573-50cc-442d-a105-1eb4f7c1b9c9",
+                  "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                  "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                  "title": "StarDisc",
+                  "primary-type": "Single"
+                },
+                "date": "2026-09-25",
+                "country": "XW",
+                "release-events": [
+                  {
+                    "date": "2026-09-25",
+                    "area": {
+                      "id": "525d4e18-3d00-31b9-a58b-a146a916de8f",
+                      "name": "[Worldwide]",
+                      "sort-name": "[Worldwide]",
+                      "iso-3166-1-codes": [
+                        "XW"
+                      ]
+                    }
+                  }
+                ],
+                "track-count": 4,
+                "media": [
+                  {
+                    "id": "41c59e23-bc78-45af-837c-1b4e7fb8a4e2",
+                    "position": 1,
+                    "format": "Digital Media",
+                    "track": [
+                      {
+                        "id": "d634551b-1df1-4b0e-bc2d-b5b48a21e937",
+                        "number": "2",
+                        "title": "Under My Skin",
+                        "length": 276153
+                      }
+                    ],
+                    "track-count": 4,
+                    "track-offset": 1
+                  }
+                ]
+              }
+            ],
+            "isrcs": [
+              "CA5KR2654253"
+            ]
+          }
+        ]
+      },
+      "status": "collected",
+      "fetched_at": "2026-10-29T22:37:40.059915+00:00"
+    },
+    "df4a207af9f3ceb4ec4f0989533ff82eed645be62d3992d4e4f94b93ecb52c89": {
+      "path": "recording",
+      "params": {
+        "query": "recording:\"Barking At Thunder\" AND artist:\"Vastive\"",
+        "limit": "5"
+      },
+      "response": {
+        "created": "2026-10-29T22:37:50.385Z",
+        "count": 0,
+        "offset": 0,
+        "recordings": []
+      },
+      "status": "collected",
+      "fetched_at": "2026-10-29T22:37:50.439313+00:00"
+    },
+    "cd898cec8fb9ece9aa47057f23a8ae33013515556a8f7541680fa482a1fd8d8c": {
+      "path": "recording",
+      "params": {
+        "query": "recording:\"Cut\" AND artist:\"Vastive\"",
+        "limit": "5"
+      },
+      "response": {
+        "created": "2026-10-29T22:37:50.724Z",
+        "count": 1,
+        "offset": 0,
+        "recordings": [
+          {
+            "id": "544def34-b3f6-473a-8ce7-0e1ce4e2d1ad",
+            "score": 100,
+            "artist-credit-id": "d4da3fa0-ab4f-477e-b4c4-80e298a05e7f",
+            "title": "Cut",
+            "length": 217932,
+            "video": null,
+            "artist-credit": [
+              {
+                "joinphrase": " & ",
+                "name": "Vastive",
+                "artist": {
+                  "id": "1c8daf2a-2e63-4a49-8f87-76abf1b93f6f",
+                  "name": "Vastive",
+                  "sort-name": "Vastive",
+                  "aliases": [
+                    {
+                      "sort-name": "Vargas, Samuel",
+                      "type-id": "d4dcd0c0-b341-3612-a332-c0ce797b25cf",
+                      "name": "Samuel Vargas",
+                      "locale": "en",
+                      "type": "Legal name",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "FelMax",
+                "artist": {
+                  "id": "2407168f-f567-4b89-8ae1-567c08c6c861",
+                  "name": "FelMax",
+                  "sort-name": "FelMax"
+                }
+              }
+            ],
+            "first-release-date": "2022-12-30",
+            "releases": [
+              {
+                "id": "ac3f2706-93df-4446-ba90-b7d01b255d97",
+                "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+                "artist-credit-id": "949a7fd5-fe73-3e8f-922e-01ff4ca958f7",
+                "count": 1,
+                "title": "Full Stack: Best of 2022",
+                "status": "Official",
+                "artist-credit": [
+                  {
+                    "name": "Various Artists",
+                    "artist": {
+                      "id": "89ad4ac3-39f7-470e-963a-56509c546377",
+                      "name": "Various Artists",
+                      "sort-name": "Various Artists",
+                      "disambiguation": "add compilations to this artist"
+                    }
+                  }
+                ],
+                "release-group": {
+                  "id": "56cc02ad-31c1-46e2-90d2-51ead3613483",
+                  "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+                  "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+                  "title": "Full Stack: Best of 2022",
+                  "primary-type": "Album",
+                  "secondary-types": [
+                    "Compilation"
+                  ],
+                  "secondary-type-ids": [
+                    "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+                  ]
+                },
+                "date": "2022-12-30",
+                "country": "XW",
+                "release-events": [
+                  {
+                    "date": "2022-12-30",
+                    "area": {
+                      "id": "525d4e18-3d00-31b9-a58b-a146a916de8f",
+                      "name": "[Worldwide]",
+                      "sort-name": "[Worldwide]",
+                      "iso-3166-1-codes": [
+                        "XW"
+                      ]
+                    }
+                  }
+                ],
+                "track-count": 12,
+                "media": [
+                  {
+                    "id": "159687f1-1175-4258-b643-2a12fc47c737",
+                    "position": 1,
+                    "format": "Digital Media",
+                    "track": [
+                      {
+                        "id": "c55c229f-be3f-4568-8bf4-3de98c349977",
+                        "number": "10",
+                        "title": "Cut",
+                        "length": 217932
+                      }
+                    ],
+                    "track-count": 12,
+                    "track-offset": 9
+                  }
+                ]
+              },
+              {
+                "id": "b822b602-8638-4ae8-93a7-f605917bf9ee",
+                "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+                "artist-credit-id": "966a011f-bfbd-31f7-8a2e-6fa388de5174",
+                "count": 1,
+                "title": "Lost Lands Compilation 2022",
+                "status": "Official",
+                "artist-credit": [
+                  {
+                    "name": "Excision",
+                    "artist": {
+                      "id": "733c6e6f-0306-403e-9243-82b16a4f82d8",
+                      "name": "Excision",
+                      "sort-name": "Excision",
+                      "disambiguation": "dubstep producer"
+                    }
+                  }
+                ],
+                "release-group": {
+                  "id": "481c8927-94d6-4076-b9a6-9cf5a493f6d4",
+                  "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+                  "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+                  "title": "Lost Lands Compilation 2022",
+                  "primary-type": "Album",
+                  "secondary-types": [
+                    "Compilation"
+                  ],
+                  "secondary-type-ids": [
+                    "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+                  ]
+                },
+                "date": "2023-03-29",
+                "country": "XW",
+                "release-events": [
+                  {
+                    "date": "2023-03-29",
+                    "area": {
+                      "id": "525d4e18-3d00-31b9-a58b-a146a916de8f",
+                      "name": "[Worldwide]",
+                      "sort-name": "[Worldwide]",
+                      "iso-3166-1-codes": [
+                        "XW"
+                      ]
+                    }
+                  }
+                ],
+                "track-count": 30,
+                "media": [
+                  {
+                    "id": "0c05b9fb-641e-35e4-88e1-7cc61b6a664c",
+                    "position": 1,
+                    "format": "Digital Media",
+                    "track": [
+                      {
+                        "id": "b0fe9d57-2100-4931-a752-19e425ca33c6",
+                        "number": "25",
+                        "title": "Cut",
+                        "length": 221538
+                      }
+                    ],
+                    "track-count": 30,
+                    "track-offset": 24
+                  }
+                ]
+              }
+            ],
+            "isrcs": [
+              "CA5KR2299899"
+            ]
+          }
+        ]
+      },
+      "status": "collected",
+      "fetched_at": "2026-10-29T22:37:50.778421+00:00"
+    }
+  }
+}
