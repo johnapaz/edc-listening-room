@@ -1,0 +1,1090 @@
+[
+ {
+  "song_key": "spotify:5jdGLLEA1e85jy9VYdggoP",
+  "act_id": "artist:adventure-club",
+  "title": "Crave You - Adventure Club Remix",
+  "credits": [
+   "Flight Facilities",
+   "Adventure Club"
+  ],
+  "spotify_duration_s": 237,
+  "status": "likely",
+  "video_id": "ZeaIvjoH1FY",
+  "video_title": "Flight Facilities - Crave You (Adventure Club Dubstep Remix) (feat. Giselle)",
+  "channel": "MrSuicideSheep",
+  "video_duration_s": 237,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:4QNpBfC0zvjKqPJcyqBy9W",
+  "act_id": "artist:afrojack",
+  "title": "Give Me Everything (feat. Nayer)",
+  "credits": [
+   "Pitbull",
+   "AFROJACK",
+   "Ne-Yo",
+   "Nayer"
+  ],
+  "spotify_duration_s": 252,
+  "status": "likely",
+  "video_id": "EPo5wWmKEaI",
+  "video_title": "Pitbull - Give Me Everything ft. Ne-Yo, Afrojack, Nayer",
+  "channel": "PitbullVEVO",
+  "video_duration_s": 267,
+  "issue": "duration differs by 15 s",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:5DdDbJvoaT8fqQMJkiGg4T",
+  "act_id": "artist:afrojack",
+  "title": "Take Over Control (feat. Eva Simons) - Radio Edit",
+  "credits": [
+   "AFROJACK",
+   "Eva Simons"
+  ],
+  "spotify_duration_s": 209,
+  "status": "likely",
+  "video_id": "rjJCIu9VlgM",
+  "video_title": "Take Over Control (feat. Eva Simons) [US Radio Edit]",
+  "channel": "AFROJACK - Topic",
+  "video_duration_s": 221,
+  "issue": "duration differs by 12 s",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:0NIIKZEed0nXPz4lHnMaZg",
+  "act_id": "artist:alesso",
+  "title": "In Your Eyes",
+  "credits": [
+   "Alesso",
+   "OneRepublic"
+  ],
+  "spotify_duration_s": 216,
+  "status": "likely",
+  "video_id": "bS9C1ipyMy8",
+  "video_title": "Alesso, OneRepublic - In Your Eyes (Visualizer)",
+  "channel": "AlessoOfficialVEVO",
+  "video_duration_s": 217,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:05XtssRLI22p8wLFIr7Vrl",
+  "act_id": "artist:alesso",
+  "title": "Heroes (we could be)",
+  "credits": [
+   "Alesso",
+   "Tove Lo"
+  ],
+  "spotify_duration_s": 210,
+  "status": "likely",
+  "video_id": "1ZCxXjDlaf8",
+  "video_title": "Alesso, Tove Lo - Heroes (Lyrics) we could be",
+  "channel": "7clouds",
+  "video_duration_s": 211,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:6TAbRIua9JOTmqGMjGWe4d",
+  "act_id": "artist:bou",
+  "title": "Raving In The Studio",
+  "credits": [
+   "Aitch",
+   "Bou"
+  ],
+  "spotify_duration_s": 184,
+  "status": "likely",
+  "video_id": "Dtd651AH87Y",
+  "video_title": "Aitch, Bou - Raving In The Studio",
+  "channel": "AitchVEVO",
+  "video_duration_s": 190,
+  "issue": "duration differs by 6 s",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:3YnzLXBGOXq0I4pcfYnOcX",
+  "act_id": "artist:bullet-tooth",
+  "title": "You & Me",
+  "credits": [
+   "bullet tooth",
+   "Tom Did It"
+  ],
+  "spotify_duration_s": 198,
+  "status": "likely",
+  "video_id": "c1Mwa-p25y8",
+  "video_title": "bullet tooth & Tom Did It - You & Me (Official)",
+  "channel": "Insomniac",
+  "video_duration_s": 198,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:0OSKN4D9kXEunDf89augTt",
+  "act_id": "artist:hayla",
+  "title": "FADED",
+  "credits": [
+   "HAYLA",
+   "Nelly Furtado"
+  ],
+  "spotify_duration_s": 216,
+  "status": "likely",
+  "video_id": "FktDNLAobOw",
+  "video_title": "HAYLA & Nelly Furtado - FADED (Official Lyric Video)",
+  "channel": "HAYLA SINGS",
+  "video_duration_s": 216,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:5uaHSOou5ernQBKhfVse1f",
+  "act_id": "artist:idemi",
+  "title": "Everytime",
+  "credits": [
+   "IDEMI",
+   "Lustral"
+  ],
+  "spotify_duration_s": 205,
+  "status": "likely",
+  "video_id": "Kis_X0EVQhA",
+  "video_title": "Everytime (Original Mix)",
+  "channel": "IDEMI - Topic",
+  "video_duration_s": 383,
+  "issue": "duration differs by 178 s",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:6F2ckzsOmaog4Ho3S928X4",
+  "act_id": "artist:idemi",
+  "title": "THE MOB",
+  "credits": [
+   "IDEMI"
+  ],
+  "spotify_duration_s": 151,
+  "status": "likely",
+  "video_id": "_MJBvwZnVuk",
+  "video_title": "IDEMI - THE MOB (Visualiser)",
+  "channel": "IDEMI",
+  "video_duration_s": 26,
+  "issue": "duration differs by 125 s",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:1Siu5Bnrt90vtjUddXeTUg",
+  "act_id": "artist:interplanetary-criminal",
+  "title": "Slow Burner",
+  "credits": [
+   "Interplanetary Criminal",
+   "Original Koffee"
+  ],
+  "spotify_duration_s": 213,
+  "status": "likely",
+  "video_id": "wKnVdrVJENw",
+  "video_title": "Interplanetary Criminal, Original Koffee - Slow Burner (Official Audio)",
+  "channel": "IPCVEVO",
+  "video_duration_s": 215,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:5fqLqeakKq58Eu05bx2si5",
+  "act_id": "artist:joa",
+  "title": "The Spot",
+  "credits": [
+   "ARTBAT",
+   "JOA"
+  ],
+  "spotify_duration_s": 298,
+  "status": "likely",
+  "video_id": "fjm9oO5CW38",
+  "video_title": "ARTBAT & JOA - The Spot",
+  "channel": "ARTBAT",
+  "video_duration_s": 290,
+  "issue": "duration differs by 8 s",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:2FFwFlkKjKBSCdVpPf38Gj",
+  "act_id": "artist:joshwa",
+  "title": "Out of My Mind",
+  "credits": [
+   "Joshwa"
+  ],
+  "spotify_duration_s": 205,
+  "status": "likely",
+  "video_id": "Wo99IP269UE",
+  "video_title": "Joshwa - Out of My Mind",
+  "channel": "Hellbent Records",
+  "video_duration_s": 205,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:3dcWKFefG4Otjdb6ykBVcY",
+  "act_id": "artist:kanine",
+  "title": "Feel The Vibration",
+  "credits": [
+   "Kanine"
+  ],
+  "spotify_duration_s": 202,
+  "status": "likely",
+  "video_id": "Hjw86NcG8Bo",
+  "video_title": "Kanine - Feel The Vibration",
+  "channel": "UKF Drum & Bass",
+  "video_duration_s": 202,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:5O5zNr0ooHWqHWfRGYX049",
+  "act_id": "artist:kanine",
+  "title": "Wide Awake",
+  "credits": [
+   "Kanine"
+  ],
+  "spotify_duration_s": 226,
+  "status": "likely",
+  "video_id": "fXnIbPmSTC0",
+  "video_title": "Kanine - Wide Awake",
+  "channel": "UKF Drum & Bass",
+  "video_duration_s": 227,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:6AJAzlq5ujQWCzzwpeGEZA",
+  "act_id": "artist:kream",
+  "title": "Wicked Game",
+  "credits": [
+   "KREAM"
+  ],
+  "spotify_duration_s": 175,
+  "status": "likely",
+  "video_id": "axWlQUExPYk",
+  "video_title": "KREAM - Wicked Game",
+  "channel": "KREAM",
+  "video_duration_s": 179,
+  "issue": "duration differs by 4 s",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:3b26vJtV7KETHKtu4sxabB",
+  "act_id": "artist:levity",
+  "title": "ONE FOR YOU",
+  "credits": [
+   "ALLEYCVT",
+   "Levity"
+  ],
+  "spotify_duration_s": 153,
+  "status": "likely",
+  "video_id": "TKuMfUxW1-E",
+  "video_title": "Alleycvt x Levity - One For You (Visualizer)",
+  "channel": "Levity Music",
+  "video_duration_s": 153,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:2nbye27S8Nv1JSrmxl1Ycf",
+  "act_id": "artist:levity",
+  "title": "Slipping Away",
+  "credits": [
+   "Levity",
+   "K.Flay"
+  ],
+  "spotify_duration_s": 259,
+  "status": "likely",
+  "video_id": "FxIO3n02jPI",
+  "video_title": "Levity x K.Flay - Slipping Away",
+  "channel": "Dubstep uNk",
+  "video_duration_s": 260,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:6qJhrI2BMuA8qHcmycD3fL",
+  "act_id": "artist:mau-p",
+  "title": "TESLA",
+  "credits": [
+   "Mau P"
+  ],
+  "spotify_duration_s": 187,
+  "status": "likely",
+  "video_id": "rVp454wjqls",
+  "video_title": "Mau P - TESLA",
+  "channel": "Mau P",
+  "video_duration_s": 219,
+  "issue": "duration differs by 32 s",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:3wRO9Pt5iPbZTs8YT1x69Q",
+  "act_id": "artist:mau-p",
+  "title": "Just A Little Bit More",
+  "credits": [
+   "Mau P"
+  ],
+  "spotify_duration_s": 214,
+  "status": "likely",
+  "video_id": "ke6hDTz3OoY",
+  "video_title": "Mau P - Just A Little Bit More (Visualizer)",
+  "channel": "MauPVEVO",
+  "video_duration_s": 218,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:0w7JPlp7eEQI2EKW3ayXrv",
+  "act_id": "artist:mau-p",
+  "title": "Drugs From Amsterdam",
+  "credits": [
+   "Mau P"
+  ],
+  "spotify_duration_s": 236,
+  "status": "likely",
+  "video_id": "juuIhW8V1Xw",
+  "video_title": "Mau P - Drugs From Amsterdam (Official Music Video)",
+  "channel": "Mau P",
+  "video_duration_s": 147,
+  "issue": "duration differs by 89 s",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:1z6pTKnrEpokcfwked9cNx",
+  "act_id": "artist:mph",
+  "title": "I'm Not Alone - MPH Remix",
+  "credits": [
+   "Calvin Harris",
+   "MPH"
+  ],
+  "spotify_duration_s": 213,
+  "status": "likely",
+  "video_id": "WLE7P1Ti34s",
+  "video_title": "Calvin Harris - I'm Not Alone (MPH Remix - Official Audio)",
+  "channel": "CalvinHarrisVEVO",
+  "video_duration_s": 215,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:45Q7gfiscW28MWPY9VvebZ",
+  "act_id": "artist:mph",
+  "title": "Mirage",
+  "credits": [
+   "MPH",
+   "Skrillex"
+  ],
+  "spotify_duration_s": 292,
+  "status": "likely",
+  "video_id": "8dTUarxrHrI",
+  "video_title": "MPH & Skrillex - Mirage",
+  "channel": "UKF",
+  "video_duration_s": 292,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:3PJo4Pq0WscWLh2h89U2Kx",
+  "act_id": "artist:pegassi",
+  "title": "227kg",
+  "credits": [
+   "Pegassi"
+  ],
+  "spotify_duration_s": 229,
+  "status": "likely",
+  "video_id": "IHfelwLVzO0",
+  "video_title": "Pegassi - 227kg (Official Video)",
+  "channel": "Pegassi",
+  "video_duration_s": 235,
+  "issue": "duration differs by 6 s",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:39hHUnYBmyMwprzRaPODCX",
+  "act_id": "artist:prospa",
+  "title": "Free Your Mind",
+  "credits": [
+   "Prospa",
+   "Cloonee",
+   "Sybil"
+  ],
+  "spotify_duration_s": 202,
+  "status": "likely",
+  "video_id": "gJYjbDnyx-o",
+  "video_title": "Prospa, Cloonee, & Sybil - Free Your Mind",
+  "channel": "CircoLoco Records",
+  "video_duration_s": 202,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "pilot:vastive:die-by-my-hand",
+  "act_id": "artist:vastive",
+  "title": "Die By My Hand",
+  "credits": [
+   "Vastive"
+  ],
+  "spotify_duration_s": null,
+  "status": "likely",
+  "video_id": "DWUbA501CO4",
+  "video_title": "Sullivan King, Vastive, Left to Suffer — Die By My Hand",
+  "channel": "Sullivan King",
+  "video_duration_s": 192,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "pilot:vastive:barking-at-thunder",
+  "act_id": "artist:vastive",
+  "title": "Barking At Thunder",
+  "credits": [
+   "Vastive"
+  ],
+  "spotify_duration_s": null,
+  "status": "likely",
+  "video_id": "dAwZ8ELG8nM",
+  "video_title": "LAYZ & Vastive - Barking At Thunder",
+  "channel": "Dubstep uNk",
+  "video_duration_s": 294,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:3V9Y3MU0zee8FiZYF0GDE9",
+  "act_id": "artist:vastive",
+  "title": "Devils",
+  "credits": [
+   "Vastive",
+   "Left to Suffer"
+  ],
+  "spotify_duration_s": 239,
+  "status": "likely",
+  "video_id": "6ePgshp5-pU",
+  "video_title": "VASTIVE & LEFT TO SUFFER - DEVILS",
+  "channel": "Dubstep uNk",
+  "video_duration_s": 239,
+  "issue": "not an official artist/Topic channel",
+  "default": "added",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:4J7CKHCF3mdL4diUsmW8lq",
+  "act_id": "artist:alesso",
+  "title": "Under Control (feat. Hurts)",
+  "credits": [
+   "Calvin Harris",
+   "Alesso",
+   "Hurts"
+  ],
+  "spotify_duration_s": 184,
+  "status": "doubtful",
+  "video_id": "yZqmarGShxg",
+  "video_title": "Calvin Harris & Alesso - Under Control (Official Video) ft. Hurts",
+  "channel": "CalvinHarrisVEVO",
+  "video_duration_s": 211,
+  "issue": "duration differs by 27 s",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:0Fj8IYC9a7dVMXq3j0wOn9",
+  "act_id": "artist:big-florida",
+  "title": "DIRTY SOUTH",
+  "credits": [
+   "Big Florida"
+  ],
+  "spotify_duration_s": 175,
+  "status": "doubtful",
+  "video_id": "qnbaEVtVZW4",
+  "video_title": "DIRTY SOUTH",
+  "channel": "Rated R - Topic",
+  "video_duration_s": 175,
+  "issue": "uploaded by 'Rated R - Topic', not the artist",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:2ZWmmrWUgDBcPSLihBMvhg",
+  "act_id": "artist:bou",
+  "title": "Baddadan (feat. IRAH, Flowdan, Trigga & Takura)",
+  "credits": [
+   "Chase & Status",
+   "Bou",
+   "Flowdan",
+   "IRAH",
+   "Trigga",
+   "Takura"
+  ],
+  "spotify_duration_s": 177,
+  "status": "doubtful",
+  "video_id": "rkjNL4dX-U4",
+  "video_title": "Chase & Status, Bou - Baddadan ft. IRAH, Flowdan, Trigga, Takura",
+  "channel": "ChaseAndStatusVEVO",
+  "video_duration_s": 220,
+  "issue": "duration differs by 43 s",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:0BK6ACxpzK8nkWa3YKuunX",
+  "act_id": "artist:chris-lorenzo",
+  "title": "Fancy Footwork",
+  "credits": [
+   "Chris Lorenzo",
+   "Chromeo"
+  ],
+  "spotify_duration_s": 192,
+  "status": "doubtful",
+  "video_id": "Mej4gAwbNtE",
+  "video_title": "Chris Lorenzo & Chromeo - Fancy Footwork (Extended Mix)",
+  "channel": "Myth of NYX",
+  "video_duration_s": 284,
+  "issue": "video looks like a different version (extended, mix); duration differs by 92 s",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:0lHAMNU8RGiIObScrsRgmP",
+  "act_id": "artist:david-guetta",
+  "title": "Titanium (feat. Sia)",
+  "credits": [
+   "David Guetta",
+   "Sia"
+  ],
+  "spotify_duration_s": 245,
+  "status": "doubtful",
+  "video_id": "-qkUlvjzuZA",
+  "video_title": "David Guetta ft Sia - Titanium (David Guetta & MORTEN Future Rave Remix) [Lyric video]",
+  "channel": "David Guetta",
+  "video_duration_s": 217,
+  "issue": "video looks like a different version (remix); duration differs by 28 s",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:5UcnVThvFiSQKWGQDtG58z",
+  "act_id": "artist:kanine",
+  "title": "Surrender",
+  "credits": [
+   "Kanine",
+   "Jem Cooke"
+  ],
+  "spotify_duration_s": 204,
+  "status": "doubtful",
+  "video_id": "l4XZ-wqc4vQ",
+  "video_title": "Kanine & Jem Cooke - Surrender",
+  "channel": "UKF Drum & Bass",
+  "video_duration_s": 239,
+  "issue": "duration differs by 35 s",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:3RBZG00eHECxQIgOwrLhjC",
+  "act_id": "artist:aat",
+  "title": "Don't Stop",
+  "credits": [
+   "AAT"
+  ],
+  "spotify_duration_s": 182,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:5au1dxozcN7pepkik4E4uE",
+  "act_id": "artist:aat",
+  "title": "Get Funky",
+  "credits": [
+   "AAT"
+  ],
+  "spotify_duration_s": 193,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:5LOkqfRL9Wl6r7exO6Xm6P",
+  "act_id": "artist:aat",
+  "title": "Bass Drop",
+  "credits": [
+   "AAT"
+  ],
+  "spotify_duration_s": 199,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:0F1VAVqj021UkGntiDz4nx",
+  "act_id": "artist:adventure-club",
+  "title": "Feels Like You",
+  "credits": [
+   "Adventure Club",
+   "Codeko"
+  ],
+  "spotify_duration_s": 203,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:6QvldZZ10eYgKamaWfG52b",
+  "act_id": "artist:adventure-club",
+  "title": "Fuck Your Sunshine (Adventure Club Remix)",
+  "credits": [
+   "Łaszewo",
+   "Adventure Club"
+  ],
+  "spotify_duration_s": 224,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:4Vdes3GjtIqdFskoWbVYnP",
+  "act_id": "artist:afrojack",
+  "title": "Awake Tonight",
+  "credits": [
+   "AFROJACK",
+   "Sia",
+   "David Guetta"
+  ],
+  "spotify_duration_s": 190,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:3rBYmkOB8N1Z4bCa3DsdPK",
+  "act_id": "artist:azzecca",
+  "title": "Love On Me",
+  "credits": [
+   "Azzecca",
+   "House Of Molly"
+  ],
+  "spotify_duration_s": 147,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "pilot:benda:break-shit--feat--blupill-",
+  "act_id": "artist:benda",
+  "title": "Break Shit (feat. Blupill)",
+  "credits": [
+   "Benda"
+  ],
+  "spotify_duration_s": null,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "pilot:benda:bone-breaker",
+  "act_id": "artist:benda",
+  "title": "Bone Breaker",
+  "credits": [
+   "Benda"
+  ],
+  "spotify_duration_s": null,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "pilot:benda:waterbenda",
+  "act_id": "artist:benda",
+  "title": "Waterbenda",
+  "credits": [
+   "Benda"
+  ],
+  "spotify_duration_s": null,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "pilot:benda:free-smoke",
+  "act_id": "artist:benda",
+  "title": "Free Smoke",
+  "credits": [
+   "Benda"
+  ],
+  "spotify_duration_s": null,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:4LlDviPbNd8rn1216SmDql",
+  "act_id": "artist:benda",
+  "title": "ME V ME",
+  "credits": [
+   "Benda"
+  ],
+  "spotify_duration_s": 210,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:508qHPYB5x0CTw2F6oILwe",
+  "act_id": "artist:big-florida",
+  "title": "BAJA BLASTER",
+  "credits": [
+   "GHENGAR",
+   "Big Florida"
+  ],
+  "spotify_duration_s": 243,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:4Vdes3GjtIqdFskoWbVYnP",
+  "act_id": "artist:david-guetta",
+  "title": "Awake Tonight",
+  "credits": [
+   "AFROJACK",
+   "Sia",
+   "David Guetta"
+  ],
+  "spotify_duration_s": 190,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:6L5xbckRDXIf5K1pwTaGkD",
+  "act_id": "artist:david-guetta",
+  "title": "Satisfaction - Hardwell & Maddix Remix",
+  "credits": [
+   "David Guetta",
+   "Benny Benassi",
+   "Hardwell",
+   "Maddix"
+  ],
+  "spotify_duration_s": 204,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:0GOXlShsWOp7BQ7nt9uwUL",
+  "act_id": "artist:david-guetta",
+  "title": "I Don't Wanna Wait - Hardwell & Olly James Remix",
+  "credits": [
+   "David Guetta",
+   "OneRepublic",
+   "Hardwell",
+   "Olly James"
+  ],
+  "spotify_duration_s": 183,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:39JofJHEtg8I4fSyo7Imft",
+  "act_id": "artist:interplanetary-criminal",
+  "title": "B.O.T.A. (Baddest Of Them All) - Edit",
+  "credits": [
+   "Eliza Rose",
+   "Interplanetary Criminal"
+  ],
+  "spotify_duration_s": 227,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:1A0yrRs7GAe1gbCklYE6wl",
+  "act_id": "artist:joa",
+  "title": "Green Light",
+  "credits": [
+   "JOA"
+  ],
+  "spotify_duration_s": 187,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:00kTtwFuoRVfFiH8wJabBu",
+  "act_id": "artist:joa",
+  "title": "Heavy",
+  "credits": [
+   "Armin van Buuren",
+   "JOA"
+  ],
+  "spotify_duration_s": 171,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:0d2Ad8j1DftVrZENtEA0fj",
+  "act_id": "artist:josh-baker",
+  "title": "Down To The Bone",
+  "credits": [
+   "Josh Baker",
+   "Eliza Rose"
+  ],
+  "spotify_duration_s": 172,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:6e3aWmdRTfEm9aXQjNuVl0",
+  "act_id": "artist:joshwa",
+  "title": "Wildflower",
+  "credits": [
+   "Joshwa"
+  ],
+  "spotify_duration_s": 208,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:0YQLxSWruiFJJ42lexKQGU",
+  "act_id": "artist:kompany",
+  "title": "Surge",
+  "credits": [
+   "Kompany",
+   "Kryture"
+  ],
+  "spotify_duration_s": 280,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:33rOFwZOk1rs9OwvHL12cF",
+  "act_id": "artist:kompany",
+  "title": "STFU",
+  "credits": [
+   "T-Pain",
+   "DJ DIESEL",
+   "San Holo",
+   "NGHTMRE",
+   "Kompany",
+   "SampliFire",
+   "IVORY"
+  ],
+  "spotify_duration_s": 219,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:5wBIHtGYaQDWdB4uKWcmsu",
+  "act_id": "artist:kompany",
+  "title": "SMILING/HIDING",
+  "credits": [
+   "San Holo",
+   "Kompany",
+   "Allegra Miles",
+   "Underbelly",
+   "Au5"
+  ],
+  "spotify_duration_s": 235,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:6lG1GtM6FvL18EvOVQELC8",
+  "act_id": "artist:kream",
+  "title": "Se Que Quiere",
+  "credits": [
+   "KREAM",
+   "RUBACK"
+  ],
+  "spotify_duration_s": 220,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:2HGWEdmzqykDOKbAxRd1JE",
+  "act_id": "artist:level-up",
+  "title": "BELIEVE",
+  "credits": [
+   "ALLEYCVT",
+   "LEVEL UP"
+  ],
+  "spotify_duration_s": 162,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:4xWXrhg0Vwc29lbeyHZsYt",
+  "act_id": "artist:level-up",
+  "title": "Dingus",
+  "credits": [
+   "Subtronics",
+   "Wooli",
+   "LEVEL UP"
+  ],
+  "spotify_duration_s": 218,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:4PzgYtLEcik1VGjbDDdqbA",
+  "act_id": "artist:levity",
+  "title": "Heartbreak",
+  "credits": [
+   "Levity"
+  ],
+  "spotify_duration_s": 154,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:6HQZTHthmIW0QIefnOsSh1",
+  "act_id": "artist:mph",
+  "title": "Fiesta",
+  "credits": [
+   "MPH"
+  ],
+  "spotify_duration_s": 226,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:2H43AB2EgHmUChTFL8zVZp",
+  "act_id": "artist:pegassi",
+  "title": "Get Up",
+  "credits": [
+   "Pegassi"
+  ],
+  "spotify_duration_s": 212,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:4HTD64x2NstZsK1su3OFd6",
+  "act_id": "artist:sidney-charles",
+  "title": "Face Your Fear",
+  "credits": [
+   "Sidney Charles"
+  ],
+  "spotify_duration_s": 219,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "pilot:vastive:cut",
+  "act_id": "artist:vastive",
+  "title": "Cut",
+  "credits": [
+   "Vastive"
+  ],
+  "spotify_duration_s": null,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ }
+]
