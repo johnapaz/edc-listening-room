@@ -1060,6 +1060,52 @@
   "decision": null
  },
  {
+  "song_key": "spotify:6YPXz7BFlkL9QxEmZVgPvh",
+  "act_id": "artist:raje",
+  "title": "Peaky & Distorted",
+  "credits": [
+   "RAJE"
+  ],
+  "spotify_duration_s": 192,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:0I3VFPyE1agmYzWSTx4mjl",
+  "act_id": "artist:raje",
+  "title": "SIMPLY GROOVE - Club Mix",
+  "credits": [
+   "salameh",
+   "RAJE",
+   "FLAT 22"
+  ],
+  "spotify_duration_s": 305,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:5th3NC5g5X0DiT2nruzr85",
+  "act_id": "artist:raje",
+  "title": "theytookmymoney",
+  "credits": [
+   "salameh",
+   "RAJE",
+   "FLAT 22"
+  ],
+  "spotify_duration_s": 270,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
   "song_key": "spotify:4HTD64x2NstZsK1su3OFd6",
   "act_id": "artist:sidney-charles",
   "title": "Face Your Fear",
@@ -1067,6 +1113,50 @@
    "Sidney Charles"
   ],
   "spotify_duration_s": 219,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:5LgajY7TLsN0WzXza4Fkw8",
+  "act_id": "artist:sloth",
+  "title": "RUSH",
+  "credits": [
+   "Sloth"
+  ],
+  "spotify_duration_s": 142,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:5wFtmxPFbYlbukfvWjzGki",
+  "act_id": "artist:sloth",
+  "title": "Woozy",
+  "credits": [
+   "WonkyWilla",
+   "Sloth"
+  ],
+  "spotify_duration_s": 121,
+  "status": "unmatched",
+  "video_id": null,
+  "issue": "no search result for this artist had this title",
+  "default": "skipped",
+  "decision": null
+ },
+ {
+  "song_key": "spotify:7MLitWCZt9WDukjo066SfF",
+  "act_id": "artist:sloth",
+  "title": "Orgasmic - Sloth Remix",
+  "credits": [
+   "WonkyWilla",
+   "Sloth"
+  ],
+  "spotify_duration_s": 150,
   "status": "unmatched",
   "video_id": null,
   "issue": "no search result for this artist had this title",
