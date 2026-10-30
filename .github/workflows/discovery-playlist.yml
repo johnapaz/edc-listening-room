@@ -70,8 +70,16 @@ jobs:
           else
             git checkout -f -B "$STATE_BRANCH"
           fi
-          for f in $STATE_FILES; do [ -f "/tmp/state/$(basename "$f")" ] && cp "/tmp/state/$(basename "$f")" "$f"; done
-          git add -f $STATE_FILES 2>/dev/null || true
+          staged=""
+          for f in $STATE_FILES; do
+            if [ -f "/tmp/state/$(basename "$f")" ]; then
+              cp "/tmp/state/$(basename "$f")" "$f"
+              staged="$staged $f"
+            fi
+          done
+          if [ -z "$staged" ]; then echo "No state files produced"; exit 0; fi
+          git add -f $staged
           if git diff --cached --quiet; then echo "No state change"; exit 0; fi
           git commit -m "Discovery state from run ${{ github.run_id }}"
           git push origin "$STATE_BRANCH"
+          echo "Saved:$staged"

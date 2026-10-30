@@ -21,9 +21,12 @@ MARKER = "edc-listening-room:pilot-m1-v1"
 TITLE = "EDC Orlando 2026 — Pilot M1 (Unofficial)"
 PREVIEW_MARKER = "edc-listening-room:preview-v1"
 PREVIEW_TITLE = "EDC Orlando 2026 — Private listening preview (unranked, unofficial)"
-# A just-created playlist can briefly answer 404 (playlistNotFound). A 404 means
-# nothing was applied, so it is safe to retry; other errors are not retried.
+# A just-created or busy playlist can briefly answer 404 (playlistNotFound) or
+# 409 (conflict/service unavailable). Neither applies the change, so both are
+# retried; any duplicate that slipped in is removed by the next discovery sync.
+# Other errors are not retried.
 NOT_FOUND_DELAYS = (2, 4, 8, 16)
+RETRYABLE_CODES = (404, 409)
 # Item listings lag behind inserts. Read-back is retried until it matches, and a
 # resume only writes after two identical listings, so a stale prefix cannot cause duplicates.
 READBACK_DELAYS = (5, 10, 15, 30)
@@ -133,7 +136,7 @@ class YouTube:
             try:
                 return call()
             except YouTubeHTTPError as e:
-                if e.code != 404:
+                if e.code not in RETRYABLE_CODES:
                     raise
                 self.sleep(delay)
         return call()
