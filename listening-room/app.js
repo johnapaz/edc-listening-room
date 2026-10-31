@@ -27,7 +27,7 @@
   }
   // Compact links use text; the official mark needs 100px height under current brand guidance.
   const youtubeLabel = () => el("span", { class: "provider-label", text: "YouTube" });
-  const youtubeIcon = () => el("img", { class: "youtube-icon", src: "youtube-icon.png", alt: "", width: "142", height: "100" });
+  const youtubeIcon = () => el("img", { class: "youtube-icon", src: "youtube-icon.png", alt: "", width: "218", height: "187" });
   const refreshIcon = () => svg("ui-icon", "M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7", "0 0 24 24");
   const shareIcon = () => svg("ui-icon", "M12 3v12M7 8l5-5 5 5M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5", "0 0 24 24");
   const readJson = async path => {

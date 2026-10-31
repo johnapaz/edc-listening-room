@@ -247,7 +247,7 @@ a.chip:hover{border-color:var(--mint);color:var(--mint)}
 @media (max-width:320px){.playlist-row{flex-wrap:wrap}}
 
 /* Official YouTube mark: unchanged, 100px minimum height with triangle-sized clear space. */
-.youtube-primary{flex-direction:column;background:var(--panel);color:var(--text);padding:32px;gap:32px;max-width:100%;text-align:center;white-space:normal}
+.youtube-primary{flex-direction:column;background:var(--panel);color:var(--text);padding:0 8px 12px;gap:0;max-width:100%;text-align:center;white-space:normal}
 .youtube-primary:hover{background:var(--panel);border-color:var(--mint)}
-.youtube-icon{display:block;width:auto;height:100px;max-width:none;flex:none}
+.youtube-icon{display:block;width:auto;height:187px;max-width:none;flex:none}
 .provider-label{font-size:10px;font-weight:650;letter-spacing:-.025em}

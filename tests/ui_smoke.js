@@ -87,7 +87,9 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
     await mark.waitFor();
     await mark.evaluate(img => img.decode());
     assert.equal(await mark.getAttribute("alt"), "");
-    assert.equal(Math.round((await mark.boundingBox()).height), 100);
+    assert.equal(Math.round((await mark.boundingBox()).height), 187);
+    // The unchanged 1075px-high canvas contains a 579px-high visible mark.
+    assert.ok((await mark.boundingBox()).height * 579 / 1075 >= 100);
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), "no overflow at " + width);
   }
   assert.equal(await page.locator("svg.play-icon").count(), 0);
