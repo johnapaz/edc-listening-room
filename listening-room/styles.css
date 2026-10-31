@@ -4,3 +4,4 @@
 /* Header About link; compact artwork when an act has no reviewed video yet (design review #47). */
 .top-links{display:flex;align-items:center;gap:10px}.about-link{display:inline-flex;align-items:center;min-height:44px;padding:0 4px;color:var(--muted);font-size:.85rem;font-weight:650;text-decoration:none}.about-link:hover,.about-link:focus-visible{color:var(--mint)}
 .artist-hero .hero-art.compact{width:96px;aspect-ratio:1;border-radius:16px;margin-bottom:12px}
+.ready{margin-bottom:24px}
