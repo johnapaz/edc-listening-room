@@ -48,7 +48,11 @@ const server = http.createServer((req, res) => {
       await page.locator('[data-day="2026-11-06"]').click();
       await page.locator('[data-stage="kinetic-field"]').click();
       assert.equal(await page.evaluate(() => document.activeElement.id), 'stage-title');
+      const stageHistory = await page.evaluate(() => history.length);
+      await page.locator('[data-stage="kinetic-field"]').click();
+      assert.equal(await page.evaluate(() => history.length), stageHistory, 'selected stage is a no-op');
       await page.locator('[data-day="2026-11-07"]').click();
+      assert.equal(await page.evaluate(() => history.length), stageHistory, 'day filter replaces history');
       assert.equal(await page.textContent('#stage-title'), 'kineticFIELD');
       assert.equal(await page.getAttribute('[data-stage="kinetic-field"]', 'aria-current'), 'true');
       assert.equal(await page.evaluate(() => document.activeElement.dataset.day), '2026-11-07');

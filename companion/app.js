@@ -33,7 +33,11 @@
   }
   function rememberScroll() { history.replaceState({ ...history.state, companionScroll: window.scrollY }, ""); }
   function navigate(hash, focus) {
-    rememberScroll(); history.pushState({ companionScroll: 0, companionFrom: C.buildHash(C.parseHash(location.hash)) }, "", hash);
+    const current = C.buildHash(C.parseHash(location.hash));
+    if (hash === current) return;
+    rememberScroll();
+    if (focus === "day") history.replaceState({ ...history.state, companionScroll: window.scrollY }, "", hash);
+    else history.pushState({ companionScroll: 0, companionFrom: current }, "", hash);
     render({ focus, scroll: focus === "day" ? window.scrollY : undefined });
   }
   document.addEventListener("click", e => {

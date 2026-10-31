@@ -56,7 +56,7 @@ Read `docs/companion-design/DESIGN-GUIDELINES.md` and `INTERACTION-CONTRACT.md` 
 
 Integration review was posted on #73. Never port invented wireframe coordinates. Use **Time unknown / No sourced schedule**, because “not announced” would claim something the reference does not establish. Future authoritative status currently uses `verified`, not the proposal's `organizer_verified`. Inline public source metadata is available; do not fetch private source registry. Keep names intended as navigation clickable.
 
-Known deliberate differences to resolve during design integration: our functional routes use `explore`/`performance`/`artist` rather than map/sheet parameters; day changes currently push browser history; details are pages rather than sheet bodies; day links use native navigation semantics. These are isolated in the router/controller/components. Route aliases and replace-on-day are possible without rewriting data/query logic. Do not remove working/deep-link behavior while restyling.
+Known deliberate differences to resolve during design integration: our functional routes use `explore`/`performance`/`artist` rather than map/sheet parameters; details are pages rather than sheet bodies; day links use native navigation semantics. These are isolated in the router/controller/components. Day changes replace the current history entry (as proposed in #73); selecting the already selected stage/day is a no-op. Route aliases are possible without rewriting data/query logic. Do not remove working/deep-link behavior while restyling.
 
 ## Outstanding acceptance
 
