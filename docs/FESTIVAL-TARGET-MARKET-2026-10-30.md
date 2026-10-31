@@ -8,7 +8,7 @@
 
 **Early targets:** EDC Orlando 2026 field validation; Rolling Loud Florida, Forbidden Kingdom, Welcome to Rockville and Ultra Miami 2027 for regional follow-up. Compare EDC's EDM repertoire against Rockville's rock/metal, Rolling Loud's hip-hop and a Latin or Puerto Rican event to validate provider discovery across genres. The 2027 Rockville lineup is already announced (150+ acts over five stages), while Rolling Loud Florida 2027's lineup was not announced as of this research.
 
-**Exclude inactive 2027 leads:** Bonnaroo explicitly announced a 2027 break; Okeechobee also announced a 2027 hiatus. Do not claim either is upcoming.
+**Exclude inactive 2027 leads:** Bonnaroo explicitly announced a 2027 break; Okeechobee also announced a 2027 hiatus. Rocking the Daisies canceled its 2026 event, so it is not treated as a near-term confirmed opportunity. Do not claim either is upcoming.
 
 ## How ranking works
 
@@ -47,7 +47,7 @@ This is an **editorial, personalized commercial-target priority**, not an object
 | 25 | Ultra Buenos Aires | Buenos Aires, Argentina | ✓ Apr 2–3 2027 | Ultra Worldwide | H |
 | 26 | Ultra South Africa | Cape Town / Johannesburg, South Africa | ✓ Apr 30–May 1 2027 | Ultra Worldwide | H |
 | 27 | Louder Than Life | Louisville, KY, US | ~ Fall 2027 | Danny Wimmer Presents | H |
-| 28 | SunFest | West Palm Beach, FL, US | ~ Spring 2027 | SunFest organizers | H |
+| 28 | Emo’s Not Dead Cruise | Miami departure / Bahamas | ✓ Jan 22–26 2027 | Sixthman | H |
 | 29 | Jacksonville Jazz Festival | Jacksonville, FL, US | ~ 2027 TBA | City of Jacksonville | H |
 | 30 | Florida Groves Music Festival | Orlando, FL, US | ✓ Apr 10 2027 | Florida Groves | H |
 | 31 | Lights All Night | Dallas, TX, US | ~ Winter 2026 | Disco Presents | H |
@@ -60,7 +60,7 @@ This is an **editorial, personalized commercial-target priority**, not an object
 | 38 | Nocturnal Wonderland | Southern California, US | ~ Fall 2027 | Insomniac Events | H |
 | 39 | Beyond Wonderland at the Gorge | George, WA, US | ~ Summer 2027 | Insomniac Events | H |
 | 40 | Rolling Loud Portugal | Portugal | ~ Next edition TBA | Rolling Loud | H |
-| 41 | Rolling Loud Thailand | Thailand | ~ Next edition TBA | Rolling Loud | H |
+| 41 | Lollapalooza India | Mumbai, India | ✓ Jan 23–24 2027 | C3 Presents / BookMyShow Live | H |
 | 42 | Aftershock | Sacramento, CA, US | ~ Fall 2027 | Danny Wimmer Presents | H |
 | 43 | Inkcarceration | Mansfield, OH, US | ~ Summer 2027 | Danny Wimmer Presents | H |
 | 44 | Bourbon & Beyond | Louisville, KY, US | ~ Fall 2027 | Danny Wimmer Presents | H |
@@ -92,7 +92,7 @@ This is an **editorial, personalized commercial-target priority**, not an object
 | 70 | Baja Beach Fest | Rosarito, Mexico | ~ Summer 2027 | Baja Beach Fest | H |
 | 71 | Sueños Music Festival | Chicago, IL, US | ~ Spring 2027 | Sueños | H |
 | 72 | Vive Latino | Mexico City, Mexico | ~ Spring 2027 | OCESA | H |
-| 73 | Tecate Pa’l Norte | Monterrey, Mexico | ~ Spring 2027 | Apodaca Group | H |
+| 73 | SunFest | West Palm Beach, FL, US | ~ Spring 2027 | SunFest organizers | H |
 | 74 | Corona Capital | Mexico City, Mexico | ~ Fall 2027 | OCESA | H |
 | 75 | Coca-Cola Flow Fest | Mexico City, Mexico | ~ Fall 2027 | OCESA | H |
 | 76 | Festival Estéreo Picnic | Bogotá, Colombia | ~ Spring 2027 | Páramo Presenta | H |
@@ -104,7 +104,7 @@ This is an **editorial, personalized commercial-target priority**, not an object
 | 82 | Leeds Festival | Leeds, England, UK | ~ Aug 2027 | Festival Republic / Live Nation | H |
 | 83 | Creamfields | Daresbury, England, UK | ~ Summer 2027 | Cream / Live Nation | H |
 | 84 | Rock am Ring | Nürburg, Germany | ~ Jun 4–6 2027 reported | CTS EVENTIM network | H |
-| 85 | Rock im Park | Nuremberg, Germany | ~ Jun 4–6 2027 reported | CTS EVENTIM network | H |
+| 85 | Djakarta Warehouse Project | Jakarta, Indonesia | ~ Dec 2026 (verify date) | Ismaya Live | H |
 | 86 | Wacken Open Air | Wacken, Germany | ~ Summer 2027 | Superstruct network | H |
 | 87 | Hellfest | Clisson, France | ~ Jun 2027 | Hellfest organizers | H |
 | 88 | Rock Werchter | Werchter, Belgium | ~ Jul 2027 | Live Nation Belgium | H |
@@ -112,10 +112,10 @@ This is an **editorial, personalized commercial-target priority**, not an object
 | 90 | Awakenings Festival | Netherlands | ~ Summer 2027 | Superstruct network | H |
 | 91 | Defqon.1 | Biddinghuizen, Netherlands | ~ Summer 2027 | Superstruct network | H |
 | 92 | Mysteryland | Haarlemmermeer, Netherlands | ~ Summer 2027 | Superstruct network | H |
-| 93 | Parookaville | Weeze, Germany | ~ Summer 2027 | Superstruct network | H |
+| 93 | We The Fest | Jakarta, Indonesia | ~ Summer 2027 | Ismaya Live | H |
 | 94 | Hurricane Festival | Scheeßel, Germany | ~ Jun 2027 | FKP Scorpio | H |
-| 95 | Southside Festival | Neuhausen ob Eck, Germany | ~ Jun 2027 | FKP Scorpio | H |
-| 96 | Boardmasters | Cornwall, England, UK | ~ Summer 2027 | Superstruct network | H |
+| 95 | Mawazine | Rabat, Morocco | ~ Summer 2027 | Maroc Cultures | H |
+| 96 | Beyond the Valley | Barunah Plains, Victoria, Australia | ✓ Dec 28 2026–Jan 1 2027 | Untitled Group | H |
 | 97 | Tomorrowland Winter | Alpe d’Huez, France | ~ Spring 2027 | WEAREONE.world | H |
 | 98 | Tomorrowland Brasil | São Paulo area, Brazil | ~ Next edition TBA | WEAREONE.world | H |
 | 99 | Fuji Rock Festival | Naeba, Japan | ~ Summer 2027 | SMASH | H |
@@ -174,3 +174,5 @@ Parent and subsidiary entries represent distinct prospective routes to market, *
 - https://www.superstruct.com/
 - https://support.bonnaroo.com/hc/en-us/articles/52741158558740-Bonnaroo-2027
 - https://edm.com/events/okeechobee-festival-hiatus-again/
+
+Additional confirmed date references: https://www.lollaindia.com/ ; https://emosnotdead.com/pages/emos-not-dead-cruise ; https://www.beyondthevalley.com.au/ .
