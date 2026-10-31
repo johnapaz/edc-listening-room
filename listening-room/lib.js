@@ -16,8 +16,30 @@
       .replace(/\s+/g, " ").trim();
   }
 
+  const EVENT_DAYS = DAYS.slice(1);
+
   function validDay(day) {
     return DAYS.some(d => d.key === day) ? day : "all";
+  }
+
+  // The festival day in America/New_York; before the event (or after it) the first day.
+  function defaultDay(now) {
+    const today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(now || new Date());
+    const hit = EVENT_DAYS.find(d => d.key === today);
+    return hit ? hit.key : EVENT_DAYS[0].key;
+  }
+
+  function eventDay(day, now) {
+    return EVENT_DAYS.some(d => d.key === day) ? day : defaultDay(now);
+  }
+
+  // "time": poster start time, unknown times last; "az": billing name.
+  function sortRows(rows, sort) {
+    const byName = (a, b) => a.display_name.localeCompare(b.display_name, "en", { sensitivity: "base" });
+    return rows.slice().sort(sort === "az" ? byName : (a, b) =>
+      (a.event_date.localeCompare(b.event_date)) ||
+      (a.starts_at && b.starts_at ? Date.parse(a.starts_at) - Date.parse(b.starts_at) : a.starts_at ? -1 : b.starts_at ? 1 : 0) ||
+      byName(a, b));
   }
 
   function safeYoutubeUrl(url) {
@@ -73,11 +95,10 @@
     return q.split(" ").every(tok => hay.includes(tok));
   }
 
-  function filterLineup(idx, { day, q, stage, tracksOnly }) {
+  function filterLineup(idx, { day, q, stage }) {
     return idx.performances.filter(p =>
       (validDay(day) === "all" || p.event_date === day) &&
       (!stage || (p.stage_id === stage && p.schedule_status === "verified")) &&
-      (!tracksOnly || songCount(p, idx) > 0) &&
       matches(p, idx, q));
   }
 
@@ -111,14 +132,16 @@
   }
 
   // Route state lives in the URL hash so Back restores query and filters.
-  function parseHash(hash) {
+  // Lineup search (q) and Tracks search (tq) are separate so neither empties the other view.
+  function parseHash(hash, now) {
     const raw = String(hash || "").replace(/^#\/?/, "");
     const [path, qs = ""] = raw.split("?");
     const params = new URLSearchParams(qs);
     let parts;
     try { parts = path.split("/").filter(Boolean).map(decodeURIComponent); }
     catch (_e) { parts = []; }
-    const ctx = { day: validDay(params.get("day") || "all"), q: params.get("q") || "", stage: params.get("stage") || "", tracksOnly: params.get("music") === "1" };
+    const ctx = { day: eventDay(params.get("day"), now), sort: params.get("sort") === "az" ? "az" : "time",
+      q: params.get("q") || "", tq: params.get("tq") || "", tday: validDay(params.get("tday") || "all"), stage: params.get("stage") || "" };
     if (parts[0] === "artist" && parts[1]) return { view: "artist", id: parts[1], ctx };
     if (parts[0] === "listen") return { view: "listen", ctx };
     return { view: "lineup", ctx };
@@ -127,9 +150,11 @@
   function buildHash(view, ctx, id) {
     const params = new URLSearchParams();
     if (ctx && ctx.day && ctx.day !== "all") params.set("day", ctx.day);
+    if (ctx && ctx.sort === "az") params.set("sort", "az");
     if (ctx && ctx.q) params.set("q", ctx.q);
+    if (ctx && ctx.tq) params.set("tq", ctx.tq);
+    if (ctx && ctx.tday && ctx.tday !== "all") params.set("tday", ctx.tday);
     if (ctx && ctx.stage) params.set("stage", ctx.stage);
-    if (ctx && ctx.tracksOnly) params.set("music", "1");
     const qs = params.toString();
     const path = view === "artist" ? "artist/" + encodeURIComponent(id) : view;
     return "#/" + path + (qs ? "?" + qs : "");
@@ -152,7 +177,7 @@
       ? safeYoutubeUrl(playlist.url) : null;
   }
 
-  return { DAYS, normalize, validDay, safeYoutubeUrl, index, songGroups, songCount, matches,
+  return { DAYS, EVENT_DAYS, defaultDay, eventDay, sortRows, normalize, validDay, safeYoutubeUrl, index, songGroups, songCount, matches,
     filterLineup, scheduleState, stageOptions, parseHash, buildHash, validPlaylistUrl,
     safeSpotifyUrl, officialSpotifyPlaylist };
 });

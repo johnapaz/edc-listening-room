@@ -1,0 +1,36 @@
+name: Device matrix (design check)
+# On demand: renders the live site on 33 Apple and Android screen profiles, including foldables folded and open.
+# Apple profiles run in WebKit (Safari's engine), Android profiles in Chromium. Read-only; no secrets, no YouTube API.
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: Site to check
+        default: https://listeningroom.app/listening-room/
+
+permissions:
+  contents: read
+
+jobs:
+  matrix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright with WebKit and Chromium
+        run: |
+          npm install --no-save playwright@1.63.0
+          npx playwright install --with-deps webkit chromium
+      - name: Render every profile
+        env:
+          BASE: ${{ inputs.base_url }}
+        run: node tests/device_matrix.js device-matrix
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: device-matrix
+          path: device-matrix/
+          retention-days: 14

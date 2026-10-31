@@ -38,13 +38,37 @@ test("search and day combine; no match gives an empty list", () => {
   assert.equal(L.filterLineup(idx, { day: "all", q: "zzzzqqq" }).length, 0);
 });
 
-test("music availability filter shows only acts with tracks and survives shared links", () => {
-  const ctx = { day: "all", q: "", stage: "", tracksOnly: true };
-  const rows = L.filterLineup(idx, ctx);
-  assert.ok(rows.length > 0 && rows.length < 130);
-  assert.ok(rows.every(p => L.songCount(p, idx) > 0));
-  assert.deepEqual(L.parseHash(L.buildHash("lineup", ctx)).ctx, ctx);
-  assert.equal(L.filterLineup(idx, { ...ctx, q: "allnightkev" }).length, 0);
+test("days default to the festival day in Eastern Time, else Friday", () => {
+  assert.equal(L.defaultDay(new Date("2026-10-31T12:00:00-04:00")), "2026-11-06");
+  assert.equal(L.defaultDay(new Date("2026-11-07T23:30:00-05:00")), "2026-11-07");
+  assert.equal(L.defaultDay(new Date("2026-11-08T03:00:00Z")), "2026-11-07");
+  assert.equal(L.defaultDay(new Date("2026-11-12T12:00:00-05:00")), "2026-11-06");
+  const before = new Date("2026-10-31T12:00:00-04:00");
+  assert.equal(L.parseHash("#/lineup", before).ctx.day, "2026-11-06");
+  assert.equal(L.parseHash("#/lineup?day=all", before).ctx.day, "2026-11-06");
+  assert.equal(L.parseHash("#/lineup?day=2026-11-08", before).ctx.day, "2026-11-08");
+});
+
+test("By time sorts on poster start times with unknown times last; A-Z sorts by name", () => {
+  const fri = L.filterLineup(idx, { day: "2026-11-06", q: "" });
+  const byTime = L.sortRows(fri, "time");
+  const timed = byTime.filter(p => p.starts_at);
+  assert.ok(timed.length > 10);
+  for (let i = 1; i < timed.length; i++) assert.ok(Date.parse(timed[i - 1].starts_at) <= Date.parse(timed[i].starts_at));
+  assert.ok(byTime.slice(timed.length).every(p => !p.starts_at), "untimed acts come last");
+  const az = names(L.sortRows(fri, "az"));
+  assert.deepEqual(az, az.slice().sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" })));
+  assert.equal(L.sortRows(fri, "time").length, fri.length);
+  assert.notStrictEqual(L.sortRows(fri, "az"), fri, "sorting never mutates the filtered list");
+});
+
+test("lineup and Tracks searches are separate route state", () => {
+  const ctx = { day: "2026-11-07", sort: "time", q: "acraze", tq: "carry you", tday: "2026-11-08", stage: "" };
+  const r = L.parseHash(L.buildHash("listen", ctx));
+  assert.equal(r.ctx.q, "acraze");
+  assert.equal(r.ctx.tq, "carry you");
+  assert.equal(r.ctx.tday, "2026-11-08");
+  assert.equal(L.parseHash("#/lineup?music=1").ctx.tracksOnly, undefined, "retired filter is ignored");
 });
 
 test("B2B performance exposes songs from each credited artist", () => {
@@ -104,15 +128,16 @@ test("stage filter and options only use verified schedule data", () => {
   assert.deepEqual(names(L.filterLineup(i2, { day: "all", q: "", stage: "s" })), ["Y"]);
 });
 
-test("route state round-trips so Back preserves search and day", () => {
-  const ctx = { day: "2026-11-07", q: "acraze b2b", stage: "", tracksOnly: true };
+test("route state round-trips so Back preserves search, day and sort", () => {
+  const ctx = { day: "2026-11-07", sort: "az", q: "acraze b2b", tq: "", tday: "all", stage: "" };
   const h = L.buildHash("artist", ctx, "edco26:2026-11-07:x y");
   const r = L.parseHash(h);
   assert.equal(r.view, "artist");
   assert.equal(r.id, "edco26:2026-11-07:x y");
   assert.deepEqual(r.ctx, ctx);
   assert.equal(L.parseHash(L.buildHash("lineup", ctx)).ctx.q, "acraze b2b");
-  assert.equal(L.parseHash("#/lineup?day=bogus").ctx.day, "all");
+  assert.equal(L.parseHash("#/lineup?day=bogus", new Date("2026-10-31T12:00:00-04:00")).ctx.day, "2026-11-06");
+  assert.equal(L.parseHash("#/lineup?sort=bogus").ctx.sort, "time");
   assert.equal(L.parseHash("").view, "lineup");
 });
 

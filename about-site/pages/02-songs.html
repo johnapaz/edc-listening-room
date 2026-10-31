@@ -24,11 +24,11 @@ lede: Every track opens one specific recording on YouTube. Here’s how we check
 <div class="table-wrap"><table>
   <thead><tr><th scope="col">You see</th><th scope="col">What it means</th></tr></thead>
   <tbody>
-    <tr><td data-label="You see"><span class="sample">A track title and a YouTube button</span></td><td data-label="Meaning">A reviewed recording. Tap either to open it on YouTube.</td></tr>
-    <tr><td data-label="You see"><span class="sample">A {{ui Spotify ↗}} button</span></td><td data-label="Meaning">The same song on Spotify. {{page songs#spotify | About Spotify links}}.</td></tr>
+    <tr><td data-label="You see"><span class="sample">A track title and a play button</span></td><td data-label="Meaning">A reviewed recording. Tap either to open it on YouTube.</td></tr>
+    <tr><td data-label="You see"><span class="sample">A {{ui Spotify}} button</span></td><td data-label="Meaning">The same song on Spotify. {{page songs#spotify | About Spotify links}}.</td></tr>
     <tr><td data-label="You see"><span class="sample">{{ui Version may differ from the original release.}}</span></td><td data-label="Meaning">Right track, right artist, but the video may be a different edit or length than the original release.</td></tr>
-    <tr><td data-label="You see"><span class="sample">{{ui No tracks added}}</span></td><td data-label="Meaning">On the lineup: the act is listed, but no track has passed review yet.</td></tr>
-    <tr><td data-label="You see"><span class="sample">{{ui No tracks added for this artist.}}</span></td><td data-label="Meaning">In a B2B set: this artist doesn’t have a reviewed track yet, even if their partner does.</td></tr>
+    <tr><td data-label="You see"><span class="sample">{{ui No tracks yet}}</span></td><td data-label="Meaning">On the lineup: the act is listed, but no track has passed review yet.</td></tr>
+    <tr><td data-label="You see"><span class="sample">{{ui No tracks added for this artist yet.}}</span></td><td data-label="Meaning">In a B2B set: this artist doesn’t have a reviewed track yet, even if their partner does.</td></tr>
   </tbody>
 </table></div>
 
@@ -36,7 +36,7 @@ lede: Every track opens one specific recording on YouTube. Here’s how we check
 <p>Pictures next to tracks are the YouTube thumbnails for those exact videos, loaded directly from YouTube. They aren’t artist portraits, and Listening Room never uses another artist’s image or makes one up. When there’s no reviewed video, or a thumbnail can’t load, you’ll see the artist’s initials instead.</p>
 
 <h2 id="coverage">Who has tracks today</h2>
-<p>Right now, {{stat songs}} reviewed tracks cover {{stat song_artists}} artists, and {{stat entries_with_songs}} of the {{stat lineup_entries}} lineup entries have at least one track. Every other act is still listed with their day. This list updates automatically whenever tracks are added, and {{app lineup?music=1 | With tracks}} on the lineup shows the same acts.</p>
+<p>Right now, {{stat songs}} reviewed tracks cover {{stat song_artists}} artists, and {{stat entries_with_songs}} of the {{stat lineup_entries}} lineup entries have at least one track. Every other act is still listed with their day. This list updates automatically whenever tracks are added. On the lineup, acts with a track have a play button at the end of their row.</p>
 {{list songs}}
 
 <h2 id="why-not-more">Why not more tracks?</h2>

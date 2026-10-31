@@ -67,7 +67,7 @@ const server = http.createServer((req, res) => {
       await page.locator('.listening-link').click();
       await page.waitForSelector('.song');
       assert.equal(await page.textContent('h1'), 'CID');
-      assert.match(await page.locator('.song a.btn').first().getAttribute('href'), /^https:\/\/www.youtube.com\/watch\?v=/);
+      assert.match(await page.locator('.song .play-btn[href]').first().getAttribute('href'), /^https:\/\/www.youtube.com\/watch\?v=/);
       await page.goBack(); await page.waitForSelector('#detail-title');
       assert.equal(await page.textContent('#detail-title'), 'CID');
       await page.locator('[data-back]').click(); await page.waitForSelector('#stage-title');
