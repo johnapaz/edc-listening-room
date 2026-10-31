@@ -76,10 +76,6 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
   assert.ok(await page.locator(".song .artist-link").count() > 0);
   assert.equal(await page.evaluate(() => document.activeElement.id), "title"); ok("artist detail, direct YouTube link, focus moved to heading");
   assert.ok(!/null|undefined/.test(await page.textContent("main")), "stray null/undefined text");
-  await page.goBack();
-  await page.waitForSelector("#list .lineup-row");
-  assert.equal(await page.inputValue("#q"), "acraze"); ok("back preserves search");
-
   // The official asset loads unchanged at the brand minimum, including narrow screens.
   for (const width of [280, 360, 1280]) {
     await page.setViewportSize({ width, height: 900 });
@@ -95,6 +91,10 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
   assert.equal(await page.locator("svg.play-icon").count(), 0);
   await page.setViewportSize({ width: 360, height: 740 });
   ok("official YouTube mark loads at 100px without overflow at 280/360/1280");
+
+  await page.goBack();
+  await page.waitForSelector("#list .lineup-row");
+  assert.equal(await page.inputValue("#q"), "acraze"); ok("back preserves search");
 
   // Day buttons clear the search and switch days.
   await page.click(`button[data-day='${SAT}']`);
