@@ -58,6 +58,8 @@ The Companion uses its **own hash router**, built the same way as Listening Room
 
 **History rules.** Selecting a stage, opening an artist or switching views each **pushes** a history entry. Changing the day, the sheet height or the map pan/zoom **replaces** the current entry, so Back is never a pile of day toggles. Browser Back steps out in this order: artist → stage → nothing selected → previous page.
 
+**Primary navigation keeps context.** Map / Stages / About links and the wordmark are built from the current route. They always carry `day`, and **Map** returns to the last selected `stage` (taken from either the map or a stage page). The skip link focuses `<main>` programmatically; it never changes the hash.
+
 **Day change keeps the stage selected** (acceptance #1). Only the sheet's set list re-filters. If the stage has nothing that day, show S6; never deselect.
 
 **To Listening Room**, always by stable ID with no search fallback:

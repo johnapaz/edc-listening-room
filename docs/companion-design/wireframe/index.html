@@ -468,8 +468,18 @@ $("#days").addEventListener("click", e => { const b = e.target.closest("button")
   announce(`${dayOf(b.dataset.day).long}${r.stage && r.stage !== "?" ? ": " + stageName(r.stage) + ", " + setsFor(r.stage, b.dataset.day).length + " sets" : ""}.`); });
 document.addEventListener("keydown", e => { if (e.key !== "Escape") return; const r = parse();
   if (r.set || r.artist) go({set:"", artist:""}); else if (r.sheet === "full") go({sheet:"half"}, true); });
+// Primary nav and the brand link carry the current day, and Map returns to the last selected stage (contract §2).
+let lastStage = "";
+function navLinks(r){
+  if (r.view === "map" || r.view === "stage") lastStage = r.view === "stage" ? r.id : (r.stage !== "?" ? r.stage : "");
+  const dest = {map: build({view:"map", day:r.day, stage:lastStage}), stages: build({view:"stages", day:r.day}), sources: build({view:"sources", day:r.day})};
+  document.querySelectorAll("[data-nav]").forEach(a => a.setAttribute("href", dest[a.dataset.nav]));
+  $(".brand").setAttribute("href", dest.map);
+}
+// Skip link focuses <main> without touching the hash, so it never replaces the route.
+$(".skip").addEventListener("click", e => { e.preventDefault(); $("#main").focus(); });
 function render(){
-  const r = parse(); days(r); document.body.className = "v-" + (["stages","stage","unscheduled","sources"].includes(r.view) ? r.view : "map");
+  const r = parse(); days(r); navLinks(r); document.body.className = "v-" + (["stages","stage","unscheduled","sources"].includes(r.view) ? r.view : "map");
   const nav = r.view === "stage" || r.view === "unscheduled" ? "stages" : r.view;
   document.querySelectorAll("[data-nav]").forEach(a => { if (a.dataset.nav === nav) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
   if (r.view === "stages") stagesView(r); else if (r.view === "stage") stagePage(r); else if (r.view === "unscheduled") unscheduledView(r); else if (r.view === "sources") sourcesView(); else mapView(r);
