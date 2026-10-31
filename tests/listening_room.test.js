@@ -124,3 +124,20 @@ test("playlist link requires published + cross-account verification", () => {
 });
 
 test("malformed route escapes recover to lineup", () => { assert.equal(L.parseHash("#/artist/%").view, "lineup"); });
+
+test("Spotify links are exact open.spotify.com tracks or playlists, and nothing else", () => {
+  const track = "https://open.spotify.com/track/6gLDnzjpM0AwOeh9NmmHE0";
+  assert.equal(L.safeSpotifyUrl(track, "track"), track);
+  assert.equal(L.safeSpotifyUrl(track, "playlist"), null);
+  for (const bad of ["javascript:alert(1)", "http://open.spotify.com/track/6gLDnzjpM0AwOeh9NmmHE0", "https://open.spotify.com/track/6gLDnzjpM0AwOeh9NmmHE0?si=x",
+    "https://evil.example/open.spotify.com/track/6gLDnzjpM0AwOeh9NmmHE0", "spotify:track:6gLDnzjpM0AwOeh9NmmHE0", null, undefined])
+    assert.equal(L.safeSpotifyUrl(bad), null);
+  const pl = rd("data/listening-room/playlist.json");
+  assert.equal(L.officialSpotifyPlaylist(pl).url, pl.official_spotify.url);
+  assert.equal(L.officialSpotifyPlaylist({ official_spotify: { url: track } }), null);
+  assert.equal(L.officialSpotifyPlaylist({}), null);
+  const linked = rd("data/listening-room/songs.json").songs.filter(s => s.spotify_url);
+  assert.ok(linked.length > 0);
+  linked.forEach(s => assert.equal(L.safeSpotifyUrl(s.spotify_url, "track"), s.spotify_url));
+});
+

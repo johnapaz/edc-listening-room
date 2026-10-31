@@ -31,3 +31,7 @@
 
 @media(min-width:900px){.music-card{display:flex;align-items:center;padding-left:8px}.music-card>.art-link{width:76px;min-width:76px}.feature-art{width:76px;height:44px}.music-copy{padding:0 8px;flex:1;min-width:0}.music-copy .artist-link{font-size:.8125rem}.music-copy .track-title{font-size:.75rem}.music-grid{gap:10px}}
 .song-credits{display:flex;flex-wrap:wrap;align-items:center;column-gap:4px}.song-credits .artist-link{display:inline-flex;align-items:center;min-height:44px;max-width:100%;overflow-wrap:anywhere}
+.listen-on{display:flex;gap:6px;flex:none}.btn-alt{background:transparent;color:var(--text);border:1px solid var(--line)}.btn-alt:hover{background:transparent;border-color:var(--mint);color:var(--mint)}
+.playlist-card{padding:12px}.playlist-card h2{margin-bottom:6px}.playlist-row{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:8px 0;border-top:1px solid var(--line)}.playlist-row:first-child{border-top:0}.playlist-row p{margin:2px 0 0;font-size:.8125rem}.playlist-row .btn{flex:none}.playlist-pending{margin:8px 0 0;font-size:.8125rem}
+@media(max-width:600px){.song>.listen-on{margin-left:auto}}
+@media(max-width:320px){.listen-on{flex-basis:100%;justify-content:flex-end}.playlist-row{flex-wrap:wrap}}

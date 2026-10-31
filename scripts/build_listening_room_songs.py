@@ -1,7 +1,9 @@
 """Build curated songs from the approved preview and explicitly published source reviews.
 
 Source review is separate from human playback. Unapproved candidates and private
-discovery state are never exported. Run with --check to detect stale output.
+discovery state are never exported. A track gets a Spotify link only when its
+reviewed YouTube match was made against that exact captured Spotify track ID;
+the link points at the source record and makes no playback claim. Run with --check to detect stale output.
 """
 import json
 import re
@@ -10,6 +12,18 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "listening-room" / "songs.json"
+
+
+def spotify_url(row):
+    """Open-in-Spotify link for the exact source track the YouTube match was reviewed against."""
+    key = row.get("song_key", "")
+    if not key.startswith("spotify:"):
+        return None
+    track = key.removeprefix("spotify:")
+    url = "https://open.spotify.com/track/" + track
+    if not re.fullmatch(r"[A-Za-z0-9]{22}", track) or url not in row.get("source_urls", []):
+        raise ValueError("Invalid Spotify source for: " + row.get("title", track))
+    return url
 
 
 def build():
@@ -44,11 +58,15 @@ def build():
                     or row.get("artwork_url") != "https://img.youtube.com/vi/" + video + "/mqdefault.jpg"
                     or row.get("artwork_check", {}).get("http_status") != 200):
                 raise ValueError("Invalid published source review: " + row.get("title", video))
-            songs.append({
+            song = {
                 "artist_id": ids[0], "artist_ids": ids, "title": row["title"],
                 "video_id": video, "url": row["url"], "review_status": row["review_status"],
                 "version_note": None, "verification": "source_reviewed",
-            })
+            }
+            spotify = spotify_url(row)
+            if spotify:
+                song["spotify_url"] = spotify
+            songs.append(song)
     if len({s["video_id"] for s in songs}) != len(songs):
         raise ValueError("Duplicate curated recording")
     return {
