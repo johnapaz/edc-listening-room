@@ -72,7 +72,15 @@ class ListeningRoomData(unittest.TestCase):
                 self.assertEqual(source["artwork_check"]["http_status"], 200)
             self.assertNotIn(s["video_id"], seen)
             seen.add(s["video_id"])
-            self.assertNotIn("spotify", json.dumps(s).lower())
+            # Spotify appears only as an exact link to the source track this YouTube match was reviewed against.
+            spotify = s.get("spotify_url")
+            without = {k: v for k, v in s.items() if k != "spotify_url"}
+            self.assertNotIn("spotify", json.dumps(without).lower())
+            if spotify is not None:
+                self.assertRegex(spotify, r"^https://open\.spotify\.com/track/[A-Za-z0-9]{22}$")
+                source = source_rows[s["video_id"]]
+                self.assertEqual(source["song_key"], "spotify:" + spotify.rsplit("/", 1)[1])
+                self.assertIn(spotify, source["source_urls"])
 
     def test_playlist_is_not_claimed_available_without_verification(self):
         pl = read("data/listening-room/playlist.json")
@@ -81,6 +89,11 @@ class ListeningRoomData(unittest.TestCase):
             self.assertRegex(pl["url"], r"^https://(www|music)\.youtube\.com/playlist\?list=")
         else:
             self.assertIsNone(pl["url"])
+        official = pl.get("official_spotify")
+        if official:
+            # The organizer's own playlist, linked as-is; never presented as ours or as reviewed.
+            self.assertRegex(official["url"], r"^https://open\.spotify\.com/playlist/[A-Za-z0-9]{22}$")
+            self.assertEqual(official["curator"], "Insomniac")
 
     def test_lineup_preserves_poster_and_prior_entries_without_inventing_schedule(self):
         rows = read("data/edco-2026/performances.json")["performances"]

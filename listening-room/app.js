@@ -1,5 +1,5 @@
 "use strict";
-// Static, read-only discovery. No visitor credentials or embedded player.
+// Static, read-only discovery. No visitor credentials or embedded player; YouTube and Spotify are plain outbound links.
 (function () {
   const L = window.RoomLib;
   const main = document.getElementById("main");
@@ -44,13 +44,26 @@
   function videoArt(s, label, cls) {
     return el("a", { class: "art-link", href: s.url, target: "_blank", rel: "noopener noreferrer", tabindex: "-1", "aria-hidden": "true" }, artwork(s, label, cls));
   }
+  // One card for every whole-event way to listen: ours on YouTube Music (once verified) and the organizer's own on Spotify.
   function playlistCard() {
     const url = L.validPlaylistUrl(playlist);
-    const card = el("section", { class: "card playlist-card", "aria-label": "Event playlist" });
-    if (url) card.append(el("h2", { text: playlist.label }), ext(url, "Listen on YouTube Music", "btn", "Listen to " + playlist.label + " on YouTube Music"));
-    else card.append(el("details", {}, el("summary", {}, el("span", { text: "Event playlist" }), el("span", { class: "soon", text: "Not available" })),
-      el("p", { class: "muted", text: "There is no public event playlist yet. You can open the individual tracks listed here on YouTube." })));
+    const official = L.officialSpotifyPlaylist(playlist);
+    const card = el("section", { class: "card playlist-card", "aria-labelledby": "playlists-title" },
+      el("h2", { id: "playlists-title", text: "Event playlists" }));
+    const rows = el("div", { class: "playlist-rows" });
+    if (url) rows.append(el("div", { class: "playlist-row" }, el("div", {}, el("strong", { text: playlist.label }), el("p", { class: "muted", text: "Our reviewed tracks, one playlist." })),
+      ext(url, "YouTube Music", "btn", "Listen to " + playlist.label + " on YouTube Music")));
+    if (official) rows.append(el("div", { class: "playlist-row" }, el("div", {}, el("strong", { text: official.label }), el("p", { class: "muted", text: (official.curator ? "Curated by " + official.curator + " on Spotify. " : "") + "Not made or checked by Listening Room." })),
+      ext(official.url, "Spotify", "btn btn-alt", "Open " + official.label + " on Spotify")));
+    if (!url) rows.append(el("p", { class: "muted playlist-pending", text: "Our own event playlist on YouTube Music isn’t ready yet. Until then, open any track below on YouTube or Spotify." }));
+    card.append(rows);
     return card;
+  }
+  function listenLinks(s, a) {
+    const spotify = L.safeSpotifyUrl(s.spotify_url, "track");
+    return el("div", { class: "listen-on", role: "group", "aria-label": "Listen to " + s.title },
+      el("a", { href: s.url, class: "btn", target: "_blank", rel: "noopener noreferrer", "aria-label": "Open " + s.title + " by " + a.display_name + " on YouTube (opens in a new tab)", text: "YouTube ↗" }),
+      spotify ? el("a", { href: spotify, class: "btn btn-alt", target: "_blank", rel: "noopener noreferrer", "aria-label": "Open " + s.title + " by " + a.display_name + " on Spotify (opens in a new tab)", text: "Spotify ↗" }) : null);
   }
   function songRow(s, a, ctx) {
     const credited = s.artist_ids.map(id => idx.artists.get(id)).filter(Boolean);
@@ -58,7 +71,7 @@
       el("div", { class: "song-copy" }, ext(s.url, s.title, "track-title"),
         el("div", { class: "song-credits" }, credited.flatMap((artist, i) => i ? [document.createTextNode(" · "), artistLink(artist, ctx)] : [artistLink(artist, ctx)])),
         s.review_status !== "strong" && s.verification !== "source_reviewed" ? el("small", { class: "muted version", text: "Version may differ from the original release." }) : null),
-      el("a", { href: s.url, class: "btn", target: "_blank", rel: "noopener noreferrer", "aria-label": "Open " + s.title + " by " + a.display_name + " on YouTube (opens in a new tab)", text: "YouTube ↗" }));
+      listenLinks(s, a));
   }
   function readyToHear(rows, ctx) {
     const seen = new Set();
@@ -75,7 +88,7 @@
   }
   function lineupView(ctx) {
     const frag = document.createDocumentFragment();
-    frag.append(el("div", { class: "intro" }, el("span", { class: "eyebrow", text: "NOVEMBER 6–8 · TINKER FIELD" }), el("h1", { text: "EDC Orlando 2026" }), el("p", { class: "muted", text: "Find an artist, check their day, and try a track on YouTube." })));
+    frag.append(el("div", { class: "intro" }, el("span", { class: "eyebrow", text: "NOVEMBER 6–8 · TINKER FIELD" }), el("h1", { text: "EDC Orlando 2026" }), el("p", { class: "muted", text: "Find an artist, check their day, and try a track on YouTube or Spotify." })));
     const search = el("input", { id: "q", type: "search", value: ctx.q, autocomplete: "off", placeholder: "Artist name or B2B partner" });
     frag.append(el("label", { class: "search-label", for: "q", text: "Search artists" }), search);
     const days = el("div", { class: "days", role: "group", "aria-label": "Filter by day" });
@@ -91,7 +104,7 @@
       stages.forEach(s => sel.append(el("option", { value: s.stage_id, selected: ctx.stage === s.stage_id, text: s.display_name })));
       frag.append(sel);
     }
-    frag.append(el("div", { id: "featured" }), ...(L.validPlaylistUrl(playlist) ? [playlistCard()] : []),
+    frag.append(el("div", { id: "featured" }), ...(L.validPlaylistUrl(playlist) || L.officialSpotifyPlaylist(playlist) ? [playlistCard()] : []),
       el("div", { class: "section-heading lineup-heading" }, el("h2", { text: "Lineup" }), el("span", { class: "muted", text: "By day · alphabetical" })),
       el("p", { id: "count", class: "status", role: "status", "aria-live": "polite" }), el("ul", { id: "list", class: "list" }));
     main.replaceChildren(frag);
@@ -175,10 +188,10 @@
   }
   function listenView(ctx) {
     const frag = document.createDocumentFragment();
-    frag.append(el("div", { class: "intro" }, el("h1", { text: "Tracks" }), el("p", { class: "muted", text: idx.songs.length + " tracks from " + idx.songsByArtist.size + " lineup artists. Each opens on YouTube." })));
+    frag.append(el("div", { class: "intro" }, el("h1", { text: "Tracks" }), el("p", { class: "muted", text: idx.songs.length + " tracks from " + idx.songsByArtist.size + " lineup artists. Open each on YouTube, or on Spotify where it’s linked." })));
     const ul = el("ul", { class: "list" });
     idx.songs.forEach(s => { const a = idx.artists.get(s.artist_ids[0]); ul.append(el("li", {}, songRow(s, a, ctx))); });
-    frag.append(ul, playlistCard()); main.replaceChildren(frag);
+    frag.append(playlistCard(), ul); main.replaceChildren(frag);
   }
   function route() {
     if (!idx) return;

@@ -1,0 +1,31 @@
+name: Spotify link check (public oEmbed, no credentials)
+on:
+  pull_request:
+    paths:
+      - data/listening-room/songs.json
+      - data/listening-room/playlist.json
+      - scripts/check_spotify_links.py
+      - .github/workflows/spotify-links.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Every Spotify link resolves and names the same song
+        run: python3 scripts/check_spotify_links.py --report spotify-link-report.json
+      - name: Keep the report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: spotify-link-report
+          path: spotify-link-report.json
+          if-no-files-found: ignore

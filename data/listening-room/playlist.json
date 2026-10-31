@@ -1,8 +1,14 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "label": "EDC Orlando 2026 Playlist",
   "status": "pending_authorization",
   "url": null,
   "verified_cross_account": false,
-  "about": "One event-wide playlist is on the way. Songs will be ordered so every matched artist gets a spin before anyone repeats. For now, listen to the reviewed recordings in Listening Room."
+  "about": "One event-wide playlist is on the way. Songs will be ordered so every matched artist gets a spin before anyone repeats. For now, listen to the reviewed recordings in Listening Room.",
+  "official_spotify": {
+    "label": "Official EDC Orlando 2026 playlist",
+    "curator": "Insomniac",
+    "url": "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+    "note": "Curated and maintained by Insomniac on Spotify. Linked as-is; Listening Room does not edit or review it."
+  }
 }

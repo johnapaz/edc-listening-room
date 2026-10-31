@@ -1,10 +1,42 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "checked_on": "2026-10-31",
   "timezone": "America/New_York",
   "lineup_source_url": "https://orlando.edc.com/lineup/",
   "lineup_source_id": "lineup-text-2026-10-31",
   "schedule_status": "current_official_day_lists_with_separately_caveated_poster_times",
+  "sources": [
+    {
+      "source_id": "lineup-text-2026-10-31",
+      "kind": "organizer_day_list",
+      "checked_on": "2026-10-31",
+      "url": "https://orlando.edc.com/lineup/"
+    },
+    {
+      "source_id": "set-times-posters-2026-10-30",
+      "kind": "poster_transcription",
+      "checked_on": "2026-10-30",
+      "url": null,
+      "independently_verified": false
+    }
+  ],
+  "coverage": {
+    "appearances": 130,
+    "distinct_billings": 127,
+    "timed": 107,
+    "unknown_time": 23,
+    "unknown_stage": 23,
+    "by_day": {
+      "Friday": 43,
+      "Saturday": 43,
+      "Sunday": 44
+    },
+    "historical_only_ids": [
+      "edco26:2026-11-06:prospa",
+      "edco26:2026-11-06:prospa-b2b-josh-baker",
+      "edco26:2026-11-07:max-dean-b2b-luke-dean"
+    ]
+  },
   "performances": [
     {
       "performance_id": "edco26:2026-11-06:2ar",
@@ -33,7 +65,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:aat",
@@ -63,7 +105,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:aat",
+        "historical_billing": "AAT"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:adventure-club",
@@ -93,7 +145,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:adventure-club",
+        "historical_billing": "Adventure Club (Sunset Set)"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:afrojack",
@@ -123,7 +185,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:afrojack",
+        "historical_billing": "Afrojack"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:alesso",
@@ -153,7 +225,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:alesso",
+        "historical_billing": "Alesso (Sunset Set)"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:azzecca",
@@ -183,7 +265,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:azzecca",
+        "historical_billing": "Azzecca"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:benda-b2b-vastive",
@@ -218,7 +310,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:benda-b2b-vastive",
+        "historical_billing": "Benda B2B Vastive"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:big-florida",
@@ -248,7 +350,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:big-florida",
+        "historical_billing": "Big Florida"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:bou-b2b-kanine",
@@ -283,7 +395,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:bou-b2b-kanine",
+        "historical_billing": "Bou B2B Kanine"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:brunello",
@@ -313,7 +435,19 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [
+        "current-vs-poster-qualifier"
+      ],
+      "reconciliation": {
+        "status": "qualifier_changed",
+        "historical_performance_id": "edco26:2026-11-06:brunello",
+        "historical_billing": "Brunello (Sunset Set)"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:bullet-tooth-b2b-sidney-charles",
@@ -348,7 +482,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:bullet-tooth-b2b-sidney-charles",
+        "historical_billing": "Bullet Tooth B2B Sidney Charles"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:chantel-jeffries",
@@ -377,7 +521,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:chris-lorenzo",
@@ -407,7 +561,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:chris-lorenzo",
+        "historical_billing": "Chris Lorenzo"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:crespo",
@@ -436,7 +600,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:david-guetta",
@@ -466,7 +640,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:david-guetta",
+        "historical_billing": "David Guetta"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:eve-lauren",
@@ -495,7 +679,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:hayla",
@@ -525,7 +719,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:hayla",
+        "historical_billing": "HAYLA"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:idemi",
@@ -555,7 +759,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:idemi",
+        "historical_billing": "IDEMI"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:inbal",
@@ -585,7 +799,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:inbal",
+        "historical_billing": "Inbal"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:interplanetary-criminal",
@@ -615,7 +839,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:interplanetary-criminal",
+        "historical_billing": "Interplanetary Criminal"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:joa",
@@ -645,7 +879,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:joa",
+        "historical_billing": "JOA"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:josh-baker",
@@ -675,7 +919,19 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [
+        "lineup-prospa-josh-baker"
+      ],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:josh-baker",
+        "historical_billing": "Josh Baker"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:joshwa",
@@ -705,7 +961,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:joshwa",
+        "historical_billing": "Joshwa"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:kashovski",
@@ -734,7 +1000,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:kompany",
@@ -764,7 +1040,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:kompany",
+        "historical_billing": "Kompany"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:kream",
@@ -794,7 +1080,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:kream",
+        "historical_billing": "KREAM"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:level-up",
@@ -824,7 +1120,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:level-up",
+        "historical_billing": "Level Up"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:levity",
@@ -854,7 +1160,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:levity",
+        "historical_billing": "Levity"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:malugi",
@@ -884,7 +1200,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:malugi",
+        "historical_billing": "MALUGI (Sunset Set)"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:matthias",
@@ -914,7 +1240,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:matthias",
+        "historical_billing": "Matthias"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:mau-p",
@@ -944,7 +1280,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:mau-p",
+        "historical_billing": "Mau P"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:me-n-u",
@@ -973,7 +1319,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:mph",
@@ -1003,7 +1359,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:mph",
+        "historical_billing": "MPH"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:night-tales",
@@ -1032,7 +1398,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:obskur",
@@ -1062,7 +1438,19 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [
+        "current-vs-poster-qualifier"
+      ],
+      "reconciliation": {
+        "status": "qualifier_changed",
+        "historical_performance_id": "edco26:2026-11-06:obskur",
+        "historical_billing": "Obskür"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:omar-plus",
@@ -1092,7 +1480,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:omar-plus",
+        "historical_billing": "Omar+"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:pegassi",
@@ -1122,7 +1520,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:pegassi",
+        "historical_billing": "Pegassi"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:raje",
@@ -1152,7 +1560,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:raje",
+        "historical_billing": "RAJE"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:seeing-double",
@@ -1181,7 +1599,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:sloth",
@@ -1211,7 +1639,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:sloth",
+        "historical_billing": "Sloth"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:whethan",
@@ -1241,7 +1679,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:whethan",
+        "historical_billing": "Whethan"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:wooli",
@@ -1271,7 +1719,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:wooli",
+        "historical_billing": "Wooli"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-06:zack-martino",
@@ -1301,7 +1759,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-06:zack-martino",
+        "historical_billing": "Zack Martino"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:aaron-hibell",
@@ -1331,7 +1799,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:aaron-hibell",
+        "historical_billing": "Aaron Hibell"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:acraze-b2b-cid",
@@ -1366,7 +1844,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:acraze-b2b-cid",
+        "historical_billing": "ACRAZE B2B CID"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:alan-walker",
@@ -1396,7 +1884,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:alan-walker",
+        "historical_billing": "Alan Walker (Sunset Set)"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:alison-wonderland",
@@ -1426,7 +1924,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:alison-wonderland",
+        "historical_billing": "Alison Wonderland"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:alleycvt",
@@ -1456,7 +1964,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:alleycvt",
+        "historical_billing": "ALLEYCVT"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:allnightkev",
@@ -1485,7 +2003,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:alves",
@@ -1515,7 +2043,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:alves",
+        "historical_billing": "Alves"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:avello",
@@ -1545,7 +2083,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:avello",
+        "historical_billing": "AVELLO"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:ayybo",
@@ -1575,7 +2123,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:ayybo",
+        "historical_billing": "AYYBO"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:cc-love",
@@ -1604,7 +2162,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:chasewest",
@@ -1634,7 +2202,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:chasewest",
+        "historical_billing": "ChaseWest"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:dennis-cruz",
@@ -1664,7 +2242,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:dennis-cruz",
+        "historical_billing": "Dennis Cruz"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:devault",
@@ -1694,7 +2282,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:devault",
+        "historical_billing": "Devault (Sunset Set)"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:discip",
@@ -1724,7 +2322,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:discip",
+        "historical_billing": "Discip"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:disco-lines",
@@ -1754,7 +2362,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:disco-lines",
+        "historical_billing": "Disco Lines"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:fallon",
@@ -1784,7 +2402,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:fallon",
+        "historical_billing": "Fallon"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:franky-rizardo",
@@ -1814,7 +2442,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:franky-rizardo",
+        "historical_billing": "Franky Rizardo"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:fury-with-mc-dino",
@@ -1849,7 +2487,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:fury-with-mc-dino",
+        "historical_billing": "Fury with MC Dino"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:gabss",
@@ -1879,7 +2527,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:gabss",
+        "historical_billing": "Gabss"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:greg-99",
@@ -1909,7 +2567,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:greg-99",
+        "historical_billing": "Greg 99"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:jfuse",
@@ -1938,7 +2606,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:jkyl-hyde",
@@ -1968,7 +2646,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:jkyl-hyde",
+        "historical_billing": "Jkyl & Hyde"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:juos",
@@ -1997,7 +2685,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:kaskade",
@@ -2027,7 +2725,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:kaskade",
+        "historical_billing": "Kaskade"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:kinahau",
@@ -2057,7 +2765,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:kinahau",
+        "historical_billing": "KinAhau"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:landis",
@@ -2086,7 +2804,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:layz",
@@ -2116,7 +2844,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:layz",
+        "historical_billing": "LAYZ"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:luke-dean-b2b-george-smeddles",
@@ -2151,7 +2889,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:luke-dean-b2b-george-smeddles",
+        "historical_billing": "Luke Dean B2B George Smeddles (Sunset Set)"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:madvktm",
@@ -2181,7 +2929,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:madvktm",
+        "historical_billing": "MADVKTM"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:mai-iachetti",
@@ -2211,7 +2969,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:mai-iachetti",
+        "historical_billing": "Mai Iachetti"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:me-n-u",
@@ -2241,7 +3009,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:me-n-u",
+        "historical_billing": "Me n ü"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:miguelle-tons",
@@ -2271,7 +3049,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:miguelle-tons",
+        "historical_billing": "Miguelle & Tons"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:monoky",
@@ -2301,7 +3089,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:monoky",
+        "historical_billing": "Monoky"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:nico-moreno",
@@ -2331,7 +3129,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:nico-moreno",
+        "historical_billing": "Nico Moreno"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:raje",
@@ -2360,7 +3168,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:ray-volpe",
@@ -2390,7 +3208,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:ray-volpe",
+        "historical_billing": "Ray Volpe"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:roddy-lima",
@@ -2420,7 +3248,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:roddy-lima",
+        "historical_billing": "Roddy Lima"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:rommii",
@@ -2449,7 +3287,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:rossi",
@@ -2479,7 +3327,19 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [
+        "current-vs-poster-qualifier"
+      ],
+      "reconciliation": {
+        "status": "qualifier_changed",
+        "historical_performance_id": "edco26:2026-11-07:rossi",
+        "historical_billing": "Rossi. (Sunset Set)"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:skull-machine",
@@ -2509,7 +3369,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:skull-machine",
+        "historical_billing": "Skull Machine (Black Tiger Sex Machine x Kai Wachi)"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:steve-aoki",
@@ -2539,7 +3409,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:steve-aoki",
+        "historical_billing": "Steve Aoki"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:subsonic",
@@ -2569,7 +3449,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:subsonic",
+        "historical_billing": "Subsonic"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-07:twinsick",
@@ -2599,7 +3489,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-07:twinsick",
+        "historical_billing": "Twinsick"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:a-little-sound",
@@ -2629,7 +3529,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:a-little-sound",
+        "historical_billing": "A Little Sound"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:adrian-mills",
@@ -2659,7 +3569,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:adrian-mills",
+        "historical_billing": "Adrián Mills"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:alok",
@@ -2689,7 +3609,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:alok",
+        "historical_billing": "Alok"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:alves",
@@ -2718,7 +3648,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:andrea-quintero",
@@ -2747,7 +3687,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:ar-co",
@@ -2777,7 +3727,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:ar-co",
+        "historical_billing": "AR/CO"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:atliens",
@@ -2807,7 +3767,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:atliens",
+        "historical_billing": "ATLiens"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:boogie-t",
@@ -2837,7 +3807,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:boogie-t",
+        "historical_billing": "Boogie T"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:boys-noize-b2b-brutalismus-3000",
@@ -2872,7 +3852,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:boys-noize-b2b-brutalismus-3000",
+        "historical_billing": "Boys Noize B2B Brutalismus 3000"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:brosa",
@@ -2901,7 +3891,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:bryan-softwell-b2b-chini",
@@ -2935,7 +3935,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:chef-boyarbeatz",
@@ -2965,7 +3975,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:chef-boyarbeatz",
+        "historical_billing": "Chef Boyarbeatz"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:contra",
@@ -2995,7 +4015,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:contra",
+        "historical_billing": "CØNTRA"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:deorro-b2b-dj-diesel",
@@ -3030,7 +4060,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:deorro-b2b-dj-diesel",
+        "historical_billing": "Deorro B2B DJ Diesel"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:discovery-project",
@@ -3053,7 +4093,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:discovery-project",
+        "historical_billing": "Discovery Project"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:esse",
@@ -3083,7 +4133,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:esse",
+        "historical_billing": "ESSE"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:hardwell",
@@ -3113,7 +4173,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:hardwell",
+        "historical_billing": "Hardwell"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:holy-priest",
@@ -3143,7 +4213,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:holy-priest",
+        "historical_billing": "Holy Priest"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:i-hate-models",
@@ -3173,7 +4253,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:i-hate-models",
+        "historical_billing": "I Hate Models"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:ian-asher",
@@ -3203,7 +4293,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:ian-asher",
+        "historical_billing": "Ian Asher"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:jessica-audiffred",
@@ -3233,7 +4333,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:jessica-audiffred",
+        "historical_billing": "Jessica Audiffred"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:joe-vanditti",
@@ -3262,7 +4372,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:kaivon",
@@ -3292,7 +4412,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:kaivon",
+        "historical_billing": "Kaivon"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:ki-ki",
@@ -3322,7 +4452,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:ki-ki",
+        "historical_billing": "KI/KI"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:klangkuenstler",
@@ -3352,7 +4492,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:klangkuenstler",
+        "historical_billing": "Klangkuenstler"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:know-good",
@@ -3382,7 +4532,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:know-good",
+        "historical_billing": "Know Good"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:kofla",
@@ -3411,7 +4571,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:m81",
@@ -3441,7 +4611,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:m81",
+        "historical_billing": "M81!"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:maddix",
@@ -3471,7 +4651,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:maddix",
+        "historical_billing": "Maddix"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:marian-br",
@@ -3500,7 +4690,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:marlon-hoffstadt",
@@ -3530,7 +4730,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:marlon-hoffstadt",
+        "historical_billing": "Marlon Hoffstadt (Sunset Set)"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:martin-garrix",
@@ -3560,7 +4770,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:martin-garrix",
+        "historical_billing": "Martin Garrix"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:meduza",
@@ -3590,7 +4810,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:meduza",
+        "historical_billing": "Meduza"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:of-the-trees",
@@ -3620,7 +4850,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:of-the-trees",
+        "historical_billing": "Of The Trees (Sunset Set)"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:phrva",
@@ -3650,7 +4890,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:phrva",
+        "historical_billing": "phrva"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:ravenscoon",
@@ -3680,7 +4930,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:ravenscoon",
+        "historical_billing": "Ravenscoon"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:san-holo",
@@ -3710,7 +4970,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:san-holo",
+        "historical_billing": "San Holo (Wholesome Riddim Set)"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:shdw",
@@ -3740,7 +5010,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:shdw",
+        "historical_billing": "SHDW"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:sippy",
@@ -3770,7 +5050,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:sippy",
+        "historical_billing": "Sippy"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:slander",
@@ -3800,7 +5090,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:slander",
+        "historical_billing": "SLANDER (Sunset Set)"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:taiki-nulight",
@@ -3830,7 +5130,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:taiki-nulight",
+        "historical_billing": "Taiki Nulight"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:troyboi",
@@ -3860,7 +5170,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:troyboi",
+        "historical_billing": "TroyBoi"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:ultrathem",
@@ -3890,7 +5210,17 @@
         "lineup-text-2026-10-31",
         "set-times-posters-2026-10-30"
       ],
-      "issue_ids": []
+      "issue_ids": [],
+      "reconciliation": {
+        "status": "normalized_billing",
+        "historical_performance_id": "edco26:2026-11-08:ultrathem",
+        "historical_billing": "Ultrathem"
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": true,
+        "times": true
+      }
     },
     {
       "performance_id": "edco26:2026-11-08:william-kiss",
@@ -3919,7 +5249,17 @@
       "issue_ids": [],
       "source_ids": [
         "lineup-text-2026-10-31"
-      ]
+      ],
+      "reconciliation": {
+        "status": "unmatched_current",
+        "historical_performance_id": null,
+        "historical_billing": null
+      },
+      "public_eligibility": {
+        "lineup": true,
+        "stage": false,
+        "times": false
+      }
     }
   ]
 }
