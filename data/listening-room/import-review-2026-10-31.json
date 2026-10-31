@@ -8477,6 +8477,66 @@
         "content_type": "image/jpeg",
         "checked_on": "2026-10-31"
       }
+    },
+    {
+      "song_key": "source:hsCHrQ3Aoyk",
+      "title": "Never Drown",
+      "artist_ids": [
+        "artist:2ar"
+      ],
+      "video_id": "hsCHrQ3Aoyk",
+      "url": "https://www.youtube.com/watch?v=hsCHrQ3Aoyk",
+      "youtube_music_url": "https://music.youtube.com/watch?v=hsCHrQ3Aoyk",
+      "artwork_url": "https://img.youtube.com/vi/hsCHrQ3Aoyk/mqdefault.jpg",
+      "source_urls": [
+        "https://www.beatport.com/artist/2ar/899421",
+        "https://www.youtube.com/watch?v=hsCHrQ3Aoyk",
+        "https://www.youtube.com/channel/UCW6jJ9lsHH8lJRjxPbzRZIA"
+      ],
+      "youtube_title": "Never Drown",
+      "uploader": "Nick Steffen - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCW6jJ9lsHH8lJRjxPbzRZIA",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "source:KYERafLPwW4",
+      "title": "FREAK",
+      "artist_ids": [
+        "artist:eve-lauren"
+      ],
+      "video_id": "KYERafLPwW4",
+      "url": "https://www.youtube.com/watch?v=KYERafLPwW4",
+      "youtube_music_url": "https://music.youtube.com/watch?v=KYERafLPwW4",
+      "artwork_url": "https://img.youtube.com/vi/KYERafLPwW4/mqdefault.jpg",
+      "source_urls": [
+        "https://www.beatport.com/track/freak/24254646",
+        "https://www.youtube.com/watch?v=KYERafLPwW4",
+        "https://www.youtube.com/@traceamountsnyc"
+      ],
+      "youtube_title": "Eve Lauren - FREAK",
+      "uploader": "Trace Amounts NYC",
+      "uploader_url": "https://www.youtube.com/@traceamountsnyc",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
     }
   ],
   "publication_authorization": {
