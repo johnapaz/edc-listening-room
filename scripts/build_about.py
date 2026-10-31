@@ -16,6 +16,7 @@ import shutil
 import sys
 from datetime import date
 from pathlib import Path
+from urllib.parse import parse_qs
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "about-site"
@@ -33,6 +34,14 @@ ESC = html.escape
 
 class BuildError(ValueError):
     pass
+
+
+def normalize(value):
+    """Same folding as the app's search (lib.js normalize): strip accents, lowercase, squeeze spaces."""
+    import unicodedata
+    v = unicodedata.normalize("NFKD", str(value or ""))
+    v = "".join(ch for ch in v if not ("\u0300" <= ch <= "\u036f"))
+    return re.sub(r"\s+", " ", v.lower()).strip()
 
 
 def load(path):
@@ -115,6 +124,7 @@ class Renderer:
         self.stats = data.stats()
         self.slugs = {p["slug"]: p for p in pages}
         self.page_links = []  # (from_page, slug, anchor) checked after all pages render
+        self.ui_strings = set()  # UI copy quoted by the help pages; tests check the app still shows it
 
     def app_href(self, route):
         path, _, query = route.partition("?")
@@ -124,7 +134,23 @@ class Renderer:
                 raise BuildError(f"app link to unknown artist or performance: {route}")
         elif parts[0] not in ("lineup", "listen"):
             raise BuildError(f"unknown app route: {route}")
+        q = parse_qs(query).get("q", [""])[0]
+        if parts[0] == "lineup" and q and not self.search_hits(q):
+            raise BuildError(f"app search link finds no lineup entry: {route}")
         return APP + "#/" + route
+
+    def search_hits(self, query):
+        tokens = normalize(query).split(" ")
+        hits = []
+        for p in self.d.perf:
+            names = [p["display_name"]]
+            for aid in p["artist_ids"]:
+                a = self.d.artists.get(aid) or {}
+                names += [a.get("display_name", ""), a.get("search_name", "")] + list(a.get("aliases") or [])
+            hay = normalize(" ".join(names))
+            if all(t in hay for t in tokens):
+                hits.append(p)
+        return hits
 
     def app_link(self, route, text):
         return f'<a class="applink" href="{ESC(self.app_href(route))}">{text}</a>'
@@ -134,6 +160,10 @@ class Renderer:
 
     def directive(self, page, name, arg):
         args = [a.strip() for a in arg.split("|")] if arg else []
+        if name == "ui":
+            # Quoted interface copy. Rendered as-is; tests/test_about_site.py checks the app still contains it.
+            self.ui_strings.add(arg)
+            return ESC(arg)
         if name == "stat":
             if args[0] not in self.stats:
                 raise BuildError(f"{page['file']}: unknown stat {args[0]}")
@@ -216,6 +246,7 @@ class Renderer:
         if pl.get("status") == "published" and pl.get("verified_cross_account") is True and str(pl.get("url", "")).startswith("https://"):
             return (f'<p>The {ESC(pl.get("label") or "event playlist")} is ready. Open it from the {listen}; it plays on YouTube Music. '
                     "Songs rotate so every matched artist gets a spin before anyone repeats.</p>")
+        self.ui_strings.add("Coming soon")
         return ("<p>An event-wide playlist on YouTube Music is planned but not available yet. It won’t appear until it has been "
                 f"checked to play for everyone, not just the person who made it. Until then, the {listen} says “Not available” "
                 "instead of showing a link that doesn’t work. The plan is for songs to rotate so every artist gets a spin before anyone repeats.</p>")
@@ -421,7 +452,7 @@ def build(out=None):
     for f in sorted((SRC / "brand").iterdir()):
         if f.is_file():
             shutil.copyfile(f, out / f.name)
-    return {"pages": len(pages), "shots": len(shots), "stats": r.stats}
+    return {"pages": len(pages), "shots": len(shots), "stats": r.stats, "ui_strings": sorted(r.ui_strings)}
 
 
 if __name__ == "__main__":
