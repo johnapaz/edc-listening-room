@@ -104,7 +104,7 @@
       rows.forEach(p => {
         if (ctx.day === "all" && p.event_date !== previousDay) {
           const day = L.DAYS.find(d => d.key === p.event_date);
-          children.push(el("li", { class: "day-heading" }, el("h3", { text: day.long }), el("span", { class: "muted", text: rows.filter(x => x.event_date === p.event_date).length + " entries" })));
+          children.push(el("li", { class: "day-heading" }, el("h3", { text: day.long }), el("span", { class: "muted", text: rows.filter(x => x.event_date === p.event_date).length + (rows.filter(x => x.event_date === p.event_date).length === 1 ? " entry" : " entries") })));
           previousDay = p.event_date;
         }
         children.push(rowFor(p, ctx));
@@ -113,7 +113,11 @@
       if (!rows.length) list.append(el("li", { class: "empty" }, el("p", { text: "No artists match these filters." }), el("button", { class: "reset-filters", type: "button", text: "Clear filters" })));
       list.querySelector(".reset-filters")?.addEventListener("click", () => { ctx.q = ""; ctx.day = "all"; ctx.tracksOnly = false; ctx.stage = ""; location.hash = L.buildHash("lineup", ctx); });
     };
-    const sync = () => history.replaceState(null, "", L.buildHash("lineup", ctx));
+    const sync = () => {
+      history.replaceState(null, "", L.buildHash("lineup", ctx));
+      document.getElementById("tab-lineup").href = L.buildHash("lineup", ctx);
+      document.getElementById("tab-listen").href = L.buildHash("listen", ctx);
+    };
     search.addEventListener("input", () => { ctx.q = search.value; sync(); draw(); });
     musicFilter.addEventListener("click", e => {
       const b = e.target.closest("button[data-music]"); if (!b) return;

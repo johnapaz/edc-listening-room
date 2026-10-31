@@ -28,3 +28,5 @@
 @media(max-width:320px){.brand{font-size:.75rem}.header-help{font-size:.8125rem}.bar{gap:0}.day-heading{flex-wrap:wrap;gap:4px}.song-copy{flex-basis:calc(100% - 96px)}.artist-hero.no-art .hero-art{width:52px;height:52px}.artist-hero.no-art{gap:10px}}
 
 .ready{margin-bottom:24px}
+
+@media(min-width:900px){.music-card{display:flex;align-items:center;padding-left:8px}.music-card>.art-link{width:76px;min-width:76px}.feature-art{width:76px;height:44px}.music-copy{padding:0 8px;flex:1;min-width:0}.music-copy .artist-link{font-size:.8125rem}.music-copy .track-title{font-size:.75rem}.music-grid{gap:10px}}
