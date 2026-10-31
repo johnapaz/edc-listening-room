@@ -44,10 +44,10 @@ class ListeningRoomData(unittest.TestCase):
         else:
             self.assertIsNone(pl["url"])
 
-    def test_lineup_has_36_entries_per_day_and_no_invented_schedule(self):
+    def test_lineup_preserves_poster_and_prior_entries_without_inventing_schedule(self):
         rows = read("data/edco-2026/performances.json")["performances"]
         for day in ("2026-11-06", "2026-11-07", "2026-11-08"):
-            self.assertEqual(sum(r["event_date"] == day for r in rows), 36)
+            self.assertEqual(sum(r["event_date"] == day for r in rows), 36 if day == "2026-11-08" else 37)
         for r in rows:
             if r["schedule_status"] != "verified":
                 self.assertTrue(r["stage_id"] is None or r["schedule_status"] == "poster_transcribed")
@@ -77,6 +77,18 @@ class AppContract(unittest.TestCase):
         result = subprocess.run(["node", "--test", str(ROOT / "tests" / "listening_room.test.js")],
                                 capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+class PublicBuild(unittest.TestCase):
+    def test_public_artifact_excludes_private_sources_and_metadata(self):
+        result = subprocess.run(["python3", str(ROOT / "scripts/build_public_site.py")], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        out = ROOT / "public-site"
+        expected = {"index.html", "404.html", "_headers", "_redirects", "listening-room/index.html", "listening-room/app.js", "listening-room/lib.js", "listening-room/styles.css", "listening-room/about.html", "data/edco-2026/artists.json", "data/edco-2026/performances.json", "data/edco-2026/venues.json", "data/edco-2026/event.json", "data/listening-room/songs.json", "data/listening-room/playlist.json"}
+        self.assertEqual({str(p.relative_to(out)) for p in out.rglob("*") if p.is_file()}, expected)
+        for path in out.rglob("*.json"):
+            text = path.read_text()
+            self.assertNotIn("notion", text.lower())
+            self.assertNotIn("identity_evidence_ref", text)
 
 
 if __name__ == "__main__":

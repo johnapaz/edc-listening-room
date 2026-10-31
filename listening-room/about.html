@@ -22,7 +22,7 @@
 
     /* Header */
     .top{border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5;background:rgba(11,16,32,.92);backdrop-filter:blur(8px)}
-    .bar{display:flex;justify-content:space-between;align-items:center;min-height:56px;gap:10px}
+    .bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;min-height:56px;gap:10px;padding-block:8px}
     .brand{font-weight:900;letter-spacing:.14em;font-size:.85rem;color:var(--text);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;gap:8px}
     .brand:hover{color:var(--text)}
     .dot{width:10px;height:10px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 4px rgba(255,138,120,.18)}
@@ -126,7 +126,7 @@
 
       <section id="how" aria-labelledby="how-h">
         <p class="kicker">How it works</p>
-        <h2 id="how-h">Find it. Hear it.</h2>
+        <h2 id="how-h">From lineup to listening.</h2>
         <p class="muted">Three steps from a name on the poster to music in your ears.</p>
         <ol class="steps">
           <li><span class="n">01</span><h3>Find an act</h3><p>Search every act on the lineup by name, including back-to-back (B2B) sets.</p></li>
@@ -141,7 +141,7 @@
         <p class="muted">Every song link points to one specific recording that was reviewed for the right artist and the right version. We don’t send you to a YouTube search and hope for the best.</p>
         <div class="split">
           <div class="note"><h3>Some acts don’t have a song yet</h3><p>Their page says so plainly, and they’re still listed with their day. More songs are added as they’re checked.</p></div>
-          <div class="note warn"><h3>Set times only when confirmed</h3><p>Day assignments come from the official lineup. Stages and set times appear only once they’re confirmed. The order acts are listed in is not the running order.</p></div>
+          <div class="note warn"><h3>Set times only when confirmed</h3><p>Day assignments come from the official lineup. Some stages and set times are transcribed from organizer posters and are labeled as not yet cross-checked. Confirm them in the official schedule. The order acts are listed in is not the running order.</p></div>
         </div>
       </section>
 
@@ -175,7 +175,7 @@
           </details>
           <details>
             <summary>What do you collect about me?</summary>
-            <div class="a"><p>Nothing personal. There are no accounts, no sign-ups and no ad trackers. When you open a song, YouTube’s privacy policy applies on YouTube.</p></div>
+            <div class="a"><p>There are no Listening Room accounts, sign-ups, or ad trackers. Video artwork loads directly from YouTube, so Google receives ordinary connection information such as your IP address when those images load. Opening a song takes you to YouTube. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google’s privacy policy<span class="vh"> (opens in a new tab)</span> ↗</a> explains its practices.</p></div>
           </details>
           <details>
             <summary>I spotted a mistake. What should I do?</summary>

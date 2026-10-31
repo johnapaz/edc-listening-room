@@ -106,7 +106,9 @@
     const raw = String(hash || "").replace(/^#\/?/, "");
     const [path, qs = ""] = raw.split("?");
     const params = new URLSearchParams(qs);
-    const parts = path.split("/").filter(Boolean).map(decodeURIComponent);
+    let parts;
+    try { parts = path.split("/").filter(Boolean).map(decodeURIComponent); }
+    catch (_e) { parts = []; }
     const ctx = { day: validDay(params.get("day") || "all"), q: params.get("q") || "", stage: params.get("stage") || "" };
     if (parts[0] === "artist" && parts[1]) return { view: "artist", id: parts[1], ctx };
     if (parts[0] === "listen") return { view: "listen", ctx };
