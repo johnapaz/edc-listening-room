@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "source": "pilot/preview-approved.json (human-reviewed; owner-confirmed playback of the private preview)",
+  "songs": [
+    {
+      "artist_id": "artist:martin-garrix",
+      "title": "Carry You",
+      "video_id": "bz6taI5pDl0",
+      "url": "https://www.youtube.com/watch?v=bz6taI5pDl0",
+      "review_status": "strong",
+      "version_note": "Original (not extended/instrumental); video 3:36 vs MB 3:35.9"
+    },
+    {
+      "artist_id": "artist:i-hate-models",
+      "title": "Daydream",
+      "video_id": "U6EjUIefwiw",
+      "url": "https://www.youtube.com/watch?v=U6EjUIefwiw",
+      "review_status": "strong",
+      "version_note": "Original; video 7:44 vs MB 7:43"
+    },
+    {
+      "artist_id": "artist:a-little-sound",
+      "title": "Back To Back (B2B)",
+      "video_id": "HYCG79PxgFc",
+      "url": "https://www.youtube.com/watch?v=HYCG79PxgFc",
+      "review_status": "strong",
+      "version_note": "Original; video 2:56 vs MB 2:55.6"
+    },
+    {
+      "artist_id": "artist:a-little-sound",
+      "title": "Breathe",
+      "video_id": "Rv550gn6y8k",
+      "url": "https://www.youtube.com/watch?v=Rv550gn6y8k",
+      "review_status": "version_unresolved",
+      "version_note": "Official UKF video 3:33 (213s)"
+    },
+    {
+      "artist_id": "artist:a-little-sound",
+      "title": "Weed & Wine (Relax, Rewind)",
+      "video_id": "_M5O_ED_1aI",
+      "url": "https://www.youtube.com/watch?v=_M5O_ED_1aI",
+      "review_status": "good_pending_playback",
+      "version_note": "Friction & A Little Sound; video 3:04 vs MB 3:04"
+    },
+    {
+      "artist_id": "artist:a-little-sound",
+      "title": "Confide",
+      "video_id": "WimivlmnA9I",
+      "url": "https://www.youtube.com/watch?v=WimivlmnA9I",
+      "review_status": "good_pending_playback",
+      "version_note": "Technimatic ft. A Little Sound; video 4:30 vs MB 4:28"
+    },
+    {
+      "artist_id": "artist:a-little-sound",
+      "title": "Overload",
+      "video_id": "8I-QJlFSJdM",
+      "url": "https://www.youtube.com/watch?v=8I-QJlFSJdM",
+      "review_status": "good_pending_playback",
+      "version_note": "Annix ft. A Little Sound; video 3:40 vs MB 3:39"
+    },
+    {
+      "artist_id": "artist:ki-ki",
+      "title": "5 Mins Of Acid",
+      "video_id": "wtnrLTqmUKI",
+      "url": "https://www.youtube.com/watch?v=wtnrLTqmUKI",
+      "review_status": "strong",
+      "version_note": "Full 5:00 version (official music video, Armada)"
+    },
+    {
+      "artist_id": "artist:acraze",
+      "title": "Do It To It",
+      "video_id": "bnA7yJkAG30",
+      "url": "https://www.youtube.com/watch?v=bnA7yJkAG30",
+      "review_status": "strong",
+      "version_note": "feat. Cherish; video 2:38 vs MB 2:37.9"
+    },
+    {
+      "artist_id": "artist:cid",
+      "title": "Night Service Only",
+      "video_id": "Scc4CRVroPo",
+      "url": "https://www.youtube.com/watch?v=Scc4CRVroPo",
+      "review_status": "no_mb_match_source_id_only",
+      "version_note": "Official video edit (190 s, Spinnin')"
+    },
+    {
+      "artist_id": "artist:vastive",
+      "title": "Slaughter",
+      "video_id": "Ve_LOVTzbxM",
+      "url": "https://www.youtube.com/watch?v=Ve_LOVTzbxM",
+      "review_status": "strong_with_rounding_note",
+      "version_note": "Sullivan King & Vastive (Monstercat 2024-07-26); distributor video 3:09 vs label 3:08 / MB 188.667 s"
+    },
+    {
+      "artist_id": "artist:benda",
+      "title": "Poison Control",
+      "video_id": "oXhWSs0mRH4",
+      "url": "https://www.youtube.com/watch?v=oXhWSs0mRH4",
+      "review_status": "strong",
+      "version_note": "Original; official Benda - Topic auto-generated audio (Stem Disintermedia, released 2022-08-17, writer Niv Ben-David); video PT2M39S vs MB 158.367 s"
+    }
+  ]
+}

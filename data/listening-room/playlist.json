@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "label": "EDC Orlando 2026 Playlist",
+  "status": "pending_authorization",
+  "url": null,
+  "verified_cross_account": false,
+  "about": "One event-wide playlist is planned, ordered so each matched artist gets one song before any artist repeats (round robin). It has not been published: creating a shareable playlist needs separate owner authorization and cross-account playback testing. The private pilot playlist is unaffected and is not linked here."
+}
