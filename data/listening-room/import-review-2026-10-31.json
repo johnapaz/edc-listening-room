@@ -1185,12 +1185,3424 @@
         "content_type": "image/jpeg",
         "checked_on": "2026-10-31"
       }
+    },
+    {
+      "song_key": "spotify:50phRe11Y2nC2N968jVU53",
+      "title": "Wait (Featuring Offset & Vory)",
+      "artist_ids": [
+        "artist:chantel-jeffries"
+      ],
+      "video_id": "D74QfbZb7XI",
+      "url": "https://www.youtube.com/watch?v=D74QfbZb7XI",
+      "youtube_music_url": "https://music.youtube.com/watch?v=D74QfbZb7XI",
+      "artwork_url": "https://img.youtube.com/vi/D74QfbZb7XI/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/50phRe11Y2nC2N968jVU53",
+        "https://www.youtube.com/watch?v=D74QfbZb7XI",
+        "https://www.youtube.com/@chanteljeffries7574"
+      ],
+      "youtube_title": "Chantel Jeffries-wait(feat. Offset & Vory",
+      "uploader": "Chantel Jeffries",
+      "uploader_url": "https://www.youtube.com/@chanteljeffries7574",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:5a0NvHhS0BUHwbMDG5HfUA",
+      "title": "Pain Away",
+      "artist_ids": [
+        "artist:george-smeddles"
+      ],
+      "video_id": "xFTIx2bxtHY",
+      "url": "https://www.youtube.com/watch?v=xFTIx2bxtHY",
+      "youtube_music_url": "https://music.youtube.com/watch?v=xFTIx2bxtHY",
+      "artwork_url": "https://img.youtube.com/vi/xFTIx2bxtHY/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/5a0NvHhS0BUHwbMDG5HfUA",
+        "https://www.youtube.com/watch?v=xFTIx2bxtHY",
+        "https://www.youtube.com/channel/UCZQtxL7wUSNhx85dOWPLv8Q"
+      ],
+      "youtube_title": "Pain Away",
+      "uploader": "George Smeddles - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCZQtxL7wUSNhx85dOWPLv8Q",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:6RYWKixE2CPFXYsQLYKxwF",
+      "title": "Hypno Eyes",
+      "artist_ids": [
+        "artist:landis"
+      ],
+      "video_id": "Z-2UpTsklx4",
+      "url": "https://www.youtube.com/watch?v=Z-2UpTsklx4",
+      "youtube_music_url": "https://music.youtube.com/watch?v=Z-2UpTsklx4",
+      "artwork_url": "https://img.youtube.com/vi/Z-2UpTsklx4/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/6RYWKixE2CPFXYsQLYKxwF",
+        "https://www.youtube.com/watch?v=Z-2UpTsklx4",
+        "https://www.youtube.com/channel/UCvfy-iNhwInfLh4155UFc5w"
+      ],
+      "youtube_title": "Hypno Eyes",
+      "uploader": "Landis - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCvfy-iNhwInfLh4155UFc5w",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:0EbmaQ70TkmqLLO5E40sp1",
+      "title": "Clean Up",
+      "artist_ids": [
+        "artist:joe-vanditti"
+      ],
+      "video_id": "gK10VQuUKC0",
+      "url": "https://www.youtube.com/watch?v=gK10VQuUKC0",
+      "youtube_music_url": "https://music.youtube.com/watch?v=gK10VQuUKC0",
+      "artwork_url": "https://img.youtube.com/vi/gK10VQuUKC0/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/0EbmaQ70TkmqLLO5E40sp1",
+        "https://www.youtube.com/watch?v=gK10VQuUKC0",
+        "https://www.youtube.com/channel/UC-wN6BxHj3hRkvbO_pGeVSg"
+      ],
+      "youtube_title": "Clean Up",
+      "uploader": "Joe Vanditti - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UC-wN6BxHj3hRkvbO_pGeVSg",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:7JvuSIL5cAynqg8fE6BjeG",
+      "title": "Got It",
+      "artist_ids": [
+        "artist:william-kiss"
+      ],
+      "video_id": "-kfJ2CQAnmk",
+      "url": "https://www.youtube.com/watch?v=-kfJ2CQAnmk",
+      "youtube_music_url": "https://music.youtube.com/watch?v=-kfJ2CQAnmk",
+      "artwork_url": "https://img.youtube.com/vi/-kfJ2CQAnmk/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/7JvuSIL5cAynqg8fE6BjeG",
+        "https://www.youtube.com/watch?v=-kfJ2CQAnmk",
+        "https://www.youtube.com/channel/UCHspSi4ZUVOQlSzdnuRp7ZA"
+      ],
+      "youtube_title": "Got It",
+      "uploader": "William Kiss - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCHspSi4ZUVOQlSzdnuRp7ZA",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:0tNC27MPOGcggOBR6Nq1ib",
+      "title": "I Can Feel It",
+      "artist_ids": [
+        "artist:william-kiss"
+      ],
+      "video_id": "IMaqIsGIv-I",
+      "url": "https://www.youtube.com/watch?v=IMaqIsGIv-I",
+      "youtube_music_url": "https://music.youtube.com/watch?v=IMaqIsGIv-I",
+      "artwork_url": "https://img.youtube.com/vi/IMaqIsGIv-I/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/0tNC27MPOGcggOBR6Nq1ib",
+        "https://www.youtube.com/watch?v=IMaqIsGIv-I",
+        "https://www.youtube.com/channel/UCHspSi4ZUVOQlSzdnuRp7ZA"
+      ],
+      "youtube_title": "I Can Feel It",
+      "uploader": "William Kiss - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCHspSi4ZUVOQlSzdnuRp7ZA",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3nendcUDZLjsOpqlDaC2Vk",
+      "title": "Thing Called Love",
+      "artist_ids": [
+        "artist:landis",
+        "artist:crespo"
+      ],
+      "video_id": "cwL6T7UAE8o",
+      "url": "https://www.youtube.com/watch?v=cwL6T7UAE8o",
+      "youtube_music_url": "https://music.youtube.com/watch?v=cwL6T7UAE8o",
+      "artwork_url": "https://img.youtube.com/vi/cwL6T7UAE8o/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3nendcUDZLjsOpqlDaC2Vk",
+        "https://www.youtube.com/watch?v=cwL6T7UAE8o",
+        "https://www.youtube.com/@Cr2recordsofficial"
+      ],
+      "youtube_title": "Landis & Crespo - Thing Called Love",
+      "uploader": "Cr2 Records",
+      "uploader_url": "https://www.youtube.com/@Cr2recordsofficial",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4JAi6fdEddk9XpW23KYq2E",
+      "title": "Baile Bounce",
+      "artist_ids": [
+        "artist:rommii"
+      ],
+      "video_id": "w3CqaeYVupo",
+      "url": "https://www.youtube.com/watch?v=w3CqaeYVupo",
+      "youtube_music_url": "https://music.youtube.com/watch?v=w3CqaeYVupo",
+      "artwork_url": "https://img.youtube.com/vi/w3CqaeYVupo/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4JAi6fdEddk9XpW23KYq2E",
+        "https://www.youtube.com/watch?v=w3CqaeYVupo",
+        "https://www.youtube.com/channel/UChzI8YrlEoY6LcruX3pLoxw"
+      ],
+      "youtube_title": "Baile Bounce",
+      "uploader": "ROMMII - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UChzI8YrlEoY6LcruX3pLoxw",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:0zn0Ks71ih3Us53IUFGwJB",
+      "title": "CLOSER",
+      "artist_ids": [
+        "artist:brosa"
+      ],
+      "video_id": "A0AIKTs_fPA",
+      "url": "https://www.youtube.com/watch?v=A0AIKTs_fPA",
+      "youtube_music_url": "https://music.youtube.com/watch?v=A0AIKTs_fPA",
+      "artwork_url": "https://img.youtube.com/vi/A0AIKTs_fPA/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/0zn0Ks71ih3Us53IUFGwJB",
+        "https://www.youtube.com/watch?v=A0AIKTs_fPA",
+        "https://www.youtube.com/channel/UCN1Y9WG34STK0amJni5ETHQ"
+      ],
+      "youtube_title": "CLOSER",
+      "uploader": "Kelland - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCN1Y9WG34STK0amJni5ETHQ",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3uACrL488Qs7owiQ5C8OlI",
+      "title": "Ain't No Way",
+      "artist_ids": [
+        "artist:marian-br"
+      ],
+      "video_id": "5Aug8tdkSXc",
+      "url": "https://www.youtube.com/watch?v=5Aug8tdkSXc",
+      "youtube_music_url": "https://music.youtube.com/watch?v=5Aug8tdkSXc",
+      "artwork_url": "https://img.youtube.com/vi/5Aug8tdkSXc/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3uACrL488Qs7owiQ5C8OlI",
+        "https://www.youtube.com/watch?v=5Aug8tdkSXc",
+        "https://www.youtube.com/channel/UCuX8McpoTl0OdNVo8tOZmMw"
+      ],
+      "youtube_title": "Ain't No Way",
+      "uploader": "Marian (BR) - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCuX8McpoTl0OdNVo8tOZmMw",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3bjOYUVu6iWvKRr3KGCwc3",
+      "title": "Lamento Boliviano",
+      "artist_ids": [
+        "artist:kofla"
+      ],
+      "video_id": "GPm1o-AXCqY",
+      "url": "https://www.youtube.com/watch?v=GPm1o-AXCqY",
+      "youtube_music_url": "https://music.youtube.com/watch?v=GPm1o-AXCqY",
+      "artwork_url": "https://img.youtube.com/vi/GPm1o-AXCqY/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3bjOYUVu6iWvKRr3KGCwc3",
+        "https://www.youtube.com/watch?v=GPm1o-AXCqY",
+        "https://www.youtube.com/@distancemusic."
+      ],
+      "youtube_title": "Kofla - Lamento Boliviano",
+      "uploader": "Distance Music",
+      "uploader_url": "https://www.youtube.com/@distancemusic.",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:1qMdHgiv9rEXu9gBUUqLhI",
+      "title": "Side Man",
+      "artist_ids": [
+        "artist:juos"
+      ],
+      "video_id": "bu-YFV9w6R4",
+      "url": "https://www.youtube.com/watch?v=bu-YFV9w6R4",
+      "youtube_music_url": "https://music.youtube.com/watch?v=bu-YFV9w6R4",
+      "artwork_url": "https://img.youtube.com/vi/bu-YFV9w6R4/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/1qMdHgiv9rEXu9gBUUqLhI",
+        "https://www.youtube.com/watch?v=bu-YFV9w6R4",
+        "https://www.youtube.com/@Thrivemusic"
+      ],
+      "youtube_title": "Juos - Side Man (feat. Techno Tupac) [Official Visualizer]",
+      "uploader": "Thrive Music",
+      "uploader_url": "https://www.youtube.com/@Thrivemusic",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:2eaNaUP23JVuERkcS3A4ny",
+      "title": "Ghost",
+      "artist_ids": [
+        "artist:kashovski"
+      ],
+      "video_id": "Yu8keR7pAsc",
+      "url": "https://www.youtube.com/watch?v=Yu8keR7pAsc",
+      "youtube_music_url": "https://music.youtube.com/watch?v=Yu8keR7pAsc",
+      "artwork_url": "https://img.youtube.com/vi/Yu8keR7pAsc/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/2eaNaUP23JVuERkcS3A4ny",
+        "https://www.youtube.com/watch?v=Yu8keR7pAsc",
+        "https://www.youtube.com/channel/UC2qHiEr7HyXG36eFwXbPd5Q"
+      ],
+      "youtube_title": "Ghost",
+      "uploader": "Kashovski - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UC2qHiEr7HyXG36eFwXbPd5Q",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:1MmE8LRKy3QaNe0OmLGQyg",
+      "title": "Burn",
+      "artist_ids": [
+        "artist:kashovski"
+      ],
+      "video_id": "Da21reJFd1w",
+      "url": "https://www.youtube.com/watch?v=Da21reJFd1w",
+      "youtube_music_url": "https://music.youtube.com/watch?v=Da21reJFd1w",
+      "artwork_url": "https://img.youtube.com/vi/Da21reJFd1w/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/1MmE8LRKy3QaNe0OmLGQyg",
+        "https://www.youtube.com/watch?v=Da21reJFd1w",
+        "https://www.youtube.com/channel/UCb_tGI6QL3_YOFgwUk1MPvQ"
+      ],
+      "youtube_title": "Burn",
+      "uploader": "Kashovski - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCb_tGI6QL3_YOFgwUk1MPvQ",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4SCiQ0g7EogKafxuGdcWnd",
+      "title": "Cúrame",
+      "artist_ids": [
+        "artist:bryan-softwell"
+      ],
+      "video_id": "iO5OUMfvolg",
+      "url": "https://www.youtube.com/watch?v=iO5OUMfvolg",
+      "youtube_music_url": "https://music.youtube.com/watch?v=iO5OUMfvolg",
+      "artwork_url": "https://img.youtube.com/vi/iO5OUMfvolg/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4SCiQ0g7EogKafxuGdcWnd",
+        "https://www.youtube.com/watch?v=iO5OUMfvolg",
+        "https://www.youtube.com/channel/UCLQoK4eR-E-eF9KWT6zhwUQ"
+      ],
+      "youtube_title": "Cúrame",
+      "uploader": "Bryan Softwell - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCLQoK4eR-E-eF9KWT6zhwUQ",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:014B9aKiAvY8vwRCJc4uz1",
+      "title": "Like That",
+      "artist_ids": [
+        "artist:gabss"
+      ],
+      "video_id": "cOH5fAhgBb0",
+      "url": "https://www.youtube.com/watch?v=cOH5fAhgBb0",
+      "youtube_music_url": "https://music.youtube.com/watch?v=cOH5fAhgBb0",
+      "artwork_url": "https://img.youtube.com/vi/cOH5fAhgBb0/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/014B9aKiAvY8vwRCJc4uz1",
+        "https://www.youtube.com/watch?v=cOH5fAhgBb0",
+        "https://www.youtube.com/@diynamicmusic"
+      ],
+      "youtube_title": "Gabss, Losing Stereo - Like That",
+      "uploader": "DIYNAMIC",
+      "uploader_url": "https://www.youtube.com/@diynamicmusic",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:1rpdapoYtP0nk1zK01FZT9",
+      "title": "Work",
+      "artist_ids": [
+        "artist:gabss"
+      ],
+      "video_id": "QPi8IM9TqZU",
+      "url": "https://www.youtube.com/watch?v=QPi8IM9TqZU",
+      "youtube_music_url": "https://music.youtube.com/watch?v=QPi8IM9TqZU",
+      "artwork_url": "https://img.youtube.com/vi/QPi8IM9TqZU/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/1rpdapoYtP0nk1zK01FZT9",
+        "https://www.youtube.com/watch?v=QPi8IM9TqZU",
+        "https://www.youtube.com/channel/UC5cDBj1FGPgXAp8b4kRGLmw"
+      ],
+      "youtube_title": "Work",
+      "uploader": "Gabss - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UC5cDBj1FGPgXAp8b4kRGLmw",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:1eMUGMEWrvTXYWrPobq2dH",
+      "title": "Heute Nacht",
+      "artist_ids": [
+        "artist:maddix"
+      ],
+      "video_id": "tAdxIzs-vXU",
+      "url": "https://www.youtube.com/watch?v=tAdxIzs-vXU",
+      "youtube_music_url": "https://music.youtube.com/watch?v=tAdxIzs-vXU",
+      "artwork_url": "https://img.youtube.com/vi/tAdxIzs-vXU/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/1eMUGMEWrvTXYWrPobq2dH",
+        "https://www.youtube.com/watch?v=tAdxIzs-vXU",
+        "https://www.youtube.com/@Revealedrec"
+      ],
+      "youtube_title": "Maddix - Heute Nacht (Techno)",
+      "uploader": "Revealed Music",
+      "uploader_url": "https://www.youtube.com/@Revealedrec",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3hVySEjegjGhNCbwFBYrEk",
+      "title": "Holy Atlantis",
+      "artist_ids": [
+        "artist:holy-priest"
+      ],
+      "video_id": "GNfMrAsTc94",
+      "url": "https://www.youtube.com/watch?v=GNfMrAsTc94",
+      "youtube_music_url": "https://music.youtube.com/watch?v=GNfMrAsTc94",
+      "artwork_url": "https://img.youtube.com/vi/GNfMrAsTc94/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3hVySEjegjGhNCbwFBYrEk",
+        "https://www.youtube.com/watch?v=GNfMrAsTc94",
+        "https://www.youtube.com/@HOLYPRIEST_MUSIC"
+      ],
+      "youtube_title": "Holy Priest & Netherworld - Holy Atlantis (Official Musicvideo)",
+      "uploader": "HOLY PRIEST",
+      "uploader_url": "https://www.youtube.com/@HOLYPRIEST_MUSIC",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:2nWw7VrUn8Ijo45K6WIIna",
+      "title": "Vielleicht Vielleicht - Holy Priest & elMefti Remix",
+      "artist_ids": [
+        "artist:holy-priest"
+      ],
+      "video_id": "pgFGKGhLXfI",
+      "url": "https://www.youtube.com/watch?v=pgFGKGhLXfI",
+      "youtube_music_url": "https://music.youtube.com/watch?v=pgFGKGhLXfI",
+      "artwork_url": "https://img.youtube.com/vi/pgFGKGhLXfI/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/2nWw7VrUn8Ijo45K6WIIna",
+        "https://www.youtube.com/watch?v=pgFGKGhLXfI",
+        "https://www.youtube.com/@HOLYPRIEST_MUSIC"
+      ],
+      "youtube_title": "@MilleniumKid  & JBS - Vielleicht Vielleicht (Holy Priest & elMefti Remix) (Music Video)",
+      "uploader": "HOLY PRIEST",
+      "uploader_url": "https://www.youtube.com/@HOLYPRIEST_MUSIC",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4Akak3MSwvkk49TVmBwjvS",
+      "title": "BALL SO HARD",
+      "artist_ids": [
+        "artist:m81"
+      ],
+      "video_id": "A4D4Zjj-haA",
+      "url": "https://www.youtube.com/watch?v=A4D4Zjj-haA",
+      "youtube_music_url": "https://music.youtube.com/watch?v=A4D4Zjj-haA",
+      "artwork_url": "https://img.youtube.com/vi/A4D4Zjj-haA/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4Akak3MSwvkk49TVmBwjvS",
+        "https://www.youtube.com/watch?v=A4D4Zjj-haA",
+        "https://www.youtube.com/@m81sound"
+      ],
+      "youtube_title": "M81! - BALL SO HARD (Official Visualizer)",
+      "uploader": "M81!",
+      "uploader_url": "https://www.youtube.com/@m81sound",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:7uSupgnScNSahebyEiRitY",
+      "title": "FULL SEND",
+      "artist_ids": [
+        "artist:ravenscoon"
+      ],
+      "video_id": "5s45xSXUObQ",
+      "url": "https://www.youtube.com/watch?v=5s45xSXUObQ",
+      "youtube_music_url": "https://music.youtube.com/watch?v=5s45xSXUObQ",
+      "artwork_url": "https://img.youtube.com/vi/5s45xSXUObQ/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/7uSupgnScNSahebyEiRitY",
+        "https://www.youtube.com/watch?v=5s45xSXUObQ",
+        "https://www.youtube.com/channel/UCrz1SsV6KGRmpBqbYm5fdEw"
+      ],
+      "youtube_title": "FULL SEND",
+      "uploader": "Jantsen - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCrz1SsV6KGRmpBqbYm5fdEw",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:06DkHLbgIlfPGxe6YDS3Ph",
+      "title": "High Class",
+      "artist_ids": [
+        "artist:chasewest"
+      ],
+      "video_id": "HwkSdyaX4mU",
+      "url": "https://www.youtube.com/watch?v=HwkSdyaX4mU",
+      "youtube_music_url": "https://music.youtube.com/watch?v=HwkSdyaX4mU",
+      "artwork_url": "https://img.youtube.com/vi/HwkSdyaX4mU/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/06DkHLbgIlfPGxe6YDS3Ph",
+        "https://www.youtube.com/watch?v=HwkSdyaX4mU",
+        "https://www.youtube.com/channel/UCL_eF6FVa-Y0xtJsnD7xl2g"
+      ],
+      "youtube_title": "High Class",
+      "uploader": "ChaseWest - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCL_eF6FVa-Y0xtJsnD7xl2g",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:5ScWfZGzV29Pr9dk7gLl95",
+      "title": "Skull Machine",
+      "artist_ids": [
+        "artist:skull-machine"
+      ],
+      "video_id": "EDe8wvZg9OQ",
+      "url": "https://www.youtube.com/watch?v=EDe8wvZg9OQ",
+      "youtube_music_url": "https://music.youtube.com/watch?v=EDe8wvZg9OQ",
+      "artwork_url": "https://img.youtube.com/vi/EDe8wvZg9OQ/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/5ScWfZGzV29Pr9dk7gLl95",
+        "https://www.youtube.com/watch?v=EDe8wvZg9OQ",
+        "https://www.youtube.com/@blacktigersexmachine"
+      ],
+      "youtube_title": "Black Tiger Sex Machine x Kai Wachi - Skull Machine (ft. Wasiu) [Lyric Video]",
+      "uploader": "Black Tiger Sex Machine",
+      "uploader_url": "https://www.youtube.com/@blacktigersexmachine",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4MgH7JjZQAPgIBf0lrdbie",
+      "title": "Save Me",
+      "artist_ids": [
+        "artist:skull-machine"
+      ],
+      "video_id": "3iAvgLiHdqw",
+      "url": "https://www.youtube.com/watch?v=3iAvgLiHdqw",
+      "youtube_music_url": "https://music.youtube.com/watch?v=3iAvgLiHdqw",
+      "artwork_url": "https://img.youtube.com/vi/3iAvgLiHdqw/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4MgH7JjZQAPgIBf0lrdbie",
+        "https://www.youtube.com/watch?v=3iAvgLiHdqw",
+        "https://www.youtube.com/@blacktigersexmachine"
+      ],
+      "youtube_title": "Black Tiger Sex Machine x Kai Wachi - Save Me",
+      "uploader": "Black Tiger Sex Machine",
+      "uploader_url": "https://www.youtube.com/@blacktigersexmachine",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:523S2SOGiZ5q1VHiiSPxbg",
+      "title": "Bad Mamma Jamma - Extended Mix",
+      "artist_ids": [
+        "artist:monoky"
+      ],
+      "video_id": "aKzJb0EzXG8",
+      "url": "https://www.youtube.com/watch?v=aKzJb0EzXG8",
+      "youtube_music_url": "https://music.youtube.com/watch?v=aKzJb0EzXG8",
+      "artwork_url": "https://img.youtube.com/vi/aKzJb0EzXG8/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/523S2SOGiZ5q1VHiiSPxbg",
+        "https://www.youtube.com/watch?v=aKzJb0EzXG8",
+        "https://www.youtube.com/channel/UCvaxlxYGfpvK43xJx-UxLeA"
+      ],
+      "youtube_title": "Bad Mamma Jamma (Extended Mix)",
+      "uploader": "Itsbilly - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCvaxlxYGfpvK43xJx-UxLeA",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:5ZWJAsrrjXUBPv3tYxaHEN",
+      "title": "Disguise",
+      "artist_ids": [
+        "artist:taiki-nulight"
+      ],
+      "video_id": "ZvEnER-rPGE",
+      "url": "https://www.youtube.com/watch?v=ZvEnER-rPGE",
+      "youtube_music_url": "https://music.youtube.com/watch?v=ZvEnER-rPGE",
+      "artwork_url": "https://img.youtube.com/vi/ZvEnER-rPGE/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/5ZWJAsrrjXUBPv3tYxaHEN",
+        "https://www.youtube.com/watch?v=ZvEnER-rPGE",
+        "https://www.youtube.com/channel/UC3HNlJTfZluK5Ey3i8lZfgw"
+      ],
+      "youtube_title": "Disguise",
+      "uploader": "Taiki Nulight - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UC3HNlJTfZluK5Ey3i8lZfgw",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:1z1io5H0gfutwUNILCDshn",
+      "title": "Spanish Moss",
+      "artist_ids": [
+        "artist:of-the-trees"
+      ],
+      "video_id": "eOILsff2GOk",
+      "url": "https://www.youtube.com/watch?v=eOILsff2GOk",
+      "youtube_music_url": "https://music.youtube.com/watch?v=eOILsff2GOk",
+      "artwork_url": "https://img.youtube.com/vi/eOILsff2GOk/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/1z1io5H0gfutwUNILCDshn",
+        "https://www.youtube.com/watch?v=eOILsff2GOk",
+        "https://www.youtube.com/channel/UCbHHkvAgRiUmiXnWsJSvg7g"
+      ],
+      "youtube_title": "Spanish Moss",
+      "uploader": "Of The Trees - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCbHHkvAgRiUmiXnWsJSvg7g",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:69LK77IjL8NtKTgpMmRuCB",
+      "title": "Brackish",
+      "artist_ids": [
+        "artist:of-the-trees"
+      ],
+      "video_id": "dFxWITe5O2o",
+      "url": "https://www.youtube.com/watch?v=dFxWITe5O2o",
+      "youtube_music_url": "https://music.youtube.com/watch?v=dFxWITe5O2o",
+      "artwork_url": "https://img.youtube.com/vi/dFxWITe5O2o/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/69LK77IjL8NtKTgpMmRuCB",
+        "https://www.youtube.com/watch?v=dFxWITe5O2o",
+        "https://www.youtube.com/channel/UCbHHkvAgRiUmiXnWsJSvg7g"
+      ],
+      "youtube_title": "Brackish",
+      "uploader": "Of The Trees - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCbHHkvAgRiUmiXnWsJSvg7g",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:7Ei2LsA34MJPITPv72dvZw",
+      "title": "Heaven",
+      "artist_ids": [
+        "artist:alison-wonderland"
+      ],
+      "video_id": "bdSgqZoA_Ew",
+      "url": "https://www.youtube.com/watch?v=bdSgqZoA_Ew",
+      "youtube_music_url": "https://music.youtube.com/watch?v=bdSgqZoA_Ew",
+      "artwork_url": "https://img.youtube.com/vi/bdSgqZoA_Ew/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/7Ei2LsA34MJPITPv72dvZw",
+        "https://www.youtube.com/watch?v=bdSgqZoA_Ew",
+        "https://www.youtube.com/@AlisonWonderlandVEVO"
+      ],
+      "youtube_title": "Alison Wonderland, Ninajirachi - Heaven",
+      "uploader": "AlisonWonderlandVEVO",
+      "uploader_url": "https://www.youtube.com/@AlisonWonderlandVEVO",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:6HQZTHthmIW0QIefnOsSh1",
+      "title": "Fiesta",
+      "artist_ids": [
+        "artist:mph"
+      ],
+      "video_id": "CgwdkExqV3g",
+      "url": "https://www.youtube.com/watch?v=CgwdkExqV3g",
+      "youtube_music_url": "https://music.youtube.com/watch?v=CgwdkExqV3g",
+      "artwork_url": "https://img.youtube.com/vi/CgwdkExqV3g/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/6HQZTHthmIW0QIefnOsSh1",
+        "https://www.youtube.com/watch?v=CgwdkExqV3g",
+        "https://www.youtube.com/@UKF"
+      ],
+      "youtube_title": "MPH - Fiesta",
+      "uploader": "UKF",
+      "uploader_url": "https://www.youtube.com/@UKF",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4D3XVVyxjxNvZLXMhmF9x3",
+      "title": "Donnie Brasco",
+      "artist_ids": [
+        "artist:know-good"
+      ],
+      "video_id": "ezcQMS0Hj2c",
+      "url": "https://www.youtube.com/watch?v=ezcQMS0Hj2c",
+      "youtube_music_url": "https://music.youtube.com/watch?v=ezcQMS0Hj2c",
+      "artwork_url": "https://img.youtube.com/vi/ezcQMS0Hj2c/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4D3XVVyxjxNvZLXMhmF9x3",
+        "https://www.youtube.com/watch?v=ezcQMS0Hj2c",
+        "https://www.youtube.com/channel/UCK7Dp5LH-FNqdFB6UlpTN6Q"
+      ],
+      "youtube_title": "Donnie Brasco",
+      "uploader": "Know Good - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCK7Dp5LH-FNqdFB6UlpTN6Q",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3EB2capRBxxmTvW4fxYQht",
+      "title": "Bodies",
+      "artist_ids": [
+        "artist:know-good"
+      ],
+      "video_id": "amhDUhwd2aw",
+      "url": "https://www.youtube.com/watch?v=amhDUhwd2aw",
+      "youtube_music_url": "https://music.youtube.com/watch?v=amhDUhwd2aw",
+      "artwork_url": "https://img.youtube.com/vi/amhDUhwd2aw/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3EB2capRBxxmTvW4fxYQht",
+        "https://www.youtube.com/watch?v=amhDUhwd2aw",
+        "https://www.youtube.com/channel/UCK7Dp5LH-FNqdFB6UlpTN6Q"
+      ],
+      "youtube_title": "Bodies (feat. JEANLOUIS)",
+      "uploader": "Know Good - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCK7Dp5LH-FNqdFB6UlpTN6Q",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3Z23sDc2J9ZkmFiMStRoIp",
+      "title": "High On Me",
+      "artist_ids": [
+        "artist:rossi"
+      ],
+      "video_id": "FLIhogjXDRA",
+      "url": "https://www.youtube.com/watch?v=FLIhogjXDRA",
+      "youtube_music_url": "https://music.youtube.com/watch?v=FLIhogjXDRA",
+      "artwork_url": "https://img.youtube.com/vi/FLIhogjXDRA/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3Z23sDc2J9ZkmFiMStRoIp",
+        "https://www.youtube.com/watch?v=FLIhogjXDRA",
+        "https://www.youtube.com/@JazzyOfficial"
+      ],
+      "youtube_title": "Rossi. X Jazzy - High On Me (Lyric Video)",
+      "uploader": "Jazzy",
+      "uploader_url": "https://www.youtube.com/@JazzyOfficial",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:7ml6mms5SS6qahrXMYWSVw",
+      "title": "CLOSE YOUR EYES",
+      "artist_ids": [
+        "artist:san-holo"
+      ],
+      "video_id": "jHNCV86qwt0",
+      "url": "https://www.youtube.com/watch?v=jHNCV86qwt0",
+      "youtube_music_url": "https://music.youtube.com/watch?v=jHNCV86qwt0",
+      "artwork_url": "https://img.youtube.com/vi/jHNCV86qwt0/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/7ml6mms5SS6qahrXMYWSVw",
+        "https://www.youtube.com/watch?v=jHNCV86qwt0",
+        "https://www.youtube.com/@sanholobeats"
+      ],
+      "youtube_title": "CLOSE YOUR EYES [OFFICIAL VISUALIZER]",
+      "uploader": "SAN HOLO",
+      "uploader_url": "https://www.youtube.com/@sanholobeats",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4RV0l2NdRR6cZ6SWqneFvx",
+      "title": "Lotis Eater",
+      "artist_ids": [
+        "artist:boogie-t"
+      ],
+      "video_id": "2Oaih0oTnbg",
+      "url": "https://www.youtube.com/watch?v=2Oaih0oTnbg",
+      "youtube_music_url": "https://music.youtube.com/watch?v=2Oaih0oTnbg",
+      "artwork_url": "https://img.youtube.com/vi/2Oaih0oTnbg/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4RV0l2NdRR6cZ6SWqneFvx",
+        "https://www.youtube.com/watch?v=2Oaih0oTnbg",
+        "https://www.youtube.com/channel/UC8R-YSY2NmozZWHaRCg36Lw"
+      ],
+      "youtube_title": "Lotis Eater",
+      "uploader": "Boogie T - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UC8R-YSY2NmozZWHaRCg36Lw",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:5LgajY7TLsN0WzXza4Fkw8",
+      "title": "RUSH",
+      "artist_ids": [
+        "artist:sloth"
+      ],
+      "video_id": "OSGYBkybzCE",
+      "url": "https://www.youtube.com/watch?v=OSGYBkybzCE",
+      "youtube_music_url": "https://music.youtube.com/watch?v=OSGYBkybzCE",
+      "artwork_url": "https://img.youtube.com/vi/OSGYBkybzCE/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/5LgajY7TLsN0WzXza4Fkw8",
+        "https://www.youtube.com/watch?v=OSGYBkybzCE",
+        "https://www.youtube.com/channel/UCLfoBrra0nLsA_x5tpsFPHQ"
+      ],
+      "youtube_title": "RUSH",
+      "uploader": "Sloth - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCLfoBrra0nLsA_x5tpsFPHQ",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:1LOjIBinbAVfmVqqELvgLh",
+      "title": "ELECTRIC LOVE",
+      "artist_ids": [
+        "artist:avello"
+      ],
+      "video_id": "P4E6_6cveZc",
+      "url": "https://www.youtube.com/watch?v=P4E6_6cveZc",
+      "youtube_music_url": "https://music.youtube.com/watch?v=P4E6_6cveZc",
+      "artwork_url": "https://img.youtube.com/vi/P4E6_6cveZc/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/1LOjIBinbAVfmVqqELvgLh",
+        "https://www.youtube.com/watch?v=P4E6_6cveZc",
+        "https://www.youtube.com/@Thrivemusic"
+      ],
+      "youtube_title": "AVELLO - ELECTRIC LOVE (Official Audio)",
+      "uploader": "Thrive Music",
+      "uploader_url": "https://www.youtube.com/@Thrivemusic",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:1uyZGBnuSdTXjsvi6dKgiD",
+      "title": "Evoke",
+      "artist_ids": [
+        "artist:contra"
+      ],
+      "video_id": "Lgwt1qxHCpo",
+      "url": "https://www.youtube.com/watch?v=Lgwt1qxHCpo",
+      "youtube_music_url": "https://music.youtube.com/watch?v=Lgwt1qxHCpo",
+      "artwork_url": "https://img.youtube.com/vi/Lgwt1qxHCpo/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/1uyZGBnuSdTXjsvi6dKgiD",
+        "https://www.youtube.com/watch?v=Lgwt1qxHCpo",
+        "https://www.youtube.com/channel/UCuhEuHdpU_id2mTE7vXnEnw"
+      ],
+      "youtube_title": "Evoke",
+      "uploader": "CØNTRA - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCuhEuHdpU_id2mTE7vXnEnw",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4bRMcJ517G0Zda8VmFZCZB",
+      "title": "What I Can Do",
+      "artist_ids": [
+        "artist:contra"
+      ],
+      "video_id": "Xn_Ka9nVFLg",
+      "url": "https://www.youtube.com/watch?v=Xn_Ka9nVFLg",
+      "youtube_music_url": "https://music.youtube.com/watch?v=Xn_Ka9nVFLg",
+      "artwork_url": "https://img.youtube.com/vi/Xn_Ka9nVFLg/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4bRMcJ517G0Zda8VmFZCZB",
+        "https://www.youtube.com/watch?v=Xn_Ka9nVFLg",
+        "https://www.youtube.com/channel/UCuhEuHdpU_id2mTE7vXnEnw"
+      ],
+      "youtube_title": "What I Can Do",
+      "uploader": "CØNTRA - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCuhEuHdpU_id2mTE7vXnEnw",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4ZmjEc72ASdMpRVYDeF9Z7",
+      "title": "Desire",
+      "artist_ids": [
+        "artist:zack-martino"
+      ],
+      "video_id": "_khcC8h55RI",
+      "url": "https://www.youtube.com/watch?v=_khcC8h55RI",
+      "youtube_music_url": "https://music.youtube.com/watch?v=_khcC8h55RI",
+      "artwork_url": "https://img.youtube.com/vi/_khcC8h55RI/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4ZmjEc72ASdMpRVYDeF9Z7",
+        "https://www.youtube.com/watch?v=_khcC8h55RI",
+        "https://www.youtube.com/channel/UCCsSnCcVtkzlKyE7xVlkyZQ"
+      ],
+      "youtube_title": "Desire",
+      "uploader": "Zack Martino - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCCsSnCcVtkzlKyE7xVlkyZQ",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4rtz2VliXObZALpQghDO5K",
+      "title": "Till I Found You",
+      "artist_ids": [
+        "artist:zack-martino"
+      ],
+      "video_id": "Ba0lEz3SEq4",
+      "url": "https://www.youtube.com/watch?v=Ba0lEz3SEq4",
+      "youtube_music_url": "https://music.youtube.com/watch?v=Ba0lEz3SEq4",
+      "artwork_url": "https://img.youtube.com/vi/Ba0lEz3SEq4/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4rtz2VliXObZALpQghDO5K",
+        "https://www.youtube.com/watch?v=Ba0lEz3SEq4",
+        "https://www.youtube.com/channel/UCCsSnCcVtkzlKyE7xVlkyZQ"
+      ],
+      "youtube_title": "Till I Found You",
+      "uploader": "Zack Martino - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCCsSnCcVtkzlKyE7xVlkyZQ",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:2XXOFINEkzVaszziVzRQj2",
+      "title": "Fotopaparazzi",
+      "artist_ids": [
+        "artist:steve-aoki",
+        "artist:jessica-audiffred"
+      ],
+      "video_id": "D6hkEWodDaE",
+      "url": "https://www.youtube.com/watch?v=D6hkEWodDaE",
+      "youtube_music_url": "https://music.youtube.com/watch?v=D6hkEWodDaE",
+      "artwork_url": "https://img.youtube.com/vi/D6hkEWodDaE/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/2XXOFINEkzVaszziVzRQj2",
+        "https://www.youtube.com/watch?v=D6hkEWodDaE",
+        "https://www.youtube.com/@SteveAoki"
+      ],
+      "youtube_title": "Steve Aoki, Jessica Audiffred - Fotopaparazzi (ft. Jon Z) [Official Music Video]",
+      "uploader": "Steve Aoki",
+      "uploader_url": "https://www.youtube.com/@SteveAoki",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:1A0yrRs7GAe1gbCklYE6wl",
+      "title": "Green Light",
+      "artist_ids": [
+        "artist:joa"
+      ],
+      "video_id": "jVY3umEyPiw",
+      "url": "https://www.youtube.com/watch?v=jVY3umEyPiw",
+      "youtube_music_url": "https://music.youtube.com/watch?v=jVY3umEyPiw",
+      "artwork_url": "https://img.youtube.com/vi/jVY3umEyPiw/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/1A0yrRs7GAe1gbCklYE6wl",
+        "https://www.youtube.com/watch?v=jVY3umEyPiw",
+        "https://www.youtube.com/channel/UCyXzD6htR66Wx8A7gdeu31A"
+      ],
+      "youtube_title": "Green Light",
+      "uploader": "JOA - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCyXzD6htR66Wx8A7gdeu31A",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:273hZiLcekoS5dDMHZn0uM",
+      "title": "Turbulence",
+      "artist_ids": [
+        "artist:shdw"
+      ],
+      "video_id": "I4g3gBrbMmg",
+      "url": "https://www.youtube.com/watch?v=I4g3gBrbMmg",
+      "youtube_music_url": "https://music.youtube.com/watch?v=I4g3gBrbMmg",
+      "artwork_url": "https://img.youtube.com/vi/I4g3gBrbMmg/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/273hZiLcekoS5dDMHZn0uM",
+        "https://www.youtube.com/watch?v=I4g3gBrbMmg",
+        "https://www.youtube.com/channel/UC6boAHTVp6vSQJD4VvtIlDg"
+      ],
+      "youtube_title": "Turbulence",
+      "uploader": "SHDW - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UC6boAHTVp6vSQJD4VvtIlDg",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:6IDywtwTrAkEsmJkPSNs27",
+      "title": "Toter Schmetterling - Single Edit",
+      "artist_ids": [
+        "artist:klangkuenstler"
+      ],
+      "video_id": "dSihYdohYy0",
+      "url": "https://www.youtube.com/watch?v=dSihYdohYy0",
+      "youtube_music_url": "https://music.youtube.com/watch?v=dSihYdohYy0",
+      "artwork_url": "https://img.youtube.com/vi/dSihYdohYy0/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/6IDywtwTrAkEsmJkPSNs27",
+        "https://www.youtube.com/watch?v=dSihYdohYy0",
+        "https://www.youtube.com/channel/UCiKYs9p3BdEO44ZBeNCkJWA"
+      ],
+      "youtube_title": "Toter Schmetterling (Single Edit)",
+      "uploader": "Klangkuenstler - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCiKYs9p3BdEO44ZBeNCkJWA",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:6m5LSzsU466ynNvEkxoctM",
+      "title": "Sound Of The Sunrise",
+      "artist_ids": [
+        "artist:ar-co"
+      ],
+      "video_id": "g2Qa2GF6pc8",
+      "url": "https://www.youtube.com/watch?v=g2Qa2GF6pc8",
+      "youtube_music_url": "https://music.youtube.com/watch?v=g2Qa2GF6pc8",
+      "artwork_url": "https://img.youtube.com/vi/g2Qa2GF6pc8/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/6m5LSzsU466ynNvEkxoctM",
+        "https://www.youtube.com/watch?v=g2Qa2GF6pc8",
+        "https://www.youtube.com/@wearearcoofficial"
+      ],
+      "youtube_title": "AR/CO X Sistek - Sound of the Sunrise [Official Visualiser]",
+      "uploader": "ARCO",
+      "uploader_url": "https://www.youtube.com/@wearearcoofficial",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:7yG1WnAViThzokX5FLL24v",
+      "title": "METAVERSO",
+      "artist_ids": [
+        "artist:adrian-mills"
+      ],
+      "video_id": "1vddrx3IE5A",
+      "url": "https://www.youtube.com/watch?v=1vddrx3IE5A",
+      "youtube_music_url": "https://music.youtube.com/watch?v=1vddrx3IE5A",
+      "artwork_url": "https://img.youtube.com/vi/1vddrx3IE5A/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/7yG1WnAViThzokX5FLL24v",
+        "https://www.youtube.com/watch?v=1vddrx3IE5A",
+        "https://www.youtube.com/@Adri%C3%A1nMills240"
+      ],
+      "youtube_title": "ADRIÁN MILLS FT. PABLO185  - METAVERSO",
+      "uploader": "Adrián Mills",
+      "uploader_url": "https://www.youtube.com/@Adri%C3%A1nMills240",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:19hfnO9fYQ5Dq4ZTSvfW24",
+      "title": "Perfect on Paper",
+      "artist_ids": [
+        "artist:twinsick"
+      ],
+      "video_id": "eEFL2Ylb8kc",
+      "url": "https://www.youtube.com/watch?v=eEFL2Ylb8kc",
+      "youtube_music_url": "https://music.youtube.com/watch?v=eEFL2Ylb8kc",
+      "artwork_url": "https://img.youtube.com/vi/eEFL2Ylb8kc/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/19hfnO9fYQ5Dq4ZTSvfW24",
+        "https://www.youtube.com/watch?v=eEFL2Ylb8kc",
+        "https://www.youtube.com/@twinsickvevo6016"
+      ],
+      "youtube_title": "TWINSICK, EVAN GIIA - Perfect on Paper (Official Video)",
+      "uploader": "TWINSICKVEVO",
+      "uploader_url": "https://www.youtube.com/@twinsickvevo6016",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:6LBVBJN2rdpOADp3RozGKC",
+      "title": "LOW",
+      "artist_ids": [
+        "artist:hardwell"
+      ],
+      "video_id": "TGzLdVhsZsc",
+      "url": "https://www.youtube.com/watch?v=TGzLdVhsZsc",
+      "youtube_music_url": "https://music.youtube.com/watch?v=TGzLdVhsZsc",
+      "artwork_url": "https://img.youtube.com/vi/TGzLdVhsZsc/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/6LBVBJN2rdpOADp3RozGKC",
+        "https://www.youtube.com/watch?v=TGzLdVhsZsc",
+        "https://www.youtube.com/@hardwell"
+      ],
+      "youtube_title": "Hardwell, Azteck & Dr Phunk - LOW (Official Lyric Video)",
+      "uploader": "Hardwell",
+      "uploader_url": "https://www.youtube.com/@hardwell",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:2YVizOAT1yNq7Say1AhrJR",
+      "title": "FVKVRVND",
+      "artist_ids": [
+        "artist:boys-noize"
+      ],
+      "video_id": "yVRcrlevPR4",
+      "url": "https://www.youtube.com/watch?v=yVRcrlevPR4",
+      "youtube_music_url": "https://music.youtube.com/watch?v=yVRcrlevPR4",
+      "artwork_url": "https://img.youtube.com/vi/yVRcrlevPR4/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/2YVizOAT1yNq7Say1AhrJR",
+        "https://www.youtube.com/watch?v=yVRcrlevPR4",
+        "https://www.youtube.com/@boysnoize"
+      ],
+      "youtube_title": "Boys Noize - FVKVRVND",
+      "uploader": "BOYS NOIZE",
+      "uploader_url": "https://www.youtube.com/@boysnoize",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4G8kDpgyrmgDiILzPIUnpe",
+      "title": "BANG YOUR HEAD",
+      "artist_ids": [
+        "artist:dj-diesel"
+      ],
+      "video_id": "RTFF9fd1PnM",
+      "url": "https://www.youtube.com/watch?v=RTFF9fd1PnM",
+      "youtube_music_url": "https://music.youtube.com/watch?v=RTFF9fd1PnM",
+      "artwork_url": "https://img.youtube.com/vi/RTFF9fd1PnM/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4G8kDpgyrmgDiILzPIUnpe",
+        "https://www.youtube.com/watch?v=RTFF9fd1PnM",
+        "https://www.youtube.com/@Monstercat"
+      ],
+      "youtube_title": "DIESEL & Hairitage - BANG YOUR HEAD [Monstercat Release]",
+      "uploader": "Monstercat Uncaged",
+      "uploader_url": "https://www.youtube.com/@Monstercat",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3ekLXHhFW8qI6FZDE6Xx9l",
+      "title": "One Last Breath - Remix",
+      "artist_ids": [
+        "artist:atliens"
+      ],
+      "video_id": "9RgE0T27zhY",
+      "url": "https://www.youtube.com/watch?v=9RgE0T27zhY",
+      "youtube_music_url": "https://music.youtube.com/watch?v=9RgE0T27zhY",
+      "artwork_url": "https://img.youtube.com/vi/9RgE0T27zhY/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3ekLXHhFW8qI6FZDE6Xx9l",
+        "https://www.youtube.com/watch?v=9RgE0T27zhY",
+        "https://www.youtube.com/@ATLiens"
+      ],
+      "youtube_title": "Creed - One Last Breath (ATLiens Remix)",
+      "uploader": "ATLiens",
+      "uploader_url": "https://www.youtube.com/@ATLiens",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:6KTJrH8rLM4TefZcc9XFQF",
+      "title": "Black Sheep",
+      "artist_ids": [
+        "artist:atliens"
+      ],
+      "video_id": "NCOQBZgncpQ",
+      "url": "https://www.youtube.com/watch?v=NCOQBZgncpQ",
+      "youtube_music_url": "https://music.youtube.com/watch?v=NCOQBZgncpQ",
+      "artwork_url": "https://img.youtube.com/vi/NCOQBZgncpQ/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/6KTJrH8rLM4TefZcc9XFQF",
+        "https://www.youtube.com/watch?v=NCOQBZgncpQ",
+        "https://www.youtube.com/@ATLiens"
+      ],
+      "youtube_title": "ATLiens - BLACK SHEEP (feat. GG Magree)",
+      "uploader": "ATLiens",
+      "uploader_url": "https://www.youtube.com/@ATLiens",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:0tAFy8LVdMQgW6A6Nq7olS",
+      "title": "Do You?",
+      "artist_ids": [
+        "artist:troyboi"
+      ],
+      "video_id": "9Z7qVahsIfE",
+      "url": "https://www.youtube.com/watch?v=9Z7qVahsIfE",
+      "youtube_music_url": "https://music.youtube.com/watch?v=9Z7qVahsIfE",
+      "artwork_url": "https://img.youtube.com/vi/9Z7qVahsIfE/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/0tAFy8LVdMQgW6A6Nq7olS",
+        "https://www.youtube.com/watch?v=9Z7qVahsIfE",
+        "https://www.youtube.com/channel/UCvEKwcnBGwsDDLnftenNM1A"
+      ],
+      "youtube_title": "Do You?",
+      "uploader": "TroyBoi - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCvEKwcnBGwsDDLnftenNM1A",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:2MsgPJQZMfAoDyXAfqqPZs",
+      "title": "I Feel It",
+      "artist_ids": [
+        "artist:kaivon"
+      ],
+      "video_id": "_kG1tkc1q0A",
+      "url": "https://www.youtube.com/watch?v=_kG1tkc1q0A",
+      "youtube_music_url": "https://music.youtube.com/watch?v=_kG1tkc1q0A",
+      "artwork_url": "https://img.youtube.com/vi/_kG1tkc1q0A/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/2MsgPJQZMfAoDyXAfqqPZs",
+        "https://www.youtube.com/watch?v=_kG1tkc1q0A",
+        "https://www.youtube.com/@kaivonofficial"
+      ],
+      "youtube_title": "Kaivon - I Feel It",
+      "uploader": "KAIVON",
+      "uploader_url": "https://www.youtube.com/@kaivonofficial",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3TmTEN2zy0cyYMjiviWbMK",
+      "title": "I Love You.",
+      "artist_ids": [
+        "artist:kaivon"
+      ],
+      "video_id": "bfDoWCzFcBE",
+      "url": "https://www.youtube.com/watch?v=bfDoWCzFcBE",
+      "youtube_music_url": "https://music.youtube.com/watch?v=bfDoWCzFcBE",
+      "artwork_url": "https://img.youtube.com/vi/bfDoWCzFcBE/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3TmTEN2zy0cyYMjiviWbMK",
+        "https://www.youtube.com/watch?v=bfDoWCzFcBE",
+        "https://www.youtube.com/channel/UCzxl1RqvoZVHg3pHApRRI3A"
+      ],
+      "youtube_title": "I Love You.",
+      "uploader": "Kaivon - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCzxl1RqvoZVHg3pHApRRI3A",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:0tUGYyimvKEBLd43acJivF",
+      "title": "Pretty",
+      "artist_ids": [
+        "artist:kaivon"
+      ],
+      "video_id": "_nl5Sl7YbEg",
+      "url": "https://www.youtube.com/watch?v=_nl5Sl7YbEg",
+      "youtube_music_url": "https://music.youtube.com/watch?v=_nl5Sl7YbEg",
+      "artwork_url": "https://img.youtube.com/vi/_nl5Sl7YbEg/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/0tUGYyimvKEBLd43acJivF",
+        "https://www.youtube.com/watch?v=_nl5Sl7YbEg",
+        "https://www.youtube.com/@kaivonofficial"
+      ],
+      "youtube_title": "Kaivon x Emilia Ali - Pretty (Official Visualizer)",
+      "uploader": "KAIVON",
+      "uploader_url": "https://www.youtube.com/@kaivonofficial",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:5uxwxuFRvmwYr3rLn81k8G",
+      "title": "YOUR EYES",
+      "artist_ids": [
+        "artist:me-n-u"
+      ],
+      "video_id": "Af8lfVSknvA",
+      "url": "https://www.youtube.com/watch?v=Af8lfVSknvA",
+      "youtube_music_url": "https://music.youtube.com/watch?v=Af8lfVSknvA",
+      "artwork_url": "https://img.youtube.com/vi/Af8lfVSknvA/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/5uxwxuFRvmwYr3rLn81k8G",
+        "https://www.youtube.com/watch?v=Af8lfVSknvA",
+        "https://www.youtube.com/channel/UCTCe3dFErqGfxHG93aT1dvg"
+      ],
+      "youtube_title": "YOUR EYES",
+      "uploader": "me n ü - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCTCe3dFErqGfxHG93aT1dvg",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:77WI2HaRmm2no6NqSA3G2c",
+      "title": "Take It All",
+      "artist_ids": [
+        "artist:subsonic"
+      ],
+      "video_id": "jz2RVRH5iSc",
+      "url": "https://www.youtube.com/watch?v=jz2RVRH5iSc",
+      "youtube_music_url": "https://music.youtube.com/watch?v=jz2RVRH5iSc",
+      "artwork_url": "https://img.youtube.com/vi/jz2RVRH5iSc/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/77WI2HaRmm2no6NqSA3G2c",
+        "https://www.youtube.com/watch?v=jz2RVRH5iSc",
+        "https://www.youtube.com/@UKFDrumandBass"
+      ],
+      "youtube_title": "Subsonic & Stealth - Take It All",
+      "uploader": "UKF Drum & Bass",
+      "uploader_url": "https://www.youtube.com/@UKFDrumandBass",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:1PqolJAHpk7lJH4jXu9ANN",
+      "title": "All I Need",
+      "artist_ids": [
+        "artist:subsonic"
+      ],
+      "video_id": "FYd7saNsQfE",
+      "url": "https://www.youtube.com/watch?v=FYd7saNsQfE",
+      "youtube_music_url": "https://music.youtube.com/watch?v=FYd7saNsQfE",
+      "artwork_url": "https://img.youtube.com/vi/FYd7saNsQfE/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/1PqolJAHpk7lJH4jXu9ANN",
+        "https://www.youtube.com/watch?v=FYd7saNsQfE",
+        "https://www.youtube.com/@Bassrush"
+      ],
+      "youtube_title": "Subsonic - All I Need | Bassrush Records",
+      "uploader": "Bassrush",
+      "uploader_url": "https://www.youtube.com/@Bassrush",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:1AVZ3Q3OwCYWoKtbeW0lGu",
+      "title": "Los Angeles Freestyle",
+      "artist_ids": [
+        "artist:kinahau"
+      ],
+      "video_id": "P3xA3-ZrmEc",
+      "url": "https://www.youtube.com/watch?v=P3xA3-ZrmEc",
+      "youtube_music_url": "https://music.youtube.com/watch?v=P3xA3-ZrmEc",
+      "artwork_url": "https://img.youtube.com/vi/P3xA3-ZrmEc/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/1AVZ3Q3OwCYWoKtbeW0lGu",
+        "https://www.youtube.com/watch?v=P3xA3-ZrmEc",
+        "https://www.youtube.com/channel/UC43cgWs55UsStCeyy93nLrg"
+      ],
+      "youtube_title": "Los Angeles Freestyle",
+      "uploader": "KinAhau - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UC43cgWs55UsStCeyy93nLrg",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:6XtFbNwhLEQnWXaasf2mwL",
+      "title": "No Le Bajes - Radio Mix",
+      "artist_ids": [
+        "artist:miguelle-tons"
+      ],
+      "video_id": "eXNno0kHybg",
+      "url": "https://www.youtube.com/watch?v=eXNno0kHybg",
+      "youtube_music_url": "https://music.youtube.com/watch?v=eXNno0kHybg",
+      "artwork_url": "https://img.youtube.com/vi/eXNno0kHybg/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/6XtFbNwhLEQnWXaasf2mwL",
+        "https://www.youtube.com/watch?v=eXNno0kHybg",
+        "https://www.youtube.com/@TwoandaHalfCats"
+      ],
+      "youtube_title": "Miguelle & Tons, Dru Flecha, Imperatori - No Le Bajes (Radio Mix)",
+      "uploader": "Two and a Half Cats",
+      "uploader_url": "https://www.youtube.com/@TwoandaHalfCats",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3tVV7V3TH4jpPVvfgPILR0",
+      "title": "La Pista Es Mía",
+      "artist_ids": [
+        "artist:miguelle-tons"
+      ],
+      "video_id": "jQDl3tFZ7iQ",
+      "url": "https://www.youtube.com/watch?v=jQDl3tFZ7iQ",
+      "youtube_music_url": "https://music.youtube.com/watch?v=jQDl3tFZ7iQ",
+      "artwork_url": "https://img.youtube.com/vi/jQDl3tFZ7iQ/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3tVV7V3TH4jpPVvfgPILR0",
+        "https://www.youtube.com/watch?v=jQDl3tFZ7iQ",
+        "https://www.youtube.com/@TwoandaHalfCats"
+      ],
+      "youtube_title": "Miguelle & Tons, Barbara Doza - La Pista Es Mía (Visualizer)",
+      "uploader": "Two and a Half Cats",
+      "uploader_url": "https://www.youtube.com/@TwoandaHalfCats",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:1T4zdIuNLgCqGVk4jHDIVl",
+      "title": "SONG REQUEST",
+      "artist_ids": [
+        "artist:ray-volpe"
+      ],
+      "video_id": "h5bSMPb7pVQ",
+      "url": "https://www.youtube.com/watch?v=h5bSMPb7pVQ",
+      "youtube_music_url": "https://music.youtube.com/watch?v=h5bSMPb7pVQ",
+      "artwork_url": "https://img.youtube.com/vi/h5bSMPb7pVQ/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/1T4zdIuNLgCqGVk4jHDIVl",
+        "https://www.youtube.com/watch?v=h5bSMPb7pVQ",
+        "https://www.youtube.com/@rayvolpe"
+      ],
+      "youtube_title": "RAY VOLPE - SONG REQUEST (Official Visualizer + Lyric Video)",
+      "uploader": "RAY VOLPE",
+      "uploader_url": "https://www.youtube.com/@rayvolpe",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:0lHAMNU8RGiIObScrsRgmP",
+      "title": "Titanium (feat. Sia)",
+      "artist_ids": [
+        "artist:david-guetta"
+      ],
+      "video_id": "JRfuAukYTKg",
+      "url": "https://www.youtube.com/watch?v=JRfuAukYTKg",
+      "youtube_music_url": "https://music.youtube.com/watch?v=JRfuAukYTKg",
+      "artwork_url": "https://img.youtube.com/vi/JRfuAukYTKg/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/0lHAMNU8RGiIObScrsRgmP",
+        "https://www.youtube.com/watch?v=JRfuAukYTKg",
+        "https://www.youtube.com/@davidguetta"
+      ],
+      "youtube_title": "David Guetta - Titanium ft. Sia (Official Video)",
+      "uploader": "David Guetta",
+      "uploader_url": "https://www.youtube.com/@davidguetta",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:6nQs7YFkvBIR3OpnAXDfLL",
+      "title": "I Need The",
+      "artist_ids": [
+        "artist:phrva"
+      ],
+      "video_id": "638mK_n99Mk",
+      "url": "https://www.youtube.com/watch?v=638mK_n99Mk",
+      "youtube_music_url": "https://music.youtube.com/watch?v=638mK_n99Mk",
+      "artwork_url": "https://img.youtube.com/vi/638mK_n99Mk/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/6nQs7YFkvBIR3OpnAXDfLL",
+        "https://www.youtube.com/watch?v=638mK_n99Mk",
+        "https://www.youtube.com/@ero808"
+      ],
+      "youtube_title": "Phrva x ero808 - I Need The (Official Music Video)",
+      "uploader": "ero808",
+      "uploader_url": "https://www.youtube.com/@ero808",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3ftdZ6WtsQo7o5tSFI2WV5",
+      "title": "Is It All",
+      "artist_ids": [
+        "artist:phrva"
+      ],
+      "video_id": "-g8PQ6o1NmI",
+      "url": "https://www.youtube.com/watch?v=-g8PQ6o1NmI",
+      "youtube_music_url": "https://music.youtube.com/watch?v=-g8PQ6o1NmI",
+      "artwork_url": "https://img.youtube.com/vi/-g8PQ6o1NmI/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3ftdZ6WtsQo7o5tSFI2WV5",
+        "https://www.youtube.com/watch?v=-g8PQ6o1NmI",
+        "https://www.youtube.com/channel/UCmkwJ0mGu3Vz9G_sDyrdfhg"
+      ],
+      "youtube_title": "Is It All",
+      "uploader": "Phrva - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCmkwJ0mGu3Vz9G_sDyrdfhg",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3zW2p2IIK885aOrjfDJEXv",
+      "title": "Elevator",
+      "artist_ids": [
+        "artist:discip"
+      ],
+      "video_id": "cRnyyOE2rnQ",
+      "url": "https://www.youtube.com/watch?v=cRnyyOE2rnQ",
+      "youtube_music_url": "https://music.youtube.com/watch?v=cRnyyOE2rnQ",
+      "artwork_url": "https://img.youtube.com/vi/cRnyyOE2rnQ/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3zW2p2IIK885aOrjfDJEXv",
+        "https://www.youtube.com/watch?v=cRnyyOE2rnQ",
+        "https://www.youtube.com/@Insomniac"
+      ],
+      "youtube_title": "Discip - Elevator (Official)",
+      "uploader": "Insomniac",
+      "uploader_url": "https://www.youtube.com/@Insomniac",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:0YQLxSWruiFJJ42lexKQGU",
+      "title": "Surge",
+      "artist_ids": [
+        "artist:kompany"
+      ],
+      "video_id": "Sz4xV4fU07Q",
+      "url": "https://www.youtube.com/watch?v=Sz4xV4fU07Q",
+      "youtube_music_url": "https://music.youtube.com/watch?v=Sz4xV4fU07Q",
+      "artwork_url": "https://img.youtube.com/vi/Sz4xV4fU07Q/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/0YQLxSWruiFJJ42lexKQGU",
+        "https://www.youtube.com/watch?v=Sz4xV4fU07Q",
+        "https://www.youtube.com/@Bassrush"
+      ],
+      "youtube_title": "Kompany & Kryture - Surge | Bassrush Records",
+      "uploader": "Bassrush",
+      "uploader_url": "https://www.youtube.com/@Bassrush",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:0NIIKZEed0nXPz4lHnMaZg",
+      "title": "In Your Eyes",
+      "artist_ids": [
+        "artist:alesso"
+      ],
+      "video_id": "3EvujYssSZ4",
+      "url": "https://www.youtube.com/watch?v=3EvujYssSZ4",
+      "youtube_music_url": "https://music.youtube.com/watch?v=3EvujYssSZ4",
+      "artwork_url": "https://img.youtube.com/vi/3EvujYssSZ4/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/0NIIKZEed0nXPz4lHnMaZg",
+        "https://www.youtube.com/watch?v=3EvujYssSZ4",
+        "https://www.youtube.com/@AlessoOfficialVEVO"
+      ],
+      "youtube_title": "Alesso, OneRepublic - In Your Eyes",
+      "uploader": "AlessoOfficialVEVO",
+      "uploader_url": "https://www.youtube.com/@AlessoOfficialVEVO",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4Vdes3GjtIqdFskoWbVYnP",
+      "title": "Awake Tonight",
+      "artist_ids": [
+        "artist:afrojack",
+        "artist:david-guetta"
+      ],
+      "video_id": "lpgt1lex3P0",
+      "url": "https://www.youtube.com/watch?v=lpgt1lex3P0",
+      "youtube_music_url": "https://music.youtube.com/watch?v=lpgt1lex3P0",
+      "artwork_url": "https://img.youtube.com/vi/lpgt1lex3P0/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4Vdes3GjtIqdFskoWbVYnP",
+        "https://www.youtube.com/watch?v=lpgt1lex3P0",
+        "https://www.youtube.com/@Afrojack"
+      ],
+      "youtube_title": "Afrojack, Sia, David Guetta - Awake Tonight (lyric video)",
+      "uploader": "Afrojack",
+      "uploader_url": "https://www.youtube.com/@Afrojack",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:79BY6QNQu7FeL6DnaKu5wT",
+      "title": "Take Me (To The Moon)",
+      "artist_ids": [
+        "artist:ian-asher"
+      ],
+      "video_id": "tNHXDNaNqsU",
+      "url": "https://www.youtube.com/watch?v=tNHXDNaNqsU",
+      "youtube_music_url": "https://music.youtube.com/watch?v=tNHXDNaNqsU",
+      "artwork_url": "https://img.youtube.com/vi/tNHXDNaNqsU/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/79BY6QNQu7FeL6DnaKu5wT",
+        "https://www.youtube.com/watch?v=tNHXDNaNqsU",
+        "https://www.youtube.com/@ianasher"
+      ],
+      "youtube_title": "Ian Asher - Take Me (To The Moon) (Official Audio)",
+      "uploader": "Ian Asher",
+      "uploader_url": "https://www.youtube.com/@ianasher",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:2rkUhGw5iWbBY1PE5AnCl8",
+      "title": "Way Too Self Aware",
+      "artist_ids": [
+        "artist:ian-asher"
+      ],
+      "video_id": "gpi25y0hLr8",
+      "url": "https://www.youtube.com/watch?v=gpi25y0hLr8",
+      "youtube_music_url": "https://music.youtube.com/watch?v=gpi25y0hLr8",
+      "artwork_url": "https://img.youtube.com/vi/gpi25y0hLr8/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/2rkUhGw5iWbBY1PE5AnCl8",
+        "https://www.youtube.com/watch?v=gpi25y0hLr8",
+        "https://www.youtube.com/@ianasher"
+      ],
+      "youtube_title": "Ian Asher - Way Too Self Aware (Official Audio)",
+      "uploader": "Ian Asher",
+      "uploader_url": "https://www.youtube.com/@ianasher",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4sMR8fuTzbUyzB0asxifV0",
+      "title": "Desire",
+      "artist_ids": [
+        "artist:ian-asher"
+      ],
+      "video_id": "ZDw_x_REei0",
+      "url": "https://www.youtube.com/watch?v=ZDw_x_REei0",
+      "youtube_music_url": "https://music.youtube.com/watch?v=ZDw_x_REei0",
+      "artwork_url": "https://img.youtube.com/vi/ZDw_x_REei0/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4sMR8fuTzbUyzB0asxifV0",
+        "https://www.youtube.com/watch?v=ZDw_x_REei0",
+        "https://www.youtube.com/@ianasher"
+      ],
+      "youtube_title": "Ian Asher & Olly Alexander (Years & Years) - Desire (Official Audio)",
+      "uploader": "Ian Asher",
+      "uploader_url": "https://www.youtube.com/@ianasher",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:23Hxd8ph2vJWlXngubtyuO",
+      "title": "Feels Like Us",
+      "artist_ids": [
+        "artist:devault"
+      ],
+      "video_id": "wGz4HpNlaMM",
+      "url": "https://www.youtube.com/watch?v=wGz4HpNlaMM",
+      "youtube_music_url": "https://music.youtube.com/watch?v=wGz4HpNlaMM",
+      "artwork_url": "https://img.youtube.com/vi/wGz4HpNlaMM/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/23Hxd8ph2vJWlXngubtyuO",
+        "https://www.youtube.com/watch?v=wGz4HpNlaMM",
+        "https://www.youtube.com/@DEVAULT"
+      ],
+      "youtube_title": "Devault - Feels Like Us (Official Video)",
+      "uploader": "DEVAULT",
+      "uploader_url": "https://www.youtube.com/@DEVAULT",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4KUvFYXZftOZQaVa3Hxato",
+      "title": "What I Came For",
+      "artist_ids": [
+        "artist:devault"
+      ],
+      "video_id": "VFnB0P6oWOU",
+      "url": "https://www.youtube.com/watch?v=VFnB0P6oWOU",
+      "youtube_music_url": "https://music.youtube.com/watch?v=VFnB0P6oWOU",
+      "artwork_url": "https://img.youtube.com/vi/VFnB0P6oWOU/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4KUvFYXZftOZQaVa3Hxato",
+        "https://www.youtube.com/watch?v=VFnB0P6oWOU",
+        "https://www.youtube.com/@DEVAULT"
+      ],
+      "youtube_title": "Devault - What I Came For",
+      "uploader": "DEVAULT",
+      "uploader_url": "https://www.youtube.com/@DEVAULT",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3RBZG00eHECxQIgOwrLhjC",
+      "title": "Don't Stop",
+      "artist_ids": [
+        "artist:aat"
+      ],
+      "video_id": "gNA6-i5pCzo",
+      "url": "https://www.youtube.com/watch?v=gNA6-i5pCzo",
+      "youtube_music_url": "https://music.youtube.com/watch?v=gNA6-i5pCzo",
+      "artwork_url": "https://img.youtube.com/vi/gNA6-i5pCzo/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3RBZG00eHECxQIgOwrLhjC",
+        "https://www.youtube.com/watch?v=gNA6-i5pCzo",
+        "https://www.youtube.com/channel/UCyQBIVmeUd_cjwrTjkO4dQA"
+      ],
+      "youtube_title": "Don't Stop",
+      "uploader": "AAT - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCyQBIVmeUd_cjwrTjkO4dQA",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4SlGZwTjgOXjOK7Pqw7xGW",
+      "title": "Get Stupid",
+      "artist_ids": [
+        "artist:greg-99"
+      ],
+      "video_id": "y3mw1-I3SBQ",
+      "url": "https://www.youtube.com/watch?v=y3mw1-I3SBQ",
+      "youtube_music_url": "https://music.youtube.com/watch?v=y3mw1-I3SBQ",
+      "artwork_url": "https://img.youtube.com/vi/y3mw1-I3SBQ/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4SlGZwTjgOXjOK7Pqw7xGW",
+        "https://www.youtube.com/watch?v=y3mw1-I3SBQ",
+        "https://www.youtube.com/@Insomniac"
+      ],
+      "youtube_title": "Greg 99 - Get Stupid (Official)",
+      "uploader": "Insomniac",
+      "uploader_url": "https://www.youtube.com/@Insomniac",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:5On7CF20MHgFOYUUlacXbf",
+      "title": "Substance",
+      "artist_ids": [
+        "artist:alok"
+      ],
+      "video_id": "9Jgn7E1bNs8",
+      "url": "https://www.youtube.com/watch?v=9Jgn7E1bNs8",
+      "youtube_music_url": "https://music.youtube.com/watch?v=9Jgn7E1bNs8",
+      "artwork_url": "https://img.youtube.com/vi/9Jgn7E1bNs8/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/5On7CF20MHgFOYUUlacXbf",
+        "https://www.youtube.com/watch?v=9Jgn7E1bNs8",
+        "https://www.youtube.com/@FAANGS"
+      ],
+      "youtube_title": "FAANGS, Alok & SCRIPT - Substance (Lyric Video)",
+      "uploader": "FAANGS",
+      "uploader_url": "https://www.youtube.com/@FAANGS",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:2obGMUH9QL8cgyj6bBM58h",
+      "title": "ZIPLOCK",
+      "artist_ids": [
+        "artist:roddy-lima"
+      ],
+      "video_id": "WU7OG6cdsGk",
+      "url": "https://www.youtube.com/watch?v=WU7OG6cdsGk",
+      "youtube_music_url": "https://music.youtube.com/watch?v=WU7OG6cdsGk",
+      "artwork_url": "https://img.youtube.com/vi/WU7OG6cdsGk/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/2obGMUH9QL8cgyj6bBM58h",
+        "https://www.youtube.com/watch?v=WU7OG6cdsGk",
+        "https://www.youtube.com/channel/UCKDv74AvZra3GVo0BduPQ4w"
+      ],
+      "youtube_title": "ZIPLOCK",
+      "uploader": "Roddy Lima - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCKDv74AvZra3GVo0BduPQ4w",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3JFbLpgf57vGArmdFULXNB",
+      "title": "Get Wompy",
+      "artist_ids": [
+        "artist:sippy"
+      ],
+      "video_id": "YOSiw_XSvBE",
+      "url": "https://www.youtube.com/watch?v=YOSiw_XSvBE",
+      "youtube_music_url": "https://music.youtube.com/watch?v=YOSiw_XSvBE",
+      "artwork_url": "https://img.youtube.com/vi/YOSiw_XSvBE/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3JFbLpgf57vGArmdFULXNB",
+        "https://www.youtube.com/watch?v=YOSiw_XSvBE",
+        "https://www.youtube.com/channel/UCkbcYgr0MAsbdZK9MIw9Tzw"
+      ],
+      "youtube_title": "Get Wompy",
+      "uploader": "SIPPY - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCkbcYgr0MAsbdZK9MIw9Tzw",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3SoMMKpm0eB3BghB3b5wyM",
+      "title": "Big Sip",
+      "artist_ids": [
+        "artist:sippy"
+      ],
+      "video_id": "LMPvNMYf4tU",
+      "url": "https://www.youtube.com/watch?v=LMPvNMYf4tU",
+      "youtube_music_url": "https://music.youtube.com/watch?v=LMPvNMYf4tU",
+      "artwork_url": "https://img.youtube.com/vi/LMPvNMYf4tU/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3SoMMKpm0eB3BghB3b5wyM",
+        "https://www.youtube.com/watch?v=LMPvNMYf4tU",
+        "https://www.youtube.com/@Bassrush"
+      ],
+      "youtube_title": "SIPPY - Big Sip | Bassrush Records",
+      "uploader": "Bassrush",
+      "uploader_url": "https://www.youtube.com/@Bassrush",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:0F1VAVqj021UkGntiDz4nx",
+      "title": "Feels Like You",
+      "artist_ids": [
+        "artist:adventure-club"
+      ],
+      "video_id": "2iJtfHnf9kA",
+      "url": "https://www.youtube.com/watch?v=2iJtfHnf9kA",
+      "youtube_music_url": "https://music.youtube.com/watch?v=2iJtfHnf9kA",
+      "artwork_url": "https://img.youtube.com/vi/2iJtfHnf9kA/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/0F1VAVqj021UkGntiDz4nx",
+        "https://www.youtube.com/watch?v=2iJtfHnf9kA",
+        "https://www.youtube.com/@CodekoMusic"
+      ],
+      "youtube_title": "Adventure Club & Codeko - Feels Like You [Lost In Dreams]",
+      "uploader": "CODEKO",
+      "uploader_url": "https://www.youtube.com/@CodekoMusic",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3MOECVkNshqHYTPt5DZcdN",
+      "title": "Five More Hours",
+      "artist_ids": [
+        "artist:deorro"
+      ],
+      "video_id": "yV8tm-ZPdpE",
+      "url": "https://www.youtube.com/watch?v=yV8tm-ZPdpE",
+      "youtube_music_url": "https://music.youtube.com/watch?v=yV8tm-ZPdpE",
+      "artwork_url": "https://img.youtube.com/vi/yV8tm-ZPdpE/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3MOECVkNshqHYTPt5DZcdN",
+        "https://www.youtube.com/watch?v=yV8tm-ZPdpE",
+        "https://www.youtube.com/@ChrisBrownVEVO"
+      ],
+      "youtube_title": "Deorro, Chris Brown - Five More Hours",
+      "uploader": "ChrisBrownVEVO",
+      "uploader_url": "https://www.youtube.com/@ChrisBrownVEVO",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:6r7FXNO57mlZCBY6PXcZZT",
+      "title": "Five Hours",
+      "artist_ids": [
+        "artist:deorro"
+      ],
+      "video_id": "yCwzA8XNBrg",
+      "url": "https://www.youtube.com/watch?v=yCwzA8XNBrg",
+      "youtube_music_url": "https://music.youtube.com/watch?v=yCwzA8XNBrg",
+      "artwork_url": "https://img.youtube.com/vi/yCwzA8XNBrg/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/6r7FXNO57mlZCBY6PXcZZT",
+        "https://www.youtube.com/watch?v=yCwzA8XNBrg",
+        "https://www.youtube.com/channel/UC89YRh6abbGfAHln2-rGHRA"
+      ],
+      "youtube_title": "Five Hours",
+      "uploader": "Deorro - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UC89YRh6abbGfAHln2-rGHRA",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:0K6bM8wUaxWYW5OXmnL5Wf",
+      "title": "Sensory Session",
+      "artist_ids": [
+        "artist:jkyl-hyde"
+      ],
+      "video_id": "vUFQ0pSOLvE",
+      "url": "https://www.youtube.com/watch?v=vUFQ0pSOLvE",
+      "youtube_music_url": "https://music.youtube.com/watch?v=vUFQ0pSOLvE",
+      "artwork_url": "https://img.youtube.com/vi/vUFQ0pSOLvE/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/0K6bM8wUaxWYW5OXmnL5Wf",
+        "https://www.youtube.com/watch?v=vUFQ0pSOLvE",
+        "https://www.youtube.com/@jkylxhyde"
+      ],
+      "youtube_title": "Jkyl & Hyde - Sensory Session (lyric video)",
+      "uploader": "Jkyl & Hyde",
+      "uploader_url": "https://www.youtube.com/@jkylxhyde",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:6cl01mVeSioV2jTHRcGe0l",
+      "title": "Runaway",
+      "artist_ids": [
+        "artist:jkyl-hyde"
+      ],
+      "video_id": "tsHH9T9-78Q",
+      "url": "https://www.youtube.com/watch?v=tsHH9T9-78Q",
+      "youtube_music_url": "https://music.youtube.com/watch?v=tsHH9T9-78Q",
+      "artwork_url": "https://img.youtube.com/vi/tsHH9T9-78Q/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/6cl01mVeSioV2jTHRcGe0l",
+        "https://www.youtube.com/watch?v=tsHH9T9-78Q",
+        "https://www.youtube.com/@jkylxhyde"
+      ],
+      "youtube_title": "Jkyl & Hyde - Runaway (lyric video)",
+      "uploader": "Jkyl & Hyde",
+      "uploader_url": "https://www.youtube.com/@jkylxhyde",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3wRO9Pt5iPbZTs8YT1x69Q",
+      "title": "Just A Little Bit More",
+      "artist_ids": [
+        "artist:mau-p"
+      ],
+      "video_id": "ke6hDTz3OoY",
+      "url": "https://www.youtube.com/watch?v=ke6hDTz3OoY",
+      "youtube_music_url": "https://music.youtube.com/watch?v=ke6hDTz3OoY",
+      "artwork_url": "https://img.youtube.com/vi/ke6hDTz3OoY/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3wRO9Pt5iPbZTs8YT1x69Q",
+        "https://www.youtube.com/watch?v=ke6hDTz3OoY",
+        "https://www.youtube.com/@maupvevo2110"
+      ],
+      "youtube_title": "Mau P - Just A Little Bit More (Visualizer)",
+      "uploader": "MauPVEVO",
+      "uploader_url": "https://www.youtube.com/@maupvevo2110",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:6qJhrI2BMuA8qHcmycD3fL",
+      "title": "TESLA",
+      "artist_ids": [
+        "artist:mau-p"
+      ],
+      "video_id": "5uJl5PmRTfI",
+      "url": "https://www.youtube.com/watch?v=5uJl5PmRTfI",
+      "youtube_music_url": "https://music.youtube.com/watch?v=5uJl5PmRTfI",
+      "artwork_url": "https://img.youtube.com/vi/5uJl5PmRTfI/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/6qJhrI2BMuA8qHcmycD3fL",
+        "https://www.youtube.com/watch?v=5uJl5PmRTfI",
+        "https://www.youtube.com/@Insomniac"
+      ],
+      "youtube_title": "Mau P - TESLA (LIVE AT CIRCUIT GROUNDS EDC LAS VEGAS 2025)",
+      "uploader": "Insomniac",
+      "uploader_url": "https://www.youtube.com/@Insomniac",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3dcWKFefG4Otjdb6ykBVcY",
+      "title": "Feel The Vibration",
+      "artist_ids": [
+        "artist:kanine"
+      ],
+      "video_id": "Hjw86NcG8Bo",
+      "url": "https://www.youtube.com/watch?v=Hjw86NcG8Bo",
+      "youtube_music_url": "https://music.youtube.com/watch?v=Hjw86NcG8Bo",
+      "artwork_url": "https://img.youtube.com/vi/Hjw86NcG8Bo/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3dcWKFefG4Otjdb6ykBVcY",
+        "https://www.youtube.com/watch?v=Hjw86NcG8Bo",
+        "https://www.youtube.com/@UKFDrumandBass"
+      ],
+      "youtube_title": "Kanine - Feel The Vibration",
+      "uploader": "UKF Drum & Bass",
+      "uploader_url": "https://www.youtube.com/@UKFDrumandBass",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:6sStFqQdlp0L4vEXk24Ms6",
+      "title": "HARDEST MFS",
+      "artist_ids": [
+        "artist:layz"
+      ],
+      "video_id": "x8FkhaZTm5A",
+      "url": "https://www.youtube.com/watch?v=x8FkhaZTm5A",
+      "youtube_music_url": "https://music.youtube.com/watch?v=x8FkhaZTm5A",
+      "artwork_url": "https://img.youtube.com/vi/x8FkhaZTm5A/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/6sStFqQdlp0L4vEXk24Ms6",
+        "https://www.youtube.com/watch?v=x8FkhaZTm5A",
+        "https://www.youtube.com/@LAYZDUBZ"
+      ],
+      "youtube_title": "LAYZ & RZRKT - HARDEST MFS",
+      "uploader": "LAYZ",
+      "uploader_url": "https://www.youtube.com/@LAYZDUBZ",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4PzgYtLEcik1VGjbDDdqbA",
+      "title": "Heartbreak",
+      "artist_ids": [
+        "artist:levity"
+      ],
+      "video_id": "FAb2Nhy46BU",
+      "url": "https://www.youtube.com/watch?v=FAb2Nhy46BU",
+      "youtube_music_url": "https://music.youtube.com/watch?v=FAb2Nhy46BU",
+      "artwork_url": "https://img.youtube.com/vi/FAb2Nhy46BU/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4PzgYtLEcik1VGjbDDdqbA",
+        "https://www.youtube.com/watch?v=FAb2Nhy46BU",
+        "https://www.youtube.com/@ultrarecords"
+      ],
+      "youtube_title": "Levity - Heartbreak [Ultra Records]",
+      "uploader": "Ultra Records",
+      "uploader_url": "https://www.youtube.com/@ultrarecords",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:2s9Ozz6HLs785JrqpRgzVU",
+      "title": "Bones",
+      "artist_ids": [
+        "artist:mai-iachetti"
+      ],
+      "video_id": "PEPTADCZM08",
+      "url": "https://www.youtube.com/watch?v=PEPTADCZM08",
+      "youtube_music_url": "https://music.youtube.com/watch?v=PEPTADCZM08",
+      "artwork_url": "https://img.youtube.com/vi/PEPTADCZM08/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/2s9Ozz6HLs785JrqpRgzVU",
+        "https://www.youtube.com/watch?v=PEPTADCZM08",
+        "https://www.youtube.com/channel/UCBvXWG8DvAf9NEqJ4HRjwEA"
+      ],
+      "youtube_title": "Bones",
+      "uploader": "Mai Iachetti - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCBvXWG8DvAf9NEqJ4HRjwEA",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:77tLqaiLioNxEex0BsVFEE",
+      "title": "Frontin'",
+      "artist_ids": [
+        "artist:chef-boyarbeatz"
+      ],
+      "video_id": "Q78m0-Dw51o",
+      "url": "https://www.youtube.com/watch?v=Q78m0-Dw51o",
+      "youtube_music_url": "https://music.youtube.com/watch?v=Q78m0-Dw51o",
+      "artwork_url": "https://img.youtube.com/vi/Q78m0-Dw51o/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/77tLqaiLioNxEex0BsVFEE",
+        "https://www.youtube.com/watch?v=Q78m0-Dw51o",
+        "https://www.youtube.com/@Bassrush"
+      ],
+      "youtube_title": "Chef Boyarbeatz & MYTHM - Frontin' | Bassrush Records",
+      "uploader": "Bassrush",
+      "uploader_url": "https://www.youtube.com/@Bassrush",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:6GvfH6m9biXR8bL6WW8YX7",
+      "title": "Bubbling",
+      "artist_ids": [
+        "artist:dennis-cruz"
+      ],
+      "video_id": "j2LE486juuE",
+      "url": "https://www.youtube.com/watch?v=j2LE486juuE",
+      "youtube_music_url": "https://music.youtube.com/watch?v=j2LE486juuE",
+      "artwork_url": "https://img.youtube.com/vi/j2LE486juuE/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/6GvfH6m9biXR8bL6WW8YX7",
+        "https://www.youtube.com/watch?v=j2LE486juuE",
+        "https://www.youtube.com/channel/UC_OOgOpdNum_gN63stcfbHA"
+      ],
+      "youtube_title": "Bubbling",
+      "uploader": "Dennis Cruz - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UC_OOgOpdNum_gN63stcfbHA",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:5MhdIizFfxEAwBczKWBzbQ",
+      "title": "Moonshine",
+      "artist_ids": [
+        "artist:alan-walker"
+      ],
+      "video_id": "gouCVSUyZNU",
+      "url": "https://www.youtube.com/watch?v=gouCVSUyZNU",
+      "youtube_music_url": "https://music.youtube.com/watch?v=gouCVSUyZNU",
+      "artwork_url": "https://img.youtube.com/vi/gouCVSUyZNU/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/5MhdIizFfxEAwBczKWBzbQ",
+        "https://www.youtube.com/watch?v=gouCVSUyZNU",
+        "https://www.youtube.com/@Alanwalkermusic"
+      ],
+      "youtube_title": "Alan Walker, Elley Duhé - Moonshine (Official Music Video)",
+      "uploader": "Alan Walker",
+      "uploader_url": "https://www.youtube.com/@Alanwalkermusic",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4zXG4SBvsjsW0EN1mjCxaV",
+      "title": "No Broke Boys - AVELLO Remix",
+      "artist_ids": [
+        "artist:avello",
+        "artist:disco-lines"
+      ],
+      "video_id": "OUvWuvz0XJU",
+      "url": "https://www.youtube.com/watch?v=OUvWuvz0XJU",
+      "youtube_music_url": "https://music.youtube.com/watch?v=OUvWuvz0XJU",
+      "artwork_url": "https://img.youtube.com/vi/OUvWuvz0XJU/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4zXG4SBvsjsW0EN1mjCxaV",
+        "https://www.youtube.com/watch?v=OUvWuvz0XJU",
+        "https://www.youtube.com/channel/UCfP0uWE3TV2B-jGAcEaIN3A"
+      ],
+      "youtube_title": "No Broke Boys (AVELLO Remix)",
+      "uploader": "Disco Lines - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCfP0uWE3TV2B-jGAcEaIN3A",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:1t0HDXFC1yeCKKxWfbZ5Go",
+      "title": "Silence",
+      "artist_ids": [
+        "artist:meduza"
+      ],
+      "video_id": "cIdqz-WMod4",
+      "url": "https://www.youtube.com/watch?v=cIdqz-WMod4",
+      "youtube_music_url": "https://music.youtube.com/watch?v=cIdqz-WMod4",
+      "artwork_url": "https://img.youtube.com/vi/cIdqz-WMod4/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/1t0HDXFC1yeCKKxWfbZ5Go",
+        "https://www.youtube.com/watch?v=cIdqz-WMod4",
+        "https://www.youtube.com/@Meduzamusic"
+      ],
+      "youtube_title": "Meduza, Rani - Silence (Official Visualizer)",
+      "uploader": "Meduza",
+      "uploader_url": "https://www.youtube.com/@Meduzamusic",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3DqOJ2BoddzZpNdty3okJH",
+      "title": "RIZZ",
+      "artist_ids": [
+        "artist:ayybo"
+      ],
+      "video_id": "ZV3tIc9g0ZE",
+      "url": "https://www.youtube.com/watch?v=ZV3tIc9g0ZE",
+      "youtube_music_url": "https://music.youtube.com/watch?v=ZV3tIc9g0ZE",
+      "artwork_url": "https://img.youtube.com/vi/ZV3tIc9g0ZE/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3DqOJ2BoddzZpNdty3okJH",
+        "https://www.youtube.com/watch?v=ZV3tIc9g0ZE",
+        "https://www.youtube.com/@AYYBO"
+      ],
+      "youtube_title": "AYYBO - RIZZ (Official Video)",
+      "uploader": "AYYBO",
+      "uploader_url": "https://www.youtube.com/@AYYBO",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:0IoD88QDxy5GPip9IzlzyI",
+      "title": "Certified",
+      "artist_ids": [
+        "artist:ayybo"
+      ],
+      "video_id": "73UVHfolSvg",
+      "url": "https://www.youtube.com/watch?v=73UVHfolSvg",
+      "youtube_music_url": "https://music.youtube.com/watch?v=73UVHfolSvg",
+      "artwork_url": "https://img.youtube.com/vi/73UVHfolSvg/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/0IoD88QDxy5GPip9IzlzyI",
+        "https://www.youtube.com/watch?v=73UVHfolSvg",
+        "https://www.youtube.com/@AYYBO"
+      ],
+      "youtube_title": "AYYBO - Certified (Lyric Video)",
+      "uploader": "AYYBO",
+      "uploader_url": "https://www.youtube.com/@AYYBO",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "source:tULfefrg0i4",
+      "title": "Lovesong",
+      "artist_ids": [
+        "artist:night-tales"
+      ],
+      "video_id": "tULfefrg0i4",
+      "url": "https://www.youtube.com/watch?v=tULfefrg0i4",
+      "youtube_music_url": "https://music.youtube.com/watch?v=tULfefrg0i4",
+      "artwork_url": "https://img.youtube.com/vi/tULfefrg0i4/mqdefault.jpg",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=tULfefrg0i4",
+        "https://www.youtube.com/channel/UCZ55SvGkSIuiGH2oLYkSD_A"
+      ],
+      "youtube_title": "Lovesong",
+      "uploader": "Night Tales - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCZ55SvGkSIuiGH2oLYkSD_A",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "source:hBg-qyzx074",
+      "title": "It's That Time",
+      "artist_ids": [
+        "artist:marlon-hoffstadt"
+      ],
+      "video_id": "hBg-qyzx074",
+      "url": "https://www.youtube.com/watch?v=hBg-qyzx074",
+      "youtube_music_url": "https://music.youtube.com/watch?v=hBg-qyzx074",
+      "artwork_url": "https://img.youtube.com/vi/hBg-qyzx074/mqdefault.jpg",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=hBg-qyzx074",
+        "https://www.youtube.com/channel/UCzuUAgx1W9zWqHiFRJdYqDw"
+      ],
+      "youtube_title": "It's That Time",
+      "uploader": "Marlon Hoffstadt - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCzuUAgx1W9zWqHiFRJdYqDw",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "source:t1TB5_ISiG4",
+      "title": "You Make Me Horny",
+      "artist_ids": [
+        "artist:nico-moreno"
+      ],
+      "video_id": "t1TB5_ISiG4",
+      "url": "https://www.youtube.com/watch?v=t1TB5_ISiG4",
+      "youtube_music_url": "https://music.youtube.com/watch?v=t1TB5_ISiG4",
+      "artwork_url": "https://img.youtube.com/vi/t1TB5_ISiG4/mqdefault.jpg",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=t1TB5_ISiG4",
+        "https://www.youtube.com/channel/UCPmj4-tukkX9_1aocKiL95g"
+      ],
+      "youtube_title": "You Make Me Horny",
+      "uploader": "Nico Moreno - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCPmj4-tukkX9_1aocKiL95g",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "source:oelcyQCQmCI",
+      "title": "Sonne Geht Auf",
+      "artist_ids": [
+        "artist:klangkuenstler"
+      ],
+      "video_id": "oelcyQCQmCI",
+      "url": "https://www.youtube.com/watch?v=oelcyQCQmCI",
+      "youtube_music_url": "https://music.youtube.com/watch?v=oelcyQCQmCI",
+      "artwork_url": "https://img.youtube.com/vi/oelcyQCQmCI/mqdefault.jpg",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=oelcyQCQmCI",
+        "https://www.youtube.com/@KlangKuenstler"
+      ],
+      "youtube_title": "Klangkuenstler, Ski Aggu - Sonne Geht Auf (full track)",
+      "uploader": "KlangKuenstler",
+      "uploader_url": "https://www.youtube.com/@KlangKuenstler",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "source:6D8YzlrcVb8",
+      "title": "LICK IT",
+      "artist_ids": [
+        "artist:roddy-lima"
+      ],
+      "video_id": "6D8YzlrcVb8",
+      "url": "https://www.youtube.com/watch?v=6D8YzlrcVb8",
+      "youtube_music_url": "https://music.youtube.com/watch?v=6D8YzlrcVb8",
+      "artwork_url": "https://img.youtube.com/vi/6D8YzlrcVb8/mqdefault.jpg",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=6D8YzlrcVb8",
+        "https://www.youtube.com/channel/UCKDv74AvZra3GVo0BduPQ4w"
+      ],
+      "youtube_title": "LICK IT",
+      "uploader": "Roddy Lima - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCKDv74AvZra3GVo0BduPQ4w",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "source:9PEaOnKb8PU",
+      "title": "Shinjuku",
+      "artist_ids": [
+        "artist:franky-rizardo"
+      ],
+      "video_id": "9PEaOnKb8PU",
+      "url": "https://www.youtube.com/watch?v=9PEaOnKb8PU",
+      "youtube_music_url": "https://music.youtube.com/watch?v=9PEaOnKb8PU",
+      "artwork_url": "https://img.youtube.com/vi/9PEaOnKb8PU/mqdefault.jpg",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=9PEaOnKb8PU",
+        "https://www.youtube.com/channel/UCGJYT5W0YO8rai8CstB4ibw"
+      ],
+      "youtube_title": "Shinjuku",
+      "uploader": "Franky Rizardo - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCGJYT5W0YO8rai8CstB4ibw",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "source:ObliJiQLtrw",
+      "title": "Diet Coke",
+      "artist_ids": [
+        "artist:fallon"
+      ],
+      "video_id": "ObliJiQLtrw",
+      "url": "https://www.youtube.com/watch?v=ObliJiQLtrw",
+      "youtube_music_url": "https://music.youtube.com/watch?v=ObliJiQLtrw",
+      "artwork_url": "https://img.youtube.com/vi/ObliJiQLtrw/mqdefault.jpg",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=ObliJiQLtrw",
+        "https://www.youtube.com/channel/UCSNw5lFwpQhGRgIF6CXt8HQ"
+      ],
+      "youtube_title": "Diet Coke",
+      "uploader": "Fallon - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCSNw5lFwpQhGRgIF6CXt8HQ",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "source:YLCm9lP-3Uk",
+      "title": "I Want U",
+      "artist_ids": [
+        "artist:alison-wonderland"
+      ],
+      "video_id": "YLCm9lP-3Uk",
+      "url": "https://www.youtube.com/watch?v=YLCm9lP-3Uk",
+      "youtube_music_url": "https://music.youtube.com/watch?v=YLCm9lP-3Uk",
+      "artwork_url": "https://img.youtube.com/vi/YLCm9lP-3Uk/mqdefault.jpg",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=YLCm9lP-3Uk",
+        "https://www.youtube.com/@AlisonWonderlandVEVO"
+      ],
+      "youtube_title": "Alison Wonderland - I Want U (Official Video)",
+      "uploader": "AlisonWonderlandVEVO",
+      "uploader_url": "https://www.youtube.com/@AlisonWonderlandVEVO",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "source:WLE7P1Ti34s",
+      "title": "I'm Not Alone (MPH Remix)",
+      "artist_ids": [
+        "artist:mph"
+      ],
+      "video_id": "WLE7P1Ti34s",
+      "url": "https://www.youtube.com/watch?v=WLE7P1Ti34s",
+      "youtube_music_url": "https://music.youtube.com/watch?v=WLE7P1Ti34s",
+      "artwork_url": "https://img.youtube.com/vi/WLE7P1Ti34s/mqdefault.jpg",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=WLE7P1Ti34s",
+        "https://www.youtube.com/@CalvinHarrisVEVO"
+      ],
+      "youtube_title": "Calvin Harris - I'm Not Alone (MPH Remix - Official Audio)",
+      "uploader": "CalvinHarrisVEVO",
+      "uploader_url": "https://www.youtube.com/@CalvinHarrisVEVO",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "source:8dTUarxrHrI",
+      "title": "Mirage",
+      "artist_ids": [
+        "artist:mph"
+      ],
+      "video_id": "8dTUarxrHrI",
+      "url": "https://www.youtube.com/watch?v=8dTUarxrHrI",
+      "youtube_music_url": "https://music.youtube.com/watch?v=8dTUarxrHrI",
+      "artwork_url": "https://img.youtube.com/vi/8dTUarxrHrI/mqdefault.jpg",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=8dTUarxrHrI",
+        "https://www.youtube.com/@UKF"
+      ],
+      "youtube_title": "MPH & Skrillex - Mirage",
+      "uploader": "UKF",
+      "uploader_url": "https://www.youtube.com/@UKF",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "source:fXnIbPmSTC0",
+      "title": "Wide Awake",
+      "artist_ids": [
+        "artist:kanine"
+      ],
+      "video_id": "fXnIbPmSTC0",
+      "url": "https://www.youtube.com/watch?v=fXnIbPmSTC0",
+      "youtube_music_url": "https://music.youtube.com/watch?v=fXnIbPmSTC0",
+      "artwork_url": "https://img.youtube.com/vi/fXnIbPmSTC0/mqdefault.jpg",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=fXnIbPmSTC0",
+        "https://www.youtube.com/@UKFDrumandBass"
+      ],
+      "youtube_title": "Kanine - Wide Awake",
+      "uploader": "UKF Drum & Bass",
+      "uploader_url": "https://www.youtube.com/@UKFDrumandBass",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "source:TKuMfUxW1-E",
+      "title": "ONE FOR YOU",
+      "artist_ids": [
+        "artist:levity",
+        "artist:alleycvt"
+      ],
+      "video_id": "TKuMfUxW1-E",
+      "url": "https://www.youtube.com/watch?v=TKuMfUxW1-E",
+      "youtube_music_url": "https://music.youtube.com/watch?v=TKuMfUxW1-E",
+      "artwork_url": "https://img.youtube.com/vi/TKuMfUxW1-E/mqdefault.jpg",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=TKuMfUxW1-E",
+        "https://www.youtube.com/@levitymusic19"
+      ],
+      "youtube_title": "Alleycvt x Levity - One For You (Visualizer)",
+      "uploader": "Levity Music",
+      "uploader_url": "https://www.youtube.com/@levitymusic19",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "source:j-8OLbc37fg",
+      "title": "RESCUE U",
+      "artist_ids": [
+        "artist:alison-wonderland"
+      ],
+      "video_id": "j-8OLbc37fg",
+      "url": "https://www.youtube.com/watch?v=j-8OLbc37fg",
+      "youtube_music_url": "https://music.youtube.com/watch?v=j-8OLbc37fg",
+      "artwork_url": "https://img.youtube.com/vi/j-8OLbc37fg/mqdefault.jpg",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=j-8OLbc37fg",
+        "https://www.youtube.com/@fmu-records"
+      ],
+      "youtube_title": "Alison Wonderland, WINK - RESCUE U",
+      "uploader": "FMU Records",
+      "uploader_url": "https://www.youtube.com/@fmu-records",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
     }
   ],
   "publication_authorization": {
     "approved": true,
     "approved_on": "2026-10-31",
-    "scope": "Publish the prepared audit and 38-track batch to johnapaz/edc-listening-room and integrate tracks/artwork into listeningroom.app. Source review does not imply personal playback.",
-    "owner_instruction": "Yes, go for it, and you're authorized to make the changes needed to deliver what was asked."
+    "scope": "Owner-authorized source-reviewed catalog completion, track artwork, repository publication and deployment; personal playback remains a separate state.",
+    "owner_instruction": "Bruh just do it yourself and batch it to avoid quota limits and get it done"
   }
 }
