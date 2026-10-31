@@ -18,4 +18,4 @@ The build uses an explicit file and field allowlist. Never deploy or serve the r
 
 DNS is hosted by Cloudflare, registration by Hover. Apex and www attach to Pages; www redirects to the apex. No Cloudflare Access policy or visitor authentication. No paid services or new runtime secrets.
 
-For local QA, build then serve `public-site/`. Tests: `python3 -m unittest discover -s tests`, `node --test tests/listening_room.test.js`, `python3 scripts/validate_edco_reference.py`.
+For local QA, build then serve `public-site/`. Tests: `python3 -m unittest discover -s tests`, `node --test tests/listening_room.test.js`, `python3 scripts/validate_edco_reference.py`. Design check across 33 Apple/Android screen profiles (foldables folded and open; Apple in WebKit): run the **Device matrix** workflow, or `node tests/device_matrix.js <outDir>` with `BASE` set.
