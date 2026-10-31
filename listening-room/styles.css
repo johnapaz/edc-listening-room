@@ -31,3 +31,30 @@
 
 @media(min-width:900px){.music-card{display:flex;align-items:center;padding-left:8px}.music-card>.art-link{width:76px;min-width:76px}.feature-art{width:76px;height:44px}.music-copy{padding:0 8px;flex:1;min-width:0}.music-copy .artist-link{font-size:.8125rem}.music-copy .track-title{font-size:.75rem}.music-grid{gap:10px}}
 .song-credits{display:flex;flex-wrap:wrap;align-items:center;column-gap:4px}.song-credits .artist-link{display:inline-flex;align-items:center;min-height:44px;max-width:100%;overflow-wrap:anywhere}
+
+/* Device review 2026-10-31: bring the lineup into the first screen, compact rows, Tracks filters. */
+.intro{padding:14px 0 8px}.intro h1{margin:4px 0}.intro .muted{margin:0}
+.search-label{margin-top:4px}.days{margin:8px 0 12px}.ready{margin-bottom:8px}
+.lineup-heading{align-items:center;margin:4px 0 0}.lineup-heading .music-filter{margin:0}
+#count.status{margin:0 0 4px}
+.music-grid.strip{display:flex;overflow-x:auto;gap:10px;padding-bottom:8px;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:thin}
+.music-grid.strip .music-card{display:flex;flex:0 0 min(80%,272px);align-items:center;padding-left:8px;scroll-snap-align:start}
+.music-grid.strip .art-link{width:76px;min-width:76px}.music-grid.strip .feature-art{width:76px;height:43px}
+.music-grid.strip .music-copy{flex:1;min-width:0;padding:0 8px}
+.music-grid.strip .music-copy a{min-height:44px}
+.day-heading{padding:12px 0 4px}
+.day-heading h3 a{display:inline-flex;align-items:center;min-height:44px;color:var(--text);text-decoration:none}
+.day-heading h3 a:hover{color:var(--mint);text-decoration:underline}
+.lineup-row{min-height:0;padding:6px 0;gap:12px}
+.row-name{min-height:44px;line-height:1.25}
+.row-meta{display:block;margin:-6px 0 6px;font-size:.8125rem;line-height:1.4;color:var(--muted)}
+.row-meta .available{color:var(--mint)}
+.row-art{width:56px;height:40px}
+.schedule{margin:0 0 2px}.note{font-size:.8125rem;margin:0 0 8px}
+h1[tabindex="-1"]:focus{outline:none}
+.btn .play-icon{width:14px;height:14px;margin-right:6px;fill:currentColor;flex:none}
+@media(max-width:600px){.music-grid.strip{grid-template-columns:none}.row-art{width:48px;height:36px}}
+@media(max-width:320px){.lineup-heading{gap:4px}.lineup-heading .music-filter button{padding:8px 10px}}
+.schedule{font-size:.875rem;color:var(--muted)}
+@media(max-width:600px){.lineup-intro .muted{display:none}.song{flex-wrap:nowrap}.song-copy{flex-basis:auto}.song>.btn{margin-left:0}.song .btn{padding:8px 10px}.lineup-heading+.status{margin-bottom:0}.day-heading{padding-top:8px}}
+@media(max-width:320px){.song{flex-wrap:wrap}.song-copy{flex-basis:calc(100% - 72px)}.song>.btn{margin-left:auto}}

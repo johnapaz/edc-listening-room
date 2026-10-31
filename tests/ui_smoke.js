@@ -28,7 +28,11 @@ const shots = process.argv[2];
   const rowLinks = await page.$$eval("#list .lineup-row:nth-child(2) a", as => as.map(a => [a.className, a.getAttribute("href"), a.tabIndex]));
   const toArtist = rowLinks.filter(([c]) => c !== "facet");
   assert.ok(toArtist.every(([, h]) => h === toArtist[0][1] && h.startsWith("#/artist/")));
-  assert.equal(rowLinks.filter(([, , t]) => t >= 0).length, 2);
+  // One keyboard stop per row; the day facet lives on the day heading, which filters to that day.
+  assert.equal(rowLinks.filter(([, , t]) => t >= 0).length, 1);
+  assert.match(await page.getAttribute("#list .day-heading a >> nth=0", "href"), /^#\/lineup\?day=2026-11-06/);
+  assert.ok((await page.evaluate(() => document.querySelector("#list .lineup-row").getBoundingClientRect().height)) <= 80, "compact rows");
+  assert.ok((await page.evaluate(() => document.querySelector("#list .lineup-row").getBoundingClientRect().top)) <= 600, "lineup starts on the first screen");
   assert.equal(await page.getAttribute("header a.header-help", "href"), "/about/");
 
   // Scenario 2: find B2B artist -> song in 3 taps excluding typing, back keeps context
@@ -69,12 +73,26 @@ const shots = process.argv[2];
   await page.waitForSelector(".song");
   assert.match(await page.textContent("section.card"), /Not available/);
   assert.ok(await page.locator(".song a.btn").count() >= 10); ok("Listen lists reviewed songs");
+  assert.equal(await page.title(), "Tracks · Listening Room");
+  const allTracks = await page.locator(".song").count();
+  await page.fill("#tq", "carry you");
+  assert.ok(await page.locator(".song").count() >= 1 && await page.locator(".song").count() < allTracks);
+  assert.match(await page.textContent(".song .track-title >> nth=0"), /Carry You/);
+  await page.fill("#tq", "");
+  await page.click("button[data-day='2026-11-08']");
+  const sunday = await page.locator(".song").count();
+  assert.ok(sunday > 0 && sunday < allTracks);
+  assert.ok(/#\/listen\?day=2026-11-08/.test(page.url())); ok("Tracks search and day filter");
+  await page.goto(BASE + "#/listen");
+  await page.waitForSelector(".song");
 
   const names = await page.$$eval(".song a.btn", as => as.map(a => a.getAttribute("aria-label")));
   assert.ok(names.every(n => /^Open .+ by .+ on YouTube \(opens in a new tab\)$/.test(n)) && new Set(names).size === names.length);
   await page.goto(new URL(BASE).origin + "/#/artist/" + encodeURIComponent("edco26:2026-11-08:martin-garrix"));
   await page.waitForSelector("h1#title");
   assert.match(await page.textContent("h1#title"), /Martin Garrix/);
+  assert.equal(await page.title(), "Martin Garrix · Listening Room"); ok("per-page document titles");
+  assert.equal(await page.evaluate(() => getComputedStyle(document.querySelector("h1#title")).outlineStyle), "none"); ok("no focus box on the routed heading");
   assert.equal(await page.getAttribute('meta[property="og:image"]', "content"), "https://listeningroom.app/og.png");
 
   // Keyboard: tab order reaches search and a result, Enter opens

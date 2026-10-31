@@ -52,13 +52,21 @@
       el("p", { class: "muted", text: "There is no public event playlist yet. You can open the individual tracks listed here on YouTube." })));
     return card;
   }
+  // Generic play glyph. The official YouTube icon replaces it once its unmodified brand asset is committed.
+  function playIcon() {
+    const ns = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("class", "play-icon"); svg.setAttribute("viewBox", "0 0 16 16"); svg.setAttribute("aria-hidden", "true"); svg.setAttribute("focusable", "false");
+    const path = document.createElementNS(ns, "path"); path.setAttribute("d", "M5 3.2v9.6a.6.6 0 0 0 .92.5l7.4-4.8a.6.6 0 0 0 0-1L5.92 2.7A.6.6 0 0 0 5 3.2z");
+    svg.append(path); return svg;
+  }
   function songRow(s, a, ctx) {
     const credited = s.artist_ids.map(id => idx.artists.get(id)).filter(Boolean);
     return el("div", { class: "song" }, videoArt(s, a.display_name, "song-art"),
       el("div", { class: "song-copy" }, ext(s.url, s.title, "track-title"),
         el("div", { class: "song-credits" }, credited.flatMap((artist, i) => i ? [document.createTextNode(" · "), artistLink(artist, ctx)] : [artistLink(artist, ctx)])),
         s.review_status !== "strong" && s.verification !== "source_reviewed" ? el("small", { class: "muted version", text: "Version may differ from the original release." }) : null),
-      el("a", { href: s.url, class: "btn", target: "_blank", rel: "noopener noreferrer", "aria-label": "Open " + s.title + " by " + a.display_name + " on YouTube (opens in a new tab)", text: "YouTube ↗" }));
+      el("a", { href: s.url, class: "btn", target: "_blank", rel: "noopener noreferrer", "aria-label": "Open " + s.title + " by " + a.display_name + " on YouTube (opens in a new tab)" }, playIcon(), el("span", { text: "YouTube" })));
   }
   function readyToHear(rows, ctx) {
     const seen = new Set();
@@ -70,12 +78,12 @@
     if (!songs.length) return null;
     return el("section", { class: "ready", "aria-labelledby": "ready-title" },
       el("div", { class: "section-heading" }, el("h2", { id: "ready-title", text: "Tracks to try" }), el("a", { href: L.buildHash("listen", ctx), class: "text-link", text: "All " + idx.songs.length + " tracks →" })),
-      el("div", { class: "music-grid" }, songs.slice(0, 4).map(({ a, s }) => el("article", { class: "music-card" },
+      el("div", { class: "music-grid strip" }, songs.slice(0, 6).map(({ a, s }) => el("article", { class: "music-card" },
         videoArt(s, a.display_name, "feature-art"), el("div", { class: "music-copy" }, artistLink(a, ctx), ext(s.url, s.title, "track-title"))))));
   }
   function lineupView(ctx) {
     const frag = document.createDocumentFragment();
-    frag.append(el("div", { class: "intro" }, el("span", { class: "eyebrow", text: "NOVEMBER 6–8 · TINKER FIELD" }), el("h1", { text: "EDC Orlando 2026" }), el("p", { class: "muted", text: "Find an artist, check their day, and try a track on YouTube." })));
+    frag.append(el("div", { class: "intro lineup-intro" }, el("span", { class: "eyebrow", text: "NOVEMBER 6–8 · TINKER FIELD" }), el("h1", { text: "EDC Orlando 2026" }), el("p", { class: "muted", text: "Find an artist and try a track on YouTube." })));
     const search = el("input", { id: "q", type: "search", value: ctx.q, autocomplete: "off", placeholder: "Artist name or B2B partner" });
     frag.append(el("label", { class: "search-label", for: "q", text: "Search artists" }), search);
     const days = el("div", { class: "days", role: "group", "aria-label": "Filter by day" });
@@ -84,7 +92,6 @@
     const musicFilter = el("div", { class: "music-filter", role: "group", "aria-label": "Filter by music availability" },
       el("button", { type: "button", "data-music": "all", "aria-pressed": String(!ctx.tracksOnly), text: "All artists" }),
       el("button", { type: "button", "data-music": "tracks", "aria-pressed": String(ctx.tracksOnly), text: "With tracks" }));
-    frag.append(musicFilter);
     const stages = L.stageOptions(idx);
     if (stages.length) {
       const sel = el("select", { id: "stage", "aria-label": "Filter by stage" }, el("option", { value: "", text: "All stages" }));
@@ -92,12 +99,12 @@
       frag.append(sel);
     }
     frag.append(el("div", { id: "featured" }), ...(L.validPlaylistUrl(playlist) ? [playlistCard()] : []),
-      el("div", { class: "section-heading lineup-heading" }, el("h2", { text: "Lineup" }), el("span", { class: "muted", text: "By day · alphabetical" })),
+      el("div", { class: "section-heading lineup-heading" }, el("h2", { text: "Lineup" }), musicFilter),
       el("p", { id: "count", class: "status", role: "status", "aria-live": "polite" }), el("ul", { id: "list", class: "list" }));
     main.replaceChildren(frag);
     const draw = () => {
       const rows = L.filterLineup(idx, ctx);
-      document.getElementById("count").textContent = rows.length + (rows.length === 1 ? " lineup entry" : " lineup entries") + (ctx.day === "all" ? " across the weekend" : " on " + L.DAYS.find(d => d.key === ctx.day).long) + (ctx.tracksOnly ? " with tracks available here." : ".") + " Checked " + checkedOn + ". Poster times are provisional.";
+      document.getElementById("count").textContent = rows.length + (rows.length === 1 ? " lineup entry" : " lineup entries") + (ctx.day === "all" ? " across the weekend" : " on " + L.DAYS.find(d => d.key === ctx.day).long) + (ctx.tracksOnly ? " with tracks." : ".");
       const featured = ctx.q || ctx.tracksOnly ? null : readyToHear(rows, ctx);
       document.getElementById("featured").replaceChildren(...(featured ? [featured] : []));
       const list = document.getElementById("list");
@@ -106,7 +113,7 @@
       rows.forEach(p => {
         if (ctx.day === "all" && p.event_date !== previousDay) {
           const day = L.DAYS.find(d => d.key === p.event_date);
-          children.push(el("li", { class: "day-heading" }, el("h3", { text: day.long }), el("span", { class: "muted", text: rows.filter(x => x.event_date === p.event_date).length + (rows.filter(x => x.event_date === p.event_date).length === 1 ? " entry" : " entries") })));
+          children.push(el("li", { class: "day-heading" }, el("h3", {}, el("a", { href: L.buildHash("lineup", { ...ctx, day: p.event_date }), text: day.long })), el("span", { class: "muted", text: rows.filter(x => x.event_date === p.event_date).length + (rows.filter(x => x.event_date === p.event_date).length === 1 ? " entry" : " entries") })));
           previousDay = p.event_date;
         }
         children.push(rowFor(p, ctx));
@@ -134,14 +141,18 @@
     if (stageSel) stageSel.addEventListener("change", () => { ctx.stage = stageSel.value; sync(); draw(); });
     draw();
   }
+  function scheduleLine(sched) {
+    return sched.kind === "unconfirmed" ? [sched.stage, sched.time].filter(Boolean).join(" · ") + " · Poster time"
+      : sched.kind === "verified" ? sched.text : "Set time not verified";
+  }
   function rowFor(p, ctx) {
     const n = L.songCount(p, idx);
     const s = L.songGroups(p, idx).flatMap(g => g.songs)[0];
     const link = el("a", { class: "row-name", href: L.buildHash("artist", ctx, p.performance_id), text: p.display_name });
-    const sched = L.scheduleState(p, idx, fmt);
+    const meta = el("p", { class: "row-meta" }, el("span", { text: scheduleLine(L.scheduleState(p, idx, fmt)) }),
+      n ? el("span", { class: "available", text: " · " + n + (n === 1 ? " track" : " tracks") }) : null);
     return el("li", { class: "lineup-row" }, el("a", { class: "art-link", href: link.getAttribute("href"), tabindex: "-1", "aria-hidden": "true" }, artwork(s, p.display_name, "row-art")),
-      el("div", { class: "row-copy" }, link, el("div", { class: "row-meta" }, dayLink(p, ctx), el("span", { class: n ? "available" : "muted", text: n ? n + (n === 1 ? " track" : " tracks") : "No tracks added" })),
-        el("p", { class: "row-schedule", text: sched.kind === "unconfirmed" ? sched.stage + " · " + sched.time + " · Poster time" : sched.kind === "verified" ? sched.text : "Set time not verified" })),
+      el("div", { class: "row-copy" }, link, meta),
       el("a", { class: "go", href: link.getAttribute("href"), tabindex: "-1", "aria-hidden": "true", text: "→" }));
   }
   function artistView(id, ctx) {
@@ -159,7 +170,8 @@
         el("div", { class: "facets" }, allBookings.map(b => dayLink(b, ctx))))));
     if (!identity) {
       const sched = L.scheduleState(p, idx, fmt);
-      frag.append(el("p", { class: sched.kind === "verified" ? "" : "flag", text: sched.text }));
+      if (sched.kind === "unconfirmed") frag.append(el("p", { class: "schedule", text: scheduleLine(sched) + ", not cross-checked" }));
+      else frag.append(el("p", { class: sched.kind === "verified" ? "schedule" : "flag", text: sched.text }));
       if (sched.kind === "verified" && p.stage_id) frag.append(el("a", { class: "facet", href: L.buildHash("lineup", { day: "all", q: "", stage: p.stage_id }), text: sched.stage }));
       if (p.set_qualifier) frag.append(el("p", { class: "muted", text: "Billing note: " + p.set_qualifier }));
     }
@@ -173,12 +185,52 @@
     });
     main.replaceChildren(frag); document.getElementById("title").focus();
   }
+  function songDays(s) {
+    const days = new Set();
+    s.artist_ids.forEach(id => idx.performances.forEach(p => { if (p.artist_ids.includes(id)) days.add(p.event_date); }));
+    return days;
+  }
+  function songMatches(s, q) {
+    const needle = L.normalize(q);
+    if (!needle) return true;
+    const hay = L.normalize([s.title].concat(s.artist_ids.map(id => (idx.artists.get(id) || {}).display_name || "")).join(" "));
+    return needle.split(" ").every(t => hay.includes(t));
+  }
   function listenView(ctx) {
     const frag = document.createDocumentFragment();
     frag.append(el("div", { class: "intro" }, el("h1", { text: "Tracks" }), el("p", { class: "muted", text: idx.songs.length + " tracks from " + idx.songsByArtist.size + " lineup artists. Each opens on YouTube." })));
+    const search = el("input", { id: "tq", type: "search", value: ctx.q, autocomplete: "off", placeholder: "Track or artist" });
+    const days = el("div", { class: "days", role: "group", "aria-label": "Filter by day" });
+    L.DAYS.forEach(d => days.append(el("button", { type: "button", "data-day": d.key, "aria-pressed": String(ctx.day === d.key), "aria-label": d.long, text: d.label })));
+    const count = el("p", { id: "count", class: "status", role: "status", "aria-live": "polite" });
     const ul = el("ul", { class: "list" });
-    idx.songs.forEach(s => { const a = idx.artists.get(s.artist_ids[0]); ul.append(el("li", {}, songRow(s, a, ctx))); });
-    frag.append(ul, playlistCard()); main.replaceChildren(frag);
+    frag.append(el("label", { class: "search-label", for: "tq", text: "Search tracks" }), search, days, count, ul, playlistCard());
+    main.replaceChildren(frag);
+    const dayCache = new Map();
+    const draw = () => {
+      const shown = idx.songs.filter(s => {
+        if (ctx.day !== "all") {
+          if (!dayCache.has(s)) dayCache.set(s, songDays(s));
+          if (!dayCache.get(s).has(ctx.day)) return false;
+        }
+        return songMatches(s, ctx.q);
+      });
+      count.textContent = shown.length + (shown.length === 1 ? " track" : " tracks") + (ctx.day === "all" ? "" : " from acts on " + L.DAYS.find(d => d.key === ctx.day).long) + ".";
+      ul.replaceChildren(...shown.map(s => el("li", {}, songRow(s, idx.artists.get(s.artist_ids[0]), ctx))));
+      if (!shown.length) ul.append(el("li", { class: "empty" }, el("p", { text: "No tracks match these filters." }), el("button", { class: "reset-filters", type: "button", text: "Clear filters" })));
+      ul.querySelector(".reset-filters")?.addEventListener("click", () => { ctx.q = ""; ctx.day = "all"; location.hash = L.buildHash("listen", ctx); });
+    };
+    const sync = () => {
+      history.replaceState(null, "", L.buildHash("listen", ctx));
+      document.getElementById("tab-lineup").href = L.buildHash("lineup", ctx);
+      document.getElementById("tab-listen").href = L.buildHash("listen", ctx);
+    };
+    search.addEventListener("input", () => { ctx.q = search.value; sync(); draw(); });
+    days.addEventListener("click", e => {
+      const b = e.target.closest("button[data-day]"); if (!b) return;
+      ctx.day = b.dataset.day; days.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x === b))); sync(); draw();
+    });
+    draw();
   }
   function route() {
     if (!idx) return;
@@ -188,6 +240,8 @@
     document.querySelectorAll(".tabs a").forEach(a => a.removeAttribute("aria-current"));
     document.getElementById(r.view === "listen" ? "tab-listen" : "tab-lineup").setAttribute("aria-current", "page");
     if (r.view === "artist") artistView(r.id, r.ctx); else if (r.view === "listen") listenView(r.ctx); else lineupView(r.ctx);
+    const heading = r.view === "artist" ? document.getElementById("title") : null;
+    document.title = heading ? heading.textContent + " · Listening Room" : r.view === "listen" ? "Tracks · Listening Room" : "Listening Room · EDC Orlando 2026";
     if (r.view !== "artist") window.scrollTo(0, 0);
   }
   // A skip link must focus content without changing the app's hash route.
