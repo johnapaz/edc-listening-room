@@ -27,7 +27,8 @@ button{font:inherit;color:inherit;cursor:pointer}
 h1,h2,h3,p{margin:0}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .skip{position:absolute;left:-999px;top:0;background:var(--amber);color:#000;padding:12px;z-index:50}.skip:focus{left:8px;top:8px}
-.wf-banner{position:fixed;z-index:60;right:8px;top:calc(var(--header) + var(--days) + 8px);background:#000c;border:1px dashed var(--amber);color:var(--amber);font-size:.6875rem;font-weight:700;letter-spacing:.06em;padding:4px 8px;border-radius:6px;pointer-events:none}
+body.v-map .wf-banner{display:block}
+.wf-banner{display:none;position:fixed;z-index:60;left:8px;top:calc(var(--header) + var(--days) + 8px);background:#000c;border:1px dashed var(--amber);color:var(--amber);font-size:.6875rem;font-weight:700;letter-spacing:.06em;padding:4px 8px;border-radius:6px;pointer-events:none}
 /* app bar */
 .app{display:grid;grid-template-rows:var(--header) var(--days) 1fr var(--tabbar);height:100dvh}
 .bar{display:flex;align-items:center;gap:8px;padding:0 var(--gutter);border-bottom:1px solid #33405f88}
@@ -92,6 +93,7 @@ main:focus{outline:none}
 .st.confirmed{color:var(--violet)}.st.confirmed::before{background:var(--violet)}
 .st.poster::before{border:1.5px dashed var(--muted)}
 .st.unannounced::before{border:1.5px dotted var(--muted);border-radius:2px}
+.st.glyph{gap:0}
 .st.disputed{color:var(--coral)}.st.disputed::before{content:"!";width:auto;height:auto;border-radius:0;font-weight:900}
 /* set rows */
 ul.sets{list-style:none;margin:0;padding:0}
@@ -146,6 +148,7 @@ dl.legend dd{margin:0;color:var(--muted);font-size:.875rem}
   .desk-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;color:var(--muted);text-decoration:none;font-weight:600;font-size:.875rem}
   .desk-nav a[aria-current=page]{color:var(--violet)}
   main.with-panel .map{right:400px}
+  main.with-panel .map-ctrl{right:412px}
   .sheet{left:auto;width:400px;height:100%!important;border-radius:0;border-top:0;border-left:1px solid var(--line);box-shadow:none}
   .grab{display:none}
   .sheet-body{padding-top:16px}
@@ -153,7 +156,14 @@ dl.legend dd{margin:0;color:var(--muted);font-size:.875rem}
   .page{padding-inline:max(var(--gutter),calc((100% - 760px)/2))}
 }
 @media (max-height:480px) and (orientation:landscape){
-  :root{--days:52px}
+  :root{--days:52px;--tabbar:0px;--header:48px}
+  .tabs{display:none}
+  .desk-nav{display:flex;margin-right:8px}
+  .desk-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 8px;color:var(--muted);text-decoration:none;font-weight:600;font-size:.8125rem}
+  .desk-nav a[aria-current=page]{color:var(--violet)}
+  .attrib{max-width:calc(50% - 24px)}
+  main.with-panel .map-ctrl{right:calc(50% + 12px);flex-direction:row}
+  .grab{display:none}.sheet-body{padding-top:12px}
   .days{padding-block:4px}
   main.with-panel .map{right:50%}
   .sheet{left:auto;width:50%;height:100%!important;border-radius:0}
@@ -206,7 +216,10 @@ const fmt = new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hour:"n
 const t = iso => iso ? fmt.format(new Date(iso)).replace(" PM","").replace(" AM","") : null;
 const ampm = iso => iso ? fmt.format(new Date(iso)).slice(-2) : "";
 const STATUS = {organizer_verified:["confirmed","Confirmed"],poster_transcribed:["poster","Poster time"],set_times_unverified:["unannounced","Time not announced"],disputed:["disputed","Sources disagree"]};
-const badge = p => { const s = STATUS[p.schedule_status] || STATUS.set_times_unverified; return `<span class="st ${s[0]}">${s[1]}</span>`; };
+const badge = (p, common) => { const s = STATUS[p.schedule_status] || STATUS.set_times_unverified;
+  // Rows whose status matches the list header show the glyph with screen-reader text; differing rows show the full text badge.
+  return p.schedule_status === common ? `<span class="st ${s[0]} glyph"><span class="sr-only">${s[1]}</span></span>` : `<span class="st ${s[0]}">${s[1]}</span>`; };
+const commonStatus = list => { const k = new Set(list.map(p => p.schedule_status)); return k.size === 1 ? [...k][0] : null; };
 
 /* ---------- routing ---------- */
 function parse(){
@@ -243,11 +256,11 @@ function timeCell(p){
   if (p.starts_at && !p.ends_at) return `<span class="time">from ${t(p.starts_at)}<small>${ampm(p.starts_at)}</small></span>`;
   return `<span class="time">${t(p.starts_at)}–${t(p.ends_at)}<small>${ampm(p.ends_at)}</small></span>`;
 }
-function setRow(p, r){
+function setRow(p, r, common){
   const qual = p.set_qualifier ? `<span class="chip">${esc(p.set_qualifier)}</span>` : "";
   const details = build({...r, view: r.view === "stage" ? "stage" : "map", set: p.performance_id, artist: ""});
   return `<li class="set">${timeCell(p)}<div><div class="billing">${esc(p.display_name.replace(" ("+p.set_qualifier+")",""))}${qual}</div>
-    <div class="acts">${badge(p)}<a class="link" href="${details}">Details<span class="sr-only"> for ${esc(p.display_name)}</span></a>${hearLinks(p, r.day)}</div></div></li>`;
+    <div class="acts">${badge(p, common)}<a class="link" href="${details}">Details<span class="sr-only"> for ${esc(p.display_name)}</span></a>${hearLinks(p, r.day)}</div></div></li>`;
 }
 function setList(stage, r){
   const list = setsFor(stage, r.day);
@@ -257,11 +270,11 @@ function setList(stage, r){
     const act = r.day !== "all" && unscheduled(r.day).length ? `<a class="btn" href="${build({...r, view:"unscheduled", id:"", set:"", artist:""})}">See ${dayOf(r.day).long} acts without a stage</a>` : `<a class="btn" href="#/sources">Where these times come from</a>`;
     return `<div class="empty"><p>${msg}</p>${act}</div>`;
   }
-  let html = "", cur = "";
+  let html = "", cur = ""; const common = commonStatus(list);
   list.forEach(p => {
     if (r.day === "all" && p.event_date !== cur) { if (cur) html += "</ul>"; cur = p.event_date; html += `<h3 class="day-sub">${dayOf(cur).sub}</h3><ul class="sets">`; }
     else if (!html) html += `<ul class="sets">`;
-    html += setRow(p, r);
+    html += setRow(p, r, common);
   });
   html += "</ul>";
   const un = r.day !== "all" ? unscheduled(r.day).length : 0;
@@ -285,13 +298,13 @@ function mapView(r){
         ${SIM === "mapfail" ? "" : artSVG()}
         <div class="hotspots" id="hotspots"></div>
       </div>
-      <div class="map-ctrl" role="group" aria-label="Map controls">
+      ${SIM === "mapfail" ? "" : `<div class="map-ctrl" role="group" aria-label="Map controls">
         <button type="button" data-z="in" aria-label="Zoom in">${ico("plus")}</button>
         <button type="button" data-z="out" aria-label="Zoom out">${ico("minus")}</button>
         <button type="button" data-z="reset" aria-label="Reset map view">${ico("reset")}</button>
         <button type="button" data-z="list" aria-label="Show stage list">${ico("list")}</button>
       </div>
-      <a class="attrib" href="#/sources">${ico("info",14)} Unofficial sketch · positions approximate · checked ${new Date(D.checked_on+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric"})}</a>
+      <a class="attrib" href="#/sources">${ico("info",14)} Unofficial sketch · positions approximate · checked ${new Date(D.checked_on+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric"})}</a>`}
       <section class="sheet" id="sheet" aria-labelledby="sheet-title" data-size="peek"><button class="grab" type="button" id="grab" aria-expanded="false" aria-label="Expand stage details"></button><div class="sheet-body" id="sheet-body"></div></section>`;
     D.stages.forEach(s => {
       const b = document.createElement("button"); b.type = "button"; b.className = "hs"; b.dataset.stage = s.stage_id;
@@ -301,7 +314,7 @@ function mapView(r){
     });
     wireMap();
     if (SIM === "mapfail") { $("#map").innerHTML = `<div class="page"><div class="empty error"><p>The map didn't load. Every stage is still in the list.</p><a class="btn" href="${build({...r, view:"stages", sheet:""})}">Show stage list</a></div></div>`; }
-    fit();
+    fit(); if (r.stage && r.stage !== "?") requestAnimationFrame(() => centerOn(r.stage));
   }
   main.classList.toggle("with-panel", true);
   if (SIM === "offline") showBanner("You're offline. Showing what was already loaded; times may be out of date.");
@@ -371,7 +384,7 @@ function unscheduledView(r){
   const main = $("#main"); main.classList.remove("with-panel"); const list = unscheduled(r.day).sort((a,b) => a.display_name.localeCompare(b.display_name));
   main.innerHTML = `<div class="page"><a class="link" href="${build({view:"stages", day:r.day})}">← Stages</a><h1>Time not announced</h1>
     <p class="lede">These acts are on the current ${r.day === "all" ? "" : dayOf(r.day).long + " "}lineup, but no stage or time has been published for them yet. We don't guess.</p>
-    <ul class="sets">${list.map(p => `<li class="set">${timeCell(p)}<div><div class="billing">${esc(p.display_name)}</div><div class="acts">${badge(p)}${r.day==="all"?`<span class="none">${dayOf(p.event_date).sub}</span>`:""}${hearLinks(p, r.day)}</div></div></li>`).join("")}</ul></div>`;
+    <ul class="sets">${list.map(p => `<li class="set">${timeCell(p)}<div><div class="billing">${esc(p.display_name)}</div><div class="acts">${badge(p, "set_times_unverified")}${r.day==="all"?`<span class="none">${dayOf(p.event_date).sub}</span>`:""}${hearLinks(p, r.day)}</div></div></li>`).join("")}</ul></div>`;
 }
 function sourcesView(){
   const main = $("#main"); main.classList.remove("with-panel");
@@ -381,7 +394,7 @@ function sourcesView(){
       <p>For the official map and updates, visit the <a href="https://orlando.edc.com/" target="_blank" rel="noopener noreferrer">organizer's website ↗</a>.</p></section>
     <section><h2>What the labels mean</h2><dl class="legend">
       <dt><span class="st confirmed">Confirmed</span></dt><dd>Published by the organizer as final set times.</dd>
-      <dt><span class="st poster">Poster time</span></dt><dd>Read from a published set-time poster (checked ${D.checked_on}). May change.</dd>
+      <dt><span class="st poster">Poster time</span></dt><dd>Read from a published set-time poster (checked ${new Date(D.checked_on+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric"})}). May change.</dd>
       <dt><span class="st unannounced">Time not announced</span></dt><dd>On the current lineup, but no stage or time has been published.</dd>
       <dt><span class="st disputed">Sources disagree</span></dt><dd>Two sources give different values. We show both.</dd></dl></section>
     <section><h2>Music</h2><p>"Hear" links open <a href="${LR}#/lineup" style="color:var(--mint)">Listening Room</a>, which has reviewed recordings for each artist. Those are not the live set.</p></section>
@@ -406,7 +419,8 @@ function artSVG(){
   </svg>`;
 }
 function fit(){
-  const m = $("#map"); if (!m) return; const w = m.clientWidth, h = m.clientHeight - (innerWidth < 1100 && innerHeight > 480 ? 120 : 0);
+  const m = $("#map"); if (!m) return; const sideSheet = innerWidth >= 1100 || innerHeight <= 480; const peek = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--peek")) || 168;
+  const w = m.clientWidth, h = m.clientHeight - (sideSheet ? 0 : peek + 44);
   fitK = Math.min(w / W, h / H); view = {k: fitK, x: (w - W*fitK)/2, y: Math.max(8, (h - H*fitK)/2)}; place();
 }
 function place(){
@@ -419,14 +433,14 @@ function zoom(f, cx, cy){
 }
 function centerOn(id){
   const m = $("#map"), p = HOTSPOT[id]; if (!m || !p) return;
-  const visH = innerWidth >= 1100 ? m.clientHeight : m.clientHeight*.45;
+  const sh = $("#sheet"); const visH = (innerWidth >= 1100 || innerHeight <= 480 || !sh) ? m.clientHeight : m.clientHeight - sh.offsetHeight;
   const sx = view.x + p.x*W*view.k, sy = view.y + p.y*H*view.k;
   if (sy > 40 && sy < visH - 20 && sx > 40 && sx < m.clientWidth - 40) return;
   m.classList.add("anim"); view.x += m.clientWidth/2 - sx; view.y += visH/2 - sy; place(); setTimeout(() => m.classList.remove("anim"), 300);
 }
 function wireMap(){
   const m = $("#map");
-  $(".map-ctrl").addEventListener("click", e => { const z = e.target.closest("button"); if (!z) return;
+  $(".map-ctrl") && $(".map-ctrl").addEventListener("click", e => { const z = e.target.closest("button"); if (!z) return;
     if (z.dataset.z === "in") zoom(1.5); if (z.dataset.z === "out") zoom(1/1.5); if (z.dataset.z === "reset") fit(); if (z.dataset.z === "list") go({view:"stages", set:"", artist:"", sheet:""}); });
   m.addEventListener("wheel", e => { e.preventDefault(); const r = m.getBoundingClientRect(); zoom(e.deltaY < 0 ? 1.15 : 1/1.15, e.clientX - r.left, e.clientY - r.top); }, {passive:false});
   let drag = null;
@@ -455,7 +469,7 @@ $("#days").addEventListener("click", e => { const b = e.target.closest("button")
 document.addEventListener("keydown", e => { if (e.key !== "Escape") return; const r = parse();
   if (r.set || r.artist) go({set:"", artist:""}); else if (r.sheet === "full") go({sheet:"half"}, true); });
 function render(){
-  const r = parse(); days(r);
+  const r = parse(); days(r); document.body.className = "v-" + (["stages","stage","unscheduled","sources"].includes(r.view) ? r.view : "map");
   const nav = r.view === "stage" || r.view === "unscheduled" ? "stages" : r.view;
   document.querySelectorAll("[data-nav]").forEach(a => { if (a.dataset.nav === nav) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
   if (r.view === "stages") stagesView(r); else if (r.view === "stage") stagePage(r); else if (r.view === "unscheduled") unscheduledView(r); else if (r.view === "sources") sourcesView(); else mapView(r);

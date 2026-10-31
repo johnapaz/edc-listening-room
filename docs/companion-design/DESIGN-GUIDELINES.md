@@ -70,6 +70,8 @@ Each schedule fact has exactly one status. Status is always shown as **icon + te
 | disputed / conflicting sources | **Sources disagree** | Coral `!` triangle and coral text, with a link to see both values |
 | historical / unmatched | **Not on current lineup** | Strikethrough-free muted text with an info icon. Hidden from default lists; shown only under "Older poster entries" |
 
+**Row-level rule:** a list header carries the full text badge for its common status, e.g. "◌ Poster times". Rows that share that status show only the glyph, with the status as visually hidden text. Any row whose status **differs** from the header shows the full text badge. Without that rule, a stage with ten poster times repeats "Poster time" ten times and pushes the "Hear" links onto a second line. If a list mixes statuses, the header says "Mixed sources" and every row shows its full badge.
+
 Freshness is always visible next to the source label, e.g. "Poster times · checked Oct 30". The footer adds "Not affiliated with EDC or Insomniac. Map is an original sketch, not the official map."
 
 ## 5. The map (original schematic)
