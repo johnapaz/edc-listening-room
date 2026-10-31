@@ -80,7 +80,8 @@ const server = http.createServer((req, res) => {
       assert.equal(await page.evaluate(() => document.activeElement.tagName), 'A'); pass('keyboard stage link and subsequent schedule navigation');
       for (const [width, height] of [[280, 653], [360, 740], [412, 915], [768, 1024], [844, 390], [1280, 800], [320, 640], [180, 740]]) {
         await page.setViewportSize({ width, height });
-        assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'overflow at ' + width);
+        const overflow = await page.evaluate(() => [...document.querySelectorAll('body *')].filter(n => n.getBoundingClientRect().right > innerWidth + 1).map(n => ({ tag: n.tagName, cls: n.className, text: n.textContent.slice(0, 70) })).slice(0, 8));
+        assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'overflow at ' + width + ': ' + JSON.stringify(overflow));
         const min = await page.locator('.stage-link,.days a').evaluateAll(nodes => Math.min(...nodes.map(n => n.getBoundingClientRect().height)));
         assert.ok(min >= 44, 'target below 44px at ' + width);
         await page.screenshot({ path: path.join(shots, engine + '-' + width + 'x' + height + '.png') });

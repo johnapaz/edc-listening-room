@@ -33,6 +33,7 @@ def validate(doc=None, artists=None, venues=None, historical=None, snapshot=None
     old = {p['performance_id']: p for p in historical}
     sources = {s['source_id']: s for s in doc['sources']}
     require(doc['timezone'] == 'America/New_York', 'Timezone must be event-local')
+    event_dates = {d['day']: d['event_date'] for d in read('event.json')['days']}
     for day, names in snapshot['by_day'].items():
         require([p['display_name'] for p in rows if p['day'] == day] == names, 'Current day-list mismatch: ' + day)
     require(len(rows) == sum(map(len, snapshot['by_day'].values())), 'Current appearances lost or added')
@@ -41,6 +42,7 @@ def validate(doc=None, artists=None, venues=None, historical=None, snapshot=None
     for p in rows:
         pid = p['performance_id']
         require(p['event_date'] in pid, 'ID/date mismatch: ' + pid)
+        require(event_dates.get(p['day']) == p['event_date'], 'Date outside festival: ' + pid)
         require(datetime.fromisoformat(p['event_date']).strftime('%A') == p['day'], 'Day/date mismatch: ' + pid)
         require(p['artist_ids'] and all(i in art for i in p['artist_ids']) or p['performance_type'] == 'program', 'Unknown artist: ' + pid)
         unique(p['artist_ids'], 'participant: ' + pid)
@@ -71,6 +73,7 @@ def validate(doc=None, artists=None, venues=None, historical=None, snapshot=None
                 require(all(p[f] == old[pid][f] for f in ('artist_ids', 'stage_id', 'starts_at', 'ends_at', 'schedule_source_id')), 'Poster slot changed: ' + pid)
         reconciliation = p['reconciliation']
         if pid in old:
+            require(all(p[f] == old[pid][f] for f in ('performance_type', 'artist_ids', 'credits')), 'Historical participants or roles changed: ' + pid)
             require(reconciliation['historical_performance_id'] == pid and reconciliation['historical_billing'] == old[pid]['display_name'], 'Historical lineage lost: ' + pid)
             require(set(old[pid].get('issue_ids', [])) <= set(p['issue_ids']), 'Earlier conflict erased: ' + pid)
         else:
