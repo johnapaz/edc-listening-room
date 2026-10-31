@@ -1,102 +1,613 @@
 {
-  "schema_version": 1,
-  "source": "pilot/preview-approved.json (human-reviewed; owner-confirmed playback of the private preview)",
+  "schema_version": 2,
+  "source": "Approved preview plus owner-authorized source-reviewed links; playback states remain distinct.",
   "songs": [
     {
       "artist_id": "artist:martin-garrix",
+      "artist_ids": [
+        "artist:martin-garrix"
+      ],
       "title": "Carry You",
       "video_id": "bz6taI5pDl0",
       "url": "https://www.youtube.com/watch?v=bz6taI5pDl0",
       "review_status": "strong",
-      "version_note": "Original (not extended/instrumental); video 3:36 vs MB 3:35.9"
+      "version_note": "Original (not extended/instrumental); video 3:36 vs MB 3:35.9",
+      "verification": "owner_playback"
     },
     {
       "artist_id": "artist:i-hate-models",
+      "artist_ids": [
+        "artist:i-hate-models"
+      ],
       "title": "Daydream",
       "video_id": "U6EjUIefwiw",
       "url": "https://www.youtube.com/watch?v=U6EjUIefwiw",
       "review_status": "strong",
-      "version_note": "Original; video 7:44 vs MB 7:43"
+      "version_note": "Original; video 7:44 vs MB 7:43",
+      "verification": "owner_playback"
     },
     {
       "artist_id": "artist:a-little-sound",
+      "artist_ids": [
+        "artist:a-little-sound"
+      ],
       "title": "Back To Back (B2B)",
       "video_id": "HYCG79PxgFc",
       "url": "https://www.youtube.com/watch?v=HYCG79PxgFc",
       "review_status": "strong",
-      "version_note": "Original; video 2:56 vs MB 2:55.6"
+      "version_note": "Original; video 2:56 vs MB 2:55.6",
+      "verification": "owner_playback"
     },
     {
       "artist_id": "artist:a-little-sound",
+      "artist_ids": [
+        "artist:a-little-sound"
+      ],
       "title": "Breathe",
       "video_id": "Rv550gn6y8k",
       "url": "https://www.youtube.com/watch?v=Rv550gn6y8k",
       "review_status": "version_unresolved",
-      "version_note": "Official UKF video 3:33 (213s)"
+      "version_note": "Official UKF video 3:33 (213s)",
+      "verification": "owner_playback"
     },
     {
       "artist_id": "artist:a-little-sound",
+      "artist_ids": [
+        "artist:a-little-sound"
+      ],
       "title": "Weed & Wine (Relax, Rewind)",
       "video_id": "_M5O_ED_1aI",
       "url": "https://www.youtube.com/watch?v=_M5O_ED_1aI",
       "review_status": "good_pending_playback",
-      "version_note": "Friction & A Little Sound; video 3:04 vs MB 3:04"
+      "version_note": "Friction & A Little Sound; video 3:04 vs MB 3:04",
+      "verification": "owner_playback"
     },
     {
       "artist_id": "artist:a-little-sound",
+      "artist_ids": [
+        "artist:a-little-sound"
+      ],
       "title": "Confide",
       "video_id": "WimivlmnA9I",
       "url": "https://www.youtube.com/watch?v=WimivlmnA9I",
       "review_status": "good_pending_playback",
-      "version_note": "Technimatic ft. A Little Sound; video 4:30 vs MB 4:28"
+      "version_note": "Technimatic ft. A Little Sound; video 4:30 vs MB 4:28",
+      "verification": "owner_playback"
     },
     {
       "artist_id": "artist:a-little-sound",
+      "artist_ids": [
+        "artist:a-little-sound"
+      ],
       "title": "Overload",
       "video_id": "8I-QJlFSJdM",
       "url": "https://www.youtube.com/watch?v=8I-QJlFSJdM",
       "review_status": "good_pending_playback",
-      "version_note": "Annix ft. A Little Sound; video 3:40 vs MB 3:39"
+      "version_note": "Annix ft. A Little Sound; video 3:40 vs MB 3:39",
+      "verification": "owner_playback"
     },
     {
       "artist_id": "artist:ki-ki",
+      "artist_ids": [
+        "artist:ki-ki"
+      ],
       "title": "5 Mins Of Acid",
       "video_id": "wtnrLTqmUKI",
       "url": "https://www.youtube.com/watch?v=wtnrLTqmUKI",
       "review_status": "strong",
-      "version_note": "Full 5:00 version (official music video, Armada)"
+      "version_note": "Full 5:00 version (official music video, Armada)",
+      "verification": "owner_playback"
     },
     {
       "artist_id": "artist:acraze",
+      "artist_ids": [
+        "artist:acraze"
+      ],
       "title": "Do It To It",
       "video_id": "bnA7yJkAG30",
       "url": "https://www.youtube.com/watch?v=bnA7yJkAG30",
       "review_status": "strong",
-      "version_note": "feat. Cherish; video 2:38 vs MB 2:37.9"
+      "version_note": "feat. Cherish; video 2:38 vs MB 2:37.9",
+      "verification": "owner_playback"
     },
     {
       "artist_id": "artist:cid",
+      "artist_ids": [
+        "artist:cid"
+      ],
       "title": "Night Service Only",
       "video_id": "Scc4CRVroPo",
       "url": "https://www.youtube.com/watch?v=Scc4CRVroPo",
       "review_status": "no_mb_match_source_id_only",
-      "version_note": "Official video edit (190 s, Spinnin')"
+      "version_note": "Official video edit (190 s, Spinnin')",
+      "verification": "owner_playback"
     },
     {
       "artist_id": "artist:vastive",
+      "artist_ids": [
+        "artist:vastive"
+      ],
       "title": "Slaughter",
       "video_id": "Ve_LOVTzbxM",
       "url": "https://www.youtube.com/watch?v=Ve_LOVTzbxM",
       "review_status": "strong_with_rounding_note",
-      "version_note": "Sullivan King & Vastive (Monstercat 2024-07-26); distributor video 3:09 vs label 3:08 / MB 188.667 s"
+      "version_note": "Sullivan King & Vastive (Monstercat 2024-07-26); distributor video 3:09 vs label 3:08 / MB 188.667 s",
+      "verification": "owner_playback"
     },
     {
       "artist_id": "artist:benda",
+      "artist_ids": [
+        "artist:benda"
+      ],
       "title": "Poison Control",
       "video_id": "oXhWSs0mRH4",
       "url": "https://www.youtube.com/watch?v=oXhWSs0mRH4",
       "review_status": "strong",
-      "version_note": "Original; official Benda - Topic auto-generated audio (Stem Disintermedia, released 2022-08-17, writer Niv Ben-David); video PT2M39S vs MB 158.367 s"
+      "version_note": "Original; official Benda - Topic auto-generated audio (Stem Disintermedia, released 2022-08-17, writer Niv Ben-David); video PT2M39S vs MB 158.367 s",
+      "verification": "owner_playback"
+    },
+    {
+      "artist_id": "artist:azzecca",
+      "artist_ids": [
+        "artist:azzecca"
+      ],
+      "title": "Other Side",
+      "video_id": "xX8vYFSV6ek",
+      "url": "https://www.youtube.com/watch?v=xX8vYFSV6ek",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:azzecca",
+      "artist_ids": [
+        "artist:azzecca"
+      ],
+      "title": "oh my yuma!",
+      "video_id": "QGR2oJ8lr2E",
+      "url": "https://www.youtube.com/watch?v=QGR2oJ8lr2E",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:slander",
+      "artist_ids": [
+        "artist:slander",
+        "artist:vastive"
+      ],
+      "title": "Under My Skin",
+      "video_id": "kYP_jbcd3Q8",
+      "url": "https://www.youtube.com/watch?v=kYP_jbcd3Q8",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:big-florida",
+      "artist_ids": [
+        "artist:big-florida"
+      ],
+      "title": "RIDE",
+      "video_id": "0oAc2uiyOeY",
+      "url": "https://www.youtube.com/watch?v=0oAc2uiyOeY",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:bou",
+      "artist_ids": [
+        "artist:bou"
+      ],
+      "title": "Closer",
+      "video_id": "F6BU1_R64oM",
+      "url": "https://www.youtube.com/watch?v=F6BU1_R64oM",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:brunello",
+      "artist_ids": [
+        "artist:brunello"
+      ],
+      "title": "Ghost Dance",
+      "video_id": "irDsRokzylg",
+      "url": "https://www.youtube.com/watch?v=irDsRokzylg",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:brunello",
+      "artist_ids": [
+        "artist:brunello"
+      ],
+      "title": "Science Fiction",
+      "video_id": "7CUTn0q-j0w",
+      "url": "https://www.youtube.com/watch?v=7CUTn0q-j0w",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:brunello",
+      "artist_ids": [
+        "artist:brunello"
+      ],
+      "title": "Illusions",
+      "video_id": "A_M-v_qsIJI",
+      "url": "https://www.youtube.com/watch?v=A_M-v_qsIJI",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:bullet-tooth",
+      "artist_ids": [
+        "artist:bullet-tooth"
+      ],
+      "title": "A Place You Wanna Go (Good Life)",
+      "video_id": "gBBfvLjtDGE",
+      "url": "https://www.youtube.com/watch?v=gBBfvLjtDGE",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:sidney-charles",
+      "artist_ids": [
+        "artist:sidney-charles"
+      ],
+      "title": "Hyper Rave",
+      "video_id": "M59_URXeNlc",
+      "url": "https://www.youtube.com/watch?v=M59_URXeNlc",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:sidney-charles",
+      "artist_ids": [
+        "artist:sidney-charles"
+      ],
+      "title": "Bass Rider",
+      "video_id": "Eg6P3j5wIzY",
+      "url": "https://www.youtube.com/watch?v=Eg6P3j5wIzY",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:chris-lorenzo",
+      "artist_ids": [
+        "artist:chris-lorenzo"
+      ],
+      "title": "In This Bih'",
+      "video_id": "TbYk1ib8CA8",
+      "url": "https://www.youtube.com/watch?v=TbYk1ib8CA8",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:chris-lorenzo",
+      "artist_ids": [
+        "artist:chris-lorenzo"
+      ],
+      "title": "California Dreamin' (feat. High Jinx)",
+      "video_id": "aNggrPAi5dg",
+      "url": "https://www.youtube.com/watch?v=aNggrPAi5dg",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:hayla",
+      "artist_ids": [
+        "artist:hayla",
+        "artist:kaskade"
+      ],
+      "title": "Escape (feat. Hayla)",
+      "video_id": "BMFNN40fNp0",
+      "url": "https://www.youtube.com/watch?v=BMFNN40fNp0",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:hayla",
+      "artist_ids": [
+        "artist:hayla"
+      ],
+      "title": "Where You Are",
+      "video_id": "5BqjhUmldDc",
+      "url": "https://www.youtube.com/watch?v=5BqjhUmldDc",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:idemi",
+      "artist_ids": [
+        "artist:idemi"
+      ],
+      "title": "Reflections",
+      "video_id": "-899-ptNSXo",
+      "url": "https://www.youtube.com/watch?v=-899-ptNSXo",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:interplanetary-criminal",
+      "artist_ids": [
+        "artist:interplanetary-criminal"
+      ],
+      "title": "Yosemite",
+      "video_id": "ZDJdynqu-i4",
+      "url": "https://www.youtube.com/watch?v=ZDJdynqu-i4",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:josh-baker",
+      "artist_ids": [
+        "artist:josh-baker"
+      ],
+      "title": "My Place",
+      "video_id": "iUzi0PHB1sY",
+      "url": "https://www.youtube.com/watch?v=iUzi0PHB1sY",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:josh-baker",
+      "artist_ids": [
+        "artist:josh-baker",
+        "artist:omar-plus"
+      ],
+      "title": "Back It Up",
+      "video_id": "Ls76ISA-4hc",
+      "url": "https://www.youtube.com/watch?v=Ls76ISA-4hc",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:joshwa",
+      "artist_ids": [
+        "artist:joshwa"
+      ],
+      "title": "My Humps",
+      "video_id": "TOlDFkiVLdw",
+      "url": "https://www.youtube.com/watch?v=TOlDFkiVLdw",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:kream",
+      "artist_ids": [
+        "artist:kream"
+      ],
+      "title": "Arrival",
+      "video_id": "zGO142zWkIs",
+      "url": "https://www.youtube.com/watch?v=zGO142zWkIs",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:level-up",
+      "artist_ids": [
+        "artist:level-up"
+      ],
+      "title": "The Other Side",
+      "video_id": "Z1rnXaTV3ck",
+      "url": "https://www.youtube.com/watch?v=Z1rnXaTV3ck",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:malugi",
+      "artist_ids": [
+        "artist:malugi"
+      ],
+      "title": "Honestly",
+      "video_id": "G7LVAtqPadU",
+      "url": "https://www.youtube.com/watch?v=G7LVAtqPadU",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:malugi",
+      "artist_ids": [
+        "artist:malugi"
+      ],
+      "title": "Chiggy Chiggy (feat. Inéz)",
+      "video_id": "c-VZY0XxxtM",
+      "url": "https://www.youtube.com/watch?v=c-VZY0XxxtM",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:malugi",
+      "artist_ids": [
+        "artist:malugi"
+      ],
+      "title": "Forever 2 (Crush Mix) - Malugi Remix",
+      "video_id": "ykY-5DZS_Ok",
+      "url": "https://www.youtube.com/watch?v=ykY-5DZS_Ok",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:luke-dean",
+      "artist_ids": [
+        "artist:luke-dean",
+        "artist:omar-plus"
+      ],
+      "title": "Make Believe",
+      "video_id": "W7ThRlBDjfg",
+      "url": "https://www.youtube.com/watch?v=W7ThRlBDjfg",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:omar-plus",
+      "artist_ids": [
+        "artist:omar-plus"
+      ],
+      "title": "Out Of My Mind",
+      "video_id": "RFXM4RrHCRU",
+      "url": "https://www.youtube.com/watch?v=RFXM4RrHCRU",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:bullet-tooth",
+      "artist_ids": [
+        "artist:bullet-tooth",
+        "artist:omar-plus"
+      ],
+      "title": "Lose Control",
+      "video_id": "lfWqXksjQQQ",
+      "url": "https://www.youtube.com/watch?v=lfWqXksjQQQ",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:pegassi",
+      "artist_ids": [
+        "artist:pegassi"
+      ],
+      "title": "Spectral Bells",
+      "video_id": "jBWLZ_GxWlg",
+      "url": "https://www.youtube.com/watch?v=jBWLZ_GxWlg",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:whethan",
+      "artist_ids": [
+        "artist:whethan"
+      ],
+      "title": "Swag Surfin'",
+      "video_id": "fcgr6PR9E60",
+      "url": "https://www.youtube.com/watch?v=fcgr6PR9E60",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:whethan",
+      "artist_ids": [
+        "artist:whethan"
+      ],
+      "title": "MONEY ON THE DASH - SPED UP",
+      "video_id": "5D597frOWhI",
+      "url": "https://www.youtube.com/watch?v=5D597frOWhI",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:kaskade",
+      "artist_ids": [
+        "artist:kaskade",
+        "artist:wooli"
+      ],
+      "title": "Hear Me Now",
+      "video_id": "KWn5FkkuYwk",
+      "url": "https://www.youtube.com/watch?v=KWn5FkkuYwk",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:aaron-hibell",
+      "artist_ids": [
+        "artist:aaron-hibell"
+      ],
+      "title": "set me free",
+      "video_id": "Og0A10H7YqU",
+      "url": "https://www.youtube.com/watch?v=Og0A10H7YqU",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:aaron-hibell",
+      "artist_ids": [
+        "artist:aaron-hibell"
+      ],
+      "title": "i feel lost",
+      "video_id": "85-so5m3CMM",
+      "url": "https://www.youtube.com/watch?v=85-so5m3CMM",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:aaron-hibell",
+      "artist_ids": [
+        "artist:aaron-hibell"
+      ],
+      "title": "levitation",
+      "video_id": "RlmeqTs4i_w",
+      "url": "https://www.youtube.com/watch?v=RlmeqTs4i_w",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:alleycvt",
+      "artist_ids": [
+        "artist:alleycvt",
+        "artist:level-up"
+      ],
+      "title": "BELIEVE",
+      "video_id": "rht_fkVLk8I",
+      "url": "https://www.youtube.com/watch?v=rht_fkVLk8I",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:acraze",
+      "artist_ids": [
+        "artist:acraze"
+      ],
+      "title": "Take Me Away",
+      "video_id": "bVm0ygOuiNk",
+      "url": "https://www.youtube.com/watch?v=bVm0ygOuiNk",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:acraze",
+      "artist_ids": [
+        "artist:acraze"
+      ],
+      "title": "Heard It Like This",
+      "video_id": "UeqAebUWRQE",
+      "url": "https://www.youtube.com/watch?v=UeqAebUWRQE",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
     }
   ]
 }

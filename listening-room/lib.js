@@ -32,14 +32,22 @@
     const artists = new Map(data.artists.map(a => [a.artist_id, a]));
     const stages = new Map((data.stages || []).map(s => [s.stage_id, s]));
     const songsByArtist = new Map();
+    const songs = [];
+    const seen = new Set();
     data.songs.forEach(s => {
-      if (!safeYoutubeUrl(s.url)) return;
-      if (!songsByArtist.has(s.artist_id)) songsByArtist.set(s.artist_id, []);
-      songsByArtist.get(s.artist_id).push(s);
+      if (!safeYoutubeUrl(s.url) || seen.has(s.video_id)) return;
+      const ids = [...new Set(s.artist_ids || [s.artist_id])].filter(id => artists.has(id));
+      if (!ids.length) return;
+      const song = { ...s, artist_ids: ids };
+      seen.add(s.video_id); songs.push(song);
+      ids.forEach(id => {
+        if (!songsByArtist.has(id)) songsByArtist.set(id, []);
+        songsByArtist.get(id).push(song);
+      });
     });
     const performances = data.performances.slice().sort((a, b) =>
       a.event_date.localeCompare(b.event_date) || a.source_order - b.source_order);
-    return { artists, stages, songsByArtist, performances };
+    return { artists, stages, songs, songsByArtist, performances };
   }
 
   // Songs grouped per credited artist so a B2B shows whose catalog each song is from.
@@ -51,7 +59,7 @@
   }
 
   function songCount(perf, idx) {
-    return songGroups(perf, idx).reduce((n, g) => n + g.songs.length, 0);
+    return new Set(songGroups(perf, idx).flatMap(g => g.songs.map(s => s.video_id))).size;
   }
 
   function matches(perf, idx, query) {

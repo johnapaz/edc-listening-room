@@ -30,3 +30,4 @@
 .ready{margin-bottom:24px}
 
 @media(min-width:900px){.music-card{display:flex;align-items:center;padding-left:8px}.music-card>.art-link{width:76px;min-width:76px}.feature-art{width:76px;height:44px}.music-copy{padding:0 8px;flex:1;min-width:0}.music-copy .artist-link{font-size:.8125rem}.music-copy .track-title{font-size:.75rem}.music-grid{gap:10px}}
+.song-credits{display:flex;flex-wrap:wrap;align-items:center;column-gap:4px}.song-credits .artist-link{display:inline-flex;align-items:center;min-height:44px;max-width:100%;overflow-wrap:anywhere}

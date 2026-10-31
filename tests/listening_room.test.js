@@ -54,6 +54,20 @@ test("B2B performance exposes songs from each credited artist", () => {
   assert.ok(L.songCount(p, idx) >= 2);
 });
 
+test("collaborations appear under each credited artist and once in the catalog", () => {
+  assert.equal(idx.songs.length, 50);
+  assert.equal(idx.songsByArtist.size, 32);
+  for (const ids of [["artist:slander", "artist:vastive"], ["artist:kaskade", "artist:wooli"], ["artist:luke-dean", "artist:omar-plus"]]) {
+    const shared = idx.songs.filter(s => ids.every(id => s.artist_ids.includes(id)));
+    assert.ok(shared.length > 0, ids.join(" / "));
+    shared.forEach(s => ids.forEach(id => assert.ok(idx.songsByArtist.get(id).includes(s))));
+  }
+  const duplicate = L.index({ performances: [], artists: [...idx.artists.values()], songs: [idx.songs[0], idx.songs[0]] });
+  assert.equal(duplicate.songs.length, 1);
+  const joint = idx.songs.find(s => s.title === "Back It Up");
+  assert.equal(L.songCount({ artist_ids: joint.artist_ids }, idx), new Set(L.songGroups({ artist_ids: joint.artist_ids }, idx).flatMap(g => g.songs.map(s => s.video_id))).size);
+});
+
 test("only reviewed direct YouTube video URLs are exposed", () => {
   for (const songs of idx.songsByArtist.values())
     for (const s of songs) assert.match(s.url, /^https:\/\/www\.youtube\.com\/watch\?v=[\w-]{11}$/);
