@@ -21,9 +21,15 @@ const shots = process.argv[2];
   assert.equal(await page.locator("#list li").count(), 110); ok("all 110 entries listed");
   assert.match(await page.textContent("#count"), /110 lineup entries/);
 
-  // Scenario 1: playlist is honest when unpublished (no dead CTA)
-  assert.match(await page.textContent("section.card"), /Coming soon/);
-  assert.equal(await page.locator("section.card a.btn").count(), 0); ok("playlist unavailable state, no dead link");
+  // Scenario 1: playlist is honest when unpublished (no dead CTA). Until it is live, its card lives on Listen only.
+  assert.equal(await page.locator("section.playlist-card").count(), 0); ok("no unavailable playlist card above the lineup");
+
+  // Design review #47: one keyboard stop per destination, consistent row targets, header About link
+  const rowLinks = await page.$$eval("#list li:first-child a", as => as.map(a => [a.className, a.getAttribute("href"), a.tabIndex]));
+  const toArtist = rowLinks.filter(([c]) => c !== "facet");
+  assert.ok(toArtist.every(([, h]) => h === toArtist[0][1] && h.startsWith("#/artist/")), "row artwork, name and arrow share one destination");
+  assert.equal(rowLinks.filter(([, , t]) => t >= 0).length, 2, "two keyboard stops per row: name and day");
+  assert.equal(await page.getAttribute("header a.about-link", "href"), "/about/"); ok("lineup rows consistent, keyboard-lean, About in header");
 
   // Scenario 2: find B2B artist -> song in 3 taps excluding typing, back keeps context
   await page.fill("#q", "acraze");
@@ -61,6 +67,18 @@ const shots = process.argv[2];
   await page.goto(BASE + "#/listen");
   await page.waitForSelector(".song");
   assert.ok(await page.locator(".song a.btn").count() >= 10); ok("Listen lists reviewed songs");
+  assert.match(await page.textContent("section.playlist-card"), /Coming soon/);
+  assert.equal(await page.locator("section.playlist-card a.btn").count(), 0); ok("Listen: playlist unavailable state, no dead link");
+  const names = await page.$$eval(".song a.btn", as => as.map(a => a.getAttribute("aria-label")));
+  assert.ok(names.every(n => /^Play .+ on YouTube \(opens in a new tab\)$/.test(n)) && new Set(names).size === names.length, "distinct YouTube button names");
+  ok("YouTube buttons have distinct accessible names");
+
+  // Shared root links keep their route; link previews and icons are declared
+  await page.goto(new URL(BASE).origin + "/#/artist/" + encodeURIComponent("edco26:2026-11-08:martin-garrix"));
+  await page.waitForSelector("h1#title");
+  assert.match(await page.textContent("h1#title"), /Martin Garrix/); ok("root share link keeps #/route");
+  assert.equal(await page.getAttribute('meta[property="og:image"]', "content"), "https://listeningroom.app/og.png");
+  assert.equal(await page.getAttribute('link[rel="icon"]', "href"), "/favicon.svg"); ok("link preview and icon metadata");
 
   // Keyboard: tab order reaches search and a result, Enter opens
   await page.goto(BASE);
