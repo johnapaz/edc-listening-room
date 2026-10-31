@@ -443,6 +443,7 @@ def layout(page, pages, i, stats):
 <footer class="foot">
   <div class="foot-in">
     <p><strong>Independent and unofficial.</strong> Listening Room isn’t affiliated with, endorsed by or sponsored by EDC or Insomniac. Artist and event names identify performers and the event; trademarks belong to their owners.</p>
+    <p>© 2026 John A. Paz. Original work: all rights reserved. <a href="{BASE}credits/">Credits &amp; licensing</a>.</p>
     <p class="foot-links"><a href="{APP}">Open Listening Room</a><a href="{BASE}privacy/">Privacy &amp; terms</a><a href="{BASE}accessibility/">Accessibility</a><a href="https://orlando.edc.com/lineup/" target="_blank" rel="noopener noreferrer">Official lineup<span class="vh"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></p>
   </div>
 </footer>
@@ -473,6 +474,8 @@ def build(out=None):
     for name in ("about.css", "about.js"):
         shutil.copyfile(SRC / "assets" / name, dest / "assets" / name)
     (dest / "img").mkdir(exist_ok=True)
+    # Creator portrait is a static first-party asset, not a versioned app screenshot.
+    shutil.copyfile(SRC / "img" / "john-paz.webp", dest / "img" / "john-paz.webp")
     if r.shots_current:
         for key, meta in shots.items():
             if not key.startswith("_"):
