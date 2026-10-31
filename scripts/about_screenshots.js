@@ -10,6 +10,7 @@
 // from img.youtube.com; without network access the app shows its initials fallback instead.
 const { chromium } = require("playwright");
 const fs = require("node:fs");
+const crypto = require("node:crypto");
 const { execFileSync } = require("node:child_process");
 const path = require("node:path");
 
@@ -19,15 +20,16 @@ const PHONE = { width: 375, height: 812 };
 const TABS = 64; // fixed bottom bar, kept in frame so the shot looks like the real screen
 
 const shots = [
-  { name: "lineup", route: "#/lineup", wait: "#list li",
-    callouts: [["#q", 1], [".days", 2], ["#featured .music-grid", 3], ["#list li:first-child", 4]],
-    until: "#list li:first-child" },
-  { name: "search", route: "#/lineup", wait: "#list li", type: "luke dean", until: "#list li:last-child" },
-  { name: "day", route: "#/lineup?day=2026-11-06", wait: "#list li", until: "#list li:nth-child(2)" },
+  { name: "lineup", route: "#/lineup", wait: "#list li.lineup-row",
+    callouts: [["#q", 1], [".days", 2], [".music-filter", 3], ["#featured .music-grid", 4], ["#list li.lineup-row", 5]],
+    until: "#list li.lineup-row" },
+  { name: "search", route: "#/lineup", wait: "#list li", type: "acraze", until: "#list li" },
+  { name: "tracks", route: "#/lineup?music=1", wait: "#list li.lineup-row", until: "#list li:nth-child(5)" },
+  { name: "day", route: "#/lineup?day=2026-11-06", wait: "#list li", until: "#list li:nth-child(3)" },
   { name: "artist", route: "#/artist/edco26:2026-11-08:martin-garrix", wait: ".song",
-    callouts: [["main p.flag", 1], [".song .track-title", 2], [".song .btn", 3]], until: ".song:last-of-type" },
-  { name: "nosong", route: "#/artist/edco26:2026-11-06:afrojack", wait: ".empty", until: ".empty" },
-  { name: "b2b", route: "#/artist/edco26:2026-11-07:acraze-b2b-cid", wait: ".song", until: "main .song:last-of-type" },
+    callouts: [["main p.flag", 1], [".song .track-title", 2], [".song .btn", 3]], until: "main .song" },
+  { name: "nosong", route: "#/artist/edco26:2026-11-06:afrojack", wait: ".empty", until: "main .empty" },
+  { name: "b2b", route: "#/artist/edco26:2026-11-07:acraze-b2b-cid", wait: ".song", until: "main .song" },
   { name: "listen", route: "#/listen", wait: ".song", until: "main ul.list li:nth-child(4)" },
   { name: "desktop", route: "#/lineup", wait: "#list li", viewport: { width: 1280, height: 800 }, scale: 1 },
 ];
@@ -68,7 +70,11 @@ async function callout(page, items) {
     await page.evaluate(() => document.activeElement && document.activeElement.blur());
     if (!s.viewport) {
       // Grow the viewport to end just below the element of interest, keeping the tab bar in view.
-      const bottom = await page.$eval(s.until, el => el.getBoundingClientRect().bottom + scrollY);
+      // Bottom of the last element matching s.until.
+      const bottom = await page.$$eval(s.until, els => {
+        if (!els.length) throw new Error("until target missing");
+        return els[els.length - 1].getBoundingClientRect().bottom + scrollY;
+      });
       const height = Math.min(1150, Math.ceil(bottom + 20 + TABS));
       await page.setViewportSize({ width: viewport.width, height });
       await page.evaluate(() => scrollTo(0, 0));
@@ -87,5 +93,9 @@ async function callout(page, items) {
     execFileSync("python3", ["-c", conv, ...Object.values(meta).map(m => path.join(OUT, m.file))], { stdio: "inherit" });
     Object.values(meta).forEach(m => { m.file = m.file.replace(/\.png$/, ".webp"); });
   } catch (_e) { console.log("Pillow unavailable; keeping PNG screenshots."); }
+  // Fingerprint of the app UI the screenshots show; build_about.py leaves images out once the app changes.
+  const h = crypto.createHash("sha256");
+  for (const f of ["index.html", "app.js", "lib.js", "styles.css"]) h.update(fs.readFileSync(path.join(__dirname, "..", "listening-room", f)));
+  meta._app = h.digest("hex").slice(0, 16);
   fs.writeFileSync(path.join(OUT, "shots.json"), JSON.stringify(meta, null, 2) + "\n");
 })().catch(e => { console.error(e); process.exit(1); });

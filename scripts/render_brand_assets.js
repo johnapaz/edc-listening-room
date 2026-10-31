@@ -26,8 +26,8 @@ const og = `<body style="margin:0;width:1200px;height:630px;overflow:hidden;font
   </div>
   <div style="position:absolute;left:72px;top:150px;width:780px">
     <div style="display:inline-block;border:2px solid #33405f;border-radius:99px;padding:8px 20px;font-size:20px;font-weight:700;letter-spacing:.14em;color:#6ff0c4">EDC ORLANDO 2026 · NOV 6–8</div>
-    <div style="margin-top:26px;font-size:66px;line-height:1.04;font-weight:850;letter-spacing:-.04em">Hear the lineup <span style="color:#6ff0c4">before</span> you’re in the crowd.</div>
-    <div style="margin-top:24px;font-size:28px;color:#b4bdd6;line-height:1.35">Find an act, pick a day, hear a song someone checked.</div>
+    <div style="margin-top:26px;font-size:66px;line-height:1.04;font-weight:850;letter-spacing:-.04em">Find an artist, check their day, <span style="color:#6ff0c4">try a track.</span></div>
+    <div style="margin-top:24px;font-size:28px;color:#b4bdd6;line-height:1.35">An independent guide to the official lineup. Tracks open on YouTube.</div>
   </div>
   <div style="position:absolute;right:72px;bottom:160px;width:250px;height:240px;display:flex;align-items:flex-end;gap:9px">${bars}</div>
   <div style="position:absolute;left:72px;right:72px;bottom:56px;display:flex;justify-content:space-between;align-items:center;font-size:24px">

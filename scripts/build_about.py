@@ -52,6 +52,18 @@ def plain(fragment):
     return re.sub(r"\s+", " ", html.unescape(TAG.sub(" ", fragment))).strip()
 
 
+def app_fingerprint():
+    """Hash of the app's UI files. Screenshots record it so stale ones can be detected (scripts/about_screenshots.js)."""
+    import hashlib
+    h = hashlib.sha256()
+    for name in APP_FILES:
+        h.update((ROOT / "listening-room" / name).read_bytes())
+    return h.hexdigest()[:16]
+
+
+APP_FILES = ("index.html", "app.js", "lib.js", "styles.css")
+
+
 # ---------------------------------------------------------------- data
 class Data:
     def __init__(self):
@@ -125,6 +137,8 @@ class Renderer:
         self.slugs = {p["slug"]: p for p in pages}
         self.page_links = []  # (from_page, slug, anchor) checked after all pages render
         self.ui_strings = set()  # UI copy quoted by the help pages; tests check the app still shows it
+        self.shots_current = shots.get("_app") == app_fingerprint()
+        self.shots_skipped = set()
 
     def app_href(self, route):
         path, _, query = route.partition("?")
@@ -164,6 +178,15 @@ class Renderer:
             # Quoted interface copy. Rendered as-is; tests/test_about_site.py checks the app still contains it.
             self.ui_strings.add(arg)
             return ESC(arg)
+        if name == "hit":
+            # Display name of the artist an example search finds, so examples stay true as billing changes.
+            q = normalize(arg)
+            for p in self.search_hits(arg):
+                for aid in p["artist_ids"]:
+                    a = self.d.artists.get(aid) or {}
+                    if q in normalize(" ".join([a.get("display_name", ""), a.get("search_name", "")] + list(a.get("aliases") or []))):
+                        return ESC(a["display_name"])
+            raise BuildError(f"{page['file']}: example search finds no artist: {arg}")
         if name == "stat":
             if args[0] not in self.stats:
                 raise BuildError(f"{page['file']}: unknown stat {args[0]}")
@@ -195,6 +218,10 @@ class Renderer:
         raise BuildError(f"{page['file']}: unknown directive {name}")
 
     def shot(self, page, name, alt, caption="", variant=""):
+        if not self.shots_current:
+            # Captured from an older app build: leave the image out rather than show a stale screen.
+            self.shots_skipped.add(name)
+            return ""
         meta = self.shots.get(name)
         if not meta:
             raise BuildError(f"{page['file']}: screenshot {name!r} missing from about-site/img/shots.json")
@@ -217,7 +244,7 @@ class Renderer:
                 + "</li>" for s in songs)
             n = len(songs)
             rows.append(f'<li class="cov"><a class="cov-name" href="{ESC(self.artist_route(artist_id))}">{ESC(a["display_name"])}</a>'
-                        f'<span class="cov-n">{n} song{"s" if n != 1 else ""}</span><ul>{items}</ul></li>')
+                        f'<span class="cov-n">{n} track{"s" if n != 1 else ""}</span><ul>{items}</ul></li>')
         return f'<ul class="coverage">{"".join(rows)}</ul>'
 
     def list_days(self, page):
@@ -229,7 +256,7 @@ class Renderer:
             label = f"{d:%b} {d.day}"
             cells.append(f'<li><a class="daycard" href="{ESC(self.app_href("lineup?day=" + key))}">'
                          f'<span class="dc-day">{name}</span><span class="dc-date">{label}</span>'
-                         f'<span class="dc-n">{n} lineup entries</span><span class="dc-s">{with_songs} with a reviewed song</span></a></li>')
+                         f'<span class="dc-n">{n} lineup entries</span><span class="dc-s">{with_songs} with tracks</span></a></li>')
         return f'<ul class="days">{"".join(cells)}</ul>'
 
     def list_stages(self, page):
@@ -246,7 +273,7 @@ class Renderer:
         if pl.get("status") == "published" and pl.get("verified_cross_account") is True and str(pl.get("url", "")).startswith("https://"):
             return (f'<p>The {ESC(pl.get("label") or "event playlist")} is ready. Open it from the {listen}; it plays on YouTube Music. '
                     "Songs rotate so every matched artist gets a spin before anyone repeats.</p>")
-        self.ui_strings.add("Coming soon")
+        self.ui_strings.add("Not available")
         return ("<p>An event-wide playlist on YouTube Music is planned but not available yet. It won’t appear until it has been "
                 f"checked to play for everyone, not just the person who made it. Until then, the {listen} says “Not available” "
                 "instead of showing a link that doesn’t work. The plan is for songs to rotate so every artist gets a spin before anyone repeats.</p>")
@@ -370,7 +397,7 @@ def layout(page, pages, i, stats):
 <meta property="og:image" content="{SITE}/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Listening Room: hear the EDC Orlando 2026 lineup before you go. Independent and unofficial.">
+<meta property="og:image:alt" content="Listening Room: browse the EDC Orlando 2026 lineup and open tracks on YouTube.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -445,16 +472,21 @@ def build(out=None):
     for name in ("about.css", "about.js"):
         shutil.copyfile(SRC / "assets" / name, dest / "assets" / name)
     (dest / "img").mkdir(exist_ok=True)
-    for meta in shots.values():
-        shutil.copyfile(SRC / "img" / meta["file"], dest / "img" / meta["file"])
+    if r.shots_current:
+        for key, meta in shots.items():
+            if not key.startswith("_"):
+                shutil.copyfile(SRC / "img" / meta["file"], dest / "img" / meta["file"])
     (dest / "search.json").write_text(json.dumps(r.search_index(), ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     # Site-wide brand files (favicon, home-screen icon, link-preview image) live at the root.
     for f in sorted((SRC / "brand").iterdir()):
         if f.is_file():
             shutil.copyfile(f, out / f.name)
-    return {"pages": len(pages), "shots": len(shots), "stats": r.stats, "ui_strings": sorted(r.ui_strings)}
+    return {"pages": len(pages), "shots": len([k for k in shots if not k.startswith("_")]) if r.shots_current else 0,
+            "shots_current": r.shots_current, "shots_skipped": sorted(r.shots_skipped),
+            "stats": r.stats, "ui_strings": sorted(r.ui_strings)}
 
 
 if __name__ == "__main__":
     result = build(sys.argv[1] if len(sys.argv) > 1 else None)
-    print(f"About section: {result['pages']} pages, {result['shots']} screenshots.")
+    print(f"About section: {result['pages']} pages, {result['shots']} screenshots."
+          + ("" if result["shots_current"] else " Screenshots are from an older app build and were left out; refresh with scripts/about_screenshots.js."))

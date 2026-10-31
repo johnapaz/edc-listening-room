@@ -3,6 +3,7 @@ import json
 import re
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 import unittest
 
@@ -119,7 +120,11 @@ class PublicBuild(unittest.TestCase):
         slugs = [re.search(r"^slug:(.*)$", p.read_text(encoding="utf-8"), re.M).group(1).strip() for p in (src / "pages").glob("*.html")]
         expected |= {f"about/{s}/index.html" if s else "about/index.html" for s in slugs}
         expected |= {"about/search.json", "about/assets/about.css", "about/assets/about.js"}
-        expected |= {"about/img/" + m["file"] for m in json.loads((src / "img" / "shots.json").read_text()).values()}
+        shots = json.loads((src / "img" / "shots.json").read_text())
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import build_about
+        if shots.get("_app") == build_about.app_fingerprint():  # screenshots ship only while they match the app
+            expected |= {"about/img/" + m["file"] for k, m in shots.items() if not k.startswith("_")}
         expected |= {"favicon.svg", "apple-touch-icon.png", "og.png"}
         self.assertEqual({str(p.relative_to(out)) for p in out.rglob("*") if p.is_file()}, expected)
         # The first About page lived at /listening-room/about.html; keep old shared links working.

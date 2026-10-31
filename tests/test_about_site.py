@@ -157,6 +157,17 @@ class AboutSite(unittest.TestCase):
         missing = [s for s in self.result["ui_strings"] if s not in app]
         self.assertEqual(missing, [], "About pages quote UI copy the app no longer shows; update about-site/pages")
 
+    def test_screenshots_ship_only_while_they_match_the_app(self):
+        shots = json.loads((ROOT / "about-site/img/shots.json").read_text(encoding="utf-8"))
+        imgs = [i for d in self.docs.values() for i in d.imgs if i["src"].startswith("/about/img/")]
+        if shots.get("_app") == build_about.app_fingerprint():
+            self.assertGreaterEqual(len(imgs), len([k for k in shots if not k.startswith("_")]))
+        else:  # the app changed after the capture: no stale screens, the guide still works on links alone
+            self.assertEqual(imgs, [])
+        stale = build_about.Renderer(build_about.Data(), [{"slug": "", "title": "t", "nav": "t", "description": "d",
+                                                           "file": "x", "url": "/about/", "body": ""}], {"_app": "old"})
+        self.assertEqual(stale.shot(stale.pages[0], "lineup", "alt"), "")
+
     def test_search_examples_find_someone(self):
         r = build_about.Renderer(build_about.Data(), [{"slug": "", "title": "t", "nav": "t", "description": "d",
                                                        "file": "x", "url": "/about/", "body": ""}], {})

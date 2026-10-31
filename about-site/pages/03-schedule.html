@@ -12,21 +12,20 @@ lede: Days come from the official lineup. Stages and set times are shown careful
 <p>Each B2B set is one entry, billed exactly as announced. A few acts carry billing notes such as “Sunset Set”, shown on their page.</p>
 
 <h2 id="set-times">Stages and set times</h2>
-<p>Set times for {{stat poster_times}} entries were copied from the organizer’s daily set-time posters. They’re shown on each artist page in Eastern Time, with a clear note that they haven’t been cross-checked against the live official schedule yet. {{stat no_time}} entries don’t have a time at all, and their pages say so.</p>
-<p>Here’s what each label on an artist page means:</p>
+<p>Set times for {{stat poster_times}} entries were copied from the organizer’s daily set-time posters. They’re shown in Eastern Time and marked as provisional until they’re cross-checked against the official schedule. {{stat no_time}} entries don’t have a time yet, and say so.</p>
+<p>Here’s what the labels mean, on lineup rows and on artist pages:</p>
 <div class="table-wrap"><table>
-  <thead><tr><th scope="col">You see</th><th scope="col">What it means</th></tr></thead>
+  <thead><tr><th scope="col">On the lineup</th><th scope="col">On the artist page</th><th scope="col">What it means</th></tr></thead>
   <tbody>
-    <tr><td><span class="sample">Stage · 9:00 PM–10:00 PM</span></td><td><strong>Confirmed.</strong> Checked against the official schedule.</td></tr>
-    <tr><td><span class="sample amber">Stage · time (from an organizer poster; not yet cross-checked)</span></td><td><strong>From a poster.</strong> Copied from an official set-time poster, but not yet double-checked. Usually right; worth confirming.</td></tr>
-    <tr><td><span class="sample amber">Stage and set time not verified yet.</span></td><td><strong>Not known yet.</strong> No reliable stage or time to show.</td></tr>
-    <tr><td><span class="sample amber">Organizer sources disagree about this billing</span></td><td><strong>Sources disagree.</strong> Official sources list this act differently, so day, stage and time are unconfirmed.</td></tr>
+    <tr><td data-label="On the lineup"><span class="sample">Stage · 9:00 PM–10:00 PM</span></td><td data-label="On the artist page"><span class="sample">Stage · 9:00 PM–10:00 PM</span></td><td data-label="Meaning"><strong>Confirmed.</strong> Checked against the official schedule.</td></tr>
+    <tr><td data-label="On the lineup"><span class="sample">Stage · time · {{ui Poster time}}</span></td><td data-label="On the artist page"><span class="sample amber">Stage · time {{ui (from an organizer poster; not yet cross-checked)}}</span></td><td data-label="Meaning"><strong>Provisional.</strong> Copied from an official set-time poster but not yet double-checked. Usually right; worth confirming.</td></tr>
+    <tr><td data-label="On the lineup"><span class="sample">{{ui Set time not verified}}</span></td><td data-label="On the artist page"><span class="sample amber">{{ui Stage and set time not verified yet.}}</span></td><td data-label="Meaning"><strong>Not known yet.</strong> No reliable stage or time to show.</td></tr>
   </tbody>
 </table></div>
 <p>A stage filter will appear on the lineup once stages are confirmed. Until then there isn’t one, so you won’t get a list that looks complete but isn’t.</p>
 
 <h2 id="running-order">List order isn’t running order</h2>
-<p>On the lineup, acts appear day by day in the order the official sources list them. That’s usually billing order, not the order they’ll play. To plan when to be where, use the set times on each artist page together with the official schedule.</p>
+<p>On the lineup, acts are grouped by day and listed alphabetically within each day, the way the organizer’s day lists show them. That isn’t the order they’ll play. To plan when to be where, use the set times shown on each act together with the official schedule.</p>
 
 <h2 id="stages">Stages</h2>
 <p>These are the {{stat stages}} stages named in the official festival information. You’ll see them on artist pages where a stage is known.</p>
