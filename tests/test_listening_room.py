@@ -78,10 +78,6 @@ class AppContract(unittest.TestCase):
                                 capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
-
-if __name__ == "__main__":
-    unittest.main()
-
 class PublicBuild(unittest.TestCase):
     def test_public_artifact_excludes_private_sources_and_metadata(self):
         result = subprocess.run(["python3", str(ROOT / "scripts/build_public_site.py")], capture_output=True, text=True)
@@ -93,3 +89,7 @@ class PublicBuild(unittest.TestCase):
             text = path.read_text()
             self.assertNotIn("notion", text.lower())
             self.assertNotIn("identity_evidence_ref", text)
+
+
+if __name__ == "__main__":
+    unittest.main()

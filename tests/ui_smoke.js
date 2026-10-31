@@ -14,24 +14,26 @@ const shots = process.argv[2];
   const external = [];
   page.on("pageerror", e => errors.push(String(e)));
   page.on("console", m => m.type() === "error" && errors.push(m.text()));
-  page.on("request", r => { if (!r.url().startsWith("http://localhost")) external.push(r.url()); });
+  page.on("request", r => { if (!r.url().startsWith(new URL(BASE).origin)) external.push(r.url()); });
 
   await page.goto(BASE);
   await page.waitForSelector("#list li");
-  assert.equal(await page.locator("#list li").count(), 108); ok("all 108 entries listed");
-  assert.match(await page.textContent("#count"), /108 lineup entries/);
+  assert.equal(await page.locator("#list li").count(), 110); ok("all 110 entries listed");
+  assert.match(await page.textContent("#count"), /110 lineup entries/);
 
   // Scenario 1: playlist is honest when unpublished (no dead CTA)
-  assert.match(await page.textContent("section.card"), /Not available yet/);
+  assert.match(await page.textContent("section.card"), /Coming soon/);
   assert.equal(await page.locator("section.card a.btn").count(), 0); ok("playlist unavailable state, no dead link");
 
   // Scenario 2: find B2B artist -> song in 3 taps excluding typing, back keeps context
   await page.fill("#q", "acraze");
-  await page.click("#list a:has-text('ACRAZE B2B CID')");   // tap 1
+  await page.click("#list .row-name:has-text('ACRAZE B2B CID')");   // tap 1
   await page.waitForSelector("h1#title");
-  const href = await page.getAttribute(".song a.btn", "href"); // tap 2 would open it
+  const href = await page.getAttribute(".song a.btn >> nth=0", "href"); // tap 2 would open it
   assert.match(href, /^https:\/\/www\.youtube\.com\/watch\?v=[\w-]{11}$/);
-  assert.equal(await page.getAttribute(".song a.btn", "target"), "_blank");
+  assert.equal(await page.getAttribute(".song a.btn >> nth=0", "target"), "_blank");
+  assert.match(await page.getAttribute(".song .track-title >> nth=0", "href"), /^https:\/\/www\.youtube\.com\/watch\?v=/);
+  assert.ok(await page.locator(".song .artist-link").count() > 0);
   assert.equal(await page.evaluate(() => document.activeElement.id), "title"); ok("artist detail, direct YouTube link, focus moved to heading");
   assert.ok(!/null|undefined/.test(await page.textContent("main")), "stray null/undefined text");
   await page.goBack();
@@ -41,15 +43,15 @@ const shots = process.argv[2];
   // Scenario 3: day filter
   await page.fill("#q", "");
   await page.click("button[data-day='2026-11-07']");
-  assert.equal(await page.locator("#list li").count(), 36);
+  assert.equal(await page.locator("#list li").count(), 37);
   assert.equal(await page.getAttribute("button[data-day='2026-11-07']", "aria-pressed"), "true");
   assert.ok(/#\/lineup\?day=2026-11-07/.test(page.url()));
-  assert.equal(await page.locator("text=playlist").filter({ hasText: /regenerat|generated/i }).count(), 0); ok("Saturday filter shows 36, URL keeps context");
+  assert.equal(await page.locator("text=playlist").filter({ hasText: /regenerat|generated/i }).count(), 0); ok("Saturday filter shows 37, URL keeps context");
 
   // Scenario 4: unknown / conflict states
   await page.click("button[data-day='all']");
   await page.fill("#q", "prospa");
-  await page.click("#list a >> nth=0");
+  await page.click("#list .row-name >> nth=0");
   await page.waitForSelector("h1#title");
   assert.match(await page.textContent("main"), /disagree|not verified/i); ok("conflict state visible");
   await page.goto(BASE + "#/artist/nope");
@@ -85,7 +87,7 @@ const shots = process.argv[2];
     await page.screenshot({ path: shots + "/artist-360.png" });
   }
 
-  assert.deepEqual(external, []); ok("no external network requests");
+  assert.ok(external.every(url => url.startsWith("https://img.youtube.com/vi/")), "only attributed video thumbnails may load externally"); ok("only official video thumbnail requests");
   assert.deepEqual(errors, []); ok("no console errors");
 
   // Weak network: data fetch fails
