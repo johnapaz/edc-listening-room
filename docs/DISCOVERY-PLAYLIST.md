@@ -1,5 +1,7 @@
 # Private all-artist discovery playlist
 
+> **Poster data addendum (2026-10-30, pending live organizer corroboration):** Draft set-time PR #36 adds Obskür and George Smeddles as performer entities. `build_acts()` therefore now yields **115 identities**, with **nine** temporarily empty catalog queues: the original seven plus these two. They have no sourced discovery song candidates, so no new search/API allowance is needed or authorized merely because of this data change. The 113/106/7 figures below describe the historical checkpoint before the posters; keep the current private playlist state and release gates unchanged.
+
 Status 2026-10-30. Owner direction (assistant session, 2026-10-30): cover every act first and deepen later; exact song versions matter less than complete playlists; uncertain matches must never wait on owner review. Builds on the Notion discovery pass ([handoff](NOTION-DISCOVERY-HANDOFF-2026-10-30.md)).
 
 ## Milestone: private Discovery release (proposed by this PR; merging approves it)
