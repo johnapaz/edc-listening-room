@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a1120">
+<title>Companion Map Wireframe</title>
+<!-- DESIGN WIREFRAME for issue #61. Not the Companion app; #64/#65 own implementation. Map geometry is a placeholder sketch. -->
+<style>
+:root{color-scheme:dark;
+  --bg:#0a1120;--bg-glow:#1c1f44;--map-ground:#0f1830;--map-dot:#ffffff0d;
+  --panel:#131b2e;--sheet:#182238;--line:#33405f;--line-strong:#6b7ca6;
+  --text:#f2f5ff;--muted:#b4bdd6;
+  --violet:#b9a4ff;--violet-hover:#d6caff;--violet-ink:#140b2e;--violet-wash:#b9a4ff1f;
+  --mint:#6ff0c4;--mint-ink:#04120d;--amber:#ffd98a;--coral:#ff8a78;
+  --path:#34436a;--zone:#16213b;--zone-edge:#2a3759;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--display:"Bricolage Grotesque",var(--sans);
+  --gutter:16px;--target:44px;--header:56px;--days:60px;--tabbar:60px;--sheet-radius:20px;--peek:168px;
+  font-family:var(--sans)}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:radial-gradient(ellipse at 0 0,var(--bg-glow) 0,transparent 45%) no-repeat,var(--bg);color:var(--text);line-height:1.45;font-size:15px;overflow:hidden}
+a{color:var(--violet);text-underline-offset:4px}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+h1,h2,h3,p{margin:0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.skip{position:absolute;left:-999px;top:0;background:var(--amber);color:#000;padding:12px;z-index:50}.skip:focus{left:8px;top:8px}
+.wf-banner{position:fixed;z-index:60;right:8px;top:calc(var(--header) + var(--days) + 8px);background:#000c;border:1px dashed var(--amber);color:var(--amber);font-size:.6875rem;font-weight:700;letter-spacing:.06em;padding:4px 8px;border-radius:6px;pointer-events:none}
+/* app bar */
+.app{display:grid;grid-template-rows:var(--header) var(--days) 1fr var(--tabbar);height:100dvh}
+.bar{display:flex;align-items:center;gap:8px;padding:0 var(--gutter);border-bottom:1px solid #33405f88}
+.brand{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:var(--text);text-decoration:none;font-weight:650;font-size:.9375rem;margin-right:auto;white-space:nowrap}
+.brand svg{color:var(--violet)}
+.to-lr{display:inline-flex;align-items:center;gap:6px;min-height:44px;color:var(--mint);font-size:.875rem;font-weight:650;text-decoration:none;white-space:nowrap}
+.to-lr:hover{text-decoration:underline}
+.icon-btn{width:44px;height:44px;display:inline-grid;place-items:center;border-radius:50%;border:0;background:transparent;color:var(--muted)}
+.icon-btn:hover{color:var(--text);background:var(--panel)}
+.desk-nav{display:none}
+/* day switch */
+.days{display:flex;gap:6px;padding:8px var(--gutter);border-bottom:1px solid #33405f55}
+.days button{flex:1;min-height:44px;border-radius:10px;border:1px solid var(--line-strong);background:var(--panel);color:var(--muted);font-size:.875rem;font-weight:650;white-space:nowrap}
+.days button:hover{border-color:var(--violet);color:var(--text)}
+.days button[aria-pressed=true]{background:var(--violet);border-color:var(--violet);color:var(--violet-ink)}
+.days .num{font-variant-numeric:tabular-nums;font-weight:500;opacity:.85}
+/* main */
+main{position:relative;min-height:0;overflow:hidden}
+main:focus{outline:none}
+.map{position:absolute;inset:0;background:var(--map-ground);overflow:hidden;touch-action:none;cursor:grab}
+.map.dragging{cursor:grabbing}
+.map-dots{position:absolute;inset:0;background-image:radial-gradient(var(--map-dot) 1.2px,transparent 1.4px);background-size:24px 24px;pointer-events:none}
+.map svg.art{position:absolute;left:0;top:0;transform-origin:0 0;pointer-events:none}
+.hotspots{position:absolute;inset:0;pointer-events:none}
+.hs{position:absolute;transform:translate(-50%,-22px);display:flex;flex-direction:column;align-items:center;gap:4px;pointer-events:auto;background:none;border:0;padding:0;min-width:44px}
+.hs .ring{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--line-strong);background:#0f1830cc}
+.hs .ring i{width:12px;height:12px;border-radius:50%;background:var(--violet)}
+.hs.unscheduled .ring{border-style:dashed}
+.hs .lbl{background:var(--panel);border:1px solid var(--line);color:var(--text);font-size:.8125rem;font-weight:600;padding:2px 8px;border-radius:99px;white-space:nowrap}
+.hs:hover .ring{border-color:var(--violet)}
+.hs[aria-pressed=true] .ring{background:var(--violet);border-color:var(--violet);box-shadow:0 0 0 6px var(--violet-wash)}
+.hs[aria-pressed=true] .ring i{background:var(--violet-ink)}
+.hs[aria-pressed=true] .lbl{background:var(--violet);border-color:var(--violet);color:var(--violet-ink)}
+.hs:focus-visible{outline:none}.hs:focus-visible .ring{outline:3px solid var(--amber);outline-offset:3px}
+.map-ctrl{position:absolute;right:12px;top:12px;display:flex;flex-direction:column;gap:8px;z-index:3}
+.map-ctrl button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-strong);background:var(--panel);display:grid;place-items:center;color:var(--text)}
+.map-ctrl button:hover{border-color:var(--violet)}
+.attrib{position:absolute;left:12px;z-index:3;bottom:calc(var(--peek) + 12px);min-height:32px;display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:99px;border:1px solid var(--line);background:#0a1120e6;color:var(--muted);font-size:.75rem;text-decoration:none}
+.attrib:hover{color:var(--text);border-color:var(--line-strong)}
+/* sheet */
+.sheet{position:absolute;left:0;right:0;bottom:0;z-index:4;background:var(--sheet);border-radius:var(--sheet-radius) var(--sheet-radius) 0 0;border-top:1px solid var(--line);box-shadow:0 -12px 32px #0006;display:flex;flex-direction:column;height:var(--peek);max-width:100%;margin-inline:auto}
+.sheet[data-size=half]{height:55%}
+.sheet[data-size=full]{height:100%;border-radius:0}
+.grab{align-self:center;width:64px;height:24px;border:0;background:none;display:grid;place-items:center;flex:none}
+.grab::before{content:"";width:36px;height:4px;border-radius:2px;background:var(--line-strong)}
+.sheet-body{overflow:auto;padding:0 var(--gutter) 16px;flex:1;overscroll-behavior:contain}
+.sheet-head{display:flex;align-items:flex-start;gap:8px}
+.sheet-head h2{font-family:var(--display);font-weight:800;font-size:1.375rem;letter-spacing:-.01em;line-height:1.2;flex:1;min-width:0;overflow-wrap:anywhere}
+.sheet-head h2:focus{outline:none}
+.sub{color:var(--muted);font-size:.8125rem;margin:4px 0 10px;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:8px 14px;border-radius:10px;border:1px solid var(--line-strong);background:transparent;color:var(--text);font-size:.875rem;font-weight:650;text-decoration:none}
+.btn:hover{border-color:var(--violet)}
+.btn.mint{background:var(--mint);border-color:var(--mint);color:var(--mint-ink)}
+.btn.mint:hover{background:#b2ffe7}
+.link{display:inline-flex;align-items:center;min-height:44px;font-size:.875rem;font-weight:600}
+.hear{display:inline-flex;align-items:center;gap:6px;min-height:44px;color:var(--mint);font-size:.875rem;font-weight:650;text-decoration:none;white-space:nowrap}
+.hear:hover{text-decoration:underline}
+.none{color:var(--muted);font-size:.8125rem}
+/* status */
+.st{display:inline-flex;align-items:center;gap:6px;font-size:.8125rem;color:var(--muted);white-space:nowrap}
+.st::before{content:"";width:10px;height:10px;border-radius:50%;flex:none}
+.st.confirmed{color:var(--violet)}.st.confirmed::before{background:var(--violet)}
+.st.poster::before{border:1.5px dashed var(--muted)}
+.st.unannounced::before{border:1.5px dotted var(--muted);border-radius:2px}
+.st.disputed{color:var(--coral)}.st.disputed::before{content:"!";width:auto;height:auto;border-radius:0;font-weight:900}
+/* set rows */
+ul.sets{list-style:none;margin:0;padding:0}
+.set{display:grid;grid-template-columns:7.5ch 1fr;column-gap:12px;padding:10px 0;border-bottom:1px solid #33405f99;min-height:64px}
+.time{font-variant-numeric:tabular-nums;font-weight:650;font-size:.875rem;padding-top:2px;white-space:nowrap}
+.time small{display:block;color:var(--muted);font-weight:500}
+.billing{font-weight:650;overflow-wrap:anywhere}
+.chip{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:99px;border:1px solid var(--line-strong);font-size:.75rem;font-weight:600;color:var(--muted);vertical-align:2px}
+.acts{display:flex;flex-wrap:wrap;align-items:center;column-gap:16px;margin-top:2px}
+.day-sub{position:sticky;top:0;background:var(--sheet);padding:10px 0 6px;font-size:.8125rem;font-weight:700;letter-spacing:.04em;color:var(--muted);border-bottom:1px solid var(--line);z-index:1}
+.empty{border:1px dashed var(--line-strong);border-radius:12px;padding:16px;color:var(--muted);margin:8px 0}
+.empty p{margin-bottom:8px}
+.error{border-color:var(--coral);color:var(--text)}
+.peek-next{font-size:.875rem;color:var(--muted)}
+.peek-next b{color:var(--text);font-variant-numeric:tabular-nums}
+/* list pages */
+.page{position:absolute;inset:0;overflow:auto;padding:16px var(--gutter) 24px}
+.page h1{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,5vw,2rem);letter-spacing:-.015em;margin-bottom:4px}
+.page .lede{color:var(--muted);font-size:.9375rem;margin-bottom:14px;max-width:40em}
+ul.stages{list-style:none;padding:0;margin:0}
+.stage-row{display:flex;align-items:center;gap:12px;min-height:72px;border-bottom:1px solid #33405f99;color:var(--text);text-decoration:none;padding:8px 4px}
+.stage-row:hover{background:var(--panel)}
+.stage-row .nm{font-family:var(--display);font-weight:800;font-size:1.0625rem}
+.stage-row .mt{display:block;color:var(--muted);font-size:.8125rem}
+.stage-row .chev{margin-left:auto;color:var(--muted)}
+.dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--line-strong);flex:none}
+.dot.has{background:var(--violet);border-color:var(--violet)}
+.dot.dashed{border-style:dashed}
+dl.legend{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;margin:12px 0}
+dl.legend dd{margin:0;color:var(--muted);font-size:.875rem}
+.page section{margin:18px 0}.page h2{font-size:1rem;margin-bottom:6px}
+.page p{margin-bottom:8px;color:var(--muted);font-size:.9375rem}
+.banner{position:absolute;z-index:6;left:12px;right:12px;top:12px;padding:10px 12px;border-radius:10px;background:var(--panel);border:1px solid var(--amber);font-size:.8125rem;margin-right:56px}
+/* bottom nav */
+.tabs{display:flex;border-top:1px solid var(--line);background:#131b2ef5;padding-bottom:env(safe-area-inset-bottom);z-index:7}
+.tabs a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:60px;color:var(--muted);text-decoration:none;font-size:.8125rem;font-weight:650}
+.tabs a[aria-current=page]{color:var(--violet);box-shadow:inset 0 3px 0 var(--violet)}
+.live{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+/* Fold cover */
+@media (max-width:320px){
+  :root{--days:108px;--peek:132px;--gutter:12px}
+  .days{display:grid;grid-template-columns:1fr 1fr}
+  .brand .long{display:none}
+  .hs:not([aria-pressed=true]) .lbl{display:none}
+  .tabs svg{display:none}
+}
+@media (min-width:768px) and (max-width:1099px){.sheet{max-width:560px}.attrib{bottom:12px}}
+@media (min-width:1100px){
+  :root{--tabbar:0px}
+  .tabs{display:none}
+  .desk-nav{display:flex;gap:4px;margin-right:12px}
+  .desk-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;color:var(--muted);text-decoration:none;font-weight:600;font-size:.875rem}
+  .desk-nav a[aria-current=page]{color:var(--violet)}
+  main.with-panel .map{right:400px}
+  .sheet{left:auto;width:400px;height:100%!important;border-radius:0;border-top:0;border-left:1px solid var(--line);box-shadow:none}
+  .grab{display:none}
+  .sheet-body{padding-top:16px}
+  .attrib{bottom:12px}
+  .page{padding-inline:max(var(--gutter),calc((100% - 760px)/2))}
+}
+@media (max-height:480px) and (orientation:landscape){
+  :root{--days:52px}
+  .days{padding-block:4px}
+  main.with-panel .map{right:50%}
+  .sheet{left:auto;width:50%;height:100%!important;border-radius:0}
+  .attrib{bottom:12px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .sheet{transition:height .22s cubic-bezier(.2,.8,.2,1)}
+  .map.anim svg.art,.map.anim .hs{transition:transform .28s cubic-bezier(.2,.8,.2,1),left .28s cubic-bezier(.2,.8,.2,1),top .28s cubic-bezier(.2,.8,.2,1)}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wf-banner" aria-hidden="true">WIREFRAME · PLACEHOLDER MAP</div>
+<div class="app">
+  <header class="bar">
+    <a class="brand" href="#/map" aria-label="Event Day Companion, map">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="10" r="3.2"/><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><ellipse cx="12" cy="21" rx="7" ry="1.6" stroke-dasharray="2 2.4"/></svg>
+      <span>Event Day <span class="long">Companion</span></span>
+    </a>
+    <nav class="desk-nav" aria-label="Primary"><a data-nav="map" href="#/map">Map</a><a data-nav="stages" href="#/stages">Stages</a><a data-nav="sources" href="#/sources">About &amp; sources</a></nav>
+    <a class="to-lr" href="../../../listening-room/#/lineup">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="10" width="3" height="10" rx="1"/><rect x="9" y="5" width="3" height="15" rx="1"/><rect x="15" y="8" width="3" height="12" rx="1"/></svg>
+      Listening Room</a>
+  </header>
+  <div class="days" role="group" aria-label="Festival day" id="days"></div>
+  <main id="main" tabindex="-1"></main>
+  <nav class="tabs" aria-label="Primary">
+    <a data-nav="map" href="#/map"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg>Map</a>
+    <a data-nav="stages" href="#/stages"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>Stages</a>
+    <a data-nav="sources" href="#/sources"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>About</a>
+  </nav>
+</div>
+<div class="live" aria-live="polite" id="live"></div>
+<script src="data.js"></script>
+<script>
+(function(){
+"use strict";
+const D = window.WF_DATA;
+const DAYS = [{key:"all",label:"All",long:"All days"},{key:"2026-11-06",label:"Fri",num:"6",long:"Friday",sub:"Friday · Nov 6"},{key:"2026-11-07",label:"Sat",num:"7",long:"Saturday",sub:"Saturday · Nov 7"},{key:"2026-11-08",label:"Sun",num:"8",long:"Sunday",sub:"Sunday · Nov 8"}];
+// PLACEHOLDER positions (normalized 0–1 of the 1000×1250 sketch). NOT geographic. #63 supplies audited values.
+const HOTSPOT = {"kinetic-field":{x:.50,y:.24},"circuit-grounds":{x:.78,y:.52},"neon-garden":{x:.24,y:.50},"stereo-bloom":{x:.40,y:.76},"casa-bacardi":{x:.74,y:.80}};
+const W = 1000, H = 1250, LR = "../../../listening-room/";
+const SIM = new URLSearchParams(location.search).get("state"); // mapfail | datafail | offline | stale (wireframe-only)
+const $ = (s, r=document) => r.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const stageName = id => (D.stages.find(s => s.stage_id === id) || {}).display_name || id;
+const dayOf = k => DAYS.find(d => d.key === k) || DAYS[0];
+const fmt = new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hour:"numeric",minute:"2-digit"});
+const t = iso => iso ? fmt.format(new Date(iso)).replace(" PM","").replace(" AM","") : null;
+const ampm = iso => iso ? fmt.format(new Date(iso)).slice(-2) : "";
+const STATUS = {organizer_verified:["confirmed","Confirmed"],poster_transcribed:["poster","Poster time"],set_times_unverified:["unannounced","Time not announced"],disputed:["disputed","Sources disagree"]};
+const badge = p => { const s = STATUS[p.schedule_status] || STATUS.set_times_unverified; return `<span class="st ${s[0]}">${s[1]}</span>`; };
+
+/* ---------- routing ---------- */
+function parse(){
+  const raw = location.hash.replace(/^#\/?/,""); const [path, qs=""] = raw.split("?");
+  const p = new URLSearchParams(qs); const parts = path.split("/").filter(Boolean).map(decodeURIComponent);
+  const day = DAYS.some(d => d.key === p.get("day")) ? p.get("day") : "all";
+  const stage = D.stages.some(s => s.stage_id === p.get("stage")) ? p.get("stage") : (p.get("stage") ? "?" : "");
+  return {view: parts[0] || "map", id: parts[1] || "", day, stage, set: p.get("set") || "", artist: p.get("artist") || "", sheet: p.get("sheet") || ""};
+}
+function build(r){
+  const p = new URLSearchParams();
+  if (r.day && r.day !== "all") p.set("day", r.day);
+  ["stage","set","artist","sheet"].forEach(k => { if (r[k] && r[k] !== "?") p.set(k, r[k]); });
+  const qs = p.toString(); return "#/" + r.view + (r.id ? "/" + encodeURIComponent(r.id) : "") + (qs ? "?" + qs : "");
+}
+function go(patch, replace){
+  const next = build({...parse(), ...patch});
+  if (replace) { history.replaceState(null, "", next); render(); } else location.hash = next;
+}
+const announce = msg => { const l = $("#live"); l.textContent = ""; setTimeout(() => l.textContent = msg, 30); };
+
+/* ---------- data helpers ---------- */
+const sorted = list => list.slice().sort((a,b) => (a.starts_at||"9").localeCompare(b.starts_at||"9") || a.display_name.localeCompare(b.display_name));
+const setsFor = (stage, day) => sorted(D.performances.filter(p => p.stage_id === stage && (day === "all" || p.event_date === day)));
+const unscheduled = day => D.performances.filter(p => !p.stage_id && (day === "all" || p.event_date === day));
+const lrArtist = (id, day) => LR + "#/artist/" + encodeURIComponent(id) + (day !== "all" ? "?day=" + day : "");
+function hearLinks(p, day){
+  const ids = p.artist_ids; const withTracks = ids.filter(i => (D.artists[i]||{}).tracks > 0);
+  if (!withTracks.length) return `<span class="none">No reviewed tracks yet</span><a class="link" href="${lrArtist(ids[0], day)}">Artist page</a>`;
+  return withTracks.map(i => `<a class="hear" href="${lrArtist(i, day)}"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Hear ${esc((D.artists[i]||{}).name||i)}</a>`).join("");
+}
+function timeCell(p){
+  if (!p.starts_at && !p.ends_at) return `<span class="time" aria-label="Time not announced">—</span>`;
+  if (p.starts_at && !p.ends_at) return `<span class="time">from ${t(p.starts_at)}<small>${ampm(p.starts_at)}</small></span>`;
+  return `<span class="time">${t(p.starts_at)}–${t(p.ends_at)}<small>${ampm(p.ends_at)}</small></span>`;
+}
+function setRow(p, r){
+  const qual = p.set_qualifier ? `<span class="chip">${esc(p.set_qualifier)}</span>` : "";
+  const details = build({...r, view: r.view === "stage" ? "stage" : "map", set: p.performance_id, artist: ""});
+  return `<li class="set">${timeCell(p)}<div><div class="billing">${esc(p.display_name.replace(" ("+p.set_qualifier+")",""))}${qual}</div>
+    <div class="acts">${badge(p)}<a class="link" href="${details}">Details<span class="sr-only"> for ${esc(p.display_name)}</span></a>${hearLinks(p, r.day)}</div></div></li>`;
+}
+function setList(stage, r){
+  const list = setsFor(stage, r.day);
+  if (!list.length) {
+    const anyDay = setsFor(stage, "all").length;
+    const msg = anyDay ? `No confirmed set times for <b>${esc(stageName(stage))}</b> on ${dayOf(r.day).long} yet.` : `No set times have been published for <b>${esc(stageName(stage))}</b> yet.`;
+    const act = r.day !== "all" && unscheduled(r.day).length ? `<a class="btn" href="${build({...r, view:"unscheduled", id:"", set:"", artist:""})}">See ${dayOf(r.day).long} acts without a stage</a>` : `<a class="btn" href="#/sources">Where these times come from</a>`;
+    return `<div class="empty"><p>${msg}</p>${act}</div>`;
+  }
+  let html = "", cur = "";
+  list.forEach(p => {
+    if (r.day === "all" && p.event_date !== cur) { if (cur) html += "</ul>"; cur = p.event_date; html += `<h3 class="day-sub">${dayOf(cur).sub}</h3><ul class="sets">`; }
+    else if (!html) html += `<ul class="sets">`;
+    html += setRow(p, r);
+  });
+  html += "</ul>";
+  const un = r.day !== "all" ? unscheduled(r.day).length : 0;
+  if (un) html += `<p class="none" style="margin-top:10px">${un} ${dayOf(r.day).long} acts have no announced stage. <a href="${build({...r, view:"unscheduled", id:"", set:"", artist:""})}">See them</a></p>`;
+  return html;
+}
+function summary(stage, day){
+  const list = setsFor(stage, day); const kinds = new Set(list.map(p => p.schedule_status));
+  const src = !list.length ? "" : kinds.size > 1 ? `<span class="st disputed">Mixed sources</span>` : badge(list[0]).replace("Poster time","Poster times");
+  return `<span>${day === "all" ? "All days" : dayOf(day).label + " " + dayOf(day).num} · ${list.length ? list.length + " set" + (list.length>1?"s":"") : "no confirmed sets"}</span>${src}<span>checked ${new Date(D.checked_on+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric"})}</span>`;
+}
+
+/* ---------- views ---------- */
+let view = {x:0, y:0, k:1}, fitK = 1;
+function mapView(r){
+  const main = $("#main");
+  if (!main.querySelector(".map")) {
+    main.innerHTML = `
+      <div class="map" role="group" aria-label="Festival map, unofficial sketch. 5 stages." id="map">
+        <div class="map-dots"></div>
+        ${SIM === "mapfail" ? "" : artSVG()}
+        <div class="hotspots" id="hotspots"></div>
+      </div>
+      <div class="map-ctrl" role="group" aria-label="Map controls">
+        <button type="button" data-z="in" aria-label="Zoom in">${ico("plus")}</button>
+        <button type="button" data-z="out" aria-label="Zoom out">${ico("minus")}</button>
+        <button type="button" data-z="reset" aria-label="Reset map view">${ico("reset")}</button>
+        <button type="button" data-z="list" aria-label="Show stage list">${ico("list")}</button>
+      </div>
+      <a class="attrib" href="#/sources">${ico("info",14)} Unofficial sketch · positions approximate · checked ${new Date(D.checked_on+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric"})}</a>
+      <section class="sheet" id="sheet" aria-labelledby="sheet-title" data-size="peek"><button class="grab" type="button" id="grab" aria-expanded="false" aria-label="Expand stage details"></button><div class="sheet-body" id="sheet-body"></div></section>`;
+    D.stages.forEach(s => {
+      const b = document.createElement("button"); b.type = "button"; b.className = "hs"; b.dataset.stage = s.stage_id;
+      b.innerHTML = `<span class="ring"><i></i></span><span class="lbl">${esc(s.display_name)}</span>`;
+      b.addEventListener("click", () => selectStage(s.stage_id));
+      $("#hotspots").append(b);
+    });
+    wireMap();
+    if (SIM === "mapfail") { $("#map").innerHTML = `<div class="page"><div class="empty error"><p>The map didn't load. Every stage is still in the list.</p><a class="btn" href="${build({...r, view:"stages", sheet:""})}">Show stage list</a></div></div>`; }
+    fit();
+  }
+  main.classList.toggle("with-panel", true);
+  if (SIM === "offline") showBanner("You're offline. Showing what was already loaded; times may be out of date.");
+  if (SIM === "stale") showBanner("These times were checked more than 3 days ago. Check the official lineup ↗");
+  document.querySelectorAll(".hs").forEach(b => {
+    const n = setsFor(b.dataset.stage, r.day).length; const d = dayOf(r.day);
+    b.setAttribute("aria-pressed", String(b.dataset.stage === r.stage));
+    b.classList.toggle("unscheduled", setsFor(b.dataset.stage, "all").length === 0);
+    b.setAttribute("aria-label", `${stageName(b.dataset.stage)}, ${n ? n + " sets" : "no confirmed schedule"} ${r.day === "all" ? "across all days" : "on " + d.long}`);
+  });
+  place();
+  sheetContent(r);
+}
+function sheetContent(r){
+  const body = $("#sheet-body"), sheet = $("#sheet");
+  if (SIM === "datafail") { body.innerHTML = `<div class="sheet-head"><h2 id="sheet-title" tabindex="-1">Set times</h2></div><div class="empty error"><p>Couldn't load set times. Check your connection and try again.</p><button class="btn" type="button" onclick="location.reload()">Try again</button></div>`; sheet.dataset.size = "half"; return; }
+  const size = r.sheet || (r.set || r.artist ? "half" : r.stage ? "half" : "peek");
+  sheet.dataset.size = size; $("#grab").setAttribute("aria-expanded", String(size !== "peek")); $("#grab").setAttribute("aria-label", size === "full" ? "Collapse stage details" : "Expand stage details");
+  $("#map") && ($("#map").inert = size === "full" && innerWidth < 1100);
+  if (r.set || r.artist) { body.innerHTML = artistPanel(r); return; }
+  if (r.stage === "?") { body.innerHTML = `<div class="sheet-head"><h2 id="sheet-title" tabindex="-1">Stage not found</h2></div><div class="empty"><p>That stage or set isn't in the current schedule.</p><a class="btn" href="#/stages">Show all stages</a></div>`; return; }
+  if (!r.stage) {
+    body.innerHTML = `<div class="sheet-head"><h2 id="sheet-title" tabindex="-1">Pick a stage</h2></div>
+      <p class="peek-next" style="margin:4px 0 10px">Tap a stage on the map to see its set times for ${r.day === "all" ? "all three days" : dayOf(r.day).long}.</p>
+      <a class="btn" href="${build({...r, view:"stages"})}">${ico("list",16)} Show stage list</a>`;
+    return;
+  }
+  const list = setsFor(r.stage, r.day), next = list[0];
+  body.innerHTML = `<div class="sheet-head"><h2 id="sheet-title" tabindex="-1">${esc(stageName(r.stage))}</h2>
+      <button class="icon-btn" type="button" id="close-stage" aria-label="Close stage">${ico("x")}</button></div>
+    <p class="sub">${summary(r.stage, r.day)}</p>
+    ${size === "peek" && next ? `<p class="peek-next">First set: <b>${t(next.starts_at)||"—"}</b> ${esc(next.display_name)}</p>` : setList(r.stage, r)}`;
+  $("#close-stage").addEventListener("click", () => { const id = r.stage; go({stage:"", set:"", artist:"", sheet:""}); requestAnimationFrame(() => { const h = document.querySelector(`.hs[data-stage="${id}"]`); h && h.focus(); }); });
+}
+function artistPanel(r){
+  let list, title;
+  if (r.set) { const p = D.performances.find(x => x.performance_id === r.set); if (!p) return `<div class="sheet-head"><h2 id="sheet-title" tabindex="-1">Set not found</h2></div><div class="empty"><p>That stage or set isn't in the current schedule.</p><a class="btn" href="#/stages">Show all stages</a></div>`; list = [p]; title = p.display_name; }
+  else { list = sorted(D.performances.filter(p => p.artist_ids.includes(r.artist) && (r.day === "all" || p.event_date === r.day))); title = (D.artists[r.artist]||{}).name || r.artist; }
+  const p0 = list[0]; const ids = p0 ? p0.artist_ids : [r.artist];
+  const back = build({...r, set:"", artist:""});
+  const offDay = p0 && r.day !== "all" && p0.event_date !== r.day ? `<p class="empty" style="padding:10px">Not on ${dayOf(r.day).long}. This set is on ${dayOf(p0.event_date).long}.</p>` : "";
+  const ctas = ids.map(i => { const a = D.artists[i]||{name:i,tracks:0};
+    return a.tracks ? `<a class="btn mint" href="${lrArtist(i, r.day)}">Hear ${esc(a.name)} in Listening Room</a>` : `<p class="none">No reviewed tracks for ${esc(a.name)} yet. <a href="${lrArtist(i, r.day)}">Artist page</a></p>`; }).join("");
+  return `<a class="link" href="${back}">← ${r.stage && r.stage !== "?" ? esc(stageName(r.stage)) : "Back"}</a>
+    <div class="sheet-head"><h2 id="sheet-title" tabindex="-1">${esc(title)}</h2></div>${offDay}
+    ${ids.length > 1 ? `<p class="sub">Credited: ${ids.map(i => esc((D.artists[i]||{}).name||i)).join(" · ")}</p>` : ""}
+    <ul class="sets">${list.map(p => `<li class="set">${timeCell(p)}<div><div class="billing">${p.stage_id ? esc(stageName(p.stage_id)) : "Stage not announced"}</div><div class="acts">${badge(p)}<span class="none">${dayOf(p.event_date).sub}</span></div></div></li>`).join("")}</ul>
+    <div style="display:grid;gap:8px;margin-top:14px">${ctas}</div>
+    <p class="none" style="margin-top:10px">Tracks are reviewed recordings, not the live set.</p>`;
+}
+function stagesView(r){
+  const main = $("#main"); main.classList.remove("with-panel");
+  main.innerHTML = `<div class="page"><h1>Stages</h1><p class="lede">Every stage and its set times for ${r.day === "all" ? "all three days" : dayOf(r.day).long}. This list does everything the map does.</p>
+    <ul class="stages">${D.stages.map(s => { const n = setsFor(s.stage_id, r.day).length, any = setsFor(s.stage_id,"all").length;
+      return `<li><a class="stage-row" href="${build({view:"stage", id:s.stage_id, day:r.day})}"><span class="dot ${n?"has":""} ${any?"":"dashed"}" aria-hidden="true"></span><span><span class="nm">${esc(s.display_name)}</span><span class="mt">${n ? n + " sets · poster times" : any ? "No sets this day" : "No confirmed schedule"}</span></span><span class="chev" aria-hidden="true">›</span></a></li>`; }).join("")}</ul>
+    ${r.day !== "all" && unscheduled(r.day).length ? `<p class="none" style="margin-top:14px">${unscheduled(r.day).length} ${dayOf(r.day).long} acts have no announced stage. <a href="${build({view:"unscheduled", day:r.day})}">See them</a></p>` : ""}</div>`;
+}
+function stagePage(r){
+  const main = $("#main"); main.classList.remove("with-panel");
+  if (!D.stages.some(s => s.stage_id === r.id)) { main.innerHTML = `<div class="page"><div class="empty"><p>That stage or set isn't in the current schedule.</p><a class="btn" href="#/stages">Show all stages</a></div></div>`; return; }
+  main.innerHTML = `<div class="page" style="max-width:760px"><a class="link" href="${build({view:"stages", day:r.day})}">← Stages</a>
+    <div class="sheet-head"><h2 id="sheet-title" tabindex="-1" style="font-size:1.75rem">${esc(stageName(r.id))}</h2></div>
+    <p class="sub">${summary(r.id, r.day)}</p><div>${r.set || r.artist ? artistPanel({...r, stage:r.id}) : setList(r.id, {...r, stage:r.id})}</div>
+    <p style="margin-top:12px"><a class="link" href="${build({view:"map", stage:r.id, day:r.day})}">Show on map</a></p></div>`;
+}
+function unscheduledView(r){
+  const main = $("#main"); main.classList.remove("with-panel"); const list = unscheduled(r.day).sort((a,b) => a.display_name.localeCompare(b.display_name));
+  main.innerHTML = `<div class="page"><a class="link" href="${build({view:"stages", day:r.day})}">← Stages</a><h1>Time not announced</h1>
+    <p class="lede">These acts are on the current ${r.day === "all" ? "" : dayOf(r.day).long + " "}lineup, but no stage or time has been published for them yet. We don't guess.</p>
+    <ul class="sets">${list.map(p => `<li class="set">${timeCell(p)}<div><div class="billing">${esc(p.display_name)}</div><div class="acts">${badge(p)}${r.day==="all"?`<span class="none">${dayOf(p.event_date).sub}</span>`:""}${hearLinks(p, r.day)}</div></div></li>`).join("")}</ul></div>`;
+}
+function sourcesView(){
+  const main = $("#main"); main.classList.remove("with-panel");
+  main.innerHTML = `<div class="page"><h1>About &amp; sources</h1>
+    <p class="lede">Event Day Companion is independent and unofficial. It is not affiliated with EDC or Insomniac.</p>
+    <section><h2>The map</h2><p>An original sketch made for this app. It is not the official festival map and isn't drawn to scale. Stage positions are approximate. There is no GPS, routing or walking time.</p>
+      <p>For the official map and updates, visit the <a href="https://orlando.edc.com/" target="_blank" rel="noopener noreferrer">organizer's website ↗</a>.</p></section>
+    <section><h2>What the labels mean</h2><dl class="legend">
+      <dt><span class="st confirmed">Confirmed</span></dt><dd>Published by the organizer as final set times.</dd>
+      <dt><span class="st poster">Poster time</span></dt><dd>Read from a published set-time poster (checked ${D.checked_on}). May change.</dd>
+      <dt><span class="st unannounced">Time not announced</span></dt><dd>On the current lineup, but no stage or time has been published.</dd>
+      <dt><span class="st disputed">Sources disagree</span></dt><dd>Two sources give different values. We show both.</dd></dl></section>
+    <section><h2>Music</h2><p>"Hear" links open <a href="${LR}#/lineup" style="color:var(--mint)">Listening Room</a>, which has reviewed recordings for each artist. Those are not the live set.</p></section>
+    <section><h2>Privacy</h2><p>No account, no tracking. Nothing you tap is stored on a server.</p></section></div>`;
+}
+function showBanner(msg){ if (!$(".banner")) { const b = document.createElement("div"); b.className = "banner"; b.setAttribute("role","status"); b.textContent = msg; $("#main").append(b); } }
+
+/* ---------- map geometry (placeholder sketch) ---------- */
+function artSVG(){
+  return `<svg class="art" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" aria-hidden="true">
+    <g fill="var(--zone)" stroke="var(--zone-edge)" stroke-width="3">
+      <path d="M300 120 h400 a80 80 0 0 1 80 80 v170 a60 60 0 0 1-60 60 H280 a60 60 0 0 1-60-60 V200 a80 80 0 0 1 80-80z"/>
+      <path d="M640 520 h230 a60 60 0 0 1 60 60 v150 a60 60 0 0 1-60 60 H660 a60 60 0 0 1-60-60 V560 a40 40 0 0 1 40-40z"/>
+      <path d="M100 500 h230 a50 50 0 0 1 50 50 v160 a50 50 0 0 1-50 50 H120 a60 60 0 0 1-60-60 V540 a40 40 0 0 1 40-40z"/>
+      <path d="M250 860 h260 a60 60 0 0 1 60 60 v120 a60 60 0 0 1-60 60 H260 a50 50 0 0 1-50-50 V900 a40 40 0 0 1 40-40z"/>
+      <rect x="640" y="920" width="200" height="170" rx="40"/>
+    </g>
+    <g fill="none" stroke="var(--path)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M500 1230 V980 M500 980 C500 860 500 800 500 640 M500 640 C380 640 300 640 240 640 M500 640 C620 640 700 650 760 660 M500 640 V420 M500 980 C600 980 680 990 740 1000"/>
+    </g>
+    <text x="500" y="1215" fill="#b4bdd6" font-size="22" text-anchor="middle" font-family="system-ui" opacity=".6">placeholder geometry · #63 supplies audited positions</text>
+  </svg>`;
+}
+function fit(){
+  const m = $("#map"); if (!m) return; const w = m.clientWidth, h = m.clientHeight - (innerWidth < 1100 && innerHeight > 480 ? 120 : 0);
+  fitK = Math.min(w / W, h / H); view = {k: fitK, x: (w - W*fitK)/2, y: Math.max(8, (h - H*fitK)/2)}; place();
+}
+function place(){
+  const svg = $("#map svg.art"); if (svg) svg.style.transform = `translate(${view.x}px,${view.y}px) scale(${view.k})`;
+  document.querySelectorAll(".hs").forEach(b => { const p = HOTSPOT[b.dataset.stage]; b.style.left = (view.x + p.x*W*view.k) + "px"; b.style.top = (view.y + p.y*H*view.k) + "px"; });
+}
+function zoom(f, cx, cy){
+  const m = $("#map"); cx ??= m.clientWidth/2; cy ??= m.clientHeight/2;
+  const k = Math.min(fitK*4, Math.max(fitK, view.k*f)); view.x = cx - (cx - view.x)*(k/view.k); view.y = cy - (cy - view.y)*(k/view.k); view.k = k; place();
+}
+function centerOn(id){
+  const m = $("#map"), p = HOTSPOT[id]; if (!m || !p) return;
+  const visH = innerWidth >= 1100 ? m.clientHeight : m.clientHeight*.45;
+  const sx = view.x + p.x*W*view.k, sy = view.y + p.y*H*view.k;
+  if (sy > 40 && sy < visH - 20 && sx > 40 && sx < m.clientWidth - 40) return;
+  m.classList.add("anim"); view.x += m.clientWidth/2 - sx; view.y += visH/2 - sy; place(); setTimeout(() => m.classList.remove("anim"), 300);
+}
+function wireMap(){
+  const m = $("#map");
+  $(".map-ctrl").addEventListener("click", e => { const z = e.target.closest("button"); if (!z) return;
+    if (z.dataset.z === "in") zoom(1.5); if (z.dataset.z === "out") zoom(1/1.5); if (z.dataset.z === "reset") fit(); if (z.dataset.z === "list") go({view:"stages", set:"", artist:"", sheet:""}); });
+  m.addEventListener("wheel", e => { e.preventDefault(); const r = m.getBoundingClientRect(); zoom(e.deltaY < 0 ? 1.15 : 1/1.15, e.clientX - r.left, e.clientY - r.top); }, {passive:false});
+  let drag = null;
+  m.addEventListener("pointerdown", e => { if (e.target.closest(".hs")) return; drag = {x:e.clientX, y:e.clientY, vx:view.x, vy:view.y}; m.setPointerCapture(e.pointerId); m.classList.add("dragging"); });
+  m.addEventListener("pointermove", e => { if (!drag) return; view.x = drag.vx + e.clientX - drag.x; view.y = drag.vy + e.clientY - drag.y; place(); });
+  m.addEventListener("pointerup", () => { drag = null; m.classList.remove("dragging"); });
+  m.addEventListener("keydown", e => { if (!["ArrowRight","ArrowDown","ArrowLeft","ArrowUp"].includes(e.key)) return; const hs = [...document.querySelectorAll(".hs")]; const i = hs.indexOf(document.activeElement); if (i < 0) return; e.preventDefault(); hs[(i + (e.key === "ArrowRight" || e.key === "ArrowDown" ? 1 : hs.length - 1)) % hs.length].focus(); });
+  $("#grab").addEventListener("click", () => { const s = $("#sheet").dataset.size; go({sheet: s === "peek" ? "half" : s === "half" ? "full" : "half"}, true); });
+}
+function selectStage(id){
+  const r = parse(); if (r.stage === id && !r.set && !r.artist) return;
+  go({view:"map", stage:id, set:"", artist:"", sheet:""});
+  centerOn(id);
+  requestAnimationFrame(() => { const h = $("#sheet-title"); h && h.focus(); announce(`${stageName(id)}, ${parse().day === "all" ? "all days" : dayOf(parse().day).long}, ${setsFor(id, parse().day).length} sets.`); });
+}
+const ICONS = {plus:'<path d="M12 5v14M5 12h14"/>',minus:'<path d="M5 12h14"/>',reset:'<path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/>',list:'<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',x:'<path d="M18 6 6 18M6 6l12 12"/>',info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/>'};
+const ico = (n, s=20) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">${ICONS[n]}</svg>`;
+
+/* ---------- shell ---------- */
+function days(r){
+  $("#days").innerHTML = DAYS.map(d => `<button type="button" aria-pressed="${d.key === r.day}" data-day="${d.key}">${d.label}${d.num ? ` <span class="num">${d.num}</span>` : ""}<span class="sr-only">${d.key === "all" ? " days" : ", " + d.long}</span></button>`).join("");
+}
+$("#days").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; const r = parse(); go({day: b.dataset.day}, true);
+  $(`#days [data-day="${b.dataset.day}"]`).focus();
+  announce(`${dayOf(b.dataset.day).long}${r.stage && r.stage !== "?" ? ": " + stageName(r.stage) + ", " + setsFor(r.stage, b.dataset.day).length + " sets" : ""}.`); });
+document.addEventListener("keydown", e => { if (e.key !== "Escape") return; const r = parse();
+  if (r.set || r.artist) go({set:"", artist:""}); else if (r.sheet === "full") go({sheet:"half"}, true); });
+function render(){
+  const r = parse(); days(r);
+  const nav = r.view === "stage" || r.view === "unscheduled" ? "stages" : r.view;
+  document.querySelectorAll("[data-nav]").forEach(a => { if (a.dataset.nav === nav) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+  if (r.view === "stages") stagesView(r); else if (r.view === "stage") stagePage(r); else if (r.view === "unscheduled") unscheduledView(r); else if (r.view === "sources") sourcesView(); else mapView(r);
+}
+addEventListener("hashchange", render);
+addEventListener("resize", () => { if ($("#map")) { fit(); const r = parse(); if (r.stage && r.stage !== "?") centerOn(r.stage); } });
+render();
+})();
+</script>
+</body>
+</html>
