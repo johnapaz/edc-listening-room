@@ -83,8 +83,17 @@ class PublicBuild(unittest.TestCase):
         result = subprocess.run(["python3", str(ROOT / "scripts/build_public_site.py")], capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         out = ROOT / "public-site"
-        expected = {"index.html", "404.html", "_headers", "_redirects", "listening-room/index.html", "listening-room/app.js", "listening-room/lib.js", "listening-room/styles.css", "listening-room/about.html", "data/edco-2026/artists.json", "data/edco-2026/performances.json", "data/edco-2026/venues.json", "data/edco-2026/event.json", "data/listening-room/songs.json", "data/listening-room/playlist.json"}
+        expected = {"index.html", "404.html", "_headers", "_redirects", "listening-room/index.html", "listening-room/app.js", "listening-room/lib.js", "listening-room/styles.css", "data/edco-2026/artists.json", "data/edco-2026/performances.json", "data/edco-2026/venues.json", "data/edco-2026/event.json", "data/listening-room/songs.json", "data/listening-room/playlist.json"}
+        # About & Help (scripts/build_about.py): pages, assets and screenshots enumerated from their sources.
+        src = ROOT / "about-site"
+        slugs = [re.search(r"^slug:(.*)$", p.read_text(encoding="utf-8"), re.M).group(1).strip() for p in (src / "pages").glob("*.html")]
+        expected |= {f"about/{s}/index.html" if s else "about/index.html" for s in slugs}
+        expected |= {"about/search.json", "about/assets/about.css", "about/assets/about.js"}
+        expected |= {"about/img/" + m["file"] for m in json.loads((src / "img" / "shots.json").read_text()).values()}
+        expected |= {"favicon.svg", "apple-touch-icon.png", "og.png"}
         self.assertEqual({str(p.relative_to(out)) for p in out.rglob("*") if p.is_file()}, expected)
+        # The first About page lived at /listening-room/about.html; keep old shared links working.
+        self.assertIn("/listening-room/about.html /about/ 301", (out / "_redirects").read_text())
         for path in out.rglob("*.json"):
             text = path.read_text()
             self.assertNotIn("notion", text.lower())
