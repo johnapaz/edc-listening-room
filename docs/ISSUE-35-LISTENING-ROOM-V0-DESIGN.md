@@ -6,7 +6,7 @@
 
 - **Listening Room** is an independent music-discovery product; **Event Day Companion** is a separate event-planning product, potentially interoperable later with permission. Initial event: **EDC Orlando 2026**, not a limit on the product's future.
 - **One** event-linked playlist in v0, presented simply as the **EDC Orlando 2026 playlist**. Its proposed **Round Robin ordering** gives each eligible matched artist a turn before a repeat. **Owner correction in Session 3 supersedes earlier prominence decisions: Round Robin is secondary ordering metadata, not the product's headline, a feature mode picker, or a prominent CTA.** “Everyone gets a spin” may explain the ordering inside an optional playlist detail.
-- One **new, separately approved unlisted/link-shareable playlist**, rather than changing the existing private pilot playlist. Unlisted means accessible to people with the URL, *not private* or a substitute for authorization. **No account connection, API keys, native playback, live playback-state sync or personalized playlist editing for listeners**.
+- One **initial** separately approved unlisted/link-shareable event playlist remains the starting point, rather than changing the existing private pilot playlist. **Latest owner direction:** allow **day-specific curated playlist variants** (e.g. Friday/Saturday/Sunday) and explore genre/stage-specific sets, so **one total playlist is no longer a fixed product limitation**. Release sequencing and actual playlist counts remain subject to feasibility and final owner approval. Unlisted means accessible to people with the URL, *not private* or a substitute for authorization. **No account connection, API keys, native playback, live playback-state sync or personalized playlist editing for listeners**.
 - Three supported journeys: (1) newcomer finds lineup search immediately, with a nearby straightforward link to the event playlist; (2) explorer searches/browses lineup, opens an artist, sees a deliberately limited set of *validated* tracks, and selects an **exact YouTube listening link** rather than facing generalized YouTube search results; (3) returner revisits the same playlist and catalog without an account.
 - Shallow two-destination navigation: **Listen** and **Lineup**. Mobile-first; no required personalization survey. No functional Discovery Shuffle or Pure Shuffle, favorites, per-user synced picks, multi-event UI, itinerary builder or offline-first capability in v0.
 - Content sources: checked-in EDCO 2026 reference pack, approved/validated song matches and current official source evidence. Day, stage and time must be distinguished; unspecified fields are unknown. Verify latest official published schedule through [#28](https://github.com/johnapaz/edc-listening-room/issues/28), not from hardcoded prior assumptions. Source order is not set order. Keep B2Bs/special billing intact.
@@ -129,3 +129,33 @@ Draft [#33](https://github.com/johnapaz/edc-listening-room/pull/33) is an **earl
 - [ ] #35 records final design approval and links this brief/PR; dependent implementation may then be planned without skipping release gates.
 
 **Until then: Session 3 feedback integrated, final sign-off pending. Round Robin prominence is expressly superseded by owner's latest direction.**
+
+## 9. Session 3 additional feedback: discovery facets and fast return to music (2026-10-30)
+
+**Owner direction:** The product must be **lightweight: get in, discover, get back to listening quickly**. Its value is a *festival-scoped* path through music that generic YouTube does not make easy. Earlier recommendations that Round Robin should be the homepage hero are expressly withdrawn. The owner prefers the B (lineup-first) treatment and After Dark Radio colors.
+
+### Discovery dimensions
+
+1. **All artists / whole event** — the broad event playlist.
+2. **Day** — filter to Friday, Saturday, or Sunday, as many attendees only go for one day. **Owner explicitly likes day-specific listening playlists** rather than merely changing visible artist cards.
+3. **Genre** — browse a genre and its lineup artists; do not infer it blindly from a single track, and prefer multiple tags where substantiated. Existing Notion Genres database is a possible reference, **not proof every act has reviewed genre tags**.
+4. **Stage** — filter artists booked on an actual stage and, where a compatible playlist exists, hear a stage-oriented mix. Owner-supplied schedule screenshots have been transcribed into **draft PR #36**: 107 scheduled slots across four pictured stages, *still pending review/merge*; fifth stage and unresolved entries must not be invented.
+
+**Core interaction:** `Event → (optional day/genre/stage filter or artist search) → curated artists/songs → specific approved YouTube listening link`, with a *playlist link for a whole filter when actually built and verified*. Filters should be quick chips/dropdowns, remain optional, and combine for **browsing** wherever underlying metadata genuinely intersects. Do not promise an automatically generated YouTube playlist for every combination: YouTube has no generic external “play all items matching our filters” URL, and each actual shared playlist requires managed publication, quota, validation, access checking and ongoing updates. Never substitute an unfiltered YouTube search without explicitly labeling it.
+
+### Implementation/release tiering proposal (NOT YET FINAL APPROVAL)
+
+- **First slice / highest priority:** minimal lineup search, direct artist→vetted song links, **one event-wide YouTube Music playlist**, simple event browsing.
+- **Next small extension if feasible for initial launch:** **three day playlists**, using the same approved matched-song catalog. If coverage is inadequate, don't expose empty/misleading “Listen to Friday” actions.
+- **Genre + stage discovery:** artist filters as soon as tags/appearances are validated; **genre/stage mixes** are a separate bounded feature, not one playlist per combination. Curate only those with enough verified coverage and authorized API quota. Make the browse interface useful even when a mix does not exist.
+- **No dynamic personal playlists, per-user OAuth, live YouTube queue control, silent account sync, or speculative backend**. The system may store filter criteria independently of providers, but should not build infrastructure purely for hypothetical combinations.
+
+### Revised usability scenarios / acceptance
+
+- Search one booked artist and reach one **exact reviewed YouTube recording** quickly.
+- Filter for **Saturday-only** and get a plainly named Saturday mix **if approved and available**, or direct artist/song links otherwise.
+- Filter to a **genre** and inspect why artists qualify; missing tags are not invented.
+- Select a **stage**, recognize only confirmed stage assignments, and discover available tracks for those acts.
+- Switch from a filtered list into a playlist or exact song link without having to fill a profile or configure a streaming account.
+
+**Governance:** This is ongoing owner feedback, not final sign-off. Preserve previous Sessions 1–2 user research and scope history, but the **single-playlist ceiling and Round Robin prominence have been explicitly revised**. Update #35 and review PR #37 before closing the design gate. Do not create or publish additional playlists just because the idea is documented.
