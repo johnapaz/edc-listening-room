@@ -33,7 +33,7 @@
 | S4 | **Stage detail (list mode)**: the same content as the S2 sheet, as a full page | a stage-list row, or `#/stage/{stage_id}` |
 | S5 | **Artist preview**: sets for one billing, credited identities, and the mint CTA to Listening Room | a set row, or `&artist=` / `&set=` |
 | S6 | **No confirmed schedule**: a selected stage with zero sourced sets for the day (CASA BACARDÍ) | any selection |
-| S7 | **Unscheduled lineup entries**: "On the lineup, time not announced", a per-day list of current billings with no slot | the link at the foot of each day in S3/S4 |
+| S7 | **Unscheduled lineup entries**: "Stage or time unknown", a per-day list of current billings with no slot | the link at the foot of each day in S3/S4 |
 | S8 | **Sources & attribution**: the map provenance, schedule sources, checked dates and the organizer homepage link | the attribution chip, footer or About |
 | S9 | **Map failed / data failed / offline**: see §7 | errors |
 | S10 | **Map gated**: the Map tab shows the stage list (S3) under a "Map coming later" notice and an organizer-homepage link. A `stage` param redirects (replace) to S4; a `set` or `artist` param without a stage opens S5 as a page. **This is the current state of real data.** | `map.geometry.status` isn't `verified`, or any stage lacks approved coordinates |
@@ -117,7 +117,7 @@ Fri 6 · 7 sets · ◌ Poster times · checked Oct 30
             ◌ Poster time        Details  ♫ Hear Afrojack
  …
 ──────────────────────────────────────────
-3 more Friday acts have no announced stage → (S7)
+3 Friday acts have an unknown stage or time in this reference → (S7)
 ```
 
 - Sort by `starts_at` ascending. Midnight and later belongs to the night it continues (the requirements' rule), so 12:30 AM sits after 11:45 PM within the same festival day.
@@ -142,9 +142,9 @@ Fri 6 · 7 sets · ◌ Poster times · checked Oct 30
 | State | Copy | Action |
 | --- | --- | --- |
 | Loading | "Loading stages…" (skeleton hotspots, no spinner on the map) | – |
-| Stage has no sets on day (S6) | "No confirmed set times for **CASA BACARDÍ** on Friday yet." | "See Friday acts without a stage" (S7) |
-| Stage has no sets on any day | "No set times have been published for this stage yet." | link to the sources (S8) |
-| Day has unscheduled acts | "{n} Friday acts are on the lineup without an announced stage or time." | S7 |
+| Stage has no sets on day (S6) | "No sourced schedule for **CASA BACARDÍ** on Friday in this reference." | "See Friday acts with unknown stage or time" (S7) |
+| Stage has no sets on any day | "No sourced schedule for this stage in this reference." | link to the sources (S8) |
+| Day has unscheduled acts | "{n} Friday acts have an unknown stage or time in this reference." | S7 |
 | Artist has no reviewed tracks | "No reviewed tracks yet." | "Artist page" (plain link) |
 | Map art failed to load | "The map didn't load. Every stage is still in the list." | "Show stage list" (S3). The map region collapses. |
 | Schedule data failed | "Couldn't load set times. Check your connection and try again." | "Try again". The stage list still renders from `venues.json` if that one loaded. |
@@ -152,7 +152,7 @@ Fri 6 · 7 sets · ◌ Poster times · checked Oct 30
 | Unknown `stage`/`set`/`artist` in the URL | "That stage or set isn't in the current schedule." | "Show all stages" |
 | Stale data (checked_on > 3 days before today) | Footer freshness turns amber-text with "Check the official lineup ↗" (homepage link) | – |
 
-Voice: plain, second person, no exclamation marks, and no organizer branding. "Time not announced" is preferred over "TBA".
+Voice: plain, second person, no exclamation marks, and no organizer branding. Copy describes **our evidence**, not the organizer's actions: say "Time unknown" or "No sourced schedule in this reference", never "not announced" or "not published", because the organizer may have published data we haven't verified. Avoid "TBA". Never describe intentional gating (S10) as a load failure; "The map didn't load" is only for a real asset failure (S9) once a verified map exists.
 
 ## 8. Data the design assumes (for #62 / #65)
 

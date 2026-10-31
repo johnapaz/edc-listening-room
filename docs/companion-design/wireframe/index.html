@@ -223,7 +223,7 @@ const fmt = new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hour:"n
 const t = iso => iso ? fmt.format(new Date(iso)).replace(" PM","").replace(" AM","") : null;
 const ampm = iso => iso ? fmt.format(new Date(iso)).slice(-2) : "";
 // Keys are the canonical schedule_status values from docs/COMPANION-DATA-CONTRACT.md / current-lineup.json.
-const STATUS = {verified:["confirmed","Confirmed"],poster_transcribed:["poster","Poster time"],set_times_unverified:["unannounced","Time not announced"]};
+const STATUS = {verified:["confirmed","Confirmed"],poster_transcribed:["poster","Poster time"],set_times_unverified:["unannounced","Time unknown"]};
 // "Sources disagree" is not a schedule_status: it is derived from issue_ids / reconciliation and shown as a separate note.
 const conflict = p => (p.issue_ids && p.issue_ids.length) || (p.reconciliation && p.reconciliation.status === "qualifier_changed");
 const conflictNote = p => { if (!conflict(p)) return "";
@@ -268,7 +268,7 @@ function hearLinks(p, day){
   return withTracks.map(i => `<a class="hear" href="${lrArtist(i, day)}"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Hear ${esc((D.artists[i]||{}).name||i)}</a>`).join("");
 }
 function timeCell(p){
-  if (!p.starts_at && !p.ends_at) return `<span class="time" aria-label="Time not announced">—</span>`;
+  if (!p.starts_at && !p.ends_at) return `<span class="time" aria-label="Time unknown">—</span>`;
   if (p.starts_at && !p.ends_at) return `<span class="time">from ${t(p.starts_at)}<small>${ampm(p.starts_at)}</small></span>`;
   return `<span class="time">${t(p.starts_at)}–${t(p.ends_at)}<small>${ampm(p.ends_at)}</small></span>`;
 }
@@ -282,8 +282,8 @@ function setList(stage, r){
   const list = setsFor(stage, r.day);
   if (!list.length) {
     const anyDay = setsFor(stage, "all").length;
-    const msg = anyDay ? `No confirmed set times for <b>${esc(stageName(stage))}</b> on ${dayOf(r.day).long} yet.` : `No set times have been published for <b>${esc(stageName(stage))}</b> yet.`;
-    const act = r.day !== "all" && unscheduled(r.day).length ? `<a class="btn" href="${build({...r, view:"unscheduled", id:"", set:"", artist:""})}">See ${dayOf(r.day).long} acts without a stage</a>` : `<a class="btn" href="#/sources">Where these times come from</a>`;
+    const msg = anyDay ? `No sourced schedule for <b>${esc(stageName(stage))}</b> on ${dayOf(r.day).long} in this reference.` : `No sourced schedule for <b>${esc(stageName(stage))}</b> in this reference.`;
+    const act = r.day !== "all" && unscheduled(r.day).length ? `<a class="btn" href="${build({...r, view:"unscheduled", id:"", set:"", artist:""})}">See ${dayOf(r.day).long} acts with unknown stage or time</a>` : `<a class="btn" href="#/sources">Where these times come from</a>`;
     return `<div class="empty"><p>${msg}</p>${act}</div>`;
   }
   let html = "", cur = ""; const common = commonStatus(list);
@@ -294,7 +294,7 @@ function setList(stage, r){
   });
   html += "</ul>";
   const un = r.day !== "all" ? unscheduled(r.day).length : 0;
-  if (un) html += `<p class="none" style="margin-top:10px">${un} ${dayOf(r.day).long} acts have no announced stage. <a href="${build({...r, view:"unscheduled", id:"", set:"", artist:""})}">See them</a></p>`;
+  if (un) html += `<p class="none" style="margin-top:10px">${un} ${dayOf(r.day).long} acts have an unknown stage or time in this reference. <a href="${build({...r, view:"unscheduled", id:"", set:"", artist:""})}">See them</a></p>`;
   return html;
 }
 function summary(stage, day){
@@ -379,7 +379,7 @@ function artistPanel(r){
   return `<a class="link" href="${back}">← ${r.stage && r.stage !== "?" ? esc(stageName(r.stage)) : "Back"}</a>
     <div class="sheet-head"><h2 id="sheet-title" tabindex="-1">${esc(title)}</h2></div>${offDay}
     ${ids.length > 1 ? `<p class="sub">Credited: ${ids.map(i => esc((D.artists[i]||{}).name||i)).join(" · ")}</p>` : ""}
-    <ul class="sets">${list.map(p => `<li class="set">${timeCell(p)}<div><div class="billing">${p.stage_id ? esc(stageName(p.stage_id)) : "Stage not announced"}</div><div class="acts">${badge(p)}${conflictNote(p)}<span class="none">${dayOf(p.event_date).sub}</span></div></div></li>`).join("")}</ul>
+    <ul class="sets">${list.map(p => `<li class="set">${timeCell(p)}<div><div class="billing">${p.stage_id ? esc(stageName(p.stage_id)) : "Stage unknown"}</div><div class="acts">${badge(p)}${conflictNote(p)}<span class="none">${dayOf(p.event_date).sub}</span></div></div></li>`).join("")}</ul>
     <div style="display:grid;gap:8px;margin-top:14px">${ctas}</div>
     ${ids.length ? `<p class="none" style="margin-top:10px">Tracks are reviewed recordings, not the live set.</p>` : ""}`;
 }
@@ -395,7 +395,7 @@ function stagesView(r, notice){
   main.innerHTML = `<div class="page">${notice || ""}<h1>Stages</h1><p class="lede">Every stage and its set times for ${r.day === "all" ? "all three days" : dayOf(r.day).long}. This list does everything the map does.</p>
     <ul class="stages">${D.stages.map(s => { const n = setsFor(s.stage_id, r.day).length, any = setsFor(s.stage_id,"all").length;
       return `<li><a class="stage-row" href="${build({view:"stage", id:s.stage_id, day:r.day})}"><span class="dot ${n?"has":""} ${any?"":"dashed"}" aria-hidden="true"></span><span><span class="nm">${esc(s.display_name)}</span><span class="mt">${n ? n + " sets · poster times" : any ? "No sets this day" : "No confirmed schedule"}</span></span><span class="chev" aria-hidden="true">›</span></a></li>`; }).join("")}</ul>
-    ${r.day !== "all" && unscheduled(r.day).length ? `<p class="none" style="margin-top:14px">${unscheduled(r.day).length} ${dayOf(r.day).long} acts have no announced stage. <a href="${build({view:"unscheduled", day:r.day})}">See them</a></p>` : ""}</div>`;
+    ${r.day !== "all" && unscheduled(r.day).length ? `<p class="none" style="margin-top:14px">${unscheduled(r.day).length} ${dayOf(r.day).long} acts have an unknown stage or time in this reference. <a href="${build({view:"unscheduled", day:r.day})}">See them</a></p>` : ""}</div>`;
 }
 function stagePage(r){
   const main = $("#main"); main.classList.remove("with-panel");
@@ -407,8 +407,8 @@ function stagePage(r){
 }
 function unscheduledView(r){
   const main = $("#main"); main.classList.remove("with-panel"); const list = unscheduled(r.day).sort((a,b) => a.display_name.localeCompare(b.display_name));
-  main.innerHTML = `<div class="page"><a class="link" href="${build({view:"stages", day:r.day})}">← Stages</a><h1>Time not announced</h1>
-    <p class="lede">These acts are on the current ${r.day === "all" ? "" : dayOf(r.day).long + " "}lineup, but no stage or time has been published for them yet. We don't guess.</p>
+  main.innerHTML = `<div class="page"><a class="link" href="${build({view:"stages", day:r.day})}">← Stages</a><h1>Stage or time unknown</h1>
+    <p class="lede">These acts are on the current ${r.day === "all" ? "" : dayOf(r.day).long + " "}lineup, but this reference has no sourced stage or time for them. The organizer may have published one we haven't verified; we don't guess.</p>
     <ul class="sets">${list.map(p => `<li class="set">${timeCell(p)}<div><div class="billing">${esc(p.display_name)}</div><div class="acts">${badge(p, "set_times_unverified")}${r.day==="all"?`<span class="none">${dayOf(p.event_date).sub}</span>`:""}${hearLinks(p, r.day)}</div></div></li>`).join("")}</ul></div>`;
 }
 function sourcesView(){
@@ -418,9 +418,9 @@ function sourcesView(){
     <section><h2>The map</h2><p>An original sketch made for this app. It is not the official festival map and isn't drawn to scale. Stage positions are approximate. There is no GPS, routing or walking time.</p>
       <p>For the official map and updates, visit the <a href="https://orlando.edc.com/" target="_blank" rel="noopener noreferrer">organizer's website ↗</a>.</p></section>
     <section><h2>What the labels mean</h2><dl class="legend">
-      <dt><span class="st confirmed">Confirmed</span></dt><dd>Published by the organizer as final set times.</dd>
+      <dt><span class="st confirmed">Confirmed</span></dt><dd>Verified against an organizer source. (None yet in this reference.)</dd>
       <dt><span class="st poster">Poster time</span></dt><dd>Read from a published set-time poster (checked ${new Date(D.checked_on+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric"})}). May change.</dd>
-      <dt><span class="st unannounced">Time not announced</span></dt><dd>On the current lineup, but no stage or time has been published.</dd>
+      <dt><span class="st unannounced">Time unknown</span></dt><dd>On the current lineup, but this reference has no sourced stage or time. Check the organizer for updates.</dd>
       <dt><span class="st disputed">Sources disagree</span></dt><dd>The current lineup and the poster differ (for example a set name). We show both.</dd></dl></section>
     <section><h2>Music</h2><p>"Hear" links open <a href="${LR}#/lineup" style="color:var(--mint)">Listening Room</a>, which has reviewed recordings for each artist. Those are not the live set.</p></section>
     <section><h2>Privacy</h2><p>No account, no tracking. Nothing you tap is stored on a server.</p></section></div>`;
@@ -458,9 +458,13 @@ function zoom(f, cx, cy){
 }
 function centerOn(id){
   const m = $("#map"), p = HOTSPOT[id]; if (!m || !p) return;
-  const sh = $("#sheet"); const visH = (innerWidth >= 1100 || innerHeight <= 480 || !sh) ? m.clientHeight : m.clientHeight - sh.offsetHeight;
+  const sh = $("#sheet");
+  // Use the sheet's TARGET height (it animates), not its current offsetHeight.
+  const peek = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--peek")) || 168;
+  const target = !sh ? 0 : sh.dataset.size === "full" ? m.clientHeight : sh.dataset.size === "half" ? m.clientHeight*.55 : peek;
+  const visH = (innerWidth >= 1100 || innerHeight <= 480 || !sh) ? m.clientHeight : m.clientHeight - target;
   const sx = view.x + p.x*W*view.k, sy = view.y + p.y*H*view.k;
-  if (sy > 40 && sy < visH - 20 && sx > 40 && sx < m.clientWidth - 40) return;
+  if (sy > 40 && sy < visH - 56 && sx > 40 && sx < m.clientWidth - 40) return;
   m.classList.add("anim"); view.x += m.clientWidth/2 - sx; view.y += visH/2 - sy; place(); setTimeout(() => m.classList.remove("anim"), 300);
 }
 function wireMap(){
@@ -478,7 +482,8 @@ function wireMap(){
 function selectStage(id){
   const r = parse(); if (r.stage === id && !r.set && !r.artist) return;
   go({view:"map", stage:id, set:"", artist:"", sheet:""});
-  centerOn(id);
+  // Center only after the hashchange render has resized the sheet, so the hotspot isn't left under it (Codex review on #73).
+  addEventListener("hashchange", () => requestAnimationFrame(() => centerOn(id)), {once:true});
   requestAnimationFrame(() => { const h = $("#sheet-title"); h && h.focus(); announce(`${stageName(id)}, ${parse().day === "all" ? "all days" : dayOf(parse().day).long}, ${setsFor(id, parse().day).length} sets.`); });
 }
 const ICONS = {plus:'<path d="M12 5v14M5 12h14"/>',minus:'<path d="M5 12h14"/>',reset:'<path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/>',list:'<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',x:'<path d="M18 6 6 18M6 6l12 12"/>',info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/>'};

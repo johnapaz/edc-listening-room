@@ -68,7 +68,7 @@ Field names and values below are the canonical ones from [`COMPANION-DATA-CONTRA
 | --- | --- | --- |
 | `verified` | **Confirmed** | Violet solid dot ● and violet text. This matches Listening Room, which treats only `verified` as fact. |
 | `poster_transcribed` | **Poster time** | Hollow dashed ring ◌ and muted text. Tooltip/legend: "Read from a published set-time poster on {date}; may change." |
-| `set_times_unverified` (no stage/time) | **Time not announced** | Dotted rule and muted text. The row has no time column; it shows "—". |
+| `set_times_unverified` (no stage/time) | **Time unknown** | Dotted rule and muted text. The row has no time column; it shows "—". |
 
 **Source notes.** These are derived signals, not statuses, and appear in addition to the time badge:
 
