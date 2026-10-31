@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Build an explicit, sanitized public allowlist. Never serve the repository root."""
 import json
+import hashlib
+import re
 import shutil
 from pathlib import Path
 
@@ -50,6 +52,19 @@ def build():
     write('data/listening-room/songs.json', {'songs': load('data/listening-room/songs.json')['songs']})
     write('data/listening-room/playlist.json', load('data/listening-room/playlist.json'))
     build_about.build(OUT)  # About & Help pages, screenshots and site-wide brand files
+    # Stable content versions prevent cached old JS/CSS from mixing with a new data build.
+    for page in OUT.rglob('*.html'):
+        def version_asset(match):
+            attr, url = match.groups()
+            if url.startswith(('https://', 'http://', '//')):
+                return match.group(0)
+            asset = (OUT / url.lstrip('/') if url.startswith('/') else page.parent / url).resolve()
+            if not asset.is_relative_to(OUT.resolve()) or not asset.is_file():
+                raise ValueError(f'Missing public asset: {url}')
+            version = hashlib.sha256(asset.read_bytes()).hexdigest()[:12]
+            return f'{attr}="{url}?v={version}"'
+        page.write_text(re.sub(r'(src|href)="([^"?]+\.(?:js|css))"', version_asset,
+                               page.read_text(encoding='utf-8')), encoding='utf-8')
     # Decode bytes so binary files (screenshots, icons) are scanned too instead of crashing read_text().
     text = ''.join(p.read_bytes().decode('utf-8', 'ignore') for p in OUT.rglob('*') if p.is_file())
     for forbidden in ['app.notion.com', 'notion_page_url', 'GOOGLE_CLIENT_SECRET', 'GOOGLE_REFRESH_TOKEN', 'PLdOAWVle']:
