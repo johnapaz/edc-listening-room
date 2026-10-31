@@ -53,21 +53,23 @@
     return card;
   }
   function songRow(s, a, ctx) {
+    const credited = s.artist_ids.map(id => idx.artists.get(id)).filter(Boolean);
     return el("div", { class: "song" }, videoArt(s, a.display_name, "song-art"),
-      el("div", { class: "song-copy" }, ext(s.url, s.title, "track-title"), artistLink(a, ctx),
-        s.review_status !== "strong" ? el("small", { class: "muted version", text: "Version may differ from the original release." }) : null),
+      el("div", { class: "song-copy" }, ext(s.url, s.title, "track-title"),
+        el("div", { class: "song-credits" }, credited.flatMap((artist, i) => i ? [document.createTextNode(" · "), artistLink(artist, ctx)] : [artistLink(artist, ctx)])),
+        s.review_status !== "strong" && s.verification !== "source_reviewed" ? el("small", { class: "muted version", text: "Version may differ from the original release." }) : null),
       el("a", { href: s.url, class: "btn", target: "_blank", rel: "noopener noreferrer", "aria-label": "Open " + s.title + " by " + a.display_name + " on YouTube (opens in a new tab)", text: "YouTube ↗" }));
   }
   function readyToHear(rows, ctx) {
     const seen = new Set();
     const songs = [];
     rows.forEach(p => L.songGroups(p, idx).forEach(g => {
-      if (seen.has(g.artist.artist_id) || !g.songs.length) return;
-      seen.add(g.artist.artist_id); songs.push({ a: g.artist, s: g.songs[0] });
+      if (!g.songs.length || seen.has(g.songs[0].video_id)) return;
+      seen.add(g.songs[0].video_id); songs.push({ a: g.artist, s: g.songs[0] });
     }));
     if (!songs.length) return null;
     return el("section", { class: "ready", "aria-labelledby": "ready-title" },
-      el("div", { class: "section-heading" }, el("h2", { id: "ready-title", text: "Tracks to try" }), el("a", { href: L.buildHash("listen", ctx), class: "text-link", text: "All " + [...idx.songsByArtist.values()].flat().length + " tracks →" })),
+      el("div", { class: "section-heading" }, el("h2", { id: "ready-title", text: "Tracks to try" }), el("a", { href: L.buildHash("listen", ctx), class: "text-link", text: "All " + idx.songs.length + " tracks →" })),
       el("div", { class: "music-grid" }, songs.slice(0, 4).map(({ a, s }) => el("article", { class: "music-card" },
         videoArt(s, a.display_name, "feature-art"), el("div", { class: "music-copy" }, artistLink(a, ctx), ext(s.url, s.title, "track-title"))))));
   }
@@ -163,18 +165,19 @@
     }
     frag.append(el("h2", { class: "artist-section", text: "Tracks" }));
     if (!groups.some(g => g.songs.length)) frag.append(el("div", { class: "empty" }, el("p", { text: "No tracks have been added for this act." }), el("a", { class: "text-link", href: L.buildHash("listen", ctx), text: "Browse available tracks →" })));
+    const shown = new Set();
     groups.forEach(g => {
       if (groups.length > 1) frag.append(el("h3", {}, artistLink(g.artist, ctx)));
       if (!g.songs.length && groups.length > 1) frag.append(el("p", { class: "muted", text: "No tracks added for this artist." }));
-      g.songs.forEach(s => frag.append(songRow(s, g.artist, ctx)));
+      g.songs.forEach(s => { if (!shown.has(s.video_id)) { shown.add(s.video_id); frag.append(songRow(s, g.artist, ctx)); } });
     });
     main.replaceChildren(frag); document.getElementById("title").focus();
   }
   function listenView(ctx) {
     const frag = document.createDocumentFragment();
-    frag.append(el("div", { class: "intro" }, el("h1", { text: "Tracks" }), el("p", { class: "muted", text: [...idx.songsByArtist.values()].flat().length + " tracks from " + idx.songsByArtist.size + " lineup artists. Each opens on YouTube." })));
+    frag.append(el("div", { class: "intro" }, el("h1", { text: "Tracks" }), el("p", { class: "muted", text: idx.songs.length + " tracks from " + idx.songsByArtist.size + " lineup artists. Each opens on YouTube." })));
     const ul = el("ul", { class: "list" });
-    idx.songsByArtist.forEach((songs, id) => { const a = idx.artists.get(id); if (a) songs.forEach(s => ul.append(el("li", {}, songRow(s, a, ctx)))); });
+    idx.songs.forEach(s => { const a = idx.artists.get(s.artist_ids[0]); ul.append(el("li", {}, songRow(s, a, ctx))); });
     frag.append(ul, playlistCard()); main.replaceChildren(frag);
   }
   function route() {

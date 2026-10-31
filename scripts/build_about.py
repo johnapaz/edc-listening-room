@@ -77,7 +77,8 @@ class Data:
         self.playlist = load("data/listening-room/playlist.json")
         self.by_artist = {}
         for s in self.songs:
-            self.by_artist.setdefault(s["artist_id"], []).append(s)
+            for artist_id in s.get("artist_ids", [s["artist_id"]]):
+                self.by_artist.setdefault(artist_id, []).append(s)
         self.perf_ids = {p["performance_id"] for p in self.perf}
 
     def has_songs(self, p):
@@ -240,7 +241,7 @@ class Renderer:
             items = "".join(
                 f'<li><a class="ext" href="{ESC(s["url"])}" target="_blank" rel="noopener noreferrer">{ESC(s["title"])}'
                 f'<span class="vh"> by {ESC(a["display_name"])} on YouTube (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a>'
-                + ('' if s.get("review_status") == "strong" else ' <span class="tagline">version may differ</span>')
+                + ('' if s.get("review_status") == "strong" or s.get("verification") == "source_reviewed" else ' <span class="tagline">version may differ</span>')
                 + "</li>" for s in songs)
             n = len(songs)
             rows.append(f'<li class="cov"><a class="cov-name" href="{ESC(self.artist_route(artist_id))}">{ESC(a["display_name"])}</a>'

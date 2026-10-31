@@ -1,0 +1,1196 @@
+{
+  "schema_version": 1,
+  "purpose": "Owner-authorized source-reviewed tracks for the public Listening Room app.",
+  "checked_on": "2026-10-31",
+  "lineup_source_url": "https://orlando.edc.com/lineup/",
+  "source_review": "Exact current YouTube oEmbed title/uploader checked against existing sourced Spotify/pilot candidates. Metadata availability and artwork are separate from human playback and app/public approval.",
+  "songs": [
+    {
+      "song_key": "spotify:6gLDnzjpM0AwOeh9NmmHE0",
+      "title": "Other Side",
+      "artist_ids": [
+        "artist:azzecca"
+      ],
+      "credits": "Azzecca",
+      "video_id": "xX8vYFSV6ek",
+      "url": "https://www.youtube.com/watch?v=xX8vYFSV6ek",
+      "youtube_music_url": "https://music.youtube.com/watch?v=xX8vYFSV6ek",
+      "artwork_url": "https://img.youtube.com/vi/xX8vYFSV6ek/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/6gLDnzjpM0AwOeh9NmmHE0",
+        "https://open.spotify.com/embed/artist/2k5DY2QDU3kBi5DX7OQlWj",
+        "https://www.youtube.com/watch?v=xX8vYFSV6ek"
+      ],
+      "youtube_title": "Other Side",
+      "uploader": "Azzecca - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UC6uHHfnF9wgy4Yw_VjAOCQw",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:0gCVfzNzYGBk95GBLQ6US4",
+      "title": "oh my yuma!",
+      "artist_ids": [
+        "artist:azzecca"
+      ],
+      "credits": "Azzecca",
+      "video_id": "QGR2oJ8lr2E",
+      "url": "https://www.youtube.com/watch?v=QGR2oJ8lr2E",
+      "youtube_music_url": "https://music.youtube.com/watch?v=QGR2oJ8lr2E",
+      "artwork_url": "https://img.youtube.com/vi/QGR2oJ8lr2E/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/0gCVfzNzYGBk95GBLQ6US4",
+        "https://open.spotify.com/embed/artist/2k5DY2QDU3kBi5DX7OQlWj",
+        "https://www.youtube.com/watch?v=QGR2oJ8lr2E"
+      ],
+      "youtube_title": "oh my yuma!",
+      "uploader": "Azzecca - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UC6uHHfnF9wgy4Yw_VjAOCQw",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "pilot:vastive:under-my-skin",
+      "title": "Under My Skin",
+      "artist_ids": [
+        "artist:slander",
+        "artist:vastive"
+      ],
+      "credits": "SLANDER, Spiritbox, Vastive",
+      "video_id": "kYP_jbcd3Q8",
+      "url": "https://www.youtube.com/watch?v=kYP_jbcd3Q8",
+      "youtube_music_url": "https://music.youtube.com/watch?v=kYP_jbcd3Q8",
+      "artwork_url": "https://img.youtube.com/vi/kYP_jbcd3Q8/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4q1LQDKbCd6JX2EDJTRZjn",
+        "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+        "https://www.youtube.com/watch?v=kYP_jbcd3Q8"
+      ],
+      "youtube_title": "SLANDER, Spiritbox & Vastive - Under My Skin",
+      "uploader": "Vastive",
+      "uploader_url": "https://www.youtube.com/@vastive",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3c805upue925stoIrEG8Ep",
+      "title": "RIDE",
+      "artist_ids": [
+        "artist:big-florida"
+      ],
+      "credits": "Big Florida",
+      "video_id": "0oAc2uiyOeY",
+      "url": "https://www.youtube.com/watch?v=0oAc2uiyOeY",
+      "youtube_music_url": "https://music.youtube.com/watch?v=0oAc2uiyOeY",
+      "artwork_url": "https://img.youtube.com/vi/0oAc2uiyOeY/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3c805upue925stoIrEG8Ep",
+        "https://open.spotify.com/embed/artist/7LjnXw8QLtGkt9GSwyo7aj",
+        "https://www.youtube.com/watch?v=0oAc2uiyOeY"
+      ],
+      "youtube_title": "RIDE",
+      "uploader": "Big Florida - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCcT0kFgnbK_BM15epnMv5BA",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:0f97n6kmc8RYUwMyialr8y",
+      "title": "Closer",
+      "artist_ids": [
+        "artist:bou"
+      ],
+      "credits": "Bou, Slay",
+      "video_id": "F6BU1_R64oM",
+      "url": "https://www.youtube.com/watch?v=F6BU1_R64oM",
+      "youtube_music_url": "https://music.youtube.com/watch?v=F6BU1_R64oM",
+      "artwork_url": "https://img.youtube.com/vi/F6BU1_R64oM/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/0f97n6kmc8RYUwMyialr8y",
+        "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+        "https://www.youtube.com/watch?v=F6BU1_R64oM"
+      ],
+      "youtube_title": "Bou - Closer (feat. Slay)",
+      "uploader": "BOU",
+      "uploader_url": "https://www.youtube.com/@bou_dnb",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3x6CEyquRREaQ9ZBbBhrGe",
+      "title": "Ghost Dance",
+      "artist_ids": [
+        "artist:brunello"
+      ],
+      "credits": "Brunello, Vargas",
+      "video_id": "irDsRokzylg",
+      "url": "https://www.youtube.com/watch?v=irDsRokzylg",
+      "youtube_music_url": "https://music.youtube.com/watch?v=irDsRokzylg",
+      "artwork_url": "https://img.youtube.com/vi/irDsRokzylg/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3x6CEyquRREaQ9ZBbBhrGe",
+        "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+        "https://www.youtube.com/watch?v=irDsRokzylg"
+      ],
+      "youtube_title": "Ghost Dance",
+      "uploader": "Brunello - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCduE0EIbPJprr4qxTxlf9XQ",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:6FTveMyq8szPAloptdZ17g",
+      "title": "Science Fiction",
+      "artist_ids": [
+        "artist:brunello"
+      ],
+      "credits": "Brunello",
+      "video_id": "7CUTn0q-j0w",
+      "url": "https://www.youtube.com/watch?v=7CUTn0q-j0w",
+      "youtube_music_url": "https://music.youtube.com/watch?v=7CUTn0q-j0w",
+      "artwork_url": "https://img.youtube.com/vi/7CUTn0q-j0w/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/6FTveMyq8szPAloptdZ17g",
+        "https://open.spotify.com/embed/artist/7FZIk8RSha4GBa4ZEPuytU",
+        "https://www.youtube.com/watch?v=7CUTn0q-j0w"
+      ],
+      "youtube_title": "Science Fiction",
+      "uploader": "Brunello - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCduE0EIbPJprr4qxTxlf9XQ",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:5vdYKeo49iIaBRXoug9bsi",
+      "title": "Illusions",
+      "artist_ids": [
+        "artist:brunello"
+      ],
+      "credits": "Brunello",
+      "video_id": "A_M-v_qsIJI",
+      "url": "https://www.youtube.com/watch?v=A_M-v_qsIJI",
+      "youtube_music_url": "https://music.youtube.com/watch?v=A_M-v_qsIJI",
+      "artwork_url": "https://img.youtube.com/vi/A_M-v_qsIJI/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/5vdYKeo49iIaBRXoug9bsi",
+        "https://open.spotify.com/embed/artist/7FZIk8RSha4GBa4ZEPuytU",
+        "https://www.youtube.com/watch?v=A_M-v_qsIJI"
+      ],
+      "youtube_title": "Illusions",
+      "uploader": "Brunello - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCduE0EIbPJprr4qxTxlf9XQ",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:0aDKvLIttZfWCA0zFjVn92",
+      "title": "A Place You Wanna Go (Good Life)",
+      "artist_ids": [
+        "artist:bullet-tooth"
+      ],
+      "credits": "bullet tooth",
+      "video_id": "gBBfvLjtDGE",
+      "url": "https://www.youtube.com/watch?v=gBBfvLjtDGE",
+      "youtube_music_url": "https://music.youtube.com/watch?v=gBBfvLjtDGE",
+      "artwork_url": "https://img.youtube.com/vi/gBBfvLjtDGE/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/0aDKvLIttZfWCA0zFjVn92",
+        "https://open.spotify.com/embed/artist/4KWIkeAdOJfvUgXSq0bEWC",
+        "https://www.youtube.com/watch?v=gBBfvLjtDGE"
+      ],
+      "youtube_title": "A Place You Wanna Go (Good Life)",
+      "uploader": "bullet tooth - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCA0ApusmAJtoBbRLLVTFMkw",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4oAZsDVgeunfAxyTR782a4",
+      "title": "Hyper Rave",
+      "artist_ids": [
+        "artist:sidney-charles"
+      ],
+      "credits": "Sidney Charles",
+      "video_id": "M59_URXeNlc",
+      "url": "https://www.youtube.com/watch?v=M59_URXeNlc",
+      "youtube_music_url": "https://music.youtube.com/watch?v=M59_URXeNlc",
+      "artwork_url": "https://img.youtube.com/vi/M59_URXeNlc/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4oAZsDVgeunfAxyTR782a4",
+        "https://open.spotify.com/embed/artist/0J6ZEXmLQfZMeHBoa4JZTH",
+        "https://www.youtube.com/watch?v=M59_URXeNlc"
+      ],
+      "youtube_title": "Hyper Rave",
+      "uploader": "Sidney Charles - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCsS9prPuvR7Fq2aoQzQfugQ",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:71lvGzvRiC58AeFffFmw3N",
+      "title": "Bass Rider",
+      "artist_ids": [
+        "artist:sidney-charles"
+      ],
+      "credits": "Sidney Charles",
+      "video_id": "Eg6P3j5wIzY",
+      "url": "https://www.youtube.com/watch?v=Eg6P3j5wIzY",
+      "youtube_music_url": "https://music.youtube.com/watch?v=Eg6P3j5wIzY",
+      "artwork_url": "https://img.youtube.com/vi/Eg6P3j5wIzY/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/71lvGzvRiC58AeFffFmw3N",
+        "https://open.spotify.com/embed/artist/0J6ZEXmLQfZMeHBoa4JZTH",
+        "https://www.youtube.com/watch?v=Eg6P3j5wIzY"
+      ],
+      "youtube_title": "Bass Rider",
+      "uploader": "Sidney Charles - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCsS9prPuvR7Fq2aoQzQfugQ",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4QUxlbwlSBYiaTT27A5MEj",
+      "title": "In This Bih'",
+      "artist_ids": [
+        "artist:chris-lorenzo"
+      ],
+      "credits": "Chris Lorenzo, Kah-Lo",
+      "video_id": "TbYk1ib8CA8",
+      "url": "https://www.youtube.com/watch?v=TbYk1ib8CA8",
+      "youtube_music_url": "https://music.youtube.com/watch?v=TbYk1ib8CA8",
+      "artwork_url": "https://img.youtube.com/vi/TbYk1ib8CA8/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4QUxlbwlSBYiaTT27A5MEj",
+        "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+        "https://www.youtube.com/watch?v=TbYk1ib8CA8"
+      ],
+      "youtube_title": "Chris Lorenzo & Kah-Lo | In This Bih' | Official Visualiser",
+      "uploader": "Chris Lorenzo",
+      "uploader_url": "https://www.youtube.com/@ChrisLorenzo",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4ASOMWcJUrwEpjJy4GEijz",
+      "title": "California Dreamin' (feat. High Jinx)",
+      "artist_ids": [
+        "artist:chris-lorenzo"
+      ],
+      "credits": "Chris Lorenzo, High Jinx",
+      "video_id": "aNggrPAi5dg",
+      "url": "https://www.youtube.com/watch?v=aNggrPAi5dg",
+      "youtube_music_url": "https://music.youtube.com/watch?v=aNggrPAi5dg",
+      "artwork_url": "https://img.youtube.com/vi/aNggrPAi5dg/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4ASOMWcJUrwEpjJy4GEijz",
+        "https://open.spotify.com/embed/artist/7tm9Tuc70geXOOyKhtZHIj",
+        "https://www.youtube.com/watch?v=aNggrPAi5dg"
+      ],
+      "youtube_title": "Chris Lorenzo - California Dreamin (feat. High Jinx)",
+      "uploader": "Chris Lorenzo",
+      "uploader_url": "https://www.youtube.com/@ChrisLorenzo",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3VpxEo6vMpi4rQ6t2WVVkK",
+      "title": "Escape (feat. Hayla)",
+      "artist_ids": [
+        "artist:hayla",
+        "artist:kaskade"
+      ],
+      "credits": "Kx5, deadmau5, Kaskade, HAYLA",
+      "video_id": "BMFNN40fNp0",
+      "url": "https://www.youtube.com/watch?v=BMFNN40fNp0",
+      "youtube_music_url": "https://music.youtube.com/watch?v=BMFNN40fNp0",
+      "artwork_url": "https://img.youtube.com/vi/BMFNN40fNp0/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3VpxEo6vMpi4rQ6t2WVVkK",
+        "https://open.spotify.com/embed/artist/6TQj5BFPooTa08A7pk8AQ1",
+        "https://www.youtube.com/watch?v=BMFNN40fNp0"
+      ],
+      "youtube_title": "Kx5 - Escape (feat. Hayla) [Official Lyric Video]",
+      "uploader": "Kx5",
+      "uploader_url": "https://www.youtube.com/@Kx5Official",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3pUz2qJe5nqZemi3hhIxMk",
+      "title": "Where You Are",
+      "artist_ids": [
+        "artist:hayla"
+      ],
+      "credits": "John Summit, HAYLA",
+      "video_id": "5BqjhUmldDc",
+      "url": "https://www.youtube.com/watch?v=5BqjhUmldDc",
+      "youtube_music_url": "https://music.youtube.com/watch?v=5BqjhUmldDc",
+      "artwork_url": "https://img.youtube.com/vi/5BqjhUmldDc/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3pUz2qJe5nqZemi3hhIxMk",
+        "https://open.spotify.com/embed/artist/4yX6mpMyBGf9UfvBB8JJrc",
+        "https://www.youtube.com/watch?v=5BqjhUmldDc"
+      ],
+      "youtube_title": "John Summit & Hayla - Where You Are (Lyric Visualizer)",
+      "uploader": "John Summit",
+      "uploader_url": "https://www.youtube.com/@JohnSummit",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:0ZZWyT8ppn9PxVe17WX2DR",
+      "title": "Reflections",
+      "artist_ids": [
+        "artist:idemi"
+      ],
+      "credits": "IDEMI",
+      "video_id": "-899-ptNSXo",
+      "url": "https://www.youtube.com/watch?v=-899-ptNSXo",
+      "youtube_music_url": "https://music.youtube.com/watch?v=-899-ptNSXo",
+      "artwork_url": "https://img.youtube.com/vi/-899-ptNSXo/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/0ZZWyT8ppn9PxVe17WX2DR",
+        "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+        "https://www.youtube.com/watch?v=-899-ptNSXo"
+      ],
+      "youtube_title": "IDEMI - Reflections",
+      "uploader": "IDEMI",
+      "uploader_url": "https://www.youtube.com/@IDEMIMUSIC",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:6Z3cE0ZK0tmj7131PFIOeZ",
+      "title": "Yosemite",
+      "artist_ids": [
+        "artist:interplanetary-criminal"
+      ],
+      "credits": "KETTAMA, Interplanetary Criminal",
+      "video_id": "ZDJdynqu-i4",
+      "url": "https://www.youtube.com/watch?v=ZDJdynqu-i4",
+      "youtube_music_url": "https://music.youtube.com/watch?v=ZDJdynqu-i4",
+      "artwork_url": "https://img.youtube.com/vi/ZDJdynqu-i4/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/6Z3cE0ZK0tmj7131PFIOeZ",
+        "https://open.spotify.com/embed/artist/6uJ51uV5rYzu1MJkC4CceI",
+        "https://www.youtube.com/watch?v=ZDJdynqu-i4"
+      ],
+      "youtube_title": "KETTAMA & Interplanetary Criminal - Yosemite",
+      "uploader": "KETTAMA",
+      "uploader_url": "https://www.youtube.com/@KETTAMAG-TOWN",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:06PtUjF9NsdCYLaYag104S",
+      "title": "My Place",
+      "artist_ids": [
+        "artist:josh-baker"
+      ],
+      "credits": "Josh Baker, Poppy Baskcomb",
+      "video_id": "iUzi0PHB1sY",
+      "url": "https://www.youtube.com/watch?v=iUzi0PHB1sY",
+      "youtube_music_url": "https://music.youtube.com/watch?v=iUzi0PHB1sY",
+      "artwork_url": "https://img.youtube.com/vi/iUzi0PHB1sY/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/06PtUjF9NsdCYLaYag104S",
+        "https://open.spotify.com/embed/artist/4zf8Awb8y1X9qwL4oiVRd6",
+        "https://www.youtube.com/watch?v=iUzi0PHB1sY"
+      ],
+      "youtube_title": "Josh Baker, Poppy Baskcomb - My Place",
+      "uploader": "Josh Baker",
+      "uploader_url": "https://www.youtube.com/@joshbakermusic",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:5bdKaYnig6IqBsQQqBUjHm",
+      "title": "Back It Up",
+      "artist_ids": [
+        "artist:josh-baker",
+        "artist:omar-plus"
+      ],
+      "credits": "Josh Baker, Omar+",
+      "video_id": "Ls76ISA-4hc",
+      "url": "https://www.youtube.com/watch?v=Ls76ISA-4hc",
+      "youtube_music_url": "https://music.youtube.com/watch?v=Ls76ISA-4hc",
+      "artwork_url": "https://img.youtube.com/vi/Ls76ISA-4hc/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/5bdKaYnig6IqBsQQqBUjHm",
+        "https://open.spotify.com/embed/artist/4zf8Awb8y1X9qwL4oiVRd6",
+        "https://www.youtube.com/watch?v=Ls76ISA-4hc"
+      ],
+      "youtube_title": "Josh Baker, Omar+ - Back It Up",
+      "uploader": "Josh Baker",
+      "uploader_url": "https://www.youtube.com/@joshbakermusic",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3BbD2sqk7P7Rc9V0KF9o4s",
+      "title": "My Humps",
+      "artist_ids": [
+        "artist:joshwa"
+      ],
+      "credits": "Joshwa, Lee Foss",
+      "video_id": "TOlDFkiVLdw",
+      "url": "https://www.youtube.com/watch?v=TOlDFkiVLdw",
+      "youtube_music_url": "https://music.youtube.com/watch?v=TOlDFkiVLdw",
+      "artwork_url": "https://img.youtube.com/vi/TOlDFkiVLdw/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3BbD2sqk7P7Rc9V0KF9o4s",
+        "https://open.spotify.com/embed/artist/1PzAgFVk9v8cxn9flrqrv5",
+        "https://www.youtube.com/watch?v=TOlDFkiVLdw"
+      ],
+      "youtube_title": "My Humps",
+      "uploader": "Joshwa - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCjeIP_RlrDklQX6NQwPmi6A",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:0hSuV2otL5a1tl8pByCiAt",
+      "title": "Arrival",
+      "artist_ids": [
+        "artist:kream"
+      ],
+      "credits": "KREAM",
+      "video_id": "zGO142zWkIs",
+      "url": "https://www.youtube.com/watch?v=zGO142zWkIs",
+      "youtube_music_url": "https://music.youtube.com/watch?v=zGO142zWkIs",
+      "artwork_url": "https://img.youtube.com/vi/zGO142zWkIs/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/0hSuV2otL5a1tl8pByCiAt",
+        "https://open.spotify.com/embed/artist/0DdDnziut7wOo6cAYWVZC5",
+        "https://www.youtube.com/watch?v=zGO142zWkIs"
+      ],
+      "youtube_title": "KREAM - Arrival",
+      "uploader": "KREAM",
+      "uploader_url": "https://www.youtube.com/@wearekream",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:6VU8WmsSE0Iz49V8BJNR2v",
+      "title": "The Other Side",
+      "artist_ids": [
+        "artist:level-up"
+      ],
+      "credits": "LEVEL UP",
+      "video_id": "Z1rnXaTV3ck",
+      "url": "https://www.youtube.com/watch?v=Z1rnXaTV3ck",
+      "youtube_music_url": "https://music.youtube.com/watch?v=Z1rnXaTV3ck",
+      "artwork_url": "https://img.youtube.com/vi/Z1rnXaTV3ck/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/6VU8WmsSE0Iz49V8BJNR2v",
+        "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+        "https://www.youtube.com/watch?v=Z1rnXaTV3ck"
+      ],
+      "youtube_title": "The Other Side",
+      "uploader": "Level Up - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCJyIvl8iEQ2rTHdOFHDGCHg",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:6PzbQNu6gi1uIuDwVCrmUu",
+      "title": "Honestly",
+      "artist_ids": [
+        "artist:malugi"
+      ],
+      "credits": "MALUGI, Sam Harper",
+      "video_id": "G7LVAtqPadU",
+      "url": "https://www.youtube.com/watch?v=G7LVAtqPadU",
+      "youtube_music_url": "https://music.youtube.com/watch?v=G7LVAtqPadU",
+      "artwork_url": "https://img.youtube.com/vi/G7LVAtqPadU/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/6PzbQNu6gi1uIuDwVCrmUu",
+        "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+        "https://www.youtube.com/watch?v=G7LVAtqPadU"
+      ],
+      "youtube_title": "MALUGI - Honestly feat. Sam Harper (Official Visualizer)",
+      "uploader": "MALUGI",
+      "uploader_url": "https://www.youtube.com/@malugienergy",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:6Gzd1wfVKRoBg9EhcC1ytq",
+      "title": "Chiggy Chiggy (feat. Inéz)",
+      "artist_ids": [
+        "artist:malugi"
+      ],
+      "credits": "MALUGI, Inéz",
+      "video_id": "c-VZY0XxxtM",
+      "url": "https://www.youtube.com/watch?v=c-VZY0XxxtM",
+      "youtube_music_url": "https://music.youtube.com/watch?v=c-VZY0XxxtM",
+      "artwork_url": "https://img.youtube.com/vi/c-VZY0XxxtM/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/6Gzd1wfVKRoBg9EhcC1ytq",
+        "https://open.spotify.com/embed/artist/50udUOTR7dQUgyPwPuCLM6",
+        "https://www.youtube.com/watch?v=c-VZY0XxxtM"
+      ],
+      "youtube_title": "MALUGI - Chiggy Chiggy feat. Inéz (Official Visualizer)",
+      "uploader": "MALUGI",
+      "uploader_url": "https://www.youtube.com/@malugienergy",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:1lWiQ34sGK1i862zAFiRNW",
+      "title": "Forever 2 (Crush Mix) - Malugi Remix",
+      "artist_ids": [
+        "artist:malugi"
+      ],
+      "credits": "Confidence Man, DJ BORING, MALUGI",
+      "video_id": "ykY-5DZS_Ok",
+      "url": "https://www.youtube.com/watch?v=ykY-5DZS_Ok",
+      "youtube_music_url": "https://music.youtube.com/watch?v=ykY-5DZS_Ok",
+      "artwork_url": "https://img.youtube.com/vi/ykY-5DZS_Ok/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/1lWiQ34sGK1i862zAFiRNW",
+        "https://open.spotify.com/embed/artist/50udUOTR7dQUgyPwPuCLM6",
+        "https://www.youtube.com/watch?v=ykY-5DZS_Ok"
+      ],
+      "youtube_title": "Forever 2 (Crush Mix) (Malugi Remix)",
+      "uploader": "Confidence Man - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCaL7OPYgSZdRoekog3gZ8nw",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:7IoTUnyyvbMEY2UuE2Tmsx",
+      "title": "Make Believe",
+      "artist_ids": [
+        "artist:luke-dean",
+        "artist:omar-plus"
+      ],
+      "credits": "Luke Dean, Omar+",
+      "video_id": "W7ThRlBDjfg",
+      "url": "https://www.youtube.com/watch?v=W7ThRlBDjfg",
+      "youtube_music_url": "https://music.youtube.com/watch?v=W7ThRlBDjfg",
+      "artwork_url": "https://img.youtube.com/vi/W7ThRlBDjfg/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/7IoTUnyyvbMEY2UuE2Tmsx",
+        "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+        "https://www.youtube.com/watch?v=W7ThRlBDjfg"
+      ],
+      "youtube_title": "Luke Dean & Omar+ - Make Believe (Official Audio)",
+      "uploader": "Omar+",
+      "uploader_url": "https://www.youtube.com/@Omarpluss",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:2tlulSZdCgI5zQFQKmbjma",
+      "title": "Out Of My Mind",
+      "artist_ids": [
+        "artist:omar-plus"
+      ],
+      "credits": "Omar+, Ben Sterling",
+      "video_id": "RFXM4RrHCRU",
+      "url": "https://www.youtube.com/watch?v=RFXM4RrHCRU",
+      "youtube_music_url": "https://music.youtube.com/watch?v=RFXM4RrHCRU",
+      "artwork_url": "https://img.youtube.com/vi/RFXM4RrHCRU/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/2tlulSZdCgI5zQFQKmbjma",
+        "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+        "https://www.youtube.com/watch?v=RFXM4RrHCRU"
+      ],
+      "youtube_title": "Out Of My Mind",
+      "uploader": "Omar+ - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCZTaa7Q3MnFQu4gqAnTz-vQ",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:0vKM6pD1koHLvYzzI5gqNy",
+      "title": "Lose Control",
+      "artist_ids": [
+        "artist:bullet-tooth",
+        "artist:omar-plus"
+      ],
+      "credits": "Omar+, bullet tooth",
+      "video_id": "lfWqXksjQQQ",
+      "url": "https://www.youtube.com/watch?v=lfWqXksjQQQ",
+      "youtube_music_url": "https://music.youtube.com/watch?v=lfWqXksjQQQ",
+      "artwork_url": "https://img.youtube.com/vi/lfWqXksjQQQ/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/0vKM6pD1koHLvYzzI5gqNy",
+        "https://open.spotify.com/embed/artist/4KWIkeAdOJfvUgXSq0bEWC",
+        "https://www.youtube.com/watch?v=lfWqXksjQQQ"
+      ],
+      "youtube_title": "Lose Control",
+      "uploader": "Omar+ - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCZTaa7Q3MnFQu4gqAnTz-vQ",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:0Yfb937yM0d5f6os0W9IWc",
+      "title": "Spectral Bells",
+      "artist_ids": [
+        "artist:pegassi"
+      ],
+      "credits": "Pegassi",
+      "video_id": "jBWLZ_GxWlg",
+      "url": "https://www.youtube.com/watch?v=jBWLZ_GxWlg",
+      "youtube_music_url": "https://music.youtube.com/watch?v=jBWLZ_GxWlg",
+      "artwork_url": "https://img.youtube.com/vi/jBWLZ_GxWlg/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/0Yfb937yM0d5f6os0W9IWc",
+        "https://open.spotify.com/embed/artist/2A4uiWrfuBpVFugyvxAt4c",
+        "https://www.youtube.com/watch?v=jBWLZ_GxWlg"
+      ],
+      "youtube_title": "Spectral Bells",
+      "uploader": "Pegassi - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCiWmbeP6Uu9tql4VNYjVZXg",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:4orH1YqyAjXBtBr0DfsqjV",
+      "title": "Swag Surfin'",
+      "artist_ids": [
+        "artist:whethan"
+      ],
+      "credits": "Whethan",
+      "video_id": "fcgr6PR9E60",
+      "url": "https://www.youtube.com/watch?v=fcgr6PR9E60",
+      "youtube_music_url": "https://music.youtube.com/watch?v=fcgr6PR9E60",
+      "artwork_url": "https://img.youtube.com/vi/fcgr6PR9E60/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/4orH1YqyAjXBtBr0DfsqjV",
+        "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+        "https://www.youtube.com/watch?v=fcgr6PR9E60"
+      ],
+      "youtube_title": "Swag Surfin'",
+      "uploader": "Whethan - Topic",
+      "uploader_url": "https://www.youtube.com/channel/UCtbGuiysgy23rMrhoB_Z8jA",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:3deZ4afG0Y4WhbSBEp97oK",
+      "title": "MONEY ON THE DASH - SPED UP",
+      "artist_ids": [
+        "artist:whethan"
+      ],
+      "credits": "Elley Duhé, Whethan",
+      "video_id": "5D597frOWhI",
+      "url": "https://www.youtube.com/watch?v=5D597frOWhI",
+      "youtube_music_url": "https://music.youtube.com/watch?v=5D597frOWhI",
+      "artwork_url": "https://img.youtube.com/vi/5D597frOWhI/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/3deZ4afG0Y4WhbSBEp97oK",
+        "https://open.spotify.com/embed/artist/0vqJkZ0RpLZixt3lTmD8vP",
+        "https://www.youtube.com/watch?v=5D597frOWhI"
+      ],
+      "youtube_title": "Elley Duhé & Whethan - MONEY ON THE DASH - SPED UP (Audio)",
+      "uploader": "Elley Duhé",
+      "uploader_url": "https://www.youtube.com/@elleyduhe",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:54S9rhNgvLcu0oGNwWjTXD",
+      "title": "Hear Me Now",
+      "artist_ids": [
+        "artist:kaskade",
+        "artist:wooli"
+      ],
+      "credits": "Kaskade, Wooli, MAXINE",
+      "video_id": "KWn5FkkuYwk",
+      "url": "https://www.youtube.com/watch?v=KWn5FkkuYwk",
+      "youtube_music_url": "https://music.youtube.com/watch?v=KWn5FkkuYwk",
+      "artwork_url": "https://img.youtube.com/vi/KWn5FkkuYwk/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/54S9rhNgvLcu0oGNwWjTXD",
+        "https://open.spotify.com/embed/artist/1Uyqa2sdHm1bL5JK4IC4zc",
+        "https://www.youtube.com/watch?v=KWn5FkkuYwk"
+      ],
+      "youtube_title": "Kaskade x Wooli x MAXINE \"Hear Me Now\"",
+      "uploader": "Kaskade",
+      "uploader_url": "https://www.youtube.com/@Kaskade",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:7Kmo4UQ5Co6tqtysQcLkpF",
+      "title": "set me free",
+      "artist_ids": [
+        "artist:aaron-hibell"
+      ],
+      "credits": "Aaron Hibell, Alex Wann",
+      "video_id": "Og0A10H7YqU",
+      "url": "https://www.youtube.com/watch?v=Og0A10H7YqU",
+      "youtube_music_url": "https://music.youtube.com/watch?v=Og0A10H7YqU",
+      "artwork_url": "https://img.youtube.com/vi/Og0A10H7YqU/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/7Kmo4UQ5Co6tqtysQcLkpF",
+        "https://open.spotify.com/playlist/31JmJV1ZZCGX2ZmeWKI1Hg",
+        "https://www.youtube.com/watch?v=Og0A10H7YqU"
+      ],
+      "youtube_title": "Aaron Hibell, Alex Wann - set me free (official visualiser)",
+      "uploader": "Aaron Hibell",
+      "uploader_url": "https://www.youtube.com/@aaronhibell",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:0L2hJdknuaFzX2SX0e6Psm",
+      "title": "i feel lost",
+      "artist_ids": [
+        "artist:aaron-hibell"
+      ],
+      "credits": "Aaron Hibell",
+      "video_id": "85-so5m3CMM",
+      "url": "https://www.youtube.com/watch?v=85-so5m3CMM",
+      "youtube_music_url": "https://music.youtube.com/watch?v=85-so5m3CMM",
+      "artwork_url": "https://img.youtube.com/vi/85-so5m3CMM/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/0L2hJdknuaFzX2SX0e6Psm",
+        "https://open.spotify.com/embed/artist/6KJPsGYJN54GllYOKTleaj",
+        "https://www.youtube.com/watch?v=85-so5m3CMM"
+      ],
+      "youtube_title": "Aaron Hibell - i feel lost [official audio]",
+      "uploader": "Aaron Hibell",
+      "uploader_url": "https://www.youtube.com/@aaronhibell",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "spotify:2dH4UWxucbsfFglVAbfNW3",
+      "title": "levitation",
+      "artist_ids": [
+        "artist:aaron-hibell"
+      ],
+      "credits": "Aaron Hibell, Felsmann + Tiley",
+      "video_id": "RlmeqTs4i_w",
+      "url": "https://www.youtube.com/watch?v=RlmeqTs4i_w",
+      "youtube_music_url": "https://music.youtube.com/watch?v=RlmeqTs4i_w",
+      "artwork_url": "https://img.youtube.com/vi/RlmeqTs4i_w/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/2dH4UWxucbsfFglVAbfNW3",
+        "https://open.spotify.com/embed/artist/6KJPsGYJN54GllYOKTleaj",
+        "https://www.youtube.com/watch?v=RlmeqTs4i_w"
+      ],
+      "youtube_title": "Aaron Hibell, Felsmann + Tiley - levitation [official audio]",
+      "uploader": "Aaron Hibell",
+      "uploader_url": "https://www.youtube.com/@aaronhibell",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "pilot:acraze:believe",
+      "title": "BELIEVE",
+      "artist_ids": [
+        "artist:alleycvt",
+        "artist:level-up"
+      ],
+      "credits": "ALLEYCVT, LEVEL UP",
+      "video_id": "rht_fkVLk8I",
+      "url": "https://www.youtube.com/watch?v=rht_fkVLk8I",
+      "youtube_music_url": "https://music.youtube.com/watch?v=rht_fkVLk8I",
+      "artwork_url": "https://img.youtube.com/vi/rht_fkVLk8I/mqdefault.jpg",
+      "source_urls": [
+        "https://open.spotify.com/track/2HGWEdmzqykDOKbAxRd1JE",
+        "https://open.spotify.com/embed/artist/1ZpDxqXS6HAvoZyCzQfKRb",
+        "https://www.youtube.com/watch?v=rht_fkVLk8I"
+      ],
+      "youtube_title": "ACRAZE - Believe ft. Goodboys",
+      "uploader": "ACRAZEVEVO",
+      "uploader_url": "https://www.youtube.com/@acrazevevo9625",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "pilot:acraze:take-me-away",
+      "title": "Take Me Away",
+      "artist_ids": [
+        "artist:acraze"
+      ],
+      "credits": "ACRAZE - Take Me Away",
+      "video_id": "bVm0ygOuiNk",
+      "url": "https://www.youtube.com/watch?v=bVm0ygOuiNk",
+      "youtube_music_url": "https://music.youtube.com/watch?v=bVm0ygOuiNk",
+      "artwork_url": "https://img.youtube.com/vi/bVm0ygOuiNk/mqdefault.jpg",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=bVm0ygOuiNk"
+      ],
+      "youtube_title": "ACRAZE - Take Me Away",
+      "uploader": "ACRAZEVEVO",
+      "uploader_url": "https://www.youtube.com/@acrazevevo9625",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    },
+    {
+      "song_key": "pilot:acraze:heard-it-like-this",
+      "title": "Heard It Like This",
+      "artist_ids": [
+        "artist:acraze"
+      ],
+      "credits": "ACRAZE, Joey Valence & Brae - Heard It Like This (Audio)",
+      "video_id": "UeqAebUWRQE",
+      "url": "https://www.youtube.com/watch?v=UeqAebUWRQE",
+      "youtube_music_url": "https://music.youtube.com/watch?v=UeqAebUWRQE",
+      "artwork_url": "https://img.youtube.com/vi/UeqAebUWRQE/mqdefault.jpg",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=UeqAebUWRQE"
+      ],
+      "youtube_title": "ACRAZE, Joey Valence & Brae - Heard It Like This (Audio)",
+      "uploader": "ACRAZEVEVO",
+      "uploader_url": "https://www.youtube.com/@acrazevevo9625",
+      "checked_on": "2026-10-31",
+      "review_status": "source_metadata_checked",
+      "human_verified": false,
+      "owner_playback_confirmed": false,
+      "youtube_music_playback_confirmed": false,
+      "public_export_approved": true,
+      "artwork_check": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "checked_on": "2026-10-31"
+      }
+    }
+  ],
+  "publication_authorization": {
+    "approved": true,
+    "approved_on": "2026-10-31",
+    "scope": "Publish the prepared audit and 38-track batch to johnapaz/edc-listening-room and integrate tracks/artwork into listeningroom.app. Source review does not imply personal playback.",
+    "owner_instruction": "Yes, go for it, and you're authorized to make the changes needed to deliver what was asked."
+  }
+}

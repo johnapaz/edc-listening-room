@@ -48,6 +48,9 @@ class ListeningRoomData(unittest.TestCase):
     def test_songs_are_reviewed_exact_youtube_videos_for_lineup_artists(self):
         artists = {a["artist_id"] for a in read("data/edco-2026/artists.json")["artists"]}
         approved = {r["video_id"]: r for r in read("pilot/preview-approved.json")}
+        source_doc = read("data/listening-room/import-review-2026-10-31.json")
+        self.assertTrue(source_doc["publication_authorization"]["approved"])
+        source_rows = {r["video_id"]: r for r in source_doc["songs"]}
         songs = read("data/listening-room/songs.json")["songs"]
         self.assertTrue(songs)
         seen = set()
@@ -56,7 +59,17 @@ class ListeningRoomData(unittest.TestCase):
             self.assertRegex(s["video_id"], r"^[A-Za-z0-9_-]{11}$")
             self.assertEqual(s["url"], "https://www.youtube.com/watch?v=" + s["video_id"])
             self.assertNotIn("search", s["url"])
-            self.assertTrue(approved[s["video_id"]]["human_verified"])
+            if s["video_id"] in approved:
+                self.assertTrue(approved[s["video_id"]]["human_verified"])
+                self.assertEqual(s["verification"], "owner_playback")
+            else:
+                source = source_rows[s["video_id"]]
+                self.assertTrue(source["public_export_approved"])
+                self.assertFalse(source["human_verified"])
+                self.assertFalse(source["owner_playback_confirmed"])
+                self.assertEqual(s["verification"], "source_reviewed")
+                self.assertEqual(s["artist_ids"], source["artist_ids"])
+                self.assertEqual(source["artwork_check"]["http_status"], 200)
             self.assertNotIn(s["video_id"], seen)
             seen.add(s["video_id"])
             self.assertNotIn("spotify", json.dumps(s).lower())
