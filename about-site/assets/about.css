@@ -151,6 +151,8 @@ td .sample{display:inline-block;font-size:.85rem}
   table,tbody,tr,td{display:block}
   tr{padding:10px 12px;border-bottom:1px solid #33405f88}tr:last-child{border-bottom:0}
   td{padding:2px 0;border:0}td:first-child{margin-bottom:2px}
+  td[data-label]::before{content:attr(data-label);display:block;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+  td[data-label]:first-child::before{margin-top:0}
 }
 .sample.amber{color:var(--amber)}
 

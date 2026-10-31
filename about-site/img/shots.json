@@ -2,41 +2,47 @@
   "lineup": {
     "file": "lineup.webp",
     "width": 750,
-    "height": 1856
+    "height": 2300
   },
   "search": {
     "file": "search.webp",
     "width": 750,
-    "height": 1560
+    "height": 1584
+  },
+  "tracks": {
+    "file": "tracks.webp",
+    "width": 750,
+    "height": 2124
   },
   "day": {
     "file": "day.webp",
     "width": 750,
-    "height": 2066
+    "height": 2300
   },
   "artist": {
     "file": "artist.webp",
     "width": 750,
-    "height": 1740
+    "height": 1616
   },
   "nosong": {
     "file": "nosong.webp",
     "width": 750,
-    "height": 1596
+    "height": 1136
   },
   "b2b": {
     "file": "b2b.webp",
     "width": 750,
-    "height": 2262
+    "height": 2178
   },
   "listen": {
     "file": "listen.webp",
     "width": 750,
-    "height": 1976
+    "height": 1930
   },
   "desktop": {
     "file": "desktop.webp",
     "width": 1280,
     "height": 800
-  }
+  },
+  "_app": "05e325d56f3a8a71"
 }

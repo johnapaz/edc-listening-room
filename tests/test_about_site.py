@@ -149,6 +149,32 @@ class AboutSite(unittest.TestCase):
         for banned in ("app.notion.com", "notion_page_url", "PLdOAWVle", "youtube.com/results"):
             self.assertNotIn(banned, blob)
 
+    def test_quoted_interface_copy_still_exists_in_the_app(self):
+        # Help pages quote on-screen wording ({{ui ...}}). If the app's copy changes, update
+        # about-site/pages/* to match (and refresh screenshots: about-site/README.md).
+        app = "".join((ROOT / "listening-room" / f).read_text(encoding="utf-8") for f in ("app.js", "lib.js", "index.html"))
+        self.assertTrue(self.result["ui_strings"])
+        missing = [s for s in self.result["ui_strings"] if s not in app]
+        self.assertEqual(missing, [], "About pages quote UI copy the app no longer shows; update about-site/pages")
+
+    def test_screenshots_ship_only_while_they_match_the_app(self):
+        shots = json.loads((ROOT / "about-site/img/shots.json").read_text(encoding="utf-8"))
+        imgs = [i for d in self.docs.values() for i in d.imgs if i["src"].startswith("/about/img/")]
+        if shots.get("_app") == build_about.app_fingerprint():
+            self.assertGreaterEqual(len(imgs), len([k for k in shots if not k.startswith("_")]))
+        else:  # the app changed after the capture: no stale screens, the guide still works on links alone
+            self.assertEqual(imgs, [])
+        stale = build_about.Renderer(build_about.Data(), [{"slug": "", "title": "t", "nav": "t", "description": "d",
+                                                           "file": "x", "url": "/about/", "body": ""}], {"_app": "old"})
+        self.assertEqual(stale.shot(stale.pages[0], "lineup", "alt"), "")
+
+    def test_search_examples_find_someone(self):
+        r = build_about.Renderer(build_about.Data(), [{"slug": "", "title": "t", "nav": "t", "description": "d",
+                                                       "file": "x", "url": "/about/", "body": ""}], {})
+        self.assertTrue(r.search_hits("obskur"), "accent-insensitive search example")
+        with self.assertRaises(build_about.BuildError):
+            r.app_href("lineup?q=zzqqxx")
+
     def test_unknown_directive_fails_the_build(self):
         r = build_about.Renderer(build_about.Data(), [{"slug": "", "title": "t", "nav": "t", "description": "d", "file": "x",
                                                        "url": "/about/", "body": "{{nope}}"}], {})

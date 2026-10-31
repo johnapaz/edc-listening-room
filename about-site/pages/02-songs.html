@@ -1,42 +1,42 @@
 <!--
 slug: songs
-title: How songs are chosen
-nav: How songs are chosen
-description: Every song in Listening Room is one specific YouTube recording that a person reviewed. Here's how that works, what the labels mean, and which artists have songs today.
-summary: Every song is one exact recording a person checked. See the rules and today's coverage.
-lede: Every song link points to one specific recording that a person checked. Listening Room doesn’t send you to a search and hope for the best.
+title: How tracks are chosen
+nav: How tracks are chosen
+description: Every track in Listening Room is one specific YouTube recording that a person reviewed. Here's how that works, what the labels mean, and which artists have tracks today.
+summary: Every track is one exact recording a person checked. See the rules and today's coverage.
+lede: Every track link points to one specific recording that a person checked. Listening Room doesn’t send you to a search and hope for the best.
 -->
 <h2 id="the-rule">The rule: one exact recording, checked by a person</h2>
-<p>Before a song appears, someone confirms:</p>
+<p>Before a track appears, someone confirms:</p>
 <ul>
   <li><strong>It’s the right artist.</strong> Many artists share similar names, so identity is checked first.</li>
-  <li><strong>It’s the right track.</strong> The YouTube video matches the released song.</li>
+  <li><strong>It’s the right song.</strong> The YouTube video matches the released track.</li>
   <li><strong>It’s the right version</strong>, or the app says when it might not be (see below).</li>
   <li><strong>It plays on YouTube</strong> through a direct video link, not a search.</li>
 </ul>
-<p>Only songs that pass are published. Automatic matches and search results are never shown as songs.</p>
+<p>Only tracks that pass are published. Automatic matches and search results are never shown as tracks.</p>
 
 <h2 id="labels">What the labels mean</h2>
 <div class="table-wrap"><table>
   <thead><tr><th scope="col">You see</th><th scope="col">What it means</th></tr></thead>
   <tbody>
-    <tr><td><span class="sample">A song title and a YouTube button</span></td><td>A reviewed recording. Tap either to open it on YouTube.</td></tr>
-    <tr><td><span class="sample amber">Reviewed recording; version may differ.</span></td><td>Right song, right artist, but the video may be a different edit or length than the original release.</td></tr>
-    <tr><td><span class="sample">No tracks added</span></td><td>The act is on the lineup, but no song has passed review yet.</td></tr>
-    <tr><td><span class="sample">No tracks added for this artist.</span></td><td>In a B2B set, this artist doesn’t have a reviewed song yet, even if their partner does.</td></tr>
+    <tr><td data-label="You see"><span class="sample">A track title and a YouTube button</span></td><td data-label="Meaning">A reviewed recording. Tap either to open it on YouTube.</td></tr>
+    <tr><td data-label="You see"><span class="sample">{{ui Version may differ from the original release.}}</span></td><td data-label="Meaning">Right track, right artist, but the video may be a different edit or length than the original release.</td></tr>
+    <tr><td data-label="You see"><span class="sample">{{ui No tracks added}}</span></td><td data-label="Meaning">On the lineup: the act is listed, but no track has passed review yet.</td></tr>
+    <tr><td data-label="You see"><span class="sample">{{ui No tracks added for this artist.}}</span></td><td data-label="Meaning">In a B2B set: this artist doesn’t have a reviewed track yet, even if their partner does.</td></tr>
   </tbody>
 </table></div>
 
 <h2 id="artwork">About the artwork</h2>
-<p>Pictures next to songs are the YouTube thumbnails for those exact videos, loaded directly from YouTube. They aren’t artist portraits, and Listening Room never uses another artist’s image or makes one up. When there’s no reviewed video, or a thumbnail can’t load, you’ll see the artist’s initials instead.</p>
+<p>Pictures next to tracks are the YouTube thumbnails for those exact videos, loaded directly from YouTube. They aren’t artist portraits, and Listening Room never uses another artist’s image or makes one up. When there’s no reviewed video, or a thumbnail can’t load, you’ll see the artist’s initials instead.</p>
 
-<h2 id="coverage">Who has songs today</h2>
-<p>Right now, {{stat songs}} reviewed songs cover {{stat song_artists}} artists, and {{stat entries_with_songs}} of the {{stat lineup_entries}} lineup entries have at least one song. Every other act is still listed with their day. This list updates automatically whenever songs are added.</p>
+<h2 id="coverage">Who has tracks today</h2>
+<p>Right now, {{stat songs}} reviewed tracks cover {{stat song_artists}} artists, and {{stat entries_with_songs}} of the {{stat lineup_entries}} lineup entries have at least one track. Every other act is still listed with their day. This list updates automatically whenever tracks are added, and {{app lineup?music=1 | With tracks}} on the lineup shows the same acts.</p>
 {{list songs}}
 
-<h2 id="why-not-more">Why not more songs?</h2>
-<p>Checking recordings by hand is slower than grabbing the top search result, but it means every song you tap is the one you were promised. Coverage grows as songs pass review; check back before the festival.</p>
-<div class="callout"><p><strong>Want to suggest a song?</strong>Tell the person who shared Listening Room with you. Suggestions go through the same review before they appear.</p></div>
+<h2 id="why-not-more">Why not more tracks?</h2>
+<p>Checking recordings by hand is slower than grabbing the top search result, but it means every track you tap is the one you were promised. Coverage grows as tracks pass review; check back before the festival.</p>
+<div class="callout"><p><strong>Want to suggest a track?</strong>Tell the person who shared Listening Room with you. Suggestions go through the same review before they appear.</p></div>
 
 <h2 id="playlist">The event playlist</h2>
 {{list playlist}}
