@@ -101,7 +101,7 @@ This is an **editorial, personalized commercial-target priority**, not an object
 | 79 | The Town | São Paulo, Brazil | ~ 2027 edition TBA | Rock World | H |
 | 80 | Download Festival | Castle Donington, England, UK | ~ Jun 2027 | Live Nation / Festival Republic | H |
 | 81 | Reading Festival | Reading, England, UK | ~ Aug 2027 | Festival Republic / Live Nation | H |
-| 82 | Leeds Festival | Leeds, England, UK | ~ Aug 2027 | Festival Republic / Live Nation | H |
+| 82 | UNTOLD Festival | Cluj-Napoca, Romania | ✓ Aug 5–8 2027 | UNTOLD Universe | H |
 | 83 | Creamfields | Daresbury, England, UK | ~ Summer 2027 | Cream / Live Nation | H |
 | 84 | Rock am Ring | Nürburg, Germany | ~ Jun 4–6 2027 reported | CTS EVENTIM network | H |
 | 85 | Djakarta Warehouse Project | Jakarta, Indonesia | ~ Dec 2026 (verify date) | Ismaya Live | H |
@@ -175,4 +175,4 @@ Parent and subsidiary entries represent distinct prospective routes to market, *
 - https://support.bonnaroo.com/hc/en-us/articles/52741158558740-Bonnaroo-2027
 - https://edm.com/events/okeechobee-festival-hiatus-again/
 
-Additional confirmed date references: https://www.lollaindia.com/ ; https://emosnotdead.com/pages/emos-not-dead-cruise ; https://www.beyondthevalley.com.au/ .
+Additional confirmed date references: https://untold.com/ ; https://www.lollaindia.com/ ; https://emosnotdead.com/pages/emos-not-dead-cruise ; https://www.beyondthevalley.com.au/ .
