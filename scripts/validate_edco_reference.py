@@ -46,7 +46,7 @@ def validate():
             'HTML alphabetical/day lists disagree')
     require(Counter(text['by_day']['Friday'])['Josh Baker'] == 2, 'Lost source duplicate evidence')
     for day, rows in poster.items():
-        require([p['display_name'] for p in performances if p['day'] == day] == rows,
+        require([p['display_name'] for p in performances if p['day'] == day and 'lineup-poster' in p['source_ids']] == rows,
                 'Poster coverage/order mismatch: ' + day)
         additions = set(rows) - set(text['by_day'][day])
         require(additions == ({'Prospa', 'Prospa B2B Josh Baker'} if day == 'Friday' else set()),
@@ -74,8 +74,8 @@ def validate():
             require(all(p[k] is None for k in ('starts_at', 'ends_at', 'stage_id', 'schedule_source_id')),
                     'Unverified row contains inferred timetable data')
         else:
-            require(p['schedule_status'] == 'official_schedule_verified', 'Unknown schedule status')
-            require(p['stage_id'] in stage_ids and p['schedule_source_id'] in source_ids, 'Missing official schedule provenance')
+            require(p['schedule_status'] in ('official_schedule_verified', 'poster_transcribed'), 'Unknown schedule status')
+            require(p['stage_id'] in stage_ids and p['schedule_source_id'] in source_ids, 'Missing schedule provenance')
             require(all(datetime.fromisoformat(p[k]).tzinfo is not None for k in ('starts_at', 'ends_at')), 'Naive set timestamp')
             require(datetime.fromisoformat(p['starts_at']) < datetime.fromisoformat(p['ends_at']), 'Set end precedes start')
         if p['issue_ids']:

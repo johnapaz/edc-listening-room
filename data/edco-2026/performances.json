@@ -2,7 +2,7 @@
   "schema_version": 1,
   "checked_on": "2026-10-30",
   "timezone": "America/New_York",
-  "schedule_status": "day_assignments_only",
+  "schedule_status": "owner_supplied_poster_transcribed_with_3_unassigned_prior_lineup_entries",
   "performances": [
     {
       "performance_id": "edco26:2026-11-06:aat",
@@ -22,15 +22,16 @@
       "set_qualifier": null,
       "source_order": 1,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-06T14:15:00-05:00",
+      "ends_at": "2026-11-06T15:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -52,15 +53,16 @@
       "set_qualifier": "Sunset Set",
       "source_order": 2,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-06T17:30:00-05:00",
+      "ends_at": "2026-11-06T18:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -82,15 +84,16 @@
       "set_qualifier": null,
       "source_order": 3,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-06T20:00:00-05:00",
+      "ends_at": "2026-11-06T21:10:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -112,15 +115,16 @@
       "set_qualifier": "Sunset Set",
       "source_order": 4,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-06T17:28:00-05:00",
+      "ends_at": "2026-11-06T18:44:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -142,15 +146,16 @@
       "set_qualifier": null,
       "source_order": 5,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-06T16:30:00-05:00",
+      "ends_at": "2026-11-06T18:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -177,15 +182,16 @@
       "set_qualifier": null,
       "source_order": 6,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-06T14:15:00-05:00",
+      "ends_at": "2026-11-06T15:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -207,15 +213,16 @@
       "set_qualifier": null,
       "source_order": 7,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-06T15:30:00-05:00",
+      "ends_at": "2026-11-06T16:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -242,15 +249,16 @@
       "set_qualifier": null,
       "source_order": 8,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-06T18:30:00-05:00",
+      "ends_at": "2026-11-06T19:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -272,15 +280,16 @@
       "set_qualifier": "Sunset Set",
       "source_order": 9,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-06T21:00:00-05:00",
+      "ends_at": "2026-11-06T22:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -307,15 +316,16 @@
       "set_qualifier": null,
       "source_order": 10,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-06T18:45:00-05:00",
+      "ends_at": "2026-11-06T20:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -337,15 +347,16 @@
       "set_qualifier": null,
       "source_order": 11,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-06T22:30:00-05:00",
+      "ends_at": "2026-11-07T00:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -367,15 +378,16 @@
       "set_qualifier": null,
       "source_order": 12,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-06T22:31:00-05:00",
+      "ends_at": "2026-11-06T23:57:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -397,15 +409,16 @@
       "set_qualifier": null,
       "source_order": 13,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-06T15:25:00-05:00",
+      "ends_at": "2026-11-06T16:25:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -427,15 +440,16 @@
       "set_qualifier": null,
       "source_order": 14,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-06T15:30:00-05:00",
+      "ends_at": "2026-11-06T16:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -457,15 +471,16 @@
       "set_qualifier": null,
       "source_order": 15,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-06T15:00:00-05:00",
+      "ends_at": "2026-11-06T16:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -487,15 +502,16 @@
       "set_qualifier": null,
       "source_order": 16,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-06T20:00:00-05:00",
+      "ends_at": "2026-11-06T21:15:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -517,15 +533,16 @@
       "set_qualifier": null,
       "source_order": 17,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-06T14:25:00-05:00",
+      "ends_at": "2026-11-06T15:25:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -547,15 +564,16 @@
       "set_qualifier": null,
       "source_order": 18,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-06T22:30:00-05:00",
+      "ends_at": "2026-11-07T00:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_sources_conflict",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": [
         "lineup-prospa-josh-baker"
@@ -579,15 +597,16 @@
       "set_qualifier": null,
       "source_order": 19,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-06T16:30:00-05:00",
+      "ends_at": "2026-11-06T17:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -609,15 +628,16 @@
       "set_qualifier": null,
       "source_order": 20,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-06T16:30:00-05:00",
+      "ends_at": "2026-11-06T17:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -639,15 +659,16 @@
       "set_qualifier": null,
       "source_order": 21,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-06T18:47:00-05:00",
+      "ends_at": "2026-11-06T19:57:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -669,15 +690,16 @@
       "set_qualifier": null,
       "source_order": 22,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-06T19:30:00-05:00",
+      "ends_at": "2026-11-06T20:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -699,15 +721,16 @@
       "set_qualifier": null,
       "source_order": 23,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-06T21:35:00-05:00",
+      "ends_at": "2026-11-06T22:45:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -729,15 +752,16 @@
       "set_qualifier": "Sunset Set",
       "source_order": 24,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-06T17:30:00-05:00",
+      "ends_at": "2026-11-06T18:45:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -759,15 +783,16 @@
       "set_qualifier": null,
       "source_order": 25,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-06T13:00:00-05:00",
+      "ends_at": "2026-11-06T15:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -789,15 +814,16 @@
       "set_qualifier": null,
       "source_order": 26,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-06T21:13:00-05:00",
+      "ends_at": "2026-11-06T22:28:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -819,15 +845,16 @@
       "set_qualifier": null,
       "source_order": 27,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-06T21:15:00-05:00",
+      "ends_at": "2026-11-06T22:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -849,15 +876,16 @@
       "set_qualifier": null,
       "source_order": 28,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-06T19:30:00-05:00",
+      "ends_at": "2026-11-06T21:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -879,15 +907,16 @@
       "set_qualifier": null,
       "source_order": 29,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-06T16:25:00-05:00",
+      "ends_at": "2026-11-06T17:28:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -976,15 +1005,16 @@
       "set_qualifier": null,
       "source_order": 32,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-06T13:00:00-05:00",
+      "ends_at": "2026-11-06T14:15:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1006,15 +1036,16 @@
       "set_qualifier": null,
       "source_order": 33,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-06T13:00:00-05:00",
+      "ends_at": "2026-11-06T14:15:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1036,15 +1067,16 @@
       "set_qualifier": null,
       "source_order": 34,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-06T20:30:00-05:00",
+      "ends_at": "2026-11-06T21:35:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1066,15 +1098,16 @@
       "set_qualifier": null,
       "source_order": 35,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-06T22:45:00-05:00",
+      "ends_at": "2026-11-07T00:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1096,15 +1129,45 @@
       "set_qualifier": null,
       "source_order": 36,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-06T13:00:00-05:00",
+      "ends_at": "2026-11-06T14:25:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-06:obskur",
+      "event_date": "2026-11-06",
+      "day": "Friday",
+      "display_name": "Obskür",
+      "performance_type": "act",
+      "artist_ids": [
+        "artist:obskur"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:obskur",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": null,
+      "source_order": 37,
+      "source_order_is_running_order": false,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-06T18:00:00-05:00",
+      "ends_at": "2026-11-06T19:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
+      "lineup_status": "poster_only_new_billing",
+      "source_ids": [
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1126,15 +1189,16 @@
       "set_qualifier": null,
       "source_order": 1,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-07T15:33:00-05:00",
+      "ends_at": "2026-11-07T16:33:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1161,15 +1225,16 @@
       "set_qualifier": null,
       "source_order": 2,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-07T16:33:00-05:00",
+      "ends_at": "2026-11-07T17:38:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1191,15 +1256,16 @@
       "set_qualifier": "Sunset Set",
       "source_order": 3,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-07T17:38:00-05:00",
+      "ends_at": "2026-11-07T18:53:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1221,15 +1287,16 @@
       "set_qualifier": null,
       "source_order": 4,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-07T22:45:00-05:00",
+      "ends_at": "2026-11-08T00:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1251,15 +1318,16 @@
       "set_qualifier": null,
       "source_order": 5,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-07T19:30:00-05:00",
+      "ends_at": "2026-11-07T20:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1281,15 +1349,16 @@
       "set_qualifier": null,
       "source_order": 6,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-07T13:00:00-05:00",
+      "ends_at": "2026-11-07T14:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1311,15 +1380,16 @@
       "set_qualifier": null,
       "source_order": 7,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-07T16:30:00-05:00",
+      "ends_at": "2026-11-07T17:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1341,15 +1411,16 @@
       "set_qualifier": null,
       "source_order": 8,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-07T21:15:00-05:00",
+      "ends_at": "2026-11-07T22:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1371,15 +1442,16 @@
       "set_qualifier": null,
       "source_order": 9,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-07T22:30:00-05:00",
+      "ends_at": "2026-11-08T00:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1401,15 +1473,16 @@
       "set_qualifier": null,
       "source_order": 10,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-07T20:30:00-05:00",
+      "ends_at": "2026-11-07T22:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1431,15 +1504,16 @@
       "set_qualifier": "Sunset Set",
       "source_order": 11,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-07T17:30:00-05:00",
+      "ends_at": "2026-11-07T18:45:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1461,15 +1535,16 @@
       "set_qualifier": null,
       "source_order": 12,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-07T18:45:00-05:00",
+      "ends_at": "2026-11-07T20:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1491,15 +1566,16 @@
       "set_qualifier": null,
       "source_order": 13,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-07T21:13:00-05:00",
+      "ends_at": "2026-11-07T22:28:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1521,15 +1597,16 @@
       "set_qualifier": null,
       "source_order": 14,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-07T16:30:00-05:00",
+      "ends_at": "2026-11-07T17:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1551,15 +1628,16 @@
       "set_qualifier": null,
       "source_order": 15,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-07T22:00:00-05:00",
+      "ends_at": "2026-11-08T00:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1586,15 +1664,16 @@
       "set_qualifier": null,
       "source_order": 16,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-07T13:00:00-05:00",
+      "ends_at": "2026-11-07T14:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1616,15 +1695,16 @@
       "set_qualifier": null,
       "source_order": 17,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-07T14:30:00-05:00",
+      "ends_at": "2026-11-07T15:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1646,15 +1726,16 @@
       "set_qualifier": null,
       "source_order": 18,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-07T15:30:00-05:00",
+      "ends_at": "2026-11-07T16:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1676,15 +1757,16 @@
       "set_qualifier": null,
       "source_order": 19,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-07T17:30:00-05:00",
+      "ends_at": "2026-11-07T18:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1706,15 +1788,16 @@
       "set_qualifier": null,
       "source_order": 20,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-07T22:31:00-05:00",
+      "ends_at": "2026-11-07T23:57:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1736,15 +1819,16 @@
       "set_qualifier": null,
       "source_order": 21,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-07T14:30:00-05:00",
+      "ends_at": "2026-11-07T16:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1766,15 +1850,16 @@
       "set_qualifier": null,
       "source_order": 22,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-07T18:30:00-05:00",
+      "ends_at": "2026-11-07T19:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1796,15 +1881,16 @@
       "set_qualifier": null,
       "source_order": 23,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-07T14:30:00-05:00",
+      "ends_at": "2026-11-07T15:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1826,15 +1912,16 @@
       "set_qualifier": null,
       "source_order": 24,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-07T13:00:00-05:00",
+      "ends_at": "2026-11-07T14:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1866,12 +1953,14 @@
       "ends_at": null,
       "schedule_status": "set_times_unverified",
       "schedule_source_id": null,
-      "lineup_status": "official_day_confirmed",
+      "lineup_status": "official_sources_conflict",
       "source_ids": [
         "lineup-text",
         "lineup-poster"
       ],
-      "issue_ids": []
+      "issue_ids": [
+        "set-times-new-billing-2026-10-30"
+      ]
     },
     {
       "performance_id": "edco26:2026-11-07:me-n-u",
@@ -1891,15 +1980,16 @@
       "set_qualifier": null,
       "source_order": 26,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-07T13:33:00-05:00",
+      "ends_at": "2026-11-07T14:33:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1921,15 +2011,16 @@
       "set_qualifier": null,
       "source_order": 27,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-07T16:30:00-05:00",
+      "ends_at": "2026-11-07T17:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1951,15 +2042,16 @@
       "set_qualifier": null,
       "source_order": 28,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-07T13:00:00-05:00",
+      "ends_at": "2026-11-07T13:33:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -1981,15 +2073,16 @@
       "set_qualifier": null,
       "source_order": 29,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-07T18:57:00-05:00",
+      "ends_at": "2026-11-07T20:02:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2011,15 +2104,16 @@
       "set_qualifier": null,
       "source_order": 30,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-07T20:30:00-05:00",
+      "ends_at": "2026-11-07T21:35:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2041,15 +2135,16 @@
       "set_qualifier": null,
       "source_order": 31,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-07T20:00:00-05:00",
+      "ends_at": "2026-11-07T21:15:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2071,15 +2166,16 @@
       "set_qualifier": "Sunset Set",
       "source_order": 32,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-07T19:00:00-05:00",
+      "ends_at": "2026-11-07T20:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2101,15 +2197,16 @@
       "set_qualifier": null,
       "source_order": 33,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-07T21:35:00-05:00",
+      "ends_at": "2026-11-07T22:45:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2131,15 +2228,16 @@
       "set_qualifier": null,
       "source_order": 34,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-07T20:05:00-05:00",
+      "ends_at": "2026-11-07T21:10:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2161,15 +2259,16 @@
       "set_qualifier": null,
       "source_order": 35,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-07T15:30:00-05:00",
+      "ends_at": "2026-11-07T16:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2191,15 +2290,50 @@
       "set_qualifier": null,
       "source_order": 36,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-07T14:33:00-05:00",
+      "ends_at": "2026-11-07T15:33:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
+      ],
+      "issue_ids": []
+    },
+    {
+      "performance_id": "edco26:2026-11-07:luke-dean-b2b-george-smeddles",
+      "event_date": "2026-11-07",
+      "day": "Saturday",
+      "display_name": "Luke Dean B2B George Smeddles (Sunset Set)",
+      "performance_type": "b2b",
+      "artist_ids": [
+        "artist:luke-dean",
+        "artist:george-smeddles"
+      ],
+      "credits": [
+        {
+          "artist_id": "artist:luke-dean",
+          "role": "performer"
+        },
+        {
+          "artist_id": "artist:george-smeddles",
+          "role": "performer"
+        }
+      ],
+      "set_qualifier": "Sunset Set",
+      "source_order": 37,
+      "source_order_is_running_order": false,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-07T17:30:00-05:00",
+      "ends_at": "2026-11-07T19:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
+      "lineup_status": "poster_only_new_billing",
+      "source_ids": [
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2221,15 +2355,16 @@
       "set_qualifier": null,
       "source_order": 1,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-08T14:25:00-05:00",
+      "ends_at": "2026-11-08T15:25:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2251,15 +2386,16 @@
       "set_qualifier": null,
       "source_order": 2,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-08T16:30:00-05:00",
+      "ends_at": "2026-11-08T18:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2281,15 +2417,16 @@
       "set_qualifier": null,
       "source_order": 3,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-08T20:02:00-05:00",
+      "ends_at": "2026-11-08T21:12:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2311,15 +2448,16 @@
       "set_qualifier": null,
       "source_order": 4,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-08T14:35:00-05:00",
+      "ends_at": "2026-11-08T15:35:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2341,15 +2479,16 @@
       "set_qualifier": null,
       "source_order": 5,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-08T21:50:00-05:00",
+      "ends_at": "2026-11-08T22:55:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2371,15 +2510,16 @@
       "set_qualifier": null,
       "source_order": 6,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-08T21:40:00-05:00",
+      "ends_at": "2026-11-08T22:50:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2406,15 +2546,16 @@
       "set_qualifier": null,
       "source_order": 7,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-08T19:30:00-05:00",
+      "ends_at": "2026-11-08T21:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2436,15 +2577,16 @@
       "set_qualifier": null,
       "source_order": 8,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-08T15:10:00-05:00",
+      "ends_at": "2026-11-08T16:10:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2466,15 +2608,16 @@
       "set_qualifier": null,
       "source_order": 9,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-08T14:10:00-05:00",
+      "ends_at": "2026-11-08T15:10:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2501,15 +2644,16 @@
       "set_qualifier": null,
       "source_order": 10,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-08T20:45:00-05:00",
+      "ends_at": "2026-11-08T21:50:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2524,15 +2668,16 @@
       "set_qualifier": null,
       "source_order": 11,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-08T13:10:00-05:00",
+      "ends_at": "2026-11-08T14:25:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2554,15 +2699,16 @@
       "set_qualifier": null,
       "source_order": 12,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-08T13:00:00-05:00",
+      "ends_at": "2026-11-08T14:35:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2584,15 +2730,16 @@
       "set_qualifier": null,
       "source_order": 13,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-08T21:15:00-05:00",
+      "ends_at": "2026-11-08T22:25:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2614,15 +2761,16 @@
       "set_qualifier": null,
       "source_order": 14,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-08T22:55:00-05:00",
+      "ends_at": "2026-11-09T00:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2644,15 +2792,16 @@
       "set_qualifier": null,
       "source_order": 15,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-08T18:54:00-05:00",
+      "ends_at": "2026-11-08T19:59:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2674,15 +2823,16 @@
       "set_qualifier": null,
       "source_order": 16,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-08T16:45:00-05:00",
+      "ends_at": "2026-11-08T17:35:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2704,15 +2854,16 @@
       "set_qualifier": null,
       "source_order": 17,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-08T15:35:00-05:00",
+      "ends_at": "2026-11-08T16:45:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2734,15 +2885,16 @@
       "set_qualifier": null,
       "source_order": 18,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-08T15:25:00-05:00",
+      "ends_at": "2026-11-08T16:35:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2764,15 +2916,16 @@
       "set_qualifier": null,
       "source_order": 19,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-08T21:00:00-05:00",
+      "ends_at": "2026-11-08T22:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2794,15 +2947,16 @@
       "set_qualifier": null,
       "source_order": 20,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-08T22:30:00-05:00",
+      "ends_at": "2026-11-09T00:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2824,15 +2978,16 @@
       "set_qualifier": null,
       "source_order": 21,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-08T18:15:00-05:00",
+      "ends_at": "2026-11-08T19:20:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2854,15 +3009,16 @@
       "set_qualifier": null,
       "source_order": 22,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-08T13:00:00-05:00",
+      "ends_at": "2026-11-08T14:10:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2884,15 +3040,16 @@
       "set_qualifier": null,
       "source_order": 23,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-08T19:45:00-05:00",
+      "ends_at": "2026-11-08T20:45:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2914,15 +3071,16 @@
       "set_qualifier": "Sunset Set",
       "source_order": 24,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-08T18:00:00-05:00",
+      "ends_at": "2026-11-08T19:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2944,15 +3102,16 @@
       "set_qualifier": null,
       "source_order": 25,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-08T22:28:00-05:00",
+      "ends_at": "2026-11-08T23:57:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -2974,15 +3133,16 @@
       "set_qualifier": null,
       "source_order": 26,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-08T18:40:00-05:00",
+      "ends_at": "2026-11-08T19:45:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -3004,15 +3164,16 @@
       "set_qualifier": "Sunset Set",
       "source_order": 27,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-08T17:25:00-05:00",
+      "ends_at": "2026-11-08T18:40:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -3034,15 +3195,16 @@
       "set_qualifier": null,
       "source_order": 28,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-08T16:10:00-05:00",
+      "ends_at": "2026-11-08T17:10:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -3064,15 +3226,16 @@
       "set_qualifier": null,
       "source_order": 29,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-08T20:30:00-05:00",
+      "ends_at": "2026-11-08T21:40:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -3094,15 +3257,16 @@
       "set_qualifier": "Wholesome Riddim Set",
       "source_order": 30,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "circuit-grounds",
+      "starts_at": "2026-11-08T16:35:00-05:00",
+      "ends_at": "2026-11-08T17:25:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -3124,15 +3288,16 @@
       "set_qualifier": null,
       "source_order": 31,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-08T15:00:00-05:00",
+      "ends_at": "2026-11-08T16:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -3154,15 +3319,16 @@
       "set_qualifier": null,
       "source_order": 32,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-08T17:10:00-05:00",
+      "ends_at": "2026-11-08T18:15:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -3184,15 +3350,16 @@
       "set_qualifier": "Sunset Set",
       "source_order": 33,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "kinetic-field",
+      "starts_at": "2026-11-08T17:35:00-05:00",
+      "ends_at": "2026-11-08T18:51:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -3214,15 +3381,16 @@
       "set_qualifier": null,
       "source_order": 34,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-08T19:20:00-05:00",
+      "ends_at": "2026-11-08T20:30:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -3244,15 +3412,16 @@
       "set_qualifier": null,
       "source_order": 35,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "stereo-bloom",
+      "starts_at": "2026-11-08T22:50:00-05:00",
+      "ends_at": "2026-11-09T00:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     },
@@ -3274,15 +3443,16 @@
       "set_qualifier": null,
       "source_order": 36,
       "source_order_is_running_order": false,
-      "stage_id": null,
-      "starts_at": null,
-      "ends_at": null,
-      "schedule_status": "set_times_unverified",
-      "schedule_source_id": null,
+      "stage_id": "neon-garden",
+      "starts_at": "2026-11-08T13:00:00-05:00",
+      "ends_at": "2026-11-08T15:00:00-05:00",
+      "schedule_status": "poster_transcribed",
+      "schedule_source_id": "set-times-posters-2026-10-30",
       "lineup_status": "official_day_confirmed",
       "source_ids": [
         "lineup-text",
-        "lineup-poster"
+        "lineup-poster",
+        "set-times-posters-2026-10-30"
       ],
       "issue_ids": []
     }

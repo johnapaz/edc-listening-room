@@ -39,6 +39,14 @@
       "source_id": "world",
       "url": "https://orlando.edc.com/experience/the-world-of-edc/",
       "type": "owner_screenshot_context_only"
+    },
+    {
+      "source_id": "set-times-posters-2026-10-30",
+      "url": null,
+      "type": "owner_supplied_organizer_branded_daily_set_time_images",
+      "provided_on": "2026-10-30",
+      "official_site_confirmation": "not_independently_verified",
+      "notes": "Three original images shared in ChatGPT; screen transcription only. Images are not rehosted in this repository. Times are poster-based; subject to change."
     }
   ],
   "owner_screenshot_provenance": [
@@ -77,18 +85,46 @@
       "sha256": "4b2fd071f5281578298aefa4676ac9ed4dfccae7781d5846d463600cc64c94db",
       "provided_on": "2026-10-30",
       "note": "Original screenshot supplied by owner; not rehosted in this public repo."
+    },
+    {
+      "filename": "1000037583.jpg",
+      "sha256": "959ec0e578fdb8abf46d7238ec8cf9840891b3c0c6ce59cd4fed152c643734dd",
+      "provided_on": "2026-10-30",
+      "note": "Organizer-branded daily set-time poster supplied by owner; not rehosted. Newer than day-only lineup reference."
+    },
+    {
+      "filename": "1000037584.jpg",
+      "sha256": "3bf272dbb07e192570d2fb13075ee61cdeee77d922686fef1fe0b858a27fba2d",
+      "provided_on": "2026-10-30",
+      "note": "Organizer-branded daily set-time poster supplied by owner; not rehosted. Newer than day-only lineup reference."
+    },
+    {
+      "filename": "1000037585.jpg",
+      "sha256": "cc2004763c74b902fa4e35d522f53d58d242b7cf1b11223f51f85ada8eb2b917",
+      "provided_on": "2026-10-30",
+      "note": "Organizer-branded daily set-time poster supplied by owner; not rehosted. Newer than day-only lineup reference."
     }
   ],
   "issues": [
     {
       "issue_id": "lineup-prospa-josh-baker",
-      "status": "unresolved_organizer_source_conflict",
-      "description": "Poster lists Josh Baker, Prospa, and Prospa B2B Josh Baker on Friday. HTML lists Josh Baker twice and neither Prospa entry. The two supplied screenshots agree on the poster. Neither source establishes which appearances remain current.",
-      "policy": "Keep one Josh Baker solo row, one Prospa row and one Prospa B2B Josh Baker row; flag all three. Do not treat duplicate HTML text as proof of a second solo set. Reconcile against the official 2026 timetable or a newer organizer announcement.",
+      "status": "unresolved_prior_lineup_vs_new_timetable",
+      "description": "Poster lists Josh Baker, Prospa, and Prospa B2B Josh Baker on Friday. HTML lists Josh Baker twice and neither Prospa entry. The two supplied screenshots agree on the poster. Neither source establishes which appearances remain current. Newer owner-supplied day/time poster shows Josh Baker solo but does not show either Prospa entry; this establishes absence from the pictured four-stage timetable, not an explicit cancellation.",
+      "policy": "Keep one Josh Baker solo row, one Prospa row and one Prospa B2B Josh Baker row; flag all three. Do not treat duplicate HTML text as proof of a second solo set. Reconcile against the official 2026 timetable or a newer organizer announcement. Keep Prospa entries unscheduled pending reconciliation.",
       "affected_performance_ids": [
         "edco26:2026-11-06:josh-baker",
         "edco26:2026-11-06:prospa",
         "edco26:2026-11-06:prospa-b2b-josh-baker"
+      ]
+    },
+    {
+      "issue_id": "set-times-new-billing-2026-10-30",
+      "status": "pending_organizer_confirmation",
+      "description": "Saturday set-time poster names Luke Dean B2B George Smeddles, replacing prior lineup-poster billing Max Dean B2B Luke Dean. Previous lineup entry is preserved without a time; new billing has a separate stable performance ID. Do not infer cancellation.",
+      "policy": "Retain both source facts; confirm with official current app/organizer before declaring cancelled or changing stable IDs.",
+      "affected_performance_ids": [
+        "edco26:2026-11-07:max-dean-b2b-luke-dean",
+        "edco26:2026-11-07:luke-dean-b2b-george-smeddles"
       ]
     }
   ],

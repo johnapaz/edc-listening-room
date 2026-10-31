@@ -76,13 +76,20 @@
     ]
   },
   "set_times": {
-    "status": "not_verified_in_checked_sources",
+    "status": "owner_supplied_posters_transcribed_external_verification_pending",
     "checked_on": "2026-10-30",
+    "source_id": "set-times-posters-2026-10-30",
+    "poster_stage_ids": [
+      "kinetic-field",
+      "circuit-grounds",
+      "neon-garden",
+      "stereo-bloom"
+    ],
+    "notes": "107 pictured performances: 35 Friday, 36 Saturday, 36 Sunday. Three previous lineup entries remain without pictured time; other stage programming not covered.",
     "official_update_channels": [
       "https://orlando.edc.com/lineup/",
       "Insomniac app",
       "Official EDC Orlando social channels"
-    ],
-    "source_id": "faq"
+    ]
   }
 }

@@ -488,6 +488,17 @@
       "aliases": []
     },
     {
+      "artist_id": "artist:george-smeddles",
+      "display_name": "George Smeddles",
+      "search_name": "George Smeddles",
+      "role": "billed_performer",
+      "identity_status": "poster_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
       "artist_id": "artist:greg-99",
       "display_name": "Greg 99",
       "search_name": "Greg 99",
@@ -977,6 +988,17 @@
       "search_name": "Nico Moreno",
       "role": "billed_performer",
       "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
+      "artist_id": "artist:obskur",
+      "display_name": "Obskür",
+      "search_name": "Obskür",
+      "role": "billed_performer",
+      "identity_status": "poster_name_only",
       "identity_evidence_ref": null,
       "notion_page_url": null,
       "member_artist_ids": [],

@@ -7,9 +7,9 @@ Start here when building the Event Day Companion or resolving a lineup name. Rea
 | File | Use |
 |---|---|
 | [LINEUP.md](LINEUP.md) | Complete, readable lineup by day, with conflicts flagged |
-| [performances.json](performances.json) | 108 performance/program rows: 36 per day; includes 8 B2Bs |
+| [performances.json](performances.json) | 110 preserved performance/program rows; 107 assigned times from newly supplied posters and 3 unresolved older lineup entries |
 | [artists.json](artists.json) | 116 named act/participant entities, including the two explicitly named Skull Machine members; **not 116 verified legal identities or independent bookings** |
-| [schedule.csv](schedule.csv) | Flat companion seed, one row per performance; times/stages currently empty |
+| [schedule.csv](schedule.csv) | Flat companion seed, one row per performance; stage/time transcriptions for 107 pictured performances; 3 older entries stay blank |
 | [event.json](event.json) | Dates, timezone, venue, daily opening/closing, last entry and box-office hours |
 | [venues.json](venues.json) | Five organizer-listed stages, official map asset, legend and visible zone labels |
 | [sources.json](sources.json) | Attribution, screenshot hashes, source conflict and normalization decisions |
@@ -26,7 +26,7 @@ The official poster in both supplied lineup screenshots lists **Josh Baker**, **
 
 ## Schedule contract
 
-Only **day assignments** are verified. No artist start/end times or stage assignments were verified in the checked sources. The organizer FAQ says timetables appear on the site, official social channels, app and email in the days before the festival. This is a dated observation, not proof the app has no timetable.
+**Dated update (October 30, 2026):** Owner supplied three organizer-branded daily set-time posters after the earlier day-only audit. We transcribed 107 pictured performances (35 Friday, 36 Saturday, 36 Sunday) at four stages into the same stable-ID dataset, with `schedule_status=poster_transcribed`, `schedule_source_id=set-times-posters-2026-10-30`, and timezone-aware start/end values. These screenshots are direct provided evidence; they have **not** been independently verified from the organizer's live site/app. Recheck for changes. The organizer FAQ says timetables appear on the site, official social channels, app and email in the days before the festival. This is a dated observation, not proof the app has no timetable.
 
 - `starts_at`, `ends_at`, `stage_id`, and `schedule_source_id` stay JSON `null` until sourced. CSV represents null as an empty cell.
 - `source_order` preserves the lineup listing order, **not performance order, popularity or a timetable**.
@@ -65,3 +65,12 @@ python scripts/validate_edco_reference.py
 Checks lineup coverage against both source snapshots, identity/credit references, the CSV projection, null schedule fields, timezone/midnight handling, indexed references, and recovered request identities. It makes no network requests or external changes.
 
 The official map remains linked to the organizer-hosted asset. Labels are transcribed for lookup; no coordinates, routes, walking durations, accessibility claims or live amenities status have been invented. Check organizer updates before relying on dated event information.
+
+## October 30 set-time poster reconciliation (provisional source)
+
+- **Friday:** poster adds Obskür (neonGARDEN 18:00–19:30). Neither Prospa nor Prospa B2B Josh Baker appears in the four-stage timetable; both older lineup entries are retained without a time. Solo Josh Baker appears at neonGARDEN 22:30–00:00.
+- **Saturday:** newer poster has **Luke Dean B2B George Smeddles (Sunset Set)** at neonGARDEN 17:30–19:00 rather than earlier **Max Dean B2B Luke Dean**. New ID and artist relation created; older billing is retained, unscheduled and flagged. No cancellation inferred.
+- **Sunday:** all 36 original performance/program rows have poster times.
+- **Scope:** four pictured stages only; no CASA BACARDÍ or other unpictured-area timetable. The image does not establish whether these schedules are final. Source image SHA-256 digests are in `sources.json`; branded artwork is not redistributed.
+- **Validity:** CSV and JSON are a synchronized projection. 00:00 is the next date at UTC−05:00. Sunset titles are set qualifiers, **not** astronomical assertions. Keep the three unresolved old lineup entries visibly unassigned until confirmation.
+- **Downstream:** Companion issue #29 may consume these sourced times; no UI implementation is authorized by this data-only change. Notion Performances projection remains a follow-on and must upsert by stable performance ID, without inventing a different source of truth.
