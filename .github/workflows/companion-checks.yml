@@ -1,0 +1,39 @@
+name: Companion browser checks
+on:
+  pull_request:
+    paths:
+      - 'companion/**'
+      - 'data/edco-2026/**'
+      - 'scripts/build*'
+      - 'scripts/validate_current_lineup.py'
+      - 'tests/companion*'
+      - '.github/workflows/companion-checks.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python3 scripts/build_companion_preview.py
+      - name: Install test-only browsers
+        run: |
+          npm install --prefix "$RUNNER_TEMP/companion-browser" playwright@1.62.1
+          "$RUNNER_TEMP/companion-browser/node_modules/.bin/playwright" install --with-deps chromium webkit
+      - name: Run browser acceptance (no hosting or provider calls)
+        env:
+          NODE_PATH: ${{ runner.temp }}/companion-browser/node_modules
+        run: node tests/companion_smoke.js
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: companion-browser-evidence
+          path: companion-evidence/

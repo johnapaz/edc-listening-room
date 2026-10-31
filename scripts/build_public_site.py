@@ -29,6 +29,8 @@ def fields(row, names):
 
 def public_lineup(perf):
     public = fields(perf, ['schema_version', 'checked_on', 'timezone', 'schedule_status', 'sources', 'coverage'])
+    public['sources'] = [fields(s, ['source_id', 'kind', 'checked_on', 'url', 'independently_verified']) for s in perf['sources']]
+    public['coverage'] = fields(perf['coverage'], ['appearances', 'distinct_billings', 'timed', 'unknown_time', 'unknown_stage', 'by_day', 'historical_only_ids'])
     public['performances'] = []
     for p in perf['performances']:
         eligible = p.get('public_eligibility', {})
@@ -38,6 +40,8 @@ def public_lineup(perf):
                         'artist_ids', 'credits', 'source_order', 'set_qualifier', 'stage_id', 'starts_at',
                         'ends_at', 'schedule_status', 'lineup_status', 'schedule_source_id', 'source_ids',
                         'issue_ids', 'reconciliation'])
+        row['credits'] = [fields(c, ['artist_id', 'role']) for c in p['credits']]
+        row['reconciliation'] = fields(p['reconciliation'], ['status', 'historical_performance_id', 'historical_billing'])
         if eligible.get('stage') is not True:
             row['stage_id'] = None
         if eligible.get('times') is not True:

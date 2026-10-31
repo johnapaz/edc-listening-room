@@ -86,7 +86,13 @@ class CompanionData(unittest.TestCase):
     def test_public_field_eligibility_and_source_art_exclusion(self):
         p = next(p for p in self.doc['performances'] if p['starts_at'])
         p['public_eligibility']['stage'] = p['public_eligibility']['times'] = False
+        p['reconciliation']['notion_page_url'] = 'private'
+        self.doc['sources'][0]['private_note'] = 'private'
+        p['credits'][0]['identity_evidence_ref'] = 'private'
         exported = public.public_lineup(self.doc)
+        self.assertNotIn('notion_page_url', json.dumps(exported))
+        self.assertNotIn('private_note', json.dumps(exported))
+        self.assertNotIn('identity_evidence_ref', json.dumps(exported))
         row = next(r for r in exported['performances'] if r['performance_id'] == p['performance_id'])
         self.assertIsNone(row['stage_id']); self.assertIsNone(row['starts_at']); self.assertIsNone(row['ends_at'])
         self.assertEqual(exported['coverage']['timed'], 106)
