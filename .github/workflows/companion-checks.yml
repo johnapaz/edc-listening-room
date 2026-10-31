@@ -32,6 +32,17 @@ jobs:
         env:
           NODE_PATH: ${{ runner.temp }}/companion-browser/node_modules
         run: node tests/companion_smoke.js
+      - name: Listening Room browser acceptance
+        env:
+          NODE_PATH: ${{ runner.temp }}/companion-browser/node_modules
+          BASE: http://127.0.0.1:8765/listening-room/
+          STUB_THUMBS: "1"
+        run: |
+          python3 scripts/build_public_site.py
+          python3 -m http.server 8765 --bind 127.0.0.1 --directory public-site > "$RUNNER_TEMP/listening-http.log" 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          node tests/ui_smoke.js
       - uses: actions/upload-artifact@v4
         if: always()
         with:

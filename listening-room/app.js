@@ -25,8 +25,9 @@
     const p = document.createElementNS(ns, "path"); p.setAttribute("d", d); s.append(p);
     return s;
   }
-  // Generic play glyph. The official YouTube icon replaces it once its unmodified brand asset is committed.
-  const playIcon = () => svg("play-icon", "M5 3.2v9.6a.6.6 0 0 0 .92.5l7.4-4.8a.6.6 0 0 0 0-1L5.92 2.7A.6.6 0 0 0 5 3.2z");
+  // Compact links use text; the official mark needs 100px height under current brand guidance.
+  const youtubeLabel = () => el("span", { class: "provider-label", text: "YouTube" });
+  const youtubeIcon = () => el("img", { class: "youtube-icon", src: "youtube-icon.png", alt: "", width: "142", height: "100" });
   const refreshIcon = () => svg("ui-icon", "M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7", "0 0 24 24");
   const shareIcon = () => svg("ui-icon", "M12 3v12M7 8l5-5 5 5M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5", "0 0 24 24");
   const readJson = async path => {
@@ -89,7 +90,7 @@
         el("a", { class: "track-title", href: s.url, target: "_blank", rel: "noopener noreferrer", "aria-label": playLabel(s, a.display_name), text: s.title }),
         el("div", { class: "song-credits" }, credited.flatMap((artist, i) => i ? [document.createTextNode(" · "), artistLink(artist, ctx)] : [artistLink(artist, ctx)])),
         s.review_status !== "strong" && s.verification !== "source_reviewed" ? el("small", { class: "muted version", text: "Version may differ from the original release." }) : null),
-      el("div", { class: "song-actions" }, spotifyLink(s, a), shortcut(s.url, "play-btn", true, playIcon())));
+      el("div", { class: "song-actions" }, spotifyLink(s, a), shortcut(s.url, "play-btn", true, youtubeLabel())));
   }
 
   // ---------- Lineup ----------
@@ -108,7 +109,7 @@
     if (!songs.length) return null;
     const strip = el("div", { class: "rail-strip" });
     const fill = () => strip.replaceChildren(...songs.slice(0, 10).map(({ a, s }) => el("article", { class: "rail-card" },
-      shortcut(s.url, "art-link", true, artwork(s, a.display_name, "rail-art"), el("span", { class: "art-play" }, playIcon())),
+      shortcut(s.url, "art-link", true, artwork(s, a.display_name, "rail-art")),
       el("a", { class: "track-title", href: s.url, target: "_blank", rel: "noopener noreferrer", "aria-label": playLabel(s, a.display_name), text: s.title }),
       artistLink(a, ctx))));
     // Reorders the cards only; nothing is queued or played.
@@ -135,7 +136,7 @@
       el("span", { class: "row-time" + (sched.time ? "" : " none") }, sched.time ? fmt(p.starts_at) : el("span", { "aria-label": "No set time", text: "—" })),
       shortcut(href, "art-link", false, artwork(s, p.display_name, "row-art")),
       el("a", { class: "row-copy", href }, el("span", { class: "row-name", text: p.display_name }), el("span", { class: "row-meta" + (n ? "" : " quiet"), text: meta })),
-      s ? el("a", { class: "play-btn", href: s.url, target: "_blank", rel: "noopener noreferrer", "aria-label": playLabel(s, g.artist.display_name) }, playIcon())
+      s ? el("a", { class: "play-btn", href: s.url, target: "_blank", rel: "noopener noreferrer", "aria-label": playLabel(s, g.artist.display_name) }, youtubeLabel())
         : el("span", { class: "play-btn empty", "aria-hidden": "true" }));
   }
   const lineupKey = ctx => JSON.stringify([ctx.day, ctx.sort, ctx.q, ctx.stage]);
@@ -259,8 +260,8 @@
     const conflict = bookings.map(b => L.scheduleState(b, idx, fmt)).find(s => s.kind === "conflict");
     if (conflict) body.append(el("p", { class: "flag", text: conflict.text }));
     if (bookings.some(b => L.scheduleState(b, idx, fmt).kind === "unconfirmed")) body.append(el("p", { class: "fine", text: "Poster times are transcribed from organizer posters and not yet cross-checked." }));
-    if (first) body.append(el("div", { class: "artist-actions" }, el("a", { class: "btn btn-play", href: first.url, target: "_blank", rel: "noopener noreferrer", "aria-label": playLabel(first, g0.artist.display_name) },
-      playIcon(), el("span", { text: "Play “" + first.title + "” on YouTube" })), spotifyLink(first, g0.artist, "btn btn-alt btn-play")));
+    if (first) body.append(el("div", { class: "artist-actions" }, el("a", { class: "btn btn-play youtube-primary", href: first.url, target: "_blank", rel: "noopener noreferrer", "aria-label": playLabel(first, g0.artist.display_name) },
+      youtubeIcon(), el("span", { text: "Play “" + first.title + "” on YouTube" })), spotifyLink(first, g0.artist, "btn btn-alt btn-play")));
     if (inPanel) body.append(el("a", { class: "text-link", href: L.buildHash("artist", ctx, id) + (L.buildHash("artist", ctx, id).includes("?") ? "&" : "?") + "full=1", text: "Open full page →" }));
     const total = new Set(groups.flatMap(g => g.songs.map(s => s.video_id))).size;
     body.append(el(inPanel ? "h3" : "h2", { class: "artist-section", text: total ? plural(total, "track", "tracks") : "Tracks" }));

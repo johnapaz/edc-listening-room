@@ -39,3 +39,7 @@ The current official icon page's Clear Space guidance states a digital minimum h
 The asset is staged for the eventual implementation, but is deliberately not added to the public build or rendered yet. This PR remains open until the compact presentation can be reconciled with current official guidance, or the approved UI is revised to satisfy it. Do not substitute an unofficial SVG.
 
 Dependency update: PR #70 supersedes #58 and includes its search-context fix. Integrate icon controls against the accepted final v2 UI and Spotify PR #68 so later changes cannot restore placeholder glyphs or overwrite provider actions.
+
+## Integration closeout — October 31, 2026
+
+The public build now ships the unchanged PNG. The artist primary YouTube link renders it at 100px high, with 32px clear space on a solid panel. Compact lineup and song links use visible YouTube text, and the rail uses its existing linked artwork and track title. All generic play glyphs have been removed. This deliberately supersedes the compact branded-icon acceptance criterion: a 28–32px mark cannot satisfy the source's stated minimum. Existing per-track accessible names and Spotify links are preserved. No Companion release is included.

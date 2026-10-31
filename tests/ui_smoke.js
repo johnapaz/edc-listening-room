@@ -80,6 +80,20 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
   await page.waitForSelector("#list .lineup-row");
   assert.equal(await page.inputValue("#q"), "acraze"); ok("back preserves search");
 
+  // The official asset loads unchanged at the brand minimum, including narrow screens.
+  for (const width of [280, 360, 1280]) {
+    await page.setViewportSize({ width, height: 900 });
+    const mark = page.locator(".youtube-primary .youtube-icon").first();
+    await mark.waitFor();
+    await mark.evaluate(img => img.decode());
+    assert.equal(await mark.getAttribute("alt"), "");
+    assert.equal(Math.round((await mark.boundingBox()).height), 100);
+    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), "no overflow at " + width);
+  }
+  assert.equal(await page.locator("svg.play-icon").count(), 0);
+  await page.setViewportSize({ width: 360, height: 740 });
+  ok("official YouTube mark loads at 100px without overflow at 280/360/1280");
+
   // Day buttons clear the search and switch days.
   await page.click(`button[data-day='${SAT}']`);
   assert.equal(await page.inputValue("#q"), "");

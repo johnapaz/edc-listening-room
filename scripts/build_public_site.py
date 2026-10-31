@@ -76,7 +76,7 @@ def build():
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir()
-    for name in ['index.html', 'app.js', 'lib.js', 'styles.css', 'redirect.js']:
+    for name in ['index.html', 'app.js', 'lib.js', 'styles.css', 'redirect.js', 'youtube-icon.png']:
         dest = OUT / 'listening-room' / name
         dest.parent.mkdir(exist_ok=True)
         shutil.copyfile(ROOT / 'listening-room' / name, dest)
