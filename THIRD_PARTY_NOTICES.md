@@ -137,3 +137,7 @@ File: `listening-room/fonts/bricolage-grotesque-latin-800.woff2` (Latin subset, 
 Listening Room does not distribute or sublicense song recordings, YouTube video content, music-video thumbnails, third-party artist photographs, the festival lineup, set-time posters, or third-party branding. Media and identifying information used or linked in the site remain subject to their owners' rights and the platforms' terms. The organizer's official lineup is linked from the app.
 
 For ownership questions, contact the project through https://github.com/johnapaz/edc-listening-room/issues.
+
+## YouTube icon
+
+The unchanged `listening-room/youtube-icon.png` is a trademark of Google LLC, used to identify a link to YouTube, without endorsement. Downloaded October 31, 2026 from https://www.gstatic.com/marketing-cms/78/29/3e68a1414bb28d0b7e47b44c3c91/youtube-icon.zip (YouTube_Icon/Digital/01 Red/yt_icon_red_digital.png). SHA-256: `1027b1b0517727adb9697155a270744381c3ce9b047b1c8bd8a9389dc7d07a83`. Subject to https://brand.youtube/youtube-icon/ and YouTube's branding guidelines; not covered by the project's license.

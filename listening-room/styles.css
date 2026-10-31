@@ -245,3 +245,12 @@ a.chip:hover{border-color:var(--mint);color:var(--mint)}
 .playlist-row p{margin:2px 0 0;font-size:.8125rem}.playlist-pending{font-size:.8125rem;margin:6px 0 0}
 .artist-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 @media (max-width:320px){.playlist-row{flex-wrap:wrap}}
+
+/* Official YouTube mark: unchanged, 100px minimum height with triangle-sized clear space. */
+.youtube-primary{flex-direction:column;background:var(--panel);color:var(--text);padding:0 8px 12px;gap:0;max-width:100%;text-align:center;white-space:normal}
+.youtube-primary:hover{background:var(--panel);border-color:var(--mint)}
+.youtube-icon{display:block;width:auto;height:187px;max-width:none;flex:none}
+.provider-label{font-size:10px;font-weight:650;letter-spacing:-.025em}
+
+@media (max-width:360px){.song{grid-template-columns:52px minmax(0,1fr) auto}.song-actions{flex-direction:column;gap:4px}.spotify-link{padding-inline:6px}}
+@media (max-width:300px){.song{grid-template-columns:minmax(0,1fr) auto}}
