@@ -2,7 +2,7 @@
 
 Static, zero-dependency app (issue #38). Independent and unofficial. **Not deployed; not approved for public release.**
 
-Run: `python3 -m http.server 8765` from the repo root, open `http://localhost:8765/listening-room/`.
+Run: `python3 -m http.server 8765` from the repo root, open `http://localhost:8765/` (redirects to `/listening-room/`).
 
 ## Data (no new sources)
 - `data/edco-2026/{performances,artists,venues,event}.json`: lineup and day assignments, unchanged from `main`.
