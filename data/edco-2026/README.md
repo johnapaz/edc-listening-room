@@ -1,3 +1,7 @@
+## Current public lineup — October 31, 2026
+
+Use `current-lineup.json` for the public app: **130 current organizer day-list entries (43 / 43 / 44)**. Source: `sources/lineup-text-2026-10-31.json`, rechecked against https://orlando.edc.com/lineup/. Reproduce/check with `python3 scripts/build_current_lineup.py --check`. See `docs/UI-COPY-LINEUP-AUDIT-2026-10-31.md` for all additions and historical-only billings. The 110-row data and discussion below are historical evidence; they do not define the current public lineup. Poster times remain provisional.
+
 # EDC Orlando 2026 reference pack
 
 Checked **2026-10-30** against organizer pages and nine owner-supplied screenshots (six earlier reference images plus three daily set-time posters). Independent, unofficial reference; lineup and event information can change.

@@ -17,12 +17,12 @@ const shots = process.argv[2];
   page.on("request", r => { if (!r.url().startsWith(new URL(BASE).origin)) external.push(r.url()); });
 
   await page.goto(BASE);
-  await page.waitForSelector("#list li");
-  assert.equal(await page.locator("#list li").count(), 110); ok("all 110 entries listed");
-  assert.match(await page.textContent("#count"), /110 lineup entries/);
+  await page.waitForSelector("#list .lineup-row");
+  assert.equal(await page.locator("#list .lineup-row").count(), 130); ok("all 130 entries listed");
+  assert.match(await page.textContent("#count"), /130 lineup entries/);
 
   // Scenario 1: playlist is honest when unpublished (no dead CTA)
-  assert.match(await page.textContent("section.card"), /Coming soon/);
+  assert.equal(await page.locator("section.playlist-card").count(), 0);
   assert.equal(await page.locator("section.card a.btn").count(), 0); ok("playlist unavailable state, no dead link");
 
   // Scenario 2: find B2B artist -> song in 3 taps excluding typing, back keeps context
@@ -37,34 +37,35 @@ const shots = process.argv[2];
   assert.equal(await page.evaluate(() => document.activeElement.id), "title"); ok("artist detail, direct YouTube link, focus moved to heading");
   assert.ok(!/null|undefined/.test(await page.textContent("main")), "stray null/undefined text");
   await page.goBack();
-  await page.waitForSelector("#list li");
+  await page.waitForSelector("#list .lineup-row");
   assert.equal(await page.inputValue("#q"), "acraze"); ok("back preserves search");
 
   // Scenario 3: day filter
   await page.fill("#q", "");
   await page.click("button[data-day='2026-11-07']");
-  assert.equal(await page.locator("#list li").count(), 37);
+  assert.equal(await page.locator("#list .lineup-row").count(), 43);
   assert.equal(await page.getAttribute("button[data-day='2026-11-07']", "aria-pressed"), "true");
   assert.ok(/#\/lineup\?day=2026-11-07/.test(page.url()));
-  assert.equal(await page.locator("text=playlist").filter({ hasText: /regenerat|generated/i }).count(), 0); ok("Saturday filter shows 37, URL keeps context");
+  assert.equal(await page.locator("text=playlist").filter({ hasText: /regenerat|generated/i }).count(), 0); ok("Saturday filter shows 43, URL keeps context");
 
-  // Scenario 4: unknown / conflict states
+  // Unknown times stay explicit for newly listed acts; old historical-only acts are not current.
   await page.click("button[data-day='all']");
-  await page.fill("#q", "prospa");
-  await page.click("#list .row-name >> nth=0");
+  await page.fill("#q", "2AR");
+  await page.click("#list .row-name");
   await page.waitForSelector("h1#title");
-  assert.match(await page.textContent("main"), /disagree|not verified/i); ok("conflict state visible");
+  assert.match(await page.textContent("main"), /not verified/i); ok("new appearance has no invented set time");
   await page.goto(BASE + "#/artist/nope");
   assert.match(await page.textContent("main"), /wasn’t found/); ok("unknown route error state");
 
   // Listen tab
   await page.goto(BASE + "#/listen");
   await page.waitForSelector(".song");
+  assert.match(await page.textContent("section.card"), /Not available/);
   assert.ok(await page.locator(".song a.btn").count() >= 10); ok("Listen lists reviewed songs");
 
   // Keyboard: tab order reaches search and a result, Enter opens
   await page.goto(BASE);
-  await page.waitForSelector("#list li");
+  await page.waitForSelector("#list .lineup-row");
   await page.focus("#q");
   await page.keyboard.press("Tab");
   assert.equal(await page.evaluate(() => document.activeElement.dataset.day), "all"); ok("keyboard reaches day filters");

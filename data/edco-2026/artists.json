@@ -1,8 +1,19 @@
 {
   "schema_version": 1,
-  "checked_on": "2026-10-30",
+  "checked_on": "2026-10-31",
   "scope": "Billed acts and explicitly credited B2B/MC/project participants, not legal-person identities or complete discographies.",
   "artists": [
+    {
+      "artist_id": "artist:2ar",
+      "display_name": "2AR",
+      "search_name": "2AR",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
     {
       "artist_id": "artist:a-little-sound",
       "display_name": "A Little Sound",
@@ -125,6 +136,17 @@
       "aliases": []
     },
     {
+      "artist_id": "artist:allnightkev",
+      "display_name": "Allnightkev",
+      "search_name": "Allnightkev",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
       "artist_id": "artist:alok",
       "display_name": "Alok",
       "search_name": "Alok",
@@ -139,6 +161,17 @@
       "artist_id": "artist:alves",
       "display_name": "Alves",
       "search_name": "Alves",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
+      "artist_id": "artist:andrea-quintero",
+      "display_name": "Andrea Quintero",
+      "search_name": "Andrea Quintero",
       "role": "billed_performer",
       "identity_status": "lineup_name_only",
       "identity_evidence_ref": null,
@@ -268,6 +301,17 @@
       "aliases": []
     },
     {
+      "artist_id": "artist:brosa",
+      "display_name": "BROSA",
+      "search_name": "BROSA",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
       "artist_id": "artist:brunello",
       "display_name": "Brunello",
       "search_name": "Brunello",
@@ -290,9 +334,42 @@
       "aliases": []
     },
     {
+      "artist_id": "artist:bryan-softwell",
+      "display_name": "Bryan Softwell",
+      "search_name": "Bryan Softwell",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
       "artist_id": "artist:bullet-tooth",
       "display_name": "Bullet Tooth",
       "search_name": "Bullet Tooth",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
+      "artist_id": "artist:cc-love",
+      "display_name": "CC Love",
+      "search_name": "CC Love",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
+      "artist_id": "artist:chantel-jeffries",
+      "display_name": "Chantel Jeffries",
+      "search_name": "Chantel Jeffries",
       "role": "billed_performer",
       "identity_status": "lineup_name_only",
       "identity_evidence_ref": null,
@@ -323,6 +400,17 @@
       "aliases": []
     },
     {
+      "artist_id": "artist:chini",
+      "display_name": "Chini",
+      "search_name": "Chini",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
       "artist_id": "artist:chris-lorenzo",
       "display_name": "Chris Lorenzo",
       "search_name": "Chris Lorenzo",
@@ -341,6 +429,17 @@
       "identity_status": "pilot_source_review_exists",
       "identity_evidence_ref": "pilot/identity-review.json#/artists/5",
       "notion_page_url": "https://app.notion.com/p/4080e646ca0d81ae940de6ae04b1b4d7",
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
+      "artist_id": "artist:crespo",
+      "display_name": "Crespo",
+      "search_name": "Crespo",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
       "member_artist_ids": [],
       "aliases": []
     },
@@ -436,6 +535,17 @@
       "artist_id": "artist:esse",
       "display_name": "ESSE",
       "search_name": "ESSE",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
+      "artist_id": "artist:eve-lauren",
+      "display_name": "Eve Lauren",
+      "search_name": "Eve Lauren",
       "role": "billed_performer",
       "identity_status": "lineup_name_only",
       "identity_evidence_ref": null,
@@ -609,6 +719,17 @@
       "aliases": []
     },
     {
+      "artist_id": "artist:jfuse",
+      "display_name": "JFUSE",
+      "search_name": "JFUSE",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
       "artist_id": "artist:jkyl-hyde",
       "display_name": "Jkyl & Hyde",
       "search_name": "Jkyl & Hyde",
@@ -631,6 +752,17 @@
       "aliases": []
     },
     {
+      "artist_id": "artist:joe-vanditti",
+      "display_name": "Joe Vanditti",
+      "search_name": "Joe Vanditti",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
       "artist_id": "artist:josh-baker",
       "display_name": "Josh Baker",
       "search_name": "Josh Baker",
@@ -645,6 +777,17 @@
       "artist_id": "artist:joshwa",
       "display_name": "Joshwa",
       "search_name": "Joshwa",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
+      "artist_id": "artist:juos",
+      "display_name": "Juos",
+      "search_name": "Juos",
       "role": "billed_performer",
       "identity_status": "lineup_name_only",
       "identity_evidence_ref": null,
@@ -678,6 +821,17 @@
       "artist_id": "artist:kanine",
       "display_name": "Kanine",
       "search_name": "Kanine",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
+      "artist_id": "artist:kashovski",
+      "display_name": "Kashovski",
+      "search_name": "Kashovski",
       "role": "billed_performer",
       "identity_status": "lineup_name_only",
       "identity_evidence_ref": null,
@@ -741,6 +895,17 @@
       "aliases": []
     },
     {
+      "artist_id": "artist:kofla",
+      "display_name": "Kofla",
+      "search_name": "Kofla",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
       "artist_id": "artist:kompany",
       "display_name": "Kompany",
       "search_name": "Kompany",
@@ -755,6 +920,17 @@
       "artist_id": "artist:kream",
       "display_name": "KREAM",
       "search_name": "KREAM",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
+      "artist_id": "artist:landis",
+      "display_name": "Landis",
+      "search_name": "Landis",
       "role": "billed_performer",
       "identity_status": "lineup_name_only",
       "identity_evidence_ref": null,
@@ -854,6 +1030,17 @@
       "artist_id": "artist:malugi",
       "display_name": "MALUGI",
       "search_name": "MALUGI",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
+      "artist_id": "artist:marian-br",
+      "display_name": "Marian (BR)",
+      "search_name": "Marian (BR)",
       "role": "billed_performer",
       "identity_status": "lineup_name_only",
       "identity_evidence_ref": null,
@@ -994,6 +1181,17 @@
       "aliases": []
     },
     {
+      "artist_id": "artist:night-tales",
+      "display_name": "Night Tales",
+      "search_name": "Night Tales",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
       "artist_id": "artist:obskur",
       "display_name": "Obskür",
       "search_name": "Obskür",
@@ -1104,6 +1302,17 @@
       "aliases": []
     },
     {
+      "artist_id": "artist:rommii",
+      "display_name": "Rommii",
+      "search_name": "Rommii",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
       "artist_id": "artist:rossi",
       "display_name": "Rossi.",
       "search_name": "Rossi.",
@@ -1118,6 +1327,17 @@
       "artist_id": "artist:san-holo",
       "display_name": "San Holo",
       "search_name": "San Holo",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
+      "artist_id": "artist:seeing-double",
+      "display_name": "Seeing Double",
+      "search_name": "Seeing Double",
       "role": "billed_performer",
       "identity_status": "lineup_name_only",
       "identity_evidence_ref": null,
@@ -1275,6 +1495,17 @@
       "artist_id": "artist:whethan",
       "display_name": "Whethan",
       "search_name": "Whethan",
+      "role": "billed_performer",
+      "identity_status": "lineup_name_only",
+      "identity_evidence_ref": null,
+      "notion_page_url": null,
+      "member_artist_ids": [],
+      "aliases": []
+    },
+    {
+      "artist_id": "artist:william-kiss",
+      "display_name": "William Kiss",
+      "search_name": "William Kiss",
       "role": "billed_performer",
       "identity_status": "lineup_name_only",
       "identity_evidence_ref": null,
