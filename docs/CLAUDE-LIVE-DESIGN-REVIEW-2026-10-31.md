@@ -86,3 +86,42 @@ John asked both agents to compare notes. In the 05:13Z comment, Codex scoped its
 | Legacy `/listening-room/about.html` and extensionless `/listening-room/about` redirect | Codex is fixing it. The rule in #48 covers only the `.html` form. | Codex |
 
 **Merge order that avoids conflicts:** #50 (help guards; touches no app files), then #49 (or its hunks), then Codex's copy/lineup pass. Claude then refreshes the docs and screenshots.
+
+---
+
+# Follow-up after #49, #51 and #52 (Claude, 02:00 ET), and v2 recommendations
+
+## Re-check of the current app (`main` e1b07f7, emulated)
+Every P1/P2 finding above is resolved on `main`:
+- **Share links:** a root `/#/artist/<id>` link lands on that artist.
+- **Previews and icons:** preview and icon metadata are present.
+- **Artwork:** `mqdefault` artwork is 16:9, with no letterbox bars.
+- **Lineup rows:** artwork in a row goes to the artist page.
+- **Keyboard:** about 2 tab stops per row (280 for 130 entries, including the day headings).
+- **YouTube buttons:** names are distinct ("Open \<title\> by \<artist\> on YouTube").
+- **About link:** "About & help" is in the header.
+- **Text size:** the smallest text is now 12px.
+- **Copy:** the slogans are gone.
+- **Playlist card:** the unavailable playlist card is off the lineup.
+- **Unchanged and still working:** no overflow at 280, 320 or 360px, Back restores scroll (9,515px before and after), the skip link keeps the hash, and there are no console errors under CSP.
+
+Screens: [09 desktop](design-review-2026-10-31/09-v2-desktop-1280.webp), [10 phone](design-review-2026-10-31/10-v2-lineup-360.webp). Artwork in them is simulated.
+
+The help center was refreshed to the new copy in #53. Quoted UI wording and screenshots now fail tests or drop out automatically when the app changes.
+
+## v2: what I'd do next, in order
+These are scoped suggestions for John to approve. None is built.
+
+| # | Recommendation | Why | Size |
+|---|---|---|---|
+| 1 | **Path URLs with a static page per act** (`/a/martin-garrix`), generated at build time. Keep the hash routes as aliases. | Link-preview crawlers ignore `#fragments`, so every shared act shows the same generic card today. Per-act pages give each artist its own preview title and image, real 404s, and search indexing, at $0 since the build is already static. | M |
+| 2 | **Let the 124 rows without tracks recede.** Show the positives ("2 tracks", a stage and time) and stop repeating "No tracks added" and "Set time not verified" on every row; keep that detail on the artist page. | With 6 of 130 entries playable, the list is mostly the same two grey phrases. Signal-to-noise is now the main visual problem. | S |
+| 3 | **Grow reviewed coverage.** This is a data task, not a design one: owner-review the private Discovery matches (42 "matched" across 23 acts). | Every design improvement is capped by having music for so few acts. This is the single biggest lift to "feels like a music app". | M (review time) |
+| 4 | **Bring imagery back up front on desktop.** "Tracks to try" became 76px thumbnails beside text. Use 16:9 cards (`mqdefault` is 320×180, sharp up to about 320px wide), and a larger hero artwork on artist pages. | The owner's launch addendum asks for image-led browsing. Phones look right; desktop reads as a text list. | S |
+| 5 | **Desktop layout.** At 900px and wider, move Lineup/Tracks into the header and lay rows out as columns: name, day, stage and time, tracks. | The bottom tab bar is a phone pattern, and the 960px single column leaves desktop sparse. | S–M |
+| 6 | **Light/auto theme,** following `prefers-color-scheme`; add an explicit toggle only if people ask. The app and `/about/` already share tokens. | Outdoor daylight readability. John shelved this; it is listed for completeness. | M |
+| 7 | **A real offline mode for the lineup and times only**, via a small service worker. Tracks still need a network, and the copy should say so. | Festival signal is poor. The help currently says there's no offline mode, so this must be built for real, not implied. | M |
+| 8 | **A public feedback route.** A privacy-respecting `mailto:` or form. | "Tell the person who shared this link" works for a family soft launch, not a public one. | XS |
+| 9 | **Real-device and screen-reader acceptance:** iOS Safari with VoiceOver, Android Chrome with TalkBack, and a Fold. | Everything so far is emulated. | S |
+
+**Out of scope without a decision.** A time-sorted "running order by stage" view would use the 107 poster times and is the most-requested festival-day feature. It overlaps the Event Day Companion (#29), which v0 explicitly excluded, so it needs a scope call.
