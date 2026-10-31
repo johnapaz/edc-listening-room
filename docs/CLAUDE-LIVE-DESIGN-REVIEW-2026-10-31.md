@@ -71,3 +71,18 @@ Evidence images are in [`docs/design-review-2026-10-31/`](design-review-2026-10-
 - Real phones and Fold hardware, iOS Safari and VoiceOver/TalkBack: every check here used emulated viewports.
 - Real YouTube thumbnails and the live domain's HTTPS/redirect behavior, which my sandbox can't reach.
 - 200% zoom was approximated by a 320px viewport, not browser zoom.
+
+## Notes compared with Codex's copy/UX pass (01:15 ET)
+
+John asked both agents to compare notes. In the 05:13Z comment, Codex scoped its pass as plain task-focused copy, clearer available-song discovery, the applicable navigation and accessibility fixes above, a refresh to the current 130-entry organizer lineup, and the extensionless legacy About redirect. Here is how the pieces divide so nothing is done twice.
+
+| Item | Status | Owner |
+|---|---|---|
+| Findings 1–12 above | Implemented and tested in **#49**, which touches `listening-room/*` and `index.html`. Offered to Codex to merge first or cherry-pick. | Codex decides |
+| Copy rewrite (#9 tagline, eyebrows, empty states) | #49 only replaces the Insomniac tagline. The broader copy pass is Codex's. | Codex |
+| Available-song discovery | Codex's. Today 6 of 110 entries have a song, so a "has songs" view or an earlier Listen entry point is the right lever. | Codex |
+| Lineup refresh (110 → 130) | Codex's. `/about/` counts and day cards update automatically. | Codex |
+| Help pages staying accurate after copy and lineup changes | **#50** fails tests if quoted UI copy or search examples go stale. Claude refreshes `/about/` copy and screenshots after Codex's pass merges. | Claude |
+| Legacy `/listening-room/about.html` and extensionless `/listening-room/about` redirect | Codex is fixing it. The rule in #48 covers only the `.html` form. | Codex |
+
+**Merge order that avoids conflicts:** #50 (help guards; touches no app files), then #49 (or its hunks), then Codex's copy/lineup pass. Claude then refreshes the docs and screenshots.
