@@ -6,7 +6,7 @@ Source for `https://listeningroom.app/about/`. `scripts/build_about.py` renders 
 |---|---|
 | `pages/NN-slug.html` | One page each, in nav order. A header comment sets `slug`, `title`, `nav`, `description`, and optionally `summary` (guide card) and `lede`. The body is an HTML fragment. Every `<h2>`/`<h3>` needs an `id`; those become the "On this page" list, section links and search results. |
 | `assets/` | `about.css` (same tokens as the app) and `about.js` (help search, copy-a-section-link, current-section marker). Pages work without JS. No inline scripts or `data:` URIs: the site CSP blocks both. |
-| `img/` | App screenshots plus `shots.json` (file, width, height). |
+| `img/` | App screenshots plus `shots.json` (file, width, height), and the first-party creator portrait `john-paz.webp` (always copied). |
 | `brand/` | `favicon.svg`, `apple-touch-icon.png`, `og.png` (link preview). Copied to the site root. |
 
 ## Directives
