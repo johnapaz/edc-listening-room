@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import build_about  # noqa: E402
 
-PAGES = ["", "using", "songs", "schedule", "faq", "privacy", "accessibility", "whats-new"]
+PAGES = ["", "using", "songs", "schedule", "faq", "privacy", "accessibility", "whats-new", "credits"]
 
 
 class Doc(HTMLParser):
@@ -119,6 +119,21 @@ class AboutSite(unittest.TestCase):
                 self.assertTrue((self.out / img["src"].lstrip("/")).is_file(), img["src"])
         for name in ("favicon.svg", "apple-touch-icon.png", "og.png"):
             self.assertTrue((self.out / name).is_file(), name)
+
+    def test_creator_credits_and_licensed_artwork(self):
+        credits = self.docs["credits"]
+        self.assertIn("John A. Paz", credits.text)
+        self.assertIn("All rights reserved", credits.text)
+        self.assertIn("not offered under an open-source", credits.text)
+        self.assertIn("/about/img/john-paz.webp", credits.text)
+        self.assertTrue((self.out / "about/img/john-paz.webp").is_file())
+        for url in ("https://johnapaz.com/", "https://www.linkedin.com/in/johnapaz",
+                    "https://www.instagram.com/john.paz.stories/", "https://github.com/johnapaz"):
+            self.assertIn(url, [a["href"] for a in credits.links])
+        self.assertEqual(credits.text.count('aria-hidden="true" focusable="false"'), 4)
+        app = (ROOT / "listening-room/index.html").read_text(encoding="utf-8")
+        self.assertIn('/about/credits/', app)
+        self.assertIn('John A. Paz', app)
 
     def test_live_numbers_come_from_the_data(self):
         stats = self.result["stats"]
