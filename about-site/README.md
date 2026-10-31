@@ -20,6 +20,8 @@ Resolved at build time against the same public data the app loads, so numbers an
 - `{{shot name | alt text | caption | wide}}`: screenshot from `img/shots.json`.
 - `{{list songs|days|stages|b2b|guides|playlist}}`: generated lists. `playlist` switches copy when `data/listening-room/playlist.json` is published and cross-account verified.
 
+The creator portrait is copied from John A. Paz’s own published portfolio image to <code>img/john-paz.webp</code> and is **not** subject to screenshot freshness checks. Social icons use Bootstrap Icons (MIT); see [third-party notices](../THIRD_PARTY_NOTICES.md).
+
 ## Refreshing screenshots
 
 When the app's look changes:
