@@ -132,7 +132,7 @@ class PublicBuild(unittest.TestCase):
         src = ROOT / "about-site"
         slugs = [re.search(r"^slug:(.*)$", p.read_text(encoding="utf-8"), re.M).group(1).strip() for p in (src / "pages").glob("*.html")]
         expected |= {f"about/{s}/index.html" if s else "about/index.html" for s in slugs}
-        expected |= {"about/search.json", "about/assets/about.css", "about/assets/about.js"}
+        expected |= {"about/search.json", "about/assets/about.css", "about/assets/about.js", "about/img/john-paz.webp"}
         shots = json.loads((src / "img" / "shots.json").read_text())
         sys.path.insert(0, str(ROOT / "scripts"))
         import build_about

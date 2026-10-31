@@ -260,3 +260,14 @@ td .sample{display:inline-block;font-size:.85rem}
   table{min-width:340px}
 }
 @media print{.top,.side,.toc,.toc-inline,.pager,.toast,.skip,.anchor{display:none!important}body{background:#fff;color:#000}.prose{max-width:none}}
+
+
+/* Creator attribution: compact portrait and accessible, recognizable profile icons */
+.creator-profile{display:grid;grid-template-columns:minmax(160px,220px) minmax(0,1fr);align-items:start;gap:24px;margin:18px 0 26px}
+.creator-photo{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;object-position:center 30%;border:1px solid var(--line);border-radius:16px;background:var(--panel)}
+.creator-links{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0;padding:0}
+.creator-links li{margin:0;padding:0}
+.creator-links a{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:8px 12px;background:var(--panel);border:1px solid var(--line);border-radius:11px;color:var(--text);font-size:.9rem;font-weight:650;text-decoration:none}
+.creator-links a:hover{color:var(--mint);border-color:var(--mint)}
+.creator-links svg{flex:none}
+@media(max-width:620px){.creator-profile{grid-template-columns:1fr;gap:16px}.creator-photo{width:min(220px,75vw)}}

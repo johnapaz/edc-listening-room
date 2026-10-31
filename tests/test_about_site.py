@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import build_about  # noqa: E402
 
-PAGES = ["", "using", "songs", "schedule", "faq", "privacy", "accessibility", "whats-new"]
+PAGES = ["", "using", "songs", "schedule", "faq", "privacy", "accessibility", "whats-new", "credits"]
 
 
 class Doc(HTMLParser):
@@ -120,6 +120,21 @@ class AboutSite(unittest.TestCase):
         for name in ("favicon.svg", "apple-touch-icon.png", "og.png"):
             self.assertTrue((self.out / name).is_file(), name)
 
+    def test_creator_credits_and_licensed_artwork(self):
+        credits = self.docs["credits"]
+        self.assertIn("John A. Paz", credits.text)
+        self.assertIn("All rights reserved", credits.text)
+        self.assertIn("not offered under an open-source", credits.text)
+        self.assertIn("/about/img/john-paz.webp", credits.text)
+        self.assertTrue((self.out / "about/img/john-paz.webp").is_file())
+        for url in ("https://johnapaz.com/", "https://www.linkedin.com/in/johnapaz",
+                    "https://www.instagram.com/john.paz.stories/", "https://github.com/johnapaz"):
+            self.assertIn(url, [a["href"] for a in credits.links])
+        self.assertEqual(credits.text.count('aria-hidden="true" focusable="false"'), 4)
+        app = (ROOT / "listening-room/index.html").read_text(encoding="utf-8")
+        self.assertIn('/about/credits/', app)
+        self.assertIn('John A. Paz', app)
+
     def test_live_numbers_come_from_the_data(self):
         stats = self.result["stats"]
         self.assertEqual(stats["lineup_entries"], len(self.perf))
@@ -159,7 +174,7 @@ class AboutSite(unittest.TestCase):
 
     def test_screenshots_ship_only_while_they_match_the_app(self):
         shots = json.loads((ROOT / "about-site/img/shots.json").read_text(encoding="utf-8"))
-        imgs = [i for d in self.docs.values() for i in d.imgs if i["src"].startswith("/about/img/")]
+        imgs = [i for d in self.docs.values() for i in d.imgs if i["src"].startswith("/about/img/") and i["src"] != "/about/img/john-paz.webp"]
         if shots.get("_app") == build_about.app_fingerprint():
             self.assertGreaterEqual(len(imgs), len([k for k in shots if not k.startswith("_")]))
         else:  # the app changed after the capture: no stale screens, the guide still works on links alone

@@ -6,7 +6,7 @@ Source for `https://listeningroom.app/about/`. `scripts/build_about.py` renders 
 |---|---|
 | `pages/NN-slug.html` | One page each, in nav order. A header comment sets `slug`, `title`, `nav`, `description`, and optionally `summary` (guide card) and `lede`. The body is an HTML fragment. Every `<h2>`/`<h3>` needs an `id`; those become the "On this page" list, section links and search results. |
 | `assets/` | `about.css` (same tokens as the app) and `about.js` (help search, copy-a-section-link, current-section marker). Pages work without JS. No inline scripts or `data:` URIs: the site CSP blocks both. |
-| `img/` | App screenshots plus `shots.json` (file, width, height). |
+| `img/` | App screenshots plus `shots.json` (file, width, height), and the first-party creator portrait `john-paz.webp` (always copied). |
 | `brand/` | `favicon.svg`, `apple-touch-icon.png`, `og.png` (link preview). Copied to the site root. |
 
 ## Directives
@@ -19,6 +19,8 @@ Resolved at build time against the same public data the app loads, so numbers an
 - `{{ext https://… | text}}`: external link, new tab, announced to screen readers.
 - `{{shot name | alt text | caption | wide}}`: screenshot from `img/shots.json`.
 - `{{list songs|days|stages|b2b|guides|playlist}}`: generated lists. `playlist` switches copy when `data/listening-room/playlist.json` is published and cross-account verified.
+
+The creator portrait is copied from John A. Paz’s own published portfolio image to <code>img/john-paz.webp</code> and is **not** subject to screenshot freshness checks. Social icons use Bootstrap Icons (MIT); see [third-party notices](../THIRD_PARTY_NOTICES.md).
 
 ## Refreshing screenshots
 
