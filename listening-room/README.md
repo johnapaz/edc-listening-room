@@ -11,6 +11,8 @@ Public, no-login music discovery at https://listeningroom.app. Independent and u
 
 Cloudflare Pages project `listening-room` builds `main` using `python3 -m unittest discover -s tests && python3 scripts/validate_edco_reference.py && python3 scripts/build_public_site.py`, output `public-site/`.
 
+The build also renders the About & Help pages at `/about/` from `about-site/` (see `about-site/README.md`), plus the site favicon, home-screen icon and link-preview image at the root.
+
 The build uses an explicit file and field allowlist. Never deploy or serve the repository root: artist source records include internal Notion links. Public output strips those and source-review metadata. Top-level `404.html` prevents SPA fallthrough from exposing misleading responses for private paths.
 
 DNS is hosted by Cloudflare, registration by Hover. Apex and www attach to Pages; www redirects to the apex. No Cloudflare Access policy or visitor authentication. No paid services or new runtime secrets.

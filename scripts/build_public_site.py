@@ -4,6 +4,8 @@ import json
 import shutil
 from pathlib import Path
 
+import build_about
+
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'public-site'
 
@@ -26,14 +28,15 @@ def build():
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir()
-    for name in ['index.html', 'app.js', 'lib.js', 'styles.css', 'about.html']:
+    for name in ['index.html', 'app.js', 'lib.js', 'styles.css']:
         dest = OUT / 'listening-room' / name
         dest.parent.mkdir(exist_ok=True)
         shutil.copyfile(ROOT / 'listening-room' / name, dest)
     shutil.copyfile(ROOT / 'index.html', OUT / 'index.html')
     # Disable SPA fallthrough so private/nonexistent paths return actual 404s.
     (OUT / '404.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><title>Not found · Listening Room</title><body><h1>Nothing here.</h1><a href="/">Back to Listening Room</a></body></html>')
-    (OUT / '_redirects').write_text('https://www.listeningroom.app/* https://listeningroom.app/:splat 301\n')
+    (OUT / '_redirects').write_text('https://www.listeningroom.app/* https://listeningroom.app/:splat 301\n'
+                                    '/listening-room/about.html /about/ 301\n')
     (OUT / '_headers').write_text('/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: no-referrer\n  X-Frame-Options: DENY\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n  Content-Security-Policy: default-src \'self\'; script-src \'self\'; style-src \'self\' \'unsafe-inline\'; img-src \'self\' https://img.youtube.com; connect-src \'self\'; object-src \'none\'; base-uri \'self\'; frame-ancestors \'none\'\n')
     art = load('data/edco-2026/artists.json')
     write('data/edco-2026/artists.json', {'artists': [fields(a, ['artist_id', 'display_name', 'search_name', 'aliases']) for a in art['artists']]})
@@ -45,7 +48,9 @@ def build():
     write('data/edco-2026/event.json', fields(load('data/edco-2026/event.json'), ['event_id', 'name', 'checked_on', 'timezone']))
     write('data/listening-room/songs.json', {'songs': load('data/listening-room/songs.json')['songs']})
     write('data/listening-room/playlist.json', load('data/listening-room/playlist.json'))
-    text = ''.join(p.read_text() for p in OUT.rglob('*') if p.is_file())
+    build_about.build(OUT)  # About & Help pages, screenshots and site-wide brand files
+    # Decode bytes so binary files (screenshots, icons) are scanned too instead of crashing read_text().
+    text = ''.join(p.read_bytes().decode('utf-8', 'ignore') for p in OUT.rglob('*') if p.is_file())
     for forbidden in ['app.notion.com', 'notion_page_url', 'GOOGLE_CLIENT_SECRET', 'GOOGLE_REFRESH_TOKEN', 'PLdOAWVle']:
         if forbidden in text:
             raise ValueError(f'Private data in public build: {forbidden}')
