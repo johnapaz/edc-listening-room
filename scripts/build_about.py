@@ -46,7 +46,7 @@ def plain(fragment):
 # ---------------------------------------------------------------- data
 class Data:
     def __init__(self):
-        perf = load("data/edco-2026/performances.json")
+        perf = load("data/edco-2026/current-lineup.json")
         self.checked_on = perf.get("checked_on")
         self.perf = sorted(perf["performances"], key=lambda p: (p["event_date"], p["source_order"]))
         self.artists = {a["artist_id"]: a for a in load("data/edco-2026/artists.json")["artists"]}
@@ -212,12 +212,12 @@ class Renderer:
 
     def list_playlist(self, page):
         pl = self.d.playlist
-        listen = self.app_link("listen", "Listen tab")
+        listen = self.app_link("listen", "Tracks tab")
         if pl.get("status") == "published" and pl.get("verified_cross_account") is True and str(pl.get("url", "")).startswith("https://"):
             return (f'<p>The {ESC(pl.get("label") or "event playlist")} is ready. Open it from the {listen}; it plays on YouTube Music. '
                     "Songs rotate so every matched artist gets a spin before anyone repeats.</p>")
         return ("<p>An event-wide playlist on YouTube Music is planned but not available yet. It won’t appear until it has been "
-                f"checked to play for everyone, not just the person who made it. Until then, the {listen} says “Coming soon” "
+                f"checked to play for everyone, not just the person who made it. Until then, the {listen} says “Not available” "
                 "instead of showing a link that doesn’t work. The plan is for songs to rotate so every artist gets a spin before anyone repeats.</p>")
 
     def list_guides(self, page):

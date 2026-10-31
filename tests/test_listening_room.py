@@ -15,6 +15,30 @@ def read(path):
 
 
 class ListeningRoomData(unittest.TestCase):
+    def test_public_lineup_matches_current_official_day_lists(self):
+        snapshot = read("data/edco-2026/sources/lineup-text-2026-10-31.json")
+        current = read("data/edco-2026/current-lineup.json")
+        rows = current["performances"]
+        self.assertEqual(current["checked_on"], "2026-10-31")
+        self.assertEqual(len(rows), 130)
+        self.assertEqual(len({r["performance_id"] for r in rows}), 130)
+        for day, names in snapshot["by_day"].items():
+            self.assertEqual([r["display_name"] for r in rows if r["day"] == day], names)
+        self.assertNotIn("Prospa", [r["display_name"] for r in rows])
+        self.assertEqual(sum(r["display_name"] == "Alves" for r in rows), 2)
+        self.assertEqual(sum(r["display_name"] == "Me n ü" for r in rows), 2)
+        self.assertEqual(sum(r["display_name"] == "RAJE" for r in rows), 2)
+        prior = {r["performance_id"] for r in read("data/edco-2026/performances.json")["performances"]}
+        for row in rows:
+            if row["performance_id"] not in prior:
+                self.assertIsNone(row["starts_at"])
+                self.assertIsNone(row["stage_id"])
+
+    def test_current_lineup_projection_is_reproducible(self):
+        result = subprocess.run(["python3", str(ROOT / "scripts/build_current_lineup.py"), "--check"],
+                                capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
     def test_songs_file_is_in_sync_with_reviewed_manifest(self):
         result = subprocess.run(["python3", str(ROOT / "scripts" / "build_listening_room_songs.py"), "--check"],
                                 capture_output=True, text=True)
@@ -83,7 +107,9 @@ class PublicBuild(unittest.TestCase):
         result = subprocess.run(["python3", str(ROOT / "scripts/build_public_site.py")], capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         out = ROOT / "public-site"
-        expected = {"index.html", "404.html", "_headers", "_redirects", "listening-room/index.html", "listening-room/app.js", "listening-room/lib.js", "listening-room/styles.css", "listening-room/redirect.js", "data/edco-2026/artists.json", "data/edco-2026/performances.json", "data/edco-2026/venues.json", "data/edco-2026/event.json", "data/listening-room/songs.json", "data/listening-room/playlist.json"}
+        self.assertEqual(read("public-site/data/edco-2026/performances.json")["performances"][0]["display_name"], "2AR")
+        self.assertEqual(len(read("public-site/data/edco-2026/performances.json")["performances"]), 130)
+        expected = {"listening-room/redirect.js", "index.html", "404.html", "_headers", "_redirects", "listening-room/index.html", "listening-room/app.js", "listening-room/lib.js", "listening-room/styles.css", "data/edco-2026/artists.json", "data/edco-2026/performances.json", "data/edco-2026/venues.json", "data/edco-2026/event.json", "data/listening-room/songs.json", "data/listening-room/playlist.json"}
         # About & Help (scripts/build_about.py): pages, assets and screenshots enumerated from their sources.
         src = ROOT / "about-site"
         slugs = [re.search(r"^slug:(.*)$", p.read_text(encoding="utf-8"), re.M).group(1).strip() for p in (src / "pages").glob("*.html")]
@@ -94,6 +120,7 @@ class PublicBuild(unittest.TestCase):
         self.assertEqual({str(p.relative_to(out)) for p in out.rglob("*") if p.is_file()}, expected)
         # The first About page lived at /listening-room/about.html; keep old shared links working.
         self.assertIn("/listening-room/about.html /about/ 301", (out / "_redirects").read_text())
+        self.assertIn("/listening-room/about /about/ 301", (out / "_redirects").read_text())
         for path in out.rglob("*.json"):
             text = path.read_text()
             self.assertNotIn("notion", text.lower())

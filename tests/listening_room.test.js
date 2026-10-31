@@ -7,7 +7,7 @@ const L = require("../listening-room/lib.js");
 
 const rd = p => JSON.parse(fs.readFileSync(path.join(__dirname, "..", p), "utf8"));
 const idx = L.index({
-  performances: rd("data/edco-2026/performances.json").performances,
+  performances: rd("data/edco-2026/current-lineup.json").performances,
   artists: rd("data/edco-2026/artists.json").artists,
   stages: rd("data/edco-2026/venues.json").stages,
   songs: rd("data/listening-room/songs.json").songs
@@ -15,10 +15,10 @@ const idx = L.index({
 const names = rows => rows.map(p => p.display_name);
 
 test("day filters return only that day and All returns the full lineup", () => {
-  assert.equal(L.filterLineup(idx, { day: "all", q: "" }).length, 110);
+  assert.equal(L.filterLineup(idx, { day: "all", q: "" }).length, 130);
   for (const d of ["2026-11-06", "2026-11-07", "2026-11-08"]) {
     const rows = L.filterLineup(idx, { day: d, q: "" });
-    assert.equal(rows.length, d === "2026-11-08" ? 36 : 37);
+    assert.equal(rows.length, d === "2026-11-08" ? 44 : 43);
     assert.ok(rows.every(p => p.event_date === d));
   }
 });
@@ -36,6 +36,15 @@ test("search and day combine; no match gives an empty list", () => {
   const sat = L.filterLineup(idx, { day: "2026-11-07", q: "acraze" });
   assert.ok(sat.every(p => p.event_date === "2026-11-07"));
   assert.equal(L.filterLineup(idx, { day: "all", q: "zzzzqqq" }).length, 0);
+});
+
+test("music availability filter shows only acts with tracks and survives shared links", () => {
+  const ctx = { day: "all", q: "", stage: "", tracksOnly: true };
+  const rows = L.filterLineup(idx, ctx);
+  assert.ok(rows.length > 0 && rows.length < 130);
+  assert.ok(rows.every(p => L.songCount(p, idx) > 0));
+  assert.deepEqual(L.parseHash(L.buildHash("lineup", ctx)).ctx, ctx);
+  assert.equal(L.filterLineup(idx, { ...ctx, q: "afrojack" }).length, 0);
 });
 
 test("B2B performance exposes songs from each credited artist", () => {
@@ -56,7 +65,7 @@ test("only reviewed direct YouTube video URLs are exposed", () => {
 test("unscheduled billings are explicitly unknown; conflicts are flagged", () => {
   const plain = { schedule_status: "unknown", stage_id: null, starts_at: null, ends_at: null, lineup_status: "official_day_confirmed" };
   assert.equal(L.scheduleState(plain, idx).kind, "unknown");
-  const conflict = idx.performances.find(p => p.lineup_status === "official_sources_conflict");
+  const conflict = { ...plain, lineup_status: "official_sources_conflict" };
   assert.equal(L.scheduleState(conflict, idx).kind, "conflict");
 });
 
@@ -82,7 +91,7 @@ test("stage filter and options only use verified schedule data", () => {
 });
 
 test("route state round-trips so Back preserves search and day", () => {
-  const ctx = { day: "2026-11-07", q: "acraze b2b", stage: "" };
+  const ctx = { day: "2026-11-07", q: "acraze b2b", stage: "", tracksOnly: true };
   const h = L.buildHash("artist", ctx, "edco26:2026-11-07:x y");
   const r = L.parseHash(h);
   assert.equal(r.view, "artist");

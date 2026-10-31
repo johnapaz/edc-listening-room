@@ -3,38 +3,33 @@ slug: using
 title: Using Listening Room
 nav: Using Listening Room
 description: A step-by-step guide to the lineup, search, day filters, artist pages, B2B sets, opening songs on YouTube, and sharing links.
-summary: A tour of the lineup, search, day filters, artist pages, B2B sets and sharing, with screenshots.
-lede: A quick tour, from the lineup to a song playing on YouTube. Every screenshot is the real app on a phone; it works the same on a tablet or computer.
+summary: A tour of the lineup, search, day filters, artist pages, B2B sets and sharing, with links into the app.
+lede: A quick tour, from the lineup to a song playing on YouTube. Use the links in this guide to try each view in the current app.
 -->
 <h2 id="lineup">The lineup</h2>
 <p>Listening Room opens on the lineup. Everything starts here.</p>
-{{shot lineup | The Listening Room lineup on a phone, with numbered markers on the search box, the day buttons, the discovery cards and the first lineup row. | The lineup on a phone. Song artwork comes from YouTube; when it can’t load, you’ll see the artist’s initials instead.}}
 <ol class="legend">
   <li><span><strong>Search</strong> finds any act by name.</span></li>
   <li><span><strong>Day buttons</strong> show everyone, or just Friday, Saturday or Sunday.</span></li>
-  <li><span><strong>Discovery cards</strong> highlight a few acts that have a reviewed song, so there’s always something to play.</span></li>
-  <li><span><strong>Lineup rows</strong> show each act, the day they play, and whether they have songs yet (“Songs on the way” means not yet).</span></li>
+  <li><span><strong>Discovery cards</strong> highlight a few acts that have an available track, so there’s always something to play.</span></li>
+  <li><span><strong>Lineup rows</strong> show each act, the day they play, and whether they have songs yet (“No tracks added” means there are no tracks for that act yet).</span></li>
 </ol>
 <p>Acts appear day by day, in the order the official sources list them. That isn’t the running order; see {{page schedule#running-order | why}}.</p>
 
 <h2 id="search">Search for an act</h2>
-<p>Type any part of a name in <em>Who are you here to hear?</em> Results update as you type.</p>
+<p>Type any part of a name in <em>Artist name or B2B partner</em> Results update as you type.</p>
 <ul>
   <li><strong>Accents and capitals don’t matter.</strong> {{app lineup?q=obskur | “obskur”}} finds Obskür.</li>
   <li><strong>Partial names work.</strong> “garr” finds Martin Garrix.</li>
   <li><strong>B2B partners are searchable.</strong> Searching either artist finds the shared set. {{app lineup?q=luke%20dean | “luke dean”}} finds both of Luke Dean’s B2B sets.</li>
 </ul>
-{{shot search | Search results for “luke dean” showing two B2B lineup entries. | Searching one artist also finds their back-to-back sets.}}
-<p>No match? You’ll see “No artists match.” Clear the search or choose <strong>All</strong> days.</p>
+<p>No match? You’ll see “No artists match these filters.” Clear the search or choose <strong>All</strong> days.</p>
 
 <h2 id="days">Browse by day</h2>
 <p>Tap <strong>Fri</strong>, <strong>Sat</strong> or <strong>Sun</strong> to narrow the lineup. A short line above the list confirms how many acts you’re looking at. You can also tap the day shown under any act to see everyone playing that day.</p>
 {{list days}}
-{{shot day | The lineup filtered to Friday, Nov 6, with the Fri button selected. | Friday selected. The day you choose stays put when you open an act and come back.}}
-
 <h2 id="artist-pages">Artist pages</h2>
 <p>Tap an act’s name to open its page. Here’s what you’ll find:</p>
-{{shot artist | Martin Garrix’s artist page with numbered markers on the schedule line, the song title and the YouTube button. | An artist page with one reviewed song.}}
 <ol class="legend">
   <li><span><strong>Day, stage and time.</strong> Times are shown in Eastern Time. If they come from an organizer poster and haven’t been cross-checked, the page says so. Learn more in {{page schedule | Days, stages &amp; set times}}.</span></li>
   <li><span><strong>Song title.</strong> Opens that exact recording on YouTube.</span></li>
@@ -43,12 +38,9 @@ lede: A quick tour, from the lineup to a song playing on YouTube. Every screensh
 <p>Tap the artist’s name at the top to see every set they’re part of. Try {{app artist/edco26:2026-11-08:martin-garrix | Martin Garrix}}.</p>
 
 <h3 id="no-songs-yet">When an act doesn’t have a song yet</h3>
-<p>Every act on the lineup has a page, even before a song has been reviewed for them. You’ll see “We’re still finding the right songs for this artist.” instead of a guess. Here’s {{app artist/edco26:2026-11-06:afrojack | an example}}.</p>
-{{shot nosong | An artist page with no reviewed song yet, showing the initials artwork and the message that songs are still being found. | No song yet, and no guesswork: the page says so plainly.}}
-
+<p>Every act on the lineup has a page, even before a song has been reviewed for them. You’ll see “No tracks have been added for this act.” instead of a guess. Here’s {{app artist/edco26:2026-11-06:afrojack | an example}}.</p>
 <h2 id="b2b">Back-to-back (B2B) sets</h2>
-<p>A B2B is two or more artists playing one set together. Listening Room keeps the billing exactly as announced and groups songs under each artist, so you know whose track you’re hearing. Tap either name to see that artist on their own.</p>
-{{shot b2b | The ACRAZE B2B CID page with a reviewed song listed under each artist. | Songs are grouped under each artist in a B2B.}}
+<p>A B2B is two or more artists playing one set together. Listening Room keeps the billing exactly as announced and groups songs under each artist, so you know whose track you’re hearing. Tap either name to see that artist on their own. To skip acts with no music links, select <strong>With tracks</strong> on the lineup.</p>
 <p>All {{stat b2b}} B2B sets on this year’s lineup:</p>
 {{list b2b}}
 
@@ -56,9 +48,8 @@ lede: A quick tour, from the lineup to a song playing on YouTube. Every screensh
 <p>Song titles and <strong>YouTube</strong> buttons open the recording in a new tab, or in the YouTube app if you have it. Listening Room never plays music itself and never asks you to sign in to anything.</p>
 <p>If a song says <span class="tagline">Reviewed recording; version may differ</span>, it’s the right song by the right artist, but it might be a different edit or length than you know. {{page songs | How songs are chosen}} explains the review.</p>
 
-<h2 id="listen-tab">The Listen tab</h2>
-<p>The bar at the bottom of the screen switches between <strong>Lineup</strong> and <strong>Listen</strong>. Listen gathers every reviewed song in one list, which is handy when you just want to press play.</p>
-{{shot listen | The Listen tab listing reviewed songs, with the event playlist marked Coming soon. | The Listen tab. The event playlist will appear here once it’s ready.}}
+<h2 id="listen-tab">The Tracks tab</h2>
+<p>The bar at the bottom of the screen switches between <strong>Lineup</strong> and <strong>Tracks</strong>. Tracks gathers every reviewed song in one list, which is handy when you just want to press play.</p>
 {{list playlist}}
 
 <h2 id="sharing">Going back and sharing</h2>
@@ -70,4 +61,3 @@ lede: A quick tour, from the lineup to a song playing on YouTube. Every screensh
 
 <h2 id="bigger-screens">On a tablet or computer</h2>
 <p>The same app spreads out on bigger screens, with more discovery cards and room for artwork. On a keyboard, press <span class="kbd">Tab</span> to move between links and buttons, and <span class="kbd">Enter</span> to open them. See {{page accessibility}} for more.</p>
-{{shot desktop | The Listening Room lineup on a desktop browser with four discovery cards. | Listening Room on a laptop.| wide}}

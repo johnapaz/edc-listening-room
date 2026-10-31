@@ -65,10 +65,11 @@
     return q.split(" ").every(tok => hay.includes(tok));
   }
 
-  function filterLineup(idx, { day, q, stage }) {
+  function filterLineup(idx, { day, q, stage, tracksOnly }) {
     return idx.performances.filter(p =>
       (validDay(day) === "all" || p.event_date === day) &&
       (!stage || (p.stage_id === stage && p.schedule_status === "verified")) &&
+      (!tracksOnly || songCount(p, idx) > 0) &&
       matches(p, idx, q));
   }
 
@@ -109,7 +110,7 @@
     let parts;
     try { parts = path.split("/").filter(Boolean).map(decodeURIComponent); }
     catch (_e) { parts = []; }
-    const ctx = { day: validDay(params.get("day") || "all"), q: params.get("q") || "", stage: params.get("stage") || "" };
+    const ctx = { day: validDay(params.get("day") || "all"), q: params.get("q") || "", stage: params.get("stage") || "", tracksOnly: params.get("music") === "1" };
     if (parts[0] === "artist" && parts[1]) return { view: "artist", id: parts[1], ctx };
     if (parts[0] === "listen") return { view: "listen", ctx };
     return { view: "lineup", ctx };
@@ -120,6 +121,7 @@
     if (ctx && ctx.day && ctx.day !== "all") params.set("day", ctx.day);
     if (ctx && ctx.q) params.set("q", ctx.q);
     if (ctx && ctx.stage) params.set("stage", ctx.stage);
+    if (ctx && ctx.tracksOnly) params.set("music", "1");
     const qs = params.toString();
     const path = view === "artist" ? "artist/" + encodeURIComponent(id) : view;
     return "#/" + path + (qs ? "?" + qs : "");

@@ -60,7 +60,7 @@ class AboutSite(unittest.TestCase):
             d.text = path.read_text(encoding="utf-8")
             d.feed(d.text)
             cls.docs[slug] = d
-        perf = json.loads((ROOT / "data/edco-2026/performances.json").read_text(encoding="utf-8"))["performances"]
+        perf = json.loads((ROOT / "data/edco-2026/current-lineup.json").read_text(encoding="utf-8"))["performances"]
         artists = json.loads((ROOT / "data/edco-2026/artists.json").read_text(encoding="utf-8"))["artists"]
         cls.app_ids = {p["performance_id"] for p in perf} | {a["artist_id"] for a in artists}
         cls.perf = perf

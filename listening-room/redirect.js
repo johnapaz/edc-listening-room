@@ -1,3 +1,3 @@
 "use strict";
-// Root (/) -> app, keeping the hash route so shared links like /#/artist/<id> open that page.
-location.replace("/listening-room/" + location.hash);
+// Preserve shared root links while the app remains hosted under /listening-room/.
+window.location.replace("/listening-room/" + window.location.search + window.location.hash);
