@@ -92,6 +92,7 @@ class Data:
             "days": len(DAYS),
             "songs": len(self.songs),
             "song_artists": len(self.by_artist),
+            "spotify_songs": sum(bool(s.get("spotify_url")) for s in self.songs),
             "entries_with_songs": sum(self.has_songs(x) for x in p),
             "entries_without_songs": sum(not self.has_songs(x) for x in p),
             "b2b": sum(x.get("performance_type") == "b2b" for x in p),
@@ -271,13 +272,19 @@ class Renderer:
     def list_playlist(self, page):
         pl = self.d.playlist
         listen = self.app_link("listen", "Tracks tab")
+        self.ui_strings.add("Event playlists")
+        official = pl.get("official_spotify") or {}
+        spotify = ""
+        if str(official.get("url", "")).startswith("https://open.spotify.com/playlist/"):
+            spotify = (f' The same card links {ESC(official.get("curator") or "the organizer")}’s own '
+                       f'{ESC(official.get("label") or "official playlist")} on Spotify. That one is theirs: Listening Room '
+                       "doesn’t make, edit or review it.")
         if pl.get("status") == "published" and pl.get("verified_cross_account") is True and str(pl.get("url", "")).startswith("https://"):
-            return (f'<p>The {ESC(pl.get("label") or "event playlist")} is ready. Open it from the {listen}; it plays on YouTube Music. '
-                    "Songs rotate so every matched artist gets a spin before anyone repeats.</p>")
-        self.ui_strings.add("Not available")
-        return ("<p>An event-wide playlist on YouTube Music is planned but not available yet. It won’t appear until it has been "
-                f"checked to play for everyone, not just the person who made it. Until then, the {listen} says “Not available” "
-                "instead of showing a link that doesn’t work. The plan is for songs to rotate so every artist gets a spin before anyone repeats.</p>")
+            return (f'<p>The {ESC(pl.get("label") or "event playlist")} is ready. Open it from <strong>Event playlists</strong> in the {listen}; '
+                    f"it plays on YouTube Music. Songs rotate so every matched artist gets a spin before anyone repeats.{spotify}</p>")
+        return ("<p>Our own event-wide playlist on YouTube Music is planned but not available yet. It won’t appear until it has been "
+                f"checked to play for everyone, not just the person who made it. The <strong>Event playlists</strong> card in the {listen} "
+                f"says so instead of showing a link that doesn’t work.{spotify}</p>")
 
     def list_guides(self, page):
         cards = []

@@ -2,7 +2,7 @@
 slug: songs
 title: How tracks are chosen
 nav: How tracks are chosen
-description: Exact YouTube recordings with checked artist credits and source metadata. Read how tracks are selected and see today's coverage.
+description: Exact YouTube recordings, with matching Spotify links, checked artist credits and source metadata. Read how tracks are selected and see today's coverage.
 summary: How recordings and artist credits are checked, with today's track coverage.
 lede: Every track opens one specific recording on YouTube. Here’s how we check the links and artist credits.
 -->
@@ -16,11 +16,16 @@ lede: Every track opens one specific recording on YouTube. Here’s how we check
 </ul>
 <p>The original 12 tracks received personal playback review. Additional tracks have source-checked titles, uploaders, artist credits and artwork, with approval for inclusion. Those source checks do not claim personal playback. Availability can vary by country or account, and YouTube Music availability is not guaranteed.</p>
 
+<h2 id="spotify">Spotify links</h2>
+<p>{{stat spotify_songs}} of the {{stat songs}} tracks also have a <strong>Spotify</strong> button. It opens the exact Spotify track that the YouTube video was matched against, so both buttons point to the same song. Tracks without one simply didn’t start from a Spotify source; nothing is guessed to fill the gap.</p>
+<p>Spotify links haven’t had separate playback review. A track can be unavailable on Spotify in some countries or plans. The <strong>{{ui Event playlists}}</strong> card also links Insomniac’s official EDC Orlando 2026 playlist on Spotify. That playlist is theirs, and Listening Room doesn’t review or change it.</p>
+
 <h2 id="labels">What the labels mean</h2>
 <div class="table-wrap"><table>
   <thead><tr><th scope="col">You see</th><th scope="col">What it means</th></tr></thead>
   <tbody>
     <tr><td data-label="You see"><span class="sample">A track title and a YouTube button</span></td><td data-label="Meaning">A reviewed recording. Tap either to open it on YouTube.</td></tr>
+    <tr><td data-label="You see"><span class="sample">A {{ui Spotify ↗}} button</span></td><td data-label="Meaning">The same song on Spotify. {{page songs#spotify | About Spotify links}}.</td></tr>
     <tr><td data-label="You see"><span class="sample">{{ui Version may differ from the original release.}}</span></td><td data-label="Meaning">Right track, right artist, but the video may be a different edit or length than the original release.</td></tr>
     <tr><td data-label="You see"><span class="sample">{{ui No tracks added}}</span></td><td data-label="Meaning">On the lineup: the act is listed, but no track has passed review yet.</td></tr>
     <tr><td data-label="You see"><span class="sample">{{ui No tracks added for this artist.}}</span></td><td data-label="Meaning">In a B2B set: this artist doesn’t have a reviewed track yet, even if their partner does.</td></tr>

@@ -6,7 +6,8 @@ Public, no-login music discovery at https://listeningroom.app. Independent and u
 - Source: `listening-room/`; 295 direct YouTube recordings across 124 artist identities: the original 12 playback-reviewed tracks plus owner-authorized source-reviewed links. Other artists stay discoverable with intentional artwork fallbacks and honest empty states. The generated About pages calculate current coverage from the data.
 - Images: unchanged, provider-hosted YouTube thumbnails for those exact checked videos, labeled as YouTube artwork and linked to the original video. No generated or scraped artist portraits. Image failure preserves layout and initials. See https://developers.google.com/youtube/data/reference/rest/v3/thumbnails and https://developers.google.com/youtube/terms/developer-policies.
 - Artist names, individual B2B credits, exact song titles and day facets are links. Browser history retains the original search/filter context. Stage filters remain hidden until independently verified; poster-transcribed times are caveated.
-- Shared event playlist remains unavailable. No private playlist or Notion data is published.
+- Spotify: plain outbound links on 255 of 295 tracks, only where the reviewed YouTube match was made against that exact Spotify track ID, plus Insomniac's official Spotify playlist in the Event playlists card. No Spotify API, embeds or assets. CI checks every link through Spotify's public oEmbed (`.github/workflows/spotify-links.yml`). See `docs/SPOTIFY-LINKS-2026-10-31.md`.
+- Our own shared YouTube Music event playlist remains unavailable. No private playlist or Notion data is published.
 
 ## Build and deploy
 
