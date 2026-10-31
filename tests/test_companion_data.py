@@ -53,6 +53,7 @@ class CompanionData(unittest.TestCase):
         with patch.object(pipeline, 'read', side_effect=ambiguous):
             with self.assertRaisesRegex(ValueError, 'Ambiguous historical billing'):
                 pipeline.project()
+
         def alias_collision(name):
             doc = original(name)
             if name == 'artists.json':
@@ -61,6 +62,20 @@ class CompanionData(unittest.TestCase):
         with patch.object(pipeline, 'read', side_effect=alias_collision):
             with self.assertRaisesRegex(ValueError, 'Ambiguous artist alias'):
                 pipeline.project()
+
+
+    def test_current_event_dates_and_credit_roles_cannot_drift(self):
+        doc = copy.deepcopy(self.doc)
+        row = doc['performances'][0]
+        row['event_date'] = '2026-11-13'
+        row['performance_id'] = row['performance_id'].replace('2026-11-06', row['event_date'])
+        with self.assertRaisesRegex(ValueError, 'outside festival'):
+            validator.validate(doc)
+        doc = copy.deepcopy(self.doc)
+        row = next(p for p in doc['performances'] if 'MC Dino' in p['display_name'])
+        row['credits'][0]['role'] = 'performer'
+        with self.assertRaisesRegex(ValueError, 'roles changed'):
+            validator.validate(doc)
 
     def test_qualifier_changes_and_previous_conflicts_are_not_erased(self):
         changed = [p for p in self.doc['performances'] if p['reconciliation']['status'] == 'qualifier_changed']
@@ -86,7 +101,13 @@ class CompanionData(unittest.TestCase):
     def test_public_field_eligibility_and_source_art_exclusion(self):
         p = next(p for p in self.doc['performances'] if p['starts_at'])
         p['public_eligibility']['stage'] = p['public_eligibility']['times'] = False
+        p['reconciliation']['notion_page_url'] = 'private'
+        self.doc['sources'][0]['private_note'] = 'private'
+        p['credits'][0]['identity_evidence_ref'] = 'private'
         exported = public.public_lineup(self.doc)
+        self.assertNotIn('notion_page_url', json.dumps(exported))
+        self.assertNotIn('private_note', json.dumps(exported))
+        self.assertNotIn('identity_evidence_ref', json.dumps(exported))
         row = next(r for r in exported['performances'] if r['performance_id'] == p['performance_id'])
         self.assertIsNone(row['stage_id']); self.assertIsNone(row['starts_at']); self.assertIsNone(row['ends_at'])
         self.assertEqual(exported['coverage']['timed'], 106)
