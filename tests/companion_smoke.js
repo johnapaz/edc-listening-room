@@ -98,11 +98,11 @@ const server = http.createServer((req, res) => {
       await page.goto(base + '/companion/#/explore?stage=missing');
       await page.waitForSelector('.error'); assert.match(await page.textContent('main'), /not found/); pass('bad stage has meaningful unavailable state');
       await page.route('**/data/listening-room/songs.json', route => route.fulfill({ status: 503, body: '{}' }));
-      await page.goto(base + '/companion/#/artist/artist%3Acid');
+      await page.goto(base + '/companion/#/artist/artist%3Acid'); await page.reload();
       await page.waitForSelector('#detail-title'); assert.match(await page.textContent('main'), /Listening coverage could not load/);
       await page.unroute('**/data/listening-room/songs.json'); pass('music failure preserves festival navigation');
       await page.route('**/data/edco-2026/performances.json', route => route.fulfill({ status: 503, body: '{}' }));
-      await page.goto(base + '/companion/'); await page.waitForSelector('.error');
+      await page.goto(base + '/companion/'); await page.reload(); await page.waitForSelector('.error');
       assert.match(await page.textContent('main'), /No offline copy is guaranteed/);
       await page.unroute('**/data/edco-2026/performances.json');
       await page.getByRole('button', { name: 'Try again' }).click();
