@@ -34,6 +34,10 @@ def build():
         dest = OUT / 'listening-room' / name
         dest.parent.mkdir(exist_ok=True)
         shutil.copyfile(ROOT / 'listening-room' / name, dest)
+    # Self-hosted display face (SIL OFL 1.1; see THIRD_PARTY_NOTICES.md). Listed by name, never a folder copy.
+    (OUT / 'listening-room' / 'fonts').mkdir()
+    shutil.copyfile(ROOT / 'listening-room' / 'fonts' / 'bricolage-grotesque-latin-800.woff2',
+                    OUT / 'listening-room' / 'fonts' / 'bricolage-grotesque-latin-800.woff2')
     shutil.copyfile(ROOT / 'index.html', OUT / 'index.html')
     # Disable SPA fallthrough so private/nonexistent paths return actual 404s.
     (OUT / '404.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><title>Not found · Listening Room</title><body><h1>Nothing here.</h1><a href="/">Back to Listening Room</a></body></html>')

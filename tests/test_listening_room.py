@@ -127,7 +127,7 @@ class PublicBuild(unittest.TestCase):
         self.assertRegex(app_html, r'app\.js\?v=[a-f0-9]{12}')
         self.assertRegex(app_html, r'lib\.js\?v=[a-f0-9]{12}')
         self.assertRegex(app_html, r'styles\.css\?v=[a-f0-9]{12}')
-        expected = {"listening-room/redirect.js", "index.html", "404.html", "_headers", "_redirects", "listening-room/index.html", "listening-room/app.js", "listening-room/lib.js", "listening-room/styles.css", "data/edco-2026/artists.json", "data/edco-2026/performances.json", "data/edco-2026/venues.json", "data/edco-2026/event.json", "data/listening-room/songs.json", "data/listening-room/playlist.json"}
+        expected = {"listening-room/redirect.js", "index.html", "404.html", "_headers", "_redirects", "listening-room/index.html", "listening-room/app.js", "listening-room/lib.js", "listening-room/styles.css", "listening-room/fonts/bricolage-grotesque-latin-800.woff2", "data/edco-2026/artists.json", "data/edco-2026/performances.json", "data/edco-2026/venues.json", "data/edco-2026/event.json", "data/listening-room/songs.json", "data/listening-room/playlist.json"}
         # About & Help (scripts/build_about.py): pages, assets and screenshots enumerated from their sources.
         src = ROOT / "about-site"
         slugs = [re.search(r"^slug:(.*)$", p.read_text(encoding="utf-8"), re.M).group(1).strip() for p in (src / "pages").glob("*.html")]

@@ -7,48 +7,44 @@ summary: A tour of the lineup, search, filters, artist pages, B2B sets and shari
 lede: A quick tour, from the lineup to a track playing on YouTube. Screenshots show the app on a phone; the links open each view in the app itself.
 -->
 <h2 id="lineup">The lineup</h2>
-<p>Listening Room opens on the lineup. Everything starts here.</p>
-{{shot lineup | The Listening Room lineup on a phone, with numbered markers on the search box, the day buttons, the With tracks filter, the Tracks to try cards and the first lineup row. | The lineup on a phone. Track artwork comes from YouTube; when it can’t load, you’ll see the artist’s initials instead.}}
+<p>Listening Room opens on the lineup for one festival day. Before the festival that’s Friday; during it, it’s today.</p>
+{{shot lineup | The Listening Room lineup on a phone, with numbered markers on the day buttons, the Hear Friday cards, the sort switch and the first lineup row. | The lineup on a phone. Track artwork comes from YouTube; when it can’t load, you’ll see the artist’s initials instead.}}
 <ol class="legend">
-  <li><span><strong>{{ui Search artists}}</strong> finds any act by name.</span></li>
-  <li><span><strong>Day buttons</strong> show everyone, or just Friday, Saturday or Sunday.</span></li>
-  <li><span><strong>{{ui With tracks}}</strong> hides acts that don’t have a track yet. <strong>{{ui All artists}}</strong> shows everyone again.</span></li>
-  <li><span><strong>{{ui Tracks to try}}</strong> highlights a few acts with a track, so there’s always something to play. <em>All tracks →</em> opens the full list.</span></li>
-  <li><span><strong>Lineup rows</strong> show each act, their day, how many tracks they have (“{{ui No tracks added}}” means none yet) and their set time when one is known.</span></li>
+  <li><span><strong>Day buttons</strong> switch between Friday, Saturday and Sunday, with the number of acts each day.</span></li>
+  <li><span><strong>Hear Friday</strong> (or Saturday, or Sunday) is a row of tracks from that day’s acts. Swipe it, or tap <strong>{{ui Show others}}</strong> to reorder the cards.</span></li>
+  <li><span><strong>{{ui By time}}</strong> and <strong>{{ui A–Z}}</strong> sort the day’s acts by poster start time or by name.</span></li>
+  <li><span><strong>Lineup rows</strong> show the start time, the act, their stage and how many tracks they have (“{{ui No tracks yet}}” means none). The round play button opens their first track on YouTube.</span></li>
 </ol>
-<p>With <strong>All</strong> days selected, the lineup is grouped under a heading for each day. Within a day, acts are listed alphabetically, which isn’t the running order; see {{page schedule#running-order | why}}.</p>
+<p>Times come from the organizer’s posters, so the line above the list says “{{ui Times are from organizer posters and can change.}}” Sorting by time isn’t a confirmed running order; see {{page schedule#running-order | why}}.</p>
 
 <h2 id="search">Search for an act</h2>
-<p>Type any part of a name in the search box (<em>{{ui Artist name or B2B partner}}</em>). Results update as you type.</p>
+<p>On a phone, tap the magnifying glass at the top. On a bigger screen the search box is always there (<em>{{ui Artist or B2B partner}}</em>). Search looks across all three days and updates as you type.</p>
 <ul>
   <li><strong>Accents and capitals don’t matter.</strong> {{app lineup?q=obskur | “obskur”}} finds {{hit obskur}}.</li>
   <li><strong>Partial names work.</strong> {{app lineup?q=garr | “garr”}} finds {{hit garr}}.</li>
   <li><strong>B2B partners are searchable.</strong> Searching either artist finds the shared set: {{app lineup?q=acraze | “acraze”}} finds ACRAZE B2B CID.</li>
 </ul>
 {{shot search | Search results for “acraze” showing the ACRAZE B2B CID set. | Searching one artist also finds their back-to-back sets.}}
-<p>No match? You’ll see “{{ui No artists match these filters.}}” with a <strong>{{ui Clear filters}}</strong> button that resets search, day and track filters.</p>
+<p>No match? You’ll see a short message with a <strong>{{ui Clear search}}</strong> button. Tapping a day button also clears the search.</p>
 
 <h2 id="days">Browse by day</h2>
-<p>Tap <strong>Fri</strong>, <strong>Sat</strong> or <strong>Sun</strong> to narrow the lineup. A short line above the list confirms how many acts you’re looking at. You can also tap the day shown under any act to see everyone playing that day.</p>
+<p>Tap <strong>Friday</strong>, <strong>Saturday</strong> or <strong>Sunday</strong>. The day you choose is part of the page’s link and stays put when you open an act and come back.</p>
 {{list days}}
-{{shot day | The lineup filtered to Friday, Nov 6, with the Fri button selected. | Friday selected. The day you choose stays put when you open an act and come back.}}
-
-<h2 id="with-tracks">Only acts with tracks</h2>
-<p>Most acts don’t have a reviewed track yet. Tap <strong>{{ui With tracks}}</strong> to see just the ones you can play now. It combines with search and days, and it’s part of the link if you share the view: {{app lineup?music=1 | acts with tracks}}.</p>
-{{shot tracks | The lineup with the With tracks filter selected, showing only acts that have tracks. | With tracks selected: only acts you can listen to right now.}}
+{{shot day | The lineup for Saturday, Nov 7, with the Saturday button selected. | Saturday selected.}}
 
 <h2 id="artist-pages">Artist pages</h2>
 <p>Tap an act’s name to open its page. Here’s what you’ll find:</p>
-{{shot artist | Martin Garrix’s artist page with numbered markers on the set time line, the track title and the YouTube button. | An artist page with one track.}}
+{{shot artist | Martin Garrix’s artist page with numbered markers on the day, stage and time chips, the play button and the track list. | An artist page.}}
 <ol class="legend">
-  <li><span><strong>Stage and time.</strong> Times are in Eastern Time. Times copied from an organizer poster are marked “{{ui not yet cross-checked}}”. Learn more in {{page schedule | Days, stages &amp; set times}}.</span></li>
-  <li><span><strong>Track title.</strong> Opens that exact recording on YouTube.</span></li>
-  <li><span><strong>YouTube button.</strong> Does the same thing with a bigger target.</span></li>
+  <li><span><strong>Day, stage and time.</strong> Times are in Eastern Time. Times copied from an organizer poster are marked “{{ui poster time}}” in amber. Learn more in {{page schedule | Days, stages &amp; set times}}.</span></li>
+  <li><span><strong>Play button.</strong> Opens the act’s first track on YouTube.</span></li>
+  <li><span><strong>Tracks.</strong> Each title, and the round button beside it, opens that exact recording on YouTube.</span></li>
 </ol>
-<p>Tap the artist’s name at the top to see every set they’re part of. Try {{app artist/edco26:2026-11-08:martin-garrix | Martin Garrix}}.</p>
+<p>The share button at the top copies or shares a link to the act. The arrow at the top left goes back to the day you came from.</p>
+<p>In a B2B, tap either artist’s name to see every set they’re part of. Try {{app artist/edco26:2026-11-08:martin-garrix | Martin Garrix}}.</p>
 
 <h3 id="no-songs-yet">When an act doesn’t have a track yet</h3>
-<p>Every act on the lineup has a page, even before a track has been reviewed for them. You’ll see “{{ui No tracks have been added for this act.}}” instead of a guess, plus a link to the tracks that are available. Here’s {{app artist/edco26:2026-11-07:allnightkev | an example}}.</p>
+<p>Every act on the lineup has a page, even before a track has been reviewed for them. You’ll see “{{ui No tracks added yet for this act.}}” instead of a guess, plus a link to the tracks that are available. Here’s {{app artist/edco26:2026-11-07:allnightkev | an example}}.</p>
 {{shot nosong | An artist page with no track yet, showing the initials artwork and the message that no tracks have been added. | No track yet, and no guesswork: the page says so plainly.}}
 
 <h2 id="b2b">Back-to-back (B2B) sets</h2>
@@ -58,21 +54,21 @@ lede: A quick tour, from the lineup to a track playing on YouTube. Screenshots s
 {{list b2b}}
 
 <h2 id="songs">Opening a track</h2>
-<p>Track titles and <strong>YouTube</strong> buttons open the recording in a new tab, or in the YouTube app if you have it. Listening Room never plays music itself and never asks you to sign in to anything.</p>
+<p>Track titles and play buttons open the recording in a new tab, or in the YouTube app if you have it. Listening Room never plays music itself and never asks you to sign in to anything.</p>
 <p>If a track says “<span class="tagline">{{ui Version may differ from the original release.}}</span>”, it’s the right track by the right artist, but the video might be a different edit or length than the one you know. {{page songs | How tracks are chosen}} explains the review.</p>
 
 <h2 id="listen-tab">The Tracks tab</h2>
-<p>The bar at the bottom of the screen switches between <strong>{{ui Lineup}}</strong> and <strong>{{ui Tracks}}</strong>. Tracks gathers every reviewed track in one list, which is handy when you just want to press play.</p>
-{{shot listen | The Tracks tab listing reviewed tracks with YouTube buttons. | The Tracks tab: every reviewed track in one place.}}
+<p>On a phone, the bar at the bottom of the screen switches between <strong>{{ui Lineup}}</strong> and <strong>{{ui Tracks}}</strong>. Tracks gathers every reviewed track in one list, with its own search (<em>{{ui Track or artist}}</em>) and day buttons.</p>
+{{shot listen | The Tracks tab listing reviewed tracks with play buttons. | The Tracks tab: every reviewed track in one place.}}
 {{list playlist}}
 
 <h2 id="sharing">Going back and sharing</h2>
 <ul>
-  <li><strong>Back works the way you expect.</strong> Your browser’s Back button, or <em>{{ui ← Back to lineup}}</em>, returns you to the same search, day and filter.</li>
+  <li><strong>Back works the way you expect.</strong> Your browser’s Back button, or the arrow at the top of an artist page, returns you to the same day, sort and search.</li>
   <li><strong>Every view has its own link.</strong> Copy the address from your browser to share an act, a day or a search. For example, here’s {{app lineup?day=2026-11-07 | Saturday’s lineup}}.</li>
   <li><strong>Keep it handy.</strong> On a phone, use your browser’s <em>Share</em> menu and choose <em>Add to Home Screen</em> to open Listening Room like an app.</li>
 </ul>
 
 <h2 id="bigger-screens">On a tablet or computer</h2>
-<p>The same app spreads out on bigger screens, with more cards in Tracks to try and room for artwork. On a keyboard, press <span class="kbd">Tab</span> to move between links and buttons, and <span class="kbd">Enter</span> to open them. See {{page accessibility}} for more.</p>
-{{shot desktop | The Listening Room lineup on a desktop browser with four Tracks to try cards. | Listening Room on a laptop.| wide}}
+<p>On a computer, Lineup and Tracks move to the top bar. On a wide screen, picking an act opens it in a panel beside the lineup, so you keep your place in the list; <em>{{ui Open full page →}}</em> shows it on its own. On a keyboard, press <span class="kbd">Tab</span> to move between links and buttons, and <span class="kbd">Enter</span> to open them. See {{page accessibility}} for more.</p>
+{{shot desktop | The Listening Room lineup on a desktop browser with an act open in the side panel. | Listening Room on a laptop.| wide}}

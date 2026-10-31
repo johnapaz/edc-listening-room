@@ -20,18 +20,17 @@ const PHONE = { width: 375, height: 812 };
 const TABS = 64; // fixed bottom bar, kept in frame so the shot looks like the real screen
 
 const shots = [
-  { name: "lineup", route: "#/lineup", wait: "#list li.lineup-row",
-    callouts: [["#q", 1], [".days", 2], [".music-filter", 3], ["#featured .music-grid", 4], ["#list li.lineup-row", 5]],
+  { name: "lineup", route: "#/lineup?day=2026-11-06", wait: "#list li.lineup-row",
+    callouts: [[".days", 1], ["#rail .rail-strip", 2], [".seg", 3], ["#list li.lineup-row:nth-child(2)", 4]],
     until: "#list li.lineup-row" },
-  { name: "search", route: "#/lineup", wait: "#list li", type: "acraze", until: "#list li" },
-  { name: "tracks", route: "#/lineup?music=1", wait: "#list li.lineup-row", until: "#list li:nth-child(5)" },
-  { name: "day", route: "#/lineup?day=2026-11-06", wait: "#list li", until: "#list li:nth-child(3)" },
+  { name: "search", route: "#/lineup?day=2026-11-06", wait: "#list li", type: "acraze", until: "#list li" },
+  { name: "day", route: "#/lineup?day=2026-11-07", wait: "#list li", until: "#list li:nth-child(3)" },
   { name: "artist", route: "#/artist/edco26:2026-11-08:martin-garrix", wait: ".song",
-    callouts: [["main p.flag", 1], [".song .track-title", 2], [".song .btn", 3]], until: "main .song" },
+    callouts: [[".chips", 1], ["a.btn-play", 2], [".song", 3]], until: "main .song" },
   { name: "nosong", route: "#/artist/edco26:2026-11-07:allnightkev", wait: ".empty", until: "main .empty" },
   { name: "b2b", route: "#/artist/edco26:2026-11-07:acraze-b2b-cid", wait: ".song", until: "main .song" },
   { name: "listen", route: "#/listen", wait: ".song", until: "main ul.list li:nth-child(4)" },
-  { name: "desktop", route: "#/lineup", wait: "#list li", viewport: { width: 1280, height: 800 }, scale: 1 },
+  { name: "desktop", route: "#/artist/edco26:2026-11-06:afrojack?day=2026-11-06", wait: "#detail h2", viewport: { width: 1280, height: 800 }, scale: 1 },
 ];
 
 async function callout(page, items) {
@@ -56,7 +55,7 @@ async function callout(page, items) {
 
 (async () => {
   fs.mkdirSync(OUT, { recursive: true });
-  const browser = await chromium.launch();
+  const browser = await chromium.launch(process.env.CHANNEL ? { channel: process.env.CHANNEL } : {});
   const meta = {};
   for (const s of shots) {
     const viewport = s.viewport || PHONE;
@@ -65,7 +64,10 @@ async function callout(page, items) {
     const page = await ctx.newPage();
     await page.goto(BASE + "/listening-room/" + s.route);
     await page.waitForSelector(s.wait);
-    if (s.type) { await page.fill("#q", s.type); await page.waitForTimeout(150); }
+    if (s.type) {
+      if (!(await page.isVisible("#q"))) await page.click(".search-toggle");
+      await page.fill("#q", s.type); await page.waitForTimeout(150);
+    }
     await page.waitForLoadState("networkidle").catch(() => {});
     await page.evaluate(() => document.activeElement && document.activeElement.blur());
     if (!s.viewport) {

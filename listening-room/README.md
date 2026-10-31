@@ -1,4 +1,4 @@
-# Listening Room v0
+# Listening Room
 
 Public, no-login music discovery at https://listeningroom.app. Independent and unofficial.
 
@@ -6,6 +6,9 @@ Public, no-login music discovery at https://listeningroom.app. Independent and u
 - Source: `listening-room/`; 295 direct YouTube recordings across 124 artist identities: the original 12 playback-reviewed tracks plus owner-authorized source-reviewed links. Other artists stay discoverable with intentional artwork fallbacks and honest empty states. The generated About pages calculate current coverage from the data.
 - Images: unchanged, provider-hosted YouTube thumbnails for those exact checked videos, labeled as YouTube artwork and linked to the original video. No generated or scraped artist portraits. Image failure preserves layout and initials. See https://developers.google.com/youtube/data/reference/rest/v3/thumbnails and https://developers.google.com/youtube/terms/developer-policies.
 - Artist names, individual B2B credits, exact song titles and day facets are links. Browser history retains the original search/filter context. Stage filters remain hidden until independently verified; poster-transcribed times are caveated.
+- **Layout (v2, music-first):** opens on one festival day (today during the festival, otherwise Friday) with large day buttons, a "Hear <day>" track rail, rows sorted By time (poster start times, caveated once per list) or A–Z, and a play button per row that opens the act's first track on YouTube. Search sits behind the header button on phones and covers all days. Lineup (`q`) and Tracks (`tq`, `tday`) keep separate route state. At ≥1100px an act opens in a side panel beside the list; navigation moves to the header at ≥900px.
+- **Type:** headings use self-hosted Bricolage Grotesque 800 (OFL; see `THIRD_PARTY_NOTICES.md`), body text the system sans.
+- **YouTube icon:** play buttons use a generic glyph until YouTube's official icon is committed unmodified from YouTube's brand resources; swap it in `playIcon()` in `app.js`.
 - Shared event playlist remains unavailable. No private playlist or Notion data is published.
 
 ## Build and deploy
