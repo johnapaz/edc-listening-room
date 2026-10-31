@@ -28,7 +28,7 @@ const shots = [
   { name: "day", route: "#/lineup?day=2026-11-06", wait: "#list li", until: "#list li:nth-child(3)" },
   { name: "artist", route: "#/artist/edco26:2026-11-08:martin-garrix", wait: ".song",
     callouts: [["main p.flag", 1], [".song .track-title", 2], [".song .btn", 3]], until: "main .song" },
-  { name: "nosong", route: "#/artist/edco26:2026-11-06:2ar", wait: ".empty", until: "main .empty" },
+  { name: "nosong", route: "#/artist/edco26:2026-11-07:allnightkev", wait: ".empty", until: "main .empty" },
   { name: "b2b", route: "#/artist/edco26:2026-11-07:acraze-b2b-cid", wait: ".song", until: "main .song" },
   { name: "listen", route: "#/listen", wait: ".song", until: "main ul.list li:nth-child(4)" },
   { name: "desktop", route: "#/lineup", wait: "#list li", viewport: { width: 1280, height: 800 }, scale: 1 },

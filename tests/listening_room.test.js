@@ -44,7 +44,7 @@ test("music availability filter shows only acts with tracks and survives shared 
   assert.ok(rows.length > 0 && rows.length < 130);
   assert.ok(rows.every(p => L.songCount(p, idx) > 0));
   assert.deepEqual(L.parseHash(L.buildHash("lineup", ctx)).ctx, ctx);
-  assert.equal(L.filterLineup(idx, { ...ctx, q: "2ar" }).length, 0);
+  assert.equal(L.filterLineup(idx, { ...ctx, q: "allnightkev" }).length, 0);
 });
 
 test("B2B performance exposes songs from each credited artist", () => {

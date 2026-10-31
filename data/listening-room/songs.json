@@ -3540,6 +3540,30 @@
       "review_status": "source_metadata_checked",
       "version_note": null,
       "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:2ar",
+      "artist_ids": [
+        "artist:2ar"
+      ],
+      "title": "Never Drown",
+      "video_id": "hsCHrQ3Aoyk",
+      "url": "https://www.youtube.com/watch?v=hsCHrQ3Aoyk",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
+    },
+    {
+      "artist_id": "artist:eve-lauren",
+      "artist_ids": [
+        "artist:eve-lauren"
+      ],
+      "title": "FREAK",
+      "video_id": "KYERafLPwW4",
+      "url": "https://www.youtube.com/watch?v=KYERafLPwW4",
+      "review_status": "source_metadata_checked",
+      "version_note": null,
+      "verification": "source_reviewed"
     }
   ]
 }
