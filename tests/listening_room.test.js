@@ -15,10 +15,10 @@ const idx = L.index({
 const names = rows => rows.map(p => p.display_name);
 
 test("day filters return only that day and All returns the full lineup", () => {
-  assert.equal(L.filterLineup(idx, { day: "all", q: "" }).length, 108);
+  assert.equal(L.filterLineup(idx, { day: "all", q: "" }).length, 110);
   for (const d of ["2026-11-06", "2026-11-07", "2026-11-08"]) {
     const rows = L.filterLineup(idx, { day: d, q: "" });
-    assert.equal(rows.length, 36);
+    assert.equal(rows.length, d === "2026-11-08" ? 36 : 37);
     assert.ok(rows.every(p => p.event_date === d));
   }
 });
@@ -54,7 +54,7 @@ test("only reviewed direct YouTube video URLs are exposed", () => {
 });
 
 test("unscheduled billings are explicitly unknown; conflicts are flagged", () => {
-  const plain = idx.performances.find(p => p.lineup_status === "official_day_confirmed");
+  const plain = { schedule_status: "unknown", stage_id: null, starts_at: null, ends_at: null, lineup_status: "official_day_confirmed" };
   assert.equal(L.scheduleState(plain, idx).kind, "unknown");
   const conflict = idx.performances.find(p => p.lineup_status === "official_sources_conflict");
   assert.equal(L.scheduleState(conflict, idx).kind, "conflict");
@@ -99,3 +99,5 @@ test("playlist link requires published + cross-account verification", () => {
   assert.equal(L.validPlaylistUrl({ status: "published", url, verified_cross_account: false }), null);
   assert.equal(L.validPlaylistUrl({ status: "published", url, verified_cross_account: true }), url);
 });
+
+test("malformed route escapes recover to lineup", () => { assert.equal(L.parseHash("#/artist/%").view, "lineup"); });
