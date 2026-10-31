@@ -205,9 +205,16 @@ dl.legend dd{margin:0;color:var(--muted);font-size:.875rem}
 const D = window.WF_DATA;
 const DAYS = [{key:"all",label:"All",long:"All days"},{key:"2026-11-06",label:"Fri",num:"6",long:"Friday",sub:"Friday · Nov 6"},{key:"2026-11-07",label:"Sat",num:"7",long:"Saturday",sub:"Saturday · Nov 7"},{key:"2026-11-08",label:"Sun",num:"8",long:"Sunday",sub:"Sunday · Nov 8"}];
 // PLACEHOLDER positions (normalized 0–1 of the 1000×1250 sketch). NOT geographic. #63 supplies audited values.
-const HOTSPOT = {"kinetic-field":{x:.50,y:.24},"circuit-grounds":{x:.78,y:.52},"neon-garden":{x:.24,y:.50},"stereo-bloom":{x:.40,y:.76},"casa-bacardi":{x:.74,y:.80}};
+const PLACEHOLDER_HOTSPOT = {"kinetic-field":{x:.50,y:.24},"circuit-grounds":{x:.78,y:.52},"neon-garden":{x:.24,y:.50},"stereo-bloom":{x:.40,y:.76},"casa-bacardi":{x:.74,y:.80}};
 const W = 1000, H = 1250, LR = "../../../listening-room/";
-const SIM = new URLSearchParams(location.search).get("state"); // mapfail | datafail | offline | stale (wireframe-only)
+const QS = new URLSearchParams(location.search);
+const SIM = QS.get("state"); // mapfail | datafail | offline | stale (wireframe-only)
+// Geometry gate (COMPANION-DATA-CONTRACT.md): the map renders only when map.geometry.status is "verified" and every stage has
+// verified, public_export_approved coordinates. ?geometry=placeholder shows the design sketch for REVIEW ONLY; it never authorizes placement.
+const PLACEHOLDER = QS.get("geometry") === "placeholder";
+const geometryOk = () => D.map.geometry.status === "verified" && D.stages.every(s => s.coordinates && s.coordinates.public_export_approved);
+const MAP_ON = PLACEHOLDER || geometryOk();
+const HOTSPOT = PLACEHOLDER ? PLACEHOLDER_HOTSPOT : Object.fromEntries(D.stages.filter(s => s.coordinates).map(s => [s.stage_id, s.coordinates]));
 const $ = (s, r=document) => r.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const stageName = id => (D.stages.find(s => s.stage_id === id) || {}).display_name || id;
@@ -215,7 +222,14 @@ const dayOf = k => DAYS.find(d => d.key === k) || DAYS[0];
 const fmt = new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hour:"numeric",minute:"2-digit"});
 const t = iso => iso ? fmt.format(new Date(iso)).replace(" PM","").replace(" AM","") : null;
 const ampm = iso => iso ? fmt.format(new Date(iso)).slice(-2) : "";
-const STATUS = {organizer_verified:["confirmed","Confirmed"],poster_transcribed:["poster","Poster time"],set_times_unverified:["unannounced","Time not announced"],disputed:["disputed","Sources disagree"]};
+// Keys are the canonical schedule_status values from docs/COMPANION-DATA-CONTRACT.md / current-lineup.json.
+const STATUS = {verified:["confirmed","Confirmed"],poster_transcribed:["poster","Poster time"],set_times_unverified:["unannounced","Time not announced"]};
+// "Sources disagree" is not a schedule_status: it is derived from issue_ids / reconciliation and shown as a separate note.
+const conflict = p => (p.issue_ids && p.issue_ids.length) || (p.reconciliation && p.reconciliation.status === "qualifier_changed");
+const conflictNote = p => { if (!conflict(p)) return "";
+  const hb = p.reconciliation && p.reconciliation.historical_billing;
+  return `<span class="st disputed">Sources disagree</span>${hb && hb !== p.display_name ? `<span class="none">Poster billing: ${esc(hb)}</span>` : ""}`; };
+const credited = p => (p.artist_ids || []).filter(i => D.artists[i]);
 const badge = (p, common) => { const s = STATUS[p.schedule_status] || STATUS.set_times_unverified;
   // Rows whose status matches the list header show the glyph with screen-reader text; differing rows show the full text badge.
   return p.schedule_status === common ? `<span class="st ${s[0]} glyph"><span class="sr-only">${s[1]}</span></span>` : `<span class="st ${s[0]}">${s[1]}</span>`; };
@@ -247,8 +261,10 @@ const setsFor = (stage, day) => sorted(D.performances.filter(p => p.stage_id ===
 const unscheduled = day => D.performances.filter(p => !p.stage_id && (day === "all" || p.event_date === day));
 const lrArtist = (id, day) => LR + "#/artist/" + encodeURIComponent(id) + (day !== "all" ? "?day=" + day : "");
 function hearLinks(p, day){
-  const ids = p.artist_ids; const withTracks = ids.filter(i => (D.artists[i]||{}).tracks > 0);
-  if (!withTracks.length) return `<span class="none">No reviewed tracks yet</span><a class="link" href="${lrArtist(ids[0], day)}">Artist page</a>`;
+  const ids = credited(p);
+  if (!ids.length) return `<span class="none">${p.performance_type === "program" ? "Program" : "No credited artist"} · no artist page</span>`;
+  const withTracks = ids.filter(i => D.artists[i].tracks > 0);
+  if (!withTracks.length) return `<span class="none">No reviewed tracks yet</span>` + ids.map(i => `<a class="link" href="${lrArtist(i, day)}">${ids.length > 1 ? esc(D.artists[i].name) + " artist page" : "Artist page"}</a>`).join("");
   return withTracks.map(i => `<a class="hear" href="${lrArtist(i, day)}"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Hear ${esc((D.artists[i]||{}).name||i)}</a>`).join("");
 }
 function timeCell(p){
@@ -260,7 +276,7 @@ function setRow(p, r, common){
   const qual = p.set_qualifier ? `<span class="chip">${esc(p.set_qualifier)}</span>` : "";
   const details = build({...r, view: r.view === "stage" ? "stage" : "map", set: p.performance_id, artist: ""});
   return `<li class="set">${timeCell(p)}<div><div class="billing">${esc(p.display_name.replace(" ("+p.set_qualifier+")",""))}${qual}</div>
-    <div class="acts">${badge(p, common)}<a class="link" href="${details}">Details<span class="sr-only"> for ${esc(p.display_name)}</span></a>${hearLinks(p, r.day)}</div></div></li>`;
+    <div class="acts">${badge(p, common)}${conflictNote(p)}<a class="link" href="${details}">Details<span class="sr-only"> for ${esc(p.display_name)}</span></a>${hearLinks(p, r.day)}</div></div></li>`;
 }
 function setList(stage, r){
   const list = setsFor(stage, r.day);
@@ -284,7 +300,8 @@ function setList(stage, r){
 function summary(stage, day){
   const list = setsFor(stage, day); const kinds = new Set(list.map(p => p.schedule_status));
   const src = !list.length ? "" : kinds.size > 1 ? `<span class="st disputed">Mixed sources</span>` : badge(list[0]).replace("Poster time","Poster times");
-  return `<span>${day === "all" ? "All days" : dayOf(day).label + " " + dayOf(day).num} · ${list.length ? list.length + " set" + (list.length>1?"s":"") : "no confirmed sets"}</span>${src}<span>checked ${new Date(D.checked_on+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric"})}</span>`;
+  const nConf = list.filter(conflict).length;
+  return `<span>${day === "all" ? "All days" : dayOf(day).label + " " + dayOf(day).num} · ${list.length ? list.length + " set" + (list.length>1?"s":"") : "no confirmed sets"}</span>${src}<span>checked ${new Date(D.checked_on+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric"})}</span>${nConf ? `<span class="st disputed">${nConf} with differing sources</span>` : ""}`;
 }
 
 /* ---------- views ---------- */
@@ -352,22 +369,30 @@ function sheetContent(r){
 function artistPanel(r){
   let list, title;
   if (r.set) { const p = D.performances.find(x => x.performance_id === r.set); if (!p) return `<div class="sheet-head"><h2 id="sheet-title" tabindex="-1">Set not found</h2></div><div class="empty"><p>That stage or set isn't in the current schedule.</p><a class="btn" href="#/stages">Show all stages</a></div>`; list = [p]; title = p.display_name; }
-  else { list = sorted(D.performances.filter(p => p.artist_ids.includes(r.artist) && (r.day === "all" || p.event_date === r.day))); title = (D.artists[r.artist]||{}).name || r.artist; }
-  const p0 = list[0]; const ids = p0 ? p0.artist_ids : [r.artist];
+  else { if (!D.artists[r.artist]) return `<div class="sheet-head"><h2 id="sheet-title" tabindex="-1">Artist not found</h2></div><div class="empty"><p>That artist isn't in the current lineup.</p><a class="btn" href="#/stages">Show all stages</a></div>`;
+    list = sorted(D.performances.filter(p => p.artist_ids.includes(r.artist) && (r.day === "all" || p.event_date === r.day))); title = D.artists[r.artist].name; }
+  const p0 = list[0]; const ids = p0 ? credited(p0) : [r.artist];
   const back = build({...r, set:"", artist:""});
   const offDay = p0 && r.day !== "all" && p0.event_date !== r.day ? `<p class="empty" style="padding:10px">Not on ${dayOf(r.day).long}. This set is on ${dayOf(p0.event_date).long}.</p>` : "";
-  const ctas = ids.map(i => { const a = D.artists[i]||{name:i,tracks:0};
+  const ctas = !ids.length ? `<p class="none">${p0 && p0.performance_type === "program" ? "This is a festival program, not a single artist," : "No artist is credited for this entry,"} so there is no Listening Room page for it.</p>` : ids.map(i => { const a = D.artists[i];
     return a.tracks ? `<a class="btn mint" href="${lrArtist(i, r.day)}">Hear ${esc(a.name)} in Listening Room</a>` : `<p class="none">No reviewed tracks for ${esc(a.name)} yet. <a href="${lrArtist(i, r.day)}">Artist page</a></p>`; }).join("");
   return `<a class="link" href="${back}">← ${r.stage && r.stage !== "?" ? esc(stageName(r.stage)) : "Back"}</a>
     <div class="sheet-head"><h2 id="sheet-title" tabindex="-1">${esc(title)}</h2></div>${offDay}
     ${ids.length > 1 ? `<p class="sub">Credited: ${ids.map(i => esc((D.artists[i]||{}).name||i)).join(" · ")}</p>` : ""}
-    <ul class="sets">${list.map(p => `<li class="set">${timeCell(p)}<div><div class="billing">${p.stage_id ? esc(stageName(p.stage_id)) : "Stage not announced"}</div><div class="acts">${badge(p)}<span class="none">${dayOf(p.event_date).sub}</span></div></div></li>`).join("")}</ul>
+    <ul class="sets">${list.map(p => `<li class="set">${timeCell(p)}<div><div class="billing">${p.stage_id ? esc(stageName(p.stage_id)) : "Stage not announced"}</div><div class="acts">${badge(p)}${conflictNote(p)}<span class="none">${dayOf(p.event_date).sub}</span></div></div></li>`).join("")}</ul>
     <div style="display:grid;gap:8px;margin-top:14px">${ctas}</div>
-    <p class="none" style="margin-top:10px">Tracks are reviewed recordings, not the live set.</p>`;
+    ${ids.length ? `<p class="none" style="margin-top:10px">Tracks are reviewed recordings, not the live set.</p>` : ""}`;
 }
-function stagesView(r){
+// S10: geometry gate closed. The Map tab shows the stage list plus an honest notice; selection still works through stage pages.
+function mapUnavailable(r){
+  if (r.stage && r.stage !== "?") { history.replaceState(null, "", build({view:"stage", id:r.stage, day:r.day, set:r.set, artist:r.artist})); return render(); }
+  if (r.set || r.artist) { const main = $("#main"); main.classList.remove("with-panel");
+    main.innerHTML = `<div class="page" style="max-width:760px">${artistPanel(r)}</div>`; return; }
+  stagesView(r, `<div class="empty" style="margin:0 0 14px"><p><b>Map coming later.</b> Stage positions haven't been verified yet, so we show the stage list instead of guessing. For the official map, visit the <a href="https://orlando.edc.com/" target="_blank" rel="noopener noreferrer">organizer's website ↗</a>.</p></div>`);
+}
+function stagesView(r, notice){
   const main = $("#main"); main.classList.remove("with-panel");
-  main.innerHTML = `<div class="page"><h1>Stages</h1><p class="lede">Every stage and its set times for ${r.day === "all" ? "all three days" : dayOf(r.day).long}. This list does everything the map does.</p>
+  main.innerHTML = `<div class="page">${notice || ""}<h1>Stages</h1><p class="lede">Every stage and its set times for ${r.day === "all" ? "all three days" : dayOf(r.day).long}. This list does everything the map does.</p>
     <ul class="stages">${D.stages.map(s => { const n = setsFor(s.stage_id, r.day).length, any = setsFor(s.stage_id,"all").length;
       return `<li><a class="stage-row" href="${build({view:"stage", id:s.stage_id, day:r.day})}"><span class="dot ${n?"has":""} ${any?"":"dashed"}" aria-hidden="true"></span><span><span class="nm">${esc(s.display_name)}</span><span class="mt">${n ? n + " sets · poster times" : any ? "No sets this day" : "No confirmed schedule"}</span></span><span class="chev" aria-hidden="true">›</span></a></li>`; }).join("")}</ul>
     ${r.day !== "all" && unscheduled(r.day).length ? `<p class="none" style="margin-top:14px">${unscheduled(r.day).length} ${dayOf(r.day).long} acts have no announced stage. <a href="${build({view:"unscheduled", day:r.day})}">See them</a></p>` : ""}</div>`;
@@ -378,7 +403,7 @@ function stagePage(r){
   main.innerHTML = `<div class="page" style="max-width:760px"><a class="link" href="${build({view:"stages", day:r.day})}">← Stages</a>
     <div class="sheet-head"><h2 id="sheet-title" tabindex="-1" style="font-size:1.75rem">${esc(stageName(r.id))}</h2></div>
     <p class="sub">${summary(r.id, r.day)}</p><div>${r.set || r.artist ? artistPanel({...r, stage:r.id}) : setList(r.id, {...r, stage:r.id})}</div>
-    <p style="margin-top:12px"><a class="link" href="${build({view:"map", stage:r.id, day:r.day})}">Show on map</a></p></div>`;
+    ${MAP_ON ? `<p style="margin-top:12px"><a class="link" href="${build({view:"map", stage:r.id, day:r.day})}">Show on map</a></p>` : ""}</div>`;
 }
 function unscheduledView(r){
   const main = $("#main"); main.classList.remove("with-panel"); const list = unscheduled(r.day).sort((a,b) => a.display_name.localeCompare(b.display_name));
@@ -396,7 +421,7 @@ function sourcesView(){
       <dt><span class="st confirmed">Confirmed</span></dt><dd>Published by the organizer as final set times.</dd>
       <dt><span class="st poster">Poster time</span></dt><dd>Read from a published set-time poster (checked ${new Date(D.checked_on+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric"})}). May change.</dd>
       <dt><span class="st unannounced">Time not announced</span></dt><dd>On the current lineup, but no stage or time has been published.</dd>
-      <dt><span class="st disputed">Sources disagree</span></dt><dd>Two sources give different values. We show both.</dd></dl></section>
+      <dt><span class="st disputed">Sources disagree</span></dt><dd>The current lineup and the poster differ (for example a set name). We show both.</dd></dl></section>
     <section><h2>Music</h2><p>"Hear" links open <a href="${LR}#/lineup" style="color:var(--mint)">Listening Room</a>, which has reviewed recordings for each artist. Those are not the live set.</p></section>
     <section><h2>Privacy</h2><p>No account, no tracking. Nothing you tap is stored on a server.</p></section></div>`;
 }
@@ -479,10 +504,10 @@ function navLinks(r){
 // Skip link focuses <main> without touching the hash, so it never replaces the route.
 $(".skip").addEventListener("click", e => { e.preventDefault(); $("#main").focus(); });
 function render(){
-  const r = parse(); days(r); navLinks(r); document.body.className = "v-" + (["stages","stage","unscheduled","sources"].includes(r.view) ? r.view : "map");
+  const r = parse(); days(r); navLinks(r); document.body.className = "v-" + (["stages","stage","unscheduled","sources"].includes(r.view) ? r.view : MAP_ON ? "map" : "map-gated");
   const nav = r.view === "stage" || r.view === "unscheduled" ? "stages" : r.view;
   document.querySelectorAll("[data-nav]").forEach(a => { if (a.dataset.nav === nav) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
-  if (r.view === "stages") stagesView(r); else if (r.view === "stage") stagePage(r); else if (r.view === "unscheduled") unscheduledView(r); else if (r.view === "sources") sourcesView(); else mapView(r);
+  if (r.view === "stages") stagesView(r); else if (r.view === "stage") stagePage(r); else if (r.view === "unscheduled") unscheduledView(r); else if (r.view === "sources") sourcesView(); else if (!MAP_ON) mapUnavailable(r); else mapView(r);
 }
 addEventListener("hashchange", render);
 addEventListener("resize", () => { if ($("#map")) { fit(); const r = parse(); if (r.stage && r.stage !== "?") centerOn(r.stage); } });

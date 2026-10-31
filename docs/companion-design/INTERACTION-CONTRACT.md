@@ -36,6 +36,7 @@
 | S7 | **Unscheduled lineup entries**: "On the lineup, time not announced", a per-day list of current billings with no slot | the link at the foot of each day in S3/S4 |
 | S8 | **Sources & attribution**: the map provenance, schedule sources, checked dates and the organizer homepage link | the attribution chip, footer or About |
 | S9 | **Map failed / data failed / offline**: see §7 | errors |
+| S10 | **Map gated**: the Map tab shows the stage list (S3) under a "Map coming later" notice and an organizer-homepage link. A `stage` param redirects (replace) to S4; a `set` or `artist` param without a stage opens S5 as a page. **This is the current state of real data.** | `map.geometry.status` isn't `verified`, or any stage lacks approved coordinates |
 
 ## 2. URL and deep-link state
 
@@ -70,6 +71,8 @@ The Companion uses its **own hash router**, built the same way as Listening Room
 
 - Open it in the **same tab**. Browser Back then returns to the exact Companion URL, which restores the day, stage, set and sheet state.
 - For a B2B or alias billing, the CTA uses the **performance's** `artist_ids`. With one credited identity, show one CTA. With several, show one mint link per identity ("Hear Benda", "Hear Vastive"). Never search by display name.
+- **No credited identity:** for a `performance_type: "program"` entry, or any entry with empty `artist_ids` (today: Discovery Project), render **no** artist link or CTA. Show "Program · no artist page", and in S5: "This is a festival program, not a single artist, so there is no Listening Room page for it." Never build `#/artist/` from a missing or unknown ID. `capture.js` asserts this across every stage × day, every unscheduled view and every `set` deep link.
+- An unknown `artist` param shows "That artist isn't in the current lineup."
 - Hide the CTA when the identity has no reviewed track. Show "No reviewed tracks yet" in muted text and still offer a plain "Artist page" link, because Listening Room shows bookings.
 - *Optional, coordinate with Listening Room:* append `&from=companion`. Listening Room currently ignores unknown params, so this is safe now. A later Listening Room change may show "← Back to map".
 
@@ -153,7 +156,24 @@ Voice: plain, second person, no exclamation marks, and no organizer branding. "T
 
 ## 8. Data the design assumes (for #62 / #65)
 
-The design reads only the reconciled projection from #62. Fields used: `performance_id`, `display_name`, `artist_ids`, `credits[].artist_id`, `set_qualifier`, `day`, `event_date`, `stage_id`, `starts_at`, `ends_at`, `schedule_status`, `lineup_status`, `source_ids` → `sources.json` (title, url, checked_on); `venues.json` stages, plus #63's `hotspot: {x, y}` normalized coordinates and `schematic_version`. It also needs the per-artist reviewed-track count that Listening Room already computes. **No new catalog.**
+The design reads only the canonical projection defined in [`COMPANION-DATA-CONTRACT.md`](../COMPANION-DATA-CONTRACT.md) (`current-lineup.json` schema 2, exported as `data/edco-2026/performances.json`) plus `venues.json`. **No new catalog and no renamed fields.**
+
+| Design concept | Canonical field |
+| --- | --- |
+| Set identity / billing / type | `performance_id`, `display_name`, `performance_type` (`act`, `b2b`, `dj_with_mc`, `project`, `program`) |
+| Credited identities (CTAs) | `artist_ids`; roles in `credits[]` |
+| Day / stage / time | `event_date`, `day`, `stage_id`, `starts_at`, `ends_at` (UTC−05:00; null = unknown) |
+| Time badge | `schedule_status` ∈ `verified` / `poster_transcribed` / `set_times_unverified` |
+| Qualifier chip | `set_qualifier` |
+| Sources disagree | `issue_ids`, `reconciliation.status`, `reconciliation.historical_billing` |
+| Source line and freshness | `source_ids` / `schedule_source_id` → top-level `sources[]` (`source_id`, `kind`, `checked_on`, `url`, `independently_verified`) |
+| Field withheld from public | `public_eligibility` (stage/time denied → null → treated as unknown) |
+| Day totals / unscheduled count | `coverage` |
+| Stage list | `venues.json` → `stages[]` (`stage_id`, `display_name`) |
+| Hotspot position | `venues.json` → `stages[].coordinates` `{x, y}` plus verification source IDs, checked date and `public_export_approved` |
+| Map on/off | `venues.json` → `map.geometry` (`status`, `coordinate_space: normalized-top-left`, `objects`, `checked_on`, `reason`) |
+
+There is no `schematic_version` or `hotspot` field. Earlier drafts of this contract used those names; the canonical names above replace them. Pan/zoom transforms the canvas and the hotspots together, placed at (100·x %, 100·y %) of the common canvas, per the data contract. The reviewed-track count per artist comes from `data/listening-room/songs.json`, as Listening Room computes it.
 
 ## 9. Acceptance mapping (#61)
 

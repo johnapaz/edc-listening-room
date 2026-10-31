@@ -60,15 +60,23 @@ Implementers should copy these as CSS custom properties on `:root`. Names match 
 
 ## 4. Status language (truthfulness system)
 
-Each schedule fact has exactly one status. Status is always shown as **icon + text**, never by colour alone.
+Field names and values below are the canonical ones from [`COMPANION-DATA-CONTRACT.md`](../COMPANION-DATA-CONTRACT.md) and `current-lineup.json` (schema 2). The design adds no new status values.
 
-| Status (data) | Badge text | Treatment |
+**Time status.** Each set has exactly one `schedule_status`. It is always shown as **icon + text**, never by colour alone.
+
+| `schedule_status` | Badge text | Treatment |
 | --- | --- | --- |
-| `organizer_verified` | **Confirmed** | Violet solid dot ● and violet text |
+| `verified` | **Confirmed** | Violet solid dot ● and violet text. This matches Listening Room, which treats only `verified` as fact. |
 | `poster_transcribed` | **Poster time** | Hollow dashed ring ◌ and muted text. Tooltip/legend: "Read from a published set-time poster on {date}; may change." |
 | `set_times_unverified` (no stage/time) | **Time not announced** | Dotted rule and muted text. The row has no time column; it shows "—". |
-| disputed / conflicting sources | **Sources disagree** | Coral `!` triangle and coral text, with a link to see both values |
-| historical / unmatched | **Not on current lineup** | Strikethrough-free muted text with an info icon. Hidden from default lists; shown only under "Older poster entries" |
+
+**Source notes.** These are derived signals, not statuses, and appear in addition to the time badge:
+
+| Derived from | Note text | Treatment |
+| --- | --- | --- |
+| non-empty `issue_ids`, or `reconciliation.status == "qualifier_changed"` | **Sources disagree** | Coral `!` and coral text. When `reconciliation.historical_billing` differs from `display_name`, also show "Poster billing: {historical_billing}". The stage header counts these sets ("3 with differing sources"). |
+| `coverage.historical_only_ids` | **Not on current lineup** | Never shown in stage/day lists. They may appear on the sources page only. |
+| `performance_type == "program"`, or empty `artist_ids` | **Program · no artist page** | Muted text with **no** Listening Room link (see contract §2). |
 
 **Row-level rule:** a list header carries the full text badge for its common status, e.g. "◌ Poster times". Rows that share that status show only the glyph, with the status as visually hidden text. Any row whose status **differs** from the header shows the full text badge. Without that rule, a stage with ten poster times repeats "Poster time" ten times and pushes the "Hear" links onto a second line. If a list mixes statuses, the header says "Mixed sources" and every row shows its full badge.
 
@@ -82,7 +90,9 @@ Freshness is always visible next to the source label, e.g. "Poster times · chec
 - **Zones:** large rounded shapes, `--zone` fill with a 1.5px `--zone-edge` stroke. No festival illustrations, icons, logos or themed art.
 - **Paths:** 10px rounded strokes in `--path`, purely decorative. Path names are not shown (they aren't verified for public use).
 - **Stage hotspots:** a 44px minimum tap circle. At rest: a 2px `--line-strong` ring, a violet inner dot and a label pill below (`--panel` with stage name in `--text` 0.8125rem). **Selected:** filled violet, violet-ink glyph, a 6px `--violet-wash` halo, and the label pill in violet with violet-ink text. A stage with no confirmed schedule (CASA BACARDÍ) uses a **dashed** ring at rest.
-- **Hotspot positions** come only from #63's audited normalized coordinates (`x`,`y` in 0–1 of the schematic's viewBox). Until #63 delivers, the wireframe's positions are **placeholders**, marked as such on screen.
+- **Hotspot positions** come only from `venues.json` → `stages[].coordinates` (`x`,`y` in [0,1], `normalized-top-left`), and only when they are verified, sourced, dated and `public_export_approved: true`.
+- **Geometry gate:** if `map.geometry.status` isn't `verified`, or any stage's `coordinates` are null or unapproved, **no map renders**. The Map tab shows the stage list with a "Map coming later" notice (contract S10).
+- The wireframe's sketch positions are synthetic. They appear only behind an explicit `?geometry=placeholder` review flag, carry a WIREFRAME label, and **never authorize real map placement**.
 - **POIs** (water, restrooms, entrances) appear only when #63 verifies them. They are smaller (32px visible, 44px hit area), neutral grey, and use generic glyphs. Under-verified POIs are simply absent.
 - **Chrome over the map:** zoom +/−, a "Reset view" button and a "List" toggle, stacked at the top right. These are 44px round `--panel` buttons with a `--line-strong` border.
 - **Attribution chip** at the bottom left of the map, above the sheet peek: "Unofficial sketch · positions approximate · checked {date}". Tapping it opens the Sources sheet.
