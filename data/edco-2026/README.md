@@ -1,6 +1,6 @@
 # EDC Orlando 2026 reference pack
 
-Checked **2026-10-30** against organizer pages and the six owner-supplied screenshots. Independent, unofficial reference; lineup and event information can change.
+Checked **2026-10-30** against organizer pages and nine owner-supplied screenshots (six earlier reference images plus three daily set-time posters). Independent, unofficial reference; lineup and event information can change.
 
 Start here when building the Event Day Companion or resolving a lineup name. Read local files before repeating web, MusicBrainz or YouTube searches. This pack adds reference data; it does not change the pilot, its approvals, or live playlists.
 
@@ -32,7 +32,7 @@ The official poster in both supplied lineup screenshots lists **Josh Baker**, **
 - `source_order` preserves the lineup listing order, **not performance order, popularity or a timetable**.
 - Sunset/Wholesome Riddim labels are qualifiers. A sunset label never supplies a clock time.
 - Use `America/New_York`. All three festival dates are UTC−05:00. Event closing midnight belongs to the **following calendar date**; Sunday closes `2026-11-09T00:00:00-05:00`.
-- When official times appear, match the full billing (including B2B/project/qualifier), preserve `performance_id`, populate offset-aware ISO timestamps and `stage_id`, add the dated official source, then change the row's schedule status. If evidence establishes a second appearance, create a separate performance ID.
+- For subsequent organizer corrections, match the full billing (including B2B/project/qualifier), preserve `performance_id`, populate offset-aware ISO timestamps and `stage_id`, add the dated official source, then change the row's schedule status. If evidence establishes a second appearance, create a separate performance ID.
 - Show “Time TBA”/“Stage TBA” when unknown. Do not offer “playing now,” clash detection or walking-time guidance from this seed.
 - Keep the three source-conflict rows visibly flagged until resolved. Do not infer artist-stage assignments from genre or map position.
 
