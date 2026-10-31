@@ -219,12 +219,12 @@ class RealDataTests(unittest.TestCase):
     def test_lineup_queues(self):
         acts = d.build_acts()
         ids = [a.act_id for a in acts]
-        self.assertEqual(len(acts), 113)
+        self.assertEqual(len(acts), 115)  # Two screenshot-only lineup additions, no catalog candidates yet
         self.assertNotIn("artist:mc-dino", ids)
         self.assertEqual(len(ids), len(set(ids)))
         empty = sorted(a.act_id for a in acts if not a.songs)
-        self.assertEqual(empty, ["artist:alves", "artist:fury", "artist:inbal", "artist:madvktm",
-                                 "artist:matthias", "artist:skull-machine", "artist:ultrathem"])
+        self.assertEqual(empty, ["artist:alves", "artist:fury", "artist:george-smeddles", "artist:inbal", "artist:madvktm",
+                                 "artist:matthias", "artist:obskur", "artist:skull-machine", "artist:ultrathem"])
         benda = next(a for a in acts if a.act_id == "artist:benda")
         self.assertEqual(benda.songs[0].known_video_id, "oXhWSs0mRH4")
 
