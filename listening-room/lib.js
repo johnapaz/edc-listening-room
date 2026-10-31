@@ -160,11 +160,24 @@
     return "#/" + path + (qs ? "?" + qs : "");
   }
 
+  // Only plain open.spotify.com track/playlist links; anything else is dropped, never rewritten.
+  function safeSpotifyUrl(url, kind) {
+    const m = /^https:\/\/open\.spotify\.com\/(track|playlist)\/([A-Za-z0-9]{22})$/.exec(String(url || ""));
+    return m && (!kind || m[1] === kind) ? url : null;
+  }
+
+  function officialSpotifyPlaylist(playlist) {
+    const s = playlist && playlist.official_spotify;
+    const url = s && safeSpotifyUrl(s.url, "playlist");
+    return url ? { label: String(s.label || "Official playlist"), curator: String(s.curator || ""), url } : null;
+  }
+
   function validPlaylistUrl(playlist) {
     return playlist && playlist.status === "published" && playlist.verified_cross_account === true
       ? safeYoutubeUrl(playlist.url) : null;
   }
 
   return { DAYS, EVENT_DAYS, defaultDay, eventDay, sortRows, normalize, validDay, safeYoutubeUrl, index, songGroups, songCount, matches,
-    filterLineup, scheduleState, stageOptions, parseHash, buildHash, validPlaylistUrl };
+    filterLineup, scheduleState, stageOptions, parseHash, buildHash, validPlaylistUrl,
+    safeSpotifyUrl, officialSpotifyPlaylist };
 });

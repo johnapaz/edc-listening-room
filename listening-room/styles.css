@@ -153,7 +153,7 @@ a.chip:hover{border-color:var(--mint);color:var(--mint)}
 .group-head a:hover{color:var(--mint)}
 
 /* Track rows (artist page, Tracks tab) */
-.song{display:grid;grid-template-columns:64px minmax(0,1fr) var(--target);align-items:center;column-gap:12px;min-height:64px;padding:6px 0;border-bottom:1px solid #33405f99}
+.song{display:grid;grid-template-columns:64px minmax(0,1fr) auto;align-items:center;column-gap:12px;min-height:64px;padding:6px 0;border-bottom:1px solid #33405f99}
 .song-art{width:64px;aspect-ratio:16/9;border-radius:7px}
 .song-copy{min-width:0}
 .track-title{display:flex;align-items:center;min-height:var(--target);color:var(--text);font-weight:650;text-decoration:none;overflow-wrap:anywhere;line-height:1.25}
@@ -225,7 +225,7 @@ a.chip:hover{border-color:var(--mint);color:var(--mint)}
   .row-time{grid-area:time}.row-copy{grid-area:copy}.lineup-row .play-btn{grid-area:play}
   .days{grid-template-columns:1fr}
   .days button{min-height:var(--target);flex-direction:row;gap:8px}
-  .song{grid-template-columns:minmax(0,1fr) var(--target)}.song .art-link{display:none}
+  .song{grid-template-columns:minmax(0,1fr) auto}.song .art-link{display:none}
   .bar{flex-wrap:wrap;gap:0}
   .brand{min-width:0;white-space:normal}
   .brand span{font-size:.875rem}
@@ -234,3 +234,14 @@ a.chip:hover{border-color:var(--mint);color:var(--mint)}
   a,button,.lineup-row{transition:color .15s,background-color .15s,border-color .15s}
   .rail-strip{scroll-behavior:smooth}
 }
+
+/* Spotify links and Event playlists card (#68) */
+.song-actions{display:flex;align-items:center;gap:6px}
+.spotify-link{display:inline-flex;align-items:center;min-height:var(--target);padding:0 10px;border-radius:10px;border:1px solid var(--line-strong);color:var(--text);font-size:.8125rem;font-weight:650;text-decoration:none}
+.spotify-link:hover{border-color:var(--mint);color:var(--mint)}
+.btn-alt{background:transparent;color:var(--text);border:1px solid var(--line-strong)}.btn-alt:hover{background:transparent;border-color:var(--mint);color:var(--mint)}
+.playlist-card{padding:12px}.playlist-card h2{margin-bottom:6px}
+.playlist-row{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:8px 0;border-top:1px solid var(--line)}.playlist-row:first-child{border-top:0}
+.playlist-row p{margin:2px 0 0;font-size:.8125rem}.playlist-pending{font-size:.8125rem;margin:6px 0 0}
+.artist-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+@media (max-width:320px){.playlist-row{flex-wrap:wrap}}

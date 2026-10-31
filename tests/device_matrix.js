@@ -27,10 +27,22 @@ const DEVICES = [
   ["android", "Galaxy Z Flip8 cover", 361, 399, 2.625, "est"], ["android", "Pixel 10 Pro Fold cover", 412, 900, 2.625, "est"],
   ["android", "Pixel 10 Pro Fold open", 791, 820, 2.625, "est"], ["android", "Razr+ 2026 cover", 412, 350, 2.625, "est"],
   ["android", "Razr+ 2026 open", 412, 1006, 2.625, "est"], ["android", "Galaxy Tab S10 FE", 800, 1280, 2],
+  // Desktop widths exercise header navigation (>=900) and the side panel (>=1100). Emulated viewports, not hardware.
+  ["desktop", "Desktop 900", 900, 800, 1], ["desktop", "Desktop 1100", 1100, 800, 1],
+  ["desktop", "Desktop 1280", 1280, 800, 1], ["desktop", "Desktop 1920", 1920, 1080, 1],
 ];
 
-const measure = () => {
-  const tabs = document.querySelector(".tabs").getBoundingClientRect();
+// Usable vertical band: below a sticky/fixed header, above a FIXED bottom nav (mobile only; at >=900 nav moves into the header).
+const BOUNDS = `(() => {
+  const pinned = el => el && ["fixed", "sticky"].includes(getComputedStyle(el).position);
+  const head = document.querySelector("header");
+  const tabs = document.querySelector(".tabs");
+  const top = pinned(head) ? head.getBoundingClientRect().bottom : 0;
+  const bottom = tabs && getComputedStyle(tabs).position === "fixed" ? tabs.getBoundingClientRect().top : innerHeight;
+  return { top, bottom };
+})()`;
+
+const measure = bounds => {
   const row = document.querySelector(".lineup-row");
   const small = [...document.querySelectorAll("a,button,input,select,summary")]
     .filter(e => e.offsetParent && e.tabIndex >= 0 && !e.classList.contains("skip"))
@@ -38,7 +50,7 @@ const measure = () => {
   return {
     firstRowTop: row ? Math.round(row.getBoundingClientRect().top) : null,
     rowHeight: row ? Math.round(row.getBoundingClientRect().height) : null,
-    firstActReadable: row ? row.getBoundingClientRect().top + 60 <= tabs.top : false,
+    firstActReadable: row ? row.getBoundingClientRect().top >= bounds.top && row.getBoundingClientRect().top + 60 <= bounds.bottom : false,
     overflowX: document.documentElement.scrollWidth > innerWidth + 1,
     smallTargets: small,
     pageHeight: document.documentElement.scrollHeight,
@@ -52,22 +64,21 @@ const measure = () => {
     const engine = engineName === "webkit" ? webkit : chromium;
     const browser = await engine.launch();
     for (const [kind, name, width, height, dpr, est] of DEVICES) {
-      if ((kind === "apple") !== (engineName === "webkit") && ENGINES.length > 1) continue;
+      if (ENGINES.length > 1 && (kind === "apple" ? engineName !== "webkit" : engineName !== "chromium")) continue;
       const slug = (engineName + "-" + name).toLowerCase().replace(/[^a-z0-9]+/g, "-");
-      const ctx = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: Math.min(dpr, 2), isMobile: true, hasTouch: true });
+      const ctx = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: Math.min(dpr, 2), isMobile: kind !== "desktop", hasTouch: kind !== "desktop" });
       const page = await ctx.newPage();
       const row = { engine: engineName, kind, name, width, height, estimated: Boolean(est) };
       try {
         await page.goto(BASE + "#/lineup", { waitUntil: "networkidle" });
         await page.waitForSelector(".lineup-row");
-        Object.assign(row, await page.evaluate(measure));
+        Object.assign(row, await page.evaluate(`(${measure})(${BOUNDS})`));
         await page.screenshot({ path: path.join(OUT, slug + "-lineup.png") });
-        await page.goto(BASE + "#/artist/" + encodeURIComponent("edco26:2026-11-08:martin-garrix"));
-        await page.waitForSelector("h1#title");
-        row.playOnFirstScreen = await page.evaluate(() => {
-          const b = document.querySelector(".song .btn");
-          return Boolean(b) && b.getBoundingClientRect().bottom <= document.querySelector(".tabs").getBoundingClientRect().top;
-        });
+        await page.goto(BASE + "#/artist/" + encodeURIComponent("edco26:2026-11-08:martin-garrix") + "?full=1");
+        await page.waitForSelector("#title");
+        // The primary artist action is a.btn-play (v2); measure it against the usable band, not the tab bar alone.
+        row.playOnFirstScreen = await page.evaluate(`(() => { const b = document.querySelector("a.btn-play"); const k = ${BOUNDS};
+          if (!b) return false; const r = b.getBoundingClientRect(); return r.top >= k.top && r.bottom <= k.bottom; })()`);
         await page.screenshot({ path: path.join(OUT, slug + "-artist.png") });
         await page.goto(BASE + "#/listen");
         await page.waitForSelector(".song");

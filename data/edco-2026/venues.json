@@ -92,6 +92,20 @@
       "Official shuttle exit",
       "Skydeck entry"
     ],
-    "interpretation": "Legend and visible labels transcribed from supplied 2026 screenshot. No geographic coordinates, walking times, path accessibility, or artist-stage assignments inferred."
+    "interpretation": "Legend and visible labels transcribed from supplied 2026 screenshot. No geographic coordinates, walking times, path accessibility, or artist-stage assignments inferred.",
+    "geometry": {
+      "status": "unverified",
+      "coordinate_space": "normalized-top-left",
+      "objects": [],
+      "checked_on": "2026-10-31",
+      "reason": "No independently verified 2026 stage positions; use stage-list navigation."
+    },
+    "rights": {
+      "status": "artwork_not_cleared",
+      "checked_on": "2026-10-31",
+      "organizer_homepage": "https://orlando.edc.com/",
+      "policy_url": "https://www.insomniac.com/terms-of-use/",
+      "artwork_public_export": false
+    }
   }
 }

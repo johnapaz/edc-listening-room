@@ -1,5 +1,5 @@
 "use strict";
-// Static, read-only discovery. No visitor credentials or embedded player: every track opens on YouTube.
+// Static, read-only discovery. No visitor credentials or embedded player; YouTube and Spotify are plain outbound links.
 (function () {
   const L = window.RoomLib;
   const main = document.getElementById("main");
@@ -61,15 +61,27 @@
   const shortcut = (href, cls, external, ...kids) => el("a", Object.assign({ class: cls, href, tabindex: "-1", "aria-hidden": "true" },
     external ? { target: "_blank", rel: "noopener noreferrer" } : {}), ...kids);
 
+  // One card for every whole-event way to listen: ours on YouTube Music (once verified) and the organizer's own on Spotify.
   function playlistCard() {
     const url = L.validPlaylistUrl(playlist);
-    const card = el("section", { class: "card playlist-card", "aria-label": "Event playlist" });
-    if (url) card.append(el("h2", { text: playlist.label }), ext(url, "Listen on YouTube Music", "btn", "Listen to " + playlist.label + " on YouTube Music"));
-    else card.append(el("details", {}, el("summary", {}, el("span", { text: "Event playlist" }), el("span", { class: "soon", text: "Not available" })),
-      el("p", { class: "muted", text: "There is no public event playlist yet. You can open the individual tracks listed here on YouTube." })));
+    const official = L.officialSpotifyPlaylist(playlist);
+    const card = el("section", { class: "card playlist-card", "aria-labelledby": "playlists-title" },
+      el("h2", { id: "playlists-title", text: "Event playlists" }));
+    const rows = el("div", { class: "playlist-rows" });
+    if (url) rows.append(el("div", { class: "playlist-row" }, el("div", {}, el("strong", { text: playlist.label }), el("p", { class: "muted", text: "Our reviewed tracks, one playlist." })),
+      ext(url, "YouTube Music", "btn", "Listen to " + playlist.label + " on YouTube Music")));
+    if (official) rows.append(el("div", { class: "playlist-row" }, el("div", {}, el("strong", { text: official.label }), el("p", { class: "muted", text: (official.curator ? "Curated by " + official.curator + " on Spotify. " : "") + "Not made or checked by Listening Room." })),
+      ext(official.url, "Spotify", "btn btn-alt", "Open " + official.label + " on Spotify")));
+    if (!url) rows.append(el("p", { class: "muted playlist-pending", text: "Our own event playlist on YouTube Music isn’t ready yet. Until then, open any track below on YouTube or Spotify." }));
+    card.append(rows);
     return card;
   }
 
+  // Spotify track link only where the reviewed match was made against that exact track (#68). Plain outbound link.
+  function spotifyLink(s, a, cls) {
+    const url = L.safeSpotifyUrl(s.spotify_url, "track");
+    return url ? el("a", { class: cls || "spotify-link", href: url, target: "_blank", rel: "noopener noreferrer", "aria-label": "Open " + s.title + " by " + a.display_name + " on Spotify (opens in a new tab)", text: "Spotify" }) : null;
+  }
   function songRow(s, a, ctx) {
     const credited = s.artist_ids.map(id => idx.artists.get(id)).filter(Boolean);
     return el("div", { class: "song" }, shortcut(s.url, "art-link", true, artwork(s, a.display_name, "song-art")),
@@ -77,7 +89,7 @@
         el("a", { class: "track-title", href: s.url, target: "_blank", rel: "noopener noreferrer", "aria-label": playLabel(s, a.display_name), text: s.title }),
         el("div", { class: "song-credits" }, credited.flatMap((artist, i) => i ? [document.createTextNode(" · "), artistLink(artist, ctx)] : [artistLink(artist, ctx)])),
         s.review_status !== "strong" && s.verification !== "source_reviewed" ? el("small", { class: "muted version", text: "Version may differ from the original release." }) : null),
-      shortcut(s.url, "play-btn", true, playIcon()));
+      el("div", { class: "song-actions" }, spotifyLink(s, a), shortcut(s.url, "play-btn", true, playIcon())));
   }
 
   // ---------- Lineup ----------
@@ -143,7 +155,7 @@
     const listPane = el("div", { class: "list-pane" },
       el("h1", { class: "sr-only", text: "EDC Orlando 2026 lineup" }),
       el("p", { class: "context", text: "EDC Orlando 2026 · Nov 6–8 · Tinker Field · Unofficial" }),
-      searchRow, days, railHost, ...(L.validPlaylistUrl(playlist) ? [playlistCard()] : []),
+      searchRow, days, railHost, ...(L.validPlaylistUrl(playlist) || L.officialSpotifyPlaylist(playlist) ? [playlistCard()] : []),
       el("div", { class: "section-heading list-head" }, listTitle, sorts), count, list);
     const frag = wide.matches
       ? el("div", { class: "split" }, listPane, el("aside", { id: "detail", class: "detail", "aria-label": "Selected act" }, emptyDetail()))
@@ -245,8 +257,8 @@
     const conflict = bookings.map(b => L.scheduleState(b, idx, fmt)).find(s => s.kind === "conflict");
     if (conflict) body.append(el("p", { class: "flag", text: conflict.text }));
     if (bookings.some(b => L.scheduleState(b, idx, fmt).kind === "unconfirmed")) body.append(el("p", { class: "fine", text: "Poster times are transcribed from organizer posters and not yet cross-checked." }));
-    if (first) body.append(el("a", { class: "btn btn-play", href: first.url, target: "_blank", rel: "noopener noreferrer", "aria-label": playLabel(first, g0.artist.display_name) },
-      playIcon(), el("span", { text: "Play “" + first.title + "” on YouTube" })));
+    if (first) body.append(el("div", { class: "artist-actions" }, el("a", { class: "btn btn-play", href: first.url, target: "_blank", rel: "noopener noreferrer", "aria-label": playLabel(first, g0.artist.display_name) },
+      playIcon(), el("span", { text: "Play “" + first.title + "” on YouTube" })), spotifyLink(first, g0.artist, "btn btn-alt btn-play")));
     if (inPanel) body.append(el("a", { class: "text-link", href: L.buildHash("artist", ctx, id) + (L.buildHash("artist", ctx, id).includes("?") ? "&" : "?") + "full=1", text: "Open full page →" }));
     const total = new Set(groups.flatMap(g => g.songs.map(s => s.video_id))).size;
     body.append(el(inPanel ? "h3" : "h2", { class: "artist-section", text: total ? plural(total, "track", "tracks") : "Tracks" }));
@@ -300,8 +312,8 @@
     L.DAYS.forEach(d => days.append(el("button", { type: "button", "data-day": d.key, "aria-label": d.long, text: d.label })));
     const count = el("p", { id: "count", class: "status", role: "status", "aria-live": "polite" });
     const ul = el("ul", { class: "list" });
-    main.replaceChildren(el("div", { class: "intro" }, el("h1", { text: "Tracks" }), el("p", { class: "muted", text: idx.songs.length + " tracks from " + idx.songsByArtist.size + " lineup artists. Each opens on YouTube." })),
-      el("label", { class: "search-label", for: "tq", text: "Search tracks" }), search, days, count, ul, playlistCard());
+    main.replaceChildren(el("div", { class: "intro" }, el("h1", { text: "Tracks" }), el("p", { class: "muted", text: idx.songs.length + " tracks from " + idx.songsByArtist.size + " lineup artists. Open each on YouTube, or on Spotify where it’s linked." })),
+      el("label", { class: "search-label", for: "tq", text: "Search tracks" }), playlistCard(), search, days, count, ul);
     main.dataset.view = "listen"; main.dataset.key = "";
     const dayCache = new Map();
     const draw = () => {
