@@ -33,8 +33,10 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
   assert.match(await page.textContent(".days button[aria-pressed=true]"), /Friday.*Nov 6 · 43 acts/);
 
   // Playlist is honest when unpublished (no dead CTA)
-  assert.equal(await page.locator("section.playlist-card").count(), 0);
-  assert.equal(await page.locator("section.card a.btn").count(), 0); ok("playlist unavailable state, no dead link");
+  // #68: the Event playlists card shows Insomniac's official Spotify playlist; our YouTube Music playlist stays absent until verified.
+  assert.equal(await page.locator("section.playlist-card").count(), 1);
+  assert.equal(await page.locator('section.playlist-card a[href^="https://open.spotify.com/playlist/"]').count(), 1);
+  assert.equal(await page.locator('section.playlist-card a[href*="music.youtube.com"]').count(), 0); ok("playlist card: official Spotify only, no dead YouTube Music link");
 
   // Rows: time, artwork, act, play. Artwork and name share a destination; at most two keyboard stops.
   const rowLinks = await page.$$eval("#list .lineup-row:nth-child(2) a", as => as.map(a => [a.className, a.getAttribute("href"), a.tabIndex, a.target]));
@@ -99,7 +101,7 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
   // Tracks tab keeps its own search, so the lineup is never emptied by a track title.
   await page.goto(BASE + "#/listen");
   await page.waitForSelector(".song");
-  assert.match(await page.textContent("section.card"), /Not available/);
+  assert.match(await page.textContent("section.card"), /isn’t ready yet/);
   assert.ok(await page.locator(".song .track-title").count() >= 10); ok("Tracks lists reviewed songs");
   assert.equal(await page.title(), "Tracks · Listening Room");
   const allTracks = await page.locator(".song").count();
@@ -187,6 +189,33 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
   await p2.goto(BASE);
   await p2.waitForSelector("[role=alert]");
   assert.match(await p2.textContent("[role=alert]"), /Couldn’t load/); ok("network failure state");
+  // Final-push integration flows (#70 handoff).
+  const p3 = await browser.newPage({ viewport: { width: 360, height: 740 } });
+  await p3.goto(BASE + "#/listen?tq=Other%20Side"); await p3.waitForSelector(".song");
+  const spotTrack = p3.locator(".song", { hasText: "Other Side" }).first();
+  assert.equal(await spotTrack.locator(".play-btn").count(), 1);
+  assert.match(await spotTrack.locator(".spotify-link").getAttribute("href"), /^https:\/\/open\.spotify\.com\/track\/[A-Za-z0-9]{22}$/); ok("Spotify and YouTube coexist on a track row");
+  await p3.click("#tab-lineup"); await p3.waitForSelector("#list .lineup-row");
+  // tq stays in the URL so Tracks can restore it, but the Lineup search and list are untouched.
+  assert.equal(await p3.inputValue("#q"), ""); assert.equal(await p3.locator("#list .lineup-row").count(), 43); ok("Tracks title search does not filter Lineup");
+  await p3.goBack(); await p3.waitForSelector(".song");
+  assert.match(await p3.evaluate(() => location.hash), /tq=Other/); await p3.goForward(); await p3.waitForSelector("#list .lineup-row"); ok("browser Back/Forward between Tracks and Lineup");
+  await p3.goto(BASE + "#/listen"); await p3.waitForSelector(".song");
+  await p3.locator(".song .artist-link").first().click(); await p3.waitForSelector("#title");
+  await p3.click("a.back"); await p3.waitForSelector("#list .lineup-row"); ok("Tracks → artist → Back to lineup");
+  await p3.goto(BASE + "#/artist/" + encodeURIComponent("edco26:2026-11-06:inbal")); await p3.waitForSelector("#title");
+  assert.equal(await p3.locator("a.btn-play").count(), 0);
+  await p3.click("text=Browse all tracks →"); await p3.waitForSelector(".song"); ok("zero-track act offers Browse all tracks");
+  await p3.goto(BASE + "#/artist/" + encodeURIComponent("edco26:2026-11-06:benda-b2b-vastive")); await p3.waitForSelector("#title");
+  const b2bNames = await p3.$$eval("#title .name-link", as => as.map(a => a.textContent));
+  assert.ok(b2bNames.length === 2 && b2bNames.every(Boolean)); ok("B2B billing keeps separate artist links");
+  await p3.close();
+  const p4 = await browser.newPage({ viewport: { width: 1280, height: 800 } });
+  await p4.goto(BASE + "#/lineup?day=2026-11-06"); await p4.waitForSelector("#list .lineup-row");
+  await p4.locator("#list .row-copy").nth(5).click(); await p4.waitForSelector("#detail #title");
+  const scrolls = await p4.evaluate(() => { const d = document.getElementById("detail"); d.scrollTop = 9999; return getComputedStyle(d).overflowY === "auto" && d.scrollHeight >= d.clientHeight; });
+  assert.ok(scrolls); assert.equal(await p4.locator("#list .lineup-row").count() > 30, true); ok("desktop side panel scrolls independently of the lineup");
+  await p4.close();
   await browser.close();
   console.log(results.length + " checks passed");
 })().catch(e => { console.error("FAIL", e.message); process.exit(1); });

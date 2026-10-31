@@ -155,8 +155,10 @@
     const listPane = el("div", { class: "list-pane" },
       el("h1", { class: "sr-only", text: "EDC Orlando 2026 lineup" }),
       el("p", { class: "context", text: "EDC Orlando 2026 · Nov 6–8 · Tinker Field · Unofficial" }),
-      searchRow, days, railHost, ...(L.validPlaylistUrl(playlist) || L.officialSpotifyPlaylist(playlist) ? [playlistCard()] : []),
-      el("div", { class: "section-heading list-head" }, listTitle, sorts), count, list);
+      searchRow, days, railHost,
+      el("div", { class: "section-heading list-head" }, listTitle, sorts), count, list,
+      // Below the list so the first act stays on the first screen (v2 priority); Tracks shows it at the top.
+      ...(L.validPlaylistUrl(playlist) || L.officialSpotifyPlaylist(playlist) ? [playlistCard()] : []));
     const frag = wide.matches
       ? el("div", { class: "split" }, listPane, el("aside", { id: "detail", class: "detail", "aria-label": "Selected act" }, emptyDetail()))
       : listPane;
