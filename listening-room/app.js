@@ -137,10 +137,10 @@
     const s = L.songGroups(p, idx).flatMap(g => g.songs)[0];
     const link = el("a", { class: "row-name", href: L.buildHash("artist", ctx, p.performance_id), text: p.display_name });
     const sched = L.scheduleState(p, idx, fmt);
-    return el("li", { class: "lineup-row" }, el("a", { class: "art-link", href: link.href, tabindex: "-1", "aria-hidden": "true" }, artwork(s, p.display_name, "row-art")),
+    return el("li", { class: "lineup-row" }, el("a", { class: "art-link", href: link.getAttribute("href"), tabindex: "-1", "aria-hidden": "true" }, artwork(s, p.display_name, "row-art")),
       el("div", { class: "row-copy" }, link, el("div", { class: "row-meta" }, dayLink(p, ctx), el("span", { class: n ? "available" : "muted", text: n ? n + (n === 1 ? " track" : " tracks") : "No tracks added" })),
         el("p", { class: "row-schedule", text: sched.kind === "unconfirmed" ? sched.stage + " · " + sched.time + " · Poster time" : sched.kind === "verified" ? sched.text : "Set time not verified" })),
-      el("a", { class: "go", href: link.href, tabindex: "-1", "aria-hidden": "true", text: "→" }));
+      el("a", { class: "go", href: link.getAttribute("href"), tabindex: "-1", "aria-hidden": "true", text: "→" }));
   }
   function artistView(id, ctx) {
     const identity = idx.artists.get(id);

@@ -61,6 +61,7 @@ const shots = process.argv[2];
   await page.waitForSelector("h1#title");
   assert.match(await page.textContent("main"), /not verified/i); ok("new appearance has no invented set time");
   await page.goto(BASE + "#/artist/nope");
+  await page.waitForSelector(".error");
   assert.match(await page.textContent("main"), /wasn’t found/); ok("unknown route error state");
 
   // Listen tab
