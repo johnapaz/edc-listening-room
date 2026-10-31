@@ -6,7 +6,11 @@ This repository implements a staged pipeline for official EDC Orlando artist ide
 
 **Naming convention:** **Listening Room** is the product. **Listening Room v0 (MVP)** is the first release (tracked in [#38](https://github.com/johnapaz/edc-listening-room/issues/38)). *“Find it. Hear it.”* is optional shorthand for finding a lineup artist and listening to a vetted recording—not an app name or version title. The approved [design brief](docs/ISSUE-35-LISTENING-ROOM-V0-DESIGN.md) defines the MVP and [#39](https://github.com/johnapaz/edc-listening-room/issues/39) tracks later releases.
 
-## Status (October 30, 2026)
+## Public app
+
+**[Open Listening Room](https://listeningroom.app)** — no login. Browse the event lineup and open reviewed YouTube recordings. The shared event playlist is still pending; private pilot and Discovery playlists are not exposed. [App and hosting notes](listening-room/README.md).
+
+## Catalog pipeline status (October 30, 2026)
 
 - Seven connected Notion databases exist: Artists, Releases, Tracks, Genres, Playlists, Performances and Playlist Entries.
 - The eight-person pilot group and two B2B performances are registered as provisional Notion records.
