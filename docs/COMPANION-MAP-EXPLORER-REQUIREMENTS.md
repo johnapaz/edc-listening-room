@@ -38,7 +38,9 @@ Use festival-local America/New_York date/time, which is UTC−05:00 over Novembe
 
 The official map URL stored in venues.json is a reference, **not a grant to reproduce, hotlink or adapt copyrighted artwork**. [#63](https://github.com/johnapaz/edc-listening-room/issues/63) must establish allowed use with evidence. If rights are unclear, create an **original, independently styled schematic** from verified locations, attribute sources and link to the organizer homepage (or deeper official map only with permission) instead; no copied art/logos or implied organizer affiliation.
 
-**Initial rights check (2026-10-31):** [Insomniac Terms of Use](https://www.insomniac.com/terms-of-use/) restrict reproducing/adapting/displaying site artwork, framing/mirroring and deep links. As a conservative engineering baseline, do not embed/hotlink/trace official map art or deep-link to the map without permission. Work from independently supported geographic facts in an original visual treatment; #63 records the evidence.\n\nProvide auditable normalized hotspot coordinates keyed to stable stage IDs. Test spatial alignment during pan/zoom/reflow. Do not claim GPS precision, accessible routes, walking times, or that amenities are open or operational. If geometry cannot be verified, use an accessible stage list plus a permitted organizer-homepage link and mark the interactive map release blocker rather than guessing.
+**Initial rights check (2026-10-31):** [Insomniac Terms of Use](https://www.insomniac.com/terms-of-use/) restrict reproducing/adapting/displaying site artwork, framing/mirroring and deep links. As a conservative engineering baseline, do not embed/hotlink/trace official map art or deep-link to the map without permission. Work from independently supported geographic facts in an original visual treatment; #63 records the evidence.
+
+Provide auditable normalized hotspot coordinates keyed to stable stage IDs. Test spatial alignment during pan/zoom/reflow. Do not claim GPS precision, accessible routes, walking times, or that amenities are open or operational. If geometry cannot be verified, use an accessible stage list plus a permitted organizer-homepage link and mark the interactive map release blocker rather than guessing.
 
 ## 5. P1 — approved direction, not a blocker for first map release
 
@@ -65,16 +67,18 @@ GPS positioning and blue dot, route optimization, walking-time estimates, crowd 
 
 ## 8. Division of work, start order and clean breaks
 
+**Staffing decision (2026-10-31):** The owner will have **Claude handle UX/visual design (#61)**. **ChatGPT (GPT-6 Chat)** handles data reconciliation, rights/geometry research, coding, integration, test evidence, and P1 implementation. The implementation tasks do not consume Claude coding capacity. Map and schedule UI work begins after a reviewable Claude design contract is available; data and rights checks can proceed in parallel.
+
 | Sequence | Issue | Work owner | Deliverable / dependency |
 | --- | --- | --- | --- |
 | Start now, parallel | [#61 — interaction wireframe](https://github.com/johnapaz/edc-listening-room/issues/61) | Claude / design | Map, stage sheet, day filter, link and accessible-list interaction contract; design closeout |
-| Start now, parallel | [#62 — current schedule reconciliation](https://github.com/johnapaz/edc-listening-room/issues/62), alongside [#28](https://github.com/johnapaz/edc-listening-room/issues/28) | Codex / data | Validated current appearances and provisional timed sets joined by stable IDs |
-| Start now, parallel | [#63 — artwork/geometry rights](https://github.com/johnapaz/edc-listening-room/issues/63) | Codex / evidence; Claude / original map asset as needed | Publishable map representation, verified hotspots |
-| After design/geometry contract | [#64 — clickable map UI](https://github.com/johnapaz/edc-listening-room/issues/64) | Claude / implementation | Responsive map shell, selection/navigation/accessibility |
-| After design/data contract | [#65 — stage/day/artist integration](https://github.com/johnapaz/edc-listening-room/issues/65) | Claude / implementation | Stage/day schedules, confidence, music deep links |
-| Plan alongside, execute after P0 | [#67 — independent acceptance](https://github.com/johnapaz/edc-listening-room/issues/67) | Codex / QA; Claude fixes | Device, source, rights, accessibility and deployment gates |
-| P1, optional after P0 | [#66 — My Day](https://github.com/johnapaz/edc-listening-room/issues/66) | Claude / implementation | Locally saved performance plan, overlap warnings |
+| Start now, parallel | [#62 — current schedule reconciliation](https://github.com/johnapaz/edc-listening-room/issues/62), alongside [#28](https://github.com/johnapaz/edc-listening-room/issues/28) | ChatGPT / data | Validated current appearances and provisional timed sets joined by stable IDs |
+| Start now, parallel | [#63 — artwork/geometry rights](https://github.com/johnapaz/edc-listening-room/issues/63) | ChatGPT / evidence + geometry; Claude / visual design direction | Publishable map representation, verified hotspots |
+| After design/geometry contract | [#64 — clickable map UI](https://github.com/johnapaz/edc-listening-room/issues/64) | ChatGPT / implementation | Responsive map shell, selection/navigation/accessibility |
+| After design/data contract | [#65 — stage/day/artist integration](https://github.com/johnapaz/edc-listening-room/issues/65) | ChatGPT / implementation | Stage/day schedules, confidence, music deep links |
+| Plan alongside, execute after P0 | [#67 — independent acceptance](https://github.com/johnapaz/edc-listening-room/issues/67) | ChatGPT / evidence-based QA and code fixes | Device, source, rights, accessibility and deployment gates |
+| P1, optional after P0 | [#66 — My Day](https://github.com/johnapaz/edc-listening-room/issues/66) | ChatGPT / implementation | Locally saved performance plan, overlap warnings |
 
-**Working limit:** One design thread plus data/rights verification at first; coordinate frontend integration instead of running competing implementations. Each implementation issue produces a reviewable PR and tests. Claude implements, Codex maintains evidence/governance/independent QA. The approved scope is not carte blanche to deploy or modify unrelated Listening Room functionality.
+**Working limit:** One design thread plus data/rights verification at first; coordinate frontend integration instead of running competing implementations. Each implementation issue produces a reviewable PR and tests. Claude delivers design only (#61); ChatGPT (GPT-6 Chat) implements and integrates the application, handles data and map source/geometry evidence, maintains governance and performs evidence-based QA. Because implementation and QA share an agent, record objective test evidence and outstanding owner/device checks instead of asserting independent-agent verification. The approved scope is not carte blanche to deploy or modify unrelated Listening Room functionality.
 
 **Clean break:** #61 ends with a reviewable UX contract; #62/#63 establish data/rights gates; #64/#65 end with integrated preview evidence; #67 records acceptance and release blockers. The user already approved the described P0/P1 split; significant additional product choices still need explicit review.
