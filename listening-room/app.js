@@ -21,8 +21,8 @@
     if (!r.ok) throw new Error(path);
     return r.json();
   };
-  function ext(href, text, cls) {
-    return el("a", { href, class: cls, target: "_blank", rel: "noopener noreferrer", "aria-label": text + " (opens in a new tab)", text: text + " ↗" });
+  function ext(href, text, cls, label) {
+    return el("a", { href, class: cls, target: "_blank", rel: "noopener noreferrer", "aria-label": (label || text) + " (opens in a new tab)", text: text + " ↗" });
   }
   const artistLink = (a, ctx, cls) => el("a", { class: cls || "artist-link", href: L.buildHash("artist", ctx, a.artist_id), text: a.display_name });
   function dayLink(p, ctx) {
@@ -47,7 +47,7 @@
   function playlistCard() {
     const url = L.validPlaylistUrl(playlist);
     const card = el("section", { class: "card playlist-card", "aria-label": "Event playlist" });
-    if (url) card.append(el("h2", { text: playlist.label }), ext(url, "Listen on YouTube Music", "btn"));
+    if (url) card.append(el("h2", { text: playlist.label }), ext(url, "Listen on YouTube Music", "btn", "Listen to " + playlist.label + " on YouTube Music"));
     else card.append(el("details", {}, el("summary", {}, el("span", { text: "Event playlist" }), el("span", { class: "soon", text: "Not available" })),
       el("p", { class: "muted", text: "There is no public event playlist yet. You can open the individual tracks listed here on YouTube." })));
     return card;

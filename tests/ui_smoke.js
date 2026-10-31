@@ -25,6 +25,12 @@ const shots = process.argv[2];
   assert.equal(await page.locator("section.playlist-card").count(), 0);
   assert.equal(await page.locator("section.card a.btn").count(), 0); ok("playlist unavailable state, no dead link");
 
+  const rowLinks = await page.$$eval("#list .lineup-row:nth-child(2) a", as => as.map(a => [a.className, a.getAttribute("href"), a.tabIndex]));
+  const toArtist = rowLinks.filter(([c]) => c !== "facet");
+  assert.ok(toArtist.every(([, h]) => h === toArtist[0][1] && h.startsWith("#/artist/")));
+  assert.equal(rowLinks.filter(([, , t]) => t >= 0).length, 2);
+  assert.equal(await page.getAttribute("header a.header-help", "href"), "/about/");
+
   // Scenario 2: find B2B artist -> song in 3 taps excluding typing, back keeps context
   await page.fill("#q", "acraze");
   await page.click("#list .row-name:has-text('ACRAZE B2B CID')");   // tap 1
@@ -62,6 +68,13 @@ const shots = process.argv[2];
   await page.waitForSelector(".song");
   assert.match(await page.textContent("section.card"), /Not available/);
   assert.ok(await page.locator(".song a.btn").count() >= 10); ok("Listen lists reviewed songs");
+
+  const names = await page.$$eval(".song a.btn", as => as.map(a => a.getAttribute("aria-label")));
+  assert.ok(names.every(n => /^Open .+ by .+ on YouTube \(opens in a new tab\)$/.test(n)) && new Set(names).size === names.length);
+  await page.goto(new URL(BASE).origin + "/#/artist/" + encodeURIComponent("edco26:2026-11-08:martin-garrix"));
+  await page.waitForSelector("h1#title");
+  assert.match(await page.textContent("h1#title"), /Martin Garrix/);
+  assert.equal(await page.getAttribute('meta[property="og:image"]', "content"), "https://listeningroom.app/og.png");
 
   // Keyboard: tab order reaches search and a result, Enter opens
   await page.goto(BASE);

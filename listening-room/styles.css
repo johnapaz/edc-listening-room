@@ -26,3 +26,5 @@
 .empty p{margin-bottom:8px}.foot{line-height:1.6}
 @media(max-width:600px){.intro .muted{font-size:.9375rem}.music-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.music-copy{padding:0 8px 6px}.hero-art{width:min(100%,320px)}.song-art{width:80px;height:45px}.song-copy{flex-basis:calc(100% - 96px)}.row-art{width:56px;height:44px}.artist-hero.no-art{display:flex}.artist-hero.no-art .hero-art{width:72px;height:72px}.artist-hero.no-art h1{font-size:1.5rem}}
 @media(max-width:320px){.brand{font-size:.75rem}.header-help{font-size:.8125rem}.bar{gap:0}.day-heading{flex-wrap:wrap;gap:4px}.song-copy{flex-basis:calc(100% - 96px)}.artist-hero.no-art .hero-art{width:52px;height:52px}.artist-hero.no-art{gap:10px}}
+
+.ready{margin-bottom:24px}

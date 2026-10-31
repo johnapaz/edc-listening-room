@@ -28,12 +28,11 @@ def build():
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir()
-    for name in ['index.html', 'app.js', 'lib.js', 'styles.css']:
+    for name in ['index.html', 'app.js', 'lib.js', 'styles.css', 'redirect.js']:
         dest = OUT / 'listening-room' / name
         dest.parent.mkdir(exist_ok=True)
         shutil.copyfile(ROOT / 'listening-room' / name, dest)
     shutil.copyfile(ROOT / 'index.html', OUT / 'index.html')
-    shutil.copyfile(ROOT / 'redirect.js', OUT / 'redirect.js')
     # Disable SPA fallthrough so private/nonexistent paths return actual 404s.
     (OUT / '404.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><title>Not found · Listening Room</title><body><h1>Nothing here.</h1><a href="/">Back to Listening Room</a></body></html>')
     (OUT / '_redirects').write_text('https://www.listeningroom.app/* https://listeningroom.app/:splat 301\n'
