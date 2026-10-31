@@ -4,6 +4,8 @@ Independent, unofficial festival music discovery. **Not affiliated with EDC or I
 
 This repository implements a staged pipeline for official EDC Orlando artist identities, relational Notion exploration, deterministic track discovery scores, and real YouTube Music playlists. It uses the [official lineup](https://orlando.edc.com/lineup/) as source of truth.
 
+**Naming convention:** **Listening Room** is the product. **Listening Room v0 (MVP)** is the first release (tracked in [#38](https://github.com/johnapaz/edc-listening-room/issues/38)). *“Find it. Hear it.”* is optional shorthand for finding a lineup artist and listening to a vetted recording—not an app name or version title. The approved [design brief](docs/ISSUE-35-LISTENING-ROOM-V0-DESIGN.md) defines the MVP and [#39](https://github.com/johnapaz/edc-listening-room/issues/39) tracks later releases.
+
 ## Status (October 30, 2026)
 
 - Seven connected Notion databases exist: Artists, Releases, Tracks, Genres, Playlists, Performances and Playlist Entries.

@@ -2,7 +2,14 @@
 
 **Status:** **OWNER-APPROVED — DESIGN HANDOFF COMPLETE** (2026-10-30). Final product direction from three bounded sessions and subsequent owner corrections in [#35](https://github.com/johnapaz/edc-listening-room/issues/35). **This document approves UX scope and implementation planning, not playlist creation, playlist visibility changes, public deployment or merging prototype PR #33.**
 
-**Implementation:** [#38 — Listening Room v0 MVP](https://github.com/johnapaz/edc-listening-room/issues/38). **Later progression:** [#39 — v0.1/v0.2/v1 roadmap](https://github.com/johnapaz/edc-listening-room/issues/39). **Separate product:** [#29 — Event Day Companion](https://github.com/johnapaz/edc-listening-room/issues/29).
+**Implementation:** [#38 — Listening Room v0 (MVP)](https://github.com/johnapaz/edc-listening-room/issues/38). **Later progression:** [#39 — v0.1/v0.2/v1 roadmap](https://github.com/johnapaz/edc-listening-room/issues/39). **Separate product:** [#29 — Event Day Companion](https://github.com/johnapaz/edc-listening-room/issues/29).
+
+## Naming convention
+
+- **Listening Room** — product name.
+- **Listening Room v0 (MVP)** — first release, used consistently in issues, documentation, engineering plans, and handoffs.
+- *“Find it. Hear it.”* — optional descriptive shorthand for the core **find an artist → hear a curated song** journey; **not a product name, release name, UI label, or separate feature**.
+- **EDC Orlando 2026** — the initial event. **Round Robin** — a quiet playlist-ordering rule, not the product identity.
 
 ## 1. Product promise and principles
 
@@ -83,7 +90,7 @@ This made Round Robin more prominent than music discovery and failed to explain 
 
 ## 4. Exactly what ships in the MVP
 
-**MVP name:** **Find it. Hear it.** Track work in [#38](https://github.com/johnapaz/edc-listening-room/issues/38).
+**First release: Listening Room v0 (MVP).** The phrase *“Find it. Hear it.”* describes its find-to-listen journey only. Track work in [#38](https://github.com/johnapaz/edc-listening-room/issues/38).
 
 **Must work:**
 1. Fast event-scoped artist search over the entire sourced lineup, including B2B billings, and **All/Fri/Sat/Sun** navigation.
@@ -101,7 +108,7 @@ Full tracked scope: [#39](https://github.com/johnapaz/edc-listening-room/issues/
 
 | Phase | Experience | Constraint |
 |---|---|---|
-| **v0 — Find it. Hear it.** | Event lineup and day browsing; artist → specific vetted YouTube songs; one event-wide shared playlist | No visitor account or playlist generation |
+| **v0 — Listening Room MVP** | Event lineup and day browsing; artist → specific vetted YouTube songs; one event-wide shared playlist | No visitor account or playlist generation |
 | **v0.1 — Listen Your Way** | Three verified **Fri/Sat/Sun** shared playlists; better reviewed genre/stage browsing; *select* curated genre/stage mixes if worthwhile | Each provider playlist must actually exist and pass independent-link testing |
 | **v0.2 — Make Your Mix** | Select artists, configure number of songs, arrange/preview a deterministic mix, optionally save a **local** recipe | Preview is **not** a published/continuous YouTube playlist; never mislabel it |
 | **v1 — Generate My Playlist** | Generate a real continuously playable playlist, ideally in the listener’s YouTube account through normal app-managed OAuth | Separate platform feasibility, Google permissions/compliance, quota, security, anti-abuse and publication gates |
