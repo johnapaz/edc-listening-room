@@ -21,3 +21,21 @@ Claude's cloud session could not reach the official source. `www.youtube.com`, `
 - The tap target is at least 44×44 at 280, 360 and 1280px, with no horizontal overflow at 280px.
 - No console errors under the production CSP. `tests/ui_smoke.js` and the Python tests pass.
 - The public build includes the SVG and no file outside the allowlist.
+
+## Codex source verification — October 31, 2026
+
+The official source is reachable in this session. The legacy brand-resource URL redirects to <https://brand.youtube/>. The icon page, <https://brand.youtube/youtube-icon/>, links this official archive:
+
+<https://www.gstatic.com/marketing-cms/78/29/3e68a1414bb28d0b7e47b44c3c91/youtube-icon.zip>
+
+The archive supplies PNG, EPS and AI digital assets; **it does not contain an SVG**. The full-color PNG is committed unchanged as `listening-room/youtube-icon.png`, extracted from `YouTube_Icon/Digital/01 Red/yt_icon_red_digital.png`. No conversion or redraw was performed.
+
+SHA-256: `1027b1b0517727adb9697155a270744381c3ce9b047b1c8bd8a9389dc7d07a83`
+
+### Integration hold
+
+The current official icon page's Clear Space guidance states a digital minimum height of **100px** and requires clear space defined by the icon's triangle. The API branding guidelines also defer minimum size to the brand site: <https://developers.google.com/youtube/terms/branding-guidelines>. That conflicts with the requested 28–32px-wide icon inside a compact 44px target. Step 6 above explicitly prioritizes official minimum sizing. Do not claim that a 28–32px rendering passes the verified current guidance.
+
+The asset is staged for the eventual implementation, but is deliberately not added to the public build or rendered yet. This PR remains open until the compact presentation can be reconciled with current official guidance, or the approved UI is revised to satisfy it. Do not substitute an unofficial SVG.
+
+Dependency update: PR #70 supersedes #58 and includes its search-context fix. Integrate icon controls against the accepted final v2 UI and Spotify PR #68 so later changes cannot restore placeholder glyphs or overwrite provider actions.
