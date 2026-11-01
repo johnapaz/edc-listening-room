@@ -1,6 +1,23 @@
 # Overnight release control — November 1, 2026
 
-PM-owned record for #83 / canonical dispatch #77. Checkpoint: 2026-11-01 04:00 UTC. This is a **pre-candidate work record**, not a release or sign-off.
+PM-owned record for #83 / canonical dispatch #77. This is a **pre-candidate work record**, not a release or sign-off.
+
+## Current checkpoint — 2026-11-01 05:00 UTC pass
+
+**NOT READY; no candidate generation or public Companion release.** This section supersedes the historical checkpoint below.
+
+- Backend helper #85 is merged at `af706af38f70f45f6e05e0e3c080d0b29d36f7f0` after full-file PM review, exact-head passing required test CI, syntax/config/manifest/size-rollup checks and verified resolution of both prior review findings. No product data, test configuration or production code changed. Author's Chromium helper evidence is baseline-only; independent/browser WebKit helper execution remains unverified.
+- Current frontend #82 head observed: `5237336ecdc2888efd1d80a4d9edb34692717999`. Exact-head test/browser are reported green in the PR. QA independently cleared sticky day-control occlusion at `42e20df`, with the same check failing on the held `db54e8b`. This does not sign off later changes.
+- Frontend reports A11Y-001/002/005 fixes (Back focus, retry announcement/focus, unavailable headings/titles); independent QA must retest current code. A11Y-006 forced-colors selection distinguishability is newly assigned to frontend. P3 polish remains deferred.
+- **LR-001 (P1) is open on the live Listening Room, pre-existing on main:** bottom navigation fully obscures focused controls. PM accepts the bounded accessibility correction under #44. QA is explicitly assigned ONLY `listening-room/styles.css` for fixed-bar scroll-padding/focus occlusion, in a separate PR with same-agent implementation/retest labelled. Backend independently verifies the fix; no competing CSS edits. LR-002 is included only if that same correction resolves it.
+- QA test/ledger branch: `claude/gracious-newton-3s6ivf` @ `4391e2b8d8aa900c41cd3e932497e2d28e67c128`. Findings are tied to tested `42e20df`; no blanket accessibility compliance or real-device/assistive-tech pass.
+- Backend branch: `claude/elegant-cray-0na154` @ `a5a31bc30ca810b7022a03ce4aa7b077f0aed5b9` before squash merge. QA's old 8fb2207 handoff pin was corrected; the current merged helper is available. Backend's remaining ready work is the explicit unfinished field-level allowlist/identity/time audit and independent LR-001 verification when the QA fix arrives. No speculative optimization.
+- Fully paginated seven Claude branches: frontend, backend and QA have observed acknowledgment/activity. No designer acknowledgment/report observed. Principal design remains gated on an actual candidate at/after 10:00 UTC.
+- Existing map/source/public-release gates and real hardware/AT limits remain. Coordinator remains available while fixes/reviews are actionable. No final report or production change from this pass.
+
+## Historical checkpoint — 2026-11-01 04:00 UTC
+
+The remaining sections record the earlier baseline; the current checkpoint above wins where status differs.
 
 ## Disposition
 
