@@ -159,7 +159,11 @@ async function acceptance(page, base, pass, ctx, perf) {
       await page.setViewportSize({ width: w, height: h });
       await go('#/explore?day=2026-11-07&stage=circuit-grounds');
       const style = css ? await page.addStyleTag({ content: css }) : null;
-      await page.evaluate(() => window.scrollTo(0, 900)); await page.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))));
+      // go() returns at once when the target is the same view (aria-busy is already false), so let the hash render and its
+      // scroll restore finish before scrolling; otherwise a late render can reset the scroll or swap the nodes under test.
+      await page.waitForTimeout(250);
+      await page.evaluate(() => window.scrollTo(0, 900)); await page.waitForTimeout(120);
+      await page.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))));
       const m = await page.evaluate(() => {
         const bar = document.querySelector('.app-bar').getBoundingClientRect(), strip = document.querySelector('.days');
         const sr = strip.getBoundingClientRect(), pos = getComputedStyle(strip).position;
@@ -173,7 +177,7 @@ async function acceptance(page, base, pass, ctx, perf) {
       if (m.barH > 60) sawWrappedHeader = true;
       if (m.stripPos === 'sticky') {
         if (m.barPos === 'sticky') assert.ok(m.stripTop >= m.barBottom - 0.5, 'strip behind app bar @' + where + ' ' + JSON.stringify({ stripTop: m.stripTop, barBottom: m.barBottom }));
-        m.links.forEach(l => assert.ok(l.ok && l.top >= -0.5, 'day link occluded @' + where + ': ' + l.text));
+        m.links.forEach(l => assert.ok(l.ok && l.top >= -0.5, 'day link occluded @' + where + ': ' + JSON.stringify({ link: l, barBottom: m.barBottom, stripTop: m.stripTop, varBar: m.varBar, varStrip: m.varStrip })));
         assert.equal(m.varBar, (m.barPos === 'sticky' ? m.barH : 0) + 'px', 'measured bar offset @' + where);
         assert.ok(Math.abs(parseFloat(m.varStrip) - m.stripH) < 1, 'measured strip offset @' + where);
       } else { // landscape / Fold cover: nothing is pinned, so no phantom offset may remain
@@ -186,7 +190,7 @@ async function acceptance(page, base, pass, ctx, perf) {
   assert.ok(sawWrappedHeader, 'the wrapped-header condition must actually be exercised');
   // Sticky day headings (All days) clear the real header + strip.
   await page.setViewportSize({ width: 360, height: 740 }); await go('#/explore?stage=circuit-grounds');
-  await page.addStyleTag({ content: ':root{font-size:30px!important}' }); await page.evaluate(() => window.scrollTo(0, 1200));
+  await page.addStyleTag({ content: ':root{font-size:30px!important}' }); await page.waitForTimeout(250); await page.evaluate(() => window.scrollTo(0, 1200)); await page.waitForTimeout(120);
   const headingGap = await page.evaluate(() => { const strip = document.querySelector('.days').getBoundingClientRect().bottom;
     return [...document.querySelectorAll('.day-heading:not(.subtle)')].map(h => parseFloat(getComputedStyle(h).top) - strip); });
   assert.ok(headingGap.length && headingGap.every(g => Math.abs(g) < 1.5), 'day headings stick directly below the strip: ' + headingGap);
