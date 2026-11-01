@@ -2,6 +2,8 @@
 
 Session 1 of 2 · October 31, 2026. Functional neutral preview; **no public release**.
 
+> **Session 2 (November 1, 2026) update:** the corrected design is integrated; see [Session 2 notes](companion-session2/QA.md). Where this document still says presentation is temporary, routes are explore/performance/artist only, or the page is not yet styled, the Session 2 notes and the route list below win.
+
 ## Run and release boundary
 
 ```
@@ -19,7 +21,7 @@ The production command `scripts/build_public_site.py` still excludes every Compa
 
 ## Architecture and replaceable interfaces
 
-No framework or production dependencies. `companion/lib.js` is pure UMD logic; it reuses Listening Room's existing day keys, index/song grouping and route builder. `components.js` returns DOM Nodes/Fragments via safe text APIs. `app.js` owns async loading, history, focus, retry and composition. `styles.css` is explicitly temporary. There are no copied wireframe scripts or positions.
+No framework or production dependencies. `companion/lib.js` is pure UMD logic; it reuses Listening Room's existing day keys, index/song grouping and route builder. `components.js` returns DOM Nodes/Fragments via safe text APIs. `app.js` owns async loading, history, focus, retry and composition. `styles.css` holds the sibling design tokens; the violet accent and wide layout are provisional review defaults. There are no copied wireframe scripts or positions.
 
 | Interface | Inputs | Output / responsibility |
 | --- | --- | --- |
@@ -28,11 +30,12 @@ No framework or production dependencies. `companion/lib.js` is pure UMD logic; i
 | `hasTime`, `coverage`, `timeLabel` | performance or performance rows | source-grounded schedule availability, truthful coverage, Orlando clock labels including next-day midnight |
 | `parseHash`, `buildHash`, `transition` | route/state/actions | stable encoded identifiers and day/stage context; no name searches |
 | `DayPicker({state})` | current route | navigable day links retaining selection; focused day is retained on filtering |
-| `FestivalMap()` | no usable geometry yet | explicit unavailable state; no map graphic or fake controls |
+| `FestivalMap()` | no usable geometry yet | "Map coming later" state with organizer link; no map graphic or fake controls |
 | `StageHotspot({stage,state})` | audited normalized point from `hotspots(venues)` | future positioned anchor; integration seam only, **not mounted** without supported geometry/representation |
 | `StageList({idx,state})` | shared stages, day | five functional stage links, unassigned link and all-performance link; sourced-time counts |
 | `StagePanel({idx,state})` | selection | heading, counts, schedule or an honest no-sourced-schedule state |
-| `PerformanceSchedule({rows,idx,state})` | queried rows | day groups, sourced times, separate unknown-time lists, performance cards |
+| `ScheduleList({rows,idx,state})` (alias `PerformanceSchedule`), `SetRow` (alias `PerformanceCard`) | queried rows | day groups, sourced times, separate unknown-time lists, set rows with status badge, a linked billing, per-artist links for multi-artist billings and per-identity Hear links |
+| `MapGatedView`, `StagesView`, `ExploreView`, `UnscheduledView`, `SourcesView`, `DetailView` | route state | the page for each view; `syncNav` keeps the primary navigation in step with the route |
 | `ArtistEntry({artist,state,role})` | stable identity, optional DJ/MC role | clickable individual artist link |
 | `DetailView({idx,state,musicAvailable})` | artist or performance route | real identity/billing information, related current appearances, project members, direct Listening Room link or honest no-track state |
 | `StateBox({title,message,kind,retry})` | text, empty/loading/error kind, optional callback | semantic status/error with working retry |
@@ -42,21 +45,20 @@ Performance shapes: see [data contract](COMPANION-DATA-CONTRACT.md). A B2B is on
 
 ## Routes / navigation
 
-- `#/explore?day=2026-11-07&stage=kinetic-field`
-- `#/performance/{encoded performance_id}?day=…&stage=…`
-- `#/artist/{encoded artist_id}?day=…&stage=…`
-- `stage=unassigned` exposes every current appearance without a sourced stage.
-- Empty stage means all performances. All days is the current neutral default.
-- Day changes retain the stage. History stores route and scroll; browser Back/Forward and logical Back links restore context. Same-tab Listening Room links use its existing artist/performance ID route. Browser Back returns across products. No Listening Room source edits or new search guesses.
+- `#/map` (also the bare URL): the S10 gated Map tab, the stage list under "Map coming later". `#/map?stage=…` redirects (replace) to the stage page; `?set=`/`?artist=` open the detail page; an unknown stage is ignored.
+- `#/stages?day=…`: stage list. `#/unscheduled?day=…`: current appearances with no sourced stage or time. `#/sources` (alias `#/about`): labels, schedule sources and the map disposition.
+- `#/explore?day=2026-11-07&stage=kinetic-field` (alias `#/stage/kinetic-field?day=…`): the stage or all-performances page. `stage=unassigned` exposes every current appearance without a sourced stage; empty stage means all performances. All days is the neutral default.
+- `#/performance/{encoded performance_id}?day=…&stage=…` and `#/artist/{encoded artist_id}?day=…&stage=…`: detail pages (legacy links unchanged).
+- Day changes replace the current history entry; other navigation pushes. History stores route and scroll; browser Back/Forward and logical Back links restore context. Selecting the already selected stage/day is a no-op. Primary navigation carries the day; Map carries the last selected stage. Same-tab Listening Room links use stable artist IDs only; there is no name-search fallback. Browser Back returns across products.
 - Invalid stage/artist/route is a recoverable unavailable state. Missing music coverage does not prevent stage navigation. Required-data load/parse/schema/network errors have a bounded 15-second wait and retry; no offline guarantee.
 
 ## Claude integration: PR #73
 
-Read `docs/companion-design/DESIGN-GUIDELINES.md` and `INTERACTION-CONTRACT.md` on `claude/eager-einstein-kkk330` / PR #73 (or main if later merged). Claude delivered design-only docs and wireframe. Its proposed accent and desktop 400px panel have not been approved in this implementation. Incorporate approved presentation in Session 2; keep pure query and ID contracts.
+Read `docs/companion-design/DESIGN-GUIDELINES.md` and `INTERACTION-CONTRACT.md` on `claude/eager-einstein-kkk330` / PR #73 (or main if later merged). Claude delivered design-only docs and wireframe. Session 2 integrated it (see the [Session 2 notes](companion-session2/QA.md)). The proposed violet accent is used as a **provisional review default**; the desktop 400px side panel was **not** built because there is no map to sit beside it (a stage rail plus schedule is used instead). Pure query and ID contracts are unchanged.
 
-Integration review was posted on #73. Never port invented wireframe coordinates. Use **Time unknown / No sourced schedule**, because “not announced” would claim something the reference does not establish. Future authoritative status currently uses `verified`, not the proposal's `organizer_verified`. Inline public source metadata is available; do not fetch private source registry. Keep names intended as navigation clickable.
+Integration review was posted on #73. Never port invented wireframe coordinates. Use **Time unknown / No sourced schedule**, because “not announced” would claim something the reference does not establish. Future authoritative status currently uses `verified`, not the proposal's `organizer_verified`. Inline public source metadata is available; do not fetch private source registry. Credited artist and project-member names stay clickable on detail pages; in set rows the billing is a native link to the performance details by owner preference (overriding the contract's plain-text billing); multi-artist billings add individual artist links.
 
-Known deliberate differences to resolve during design integration: our functional routes use `explore`/`performance`/`artist` rather than map/sheet parameters; details are pages rather than sheet bodies; day links use native navigation semantics. These are isolated in the router/controller/components. Day changes replace the current history entry (as proposed in #73); selecting the already selected stage/day is a no-op. Route aliases are possible without rewriting data/query logic. Do not remove working/deep-link behavior while restyling.
+Resolved in Session 2: the design routes (`map`, `stages`, `stage/{id}`, `unscheduled`, `sources`/`about`) exist beside the legacy `explore`/`performance`/`artist` routes through the pure router; details remain pages rather than sheet bodies (there is no sheet without a map); day links use native navigation semantics. Day changes replace the current history entry (as proposed in #73); selecting the already selected stage/day is a no-op. Do not remove working/deep-link behavior while restyling.
 
 ## Outstanding acceptance
 

@@ -10,6 +10,7 @@ Work is chunked and pushed after each step so it can resume after a rate limit o
 - [x] 6a. Codex review: skip link and nav context (1b6f855)
 - [x] 6b. Owner review: canonical #72 field and status names, geometry gate (S10), program entries with no artist link, and an identity-link assertion in capture.js
 - [ ] 6. Answer Codex follow-ups (an hourly scheduled check runs in this session)
+- [x] 7. Session 2 (lane A of #77): corrected design integrated into `companion/` as a production-excluded review build; see [Session 2 notes](../companion-session2/QA.md). Violet and the desktop layout remain provisional.
 
 Re-capture: `node docs/companion-design/wireframe/capture.js docs/companion-design/wireframe <out-dir>` (uses the preinstalled Playwright and also checks the day-switch and Back flow). Real data keeps the map gated, so the Map tab shows the stage list. Add `?geometry=placeholder` to see the design sketch; it is synthetic and never authorizes placement. Wireframe-only failure states: `?geometry=placeholder&state=mapfail|datafail|offline|stale`.
 
