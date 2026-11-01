@@ -1,0 +1,380 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-01T03:34:44Z",
+  "checked_local_date": "2026-10-31",
+  "baseline_commit": "aca385d6e22e45d7d46507fbfe27c9d42e3a2c51",
+  "scope": "lane B evidence only; no production data or confidence mutation",
+  "source": {
+    "url": "https://www.insomniac.com/s/jZZ09f2XbXVFlrViHG",
+    "retrieval": "web search followed by direct page open",
+    "kind": "organizer_hosted_favorites_share_subset",
+    "authority_limit": "Organizer-hosted selected favorites, not the complete editorial timetable. Page ownership/editorial validation and upstream schedule revision are not established.",
+    "direct_page_times_present": false,
+    "search_snippet_times_present": true,
+    "time_verification": "withheld; snippet-only clock times cannot verify exact current starts or any ends"
+  },
+  "observations": [
+    {
+      "performance_id": "edco26:2026-11-06:sloth",
+      "event_date": "2026-11-06",
+      "billing": "Sloth",
+      "stage_id": "circuit-grounds",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-06:big-florida",
+      "event_date": "2026-11-06",
+      "billing": "Big Florida",
+      "stage_id": "circuit-grounds",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-06:adventure-club",
+      "event_date": "2026-11-06",
+      "billing": "Adventure Club (Sunset Set)",
+      "stage_id": "circuit-grounds",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-06:level-up",
+      "event_date": "2026-11-06",
+      "billing": "Level Up",
+      "stage_id": "circuit-grounds",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-06:whethan",
+      "event_date": "2026-11-06",
+      "billing": "Whethan",
+      "stage_id": "circuit-grounds",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-06:levity",
+      "event_date": "2026-11-06",
+      "billing": "Levity",
+      "stage_id": "circuit-grounds",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-06:david-guetta",
+      "event_date": "2026-11-06",
+      "billing": "David Guetta",
+      "stage_id": "kinetic-field",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-06:wooli",
+      "event_date": "2026-11-06",
+      "billing": "Wooli",
+      "stage_id": "circuit-grounds",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-07:me-n-u",
+      "event_date": "2026-11-07",
+      "billing": "Me n ü",
+      "stage_id": "kinetic-field",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-07:twinsick",
+      "event_date": "2026-11-07",
+      "billing": "Twinsick",
+      "stage_id": "kinetic-field",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-07:subsonic",
+      "event_date": "2026-11-07",
+      "billing": "Subsonic",
+      "stage_id": "circuit-grounds",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-07:avello",
+      "event_date": "2026-11-07",
+      "billing": "AVELLO",
+      "stage_id": "circuit-grounds",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-07:jkyl-hyde",
+      "event_date": "2026-11-07",
+      "billing": "Jkyl & Hyde",
+      "stage_id": "circuit-grounds",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-07:alleycvt",
+      "event_date": "2026-11-07",
+      "billing": "ALLEYCVT",
+      "stage_id": "circuit-grounds",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-07:ray-volpe",
+      "event_date": "2026-11-07",
+      "billing": "Ray Volpe",
+      "stage_id": "circuit-grounds",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-07:disco-lines",
+      "event_date": "2026-11-07",
+      "billing": "Disco Lines",
+      "stage_id": "kinetic-field",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-07:alison-wonderland",
+      "event_date": "2026-11-07",
+      "billing": "Alison Wonderland",
+      "stage_id": "circuit-grounds",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-08:discovery-project",
+      "event_date": "2026-11-08",
+      "billing": "Discovery Project",
+      "stage_id": "circuit-grounds",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-08:ian-asher",
+      "event_date": "2026-11-08",
+      "billing": "Ian Asher",
+      "stage_id": "kinetic-field",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-08:san-holo",
+      "event_date": "2026-11-08",
+      "billing": "San Holo (Wholesome Riddim Set)",
+      "stage_id": "circuit-grounds",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-08:of-the-trees",
+      "event_date": "2026-11-08",
+      "billing": "Of The Trees (Sunset Set)",
+      "stage_id": "circuit-grounds",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-08:slander",
+      "event_date": "2026-11-08",
+      "billing": "SLANDER (Sunset Set)",
+      "stage_id": "kinetic-field",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-08:know-good",
+      "event_date": "2026-11-08",
+      "billing": "Know Good",
+      "stage_id": "stereo-bloom",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-08:deorro-b2b-dj-diesel",
+      "event_date": "2026-11-08",
+      "billing": "Deorro B2B DJ Diesel",
+      "stage_id": "circuit-grounds",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-08:boogie-t",
+      "event_date": "2026-11-08",
+      "billing": "Boogie T",
+      "stage_id": "stereo-bloom",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-08:atliens",
+      "event_date": "2026-11-08",
+      "billing": "ATLiens",
+      "stage_id": "circuit-grounds",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    },
+    {
+      "performance_id": "edco26:2026-11-08:martin-garrix",
+      "event_date": "2026-11-08",
+      "billing": "Martin Garrix",
+      "stage_id": "kinetic-field",
+      "observed_fields": [
+        "event_date",
+        "billing",
+        "stage_id"
+      ],
+      "starts_at": null,
+      "ends_at": null
+    }
+  ],
+  "disposition": {
+    "matched_day_stage": 27,
+    "changed_current_records": 0,
+    "appearances": 130,
+    "poster_transcribed": 107,
+    "unknown_stage_time": 23,
+    "verified_complete_slots": 0,
+    "geometry_objects": 0,
+    "confidence_upgrade": false,
+    "public_export_approved": false
+  }
+}
