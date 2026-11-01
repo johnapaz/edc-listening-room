@@ -172,6 +172,7 @@ async function installScenario(ctx, base, id, overrides, record) {
 /**
  * Open a page under one profile + scenario + time fixture.
  * opts: engine, profile, scenario, time (fixture id or ISO instant), base, path, params, reducedMotion,
+ *       (offline-before-load never auto-navigates; call s.goto() yourself),
  *       locale, colorScheme, goto (default true).
  */
 async function openScenario(opts) {
@@ -194,7 +195,7 @@ async function openScenario(opts) {
   const ctx = await browser.newContext({
     viewport: { width: profile.width, height: profile.height },
     deviceScaleFactor: Math.min(profile.dpr, 2), // matches tests/device_matrix.js; 3x adds screenshot weight without layout change
-    isMobile: profile.mobile && engineName === "chromium", // WebKit contexts do not support isMobile
+    isMobile: profile.mobile, // supported by Chromium and WebKit (device_matrix.js does the same)
     hasTouch: profile.touch,
     reducedMotion: opts.reducedMotion ? "reduce" : "no-preference",
     colorScheme: opts.colorScheme || "light",
@@ -219,7 +220,13 @@ async function openScenario(opts) {
     close: async () => { record.finished_utc = new Date().toISOString(); await ctx.close(); await browser.close(); },
     goto: (p, o) => page.goto(opts.base + (p || record.path), o),
   };
-  if (opts.goto !== false) await page.goto(opts.base + record.path, { waitUntil: "domcontentloaded" });
+  // offline-before-load makes the first navigation fail by design, so the caller must navigate itself after deciding what to assert.
+  const autoGoto = opts.goto !== false && (opts.scenario || "normal") !== "offline-before-load";
+  if (!autoGoto && opts.goto !== false) record.applied.push("navigation skipped: offline-before-load; call s.goto() then s.restore()");
+  if (autoGoto) {
+    try { await page.goto(opts.base + record.path, { waitUntil: "domcontentloaded" }); }
+    catch (e) { await scenario.close().catch(() => {}); throw e; } // never leak the browser when navigation fails
+  }
   return scenario;
 }
 
