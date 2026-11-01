@@ -2,6 +2,9 @@
 
 **Checkpoint 2:** 2026-11-01 05:00 UTC (sandbox clock; the earlier checkpoint's "~05:25" label was an estimate written ahead of the clock and is wrong, it was pushed at ~04:55 UTC) · branch `claude/gracious-newton-3s6ivf` (QA session's assigned branch; not `claude/rc-qa-2026-11-01`) · role: QA, independent of frontend (#82) and backend (#85). Same-agent evidence is labelled; WebKit, real devices and assistive tech are untested.
 
+## Update 06:00 UTC: retest of #82 `6c217ec`
+A11Y-001, 002, 005 and 006 are **fixed and independently retested (PASS)**; sticky occlusion still passes; no regressions found in keyboard, announcements or Back/scroll. **Open:** A11Y-003/004/007 (P3, Companion), **LR-001 (P1), LR-002, LR-003 (live Listening Room, pre-existing; `listening-room/` unchanged by #82 and main)**. Tested head `6c217ec` is a candidate-in-progress; final sign-off still requires the exact candidate SHA recorded by PM.
+
 ## Completed
 - **Baseline on `main` @ `aca385d` and PR #82 @ `42e20df`** (Chromium only): Python 101 pass / 1 existing skip; Node 31 pass (#82; main 26); both lineup validators and EDCO reference validator clean; Companion smoke 29/29 (#82; main 12/12); Listening Room UI smoke 35/35 (main). Production exclusion test is in the Python suite. No config or assertion was changed to obtain these.
 - **Sticky-occlusion retest (PM request, #80 comment 6553142656): PASS at `42e20df`**, FAIL at the held head `db54e8b` with the same test. See ledger.
