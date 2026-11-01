@@ -1,6 +1,6 @@
 # QA status — issues #80 / #77 / #67
 
-**Checkpoint 2:** 2026-11-01 ~05:10 UTC (supersedes ~05:25 label of checkpoint 1; sandbox clock) · branch `claude/gracious-newton-3s6ivf` (QA session's assigned branch; not `claude/rc-qa-2026-11-01`) · role: QA, independent of frontend (#82) and backend (#85). Same-agent evidence is labelled; WebKit, real devices and assistive tech are untested.
+**Checkpoint 2:** 2026-11-01 05:00 UTC (sandbox clock; the earlier checkpoint's "~05:25" label was an estimate written ahead of the clock and is wrong, it was pushed at ~04:55 UTC) · branch `claude/gracious-newton-3s6ivf` (QA session's assigned branch; not `claude/rc-qa-2026-11-01`) · role: QA, independent of frontend (#82) and backend (#85). Same-agent evidence is labelled; WebKit, real devices and assistive tech are untested.
 
 ## Completed
 - **Baseline on `main` @ `aca385d` and PR #82 @ `42e20df`** (Chromium only): Python 101 pass / 1 existing skip; Node 31 pass (#82; main 26); both lineup validators and EDCO reference validator clean; Companion smoke 29/29 (#82; main 12/12); Listening Room UI smoke 35/35 (main). Production exclusion test is in the Python suite. No config or assertion was changed to obtain these.
