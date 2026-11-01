@@ -284,7 +284,8 @@
   function DetailView({ idx, state, musicAvailable }) {
     const isArtist = state.view === "artist";
     const entity = isArtist ? idx.artists.get(state.id) : idx.byPerformance.get(state.id);
-    if (!entity) return el("div", { class: "details" }, BackLink({ state }), StateBox({ title: "Entry unavailable", message: "This link does not match the current reference. Return to stages and performances.", kind: "error" }));
+    if (!entity) return el("div", { class: "details" }, BackLink({ state }), el("h1", { id: "detail-title", tabindex: "-1", text: "Entry unavailable" }),
+      StateBox({ title: "Not in the current reference", message: "This link does not match the current reference. Return to stages and performances.", kind: "error" }));
     const allAppearances = isArtist ? idx.performances.filter(p => p.artist_ids.includes(state.id)).sort(C.chronological) : [entity];
     const rows = isArtist ? allAppearances.filter(p => state.day === "all" || p.event_date === state.day) : allAppearances;
     const node = el("article", { class: "details" }, BackLink({ state }),

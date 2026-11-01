@@ -133,6 +133,21 @@ async function acceptance(page, base, pass, ctx, perf) {
   await page.waitForFunction(() => !document.getElementById('banner').hidden);
   const banner = await page.textContent('#banner'); assert.match(banner, /offline/i); assert.doesNotMatch(banner, /available offline|works offline/i);
   await ctx.setOffline(false); await page.waitForFunction(() => document.getElementById('banner').hidden); pass('offline banner appears and clears');
+  // Focus survives browser Back: popstate focuses the heading and the hashchange that follows must not re-render over it.
+  await go('#/explore?day=2026-11-07&stage=circuit-grounds');
+  await page.locator('.billing-link').nth(2).click(); await page.waitForSelector('#detail-title');
+  await page.goBack(); await page.waitForTimeout(600);
+  assert.equal(await page.evaluate(() => document.activeElement.id), 'stage-title', 'focus after browser Back');
+  await page.locator('.billing-link').nth(2).click(); await page.waitForSelector('#detail-title');
+  await page.locator('[data-back]').click(); await page.waitForTimeout(600);
+  assert.equal(await page.evaluate(() => document.activeElement.id), 'stage-title', 'focus after in-page Back'); pass('focus stays on the restored heading after Back');
+  // Error views have exactly one h1 and an accurate document title.
+  for (const [hash, title] of [['#/artist/nope', /^Entry unavailable/], ['#/performance/nope', /^Entry unavailable/], ['#/bogus', /^Selection unavailable/], ['#/explore?stage=missing', /^Selection unavailable/]]) {
+    await go(hash); await page.waitForSelector('.error');
+    assert.equal(await page.locator('main h1').count(), 1, 'one h1 ' + hash); assert.match(await page.title(), title, hash);
+    assert.equal(await page.evaluate(() => document.querySelector('main h1').id), 'detail-title');
+  }
+  pass('unavailable views have one h1 and an accurate title');
   // Bad route state is recoverable and the nav still works.
   await go('#/nonsense'); assert.match(await page.textContent('main'), /not found/);
   await page.locator('main .back').click(); await page.waitForSelector('#page-title'); pass('invalid route recovery');
@@ -275,7 +290,9 @@ async function acceptance(page, base, pass, ctx, perf) {
       assert.match(await page.textContent('main'), /No offline copy is guaranteed/);
       await page.unroute('**/data/edco-2026/performances.json');
       await page.getByRole('button', { name: 'Try again' }).click();
-      await page.waitForSelector('#stage-panel .performance'); assert.equal(await page.locator('#stage-panel .performance').count(), 130); pass('data failure and working retry');
+      await page.waitForSelector('#stage-panel .performance'); assert.equal(await page.locator('#stage-panel .performance').count(), 130);
+      assert.equal(await page.evaluate(() => document.activeElement.id), 'stage-title', 'retry success moves focus into the restored content');
+      await page.waitForFunction(() => document.getElementById('live').textContent.length > 0); pass('data failure and working retry');
       await page.goto(base + '/companion/#/map'); await page.waitForSelector('[data-component="festival-map"]');
       assert.equal(await page.locator('[data-component="festival-map"] button').count(), 0);
       assert.equal(await page.locator('[data-component="festival-map"] svg, [data-component="festival-map"] img, canvas, .stage-hotspot').count(), 0);

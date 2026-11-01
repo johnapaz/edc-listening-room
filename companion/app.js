@@ -2,7 +2,7 @@
 (function () {
   const C = window.CompanionLib, U = window.CompanionUI, main = document.getElementById("main");
   const nav = document.querySelector(".primary"), live = document.getElementById("live"), banner = document.getElementById("banner");
-  let idx, musicAvailable = false, controller, loadNumber = 0, lastStage = "", liveTimer;
+  let idx, musicAvailable = false, controller, loadNumber = 0, lastStage = "", liveTimer, renderedHash = null;
   history.scrollRestoration = "manual";
   async function readJson(path, signal) {
     const response = await fetch(path, { cache: "no-cache", signal });
@@ -16,9 +16,10 @@
   }
   const TITLES = { map: "Map", stages: "Stages", unscheduled: "Stage or time unknown", sources: "About & sources" };
   function titleFor(state) {
+    if (state.view === "invalid") return "Selection unavailable";
     if (state.view === "explore") return idx.stages.get(state.stage)?.display_name || (state.stage === C.UNKNOWN_STAGE ? "Stage unknown" : "Explore");
-    if (state.view === "artist") return idx.artists.get(state.id)?.display_name || "Artist";
-    if (state.view === "performance") return idx.byPerformance.get(state.id)?.display_name || "Performance";
+    if (state.view === "artist") return idx.artists.get(state.id)?.display_name || "Entry unavailable";
+    if (state.view === "performance") return idx.byPerformance.get(state.id)?.display_name || "Entry unavailable";
     return TITLES[state.view] || "Explore";
   }
   function focusTarget(state) {
@@ -57,11 +58,13 @@
     U.syncNav(nav, state, lastStage);
     main.setAttribute("aria-busy", "false");
     measureLayout();
-    document.title = titleFor(state) + " · Event Day Companion";
+    const unavailable = state.view === "invalid" || (["explore", "artist", "performance"].includes(state.view) && !stageOk);
+    document.title = (unavailable ? "Selection unavailable" : titleFor(state)) + " · Event Day Companion";
+    renderedHash = location.hash; // lets the hashchange that follows a popstate skip a second, focus-destroying render
     if (focus) {
       const target = focus === "day" ? [...main.querySelectorAll("a[data-day]")].find(a => a.dataset.day === state.day) : focusTarget(state);
       (target || main).focus({ preventScroll: focus === "day" || scroll !== undefined });
-      announce(state.view === "explore" ? C.announcement(idx, state) : titleFor(state) + (focus === "day" ? ", " + (state.day === "all" ? "all days" : C.weekday(state.day)) : ""));
+      announce(state.view === "explore" && !unavailable ? C.announcement(idx, state) : (unavailable ? "Selection unavailable" : titleFor(state)) + (focus === "day" ? ", " + (state.day === "all" ? "all days" : C.weekday(state.day)) : ""));
     }
     if (scroll !== undefined) requestAnimationFrame(() => window.scrollTo(0, scroll));
   }
@@ -87,9 +90,10 @@
     } else rememberScroll(); // Retain route + scroll across the Listening Room boundary.
   });
   window.addEventListener("popstate", () => render({ focus: "content", scroll: history.state?.companionScroll || 0 }));
-  // Direct hash edits also work. Browser popstate may additionally emit hashchange;
-  // rendering again is harmless but must not reset a restored scroll position.
-  window.addEventListener("hashchange", () => render({ scroll: history.state?.companionScroll || 0 }));
+  // Direct hash edits also work. Browser Back/Forward emits popstate and then hashchange for the same
+  // hash: popstate already rendered it and focused the heading, so the duplicate render is skipped
+  // (it would replace the focused heading and drop keyboard focus to <body>).
+  window.addEventListener("hashchange", () => { if (location.hash !== renderedHash) render({ scroll: history.state?.companionScroll || 0 }); });
   window.addEventListener("pagehide", rememberScroll);
   window.addEventListener("pageshow", e => { if (e.persisted) render({ scroll: history.state?.companionScroll || 0 }); });
   // Honest connectivity note. This is a status message, never an offline-support promise.
@@ -98,7 +102,7 @@
     banner.textContent = navigator.onLine === false ? "You’re offline. Showing what was already loaded; times may be out of date." : "";
   }
   window.addEventListener("offline", showConnectivity); window.addEventListener("online", showConnectivity); showConnectivity();
-  async function load() {
+  async function load(recovering = false) {
     controller?.abort(); controller = new AbortController(); const signal = controller.signal, number = ++loadNumber;
     idx = undefined; main.setAttribute("aria-busy", "true");
     main.replaceChildren(U.StateBox({ title: "Loading stages…", message: "Getting stages and current performances…", kind: "loading" }));
@@ -113,12 +117,13 @@
       ]);
       if (number !== loadNumber) return;
       musicAvailable = music !== null; idx = C.createIndex(perf, art, venues, music || []);
-      render({ scroll: history.state?.companionScroll || 0 });
+      // After a manual retry the retry button is gone, so move focus into the restored content and announce it.
+      render({ scroll: history.state?.companionScroll || 0, focus: recovering ? "content" : undefined });
     } catch (_e) {
       if (number !== loadNumber) return;
       main.setAttribute("aria-busy", "false");
       main.replaceChildren(U.el("div", { class: "page" }, U.el("h1", { text: "Festival reference unavailable" }),
-        U.StateBox({ title: "Couldn’t load the reference", message: "Your connection may be weak, or the current data may be unavailable. Try again when connected. No offline copy is guaranteed.", kind: "error", retry: load }),
+        U.StateBox({ title: "Couldn’t load the reference", message: "Your connection may be weak, or the current data may be unavailable. Try again when connected. No offline copy is guaranteed.", kind: "error", retry: () => load(true) }),
         U.el("a", { class: "action", href: "https://orlando.edc.com/", text: "Organizer homepage ↗" })));
     } finally { clearTimeout(timer); }
   }
