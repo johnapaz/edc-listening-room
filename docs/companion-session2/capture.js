@@ -21,7 +21,9 @@ const SHOTS = [
   ['07-b2b-detail-360', 360, 740, '#/performance/edco26%3A2026-11-07%3Aacraze-b2b-cid?day=2026-11-07&stage=kinetic-field'],
   ['08-sources-360', 360, 740, '#/sources'], ['09-fold-cover-280', 280, 653, '#/explore?day=2026-11-07&stage=neon-garden'],
   ['10-tablet-768', 768, 1024, '#/explore?day=2026-11-07&stage=kinetic-field'], ['11-desktop-1280', 1280, 800, '#/explore?day=2026-11-07&stage=kinetic-field'],
-  ['12-landscape-844', 844, 390, '#/explore?day=2026-11-06&stage=kinetic-field'], ['13-load-failure-360', 360, 740, '#/explore', 'fail']
+  ['12-landscape-844', 844, 390, '#/explore?day=2026-11-06&stage=kinetic-field'], ['13-load-failure-360', 360, 740, '#/explore', 'fail'],
+  ['14-sticky-scrolled-360', 360, 740, '#/explore?day=2026-11-07&stage=circuit-grounds', 'scroll'],
+  ['15-sticky-wrapped-header-200pct-360', 360, 740, '#/explore?day=2026-11-07&stage=circuit-grounds', 'zoom']
 ];
 (async () => {
   await new Promise(r => server.listen(0, '127.0.0.1', r));
@@ -32,6 +34,8 @@ const SHOTS = [
     if (mode === 'fail') await page.route('**/performances.json', r => r.fulfill({ status: 503, body: '{}' }));
     await page.goto(base + '/companion/' + hash);
     await page.waitForSelector(mode === 'fail' ? '.error' : 'main[aria-busy="false"] h1');
+    if (mode === 'zoom') await page.addStyleTag({ content: ':root{font-size:30px!important}' });
+    if (mode === 'scroll' || mode === 'zoom') { await page.evaluate(() => window.scrollTo(0, 900)); await page.waitForTimeout(150); }
     await page.screenshot({ path: path.join(out, name + '.png') });
     await ctx.close();
   }

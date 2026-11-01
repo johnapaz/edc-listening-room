@@ -5,7 +5,7 @@
 @font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:800;font-display:swap;src:url(../listening-room/fonts/bricolage-grotesque-latin-800.woff2) format("woff2")}
 :root{color-scheme:dark;
   /* ground */
-  --bg:#0a1120;--bg-glow:#1c1f44;--map-dot:#ffffff0d;--bar:#0a1120f5;
+  --bg:#0a1120;--bg-glow:#1c1f44;--map-dot:#ffffff0d;--bar:#0a1120;
   --panel:#131b2e;--sheet:#182238;--line:#33405f;--line-strong:#6b7ca6;
   /* text */
   --text:#f2f5ff;--muted:#b4bdd6;
