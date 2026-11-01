@@ -219,6 +219,38 @@ async function acceptance(page, base, pass, ctx, perf) {
     return [...document.querySelectorAll('.day-heading:not(.subtle)')].map(h => parseFloat(getComputedStyle(h).top) - strip); });
   assert.ok(headingGap.length && headingGap.every(g => Math.abs(g) < 1.5), 'day headings stick directly below the strip: ' + headingGap);
   pass('sticky header and day strip never overlap, including wrapped header and 200% text');
+  // Real Tab traversal on the Stages landing: a focused control must settle clear of the pinned app bar and the fixed tab bar,
+  // including 320x640 with 200% text where the day strip wraps to two rows and rests under the tab bar at scroll top.
+  // (Content resting under a fixed bar before any scrolling is not a focus failure; focus must still scroll it clear.)
+  const seenStops = new Set();
+  for (const [w, h, css] of [[320, 640, ':root{font-size:30px!important}'], [360, 740, ':root{font-size:30px!important}'], [360, 740, ''], [412, 915, ''], [1280, 800, '']]) {
+    await page.setViewportSize({ width: w, height: h });
+    await page.reload(); await page.waitForSelector('main[aria-busy="false"] h1');
+    if (css) await page.addStyleTag({ content: css });
+    await page.waitForTimeout(250);
+    const bad = []; let stops = 0;
+    for (let i = 0; i < 70; i++) {
+      await page.keyboard.press('Tab');
+      await page.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))));
+      const m = await page.evaluate(() => {
+        const a = document.activeElement;
+        if (!a || a === document.body || a.classList.contains('skip')) return null; // the skip link deliberately overlays the header
+        const bar = document.querySelector('.app-bar'), nav = document.querySelector('.primary');
+        const barSticky = getComputedStyle(bar).position === 'sticky', navFixed = getComputedStyle(nav).position === 'fixed';
+        const q = a.getBoundingClientRect(), line = a.getClientRects()[0] || q; // a wrapped inline link's box spans several lines
+        const hit = document.elementFromPoint(line.left + line.width / 2, Math.min(Math.max(line.top + line.height / 2, 1), innerHeight - 1));
+        return { name: (a.textContent || a.tagName).trim().slice(0, 24), top: q.top, bottom: q.bottom, own: !!(a.closest('.app-bar') || a.closest('.primary')),
+          barBottom: barSticky ? bar.getBoundingClientRect().bottom : 0, navTop: navFixed ? nav.getBoundingClientRect().top : innerHeight, ok: !!hit && (hit === a || a.contains(hit)) };
+      });
+      if (!m) { if (i > 5 && await page.evaluate(() => document.activeElement === document.body)) break; continue; }
+      stops++; seenStops.add(w + ':' + m.name);
+      if (!m.own && (m.top < m.barBottom - 0.5 || m.bottom > m.navTop + 0.5 || !m.ok)) bad.push(m);
+    }
+    assert.ok(stops >= 30, 'tabbed through the landing at ' + w + ' (' + stops + ' stops)');
+    assert.deepEqual(bad.slice(0, 3), [], 'focused control under a fixed bar at ' + w + 'x' + h + (css ? ' 200% text' : ''));
+  }
+  assert.ok(seenStops.has('320:Sat 7') && seenStops.has('320:Sun 8'), 'the wrapped day controls were exercised at 320x640');
+  pass('keyboard focus on the Stages landing never ends up under the pinned bars (320x640 at 200% text included)');
   // Forced colors (Windows High Contrast): background fills and box-shadows are overridden, so a selected day, stage or nav item
   // must differ from its siblings in something other than colour (border width/style, text decoration). Chromium emulates this.
   if (ctx.browser().browserType().name() === 'chromium') {
