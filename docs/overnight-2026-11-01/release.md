@@ -2,7 +2,40 @@
 
 PM-owned record for #83 / canonical dispatch #77. This is a **pre-candidate work record**, not a release or sign-off.
 
-## Freeze checkpoint — 2026-11-01 09:00 UTC / 04:00 EST
+## 05:00 EST cutoff — 2026-11-01 10:00 UTC
+
+**NOT READY / NO-GO for public Companion release. No release candidate is certified.** A real, immutable **preliminary review build R1** is available for review of the implemented surfaces. This is not a reduction of map-first P0 scope.
+
+| Record | Exact value |
+| --- | --- |
+| Application baseline | `affa1b9b14e2adb9b5824b8d3a26aec67d26e825` (#82 merged) |
+| Packaging PR / branch head | #86 / `31245708b0161f4fb93d41b0cfd8545441d5f002` |
+| Actual tested checkout | `e7b55cd09f7979921b8f9963d683b0b1152cb1ab` (PR synthetic merge checkout) |
+| Merged packaging commit | `675885eb0b92fdae760f0b754c307da7126a2f90` |
+| Runnable sanitized ZIP | [artifact 13077233599](https://github.com/johnapaz/edc-listening-room/actions/runs/41291620886/artifacts/13077233599) |
+| ZIP SHA-256 | `6210789c2f7dfbba81b7e24742bd20342f0240f9ec8c4ee41c1eadd078540ae9` |
+| Browser CI | [41291620886](https://github.com/johnapaz/edc-listening-room/actions/runs/41291620886), SUCCESS at branch head above |
+| Unit / validation CI | [41291620891](https://github.com/johnapaz/edc-listening-room/actions/runs/41291620891), SUCCESS at branch head above |
+| Screenshot evidence | artifact 13077472938 in the browser run |
+| Live status | No public Companion deployment; production builder still excludes Companion. No live-deployment change claimed by this pass. |
+
+PM downloaded/inspected the ZIP: hash matches; 38 files; private pilot/Discovery/Notion/source/test/script paths excluded; CSP headers retained. Data remains 130 unique appearances, 107 provisional poster slots, 23 null unknown stage/time, B2B/program identities intact, five stage coordinates null. This is static artifact inspection, not a new device/assistive-tech test.
+
+**Reproduce R1:** download the artifact and extract into an empty directory. Serve only that extracted build root with `python3 -m http.server 8765 --bind 127.0.0.1 --directory <extracted-build-root>`; open `http://127.0.0.1:8765/companion/` and the sibling `/listening-room/`. Never serve a repository root. The simple reproduction server does not apply Cloudflare `_headers`; security assertions use the existing CI harness.
+
+### Open gates and review sequence
+
+- **LR-001 P1** still has no published CSS fix/checkpoint. QA retains its authorized `listening-room/styles.css` lane; backend independently verifies. No unacknowledged worker takeover.
+- Map P0 remains incomplete: independently supported coordinates/permitted representation unavailable. Timetable slots remain provisional; no new evidence/confidence upgrade. #28/#63/#64/#67 remain open.
+- QA's independent Companion retest is at `6c217ec` (`ba7e1f2` report); it is not final candidate-wide approval. Real hardware/AT/browser-native zoom remain untested.
+- Principal designer is given R1 **only for preliminary inspection**, with final candidate activation BLOCKED by unresolved gates. No designer acknowledgment/sign-off observed. Return ranked findings on these actual surfaces and an exact reviewed SHA; no blanket release approval.
+- Final QA after affected fixes, principal final review and PM final acceptance are pending. Any changed app/data surface requires new build generation R2 (or a separately named certified candidate), exact CI and affected retests. Do not carry R1 findings/sign-offs forward automatically.
+- Backend's demonstrated smoke geometry synchronization investigation remains assigned; no result or root cause is claimed. Existing assertions/configuration must remain intact.
+- Freeze continues. Only release-blocking fixes/verification; #66, P3 polish and new features remain deferred.
+
+Merged overnight PRs: #78 evidence; #85 scenario support; #84 release record; #82 Companion integration; #86 sanitized build packaging. Nothing here authorizes DNS, public Companion deployment, paid/API services or provider/playlist writes.
+
+## Historical freeze checkpoint — 2026-11-01 09:00 UTC / 04:00 EST
 
 **NOT READY. Feature freeze is in effect; only release-blocking fixes and verification remain. No candidate generation or public Companion release is declared.**
 
