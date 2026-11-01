@@ -1,0 +1,41 @@
+# QA accessibility ledger — Companion review build (issue #80)
+
+Scope: a product audit against relevant WCAG 2.2 A/AA criteria, **not** a conformance certification. Product-specific rules (44px targets, no invented artist links) are labelled separately from standards findings.
+
+**Environment for every row below:** headless Chromium (Playwright 1.63) on Linux, emulated viewports, sanitized preview built with `scripts/build_companion_preview.py` and served with the production `_headers`. No VoiceOver, TalkBack, NVDA/JAWS, real device, real browser zoom or WebKit/Firefox was available. **Those remain UNTESTED; nothing here is an assistive-technology pass.**
+
+**Tested code:** PR #82 `42e20df` (frontend, code `ab9109c`). Control build: `db54e8b` (the head the PM reviewed and held). Helper PR #85 was not consumed (its own selfcheck is same-agent and Chromium-only); this audit uses `tests/qa/a11y_regression.js`.
+
+## Findings
+
+| ID | Sev | Finding | Route / state | Criterion | Owner | Status |
+|---|---|---|---|---|---|---|
+| A11Y-001 | P2 (P1 if keyboard efficiency on the 130-row list is treated as essential) | After browser **Back** or the in-page "← Back" link, keyboard focus ends on `<body>`. `popstate` correctly focuses `#stage-title` and announces, then the `hashchange` listener (`companion/app.js`, "rendering again is harmless") re-renders with `main.replaceChildren`, destroying the focused heading. A keyboard or screen-reader user returns to the top of the document and must re-tab through the bars (up to ~300 stops on `#/explore`). | `#/explore?day=2026-11-07&stage=circuit-grounds` → open any set → Back | 2.4.3 Focus Order (A) | frontend | OPEN. Suggested fix: skip the `hashchange` render when the hash was already rendered by the preceding `popstate` (compare against the last rendered hash). QA can implement if PM transfers `companion/app.js`. |
+| A11Y-005 | P2 | A successful **Try again** neither moves focus nor announces. `load()` calls `render({scroll})` with no `focus`; the retry button is removed so focus falls to `<body>`, and `#live` stays empty. A screen-reader user gets no confirmation that content is back. (Failure itself is good: `role=alert`, native `<button>`, keyboard-operable, retry works for 503 and malformed JSON.) | `#/explore?stage=circuit-grounds`, required `performances.json` 503 then OK | 4.1.3 Status Messages (AA), 2.4.3 | frontend | OPEN. Suggested fix: pass `focus: "content"` on the render that follows a retry. |
+| A11Y-002 | P2 | Error views have weak headings/titles: `#/artist/nope` has **no `<h1>`** (only an `<h2>`) and title "Artist · …"; `#/bogus` title is "Explore · …" while the page says "Selection unavailable". | `#/artist/nope`, `#/bogus` | 1.3.1, 2.4.2, 2.4.6 | frontend | OPEN |
+| A11Y-003 | P3 | Links with identical names reach different pages: an act playing on two days appears as "RAJE" twice in the all-days list (Fri vs Sat). Context is only the list's `aria-label` and a time column; the link name has no day. | `#/explore` | 2.4.4 Link Purpose (in context, A) | frontend | OPEN (nonblocking; consider `aria-label="RAJE, Friday"`) |
+| A11Y-004 | P3 | Detail pages repeat the Listening Room action: header "Hear X in Listening Room →" and the row's "Hear X" go to the same URL under different names (two extra tab stops per artist). Informational. | `#/performance/*` | 2.4.4 / efficiency | frontend | OPEN (nonblocking) |
+
+
+## Verified (PASS) at `42e20df`
+
+| Check | Evidence |
+|---|---|
+| **#80/PM retest — sticky day controls vs wrapping app bar** (2.4.11 Focus Not Obscured, 2.5.8 target access) | `tests/qa/a11y_regression.js`: at 360/390/412/320/280 CSS px, 844×390 landscape, 200% text, text-spacing, wide font, scrolled 0/400/1200 px, pinned bars never overlap and every in-view day control is hit-testable. **Control:** the identical test fails on `db54e8b` (app-bar/day-strip overlap 33–61 px at 200% text, spacing and wide font), so the check can detect the defect. Exhaustive Tab-through of 70 stops (stage view) and 160 stops (all-days list) at 10 viewport/text configurations found no focused control hidden or off-screen. |
+| Focus visible | 3px amber outline on every tabbed control, including the skip link. |
+| Skip link, landmarks, language | Skip link first in order; one `<main>`, `banner`, `contentinfo`, labelled `nav`s; `lang="en"`; unique ids. |
+| Names / semantics | No unnamed links or buttons on 13 route states; no `aria-pressed`/`radiogroup`; day switch is native links with `aria-current`; no nested interactives; program entry (Discovery Project) has no artist or Listening Room link. |
+| Titles | Per-route `document.title` updates on all valid routes. |
+| Day/stage/detail changes | Focus moves to the stage or detail heading; day change keeps focus on the day link; `#live` announces "circuitGROUNDS, Sunday, 10 performances." and the detail title. |
+| Contrast (computed) | Minimum text contrast 8.0:1 across 11 route states (threshold 4.5:1). Caveat: body background is a gradient, estimated from the nearest solid color. |
+| Failure handling | 503 and malformed JSON show a `role=alert` state with a keyboard-reachable "Try again" that restores content; optional-music failure leaves festival navigation intact; slow load shows a `role=status` loading state. |
+
+## Not tested (explicit)
+
+- Real screen readers (VoiceOver, TalkBack, NVDA, JAWS), real iOS/Android devices, Galaxy Z Fold, physical orientation changes, browser-native zoom (only CSS `font-size:200%` and narrow-viewport emulation were used), WebKit/Firefox, Windows high-contrast.
+- Forced-colors, reduced-motion, 400%/320 px reflow beyond the viewport sweep above, Fold cover→open transition with selection preserved, and the Listening Room regression pass (priority 6): queued next.
+- No automated scanner (axe/Lighthouse) is installed in the repo or sandbox; none was added. This ledger is keyboard, DOM, computed-style and layout evidence only.
+
+## Test changes
+
+Added only: `tests/qa/a11y_regression.js` (new file; not wired into CI because workflows are PM-owned). No existing test, assertion, threshold or config was edited. Checks tagged KNOWN print KNOWN-OPEN until fixed; `STRICT=1` makes them hard failures, so a fix is retested rather than silently assumed.
