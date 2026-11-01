@@ -23,7 +23,8 @@ const SHOTS = [
   ['10-tablet-768', 768, 1024, '#/explore?day=2026-11-07&stage=kinetic-field'], ['11-desktop-1280', 1280, 800, '#/explore?day=2026-11-07&stage=kinetic-field'],
   ['12-landscape-844', 844, 390, '#/explore?day=2026-11-06&stage=kinetic-field'], ['13-load-failure-360', 360, 740, '#/explore', 'fail'],
   ['14-sticky-scrolled-360', 360, 740, '#/explore?day=2026-11-07&stage=circuit-grounds', 'scroll'],
-  ['15-sticky-wrapped-header-200pct-360', 360, 740, '#/explore?day=2026-11-07&stage=circuit-grounds', 'zoom']
+  ['15-sticky-wrapped-header-200pct-360', 360, 740, '#/explore?day=2026-11-07&stage=circuit-grounds', 'zoom'],
+  ['16-forced-colors-360', 360, 740, '#/explore?day=2026-11-07&stage=circuit-grounds', 'forced']
 ];
 (async () => {
   await new Promise(r => server.listen(0, '127.0.0.1', r));
@@ -31,6 +32,7 @@ const SHOTS = [
   for (const [name, width, height, hash, mode] of SHOTS) {
     const ctx = await browser.newContext({ viewport: { width, height }, reducedMotion: 'reduce' });
     const page = await ctx.newPage();
+    if (mode === 'forced') await page.emulateMedia({ forcedColors: 'active' });
     if (mode === 'fail') await page.route('**/performances.json', r => r.fulfill({ status: 503, body: '{}' }));
     await page.goto(base + '/companion/' + hash);
     await page.waitForSelector(mode === 'fail' ? '.error' : 'main[aria-busy="false"] h1');
