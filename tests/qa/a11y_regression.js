@@ -66,6 +66,27 @@ const SIZES = [[360, 740, ''], [390, 844, ''], [412, 915, ''], [320, 640, ''], [
         const d = await page.evaluate(() => ({ h1: document.querySelectorAll('main h1').length, title: document.title }));
         if (d.h1 !== 1 || !mustTitle.test(d.title)) bad.push(`${r}: h1=${d.h1} title="${d.title}"`); }
       record('A11Y-002', 'one h1 per view; error views have a descriptive title', !bad.length, bad.join(' | '), true); await ctx.close(); }
+    // A11Y-006 (Companion): in forced-colors mode the selected day/stage/nav item must differ from unselected ones by something other than colors the UA overrides.
+    { const { ctx, page } = await open({ forcedColors: 'active' }); await page.goto(base + '/companion/#/explore?day=2026-11-07&stage=circuit-grounds'); await ready(page);
+      const d = await page.evaluate(() => { const props = ['borderTopWidth', 'borderTopStyle', 'fontWeight', 'textDecorationLine', 'outlineStyle'];
+        const pick = e => { const cs = getComputedStyle(e); return props.map(p => cs[p]).join('|'); };
+        return [['day', '.days a[aria-current]', '.days a:not([aria-current])'], ['stage', '.stage-link[aria-current]', '.stage-link:not([aria-current]):not(.empty)'], ['nav', 'nav.primary a[aria-current]', 'nav.primary a:not([aria-current])']]
+          .filter(([, s, u]) => pick(document.querySelector(s)) === pick(document.querySelector(u))).map(x => x[0]); });
+      record('A11Y-006', 'selected day/stage/nav item is distinguishable in forced-colors mode', d.length === 0, 'indistinguishable: ' + d.join(','), true); await ctx.close(); }
+    // LR-001 / LR-002 (live Listening Room, pre-existing on main): focus must not be fully hidden behind the sticky bottom tab bar; rail cards should be mostly visible when focused.
+    { const { ctx, page } = await open({ reducedMotion: 'reduce' }); await page.goto(base + '/listening-room/#/lineup'); await page.waitForSelector('.lineup-row'); await page.waitForTimeout(800);
+      let hidden = [], sliver = [];
+      for (let i = 0; i < 60; i++) { await page.keyboard.press('Tab'); await page.waitForTimeout(100);
+        const r = await page.evaluate(() => { const e = document.activeElement, q = e.getBoundingClientRect(); let free = 0, n = 0;
+          for (let a = 1; a <= 9; a++) for (let b = 1; b <= 5; b++) { const x = q.left + q.width * a / 10, y = q.top + q.height * b / 6; if (x < 0 || y < 0 || x >= innerWidth || y >= innerHeight) { n++; continue; } n++; const t = document.elementFromPoint(x, y); if (t === e || e.contains(t)) free++; }
+          return { name: (e.getAttribute('aria-label') || e.textContent).trim().slice(0, 28), pct: Math.round(100 * free / n), rail: !!e.closest('.rail-card') }; });
+        if (r.pct === 0) hidden.push(r.name); else if (r.rail && r.pct < 25) sliver.push(r.name + ' ' + r.pct + '%'); }
+      record('LR-001', 'Listening Room: no focused control is fully hidden behind the sticky bottom tab bar (60 Tab stops, 360px)', hidden.length === 0, hidden.length + ' stops fully hidden, e.g. ' + hidden.slice(0, 2).join(' | '), true);
+      record('LR-002', 'Listening Room: focused rail cards are at least 25% visible', sliver.length === 0, sliver.length + ' stops, e.g. ' + sliver.slice(0, 2).join(' | '), true); await ctx.close(); }
+    // LR-003: Listening Room not-found artist view has a heading and a title that says so.
+    { const { ctx, page } = await open(); await page.goto(base + '/listening-room/#/artist/nope'); await page.waitForTimeout(900);
+      const d = await page.evaluate(() => ({ h: document.querySelectorAll('main h1,main h2').length, title: document.title }));
+      record('LR-003', 'Listening Room not-found view has a heading and a distinct title', d.h > 0 && !/^Listening Room · EDC Orlando 2026$/.test(d.title), `headings=${d.h} title="${d.title}"`, true); await ctx.close(); }
     // Structure guards (currently passing): no invalid pressed/radiogroup semantics, no unnamed controls, one main landmark, lang set.
     { const { ctx, page } = await open(); const bad = [];
       for (const r of ['#/map', '#/stages', '#/explore', '#/unscheduled', '#/sources', '#/performance/edco26:2026-11-06:benda-b2b-vastive', '#/performance/edco26:2026-11-08:discovery-project', '#/artist/artist:benda']) {
