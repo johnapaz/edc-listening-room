@@ -114,6 +114,8 @@ async function acceptance(page, base, pass, ctx, perf) {
   for (const text of [/Confirmed/, /Poster time/, /Time unknown/, /Sources disagree/, /Program/, /There is no map yet/, /No GPS, routes, walking times or offline copy/, /checked Oct 30/]) assert.match(sources, text);
   assert.ok((await page.locator('a.external').evaluateAll(n => n.map(a => a.getAttribute('href')))).every(h => /^https:\/\//.test(h)), 'outbound links are https');
   assert.ok((await page.locator('a.external').evaluateAll(n => n.every(a => a.rel.includes('noopener')))));
+  const sourceHrefs = await page.locator('a.external').evaluateAll(n => n.map(a => a.getAttribute('href')));
+  assert.ok(sourceHrefs.length >= 1 && sourceHrefs.every(h => h === 'https://orlando.edc.com/'), 'homepage-only source links: ' + sourceHrefs);
   await go('#/about'); assert.equal(await page.textContent('#page-title'), 'How to read this reference'); pass('sources and About page');
   // Disagreement surfaces on the set (coral badge + text).
   await go('#/explore'); assert.ok(await page.locator('.disagree-note .status.disagree').count() >= 1); pass('differing sources stay visible on affected sets');
@@ -134,6 +136,46 @@ async function acceptance(page, base, pass, ctx, perf) {
   // Bad route state is recoverable and the nav still works.
   await go('#/nonsense'); assert.match(await page.textContent('main'), /not found/);
   await page.locator('main .back').click(); await page.waitForSelector('#page-title'); pass('invalid route recovery');
+  // Sticky header/day strip must never occlude each other, even when the app bar wraps (wide system fonts, text zoom).
+  const CONDITIONS = [['normal', ''], ['wide-font', ':root{font-family:"DejaVu Sans Mono",monospace!important}'], ['200%-text', ':root{font-size:30px!important}']];
+  let sawWrappedHeader = false;
+  for (const [w, h] of [[320, 640], [360, 740], [390, 844], [412, 915], [844, 390]]) {
+    for (const [name, css] of CONDITIONS) {
+      await page.setViewportSize({ width: w, height: h });
+      await go('#/explore?day=2026-11-07&stage=circuit-grounds');
+      const style = css ? await page.addStyleTag({ content: css }) : null;
+      await page.evaluate(() => window.scrollTo(0, 900)); await page.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))));
+      const m = await page.evaluate(() => {
+        const bar = document.querySelector('.app-bar').getBoundingClientRect(), strip = document.querySelector('.days');
+        const sr = strip.getBoundingClientRect(), pos = getComputedStyle(strip).position;
+        const links = [...strip.querySelectorAll('a')].map(a => { const r = a.getBoundingClientRect(); const hit = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+          return { top: r.top, bottom: r.bottom, ok: !!hit && (hit === a || a.contains(hit)), text: a.textContent.trim() }; });
+        const rootStyle = getComputedStyle(document.documentElement);
+        return { barH: bar.height, barBottom: bar.bottom, barPos: getComputedStyle(document.querySelector('.app-bar')).position, stripPos: pos, stripTop: sr.top, links,
+          varBar: rootStyle.getPropertyValue('--bar-h'), varStrip: rootStyle.getPropertyValue('--strip-h'), stripH: sr.height };
+      });
+      const where = w + 'x' + h + ' ' + name;
+      if (m.barH > 60) sawWrappedHeader = true;
+      if (m.stripPos === 'sticky') {
+        if (m.barPos === 'sticky') assert.ok(m.stripTop >= m.barBottom - 0.5, 'strip behind app bar @' + where + ' ' + JSON.stringify({ stripTop: m.stripTop, barBottom: m.barBottom }));
+        m.links.forEach(l => assert.ok(l.ok && l.top >= -0.5, 'day link occluded @' + where + ': ' + l.text));
+        assert.equal(m.varBar, (m.barPos === 'sticky' ? m.barH : 0) + 'px', 'measured bar offset @' + where);
+        assert.ok(Math.abs(parseFloat(m.varStrip) - m.stripH) < 1, 'measured strip offset @' + where);
+      } else { // landscape / Fold cover: nothing is pinned, so no phantom offset may remain
+        assert.equal(m.varStrip, '0px', 'phantom strip offset @' + where);
+        if (m.barPos !== 'sticky') assert.equal(m.varBar, '0px', 'phantom bar offset @' + where);
+      }
+      if (style) await style.evaluate(n => n.remove());
+    }
+  }
+  assert.ok(sawWrappedHeader, 'the wrapped-header condition must actually be exercised');
+  // Sticky day headings (All days) clear the real header + strip.
+  await page.setViewportSize({ width: 360, height: 740 }); await go('#/explore?stage=circuit-grounds');
+  await page.addStyleTag({ content: ':root{font-size:30px!important}' }); await page.evaluate(() => window.scrollTo(0, 1200));
+  const headingGap = await page.evaluate(() => { const strip = document.querySelector('.days').getBoundingClientRect().bottom;
+    return [...document.querySelectorAll('.day-heading:not(.subtle)')].map(h => parseFloat(getComputedStyle(h).top) - strip); });
+  assert.ok(headingGap.length && headingGap.every(g => Math.abs(g) < 1.5), 'day headings stick directly below the strip: ' + headingGap);
+  pass('sticky header and day strip never overlap, including wrapped header and 200% text');
   // Reflow/overflow on every new view at the extremes (Fold cover, 320, desktop) and 44px targets.
   for (const [w, h] of [[280, 653], [320, 640], [360, 740], [844, 390], [1280, 800]]) {
     await page.setViewportSize({ width: w, height: h });

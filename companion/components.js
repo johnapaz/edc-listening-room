@@ -263,9 +263,10 @@
           el("dt", {}, el("span", { class: "status mixed", text: "Program" })),
           el("dd", { text: "A festival program slot rather than one artist, so there is no artist page for it." }))),
       el("section", { "aria-labelledby": "sources-title" }, el("h2", { id: "sources-title", text: "Where the schedule comes from" }),
+        // Homepage-only UI links: the audited source URLs stay in the data, not in the UI.
         el("ul", { class: "source-list" }, (meta.sources || []).map(s => el("li", {},
           el("strong", { text: named[s.kind] || s.kind }), el("span", { text: " · checked " + C.shortDate(s.checked_on) + (s.independently_verified === false ? " · not independently verified" : "") }),
-          s.url ? [" · ", external("source", s.url)] : null))),
+          s.url ? [" · ", external("organizer homepage", ORGANIZER)] : null))),
         el("p", { class: "muted", text: "Times are Orlando time (EST, UTC−05:00); a set after midnight belongs to the night it continues. Music shown is reviewed discovery recordings, not a live setlist." })),
       el("section", { "aria-labelledby": "map-title" }, el("h2", { id: "map-title", text: "The map" }),
         el("p", { text: "There is no map yet. Stage positions have not been independently verified and no official artwork is copied, traced or embedded here, so nothing on this site shows where a stage is. No GPS, routes, walking times or offline copy are offered." }),

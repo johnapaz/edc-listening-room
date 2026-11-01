@@ -15,11 +15,11 @@
   --mint:#6ff0c4;--mint-hover:#b2ffe7;--amber:#ffd98a;--coral:#ff8a78;
   --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--display:"Bricolage Grotesque",var(--sans);
   /* layout */
-  --gutter:16px;--target:44px;--header:56px;--days-h:60px;--tabbar:60px;--radius:12px;
+  --gutter:16px;--target:44px;--header:56px;--bar-h:56px;--strip-h:60px;--tabbar:60px;--radius:12px;
   --rail-w:320px;--page-w:760px;--wide-w:1200px;
   font-family:var(--sans);font-size:15px;line-height:1.45}
 *{box-sizing:border-box}
-html{scroll-padding-top:calc(var(--header) + var(--days-h) + 12px);scroll-padding-bottom:calc(var(--tabbar) + 12px)}
+html{scroll-padding-top:calc(var(--bar-h) + var(--strip-h) + 12px);scroll-padding-bottom:calc(var(--tabbar) + 12px)}
 body{margin:0;overflow-wrap:anywhere;color:var(--text);padding-bottom:calc(var(--tabbar) + env(safe-area-inset-bottom));
   background:radial-gradient(ellipse at 0 0,var(--bg-glow) 0,transparent 45%) no-repeat,radial-gradient(var(--map-dot) 1.2px,transparent 1.4px) 0 0/24px 24px,var(--bg)}
 a{color:var(--violet);text-underline-offset:.2em}a:hover{color:var(--violet-hover)}
@@ -31,7 +31,7 @@ h1,h2{font-family:var(--display);font-weight:800;letter-spacing:-.01em;line-heig
 h1{font-size:clamp(1.5rem,5vw,2rem);margin-bottom:.25rem}
 h2{font-size:1.25rem}h3{font-size:1rem}
 h1:focus,h2:focus,main:focus{outline:none}
-[tabindex="-1"]{scroll-margin-top:calc(var(--header) + var(--days-h) + 12px)}
+[tabindex="-1"]{scroll-margin-top:calc(var(--bar-h) + var(--strip-h) + 12px)}
 small,.muted{color:var(--muted)}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap;border:0}
 .skip{position:fixed;top:-100px;left:1rem;z-index:50;background:var(--amber);color:#000;padding:.75rem}.skip:focus{top:.5rem}
@@ -72,7 +72,7 @@ main{padding:0 var(--gutter)}
 .external{white-space:normal}
 
 /* day switch: native links styled as a segmented control */
-.days{position:sticky;top:var(--header);z-index:20;display:flex;gap:6px;margin:0 calc(var(--gutter) * -1) 12px;padding:8px var(--gutter);background:var(--bar);border-bottom:1px solid var(--line)}
+.days{position:sticky;top:var(--bar-h);z-index:20;display:flex;gap:6px;margin:0 calc(var(--gutter) * -1) 12px;padding:8px var(--gutter);background:var(--bar);border-bottom:1px solid var(--line)}
 .days a{flex:1;display:inline-flex;align-items:center;justify-content:center;min-height:var(--target);padding:0 6px;border:1px solid var(--line-strong);border-radius:10px;background:var(--panel);color:var(--muted);font-size:.875rem;font-weight:650;text-decoration:none;white-space:nowrap}
 .days a:hover{border-color:var(--violet);color:var(--text)}
 .days a[aria-current="true"]{background:var(--violet);border-color:var(--violet);color:var(--violet-ink)}
@@ -104,7 +104,7 @@ main{padding:0 var(--gutter)}
 .panel>h2{margin-bottom:4px;font-size:1.5rem}
 .section-meta{margin-bottom:6px;color:var(--muted);font-size:.875rem}
 .foot-link{margin:16px 0 0}.foot-link a{display:inline-flex;align-items:center;min-height:var(--target)}
-.day-heading{position:sticky;top:calc(var(--header) + var(--days-h));z-index:5;margin:18px calc(var(--gutter) * -1) 0;padding:10px var(--gutter) 6px;background:var(--bar);border-bottom:1px solid var(--line);color:var(--muted);font-size:.8125rem;font-weight:700;letter-spacing:.04em}
+.day-heading{position:sticky;top:calc(var(--bar-h) + var(--strip-h));z-index:5;margin:18px calc(var(--gutter) * -1) 0;padding:10px var(--gutter) 6px;background:var(--bar);border-bottom:1px solid var(--line);color:var(--muted);font-size:.8125rem;font-weight:700;letter-spacing:.04em}
 .day-heading.subtle{position:static;margin:14px 0 0;padding:6px 0;background:none;font-weight:600}
 
 /* set rows */
@@ -154,13 +154,15 @@ footer{max-width:var(--wide-w);margin:16px auto 0;padding:16px var(--gutter);bor
 footer p{margin-bottom:6px}
 .noscript{max-width:var(--page-w);margin:0 auto;padding:0 var(--gutter)}
 
+/* --bar-h / --strip-h are the sticky header and day-strip heights; app.js overwrites them with the measured
+   values so the offsets follow wrapping and text size. The values here are only the pre-script fallbacks. */
 /* Fold cover and very small screens */
 @media(max-width:340px){.rail .stage-list{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:320px){
-  :root{--gutter:12px;--days-h:0px}
+  :root{--gutter:12px;--strip-h:0px}
   .brand-long{display:none}
   .days{position:static;display:grid;grid-template-columns:1fr 1fr}
-  .day-heading{top:var(--header)}
+  .day-heading{top:var(--bar-h)}
   .primary a svg{display:none}
   .set{grid-template-columns:4.75rem minmax(0,1fr);column-gap:8px}
 }
@@ -168,7 +170,7 @@ footer p{margin-bottom:6px}
 /* Wide: tab bar becomes header links; rail + schedule sit side by side. No 400px side panel while
    there is no map to sit beside it (REVIEW DEFAULT; revisit when real geometry exists). */
 @media(min-width:1100px){
-  :root{--tabbar:0px;--days-h:60px}
+  :root{--tabbar:0px;--strip-h:60px}
   body{padding-bottom:0}
   .primary{position:static;order:2;margin-right:12px;padding:0;background:none;border:0}
   .primary a{flex:none;flex-direction:row;min-height:var(--target);padding:0 12px;box-shadow:none!important;font-size:.875rem}
@@ -176,7 +178,7 @@ footer p{margin-bottom:6px}
   .primary a[aria-current="page"]{color:var(--violet);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px}
   .to-lr{order:3}
   .explorer{grid-template-columns:var(--rail-w) minmax(0,1fr);gap:28px}
-  .rail{position:sticky;top:calc(var(--header) + var(--days-h) + 12px)}
+  .rail{position:sticky;top:calc(var(--bar-h) + var(--strip-h) + 12px)}
   .rail .stage-list{grid-template-columns:minmax(0,1fr)}
   .rail .stage-link{min-height:60px}
   .rail .stage-link small,.rail .stage-link svg{position:static;width:auto;height:auto;clip-path:none;white-space:normal}
@@ -184,7 +186,7 @@ footer p{margin-bottom:6px}
 }
 /* Short landscape phones: keep vertical space for content */
 @media(max-height:480px) and (orientation:landscape){
-  :root{--tabbar:0px;--days-h:0px}
+  :root{--tabbar:0px;--bar-h:0px;--strip-h:0px}
   body{padding-bottom:0}
   .app-bar{position:static}
   .primary{position:static;order:2;margin-right:8px;padding:0;background:none;border:0}

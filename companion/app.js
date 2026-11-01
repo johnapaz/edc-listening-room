@@ -26,6 +26,16 @@
     if (["artist", "performance", "invalid"].includes(state.view)) return document.getElementById("detail-title");
     return document.getElementById("page-title");
   }
+  // Sticky offsets follow the real layout: the app bar can wrap (long text, wide system fonts, text zoom) and the
+  // day strip can wrap on narrow screens. Static (non-sticky) bars contribute no offset.
+  const root = document.documentElement, bar = document.querySelector(".app-bar");
+  function measureLayout() {
+    const days = document.querySelector(".days"), stuck = el => el && getComputedStyle(el).position === "sticky";
+    root.style.setProperty("--bar-h", (stuck(bar) ? bar.getBoundingClientRect().height : 0) + "px");
+    root.style.setProperty("--strip-h", (stuck(days) ? days.getBoundingClientRect().height : 0) + "px");
+  }
+  if ("ResizeObserver" in window) new ResizeObserver(measureLayout).observe(bar), new ResizeObserver(measureLayout).observe(main);
+  window.addEventListener("resize", measureLayout); document.fonts?.ready.then(measureLayout);
   function render({ focus, scroll } = {}) {
     if (!idx) return;
     const parsed = C.parseHash(location.hash);
@@ -46,6 +56,7 @@
     }
     U.syncNav(nav, state, lastStage);
     main.setAttribute("aria-busy", "false");
+    measureLayout();
     document.title = titleFor(state) + " · Event Day Companion";
     if (focus) {
       const target = focus === "day" ? [...main.querySelectorAll("a[data-day]")].find(a => a.dataset.day === state.day) : focusTarget(state);
