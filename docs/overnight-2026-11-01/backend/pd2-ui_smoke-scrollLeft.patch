@@ -1,0 +1,44 @@
+diff --git a/tests/ui_smoke.js b/tests/ui_smoke.js
+index bc6c61e..6048207 100644
+--- a/tests/ui_smoke.js
++++ b/tests/ui_smoke.js
+@@ -87,6 +87,39 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
+   await page.setViewportSize({ width: 360, height: 740 });
+   ok("rail keyboard focus stays inside the strip and clear of the side panel (360/1280, reduced and normal motion)");
+ 
++  // PD-2 (scrollLeft contract): the strip's scrollLeft itself must follow keyboard focus, forward to the last card and back to the first.
++  // The containment check above would also pass if the browser happened to keep a card visible some other way; this pins the scrolling.
++  for (const [width, height, motion] of [[360, 740, "reduce"], [360, 740, "no-preference"], [1280, 860, "reduce"], [1280, 860, "no-preference"]]) {
++    await page.emulateMedia({ reducedMotion: motion });
++    await page.setViewportSize({ width, height });
++    await page.goto(BASE + "#/lineup?day=" + FRI);
++    await page.waitForSelector("#rail .rail-card");
++    const strip = () => page.evaluate(() => { const s = document.querySelector(".rail-strip"); const c = document.activeElement.closest(".rail-card"); if (!c) return { left: s.scrollLeft, max: s.scrollWidth - s.clientWidth, card: -1 };
++      // Range of scrollLeft values that put the whole focused card inside the strip: [cardRight - clientWidth, cardLeft] in content coordinates.
++      const q = c.getBoundingClientRect(), r = s.getBoundingClientRect(), left = q.left - r.left + s.scrollLeft;
++      return { left: s.scrollLeft, max: s.scrollWidth - s.clientWidth, card: [...s.querySelectorAll(".rail-card")].indexOf(c), lo: left + q.width - s.clientWidth, hi: left }; });
++    const reveals = (at, where) => assert.ok(at.left >= at.lo - 20 && at.left <= at.hi + 20, "scrollLeft puts the whole focused card in view " + where + ": " + JSON.stringify(at));
++    // Smooth scrolling animates: wait until scrollLeft stops changing (two equal reads) before sampling.
++    const settled = async () => { let prev = -1, now = (await strip()).left; for (let i = 0; i < 40 && now !== prev; i++) { prev = now; await page.waitForTimeout(60); now = (await strip()).left; } return strip(); };
++    const total = await page.locator("#rail .rail-card").count();
++    await page.locator("#rail .rail-card a").first().focus();
++    let at = await settled();
++    assert.ok(at.max > 0, "the rail overflows at " + width + " so scrolling is observable: " + JSON.stringify(at));
++    assert.equal(at.card, 0); assert.equal(at.left, 0, "starts scrolled to the first card");
++    const forward = [at.left];
++    for (let i = 0; i < total * 3 && at.card < total - 1; i++) { await page.keyboard.press("Tab"); at = await settled(); if (at.card < 0) break; forward.push(at.left); reveals(at, "tabbing forward at " + width + " (" + motion + ")"); }
++    assert.equal(at.card, total - 1, "Tab reached the last rail card at " + width + " (" + motion + ")");
++    assert.ok(forward.every((v, i) => i === 0 || v >= forward[i - 1] - 1), "scrollLeft never moves backwards while tabbing forward at " + width + ": " + forward.join(","));
++    assert.ok(at.left > forward[0] + 100, "scrollLeft advanced as focus moved to the last card at " + width + " (" + motion + "): " + forward.join(","));
++    assert.ok(Math.abs(at.left - at.max) <= 2, "last card is scrolled fully into the end of the strip: " + at.left + " of " + at.max);
++    for (let i = 0; i < total * 3 && at.card > 0; i++) { await page.keyboard.press("Shift+Tab"); at = await settled(); if (at.card < 0) break; reveals(at, "tabbing back at " + width + " (" + motion + ")"); }
++    assert.equal(at.card, 0, "Shift+Tab returned to the first rail card at " + width + " (" + motion + ")");
++    assert.ok(at.left <= 2, "scrollLeft followed focus back to the start at " + width + " (" + motion + "): " + at.left);
++  }
++  await page.emulateMedia({ reducedMotion: "reduce" });
++  await page.setViewportSize({ width: 360, height: 740 });
++  ok("rail scrollLeft follows keyboard focus forward and back (360/1280, reduced and normal motion)");
++
+   // Sort: By time is the default; A–Z sorts by name and is kept in the URL.
+   const times = await page.$$eval("#list .lineup-row", lis => lis.map(li => li.dataset.id));
+   await page.click(".seg button[data-sort='az']");

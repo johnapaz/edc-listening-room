@@ -1,0 +1,15 @@
+diff --git a/tests/ui_smoke.js b/tests/ui_smoke.js
+index 86a4d12..9994657 100644
+--- a/tests/ui_smoke.js
++++ b/tests/ui_smoke.js
+@@ -79,6 +79,10 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
+   // The official asset loads unchanged at the brand minimum, including narrow screens.
+   for (const width of [280, 360, 1280]) {
+     await page.setViewportSize({ width, height: 900 });
++    // The app re-renders when the (min-width:1100px) query flips, replacing the mark's node. Wait for that re-render to land before
++    // locating it, so waitFor/decode/boundingBox all act on the same final node. Assertions below are unchanged.
++    await page.waitForFunction(w => matchMedia("(min-width: 1100px)").matches === (w >= 1100) && document.querySelector(".youtube-primary .youtube-icon"), width);
++    await page.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))));
+     const mark = page.locator(".youtube-primary .youtube-icon").first();
+     await mark.waitFor();
+     await mark.evaluate(img => img.decode());
