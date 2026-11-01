@@ -2,7 +2,21 @@
 
 PM-owned record for #83 / canonical dispatch #77. This is a **pre-candidate work record**, not a release or sign-off.
 
-## Current checkpoint — 2026-11-01 05:00 UTC pass
+## Freeze checkpoint — 2026-11-01 09:00 UTC / 04:00 EST
+
+**NOT READY. Feature freeze is in effect; only release-blocking fixes and verification remain. No candidate generation or public Companion release is declared.**
+
+- Frozen application baseline: `affa1b9b14e2adb9b5824b8d3a26aec67d26e825` (merged #82). Its PR head `6c217ec` had exact-head test/browser passes, 63 PASS artifact entries, complete PM review and independent QA retest of sticky occlusion / A11Y-001/002/005/006. Main test run: https://github.com/johnapaz/edc-listening-room/actions/runs/41283112462 .
+- Merged overnight work: #78 evidence (`9340bea`), #85 helper (`af706af`), #84 release record (`b59e166`), #82 Companion integration (`affa1b9`). Companion remains production-excluded.
+- **LR-001 P1 remains open:** no CSS fix or verification checkpoint is published. QA retains the explicit `listening-room/styles.css` transfer in #80; backend independently verifies once available. Lack of branch activity does not establish relinquishment.
+- Backend's bounded `tests/ui_smoke.js` geometry-readiness investigation remains assigned in #79. One prior null-boundingBox failure followed by a passing rerun is recorded; root cause is not proven. No assertions or configuration may be weakened.
+- Seven Claude branches were completely paginated; observed frontend `6c217ec`, backend `a5a31bc`, QA `ba7e1f2` heads/reports are unchanged. No new designer branch/report/acknowledgment observed. No assumptions about unpublished local work.
+- **Review packaging:** the existing browser workflow now additionally uploads `companion-preview/` only after successful checks as `companion-review-build-{workflow SHA}`, retained seven days. The existing sanitized preview builder is unchanged; screenshots still upload on failure. This adds no hosting or provider write. Record the actual successful run/artifact ID and SHA before assigning a build for review.
+- At **10:00 UTC / 05:00 EST**, record actual tested build generation or NOT READY with missing inputs. If LR-001 or map/source gates remain, do not silently redefine scope. Principal review can evaluate actual available surfaces with an explicit blocked-release disposition; final design/QA/PM sign-offs remain pending.
+- A later app/data fix invalidates affected earlier QA/design sign-offs. P3 polish, #66, source retry loops and speculative optimizations remain deferred. Hardware/AT and exact final candidate checks remain explicit.
+- No public Companion release, DNS, OAuth/playlist/provider writes, paid service or API is authorized. Listening Room availability and existing security/allowlist/tests remain protected.
+
+## Historical checkpoint — 2026-11-01 05:00 UTC pass
 
 **NOT READY; no candidate generation or public Companion release.** This section supersedes the historical checkpoint below.
 
