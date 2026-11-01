@@ -2,7 +2,7 @@
 (function () {
   const C = window.CompanionLib, U = window.CompanionUI, main = document.getElementById("main");
   const nav = document.querySelector(".primary"), live = document.getElementById("live"), banner = document.getElementById("banner");
-  let idx, musicAvailable = false, controller, loadNumber = 0, lastStage = "", liveTimer, renderedHash = null;
+  let idx, musicAvailable = false, controller, loadNumber = 0, liveTimer, renderedHash = null;
   history.scrollRestoration = "manual";
   async function readJson(path, signal) {
     const response = await fetch(path, { cache: "no-cache", signal });
@@ -14,7 +14,7 @@
     clearTimeout(liveTimer); live.textContent = "";
     liveTimer = setTimeout(() => { live.textContent = text; }, 60);
   }
-  const TITLES = { map: "Map", stages: "Stages", unscheduled: "Stage or time unknown", sources: "About & sources" };
+  const TITLES = { stages: "Stages", unscheduled: "Stage or time unknown", sources: "About & sources" };
   function titleFor(state) {
     if (state.view === "invalid") return "Selection unavailable";
     if (state.view === "explore") return idx.stages.get(state.stage)?.display_name || (state.stage === C.UNKNOWN_STAGE ? "Stage unknown" : "Explore");
@@ -44,7 +44,6 @@
     const { state, replace } = parsed.view === "invalid" ? { state: parsed, replace: false } : C.resolveRoute(idx, parsed);
     if (replace) history.replaceState({ ...history.state }, "", C.buildHash(state));
     const stageOk = !state.stage || state.stage === C.UNKNOWN_STAGE || idx.stages.has(state.stage);
-    if (state.view === "explore" && state.stage && stageOk) lastStage = state.stage;
     if (state.view === "invalid" || ((["explore", "artist", "performance"].includes(state.view)) && !stageOk)) {
       main.replaceChildren(U.el("div", { class: "page" }, U.el("h1", { id: "detail-title", tabindex: "-1", text: "Selection unavailable" }),
         U.StateBox({ title: "This stage or link was not found", message: "Choose from the stages in the current reference.", kind: "error" }),
@@ -52,10 +51,10 @@
     } else if (["artist", "performance"].includes(state.view)) {
       main.replaceChildren(U.DetailView({ idx, state, musicAvailable }));
     } else {
-      const views = { map: U.MapGatedView, stages: U.StagesView, explore: U.ExploreView, unscheduled: U.UnscheduledView, sources: U.SourcesView };
+      const views = { stages: U.StagesView, explore: U.ExploreView, unscheduled: U.UnscheduledView, sources: U.SourcesView };
       main.replaceChildren(views[state.view]({ idx, state }));
     }
-    U.syncNav(nav, state, lastStage);
+    U.syncNav(nav, state);
     main.setAttribute("aria-busy", "false");
     measureLayout();
     const unavailable = state.view === "invalid" || (["explore", "artist", "performance"].includes(state.view) && !stageOk);

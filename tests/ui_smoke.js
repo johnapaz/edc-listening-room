@@ -51,6 +51,41 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
   assert.ok((await page.evaluate(() => document.querySelector("#list .lineup-row").getBoundingClientRect().top)) <= 740, "lineup starts on the first screen");
   assert.equal(await page.getAttribute("header a.header-help", "href"), "/about/");
   assert.ok(await page.locator("#rail .rail-card").count() >= 4); ok("Hear Friday rail");
+  // PD-2: keyboard focus must keep each rail card inside the strip's visible box (and clear of the wide-screen side panel).
+  for (const [width, height, motion] of [[360, 740, "reduce"], [360, 740, "no-preference"], [1280, 860, "reduce"], [1280, 860, "no-preference"]]) {
+    await page.emulateMedia({ reducedMotion: motion });
+    await page.setViewportSize({ width, height });
+    await page.goto(BASE + "#/lineup?day=" + FRI);
+    await page.waitForSelector("#rail .rail-card");
+    const cards = await page.locator("#rail .rail-card").count();
+    await page.locator("#rail .rail-card a").first().focus();
+    let railStops = 0;
+    for (let i = 0; i < cards * 3 + 2; i++) {
+      // Smooth scrolling animates, so poll until the focused card is inside the strip; a card that never gets there fails here.
+      await page.waitForFunction(() => {
+        const card = document.activeElement.closest(".rail-card");
+        if (!card) return true;
+        const c = card.getBoundingClientRect(), s = card.closest(".rail-strip").getBoundingClientRect();
+        return c.left >= s.left - 1 && c.right <= s.right + 1;
+      }, null, { timeout: 2000 }).catch(async () => {
+        const m = await page.evaluate(() => { const c = document.activeElement.closest(".rail-card").getBoundingClientRect(), s = document.querySelector(".rail-strip"); return { card: [c.left, c.right], strip: [s.getBoundingClientRect().left, s.getBoundingClientRect().right], scrollLeft: s.scrollLeft }; });
+        assert.fail("focused rail card is outside the strip at " + width + " (" + motion + "): " + JSON.stringify(m));
+      });
+      const overlap = await page.evaluate(() => {
+        const card = document.activeElement.closest(".rail-card"), panel = document.querySelector("#detail");
+        if (!card) return null;
+        const c = card.getBoundingClientRect(), p = panel && panel.getBoundingClientRect();
+        return p && p.width && c.right > p.left + 1 && c.left < p.right - 1 && c.bottom > p.top && c.top < p.bottom ? { card: [c.left, c.right], panel: [p.left, p.right] } : false;
+      }).catch(() => null);
+      assert.ok(!overlap, "rail card under the side panel at " + width + ": " + JSON.stringify(overlap));
+      if (await page.evaluate(() => !!document.activeElement.closest(".rail-card"))) railStops++;
+      await page.keyboard.press("Tab");
+    }
+    assert.ok(railStops >= cards, "tabbed through the rail cards at " + width);
+  }
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.setViewportSize({ width: 360, height: 740 });
+  ok("rail keyboard focus stays inside the strip and clear of the side panel (360/1280, reduced and normal motion)");
 
   // Sort: By time is the default; A–Z sorts by name and is kept in the URL.
   const times = await page.$$eval("#list .lineup-row", lis => lis.map(li => li.dataset.id));

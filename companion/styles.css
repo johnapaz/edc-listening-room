@@ -61,8 +61,16 @@ main{padding:0 var(--gutter)}
 .notice p{margin-bottom:6px}
 .notice.compact{font-size:.8125rem;padding:10px 12px}
 .notice-warning{border-left:4px solid var(--line-strong)}
-.geometry-unavailable{border-style:dashed;color:var(--muted)}
-.geometry-unavailable strong{color:var(--text)}
+.schedule-status{padding:0;margin-bottom:12px}
+.schedule-status summary{position:relative;display:block;min-height:var(--target);padding:10px 38px 10px 14px;cursor:pointer;font-size:.8125rem;line-height:1.4;list-style:none}
+.schedule-status summary::-webkit-details-marker{display:none}
+.schedule-status summary::after{content:"+";position:absolute;right:14px;top:8px;font-size:1.125rem;font-weight:700;line-height:1.4}
+.schedule-status[open] summary::after{content:"−"}
+.schedule-status summary strong{color:var(--text)}
+.schedule-status p{margin:0 14px 8px;font-size:.8125rem}
+.schedule-status p:last-child{margin-bottom:12px}
+.status-wrap .stale{margin:-4px 0 12px;font-size:.8125rem}
+.map-note{margin:8px 0 0;font-size:.8125rem}
 .stale{color:var(--amber)}
 .state-box{border:1px dashed var(--line-strong)}
 .state-box.error{border-color:var(--coral)}

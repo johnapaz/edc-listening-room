@@ -83,7 +83,7 @@ test('design-contract routes and legacy deep links parse to one canonical state'
   assert.equal(C.buildHash(legacy), '#/explore?day=2026-11-07&stage=neon-garden');
   for (const view of ['stages', 'map', 'unscheduled', 'sources']) assert.equal(C.parseHash('#/' + view).view, view);
   assert.equal(C.parseHash('#/about').view, 'sources');
-  assert.equal(C.parseHash('').view, 'map'); assert.equal(C.parseHash('#/').view, 'map'); assert.equal(C.parseHash('#/explore').view, 'explore');
+  assert.equal(C.parseHash('').view, 'stages'); assert.equal(C.parseHash('#/').view, 'stages'); assert.equal(C.parseHash('#/explore').view, 'explore');
   assert.equal(C.parseHash('#/stages/extra').view, 'invalid');
   assert.equal(C.parseHash('#/stage').view, 'invalid');
   assert.equal(C.buildHash({ view: 'unscheduled', day: '2026-11-08', stage: '' }), '#/unscheduled?day=2026-11-08');
@@ -92,16 +92,18 @@ test('design-contract routes and legacy deep links parse to one canonical state'
   const nav = C.transition({ view: 'artist', id: 'artist:cid', day: '2026-11-07', stage: 'kinetic-field' }, { type: 'sources' });
   assert.deepEqual(nav, { view: 'sources', day: '2026-11-07', stage: 'kinetic-field' });
 });
-test('gated map route redirects instead of showing a map and ignores bad stages silently', () => {
+test('the legacy map alias never shows a map: it redirects to the stage list, a stage page or a detail page', () => {
   const r = state => C.resolveRoute(idx, C.parseHash(state));
   assert.deepEqual(r('#/map?day=2026-11-06&stage=kinetic-field'), { state: { view: 'explore', day: '2026-11-06', stage: 'kinetic-field' }, replace: true });
-  assert.deepEqual(r('#/map?stage=nope'), { state: { view: 'map', day: 'all', stage: '' }, replace: false });
+  assert.deepEqual(r('#/map?stage=nope'), { state: { view: 'stages', day: 'all', stage: '' }, replace: true });
   assert.deepEqual(r('#/map?set=edco26%3A2026-11-07%3Aacraze-b2b-cid&day=2026-11-07').state, { day: '2026-11-07', stage: '', view: 'performance', id: 'edco26:2026-11-07:acraze-b2b-cid' });
   assert.equal(r('#/map?artist=artist%3Acid').state.view, 'artist');
   assert.equal(r('#/stages?stage=nope').replace, true);
   assert.equal(r('#/stages?stage=nope').state.stage, '');
   assert.equal(r('#/explore?stage=nope').state.stage, 'nope', 'explore keeps its recoverable unavailable state');
-  assert.equal(r('#/map').replace, false);
+  assert.deepEqual(r('#/map?day=2026-11-08'), { state: { view: 'stages', day: '2026-11-08', stage: '' }, replace: true });
+  assert.deepEqual(r('#/map'), { state: { view: 'stages', day: 'all', stage: '' }, replace: true });
+  assert.equal(r('#/stages').replace, false, 'the stage list itself is canonical');
 });
 test('unscheduled lists exactly the current appearances without a usable stage and time', () => {
   assert.deepEqual(C.DAYS.map(d => C.unscheduled(idx, d.key).length), [23, 8, 7, 8]);

@@ -120,6 +120,12 @@
       fill();
     });
     fill();
+    // Keyboard focus must keep its card inside the strip's visible box (WCAG 2.4.7 / 2.4.11); the browser does not
+    // scroll this snap container to a focused card on its own. Reduced motion jumps instead of animating.
+    strip.addEventListener("focusin", e => {
+      const card = e.target.closest?.(".rail-card");
+      if (card) card.scrollIntoView({ inline: "nearest", block: "nearest", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    });
     return el("section", { class: "rail", "aria-labelledby": "rail-title" },
       el("div", { class: "section-heading" }, el("h2", { id: "rail-title", text: "Hear " + dayName(ctx.day) }), more), strip);
   }
