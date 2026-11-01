@@ -2,7 +2,29 @@
 
 PM-owned record for #83 / canonical dispatch #77. This is a **pre-candidate work record**, not a release or sign-off.
 
-## Post-merge checkpoint - November 1, 2026, 12:00 EST
+## R2 preliminary build pinned - November 1, 2026, 13:00 EST
+**PROVISIONAL / NO-GO. R2 is an inspected review build, not a certified release candidate or deployment.** It incorporates LR-001 (#88) and #91's browser-trigger coverage. PD-2/3/4 and source/map/device/final-review gates remain open.
+
+| Provenance | Exact value |
+| --- | --- |
+| Merged integration | `c05bf2bbc6515cccc364d0dca9f63ae7774e6e99` (#91); LR fix `79ab62c9830715cdb0829d5eaba465f3da20398d` (#88) |
+| Tested PR head | `1700ddd6740c1b092b11c21995d319c7116e25e5` |
+| Actual tested checkout | `7f0f6a4192c94b2bcc41a8e33e83cb682b42791c` (synthetic merge) |
+| Browser / unit CI | [41329698977](https://github.com/johnapaz/edc-listening-room/actions/runs/41329698977) / [41329698966](https://github.com/johnapaz/edc-listening-room/actions/runs/41329698966), both SUCCESS at PR head |
+| Sanitized ZIP | [13092916753](https://github.com/johnapaz/edc-listening-room/actions/runs/41329698977/artifacts/13092916753), 351917 bytes |
+| Downloaded ZIP SHA-256 | `fdf6f2010ad683fcccf011b416f3fbde6a8ff42628dc0b24f07cf4ce6e50e0d1` (matches reported digest) |
+| Screenshot evidence | artifact 13092827313 in the browser run; not newly visually reviewed by this PM pass |
+| Tree equivalence | tested checkout and merged c05bf2b both tree `76b58be5a0004d1f839e0d76ddbafdac98ed51a6`; equivalence is not a separate merged-head browser run |
+
+PM independently downloaded and inspected the ZIP: 38 files; no private pilot/Discovery/Notion/source/test/script paths; CSP retained. Only listening-room/styles.css and its index.html stylesheet cache key differ from R1; all Companion/data files are byte-identical. Static checks preserve 130 unique appearances, 107 provisional / 23 unknown stage/time, B2B/program/credit IDs and source dates; all five stage coordinates remain null, geometry objects empty, artwork_public_export false. No confidence upgrade.
+
+Reproduce: download/extract into an empty directory, then `python3 -m http.server 8765 --bind 127.0.0.1 --directory <extracted-build-root>`; open /listening-room/ and /companion/. Never serve repo root. This simple server does not apply _headers; security testing uses the existing harness.
+
+**Affected acceptance:** designer re-review of LR-001 on this exact artifact; QA changed-head Listening Room regression plus rail evidence reconciliation; backend independent LR viewport/text verification remains pending. Record actual app/test SHA and limitations. QA's own CSS-fix/retest remains same-agent; design's earlier 360/768 check is at b487476. No old final sign-off is carried forward. Frontend PD-2 app.js and PD-3/4 Companion work remain assigned without takeover. Real devices/Fold, VoiceOver/TalkBack, native zoom and physical high-contrast checks are unverified. Final design -> independent QA -> PM review is still blocked by open findings.
+
+No public Companion, DNS, provider or production deployment by this checkpoint. #66/P2/P3 deferred. Continue coordination while internal work remains; the 08:00 saved PDF remains a clearly dated provisional historical snapshot until final reviews complete.
+
+## Historical post-merge checkpoint - November 1, 2026, 12:00 EST
 **PROVISIONAL / NO-GO remains.** #88 merged as `79ab62c9830715cdb0829d5eaba465f3da20398d` at 16:44:37 UTC. LR-001/PD-1 is integrated, not deployment or final acceptance. The prior 08:00 report and R1 are historical snapshots.
 - Main [Pilot checks 41327875517](https://github.com/johnapaz/edc-listening-room/actions/runs/41327875517) PASS at `79ab62c`; prior exact PR head `b487476` test PASS. No new browser execution or backend viewport/text verification is established by the merge. Prior design 360/768 verification and QA same-agent cases remain labelled as such.
 - **R2 requested, artifact/checks pending:** the existing browser workflow excluded Listening Room-only PRs despite running its ui_smoke.js. The bounded PM change adds listening-room/** and tests/ui_smoke.js to its PR trigger only. Existing jobs/assertions/security/permissions and production exclusion remain identical. Pin actual passing PR head, tested checkout and artifact before describing R2 as available.
