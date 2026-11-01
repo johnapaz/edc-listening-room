@@ -2,7 +2,17 @@
 
 PM-owned record for #83 / canonical dispatch #77. This is a **pre-candidate work record**, not a release or sign-off.
 
-## 05:00 EST cutoff — 2026-11-01 10:00 UTC
+## 08:00 EST morning checkpoint - 2026-11-01 13:00 UTC
+**PROVISIONAL / NO-GO; no certified candidate.** See [morning-report.md](morning-report.md) for the coffee one-pager. Integration baseline `af47df430f097718b1bd182c623ef18e2273defc`; R1 artifact/provenance below remains preliminary, app unchanged since #82.
+- Preliminary principal design #89 is merged as `af47df4`: rebuilt main `62c7151`, Chromium emulation only. This is observed acknowledgment, not final candidate sign-off.
+- LR-001/PD-1 P1 fix is published in #88 at `b487476`, not merged. QA author evidence is same-agent; design independently checked 360/768; full PM static review has no material finding and exact-head test SUCCESS. Backend's assigned independent verification remains pending.
+- PD-2 rail focus and PD-3/4 Companion navigation/hierarchy are P1/open with frontend. QA has a bounded rail-evidence reconciliation task; backend owns existing ui_smoke.js assertions/synchronization investigation. No new fix/retest checkpoint or relinquishment observed.
+- Eight actual Claude branches completely paginated and their role reports inspected. Frontend `6c217ec`, backend `a5a31bc`, QA `b487476`, designer `1ed18f2`; no new activity assumed.
+- Source/map/hardware/public-release gates unchanged. Real-device/AT checks and final design -> QA -> PM acceptance remain pending; P2/P3/#66 deferred.
+- No deployment or current live deployment SHA/health certification by this checkpoint. Existing availability/production Companion exclusion preserved; existing verify/rollback plan below remains required before authorized deployment.
+- Continued internal P1/verification work remains: do not pause coordination solely because map evidence is externally blocked. No active code-lane takeover or PR review claim retained.
+
+## Historical 05:00 EST cutoff — 2026-11-01 10:00 UTC
 
 **NOT READY / NO-GO for public Companion release. No release candidate is certified.** A real, immutable **preliminary review build R1** is available for review of the implemented surfaces. This is not a reduction of map-first P0 scope.
 
