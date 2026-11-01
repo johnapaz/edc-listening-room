@@ -2,6 +2,31 @@
 
 **Checkpoint 2:** 2026-11-01 05:00 UTC (sandbox clock; the earlier checkpoint's "~05:25" label was an estimate written ahead of the clock and is wrong, it was pushed at ~04:55 UTC) · branch `claude/gracious-newton-3s6ivf` (QA session's assigned branch; not `claude/rc-qa-2026-11-01`) · role: QA, independent of frontend (#82) and backend (#85). Same-agent evidence is labelled; WebKit, real devices and assistive tech are untested.
 
+## RC stability analysis for PM — 2026-11-01 ~10:30 UTC
+
+**Tested:** `main` @ `62c7151` (R1 baseline: merged #82 `affa1b9` + packaging). App code is byte-identical to the #82 head `6c217ec` I retested; the only differences are `tests/support/rc_*` helpers and release docs. I rebuilt the sanitized preview from that exact checkout; I did not download the CI artifact 13077233599 or compare its hash. Chromium emulation only. **Not a candidate sign-off:** PM records NOT READY and I do not contradict that.
+
+| Area | Disposition at `62c7151` | Evidence |
+|---|---|---|
+| Existing suites | **PASS** | Python 101 pass / 1 existing skip; Node 31 pass; Companion browser smoke 32/32 Chromium; Listening Room UI smoke 35/35 (run on the LR-fix branch, three consecutive runs). WebKit: **UNTESTED here** (CI only). |
+| Data integrity | **PASS** | Current-lineup `--check` and validators, EDCO reference validator: 130 appearances (Fri 43 / Sat 43 / Sun 44), 127 distinct billings. Provisional-time and null-geometry gates unchanged (not re-argued here). |
+| Production exclusion | **PASS** | `build_public_site.py` builds 33 files, no `companion/`, no private paths. |
+| Sticky bars vs day controls (2.4.11 / PM retest) | **PASS** | 12 viewport/text configs, 0 overlap or hit-test failures; fails on held head `db54e8b`. |
+| Back/retry focus, announcements (2.4.3, 4.1.3) A11Y-001/005 | **PASS** | Focus stays on `stage-title` after Back; retry announces and keeps focus. |
+| Error views (1.3.1, 2.4.2) A11Y-002 | **PASS** | h1 and matching titles. |
+| Forced-colors selection (1.4.1, 1.4.11) A11Y-006 | **PASS** (Chromium emulation) | Selected day/stage/nav differ by border/underline. |
+| Listening Room focus obscured (2.4.11) LR-001, P1 | **FAIL on `main`; fix proposed in PR #88, same-agent PASS** | Before: 2–17 fully hidden stops per config below 1280px; after: 0 in all 18 configs. Independent verification by backend pending. **Needs merge to count.** |
+| LR-002 (rail sliver), LR-003 (not-found heading/title) | **FAIL, open, P2** | Live Listening Room, pre-existing. |
+| A11Y-003/004/007 | **FAIL, open, P3** | Deferred polish. |
+| Real screen readers, real devices/Fold, browser-native zoom, WebKit/Firefox, real Windows high contrast | **UNTESTED** | Not available in this sandbox; not claimed. |
+| Map-specific P0 | **BLOCKED** (not QA-testable) | No geometry or permitted representation; the stage-list fallback is not map acceptance. |
+
+**Stability view.** Companion code is stable under everything I could emulate: no P0, no Companion P1, no flaky result in my runs, and every finding the audit raised against it has either been fixed and independently retested or is P3. The one release-relevant defect (LR-001) was in the *live Listening Room*, not the new surface; a small CSS fix is in PR #88. Largest remaining risks are unverified rather than known-bad: real assistive technology and devices, WebKit locally unreproduced, and the intermittent `ui_smoke.js` `boundingBox()` null that frontend saw once (I could not reproduce it in 3 runs and make no claim about its cause).
+
+**What invalidates this:** any change to `companion/`, `listening-room/` or data. PR #88 changes `listening-room/styles.css`; if it merges, the Listening Room checks need one rerun on the new SHA (cheap: `STRICT=1 node tests/qa/a11y_regression.js` and `tests/ui_smoke.js`).
+
+**Process correction.** My 06:00 UTC report asked for the LR-001 path decision that PM had already granted at 05:02 UTC; I had read the wrong comment page. The LR-001 work started only at ~10:10 UTC as a result. Late by about five hours; no other effect found.
+
 ## Update 06:00 UTC: retest of #82 `6c217ec`
 A11Y-001, 002, 005 and 006 are **fixed and independently retested (PASS)**; sticky occlusion still passes; no regressions found in keyboard, announcements or Back/scroll. **Open:** A11Y-003/004/007 (P3, Companion), **LR-001 (P1), LR-002, LR-003 (live Listening Room, pre-existing; `listening-room/` unchanged by #82 and main)**. Tested head `6c217ec` is a candidate-in-progress; final sign-off still requires the exact candidate SHA recorded by PM.
 
