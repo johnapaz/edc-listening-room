@@ -76,3 +76,67 @@ test('dated reference warning uses Orlando calendar rather than user timezone', 
   assert.equal(C.freshnessWarning('2026-10-31', new Date('2026-11-06T04:59:00Z')), false);
   assert.equal(C.freshnessWarning('2026-10-31', new Date('2026-11-06T05:00:00Z')), true);
 });
+
+test('design-contract routes and legacy deep links parse to one canonical state', () => {
+  const legacy = C.parseHash('#/explore?day=2026-11-07&stage=neon-garden');
+  assert.deepEqual(C.parseHash('#/stage/neon-garden?day=2026-11-07'), legacy);
+  assert.equal(C.buildHash(legacy), '#/explore?day=2026-11-07&stage=neon-garden');
+  for (const view of ['stages', 'map', 'unscheduled', 'sources']) assert.equal(C.parseHash('#/' + view).view, view);
+  assert.equal(C.parseHash('#/about').view, 'sources');
+  assert.equal(C.parseHash('').view, 'map'); assert.equal(C.parseHash('#/').view, 'map'); assert.equal(C.parseHash('#/explore').view, 'explore');
+  assert.equal(C.parseHash('#/stages/extra').view, 'invalid');
+  assert.equal(C.parseHash('#/stage').view, 'invalid');
+  assert.equal(C.buildHash({ view: 'unscheduled', day: '2026-11-08', stage: '' }), '#/unscheduled?day=2026-11-08');
+  const legacyArtist = '#/artist/artist%3Acid?day=2026-11-07&stage=kinetic-field';
+  assert.equal(C.buildHash(C.parseHash(legacyArtist)), legacyArtist);
+  const nav = C.transition({ view: 'artist', id: 'artist:cid', day: '2026-11-07', stage: 'kinetic-field' }, { type: 'sources' });
+  assert.deepEqual(nav, { view: 'sources', day: '2026-11-07', stage: 'kinetic-field' });
+});
+test('gated map route redirects instead of showing a map and ignores bad stages silently', () => {
+  const r = state => C.resolveRoute(idx, C.parseHash(state));
+  assert.deepEqual(r('#/map?day=2026-11-06&stage=kinetic-field'), { state: { view: 'explore', day: '2026-11-06', stage: 'kinetic-field' }, replace: true });
+  assert.deepEqual(r('#/map?stage=nope'), { state: { view: 'map', day: 'all', stage: '' }, replace: false });
+  assert.deepEqual(r('#/map?set=edco26%3A2026-11-07%3Aacraze-b2b-cid&day=2026-11-07').state, { day: '2026-11-07', stage: '', view: 'performance', id: 'edco26:2026-11-07:acraze-b2b-cid' });
+  assert.equal(r('#/map?artist=artist%3Acid').state.view, 'artist');
+  assert.equal(r('#/stages?stage=nope').replace, true);
+  assert.equal(r('#/stages?stage=nope').state.stage, '');
+  assert.equal(r('#/explore?stage=nope').state.stage, 'nope', 'explore keeps its recoverable unavailable state');
+  assert.equal(r('#/map').replace, false);
+});
+test('unscheduled lists exactly the current appearances without a usable stage and time', () => {
+  assert.deepEqual(C.DAYS.map(d => C.unscheduled(idx, d.key).length), [23, 8, 7, 8]);
+  C.unscheduled(idx, 'all').forEach(p => assert.ok(!p.stage_id || !C.hasTime(p)));
+  assert.equal(C.query(idx, { day: 'all', stage: C.UNKNOWN_STAGE }).length, 23);
+  assert.ok(idx.performances.filter(p => p.stage_id && C.hasTime(p)).every(p => !C.unscheduled(idx, 'all').includes(p)));
+});
+test('status vocabulary: header carries a shared status, mixed lists spell each row out', () => {
+  const timed = idx.performances.find(C.hasTime);
+  const untimed = { ...timed, starts_at: null, ends_at: null, schedule_status: 'set_times_unverified' };
+  assert.equal(C.statusOf(timed), 'poster');
+  assert.equal(C.statusOf({ ...timed, schedule_status: 'verified' }), 'verified');
+  assert.equal(C.statusOf(untimed), 'unknown');
+  assert.equal(C.statusOf({ ...timed, lineup_status: 'official_sources_conflict' }), 'unknown');
+  assert.equal(C.summarizeStatus([timed, timed]).status, 'poster');
+  assert.equal(C.summarizeStatus([timed, untimed]).status, 'mixed');
+  assert.equal(C.summarizeStatus([]).status, 'none');
+  assert.equal(C.sourcesDisagree({ ...timed, issue_ids: [] }), false);
+  assert.equal(C.sourcesDisagree({ ...timed, issue_ids: ['x'] }), true);
+  assert.equal(C.sourcesDisagree({ ...timed, issue_ids: [], reconciliation: { status: 'qualifier_changed' } }), true);
+  assert.equal(C.dayLabel('2026-11-06'), 'Fri 6'); assert.equal(C.dayLabel('all'), 'All');
+  assert.equal(C.shortDate('2026-10-30'), 'Oct 30');
+  assert.deepEqual(C.timeParts({ ...timed, starts_at: '2026-11-06T23:30:00-05:00', ends_at: '2026-11-07T00:30:00-05:00' }), { start: '11:30 PM', end: '12:30 AM', nextDay: true });
+  assert.equal(C.timeParts(untimed), null);
+});
+test('Listening Room targets are stable artist IDs; programs and empty credits get none', () => {
+  const songs = [{ video_id: 'a', artist_ids: ['artist:cid'], url: 'https://www.youtube.com/watch?v=a', title: 't', artist: 'CID' }];
+  const withSongs = C.createIndex(perf, art, venues, songs);
+  const b2b = withSongs.performances.find(p => p.display_name === 'ACRAZE B2B CID');
+  const targets = C.hearTargets(withSongs, b2b);
+  assert.deepEqual(targets.map(t => t.artist.artist_id).sort(), [...b2b.artist_ids].sort());
+  assert.equal(targets.find(t => t.artist.artist_id === 'artist:cid').tracks, 1);
+  assert.equal(targets.find(t => t.artist.artist_id !== 'artist:cid').tracks, 0);
+  const program = withSongs.performances.find(p => p.performance_type === 'program');
+  assert.deepEqual(C.hearTargets(withSongs, program), []);
+  assert.deepEqual(C.hearTargets(withSongs, { ...b2b, artist_ids: [] }), []);
+  assert.equal(C.hearTargets(idx, b2b).every(t => t.tracks === 0), true);
+});
