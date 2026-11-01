@@ -1,7 +1,15 @@
 # Coffee report - November 1, 2026, 08:00 EST
 **PROVISIONAL / NO-GO.** Companion Session 2 is integrated for private review; it is not a completed map or a certified release candidate. Final design, final-candidate QA and final PM acceptance remain pending. Keep Listening Room available and Companion excluded from production.
 
-## Candidate versus live
+## Post-merge checkpoint - November 1, 2026, 12:00 EST
+**PROVISIONAL / NO-GO remains.** #88 merged as `79ab62c9830715cdb0829d5eaba465f3da20398d` at 16:44:37 UTC. LR-001/PD-1 is integrated, not deployment or final acceptance. The prior 08:00 report and R1 are historical snapshots.
+- Main [Pilot checks 41327875517](https://github.com/johnapaz/edc-listening-room/actions/runs/41327875517) PASS at `79ab62c`; prior exact PR head `b487476` test PASS. No new browser execution or backend viewport/text verification is established by the merge. Prior design 360/768 verification and QA same-agent cases remain labelled as such.
+- **R2 requested, artifact/checks pending:** the existing browser workflow excluded Listening Room-only PRs despite running its ui_smoke.js. The bounded PM change adds listening-room/** and tests/ui_smoke.js to its PR trigger only. Existing jobs/assertions/security/permissions and production exclusion remain identical. Pin actual passing PR head, tested checkout and artifact before describing R2 as available.
+- Backend carries independent LR-001 verification to `79ab62c`; QA owns merged-head regression/rail-evidence reconciliation. Frontend PD-2/3/4 remains open, with no new branch checkpoint; backend keeps ui_smoke.js ownership. No duplicate dispatch or takeover.
+- App changes invalidate affected R1 acceptance. Final design on changed surfaces, independent final QA and PM acceptance remain pending. Source/map/device gates unchanged; #66/P2/P3 deferred. No deployment or public Companion authority.
+- Continue coordination while assigned internal work remains. The saved 08:00 PDF is the historical provisional report; update it after actual final reviews, not as a false final sign-off.
+
+## Historical 08:00 candidate versus live
 Current integration baseline: `af47df430f097718b1bd182c623ef18e2273defc`; application baseline #82: `affa1b9b14e2adb9b5824b8d3a26aec67d26e825`. No production deployment, DNS or provider write was performed overnight. The current live deployment SHA/health was not freshly certified by this report.
 Preliminary **R1**: [sanitized build 13077233599](https://github.com/johnapaz/edc-listening-room/actions/runs/41291620886/artifacts/13077233599), actual CI checkout `e7b55cd09f7979921b8f9963d683b0b1152cb1ab`, packaging head `31245708b0161f4fb93d41b0cfd8545441d5f002`. It is review-only, not live. Full hash/reproduction/provenance: [release record](release.md).
 

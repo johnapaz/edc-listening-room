@@ -2,7 +2,15 @@
 
 PM-owned record for #83 / canonical dispatch #77. This is a **pre-candidate work record**, not a release or sign-off.
 
-## 08:00 EST morning checkpoint - 2026-11-01 13:00 UTC
+## Post-merge checkpoint - November 1, 2026, 12:00 EST
+**PROVISIONAL / NO-GO remains.** #88 merged as `79ab62c9830715cdb0829d5eaba465f3da20398d` at 16:44:37 UTC. LR-001/PD-1 is integrated, not deployment or final acceptance. The prior 08:00 report and R1 are historical snapshots.
+- Main [Pilot checks 41327875517](https://github.com/johnapaz/edc-listening-room/actions/runs/41327875517) PASS at `79ab62c`; prior exact PR head `b487476` test PASS. No new browser execution or backend viewport/text verification is established by the merge. Prior design 360/768 verification and QA same-agent cases remain labelled as such.
+- **R2 requested, artifact/checks pending:** the existing browser workflow excluded Listening Room-only PRs despite running its ui_smoke.js. The bounded PM change adds listening-room/** and tests/ui_smoke.js to its PR trigger only. Existing jobs/assertions/security/permissions and production exclusion remain identical. Pin actual passing PR head, tested checkout and artifact before describing R2 as available.
+- Backend carries independent LR-001 verification to `79ab62c`; QA owns merged-head regression/rail-evidence reconciliation. Frontend PD-2/3/4 remains open, with no new branch checkpoint; backend keeps ui_smoke.js ownership. No duplicate dispatch or takeover.
+- App changes invalidate affected R1 acceptance. Final design on changed surfaces, independent final QA and PM acceptance remain pending. Source/map/device gates unchanged; #66/P2/P3 deferred. No deployment or public Companion authority.
+- Continue coordination while assigned internal work remains. The saved 08:00 PDF is the historical provisional report; update it after actual final reviews, not as a false final sign-off.
+
+## Historical 08:00 EST morning checkpoint - 2026-11-01 13:00 UTC
 **PROVISIONAL / NO-GO; no certified candidate.** See [morning-report.md](morning-report.md) for the coffee one-pager. Integration baseline `af47df430f097718b1bd182c623ef18e2273defc`; R1 artifact/provenance below remains preliminary, app unchanged since #82.
 - Preliminary principal design #89 is merged as `af47df4`: rebuilt main `62c7151`, Chromium emulation only. This is observed acknowledgment, not final candidate sign-off.
 - LR-001/PD-1 P1 fix is published in #88 at `b487476`, not merged. QA author evidence is same-agent; design independently checked 360/768; full PM static review has no material finding and exact-head test SUCCESS. Backend's assigned independent verification remains pending.
