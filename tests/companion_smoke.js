@@ -24,27 +24,51 @@ const server = http.createServer((req, res) => {
 async function acceptance(page, base, pass, ctx, perf) {
   await page.setViewportSize({ width: 360, height: 740 });
   const go = async hash => { await page.goto(base + '/companion/' + hash); await page.waitForSelector('main[aria-busy="false"] h1'); };
-  // S1/S10 landing: bare URL is the Map tab; no performance list, no map graphic, five stages plus the unknown bucket.
+  // Landing (PD-3/PD-4): the bare URL is the stage list. No Map tab, no map box, stages above the fold, counts out of sight.
   await go('');
-  assert.equal(await page.textContent('h1'), 'Find your next stage');
+  assert.equal(await page.textContent('h1'), 'Stages');
   assert.equal(await page.locator('.stage-link').count(), 6);
   assert.equal(await page.locator('.performance').count(), 0);
-  assert.equal(await page.getAttribute('.primary [data-nav="map"]', 'aria-current'), 'page');
-  assert.match(await page.textContent('.data-status'), /107 provisional.*23 time unknown/); pass('map landing is the gated stage list (S10)');
-  // Primary navigation carries the day; Map returns to the last stage through the gate (replace, not a stray /map entry).
+  assert.equal(await page.getAttribute('.primary [data-nav="stages"]', 'aria-current'), 'page');
+  assert.deepEqual((await page.locator('.primary a').allTextContents()).map(t => t.trim()), ['Stages', 'About'], 'tabs: Stages, About');
+  assert.equal(await page.locator('[data-nav="map"]').count(), 0);
+  assert.doesNotMatch(await page.locator('header').innerText(), /\bMap\b/, 'no visible nav item says Map');
+  assert.doesNotMatch(await page.locator('main').innerText(), /Map coming later|\bMap\b/, 'no map promise on the landing');
+  assert.match(await page.textContent('.data-status'), /107 provisional.*23 time unknown/); pass('landing is the stage list with only Stages and About tabs');
+  for (const [w, h] of [[360, 740], [280, 653], [412, 915]]) {
+    await page.setViewportSize({ width: w, height: h }); await go('');
+    const fold = await page.evaluate(() => { const c = document.querySelector('.stage-link').getBoundingClientRect(), nav = document.querySelector('.primary').getBoundingClientRect();
+      const limit = getComputedStyle(document.querySelector('.primary')).position === 'fixed' ? nav.top : innerHeight; return { bottom: c.bottom, top: c.top, limit }; });
+    assert.ok(fold.top >= 0 && fold.bottom <= fold.limit, 'first stage card must be fully visible without scrolling @' + w + ' ' + JSON.stringify(fold));
+  }
+  await page.setViewportSize({ width: 360, height: 740 }); await go('');
+  const visibleText = await page.locator('main').innerText();
+  assert.doesNotMatch(visibleText, /\d+ (current appearances|provisional|stage unknown|time unknown)|with sourced times/, 'no count strings on the landing');
+  assert.match(await page.locator('.schedule-status summary').innerText(), /Schedule status.*poster.*may change/s);
+  assert.equal(await page.locator('.schedule-status').evaluate(d => d.open), false);
+  await page.locator('.schedule-status summary').click();
+  assert.match(await page.locator('main').innerText(), /107 provisional poster times/); // the counts are one tap away
+  assert.deepEqual(await page.locator('.stage-link small').allTextContents(), ['28 sets · poster times', '30 sets · poster times', '21 sets · poster times', '28 sets · poster times', 'No sourced schedule', '23 appearances · stage and time unknown']);
+  assert.equal(await page.locator('.map-note a[href="https://orlando.edc.com/"]').count(), 1, 'organizer homepage link kept');
+  assert.equal(await page.locator('main canvas, main img, .stage-hotspot, main [data-component="festival-map"]').count(), 0);
+  pass('stages above the fold, counts collapsed, stage wording matches About');
+  // Primary navigation carries the day (there is no Map tab to carry a stage).
   await page.locator('[data-day="2026-11-08"]').click();
   assert.match(await page.getAttribute('.primary [data-nav="stages"]', 'href'), /day=2026-11-08/);
   await page.locator('[data-stage="stereo-bloom"]').click();
   await page.locator('.primary [data-nav="stages"]').click(); await page.waitForSelector('#page-title');
   assert.equal(await page.textContent('#page-title'), 'Stages'); assert.match(page.url(), /#\/stages\?day=2026-11-08$/);
-  await page.locator('.primary [data-nav="map"]').click(); await page.waitForSelector('#stage-title');
-  assert.match(page.url(), /#\/explore\?day=2026-11-08&stage=stereo-bloom$/);
-  assert.equal(await page.textContent('#stage-title'), 'stereoBLOOM');
-  await page.goBack(); assert.match(page.url(), /#\/stages\?day=2026-11-08$/); pass('primary navigation keeps day and last stage; map alias replaces');
+  assert.equal(await page.getAttribute('.primary [data-nav="sources"]', 'href'), '#/sources?day=2026-11-08');
+  assert.equal(await page.getAttribute('.brand', 'href'), '#/stages?day=2026-11-08');
+  // Old #/map links still resolve, by replacing the entry (no stray /map history).
+  await go('#/map?day=2026-11-07'); assert.match(page.url(), /#\/stages\?day=2026-11-07$/);
+  assert.equal(await page.textContent('#page-title'), 'Stages');
+  assert.equal(await page.getAttribute('.primary [data-nav="stages"]', 'aria-current'), 'page');
+  pass('primary navigation keeps the day; #/map redirects to Stages');
   // Design-contract aliases and legacy deep links resolve to the same page.
   await go('#/stage/neon-garden?day=2026-11-07'); assert.equal(await page.textContent('#stage-title'), 'neonGARDEN');
   await go('#/map?stage=kinetic-field&day=2026-11-06'); assert.match(page.url(), /#\/explore\?day=2026-11-06&stage=kinetic-field$/);
-  await go('#/map?stage=nope'); assert.equal(await page.textContent('#page-title'), 'Find your next stage'); assert.equal(await page.locator('.error').count(), 0);
+  await go('#/map?stage=nope'); assert.equal(await page.textContent('#page-title'), 'Stages'); assert.equal(await page.locator('.error').count(), 0);
   await go('#/map?set=edco26%3A2026-11-07%3Aacraze-b2b-cid&day=2026-11-07'); assert.match(await page.textContent('#detail-title'), /ACRAZE B2B CID/);
   await go('#/performance/edco26%3A2026-11-06%3Aadventure-club?day=2026-11-07');
   await go('#/performance/edco26%3A2026-11-06%3Aadventure-club?day=2026-11-06');
@@ -195,6 +219,38 @@ async function acceptance(page, base, pass, ctx, perf) {
     return [...document.querySelectorAll('.day-heading:not(.subtle)')].map(h => parseFloat(getComputedStyle(h).top) - strip); });
   assert.ok(headingGap.length && headingGap.every(g => Math.abs(g) < 1.5), 'day headings stick directly below the strip: ' + headingGap);
   pass('sticky header and day strip never overlap, including wrapped header and 200% text');
+  // Real Tab traversal on the Stages landing: a focused control must settle clear of the pinned app bar and the fixed tab bar,
+  // including 320x640 with 200% text where the day strip wraps to two rows and rests under the tab bar at scroll top.
+  // (Content resting under a fixed bar before any scrolling is not a focus failure; focus must still scroll it clear.)
+  const seenStops = new Set();
+  for (const [w, h, css] of [[320, 640, ':root{font-size:30px!important}'], [360, 740, ':root{font-size:30px!important}'], [360, 740, ''], [412, 915, ''], [1280, 800, '']]) {
+    await page.setViewportSize({ width: w, height: h });
+    await page.reload(); await page.waitForSelector('main[aria-busy="false"] h1');
+    if (css) await page.addStyleTag({ content: css });
+    await page.waitForTimeout(250);
+    const bad = []; let stops = 0;
+    for (let i = 0; i < 70; i++) {
+      await page.keyboard.press('Tab');
+      await page.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))));
+      const m = await page.evaluate(() => {
+        const a = document.activeElement;
+        if (!a || a === document.body || a.classList.contains('skip')) return null; // the skip link deliberately overlays the header
+        const bar = document.querySelector('.app-bar'), nav = document.querySelector('.primary');
+        const barSticky = getComputedStyle(bar).position === 'sticky', navFixed = getComputedStyle(nav).position === 'fixed';
+        const q = a.getBoundingClientRect(), line = a.getClientRects()[0] || q; // a wrapped inline link's box spans several lines
+        const hit = document.elementFromPoint(line.left + line.width / 2, Math.min(Math.max(line.top + line.height / 2, 1), innerHeight - 1));
+        return { name: (a.textContent || a.tagName).trim().slice(0, 24), top: q.top, bottom: q.bottom, own: !!(a.closest('.app-bar') || a.closest('.primary')),
+          barBottom: barSticky ? bar.getBoundingClientRect().bottom : 0, navTop: navFixed ? nav.getBoundingClientRect().top : innerHeight, ok: !!hit && (hit === a || a.contains(hit)) };
+      });
+      if (!m) { if (i > 5 && await page.evaluate(() => document.activeElement === document.body)) break; continue; }
+      stops++; seenStops.add(w + ':' + m.name);
+      if (!m.own && (m.top < m.barBottom - 0.5 || m.bottom > m.navTop + 0.5 || !m.ok)) bad.push(m);
+    }
+    assert.ok(stops >= 30, 'tabbed through the landing at ' + w + ' (' + stops + ' stops)');
+    assert.deepEqual(bad.slice(0, 3), [], 'focused control under a fixed bar at ' + w + 'x' + h + (css ? ' 200% text' : ''));
+  }
+  assert.ok(seenStops.has('320:Sat 7') && seenStops.has('320:Sun 8'), 'the wrapped day controls were exercised at 320x640');
+  pass('keyboard focus on the Stages landing never ends up under the pinned bars (320x640 at 200% text included)');
   // Forced colors (Windows High Contrast): background fills and box-shadows are overridden, so a selected day, stage or nav item
   // must differ from its siblings in something other than colour (border width/style, text decoration). Chromium emulates this.
   if (ctx.browser().browserType().name() === 'chromium') {
@@ -314,12 +370,14 @@ async function acceptance(page, base, pass, ctx, perf) {
       await page.waitForSelector('#stage-panel .performance'); assert.equal(await page.locator('#stage-panel .performance').count(), 130);
       assert.equal(await page.evaluate(() => document.activeElement.id), 'stage-title', 'retry success moves focus into the restored content');
       await page.waitForFunction(() => document.getElementById('live').textContent.length > 0); pass('data failure and working retry');
-      await page.goto(base + '/companion/#/map'); await page.waitForSelector('[data-component="festival-map"]');
-      assert.equal(await page.locator('[data-component="festival-map"] button').count(), 0);
-      assert.equal(await page.locator('[data-component="festival-map"] svg, [data-component="festival-map"] img, canvas, .stage-hotspot').count(), 0);
-      assert.match(await page.textContent('[data-component="festival-map"]'), /positions have not been verified/);
-      assert.match(await page.textContent('[data-component="festival-map"]'), /Map coming later/);
-      assert.equal(await page.locator('[data-component="festival-map"] a[href="https://orlando.edc.com/"]').count(), 1);
+      // No map screen exists: #/map lands on Stages, nothing map-like is mounted, and About states the map disposition truthfully.
+      await page.goto(base + '/companion/#/map'); await page.waitForSelector('#page-title');
+      assert.equal(await page.textContent('#page-title'), 'Stages');
+      assert.equal(await page.locator('main canvas, main img, main svg:not(.stage-link svg), .stage-hotspot, [data-component="festival-map"]').count(), 0);
+      assert.equal(await page.locator('main button').count(), 0, 'no fake map controls');
+      await page.goto(base + '/companion/#/sources'); await page.waitForSelector('#map-title');
+      assert.match(await page.textContent('main'), /Stage positions have not been independently verified/);
+      assert.equal(await page.locator('main a[href="https://orlando.edc.com/"]').count() >= 1, true);
       assert.deepEqual(errors, []); pass('no fake map controls, script errors or CSP violations');
       await acceptance(page, base, pass, ctx, perf);
     } catch (e) {

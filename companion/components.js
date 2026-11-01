@@ -47,13 +47,12 @@
     return node;
   }
 
-  // Primary navigation keeps the day. Map returns to the last stage the visitor picked, which
-  // (while the map is gated) lands on that stage's schedule through the route resolver.
-  function syncNav(nav, state, lastStage) {
-    const current = state.view === "sources" ? "sources" : state.view === "map" ? "map" : "stages";
+  // Primary navigation (Stages, About) keeps the day. There is no Map tab while no map exists (PD-3); #/map is only a
+  // legacy alias that the route resolver sends to the stage list.
+  function syncNav(nav, state) {
+    const current = state.view === "sources" ? "sources" : "stages";
     const targets = {
-      home: { view: "map", day: state.day, stage: "" },
-      map: { view: "map", day: state.day, stage: lastStage || "" },
+      home: { view: "stages", day: state.day, stage: "" },
       stages: { view: "stages", day: state.day, stage: "" },
       sources: { view: "sources", day: state.day, stage: "" }
     };
@@ -73,13 +72,9 @@
     }));
   }
 
-  function FestivalMap({ compact } = {}) {
-    // Geographic interaction is gated by supported positions + an original permitted representation.
-    // Never substitute a decorative or guessed map for unavailable evidence.
-    return el("div", { class: "notice geometry-unavailable" + (compact ? " compact" : ""), "data-component": "festival-map" },
-      el("strong", { text: "Map coming later" }),
-      el("p", { text: "Stage positions have not been verified, so there is no map yet. Choose a stage to explore its performances. These cards do not show physical locations." }),
-      el("p", {}, "For the official park map, see the ", external("organizer homepage", ORGANIZER), "."));
+  // One quiet line instead of a "map coming later" box: no map is promised, the official one lives on the organizer site.
+  function MapNote() {
+    return el("p", { class: "map-note muted", "data-component": "map-note" }, "Looking for the park map? See the ", external("organizer homepage", ORGANIZER), ".");
   }
   function StageHotspot({ stage, state }) {
     const a = link(stage.display_name, C.transition(state, { type: "stage", stage: stage.stage_id }), { class: "stage-hotspot", "aria-label": "View " + stage.display_name + " performances" });
@@ -111,6 +106,8 @@
     return wrap;
   }
 
+  // Card wording matches the About legend: "poster times", never "sourced" next to "provisional".
+  const STATUS_WORDS = { verified: "confirmed times", poster: "poster times", unknown: "time unknown", mixed: "mixed sources", none: "no sourced schedule" };
   function StageList({ idx, state, mode = "full" }) {
     const options = [...idx.stages.values(), { stage_id: C.UNKNOWN_STAGE, display_name: "Stage unknown" }];
     return el("section", { class: "stage-list-panel " + mode, "aria-labelledby": "stage-list-title" },
@@ -119,7 +116,7 @@
         const rows = C.query(idx, { ...state, stage: stage.stage_id }), cov = C.coverage(rows);
         const selected = state.view === "explore" && state.stage === stage.stage_id;
         const unknown = stage.stage_id === C.UNKNOWN_STAGE;
-        const meta = !cov.total ? "No sourced schedule" : unknown ? plural(cov.total, "appearance", "appearances") + " · stage and time unknown" : plural(cov.total, "performance", "performances") + " · " + cov.timed + " with sourced times";
+        const meta = !cov.total ? "No sourced schedule" : unknown ? plural(cov.total, "appearance", "appearances") + " · stage and time unknown" : plural(cov.total, "set", "sets") + " · " + STATUS_WORDS[C.summarizeStatus(rows).status];
         return el("li", {}, link("", C.transition(state, { type: "stage", stage: stage.stage_id }), {
           class: "stage-link" + (!cov.total ? " empty" : ""), "data-stage": stage.stage_id, "aria-current": selected ? "true" : null
         }, el("span", { class: "stage-name", text: stage.display_name }), el("small", { text: meta }), icon(ICONS.chevron, 18)));
@@ -192,7 +189,7 @@
     const title = stage?.display_name || (state.stage === C.UNKNOWN_STAGE ? "Stage unknown" : "All performances");
     const section = el("section", { class: "panel", id: "stage-panel", "aria-labelledby": "stage-title" },
       el("h2", { id: "stage-title", tabindex: "-1", text: title }),
-      el("p", { class: "section-meta" }, el("span", { text: (state.day === "all" ? "All days" : C.dayLabel(state.day)) + " · " + plural(cov.total, "performance", "performances") + " · " + cov.timed + " with sourced times · " + cov.unknownTime + " time unknown" })),
+      el("p", { class: "section-meta" }, el("span", { text: (state.day === "all" ? "All days" : C.dayLabel(state.day)) + " · " + plural(cov.total, "set", "sets") + (cov.unknownTime ? " · " + cov.unknownTime + " time unknown" : "") })),
       rows.length ? el("p", { class: "section-meta" }, SourceLine({ idx, rows })) : null);
     if (!rows.length) {
       const day = state.day === "all" ? "" : " on " + C.weekday(state.day);
@@ -203,16 +200,20 @@
     return section;
   }
 
-  function SourceNotice({ idx, compact }) {
-    const cov = C.coverage(idx.performances);
-    const stale = C.freshnessWarning(idx.meta.checked_on);
-    const posters = idx.sources.get("set-times-posters-2026-10-30")?.checked_on;
-    const facts = cov.total + " current appearances · " + cov.provisional + " provisional poster times · " + cov.unknownTime + " time unknown · " + cov.unknownStage + " stage unknown.";
-    return el("aside", { class: "notice notice-warning data-status" + (compact ? " compact" : ""), "aria-label": "Schedule coverage and freshness" },
+  function coverageFacts(idx) {
+    const cov = C.coverage(idx.performances), posters = idx.sources.get("set-times-posters-2026-10-30")?.checked_on;
+    return { posters, facts: cov.total + " current appearances · " + cov.provisional + " provisional poster times · " + cov.unknownTime + " time unknown · " + cov.unknownStage + " stage unknown." };
+  }
+  // A collapsed, one-line disclosure: the headline caveat stays visible, the counts sit one tap away (and in About).
+  // A stale-data warning is never collapsed.
+  function ScheduleStatus({ idx }) {
+    const { posters, facts } = coverageFacts(idx), stale = C.freshnessWarning(idx.meta.checked_on);
+    const box = el("details", { class: "notice notice-warning data-status schedule-status" },
+      el("summary", {}, el("strong", { text: "Schedule status" }), el("span", { class: "muted", text: " · times are from organizer posters and may change" })),
       el("p", { text: facts }),
-      el("p", {}, (compact ? "Checked " + C.shortDate(idx.meta.checked_on) + "; poster times transcribed " + (posters ? C.shortDate(posters) : "date unavailable") + ". Orlando time. "
-        : "Lineup checked " + idx.meta.checked_on + ". Poster transcription: " + (posters || "date unavailable") + ". Incomplete timetable; all times are Orlando time (EST, UTC−05:00). ") +
-        "Cross-check the official schedule. ", link("What do these labels mean?", { view: "sources", day: "all", stage: "" })),
+      el("p", {}, "Checked " + C.shortDate(idx.meta.checked_on) + "; poster times transcribed " + (posters ? C.shortDate(posters) : "date unavailable") + ". Orlando time (EST). Cross-check the official schedule. ",
+        link("What do these labels mean?", { view: "sources", day: "all", stage: "" })));
+    return el("div", { class: "status-wrap" }, box,
       stale ? el("p", { class: "stale" }, "Dated reference: these records have not been checked today. Changes may be missing. ", external("Check the official lineup", ORGANIZER)) : null);
   }
 
@@ -222,19 +223,15 @@
     return el("div", { class: "intro" }, el("p", { class: "eyebrow", text: eyebrow }), el("h1", { id, tabindex: "-1", text: title }), lede ? el("p", { class: "muted", text: lede }) : null);
   }
 
-  // S10: while geometry is unverified the Map tab is the stage list under a "Map coming later" notice.
-  function MapGatedView({ idx, state }) {
-    return el("div", { class: "page" }, PageIntro({ id: "page-title", eyebrow: "EDC Orlando · Nov 6–8, 2026 · Review preview", title: "Find your next stage", lede: "Explore stages, check the available set times, and get to know the artists." }),
-      SourceNotice({ idx }), DayPicker({ state }), FestivalMap(), StageList({ idx, state, mode: "full" }));
-  }
+  // The landing page. Stage cards come first: a short disclosure for the caveat, no counts, no map box.
   function StagesView({ idx, state }) {
-    return el("div", { class: "page" }, PageIntro({ id: "page-title", eyebrow: "Stages", title: "Stages", lede: "Five stages. Counts follow the selected day." }),
-      DayPicker({ state }), StageList({ idx, state, mode: "full" }), UnscheduledLink({ idx, state }));
+    return el("div", { class: "page" }, PageIntro({ id: "page-title", eyebrow: "EDC Orlando · Nov 6–8, 2026 · Review preview", title: "Stages", lede: "Pick a stage to see its sets." }),
+      ScheduleStatus({ idx }), DayPicker({ state }), StageList({ idx, state, mode: "full" }), UnscheduledLink({ idx, state }), MapNote());
   }
   function ExploreView({ idx, state }) {
     return el("div", { class: "page wide" },
       PageIntro({ eyebrow: "EDC Orlando · Nov 6–8, 2026 · Review preview", title: "Stages and sets", lede: null, id: "page-title" }),
-      SourceNotice({ idx, compact: true }), DayPicker({ state }),
+      ScheduleStatus({ idx }), DayPicker({ state }),
       el("div", { class: "explorer" }, el("div", { class: "rail" }, StageList({ idx, state, mode: "rail" })), StagePanel({ idx, state })));
   }
   function UnscheduledView({ idx, state }) {
@@ -268,6 +265,9 @@
           el("strong", { text: named[s.kind] || s.kind }), el("span", { text: " · checked " + C.shortDate(s.checked_on) + (s.independently_verified === false ? " · not independently verified" : "") }),
           s.url ? [" · ", external("organizer homepage", ORGANIZER)] : null))),
         el("p", { class: "muted", text: "Times are Orlando time (EST, UTC−05:00); a set after midnight belongs to the night it continues. Music shown is reviewed discovery recordings, not a live setlist." })),
+      el("section", { "aria-labelledby": "coverage-title" }, el("h2", { id: "coverage-title", text: "Coverage" }),
+        el("p", { text: coverageFacts(idx).facts }),
+        el("p", { class: "muted", text: "Lineup checked " + meta.checked_on + ". Poster transcription: " + (coverageFacts(idx).posters || "date unavailable") + ". Incomplete timetable; all times are Orlando time (EST, UTC−05:00)." })),
       el("section", { "aria-labelledby": "map-title" }, el("h2", { id: "map-title", text: "The map" }),
         el("p", { text: "There is no map yet. Stage positions have not been independently verified and no official artwork is copied, traced or embedded here, so nothing on this site shows where a stage is. No GPS, routes, walking times or offline copy are offered." }),
         el("p", {}, external("Organizer homepage", ORGANIZER))));
@@ -308,7 +308,7 @@
     return node;
   }
 
-  window.CompanionUI = { el, icon, ICONS, external, StateBox, syncNav, DayPicker, FestivalMap, StageHotspot, StatusBadge, SourceLine, StageList, ArtistEntry,
-    SetRow, PerformanceCard: SetRow, ScheduleList, PerformanceSchedule: ScheduleList, StagePanel, UnscheduledLink, SourceNotice, DetailView, BackLink,
-    MapGatedView, StagesView, ExploreView, UnscheduledView, SourcesView };
+  window.CompanionUI = { el, icon, ICONS, external, StateBox, syncNav, DayPicker, MapNote, StageHotspot, StatusBadge, SourceLine, StageList, ArtistEntry,
+    SetRow, PerformanceCard: SetRow, ScheduleList, PerformanceSchedule: ScheduleList, StagePanel, UnscheduledLink, ScheduleStatus, SourceNotice: ScheduleStatus, DetailView, BackLink,
+    StagesView, ExploreView, UnscheduledView, SourcesView };
 })();

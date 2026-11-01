@@ -45,7 +45,8 @@
       unknownTime: rows.filter(p => !hasTime(p)).length, unknownStage: rows.filter(p => !p.stage_id).length };
   }
   // Views. "explore" is the legacy/canonical stage or all-performances page (S4).
-  // "stages" is the stage list (S3), "map" is the gated map tab (S10), "unscheduled" is S7, "sources" is S8.
+  // "stages" is the stage list and the landing page, "unscheduled" is S7, "sources" is S8. "map" only exists as a legacy
+  // alias: with no verified geometry there is no map screen, so resolveRoute() always redirects it (PD-3).
   const PAGE_VIEWS = ["stages", "map", "unscheduled", "sources"];
   function parseHash(hash) {
     const [path, qs = ""] = String(hash || "").replace(/^#\/?/, "").split("?");
@@ -55,7 +56,7 @@
     catch (_e) { return { view: "invalid", day: validDay(params.get("day")), stage: params.get("stage") || "" }; }
     const state = { view: "explore", day: validDay(params.get("day")), stage: params.get("stage") || "" };
     const head = parts[0];
-    if (!parts.length) return { ...state, view: "map" }; // S1/S10: the bare URL lands on the (gated) map tab
+    if (!parts.length) return { ...state, view: "stages" }; // the bare URL lands on the stage list
     if (["artist", "performance"].includes(head) && parts[1]) return { ...state, view: head, id: parts[1] };
     // Design-contract alias: #/stage/{id} is the same page as #/explore?stage={id}.
     if (head === "stage" && parts.length === 2) return { ...state, stage: parts[1] };
@@ -91,8 +92,9 @@
       const base = { day: state.day, stage: known ? state.stage : "" };
       if (state.set) return { state: { ...base, view: "performance", id: state.set }, replace: true };
       if (state.artist) return { state: { ...base, view: "artist", id: state.artist }, replace: true };
-      if (base.stage && !hotspots(idx.venues).length) return { state: { ...base, view: "explore" }, replace: true };
-      return { state: { view: "map", ...base }, replace: false };
+      // No map screen exists until geometry is verified (#63): a stage goes to its page, anything else to the stage list.
+      if (base.stage) return { state: { ...base, view: "explore" }, replace: true };
+      return { state: { view: "stages", day: base.day, stage: "" }, replace: true };
     }
     if (PAGE_VIEWS.includes(state.view) && !known) return { state: { ...state, stage: "" }, replace: true };
     return { state, replace: false };

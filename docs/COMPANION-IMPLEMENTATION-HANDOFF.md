@@ -30,12 +30,13 @@ No framework or production dependencies. `companion/lib.js` is pure UMD logic; i
 | `hasTime`, `coverage`, `timeLabel` | performance or performance rows | source-grounded schedule availability, truthful coverage, Orlando clock labels including next-day midnight |
 | `parseHash`, `buildHash`, `transition` | route/state/actions | stable encoded identifiers and day/stage context; no name searches |
 | `DayPicker({state})` | current route | navigable day links retaining selection; focused day is retained on filtering |
-| `FestivalMap()` | no usable geometry yet | "Map coming later" state with organizer link; no map graphic or fake controls |
+| `MapNote()` | no usable geometry yet | one-line organizer-homepage note under the stage list; there is no map screen, graphic or fake control (PD-3) |
+| `ScheduleStatus({idx})` (alias `SourceNotice`) | coverage and source dates | a collapsed "Schedule status" disclosure (counts inside); a stale-data warning stays visible (PD-4) |
 | `StageHotspot({stage,state})` | audited normalized point from `hotspots(venues)` | future positioned anchor; integration seam only, **not mounted** without supported geometry/representation |
 | `StageList({idx,state})` | shared stages, day | five functional stage links, unassigned link and all-performance link; sourced-time counts |
 | `StagePanel({idx,state})` | selection | heading, counts, schedule or an honest no-sourced-schedule state |
 | `ScheduleList({rows,idx,state})` (alias `PerformanceSchedule`), `SetRow` (alias `PerformanceCard`) | queried rows | day groups, sourced times, separate unknown-time lists, set rows with status badge, a linked billing, per-artist links for multi-artist billings and per-identity Hear links |
-| `MapGatedView`, `StagesView`, `ExploreView`, `UnscheduledView`, `SourcesView`, `DetailView` | route state | the page for each view; `syncNav` keeps the primary navigation in step with the route |
+| `StagesView`, `ExploreView`, `UnscheduledView`, `SourcesView`, `DetailView` | route state | the page for each view; `syncNav` keeps the primary navigation in step with the route |
 | `ArtistEntry({artist,state,role})` | stable identity, optional DJ/MC role | clickable individual artist link |
 | `DetailView({idx,state,musicAvailable})` | artist or performance route | real identity/billing information, related current appearances, project members, direct Listening Room link or honest no-track state |
 | `StateBox({title,message,kind,retry})` | text, empty/loading/error kind, optional callback | semantic status/error with working retry |
@@ -45,8 +46,8 @@ Performance shapes: see [data contract](COMPANION-DATA-CONTRACT.md). A B2B is on
 
 ## Routes / navigation
 
-- `#/map` (also the bare URL): the S10 gated Map tab, the stage list under "Map coming later". `#/map?stage=…` redirects (replace) to the stage page; `?set=`/`?artist=` open the detail page; an unknown stage is ignored.
-- `#/stages?day=…`: stage list. `#/unscheduled?day=…`: current appearances with no sourced stage or time. `#/sources` (alias `#/about`): labels, schedule sources and the map disposition.
+- `#/stages?day=…` (also the bare URL): the stage list and landing page. Tabs are Stages and About; there is no Map tab (PD-3). `#/map` is a legacy alias that always redirects by replacing the entry: `?stage=…` to the stage page, `?set=`/`?artist=` to the detail page, otherwise to Stages; an unknown stage is ignored.
+- `#/unscheduled?day=…`: current appearances with no sourced stage or time. `#/sources` (alias `#/about`): labels, schedule sources and the map disposition.
 - `#/explore?day=2026-11-07&stage=kinetic-field` (alias `#/stage/kinetic-field?day=…`): the stage or all-performances page. `stage=unassigned` exposes every current appearance without a sourced stage; empty stage means all performances. All days is the neutral default.
 - `#/performance/{encoded performance_id}?day=…&stage=…` and `#/artist/{encoded artist_id}?day=…&stage=…`: detail pages (legacy links unchanged).
 - Day changes replace the current history entry; other navigation pushes. History stores route and scroll; browser Back/Forward and logical Back links restore context. Selecting the already selected stage/day is a no-op. Primary navigation carries the day; Map carries the last selected stage. Same-tab Listening Room links use stable artist IDs only; there is no name-search fallback. Browser Back returns across products.

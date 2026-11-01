@@ -15,7 +15,7 @@ const server = http.createServer((req, res) => {
   } catch { res.writeHead(404).end(); }
 });
 const SHOTS = [
-  ['01-map-gated-landing-360', 360, 740, '#/map'], ['02-stage-fri-360', 360, 740, '#/explore?day=2026-11-06&stage=kinetic-field'],
+  ['01-stages-landing-360', 360, 740, ''], ['02-stage-fri-360', 360, 740, '#/explore?day=2026-11-06&stage=kinetic-field'],
   ['03-stage-all-days-360', 360, 740, '#/explore?stage=circuit-grounds'], ['04-casa-empty-360', 360, 740, '#/explore?day=2026-11-06&stage=casa-bacardi'],
   ['05-stage-list-360', 360, 740, '#/stages?day=2026-11-07'], ['06-unscheduled-360', 360, 740, '#/unscheduled?day=2026-11-06'],
   ['07-b2b-detail-360', 360, 740, '#/performance/edco26%3A2026-11-07%3Aacraze-b2b-cid?day=2026-11-07&stage=kinetic-field'],
@@ -24,6 +24,7 @@ const SHOTS = [
   ['12-landscape-844', 844, 390, '#/explore?day=2026-11-06&stage=kinetic-field'], ['13-load-failure-360', 360, 740, '#/explore', 'fail'],
   ['14-sticky-scrolled-360', 360, 740, '#/explore?day=2026-11-07&stage=circuit-grounds', 'scroll'],
   ['15-sticky-wrapped-header-200pct-360', 360, 740, '#/explore?day=2026-11-07&stage=circuit-grounds', 'zoom'],
+  ['17-stages-landing-280', 280, 653, ''],
   ['16-forced-colors-360', 360, 740, '#/explore?day=2026-11-07&stage=circuit-grounds', 'forced']
 ];
 (async () => {
