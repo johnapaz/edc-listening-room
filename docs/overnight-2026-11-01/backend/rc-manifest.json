@@ -1,0 +1,462 @@
+{
+ "schema_version": 1,
+ "baseline_sha": "02da45c0f138a437a2a94c3ec1421c9673f7d5ee",
+ "support_files_modified_since_commit": false,
+ "generated_utc": "2026-11-01T04:36:53.302Z",
+ "environment": {
+  "node": "v22.23.4",
+  "playwright": "1.63.0",
+  "platform": "linux/x64",
+  "engines_installed": {
+   "chromium": true,
+   "webkit": false
+  }
+ },
+ "commands": {
+  "build_preview": "python3 scripts/build_companion_preview.py",
+  "self_check": "node tests/support/rc_selfcheck.js",
+  "manifest": "node tests/support/rc_scenarios.js --manifest <outFile>"
+ },
+ "honesty": [
+  "Every profile is an emulated viewport. Chromium emulation is not Android hardware; WebKit emulation is not iOS Safari hardware.",
+  "basis=trusted means the dimensions were already published in tests/device_matrix.js as non-estimated. basis=generic means a representative size chosen to exercise a layout class, not a specific device.",
+  "No Galaxy Z Fold 6 viewport is asserted here. Confirm the real cover/open CSS viewport on the device (innerWidth x innerHeight) before relying on fold-6 conclusions."
+ ],
+ "hardware_confirmation_needed": [
+  {
+   "device": "Galaxy Z Fold 6",
+   "measure": "window.innerWidth x window.innerHeight (cover, open, half-folded), devicePixelRatio, font scale",
+   "stand_in_profiles": [
+    "fold-cover-280",
+    "phone-360",
+    "fold-open-768"
+   ]
+  }
+ ],
+ "profiles": [
+  {
+   "id": "fold-cover-280",
+   "label": "Narrow Fold cover (Fold5 cover size)",
+   "width": 280,
+   "height": 653,
+   "dpr": 3,
+   "mobile": true,
+   "touch": true,
+   "basis": "trusted",
+   "source": "tests/device_matrix.js Galaxy Z Fold5 cover",
+   "engines": [
+    "chromium"
+   ],
+   "role": "narrowest supported cover display"
+  },
+  {
+   "id": "phone-360",
+   "label": "Small Android phone",
+   "width": 360,
+   "height": 740,
+   "dpr": 3,
+   "mobile": true,
+   "touch": true,
+   "basis": "generic",
+   "engines": [
+    "chromium",
+    "webkit"
+   ],
+   "role": "common small phone; matches companion_smoke default"
+  },
+  {
+   "id": "phone-390",
+   "label": "Mid iPhone-class phone",
+   "width": 390,
+   "height": 844,
+   "dpr": 3,
+   "mobile": true,
+   "touch": true,
+   "basis": "trusted",
+   "source": "tests/device_matrix.js iPhone 14 / 13",
+   "engines": [
+    "chromium",
+    "webkit"
+   ],
+   "role": "common iPhone width"
+  },
+  {
+   "id": "phone-412",
+   "label": "Large Android phone",
+   "width": 412,
+   "height": 915,
+   "dpr": 2.625,
+   "mobile": true,
+   "touch": true,
+   "basis": "trusted",
+   "source": "tests/device_matrix.js Galaxy A56 / A36",
+   "engines": [
+    "chromium",
+    "webkit"
+   ],
+   "role": "common Android width"
+  },
+  {
+   "id": "fold-open-768",
+   "label": "Generic Fold-open / small tablet",
+   "width": 768,
+   "height": 900,
+   "dpr": 2.625,
+   "mobile": true,
+   "touch": true,
+   "basis": "generic",
+   "engines": [
+    "chromium",
+    "webkit"
+   ],
+   "role": "open foldable class; not a specific device"
+  },
+  {
+   "id": "landscape-844x390",
+   "label": "Phone landscape",
+   "width": 844,
+   "height": 390,
+   "dpr": 3,
+   "mobile": true,
+   "touch": true,
+   "basis": "generic",
+   "engines": [
+    "chromium",
+    "webkit"
+   ],
+   "role": "short viewport; sticky bars may occlude content"
+  },
+  {
+   "id": "tablet-820x1180",
+   "label": "Generic portrait tablet",
+   "width": 820,
+   "height": 1180,
+   "dpr": 2,
+   "mobile": true,
+   "touch": true,
+   "basis": "generic",
+   "engines": [
+    "chromium",
+    "webkit"
+   ],
+   "role": "tablet class below the 900px breakpoint"
+  },
+  {
+   "id": "reflow-320",
+   "label": "WCAG 1.4.10 reflow width",
+   "width": 320,
+   "height": 640,
+   "dpr": 2,
+   "mobile": false,
+   "touch": false,
+   "basis": "generic",
+   "engines": [
+    "chromium",
+    "webkit"
+   ],
+   "role": "320 CSS px reflow; desktop UA so width is exact"
+  },
+  {
+   "id": "desktop-899",
+   "label": "One pixel below 900 breakpoint",
+   "width": 899,
+   "height": 800,
+   "dpr": 1,
+   "mobile": false,
+   "touch": false,
+   "basis": "generic",
+   "engines": [
+    "chromium",
+    "webkit"
+   ],
+   "role": "breakpoint boundary (Listening Room header nav at >=900)"
+  },
+  {
+   "id": "desktop-900",
+   "label": "At 900 breakpoint",
+   "width": 900,
+   "height": 800,
+   "dpr": 1,
+   "mobile": false,
+   "touch": false,
+   "basis": "generic",
+   "engines": [
+    "chromium",
+    "webkit"
+   ],
+   "role": "breakpoint boundary"
+  },
+  {
+   "id": "desktop-1099",
+   "label": "One pixel below 1100 breakpoint",
+   "width": 1099,
+   "height": 800,
+   "dpr": 1,
+   "mobile": false,
+   "touch": false,
+   "basis": "generic",
+   "engines": [
+    "chromium",
+    "webkit"
+   ],
+   "role": "breakpoint boundary (Companion wide layout at >=1100 in PR #82)"
+  },
+  {
+   "id": "desktop-1100",
+   "label": "At 1100 breakpoint",
+   "width": 1100,
+   "height": 800,
+   "dpr": 1,
+   "mobile": false,
+   "touch": false,
+   "basis": "generic",
+   "engines": [
+    "chromium",
+    "webkit"
+   ],
+   "role": "breakpoint boundary"
+  },
+  {
+   "id": "desktop-1280",
+   "label": "Common desktop",
+   "width": 1280,
+   "height": 800,
+   "dpr": 1,
+   "mobile": false,
+   "touch": false,
+   "basis": "generic",
+   "engines": [
+    "chromium",
+    "webkit"
+   ],
+   "role": "wide layout"
+  }
+ ],
+ "failure_scenarios": [
+  {
+   "id": "normal",
+   "label": "Normal load",
+   "params": {}
+  },
+  {
+   "id": "required-delayed",
+   "label": "Delayed required JSON",
+   "params": {
+    "delay_ms": 2000
+   },
+   "note": "Every required file is held for delay_ms. The app aborts after 15 s; use delay_ms above 15000 with a fake-timer test to exercise that."
+  },
+  {
+   "id": "required-503",
+   "label": "Required JSON returns 503 until restored",
+   "params": {
+    "status": 503
+   }
+  },
+  {
+   "id": "required-503-then-ok",
+   "label": "Required JSON fails N times then succeeds",
+   "params": {
+    "fail_count": 3,
+    "status": 503
+   },
+   "note": "Counts all required requests, three files per load, so 3 equals one failed load then recovery."
+  },
+  {
+   "id": "required-malformed",
+   "label": "Required JSON is truncated (200, invalid JSON)",
+   "params": {
+    "target": "performances.json"
+   }
+  },
+  {
+   "id": "required-incompatible-schema",
+   "label": "Required JSON is valid but has an unexpected shape",
+   "params": {
+    "target": "performances.json",
+    "body": {
+     "schema_version": 99,
+     "performances": {
+      "unexpected": "object"
+     }
+    }
+   }
+  },
+  {
+   "id": "optional-songs-503",
+   "label": "Optional songs JSON returns 503",
+   "params": {
+    "status": 503
+   }
+  },
+  {
+   "id": "optional-songs-malformed",
+   "label": "Optional songs JSON is malformed",
+   "params": {}
+  },
+  {
+   "id": "thumbnails-fail",
+   "label": "Thumbnail host fails",
+   "params": {
+    "hosts": [
+     "img.youtube.com"
+    ]
+   }
+  },
+  {
+   "id": "thumbnails-stub",
+   "label": "Thumbnail host answers with a 1x1 PNG",
+   "params": {
+    "hosts": [
+     "img.youtube.com"
+    ]
+   }
+  },
+  {
+   "id": "offline-before-load",
+   "label": "Offline before first load",
+   "params": {},
+   "restore": "setOffline(false)"
+  },
+  {
+   "id": "network-lost-after-load",
+   "label": "Network lost after a successful load",
+   "params": {},
+   "trigger": "scenario.afterLoad()",
+   "restore": "setOffline(false)"
+  }
+ ],
+ "time_fixtures": [
+  {
+   "id": "before-festival",
+   "instant": "2026-11-05T15:00:00Z",
+   "local": "2026-11-05 10:00 EST",
+   "note": "Data checked_on 2026-10-31; before the Nov 6 staleness rule applies."
+  },
+  {
+   "id": "stale-boundary-before",
+   "instant": "2026-11-06T04:59:59Z",
+   "local": "2026-11-05 23:59:59 EST",
+   "note": "One second before festival-day-1 local midnight: freshness warning must not apply."
+  },
+  {
+   "id": "stale-boundary-at",
+   "instant": "2026-11-06T05:00:00Z",
+   "local": "2026-11-06 00:00:00 EST",
+   "note": "First instant of festival day 1: companion/lib.js freshnessWarning turns on when checked_on is earlier."
+  },
+  {
+   "id": "festival-day-1-evening",
+   "instant": "2026-11-07T01:30:00Z",
+   "local": "2026-11-06 20:30 EST"
+  },
+  {
+   "id": "festival-midnight-rollover",
+   "instant": "2026-11-07T04:59:59Z",
+   "local": "2026-11-06 23:59:59 EST",
+   "note": "Schedule rows after midnight belong to the next calendar date but the same festival night."
+  },
+  {
+   "id": "festival-after-midnight",
+   "instant": "2026-11-07T05:00:00Z",
+   "local": "2026-11-07 00:00:00 EST"
+  },
+  {
+   "id": "festival-day-3",
+   "instant": "2026-11-08T23:00:00Z",
+   "local": "2026-11-08 18:00 EST"
+  },
+  {
+   "id": "dst-fall-back-first-1am",
+   "instant": "2026-11-01T05:30:00Z",
+   "local": "2026-11-01 01:30 EDT",
+   "note": "US DST ends 2026-11-01 06:00 UTC. The 01:00 local hour occurs twice."
+  },
+  {
+   "id": "dst-fall-back-second-1am",
+   "instant": "2026-11-01T06:30:00Z",
+   "local": "2026-11-01 01:30 EST"
+  }
+ ],
+ "transitions": [
+  {
+   "id": "rotate",
+   "steps": [
+    "resize to profile",
+    "swap width and height",
+    "swap back"
+   ],
+   "helper": "rotate(page)"
+  },
+  {
+   "id": "fold-cover-open-cover",
+   "steps": [
+    "fold-cover-280",
+    "fold-open-768",
+    "fold-cover-280"
+   ],
+   "helper": "foldCycle(page)",
+   "note": "Viewport change only. Does not emulate the hinge, posture or window-segment APIs."
+  },
+  {
+   "id": "resize-sweep",
+   "steps": [
+    "desktop-1280",
+    "desktop-1100",
+    "desktop-1099",
+    "desktop-900",
+    "desktop-899",
+    "tablet-820x1180",
+    "phone-390",
+    "fold-cover-280"
+   ],
+   "helper": "resizeSweep(page, ids)"
+  },
+  {
+   "id": "reduced-motion",
+   "steps": [
+    "emulateMedia reducedMotion=reduce"
+   ],
+   "helper": "setReducedMotion(page, true)"
+  },
+  {
+   "id": "keyboard-trace",
+   "steps": [
+    "press Tab N times",
+    "record focused element per step"
+   ],
+   "helper": "tabTrace(page, n)"
+  },
+  {
+   "id": "history-back",
+   "steps": [
+    "page.goBack()"
+   ],
+   "helper": "goBack(page)",
+   "note": "For cross-product Back, navigate between /companion/ and /listening-room/ with page.goto or link clicks in the QA test, then call goBack."
+  }
+ ],
+ "unsupported_simulations": [
+  "Real iOS Safari, Samsung Internet, Android WebView or any hardware behavior",
+  "VoiceOver, TalkBack or any screen reader",
+  "Fold hinge/posture APIs and window segments",
+  "Browser or OS text-size and display-zoom settings. Use QA-owned CSS zoom or text-spacing injection and label it as such",
+  "Real mobile radio conditions. Offline and slow responses are simulated at the request layer",
+  "WebKit when the WebKit browser is not installed. The self-check reports it as skipped, not passed"
+ ],
+ "api": [
+  "startServer",
+  "openScenario",
+  "resizeTo",
+  "rotate",
+  "resizeSweep",
+  "foldCycle",
+  "setReducedMotion",
+  "goBack",
+  "tabTrace",
+  "waitForSettled",
+  "treeDigest",
+  "engineInstalled",
+  "manifest"
+ ]
+}

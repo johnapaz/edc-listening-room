@@ -1,0 +1,1145 @@
+{
+ "schema_version": 1,
+ "baseline_sha": "02da45c0f138a437a2a94c3ec1421c9673f7d5ee",
+ "generated_utc": "2026-11-01T04:36:53.642Z",
+ "environment": {
+  "node": "v22.23.4",
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+  "cpus": 4,
+  "platform": "linux/x64",
+  "runs_per_timing": 21
+ },
+ "caveats": [
+  "Timings are Node/V8 on the build machine, not phone CPU.",
+  "Browser request counts are over loopback with no throttling.",
+  "No Core Web Vitals are measured or claimed.",
+  "gzip level 9 and brotli 11 are best-case; the host's actual compression may differ."
+ ],
+ "artifacts": {
+  "public-site": {
+   "file_count": 33,
+   "total": {
+    "raw": 789911,
+    "gzip": 325895,
+    "brotli": 305083
+   },
+   "by_type": {
+    ".html": {
+     "files": 12,
+     "raw": 210919,
+     "gzip": 46406,
+     "brotli": 36895
+    },
+    "(none)": {
+     "files": 2,
+     "raw": 516,
+     "gzip": 327,
+     "brotli": 274
+    },
+    ".css": {
+     "files": 2,
+     "raw": 37995,
+     "gzip": 9895,
+     "brotli": 8653
+    },
+    ".js": {
+     "files": 4,
+     "raw": 41668,
+     "gzip": 13470,
+     "brotli": 11698
+    },
+    ".webp": {
+     "files": 1,
+     "raw": 53812,
+     "gzip": 53850,
+     "brotli": 53816
+    },
+    ".json": {
+     "files": 7,
+     "raw": 275913,
+     "gzip": 39888,
+     "brotli": 33518
+    },
+    ".png": {
+     "files": 3,
+     "raw": 146926,
+     "gzip": 140002,
+     "brotli": 138227
+    },
+    ".svg": {
+     "files": 1,
+     "raw": 318,
+     "gzip": 185,
+     "brotli": 155
+    },
+    ".woff2": {
+     "files": 1,
+     "raw": 21844,
+     "gzip": 21872,
+     "brotli": 21847
+    }
+   },
+   "largest": [
+    {
+     "path": "og.png",
+     "raw": 127821,
+     "gzip": 126215,
+     "brotli": 124732,
+     "sha256_12": "41e1a8f51463"
+    },
+    {
+     "path": "about/songs/index.html",
+     "raw": 106625,
+     "gzip": 13866,
+     "brotli": 11465,
+     "sha256_12": "be17e1a53897"
+    },
+    {
+     "path": "data/listening-room/songs.json",
+     "raw": 96303,
+     "gzip": 15872,
+     "brotli": 13572,
+     "sha256_12": "596471a4dc23"
+    },
+    {
+     "path": "data/edco-2026/performances.json",
+     "raw": 95155,
+     "gzip": 6848,
+     "brotli": 5658,
+     "sha256_12": "93894659b0c3"
+    },
+    {
+     "path": "about/search.json",
+     "raw": 62419,
+     "gzip": 13848,
+     "brotli": 11508,
+     "sha256_12": "a90691464a1f"
+    },
+    {
+     "path": "about/img/john-paz.webp",
+     "raw": 53812,
+     "gzip": 53850,
+     "brotli": 53816,
+     "sha256_12": "d1c680719341"
+    },
+    {
+     "path": "listening-room/app.js",
+     "raw": 27188,
+     "gzip": 8062,
+     "brotli": 7060,
+     "sha256_12": "b90a4ca2f052"
+    },
+    {
+     "path": "listening-room/fonts/bricolage-grotesque-latin-800.woff2",
+     "raw": 21844,
+     "gzip": 21872,
+     "brotli": 21847,
+     "sha256_12": "3e1b5f0a56ee"
+    }
+   ],
+   "duplicate_files": [],
+   "assets": [
+    {
+     "path": "404.html",
+     "raw": 175,
+     "gzip": 151,
+     "brotli": 96
+    },
+    {
+     "path": "_headers",
+     "raw": 374,
+     "gzip": 236,
+     "brotli": 194
+    },
+    {
+     "path": "_redirects",
+     "raw": 142,
+     "gzip": 91,
+     "brotli": 80
+    },
+    {
+     "path": "about/accessibility/index.html",
+     "raw": 8979,
+     "gzip": 2937,
+     "brotli": 2247
+    },
+    {
+     "path": "about/assets/about.css",
+     "raw": 19923,
+     "gzip": 5138,
+     "brotli": 4491
+    },
+    {
+     "path": "about/assets/about.js",
+     "raw": 6113,
+     "gzip": 2324,
+     "brotli": 1951
+    },
+    {
+     "path": "about/credits/index.html",
+     "raw": 16160,
+     "gzip": 5285,
+     "brotli": 4161
+    },
+    {
+     "path": "about/faq/index.html",
+     "raw": 12623,
+     "gzip": 3894,
+     "brotli": 3042
+    },
+    {
+     "path": "about/img/john-paz.webp",
+     "raw": 53812,
+     "gzip": 53850,
+     "brotli": 53816
+    },
+    {
+     "path": "about/index.html",
+     "raw": 11421,
+     "gzip": 3416,
+     "brotli": 2679
+    },
+    {
+     "path": "about/privacy/index.html",
+     "raw": 11217,
+     "gzip": 3202,
+     "brotli": 2474
+    },
+    {
+     "path": "about/schedule/index.html",
+     "raw": 11837,
+     "gzip": 3433,
+     "brotli": 2708
+    },
+    {
+     "path": "about/search.json",
+     "raw": 62419,
+     "gzip": 13848,
+     "brotli": 11508
+    },
+    {
+     "path": "about/songs/index.html",
+     "raw": 106625,
+     "gzip": 13866,
+     "brotli": 11465
+    },
+    {
+     "path": "about/using/index.html",
+     "raw": 15957,
+     "gzip": 4876,
+     "brotli": 3975
+    },
+    {
+     "path": "about/whats-new/index.html",
+     "raw": 10595,
+     "gzip": 3282,
+     "brotli": 2556
+    },
+    {
+     "path": "apple-touch-icon.png",
+     "raw": 2418,
+     "gzip": 2401,
+     "brotli": 2368
+    },
+    {
+     "path": "data/edco-2026/artists.json",
+     "raw": 20436,
+     "gzip": 2392,
+     "brotli": 2030
+    },
+    {
+     "path": "data/edco-2026/event.json",
+     "raw": 107,
+     "gzip": 117,
+     "brotli": 111
+    },
+    {
+     "path": "data/edco-2026/performances.json",
+     "raw": 95155,
+     "gzip": 6848,
+     "brotli": 5658
+    },
+    {
+     "path": "data/edco-2026/venues.json",
+     "raw": 902,
+     "gzip": 420,
+     "brotli": 333
+    },
+    {
+     "path": "data/listening-room/playlist.json",
+     "raw": 591,
+     "gzip": 391,
+     "brotli": 306
+    },
+    {
+     "path": "data/listening-room/songs.json",
+     "raw": 96303,
+     "gzip": 15872,
+     "brotli": 13572
+    },
+    {
+     "path": "favicon.svg",
+     "raw": 318,
+     "gzip": 185,
+     "brotli": 155
+    },
+    {
+     "path": "index.html",
+     "raw": 1613,
+     "gzip": 652,
+     "brotli": 434
+    },
+    {
+     "path": "listening-room/app.js",
+     "raw": 27188,
+     "gzip": 8062,
+     "brotli": 7060
+    },
+    {
+     "path": "listening-room/fonts/bricolage-grotesque-latin-800.woff2",
+     "raw": 21844,
+     "gzip": 21872,
+     "brotli": 21847
+    },
+    {
+     "path": "listening-room/index.html",
+     "raw": 3717,
+     "gzip": 1412,
+     "brotli": 1058
+    },
+    {
+     "path": "listening-room/lib.js",
+     "raw": 8177,
+     "gzip": 2947,
+     "brotli": 2582
+    },
+    {
+     "path": "listening-room/redirect.js",
+     "raw": 190,
+     "gzip": 137,
+     "brotli": 105
+    },
+    {
+     "path": "listening-room/styles.css",
+     "raw": 18072,
+     "gzip": 4757,
+     "brotli": 4162
+    },
+    {
+     "path": "listening-room/youtube-icon.png",
+     "raw": 16687,
+     "gzip": 11386,
+     "brotli": 11127
+    },
+    {
+     "path": "og.png",
+     "raw": 127821,
+     "gzip": 126215,
+     "brotli": 124732
+    }
+   ]
+  },
+  "companion-preview": {
+   "file_count": 38,
+   "total": {
+    "raw": 819262,
+    "gzip": 336561,
+    "brotli": 313939
+   },
+   "by_type": {
+    ".html": {
+     "files": 13,
+     "raw": 212426,
+     "gzip": 47193,
+     "brotli": 37447
+    },
+    "(none)": {
+     "files": 2,
+     "raw": 516,
+     "gzip": 327,
+     "brotli": 274
+    },
+    ".css": {
+     "files": 3,
+     "raw": 42237,
+     "gzip": 11489,
+     "brotli": 9949
+    },
+    ".js": {
+     "files": 7,
+     "raw": 65270,
+     "gzip": 21755,
+     "brotli": 18706
+    },
+    ".webp": {
+     "files": 1,
+     "raw": 53812,
+     "gzip": 53850,
+     "brotli": 53816
+    },
+    ".json": {
+     "files": 7,
+     "raw": 275913,
+     "gzip": 39888,
+     "brotli": 33518
+    },
+    ".png": {
+     "files": 3,
+     "raw": 146926,
+     "gzip": 140002,
+     "brotli": 138227
+    },
+    ".svg": {
+     "files": 1,
+     "raw": 318,
+     "gzip": 185,
+     "brotli": 155
+    },
+    ".woff2": {
+     "files": 1,
+     "raw": 21844,
+     "gzip": 21872,
+     "brotli": 21847
+    }
+   },
+   "largest": [
+    {
+     "path": "og.png",
+     "raw": 127821,
+     "gzip": 126215,
+     "brotli": 124732,
+     "sha256_12": "41e1a8f51463"
+    },
+    {
+     "path": "about/songs/index.html",
+     "raw": 106625,
+     "gzip": 13866,
+     "brotli": 11465,
+     "sha256_12": "be17e1a53897"
+    },
+    {
+     "path": "data/listening-room/songs.json",
+     "raw": 96303,
+     "gzip": 15872,
+     "brotli": 13572,
+     "sha256_12": "596471a4dc23"
+    },
+    {
+     "path": "data/edco-2026/performances.json",
+     "raw": 95155,
+     "gzip": 6848,
+     "brotli": 5658,
+     "sha256_12": "93894659b0c3"
+    },
+    {
+     "path": "about/search.json",
+     "raw": 62419,
+     "gzip": 13848,
+     "brotli": 11508,
+     "sha256_12": "a90691464a1f"
+    },
+    {
+     "path": "about/img/john-paz.webp",
+     "raw": 53812,
+     "gzip": 53850,
+     "brotli": 53816,
+     "sha256_12": "d1c680719341"
+    },
+    {
+     "path": "listening-room/app.js",
+     "raw": 27188,
+     "gzip": 8062,
+     "brotli": 7060,
+     "sha256_12": "b90a4ca2f052"
+    },
+    {
+     "path": "listening-room/fonts/bricolage-grotesque-latin-800.woff2",
+     "raw": 21844,
+     "gzip": 21872,
+     "brotli": 21847,
+     "sha256_12": "3e1b5f0a56ee"
+    }
+   ],
+   "duplicate_files": [],
+   "assets": [
+    {
+     "path": "404.html",
+     "raw": 175,
+     "gzip": 151,
+     "brotli": 96
+    },
+    {
+     "path": "_headers",
+     "raw": 374,
+     "gzip": 236,
+     "brotli": 194
+    },
+    {
+     "path": "_redirects",
+     "raw": 142,
+     "gzip": 91,
+     "brotli": 80
+    },
+    {
+     "path": "about/accessibility/index.html",
+     "raw": 8979,
+     "gzip": 2937,
+     "brotli": 2247
+    },
+    {
+     "path": "about/assets/about.css",
+     "raw": 19923,
+     "gzip": 5138,
+     "brotli": 4491
+    },
+    {
+     "path": "about/assets/about.js",
+     "raw": 6113,
+     "gzip": 2324,
+     "brotli": 1951
+    },
+    {
+     "path": "about/credits/index.html",
+     "raw": 16160,
+     "gzip": 5285,
+     "brotli": 4161
+    },
+    {
+     "path": "about/faq/index.html",
+     "raw": 12623,
+     "gzip": 3894,
+     "brotli": 3042
+    },
+    {
+     "path": "about/img/john-paz.webp",
+     "raw": 53812,
+     "gzip": 53850,
+     "brotli": 53816
+    },
+    {
+     "path": "about/index.html",
+     "raw": 11421,
+     "gzip": 3416,
+     "brotli": 2679
+    },
+    {
+     "path": "about/privacy/index.html",
+     "raw": 11217,
+     "gzip": 3202,
+     "brotli": 2474
+    },
+    {
+     "path": "about/schedule/index.html",
+     "raw": 11837,
+     "gzip": 3433,
+     "brotli": 2708
+    },
+    {
+     "path": "about/search.json",
+     "raw": 62419,
+     "gzip": 13848,
+     "brotli": 11508
+    },
+    {
+     "path": "about/songs/index.html",
+     "raw": 106625,
+     "gzip": 13866,
+     "brotli": 11465
+    },
+    {
+     "path": "about/using/index.html",
+     "raw": 15957,
+     "gzip": 4876,
+     "brotli": 3975
+    },
+    {
+     "path": "about/whats-new/index.html",
+     "raw": 10595,
+     "gzip": 3282,
+     "brotli": 2556
+    },
+    {
+     "path": "apple-touch-icon.png",
+     "raw": 2418,
+     "gzip": 2401,
+     "brotli": 2368
+    },
+    {
+     "path": "companion/app.js",
+     "raw": 5937,
+     "gzip": 2257,
+     "brotli": 1889
+    },
+    {
+     "path": "companion/components.js",
+     "raw": 11560,
+     "gzip": 3797,
+     "brotli": 3181
+    },
+    {
+     "path": "companion/index.html",
+     "raw": 1507,
+     "gzip": 787,
+     "brotli": 552
+    },
+    {
+     "path": "companion/lib.js",
+     "raw": 6105,
+     "gzip": 2231,
+     "brotli": 1938
+    },
+    {
+     "path": "companion/styles.css",
+     "raw": 4242,
+     "gzip": 1594,
+     "brotli": 1296
+    },
+    {
+     "path": "data/edco-2026/artists.json",
+     "raw": 20436,
+     "gzip": 2392,
+     "brotli": 2030
+    },
+    {
+     "path": "data/edco-2026/event.json",
+     "raw": 107,
+     "gzip": 117,
+     "brotli": 111
+    },
+    {
+     "path": "data/edco-2026/performances.json",
+     "raw": 95155,
+     "gzip": 6848,
+     "brotli": 5658
+    },
+    {
+     "path": "data/edco-2026/venues.json",
+     "raw": 902,
+     "gzip": 420,
+     "brotli": 333
+    },
+    {
+     "path": "data/listening-room/playlist.json",
+     "raw": 591,
+     "gzip": 391,
+     "brotli": 306
+    },
+    {
+     "path": "data/listening-room/songs.json",
+     "raw": 96303,
+     "gzip": 15872,
+     "brotli": 13572
+    },
+    {
+     "path": "favicon.svg",
+     "raw": 318,
+     "gzip": 185,
+     "brotli": 155
+    },
+    {
+     "path": "index.html",
+     "raw": 1613,
+     "gzip": 652,
+     "brotli": 434
+    },
+    {
+     "path": "listening-room/app.js",
+     "raw": 27188,
+     "gzip": 8062,
+     "brotli": 7060
+    },
+    {
+     "path": "listening-room/fonts/bricolage-grotesque-latin-800.woff2",
+     "raw": 21844,
+     "gzip": 21872,
+     "brotli": 21847
+    },
+    {
+     "path": "listening-room/index.html",
+     "raw": 3717,
+     "gzip": 1412,
+     "brotli": 1058
+    },
+    {
+     "path": "listening-room/lib.js",
+     "raw": 8177,
+     "gzip": 2947,
+     "brotli": 2582
+    },
+    {
+     "path": "listening-room/redirect.js",
+     "raw": 190,
+     "gzip": 137,
+     "brotli": 105
+    },
+    {
+     "path": "listening-room/styles.css",
+     "raw": 18072,
+     "gzip": 4757,
+     "brotli": 4162
+    },
+    {
+     "path": "listening-room/youtube-icon.png",
+     "raw": 16687,
+     "gzip": 11386,
+     "brotli": 11127
+    },
+    {
+     "path": "og.png",
+     "raw": 127821,
+     "gzip": 126215,
+     "brotli": 124732
+    }
+   ]
+  }
+ },
+ "json_payloads": {
+  "data/edco-2026/performances.json": {
+   "raw": 95155,
+   "gzip": 6848,
+   "minified_raw": 95154,
+   "parse": {
+    "median_ms": 0.251,
+    "p95_ms": 0.684,
+    "min_ms": 0.222,
+    "runs": 21
+   },
+   "pretty_printing_overhead_bytes": 1,
+   "minified_gzip": 6844
+  },
+  "data/edco-2026/artists.json": {
+   "raw": 20436,
+   "gzip": 2392,
+   "minified_raw": 20435,
+   "parse": {
+    "median_ms": 0.072,
+    "p95_ms": 0.217,
+    "min_ms": 0.064,
+    "runs": 21
+   },
+   "pretty_printing_overhead_bytes": 1,
+   "minified_gzip": 2389
+  },
+  "data/edco-2026/venues.json": {
+   "raw": 902,
+   "gzip": 420,
+   "minified_raw": 901,
+   "parse": {
+    "median_ms": 0.003,
+    "p95_ms": 0.004,
+    "min_ms": 0.003,
+    "runs": 21
+   },
+   "pretty_printing_overhead_bytes": 1,
+   "minified_gzip": 417
+  },
+  "data/edco-2026/event.json": {
+   "raw": 107,
+   "gzip": 117,
+   "minified_raw": 106,
+   "parse": {
+    "median_ms": 0.001,
+    "p95_ms": 0.001,
+    "min_ms": 0.001,
+    "runs": 21
+   },
+   "pretty_printing_overhead_bytes": 1,
+   "minified_gzip": 116
+  },
+  "data/listening-room/songs.json": {
+   "raw": 96303,
+   "gzip": 15872,
+   "minified_raw": 96302,
+   "parse": {
+    "median_ms": 0.22,
+    "p95_ms": 0.602,
+    "min_ms": 0.204,
+    "runs": 21
+   },
+   "pretty_printing_overhead_bytes": 1,
+   "minified_gzip": 15869
+  },
+  "data/listening-room/playlist.json": {
+   "raw": 591,
+   "gzip": 391,
+   "minified_raw": 590,
+   "parse": {
+    "median_ms": 0.001,
+    "p95_ms": 0.002,
+    "min_ms": 0.001,
+    "runs": 21
+   },
+   "pretty_printing_overhead_bytes": 1,
+   "minified_gzip": 389
+  }
+ },
+ "companion_index": {
+  "createIndex": {
+   "median_ms": 0.61,
+   "p95_ms": 1.202,
+   "min_ms": 0.328,
+   "runs": 21
+  },
+  "queries_all_days_all_stages": {
+   "median_ms": 2.902,
+   "p95_ms": 4.045,
+   "min_ms": 2.645,
+   "runs": 21
+  },
+  "performances": 130,
+  "songs": 295
+ },
+ "browser_loads": [
+  {
+   "label": "Companion first load",
+   "path": "/companion/",
+   "requests_total": 10,
+   "requests_by_type": {
+    "document": 1,
+    "stylesheet": 1,
+    "script": 4,
+    "fetch": 4
+   },
+   "repeated_same_url": [],
+   "external_requests_blocked_or_stubbed": 0,
+   "same_origin_bytes_decoded": 248817,
+   "navigation_timing_localhost": {
+    "dom_content_loaded_ms": 45,
+    "load_ms": 45
+   },
+   "wall_ms": 630,
+   "note": "localhost over loopback, no CPU/network throttling: use for request counts, not for user-perceived speed",
+   "transfers": [
+    {
+     "name": "/companion/styles.css",
+     "encoded": 4242,
+     "decoded": 4242
+    },
+    {
+     "name": "/listening-room/lib.js",
+     "encoded": 8177,
+     "decoded": 8177
+    },
+    {
+     "name": "/companion/app.js",
+     "encoded": 5937,
+     "decoded": 5937
+    },
+    {
+     "name": "/companion/components.js",
+     "encoded": 11560,
+     "decoded": 11560
+    },
+    {
+     "name": "/companion/lib.js",
+     "encoded": 6105,
+     "decoded": 6105
+    },
+    {
+     "name": "/data/edco-2026/performances.json",
+     "encoded": 95155,
+     "decoded": 95155
+    },
+    {
+     "name": "/data/edco-2026/artists.json",
+     "encoded": 20436,
+     "decoded": 20436
+    },
+    {
+     "name": "/data/edco-2026/venues.json",
+     "encoded": 902,
+     "decoded": 902
+    },
+    {
+     "name": "/data/listening-room/songs.json",
+     "encoded": 96303,
+     "decoded": 96303
+    }
+   ]
+  },
+  {
+   "label": "Listening Room first load",
+   "path": "/listening-room/",
+   "requests_total": 53,
+   "requests_by_type": {
+    "document": 1,
+    "stylesheet": 1,
+    "script": 2,
+    "fetch": 6,
+    "font": 1,
+    "image": 42
+   },
+   "repeated_same_url": [],
+   "external_requests_blocked_or_stubbed": 42,
+   "same_origin_bytes_decoded": 288775,
+   "navigation_timing_localhost": {
+    "dom_content_loaded_ms": 33,
+    "load_ms": 56
+   },
+   "wall_ms": 10115,
+   "note": "localhost over loopback, no CPU/network throttling: use for request counts, not for user-perceived speed",
+   "transfers": [
+    {
+     "name": "/listening-room/styles.css",
+     "encoded": 18072,
+     "decoded": 18072
+    },
+    {
+     "name": "/listening-room/lib.js",
+     "encoded": 8177,
+     "decoded": 8177
+    },
+    {
+     "name": "/listening-room/app.js",
+     "encoded": 27188,
+     "decoded": 27188
+    },
+    {
+     "name": "/data/edco-2026/performances.json",
+     "encoded": 95155,
+     "decoded": 95155
+    },
+    {
+     "name": "/data/edco-2026/artists.json",
+     "encoded": 20436,
+     "decoded": 20436
+    },
+    {
+     "name": "/data/edco-2026/venues.json",
+     "encoded": 902,
+     "decoded": 902
+    },
+    {
+     "name": "/data/edco-2026/event.json",
+     "encoded": 107,
+     "decoded": 107
+    },
+    {
+     "name": "/data/listening-room/songs.json",
+     "encoded": 96303,
+     "decoded": 96303
+    },
+    {
+     "name": "/data/listening-room/playlist.json",
+     "encoded": 591,
+     "decoded": 591
+    },
+    {
+     "name": "/listening-room/fonts/bricolage-grotesque-latin-800.woff2",
+     "encoded": 21844,
+     "decoded": 21844
+    },
+    {
+     "name": "/vi/m75yTWh_-Z0/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/OSGYBkybzCE/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/_khcC8h55RI/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/gNA6-i5pCzo/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/oXhWSs0mRH4/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/Ve_LOVTzbxM/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/jVY3umEyPiw/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/BMFNN40fNp0/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/0oAc2uiyOeY/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/-899-ptNSXo/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/jBWLZ_GxWlg/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/xX8vYFSV6ek/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/TOlDFkiVLdw/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/Sz4xV4fU07Q/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/3EvujYssSZ4/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/2iJtfHnf9kA/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/G7LVAtqPadU/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/kmt25K7A1eM/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/F6BU1_R64oM/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/gBBfvLjtDGE/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/zGO142zWkIs/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/Z1rnXaTV3ck/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/Ls76ISA-4hc/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/lpgt1lex3P0/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/ZDJdynqu-i4/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/fcgr6PR9E60/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/irDsRokzylg/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/ke6hDTz3OoY/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/CgwdkExqV3g/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/FAb2Nhy46BU/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/iUzi0PHB1sY/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/TbYk1ib8CA8/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/JRfuAukYTKg/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/KWn5FkkuYwk/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/hsCHrQ3Aoyk/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/D74QfbZb7XI/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/cwL6T7UAE8o/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/KYERafLPwW4/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/Yu8keR7pAsc/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/Af8lfVSknvA/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/tULfefrg0i4/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    },
+    {
+     "name": "/vi/HSWK2BWkHUU/mqdefault.jpg",
+     "encoded": 0,
+     "decoded": 0
+    }
+   ]
+  }
+ ]
+}

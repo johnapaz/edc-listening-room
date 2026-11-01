@@ -1,0 +1,79 @@
+{
+ "results": [
+  {
+   "engine": "chromium",
+   "check": "profiles apply exact CSS viewport",
+   "status": "pass",
+   "detail": "13 profiles"
+  },
+  {
+   "engine": "chromium",
+   "check": "normal: data served unmodified, no external traffic",
+   "status": "pass"
+  },
+  {
+   "engine": "chromium",
+   "check": "required-503: fails, then restore() lets retry succeed",
+   "status": "pass"
+  },
+  {
+   "engine": "chromium",
+   "check": "required-503-then-ok: exactly fail_count failures",
+   "status": "pass"
+  },
+  {
+   "engine": "chromium",
+   "check": "required-malformed and incompatible-schema",
+   "status": "pass"
+  },
+  {
+   "engine": "chromium",
+   "check": "required-delayed holds responses for delay_ms",
+   "status": "pass",
+   "detail": "elapsed 667 ms"
+  },
+  {
+   "engine": "chromium",
+   "check": "optional songs failures leave required data intact",
+   "status": "pass"
+  },
+  {
+   "engine": "chromium",
+   "check": "thumbnails: fail vs stub",
+   "status": "pass"
+  },
+  {
+   "engine": "chromium",
+   "check": "offline-before-load fails navigation; restore recovers",
+   "status": "pass"
+  },
+  {
+   "engine": "chromium",
+   "check": "network-lost-after-load: data fetch fails only after afterLoad()",
+   "status": "pass"
+  },
+  {
+   "engine": "chromium",
+   "check": "time fixtures: instant, festival-timezone date, DST abbreviation",
+   "status": "pass",
+   "detail": "6 fixtures"
+  },
+  {
+   "engine": "chromium",
+   "check": "transitions: rotate, fold cycle, sweep, reduced motion, tab trace, back",
+   "status": "pass"
+  },
+  {
+   "engine": "webkit",
+   "check": "engine",
+   "status": "skipped",
+   "detail": "browser not installed; nothing verified for this engine"
+  },
+  {
+   "engine": "all",
+   "check": "served artifact unmodified",
+   "status": "pass",
+   "detail": "digest 25d215d84f9f"
+  }
+ ]
+}
