@@ -2,6 +2,8 @@
 
 **Evidence head:** code `ab9109c`. All screenshots in [shots/](shots/) were captured from the review build of that code SHA (earlier captures predated the linked-billing, detail-page and sticky-offset fixes and were replaced). This is review-build evidence, **not** final designer sign-off.
 
+**Later code head `e5d1854`** adds the QA accessibility fixes (A11Y-001 focus after Back, A11Y-005 retry recovery focus and announcement, A11Y-002 unavailable-view heading and title). Those change focus handling, one heading and document titles only; they do not change layout, so the screenshots below remain representative. They are not recaptured. A11Y-003/004 (P3 polish) are deferred.
+
 **Disposition:** corrected design integrated into the functional `companion/` app as a **production-excluded review build**. This is **not** a completed geographic-map release and **not** release authorization. Implemented and tested by the same agent (Claude); this is not independent QA. Codex review of the exact head is requested in the PR.
 
 Queue: [#77](https://github.com/johnapaz/edc-listening-room/issues/77) lane A · [#61](https://github.com/johnapaz/edc-listening-room/issues/61) · [#64](https://github.com/johnapaz/edc-listening-room/issues/64) · [#65](https://github.com/johnapaz/edc-listening-room/issues/65). Design inputs: [interaction contract](../companion-design/INTERACTION-CONTRACT.md), [design guidelines](../companion-design/DESIGN-GUIDELINES.md), [implementation handoff](../COMPANION-IMPLEMENTATION-HANDOFF.md).
