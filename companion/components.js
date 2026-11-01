@@ -151,12 +151,13 @@
           parts.nextDay ? el("span", { class: "sr-only", text: " (ends next day)" }) : null]
           : [el("span", { "aria-hidden": "true", text: "—" }), el("span", { class: "sr-only", text: "Time unknown" })]),
       el("div", { class: "set-body" },
-        el("p", { class: "billing" }, el("strong", { text: p.display_name }), p.set_qualifier ? el("span", { class: "chip", text: p.set_qualifier }) : null),
+        el("p", { class: "billing" }, link(p.display_name, C.transition(state, { type: "performance", id: p.performance_id }), { class: "billing-link" }), p.set_qualifier ? el("span", { class: "chip", text: p.set_qualifier }) : null),
         showStage ? el("p", { class: "set-stage", text: stage?.display_name || "Stage unknown" }) : null,
         p.performance_type === "program" ? el("p", { class: "set-status", text: "Program · no artist page" }) : null,
         C.sourcesDisagree(p) ? DisagreementNote(p) : null,
+        p.artist_ids.length > 1 ? el("div", { class: "participants", "aria-label": "Credited artists" }, p.artist_ids.map(id => idx.artists.get(id)).filter(Boolean).map(artist =>
+          ArtistEntry({ artist, state, role: p.credits?.find(c => c.artist_id === artist.artist_id)?.role }))) : null,
         el("p", { class: "actions" }, StatusBadge({ status, compact }),
-          link("Details", C.transition(state, { type: "performance", id: p.performance_id }), { class: "details-link", "aria-label": "Details for " + p.display_name }),
           C.hearTargets(idx, p).filter(t => t.tracks > 0).map(t => el("a", { class: "hear", href: C.listeningHref(t.artist.artist_id, state), "data-hear": t.artist.artist_id },
             el("span", { "aria-hidden": "true", text: "♫ " }), "Hear " + t.artist.display_name)))));
     return row;

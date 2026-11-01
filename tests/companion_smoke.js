@@ -53,6 +53,18 @@ async function acceptance(page, base, pass, ctx, perf) {
   assert.ok((await page.locator('.details .set .status').allTextContents()).every(t => t === 'Poster time'));
   await go('#/performance/edco26%3A2026-11-06%3Aadventure-club?day=2026-11-07');
   assert.match(await page.textContent('.details .notice'), /Not on Saturday/); pass('aliases, bad stage on map, set deep link and Not-on-day notice');
+  // Owner preference: the visible billing is a native link to details, with separate artist/Hear links and no nesting.
+  await go('#/explore?day=2026-11-07&stage=kinetic-field');
+  const b2bRow = page.locator('[data-performance="edco26:2026-11-07:acraze-b2b-cid"]');
+  assert.equal(await b2bRow.locator('.billing a.billing-link').count(), 1);
+  assert.equal(await b2bRow.locator('.participants .artist-link').count(), 2);
+  assert.equal(await b2bRow.locator('.billing a a, a .hear, .billing a .artist-link').count(), 0);
+  await b2bRow.locator('.billing-link').click(); await page.waitForSelector('#detail-title');
+  assert.match(page.url(), /#\/performance\/edco26%3A2026-11-07%3Aacraze-b2b-cid\?day=2026-11-07&stage=kinetic-field$/);
+  await page.goBack(); await page.waitForSelector('#stage-title'); assert.match(page.url(), /stage=kinetic-field/);
+  await go('#/explore?day=2026-11-08&stage=circuit-grounds');
+  await page.locator('[data-performance="edco26:2026-11-08:discovery-project"] .billing-link').click(); await page.waitForSelector('#detail-title');
+  assert.equal(await page.locator('.details a[href^="/listening-room/#"]').count(), 0); pass('billing is a native link to details; program links only to its details');
   // S7 unscheduled and S6 empty copy.
   await go('#/explore?day=2026-11-06&stage=casa-bacardi');
   assert.match(await page.textContent('#stage-panel'), /No sourced schedule for CASA BACARDÍ on Friday in this reference/);
@@ -128,7 +140,7 @@ async function acceptance(page, base, pass, ctx, perf) {
     for (const hash of ['', '#/stages', '#/explore?day=2026-11-06&stage=kinetic-field', '#/unscheduled?day=2026-11-08', '#/sources', '#/artist/artist%3Acid']) {
       await go(hash);
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'overflow ' + hash + ' @' + w);
-      const small = await page.locator('.primary a, .days a, .stage-link, .details-link, .hear, .back, .action').evaluateAll(n => n.filter(a => { const r = a.getBoundingClientRect(); return r.width && r.height < 43.5; }).map(a => a.className + ':' + a.textContent.trim().slice(0, 20)));
+      const small = await page.locator('.primary a, .days a, .stage-link, .billing-link, .hear, .back, .action').evaluateAll(n => n.filter(a => { const r = a.getBoundingClientRect(); return r.width && r.height < 43.5; }).map(a => a.className + ':' + a.textContent.trim().slice(0, 20)));
       assert.deepEqual(small, [], 'target <44px ' + hash + ' @' + w);
     }
   }
@@ -173,10 +185,10 @@ async function acceptance(page, base, pass, ctx, perf) {
       const ids = await page.locator('#stage-panel .performance').evaluateAll(nodes => nodes.map(n => n.dataset.performance));
       const times = ids.map(id => Date.parse(perf.find(p => p.performance_id === id).starts_at));
       assert.deepEqual(times, [...times].sort((a, b) => a - b)); pass('stage persistence, source chronology and focus');
-      await page.locator('[data-performance="edco26:2026-11-07:acraze-b2b-cid"] .details-link').click();
+      await page.locator('[data-performance="edco26:2026-11-07:acraze-b2b-cid"] .billing-link').click();
       assert.match(await page.textContent('#detail-title'), /ACRAZE B2B CID/);
-      assert.equal(await page.locator('.participants .artist-link').count(), 2);
-      await page.locator('[data-artist="artist:cid"]').click();
+      assert.equal(await page.locator('.details > .participants .artist-link').count(), 2);
+      await page.locator('.details > .participants [data-artist="artist:cid"]').click();
       assert.equal(await page.textContent('#detail-title'), 'CID');
       await page.locator('.listening-link').click();
       await page.waitForSelector('.song');
