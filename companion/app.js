@@ -1,33 +1,56 @@
 "use strict";
 (function () {
   const C = window.CompanionLib, U = window.CompanionUI, main = document.getElementById("main");
-  let idx, musicAvailable = false, controller, loadNumber = 0;
+  const nav = document.querySelector(".primary"), live = document.getElementById("live"), banner = document.getElementById("banner");
+  let idx, musicAvailable = false, controller, loadNumber = 0, lastStage = "", liveTimer;
   history.scrollRestoration = "manual";
   async function readJson(path, signal) {
     const response = await fetch(path, { cache: "no-cache", signal });
     if (!response.ok) throw new Error("Data unavailable");
     return response.json();
   }
+  function announce(text) {
+    // Clear first so repeating a message (same stage, same day) is still announced.
+    clearTimeout(liveTimer); live.textContent = "";
+    liveTimer = setTimeout(() => { live.textContent = text; }, 60);
+  }
+  const TITLES = { map: "Map", stages: "Stages", unscheduled: "Stage or time unknown", sources: "About & sources" };
+  function titleFor(state) {
+    if (state.view === "explore") return idx.stages.get(state.stage)?.display_name || (state.stage === C.UNKNOWN_STAGE ? "Stage unknown" : "Explore");
+    if (state.view === "artist") return idx.artists.get(state.id)?.display_name || "Artist";
+    if (state.view === "performance") return idx.byPerformance.get(state.id)?.display_name || "Performance";
+    return TITLES[state.view] || "Explore";
+  }
+  function focusTarget(state) {
+    if (state.view === "explore") return document.getElementById("stage-title");
+    if (["artist", "performance", "invalid"].includes(state.view)) return document.getElementById("detail-title");
+    return document.getElementById("page-title");
+  }
   function render({ focus, scroll } = {}) {
     if (!idx) return;
-    const state = C.parseHash(location.hash);
-    if (state.view === "invalid" || (state.stage && state.stage !== C.UNKNOWN_STAGE && !idx.stages.has(state.stage))) {
-      main.replaceChildren(U.el("h1", { id: "detail-title", tabindex: "-1", text: "Selection unavailable" }),
+    const parsed = C.parseHash(location.hash);
+    // Gated map aliases (S10) and bad stage params on the list pages canonicalise by replacing the entry.
+    const { state, replace } = parsed.view === "invalid" ? { state: parsed, replace: false } : C.resolveRoute(idx, parsed);
+    if (replace) history.replaceState({ ...history.state }, "", C.buildHash(state));
+    const stageOk = !state.stage || state.stage === C.UNKNOWN_STAGE || idx.stages.has(state.stage);
+    if (state.view === "explore" && state.stage && stageOk) lastStage = state.stage;
+    if (state.view === "invalid" || ((["explore", "artist", "performance"].includes(state.view)) && !stageOk)) {
+      main.replaceChildren(U.el("div", { class: "page" }, U.el("h1", { id: "detail-title", tabindex: "-1", text: "Selection unavailable" }),
         U.StateBox({ title: "This stage or link was not found", message: "Choose from the stages in the current reference.", kind: "error" }),
-        U.el("a", { href: C.buildHash({ day: state.day, stage: "" }), class: "back", text: "Browse stages and performances" }));
+        U.el("a", { href: C.buildHash({ view: "stages", day: state.day, stage: "" }), class: "back", text: "Browse stages and performances" })));
     } else if (["artist", "performance"].includes(state.view)) {
       main.replaceChildren(U.DetailView({ idx, state, musicAvailable }));
     } else {
-      main.replaceChildren(U.el("div", { class: "intro" }, U.el("p", { class: "eyebrow", text: "EDC Orlando · Nov 6–8, 2026 · Review preview" }),
-        U.el("h1", { text: "Find your next stage" }), U.el("p", { class: "muted", text: "Explore stages, check the available set times, and get to know the artists." })),
-        U.SourceNotice({ idx }), U.DayPicker({ state }),
-        U.el("div", { class: "explorer" }, U.StageList({ idx, state }), U.StagePanel({ idx, state })));
+      const views = { map: U.MapGatedView, stages: U.StagesView, explore: U.ExploreView, unscheduled: U.UnscheduledView, sources: U.SourcesView };
+      main.replaceChildren(views[state.view]({ idx, state }));
     }
+    U.syncNav(nav, state, lastStage);
     main.setAttribute("aria-busy", "false");
-    document.title = (idx.artists.get(state.id)?.display_name || idx.byPerformance.get(state.id)?.display_name || idx.stages.get(state.stage)?.display_name || "Explore") + " · Event Day Companion";
+    document.title = titleFor(state) + " · Event Day Companion";
     if (focus) {
-      const target = focus === "day" ? [...main.querySelectorAll("a[data-day]")].find(a => a.dataset.day === state.day) : document.getElementById(state.view === "explore" ? "stage-title" : "detail-title");
+      const target = focus === "day" ? [...main.querySelectorAll("a[data-day]")].find(a => a.dataset.day === state.day) : focusTarget(state);
       (target || main).focus({ preventScroll: focus === "day" || scroll !== undefined });
+      announce(state.view === "explore" ? C.announcement(idx, state) : titleFor(state) + (focus === "day" ? ", " + (state.day === "all" ? "all days" : C.weekday(state.day)) : ""));
     }
     if (scroll !== undefined) requestAnimationFrame(() => window.scrollTo(0, scroll));
   }
@@ -58,10 +81,16 @@
   window.addEventListener("hashchange", () => render({ scroll: history.state?.companionScroll || 0 }));
   window.addEventListener("pagehide", rememberScroll);
   window.addEventListener("pageshow", e => { if (e.persisted) render({ scroll: history.state?.companionScroll || 0 }); });
+  // Honest connectivity note. This is a status message, never an offline-support promise.
+  function showConnectivity() {
+    banner.hidden = navigator.onLine !== false;
+    banner.textContent = navigator.onLine === false ? "You’re offline. Showing what was already loaded; times may be out of date." : "";
+  }
+  window.addEventListener("offline", showConnectivity); window.addEventListener("online", showConnectivity); showConnectivity();
   async function load() {
     controller?.abort(); controller = new AbortController(); const signal = controller.signal, number = ++loadNumber;
     idx = undefined; main.setAttribute("aria-busy", "true");
-    main.replaceChildren(U.StateBox({ title: "Loading festival reference", message: "Getting stages and current performances…", kind: "loading" }));
+    main.replaceChildren(U.StateBox({ title: "Loading stages…", message: "Getting stages and current performances…", kind: "loading" }));
     // Abort weak-signal requests after a bounded wait. No offline/cache promise.
     const requestController = controller;
     const timer = setTimeout(() => requestController.abort(), 15000);
@@ -77,8 +106,9 @@
     } catch (_e) {
       if (number !== loadNumber) return;
       main.setAttribute("aria-busy", "false");
-      main.replaceChildren(U.el("h1", { text: "Festival reference unavailable" }), U.StateBox({ title: "Couldn’t load the reference", message: "Your connection may be weak, or the current data may be unavailable. Try again when connected. No offline copy is guaranteed.", kind: "error", retry: load }),
-        U.el("a", { class: "action", href: "https://orlando.edc.com/", text: "Organizer homepage ↗" }));
+      main.replaceChildren(U.el("div", { class: "page" }, U.el("h1", { text: "Festival reference unavailable" }),
+        U.StateBox({ title: "Couldn’t load the reference", message: "Your connection may be weak, or the current data may be unavailable. Try again when connected. No offline copy is guaranteed.", kind: "error", retry: load }),
+        U.el("a", { class: "action", href: "https://orlando.edc.com/", text: "Organizer homepage ↗" })));
     } finally { clearTimeout(timer); }
   }
   load();
