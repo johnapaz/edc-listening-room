@@ -1,5 +1,7 @@
 # Session 2 (lane A) implementation notes and evidence — November 1, 2026
 
+**Evidence head:** code `ab9109c`. All screenshots in [shots/](shots/) were captured from the review build of that code SHA (earlier captures predated the linked-billing, detail-page and sticky-offset fixes and were replaced). This is review-build evidence, **not** final designer sign-off.
+
 **Disposition:** corrected design integrated into the functional `companion/` app as a **production-excluded review build**. This is **not** a completed geographic-map release and **not** release authorization. Implemented and tested by the same agent (Claude); this is not independent QA. Codex review of the exact head is requested in the PR.
 
 Queue: [#77](https://github.com/johnapaz/edc-listening-room/issues/77) lane A · [#61](https://github.com/johnapaz/edc-listening-room/issues/61) · [#64](https://github.com/johnapaz/edc-listening-room/issues/64) · [#65](https://github.com/johnapaz/edc-listening-room/issues/65). Design inputs: [interaction contract](../companion-design/INTERACTION-CONTRACT.md), [design guidelines](../companion-design/DESIGN-GUIDELINES.md), [implementation handoff](../COMPANION-IMPLEMENTATION-HANDOFF.md).
@@ -8,6 +10,7 @@ Queue: [#77](https://github.com/johnapaz/edc-listening-room/issues/77) lane A ·
 
 - **S10 gated Map tab.** The bare URL and `#/map` land on the stage list under "Map coming later" plus an organizer-homepage link. No map graphic, hotspot, map control, coordinate, copied artwork or GPS/route/offline claim is mounted. `StageHotspot`/`hotspots()` remain an unmounted seam that requires verified geometry.
 - **Routes.** `#/map`, `#/stages`, `#/unscheduled`, `#/sources` (alias `#/about`) and `#/stage/{id}` (alias of `#/explore?stage=`) are new. Legacy `#/explore`, `#/artist/{id}` and `#/performance/{id}` links are unchanged. `#/map?stage=` redirects to the stage page, `?set=`/`?artist=` open the detail page, and an unknown stage on the map is ignored silently; all by **replacing** the history entry through the pure `resolveRoute()`.
+- **Sticky layout.** The app bar can wrap (wide system fonts, text zoom) and the day strip can wrap on narrow screens, so `app.js` measures the real pinned heights into `--bar-h`/`--strip-h` (zero when a bar is not pinned: landscape, Fold cover); CSS offsets and scroll margins use them. Sticky bars are opaque.
 - **Navigation.** Primary Map/Stages/About links (bottom tab bar on phones, header links ≥1100px) and the wordmark carry the day; Map returns to the last stage picked (in memory only). The skip link focuses `<main>` without changing the route.
 - **Day switch** is four native links with `aria-current="true"`. There is no `aria-pressed` and no radiogroup anywhere (asserted by a browser test).
 - **Set rows:** time column (next-day ends shown as "+1"), billing as a native link to the performance details (context preserved), qualifier chip, status badge, separate artist links for multi-artist billings, and one mint "Hear {artist}" link per credited identity that has reviewed tracks. A shared status is spelled out once in the list header; rows whose status differs, or any row in a mixed list, spell out their own. Programs show "Program · no artist page" and never a link.
@@ -34,7 +37,9 @@ Automated, on this branch's code: `python3 -m unittest discover -s tests` (101 p
 
 Browser acceptance (`tests/companion_smoke.js`, Chromium locally; Chromium + WebKit in CI): all pre-existing assertions kept, with these selector changes only: full-lineup checks use `#/explore`; billing link `h3 a` → `.billing-link` (billing is a native link again, per owner preference); unknown-stage row text now read from `.time`/`.set-stage`; the map-notice assertions run on `#/map`. New checks cover the gated landing, nav day/stage carry, route aliases and redirects, bad map stage, set deep link, S6/S7/S8, program slots, stable-ID-only Listening Room hrefs across views, per-identity Hear links, status vocabulary, no invalid pressed/radiogroup/nested-interactive semantics, live region, skip link, offline banner, and overflow plus 44px targets for every new view at 280, 320, 360, 844×390 and 1280.
 
-Screenshots (Chromium emulation) are in [shots/](shots/); re-capture with `node docs/companion-session2/capture.js <dir>` after `python3 scripts/build_companion_preview.py`.
+The sticky-layout regression hit-tests every day link under a scrolled page at 320×640, 360×740, 390×844, 412×915 and 844×390, each at normal, wide-monospace-font and 200% text (which force the app bar to wrap), checks the measured offsets and sticky day headings, and was confirmed to fail when the measurement is disabled. Sources & About asserts homepage-only outbound hrefs (`https://orlando.edc.com/`); the audited source URLs stay in the data and are not rendered.
+
+Screenshots (Chromium emulation, code `ab9109c`) are in [shots/](shots/), including scrolled and wrapped-header-at-200%-text states; re-capture with `node docs/companion-session2/capture.js <dir>` after `python3 scripts/build_companion_preview.py`.
 
 ## Not verified / still open
 
