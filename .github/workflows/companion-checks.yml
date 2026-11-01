@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - 'companion/**'
+      - 'listening-room/**'
+      - 'tests/ui_smoke.js'
       - 'data/edco-2026/**'
       - 'scripts/build*'
       - 'scripts/validate_current_lineup.py'
@@ -43,6 +45,14 @@ jobs:
           server_pid=$!
           trap 'kill "$server_pid"' EXIT
           node tests/ui_smoke.js
+      - name: Save sanitized review build (not a deployment)
+        uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: companion-review-build-${{ github.sha }}
+          path: companion-preview/
+          if-no-files-found: error
+          retention-days: 7
       - uses: actions/upload-artifact@v4
         if: always()
         with:

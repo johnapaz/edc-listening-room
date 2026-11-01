@@ -8,6 +8,8 @@
   --gutter:16px;--target:44px;--header:60px;--tabbar:60px;
   font-family:var(--sans)}
 *{box-sizing:border-box}
+/* LR-001 / WCAG 2.4.11: keyboard focus scrolls controls clear of the sticky header and the fixed bottom tab bar. */
+html{scroll-padding-top:calc(var(--header) + 12px);scroll-padding-bottom:calc(var(--tabbar) + env(safe-area-inset-bottom) + 12px)}
 body{margin:0;background:radial-gradient(ellipse at 90% 0,var(--bg-glow) 0,transparent 50%) no-repeat,var(--bg);color:var(--text);line-height:1.45;padding-bottom:calc(var(--tabbar) + env(safe-area-inset-bottom) + 12px)}
 a{color:var(--mint);text-underline-offset:4px;-webkit-tap-highlight-color:#6ff0c433}
 a:hover{color:var(--text)}
@@ -190,6 +192,7 @@ a.chip:hover{border-color:var(--mint);color:var(--mint)}
   .row-art{width:80px}
 }
 @media (min-width:900px){
+  html{scroll-padding-top:calc(68px + 1px + 12px);scroll-padding-bottom:12px} /* tabs are static here; header is 68px + border */
   body{padding-bottom:0}
   .bar{gap:24px;min-height:68px}
   .tabs{position:static;display:flex;gap:4px;background:none;border:0;padding:0}

@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#0a1120">
   <title>Event Day Companion · EDC Orlando 2026</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
@@ -14,15 +15,25 @@
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <header class="site-header">
-    <a href="#/explore" class="brand">Event Day Companion</a>
-    <a href="/listening-room/">Listening Room →</a>
+  <header class="app-bar">
+    <a href="#/map" class="brand" data-nav="home" aria-label="Event Day Companion, home">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="12" cy="10" r="3.2"/><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><ellipse cx="12" cy="21" rx="7" ry="1.6" stroke-dasharray="2 2.4"/></svg>
+      <span>Event Day <span class="brand-long">Companion</span></span>
+    </a>
+    <nav class="primary" aria-label="Primary">
+      <a href="#/map" data-nav="map"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg><span>Map</span></a>
+      <a href="#/stages" data-nav="stages"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg><span>Stages</span></a>
+      <a href="#/sources" data-nav="sources"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span>About</span></a>
+    </nav>
+    <a class="to-lr" href="/listening-room/">Listening Room <span aria-hidden="true">→</span></a>
   </header>
+  <div id="banner" class="banner" role="status" hidden></div>
   <main id="main" tabindex="-1" aria-busy="true">
     <h1>EDC Orlando 2026</h1>
     <p role="status">Loading stages and performances…</p>
   </main>
-  <noscript><p>This preview needs JavaScript for stage and day filtering. Visit <a href="https://orlando.edc.com/">the organizer homepage</a> for official information.</p></noscript>
+  <div id="live" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+  <noscript><p class="noscript">This preview needs JavaScript for stage and day filtering. Visit <a href="https://orlando.edc.com/">the organizer homepage</a> for official information.</p></noscript>
   <footer>
     <p>Independent, unofficial event reference. Not affiliated with EDC or Insomniac. Information can change.</p>
     <p>Created by <a href="https://johnapaz.com/">John A. Paz</a> · <a href="/about/credits/">Credits &amp; licensing</a> · <a href="https://orlando.edc.com/">Organizer homepage ↗</a></p>
