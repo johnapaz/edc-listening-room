@@ -95,6 +95,8 @@ async function acceptance(page, base, pass, ctx, perf) {
   // S8 sources & About.
   await go('#/sources'); const sources = await page.textContent('main');
   for (const text of [/Confirmed/, /Poster time/, /Time unknown/, /Sources disagree/, /Program/, /There is no map yet/, /No GPS, routes, walking times or offline copy/, /checked Oct 30/]) assert.match(sources, text);
+  assert.ok((await page.locator('a.external').evaluateAll(n => n.map(a => a.getAttribute('href')))).every(h => /^https:\/\//.test(h)), 'outbound links are https');
+  assert.ok((await page.locator('a.external').evaluateAll(n => n.every(a => a.rel.includes('noopener')))));
   await go('#/about'); assert.equal(await page.textContent('#page-title'), 'How to read this reference'); pass('sources and About page');
   // Disagreement surfaces on the set (coral badge + text).
   await go('#/explore'); assert.ok(await page.locator('.disagree-note .status.disagree').count() >= 1); pass('differing sources stay visible on affected sets');

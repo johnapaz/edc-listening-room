@@ -34,7 +34,8 @@
     pin: [["circle", { cx: 12, cy: 10, r: 3.2 }], ["path", { d: "M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z" }]]
   };
   const link = (text, state, props, ...kids) => el("a", { href: C.buildHash(state), text, ...props }, ...kids);
-  const external = (text, href) => el("a", { class: "external", href, text, rel: "noopener noreferrer" }, " ", el("span", { "aria-hidden": "true", text: "↗" }));
+  // Outbound links are https only, whatever the data says.
+  const external = (text, href) => /^https:\/\//i.test(href || "") ? el("a", { class: "external", href, text, rel: "noopener noreferrer" }, " ", el("span", { "aria-hidden": "true", text: "↗" })) : el("span", { text });
   const plural = (n, one, many) => n + " " + (n === 1 ? one : many);
   const dayName = date => C.longDay(date);
   const scopeLabel = day => day === "all" ? "all days" : C.weekday(day);
@@ -232,7 +233,7 @@
     return el("div", { class: "page wide" },
       PageIntro({ eyebrow: "EDC Orlando · Nov 6–8, 2026 · Review preview", title: "Stages and sets", lede: null, id: "page-title" }),
       SourceNotice({ idx, compact: true }), DayPicker({ state }),
-      el("div", { class: "explorer" + (state.stage ? " has-stage" : "") }, el("div", { class: "rail" }, StageList({ idx, state, mode: "rail" })), StagePanel({ idx, state })));
+      el("div", { class: "explorer" }, el("div", { class: "rail" }, StageList({ idx, state, mode: "rail" })), StagePanel({ idx, state })));
   }
   function UnscheduledView({ idx, state }) {
     const rows = C.unscheduled(idx, state.day);
