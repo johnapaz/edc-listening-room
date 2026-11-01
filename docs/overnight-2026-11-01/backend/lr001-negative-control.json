@@ -1,0 +1,360 @@
+{
+ "baseline_sha": "50de01a3c7000297fb41dbeb2e92e63609e29604",
+ "engine": "chromium",
+ "generated_utc": "2026-11-01T18:56:12.131Z",
+ "runs": 6,
+ "total_fully_covered": 38,
+ "rows": [
+  {
+   "size": "phone-360",
+   "viewport": "360x740",
+   "config": "default",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 16,
+   "partially_covered": 37,
+   "offscreen": 0,
+   "examples_fully_covered": [
+    {
+     "n": 36,
+     "label": "SlothcircuitGROUNDS · 3 tracks",
+     "top": 675,
+     "bottom": 721,
+     "vh": 740,
+     "by": {
+      "nav.tabs": 45
+     }
+    },
+    {
+     "n": 37,
+     "label": "Play RUSH by Sloth on YouTube (opens in ",
+     "top": 676,
+     "bottom": 720,
+     "vh": 740,
+     "by": {
+      "nav.tabs": 45
+     }
+    },
+    {
+     "n": 38,
+     "label": "Zack MartinokineticFIELD · 3 tracks",
+     "top": 694,
+     "bottom": 740,
+     "vh": 740,
+     "by": {
+      "nav.tabs": 45
+     }
+    }
+   ],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "Search the lineup",
+     "top": 8,
+     "bottom": 52,
+     "vh": 740,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 6,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 740,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "phone-360",
+   "viewport": "360x740",
+   "config": "font-200",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 4,
+   "partially_covered": 66,
+   "offscreen": 0,
+   "examples_fully_covered": [
+    {
+     "n": 31,
+     "label": "A–Z",
+     "top": 701,
+     "bottom": 745,
+     "vh": 745,
+     "by": {
+      "nav.tabs": 45
+     }
+    },
+    {
+     "n": 32,
+     "label": "By time",
+     "top": 701,
+     "bottom": 745,
+     "vh": 745,
+     "by": {
+      "nav.tabs": 45
+     }
+    },
+    {
+     "n": 121,
+     "label": "Official lineup ↗",
+     "top": 701,
+     "bottom": 745,
+     "vh": 745,
+     "by": {
+      "nav.tabs": 45
+     }
+    }
+   ],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "Search the lineup",
+     "top": 8,
+     "bottom": 52,
+     "vh": 745,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 6,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 745,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "fold-open-768",
+   "viewport": "768x900",
+   "config": "default",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 12,
+   "partially_covered": 42,
+   "offscreen": 0,
+   "examples_fully_covered": [
+    {
+     "n": 38,
+     "label": "Zack MartinokineticFIELD · 3 tracks",
+     "top": 853,
+     "bottom": 898,
+     "vh": 900,
+     "by": {
+      "nav.tabs": 45
+     }
+    },
+    {
+     "n": 39,
+     "label": "Play Desire by Zack Martino on YouTube (",
+     "top": 853,
+     "bottom": 897,
+     "vh": 900,
+     "by": {
+      "nav.tabs": 45
+     }
+    },
+    {
+     "n": 51,
+     "label": "IDEMIstereoBLOOM · 1 track",
+     "top": 845,
+     "bottom": 890,
+     "vh": 900,
+     "by": {
+      "nav.tabs": 45
+     }
+    }
+   ],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 900,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 429,
+     "bottom": 473,
+     "vh": 900,
+     "by": {
+      "body": 10
+     },
+     "freePct": 50
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "fold-open-768",
+   "viewport": "768x900",
+   "config": "font-200",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 6,
+   "partially_covered": 57,
+   "offscreen": 0,
+   "examples_fully_covered": [
+    {
+     "n": 35,
+     "label": "Play Peaky & Distorted by RAJE on YouTub",
+     "top": 837,
+     "bottom": 881,
+     "vh": 900,
+     "by": {
+      "nav.tabs": 45
+     }
+    },
+    {
+     "n": 58,
+     "label": "Play My Humps by Joshwa on YouTube (open",
+     "top": 837,
+     "bottom": 881,
+     "vh": 900,
+     "by": {
+      "nav.tabs": 45
+     }
+    },
+    {
+     "n": 70,
+     "label": "Play Closer by Bou on YouTube (opens in ",
+     "top": 838,
+     "bottom": 882,
+     "vh": 900,
+     "by": {
+      "nav.tabs": 45
+     }
+    }
+   ],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 900,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 523,
+     "bottom": 567,
+     "vh": 900,
+     "by": {
+      "body": 10
+     },
+     "freePct": 50
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "desktop-1280",
+   "viewport": "1280x800",
+   "config": "default",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 47,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 449,
+     "bottom": 493,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    },
+    {
+     "n": 18,
+     "label": "AAT",
+     "top": 493,
+     "bottom": 537,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "desktop-1280",
+   "viewport": "1280x800",
+   "config": "font-200",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 47,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 539,
+     "bottom": 583,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    },
+    {
+     "n": 18,
+     "label": "AAT",
+     "top": 583,
+     "bottom": 627,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  }
+ ],
+ "limits": [
+  "Emulated viewport and CSS-injected font-size/spacing; not native browser zoom, OS text scaling or hardware.",
+  "Chromium only unless --engine webkit is installed.",
+  "Assertion is zero FULLY covered stops (LR-001). Partial coverage is reported, not failed."
+ ]
+}

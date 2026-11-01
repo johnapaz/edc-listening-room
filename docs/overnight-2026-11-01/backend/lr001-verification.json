@@ -1,0 +1,1346 @@
+{
+ "baseline_sha": "50de01a3c7000297fb41dbeb2e92e63609e29604",
+ "engine": "chromium",
+ "generated_utc": "2026-11-01T18:46:46.147Z",
+ "runs": 36,
+ "total_fully_covered": 0,
+ "rows": [
+  {
+   "size": "phone-360",
+   "viewport": "360x740",
+   "config": "default",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 43,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "Search the lineup",
+     "top": 8,
+     "bottom": 52,
+     "vh": 740,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 6,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 740,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "phone-360",
+   "viewport": "360x740",
+   "config": "default",
+   "motion": "smooth",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 43,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "Search the lineup",
+     "top": 8,
+     "bottom": 52,
+     "vh": 740,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 6,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 740,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "phone-360",
+   "viewport": "360x740",
+   "config": "font-200",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 51,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "Search the lineup",
+     "top": 8,
+     "bottom": 52,
+     "vh": 745,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 6,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 745,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "phone-360",
+   "viewport": "360x740",
+   "config": "font-200",
+   "motion": "smooth",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 51,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "Search the lineup",
+     "top": 8,
+     "bottom": 52,
+     "vh": 745,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 6,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 745,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "phone-360",
+   "viewport": "360x740",
+   "config": "font-300",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 55,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "Search the lineup",
+     "top": 11,
+     "bottom": 55,
+     "vh": 975,
+     "by": {
+      "header.top": 2
+     },
+     "freePct": 96
+    },
+    {
+     "n": 6,
+     "label": "About and help",
+     "top": 11,
+     "bottom": 55,
+     "vh": 975,
+     "by": {
+      "header.top": 2
+     },
+     "freePct": 96
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "phone-360",
+   "viewport": "360x740",
+   "config": "font-300",
+   "motion": "smooth",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 55,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "Search the lineup",
+     "top": 11,
+     "bottom": 55,
+     "vh": 975,
+     "by": {
+      "header.top": 2
+     },
+     "freePct": 96
+    },
+    {
+     "n": 6,
+     "label": "About and help",
+     "top": 11,
+     "bottom": 55,
+     "vh": 975,
+     "by": {
+      "header.top": 2
+     },
+     "freePct": 96
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "phone-360",
+   "viewport": "360x740",
+   "config": "text-spacing",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 43,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "Search the lineup",
+     "top": 8,
+     "bottom": 52,
+     "vh": 740,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 6,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 740,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "phone-360",
+   "viewport": "360x740",
+   "config": "text-spacing",
+   "motion": "smooth",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 43,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "Search the lineup",
+     "top": 8,
+     "bottom": 52,
+     "vh": 740,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 6,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 740,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "phone-360",
+   "viewport": "360x740",
+   "config": "verdana",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 43,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "Search the lineup",
+     "top": 8,
+     "bottom": 52,
+     "vh": 740,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 6,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 740,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "phone-360",
+   "viewport": "360x740",
+   "config": "verdana",
+   "motion": "smooth",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 43,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "Search the lineup",
+     "top": 8,
+     "bottom": 52,
+     "vh": 740,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 6,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 740,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "phone-360",
+   "viewport": "360x740",
+   "config": "font-200+spacing",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 52,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "Search the lineup",
+     "top": 8,
+     "bottom": 52,
+     "vh": 868,
+     "by": {
+      "header.top": 2
+     },
+     "freePct": 96
+    },
+    {
+     "n": 6,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 868,
+     "by": {
+      "header.top": 2
+     },
+     "freePct": 96
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "phone-360",
+   "viewport": "360x740",
+   "config": "font-200+spacing",
+   "motion": "smooth",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 53,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "Search the lineup",
+     "top": 8,
+     "bottom": 52,
+     "vh": 868,
+     "by": {
+      "header.top": 2
+     },
+     "freePct": 96
+    },
+    {
+     "n": 6,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 868,
+     "by": {
+      "header.top": 2
+     },
+     "freePct": 96
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "fold-open-768",
+   "viewport": "768x900",
+   "config": "default",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 48,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 900,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 429,
+     "bottom": 473,
+     "vh": 900,
+     "by": {
+      "body": 10
+     },
+     "freePct": 50
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "fold-open-768",
+   "viewport": "768x900",
+   "config": "default",
+   "motion": "smooth",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 50,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 900,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 429,
+     "bottom": 473,
+     "vh": 900,
+     "by": {
+      "body": 10
+     },
+     "freePct": 50
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "fold-open-768",
+   "viewport": "768x900",
+   "config": "font-200",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 48,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 900,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 523,
+     "bottom": 567,
+     "vh": 900,
+     "by": {
+      "body": 10
+     },
+     "freePct": 50
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "fold-open-768",
+   "viewport": "768x900",
+   "config": "font-200",
+   "motion": "smooth",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 50,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 900,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 523,
+     "bottom": 567,
+     "vh": 900,
+     "by": {
+      "body": 10
+     },
+     "freePct": 50
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "fold-open-768",
+   "viewport": "768x900",
+   "config": "font-300",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 55,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "About and help",
+     "top": 15,
+     "bottom": 59,
+     "vh": 900,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 12,
+     "label": "RAJE",
+     "top": 777,
+     "bottom": 828,
+     "vh": 900,
+     "by": {
+      "nav.tabs": 9
+     },
+     "freePct": 80
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "fold-open-768",
+   "viewport": "768x900",
+   "config": "font-300",
+   "motion": "smooth",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 56,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "About and help",
+     "top": 15,
+     "bottom": 59,
+     "vh": 900,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 12,
+     "label": "RAJE",
+     "top": 777,
+     "bottom": 828,
+     "vh": 900,
+     "by": {
+      "nav.tabs": 9
+     },
+     "freePct": 80
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "fold-open-768",
+   "viewport": "768x900",
+   "config": "text-spacing",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 48,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 900,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 457,
+     "bottom": 501,
+     "vh": 900,
+     "by": {
+      "body": 10
+     },
+     "freePct": 50
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "fold-open-768",
+   "viewport": "768x900",
+   "config": "text-spacing",
+   "motion": "smooth",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 50,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 900,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 457,
+     "bottom": 501,
+     "vh": 900,
+     "by": {
+      "body": 10
+     },
+     "freePct": 50
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "fold-open-768",
+   "viewport": "768x900",
+   "config": "verdana",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 48,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 900,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 429,
+     "bottom": 473,
+     "vh": 900,
+     "by": {
+      "body": 10
+     },
+     "freePct": 50
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "fold-open-768",
+   "viewport": "768x900",
+   "config": "verdana",
+   "motion": "smooth",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 50,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 900,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 429,
+     "bottom": 473,
+     "vh": 900,
+     "by": {
+      "body": 10
+     },
+     "freePct": 50
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "fold-open-768",
+   "viewport": "768x900",
+   "config": "font-200+spacing",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 48,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 900,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 620,
+     "bottom": 670,
+     "vh": 900,
+     "by": {
+      "body": 10
+     },
+     "freePct": 50
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "fold-open-768",
+   "viewport": "768x900",
+   "config": "font-200+spacing",
+   "motion": "smooth",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 50,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 5,
+     "label": "About and help",
+     "top": 8,
+     "bottom": 52,
+     "vh": 900,
+     "by": {
+      "header.top": 3
+     },
+     "freePct": 93
+    },
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 620,
+     "bottom": 670,
+     "vh": 900,
+     "by": {
+      "body": 10
+     },
+     "freePct": 50
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "desktop-1280",
+   "viewport": "1280x800",
+   "config": "default",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 47,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 449,
+     "bottom": 493,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    },
+    {
+     "n": 18,
+     "label": "AAT",
+     "top": 493,
+     "bottom": 537,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "desktop-1280",
+   "viewport": "1280x800",
+   "config": "default",
+   "motion": "smooth",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 49,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 449,
+     "bottom": 493,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    },
+    {
+     "n": 18,
+     "label": "AAT",
+     "top": 493,
+     "bottom": 537,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "desktop-1280",
+   "viewport": "1280x800",
+   "config": "font-200",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 47,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 539,
+     "bottom": 583,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    },
+    {
+     "n": 18,
+     "label": "AAT",
+     "top": 583,
+     "bottom": 627,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "desktop-1280",
+   "viewport": "1280x800",
+   "config": "font-200",
+   "motion": "smooth",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 49,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 539,
+     "bottom": 583,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    },
+    {
+     "n": 18,
+     "label": "AAT",
+     "top": 583,
+     "bottom": 627,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "desktop-1280",
+   "viewport": "1280x800",
+   "config": "font-300",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 48,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 9,
+     "label": "SundayNov 8 · 44 acts",
+     "top": 391,
+     "bottom": 498,
+     "vh": 800,
+     "by": {
+      "aside.detail": 4
+     },
+     "freePct": 91
+    },
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 674,
+     "bottom": 737,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "desktop-1280",
+   "viewport": "1280x800",
+   "config": "font-300",
+   "motion": "smooth",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 50,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 9,
+     "label": "SundayNov 8 · 44 acts",
+     "top": 391,
+     "bottom": 498,
+     "vh": 800,
+     "by": {
+      "aside.detail": 4
+     },
+     "freePct": 91
+    },
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 674,
+     "bottom": 737,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "desktop-1280",
+   "viewport": "1280x800",
+   "config": "text-spacing",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 47,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 477,
+     "bottom": 521,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    },
+    {
+     "n": 18,
+     "label": "AAT",
+     "top": 521,
+     "bottom": 565,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "desktop-1280",
+   "viewport": "1280x800",
+   "config": "text-spacing",
+   "motion": "smooth",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 49,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 477,
+     "bottom": 521,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    },
+    {
+     "n": 18,
+     "label": "AAT",
+     "top": 521,
+     "bottom": 565,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "desktop-1280",
+   "viewport": "1280x800",
+   "config": "verdana",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 47,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 449,
+     "bottom": 493,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    },
+    {
+     "n": 18,
+     "label": "AAT",
+     "top": 493,
+     "bottom": 537,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "desktop-1280",
+   "viewport": "1280x800",
+   "config": "verdana",
+   "motion": "smooth",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 49,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 449,
+     "bottom": 493,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    },
+    {
+     "n": 18,
+     "label": "AAT",
+     "top": 493,
+     "bottom": 537,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "desktop-1280",
+   "viewport": "1280x800",
+   "config": "font-200+spacing",
+   "motion": "reduced",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 47,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 600,
+     "bottom": 650,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    },
+    {
+     "n": 18,
+     "label": "AAT",
+     "top": 650,
+     "bottom": 694,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  },
+  {
+   "size": "desktop-1280",
+   "viewport": "1280x800",
+   "config": "font-200+spacing",
+   "motion": "smooth",
+   "stops": 122,
+   "fully_covered": 0,
+   "partially_covered": 49,
+   "offscreen": 0,
+   "examples_fully_covered": [],
+   "examples_partial": [
+    {
+     "n": 17,
+     "label": "Play Don't Stop by AAT on YouTube (opens",
+     "top": 600,
+     "bottom": 650,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    },
+    {
+     "n": 18,
+     "label": "AAT",
+     "top": 650,
+     "bottom": 694,
+     "vh": 800,
+     "by": {
+      "div.split": 30
+     },
+     "freePct": 33
+    }
+   ],
+   "examples_offscreen": [],
+   "page_errors": 0
+  }
+ ],
+ "limits": [
+  "Emulated viewport and CSS-injected font-size/spacing; not native browser zoom, OS text scaling or hardware.",
+  "Chromium only unless --engine webkit is installed.",
+  "Assertion is zero FULLY covered stops (LR-001). Partial coverage is reported, not failed."
+ ]
+}
