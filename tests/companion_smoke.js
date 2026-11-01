@@ -195,6 +195,23 @@ async function acceptance(page, base, pass, ctx, perf) {
     return [...document.querySelectorAll('.day-heading:not(.subtle)')].map(h => parseFloat(getComputedStyle(h).top) - strip); });
   assert.ok(headingGap.length && headingGap.every(g => Math.abs(g) < 1.5), 'day headings stick directly below the strip: ' + headingGap);
   pass('sticky header and day strip never overlap, including wrapped header and 200% text');
+  // Forced colors (Windows High Contrast): background fills and box-shadows are overridden, so a selected day, stage or nav item
+  // must differ from its siblings in something other than colour (border width/style, text decoration). Chromium emulates this.
+  if (ctx.browser().browserType().name() === 'chromium') {
+    await page.emulateMedia({ forcedColors: 'active' });
+    const signature = el => { const c = getComputedStyle(el); return ['borderTopWidth', 'borderTopStyle', 'borderLeftWidth', 'borderBottomWidth', 'textDecorationLine'].map(k => c[k]).join('|'); };
+    for (const [w, h, hash, pairs] of [
+      [360, 740, '#/explore?day=2026-11-07&stage=circuit-grounds', [['.days a[aria-current="true"]', '.days a:not([aria-current])'], ['.stage-link[aria-current="true"]', '.stage-link:not([aria-current])'], ['.primary a[aria-current="page"]', '.primary a:not([aria-current])']]],
+      [1280, 800, '#/explore?day=2026-11-08&stage=kinetic-field', [['.days a[aria-current="true"]', '.days a:not([aria-current])'], ['.stage-link[aria-current="true"]', '.stage-link:not([aria-current])'], ['.primary a[aria-current="page"]', '.primary a:not([aria-current])']]]]) {
+      await page.setViewportSize({ width: w, height: h }); await go(hash); await page.waitForTimeout(150);
+      for (const [selected, other] of pairs) {
+        const sig = await page.evaluate(([a, b, fn]) => { const f = new Function('el', 'return (' + fn + ')(el)'); return [f(document.querySelector(a)), f(document.querySelector(b))]; }, [selected, other, signature.toString()]);
+        assert.notEqual(sig[0], sig[1], 'forced-colors: selected state indistinguishable without colour @' + w + ' ' + selected + ' :: ' + sig.join(' vs '));
+      }
+    }
+    await page.emulateMedia({ forcedColors: 'none' });
+    pass('selected day, stage and nav states survive forced colors without relying on colour');
+  }
   // Reflow/overflow on every new view at the extremes (Fold cover, 320, desktop) and 44px targets.
   for (const [w, h] of [[280, 653], [320, 640], [360, 740], [844, 390], [1280, 800]]) {
     await page.setViewportSize({ width: w, height: h });

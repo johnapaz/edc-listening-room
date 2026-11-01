@@ -198,4 +198,13 @@ footer p{margin-bottom:6px}
   .day-heading{top:0}
   .rail{position:static}
 }
+/* Forced colors (e.g. Windows High Contrast): backgrounds and box-shadows are replaced by system colours, so every
+   selected state also differs in something that is not colour: a thicker double border and/or an underline. */
+@media(forced-colors:active){
+  .days a[aria-current="true"],.stage-link[aria-current="true"]{border:3px double Highlight}
+  .days a[aria-current="true"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.25em}
+  .stage-link[aria-current="true"] .stage-name{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.2em}
+  .primary a[aria-current="page"]{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:.3em}
+  .status.verified::before{box-sizing:border-box;border:5px solid CanvasText;background:none}
+}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
