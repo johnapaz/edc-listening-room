@@ -162,13 +162,14 @@
     return row;
   }
 
-  function ScheduleList({ rows, idx, state, showStage }) {
+  function ScheduleList({ rows, idx, state, showStage, detail }) {
     const fragment = document.createDocumentFragment();
-    const headerStatus = C.summarizeStatus(rows).status;
+    // Glyph-only badges rely on a visible source summary above the list; detail pages have none, so they spell each badge out.
+    const headerStatus = detail ? null : C.summarizeStatus(rows).status;
     const dates = [...new Set(rows.map(p => p.event_date))];
     dates.forEach(date => {
       const dayRows = rows.filter(p => p.event_date === date);
-      if (state.day === "all" || dates.length > 1) fragment.append(el("h3", { class: "day-heading", text: dayName(date) }));
+      if (detail || state.day === "all" || dates.length > 1) fragment.append(el("h3", { class: "day-heading", text: dayName(date) }));
       const timed = dayRows.filter(C.hasTime), untimed = dayRows.filter(p => !C.hasTime(p));
       if (timed.length) fragment.append(el("ul", { class: "schedule", "aria-label": dayName(date) + " sourced times" }, timed.map(p => SetRow({ performance: p, idx, state, headerStatus, showStage }))));
       if (untimed.length) fragment.append(el("h3", { class: "day-heading subtle", text: "Time unknown · alphabetical" }),
@@ -299,7 +300,7 @@
     } else node.append(el("p", { class: "muted", text: "This is a festival program, not a single artist, so there is no Listening Room page for it." }));
     node.append(el("p", { class: "muted", text: "Discovery recordings are not the songs promised for a live set. Use your browser’s Back to return from Listening Room." }),
       el("h2", { text: isArtist ? "Current appearances · " + dayName(state.day) : "This performance" }));
-    if (rows.length) node.append(ScheduleList({ rows, idx, state, showStage: true }));
+    if (rows.length) node.append(el("p", { class: "section-meta" }, SourceLine({ idx, rows })), ScheduleList({ rows, idx, state, showStage: true, detail: true }));
     else node.append(StateBox({ title: allAppearances.length ? "No appearance on the selected day" : "No separately billed appearance", message: allAppearances.length ? "This artist has current appearances on other days. Return to stages and choose All days to see them." : "This identity is a credited project member or historical reference, not a separate current booking. Project membership does not make its solo catalog a project recording." }));
     return node;
   }

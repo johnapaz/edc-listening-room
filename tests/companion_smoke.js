@@ -47,6 +47,11 @@ async function acceptance(page, base, pass, ctx, perf) {
   await go('#/map?stage=nope'); assert.equal(await page.textContent('#page-title'), 'Find your next stage'); assert.equal(await page.locator('.error').count(), 0);
   await go('#/map?set=edco26%3A2026-11-07%3Aacraze-b2b-cid&day=2026-11-07'); assert.match(await page.textContent('#detail-title'), /ACRAZE B2B CID/);
   await go('#/performance/edco26%3A2026-11-06%3Aadventure-club?day=2026-11-07');
+  await go('#/performance/edco26%3A2026-11-06%3Aadventure-club?day=2026-11-06');
+  assert.match(await page.textContent('.details .day-heading'), /Friday, Nov 6/);
+  assert.match(await page.textContent('.details .source-line'), /Poster times · checked Oct 30/);
+  assert.ok((await page.locator('.details .set .status').allTextContents()).every(t => t === 'Poster time'));
+  await go('#/performance/edco26%3A2026-11-06%3Aadventure-club?day=2026-11-07');
   assert.match(await page.textContent('.details .notice'), /Not on Saturday/); pass('aliases, bad stage on map, set deep link and Not-on-day notice');
   // S7 unscheduled and S6 empty copy.
   await go('#/explore?day=2026-11-06&stage=casa-bacardi');
