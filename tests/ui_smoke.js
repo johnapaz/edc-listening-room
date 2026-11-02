@@ -250,12 +250,12 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
   assert.match(await page.textContent("#player-count"), /98 reviewed tracks/);
   assert.equal(await page.locator("#queue-list li").count(), 98, "Friday mix uses Friday artists");
   assert.equal(await page.getAttribute("#play-friday", "aria-pressed"), "true");
-  const ordered = await page.locator("#queue-list li").allTextContents();
+  const ordered = await page.locator("#queue-list .queue-track").evaluateAll(els => els.map(el => el.dataset.videoId));
   const srcBeforeShuffle = await page.getAttribute("#player-frame iframe", "src");
   await page.locator("#queue-shuffle").click();
   await page.locator("#player-frame iframe").waitFor();
   assert.equal(await page.getAttribute("#queue-shuffle", "aria-pressed"), "true");
-  const shuffled = await page.locator("#queue-list li").allTextContents();
+  const shuffled = await page.locator("#queue-list .queue-track").evaluateAll(els => els.map(el => el.dataset.videoId));
   assert.notDeepEqual(shuffled, ordered, "shuffle changes the queue");
   assert.deepEqual(new Set(shuffled), new Set(ordered), "shuffle preserves every track");
   assert.notEqual(await page.getAttribute("#player-frame iframe", "src"), srcBeforeShuffle, "shuffle restarts provider queue");
