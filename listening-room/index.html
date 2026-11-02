@@ -43,14 +43,14 @@
     <div class="wrap play-all-inner">
       <div class="mix-intro"><strong>Choose your soundtrack.</strong><span>All tracks, or just your festival day.</span></div>
       <div class="mix-buttons" role="group" aria-label="Start a listening mix">
-        <button id="play-all" class="play-all-button" type="button" aria-controls="listening-player" aria-pressed="false">▶ All tracks</button>
-        <button id="play-friday" class="play-all-button play-day-button" type="button" aria-controls="listening-player" aria-pressed="false">▶ Friday</button>
-        <button id="play-saturday" class="play-all-button play-day-button" type="button" aria-controls="listening-player" aria-pressed="false">▶ Saturday</button>
-        <button id="play-sunday" class="play-all-button play-day-button" type="button" aria-controls="listening-player" aria-pressed="false">▶ Sunday</button>
+        <button id="play-all" class="play-all-button" type="button" aria-controls="listening-player" aria-pressed="false">▶ <span class="play-long">All tracks</span><span class="play-short">All</span></button>
+        <button id="play-friday" class="play-all-button play-day-button" type="button" aria-controls="listening-player" aria-pressed="false">▶ <span class="play-long">Friday</span><span class="play-short">Fri</span></button>
+        <button id="play-saturday" class="play-all-button play-day-button" type="button" aria-controls="listening-player" aria-pressed="false">▶ <span class="play-long">Saturday</span><span class="play-short">Sat</span></button>
+        <button id="play-sunday" class="play-all-button play-day-button" type="button" aria-controls="listening-player" aria-pressed="false">▶ <span class="play-long">Sunday</span><span class="play-short">Sun</span></button>
       </div>
       <div class="mix-options">
-        <button id="queue-shuffle" class="mix-option" type="button" aria-pressed="false" aria-label="Shuffle queue order; changing order restarts playback">↝ Shuffle</button>
-        <button id="queue-toggle" class="mix-option" type="button" aria-expanded="false" aria-controls="queue-panel">View queue</button>
+        <button id="queue-shuffle" class="mix-option" type="button" aria-pressed="false" aria-label="Shuffle queue order; changing order restarts playback"><span class="option-icon" aria-hidden="true">↝</span><span class="option-text">Shuffle</span></button>
+        <button id="queue-toggle" class="mix-option" type="button" aria-expanded="false" aria-controls="queue-panel" aria-label="View queue"><span class="option-icon" aria-hidden="true">≡</span><span class="option-text">Queue</span></button>
       </div>
     </div>
   </section>
