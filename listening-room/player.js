@@ -124,7 +124,7 @@
       shuffle.setAttribute("aria-pressed", String(shuffled));
       toggleQueue.setAttribute("aria-expanded", String(open));
       showQueue.setAttribute("aria-expanded", String(open));
-      toggleQueue.textContent = open ? "Hide queue" : "View queue";
+      toggleQueue.setAttribute("aria-label", open ? "Hide queue" : "View queue");
       showQueue.textContent = open ? "Hide queue" : "Show queue";
       queuePanel.hidden = !open;
       showQueue.hidden = !queue.length;
