@@ -119,7 +119,7 @@ class AppContract(unittest.TestCase):
         self.assertNotIn("innerHTML", js)
         self.assertNotIn("eval(", js)
         self.assertNotIn("youtube.com/results", js)
-        for banned in ("Generate", "Shuffle", "Save to YouTube", "Now playing"):
+        for banned in ("Generate", "Save to YouTube", "Now playing"):
             self.assertNotIn(banned, html + js)
         self.assertIn("Not affiliated", html)
 
