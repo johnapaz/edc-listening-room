@@ -149,7 +149,7 @@
       queueList.replaceChildren(fragment);
       queueDescription.textContent = queue.length
         ? selectedLabel + " · " + queue.length + " tracks in " +
-          (shuffled ? "shuffled" : "artist-balanced") + " order. YouTube controls playback; this list does not follow its progress."
+          (shuffled ? "shuffled" : "list") + " order. YouTube controls playback; this list does not follow its progress."
         : "No reviewed tracks available for this mix.";
     }
     function showDock(wantsQueue) {

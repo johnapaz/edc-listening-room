@@ -267,8 +267,9 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
   await page.locator("#play-filtered").click();
   await catalogRequested;
   await page.locator("#close-player").click();
+  const catalogResponse = page.waitForResponse(response => response.url().endsWith("/data/listening-room/songs.json"));
   releaseCatalog();
-  await page.waitForResponse(response => response.url().endsWith("/data/listening-room/songs.json"));
+  await catalogResponse;
   // An evaluation after the response and rendering flush gives the async handler time to settle.
   await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
   assert.equal(await page.locator("#listening-player").isVisible(), false);
