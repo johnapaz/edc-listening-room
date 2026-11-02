@@ -254,6 +254,40 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
   assert.equal(await page.locator(".song").count(), 98);
   assert.equal(await page.locator("#queue-shuffle").isVisible(), false, "shuffle stays in closed mini player");
   await ctx.route("https://www.youtube-nocookie.com/**", r => r.fulfill({ status: 200, contentType: "text/html", body: "<title>YouTube player stub</title>" }));
+  // Stop cancels a pending catalog load; its late response cannot reopen playback.
+  let releaseCatalog;
+  const heldCatalog = new Promise(resolve => { releaseCatalog = resolve; });
+  let sawCatalog;
+  const catalogRequested = new Promise(resolve => { sawCatalog = resolve; });
+  await page.route("**/data/listening-room/songs.json", async route => {
+    sawCatalog();
+    await heldCatalog;
+    await route.continue();
+  });
+  await page.locator("#play-filtered").click();
+  await catalogRequested;
+  await page.locator("#close-player").click();
+  const catalogResponse = page.waitForResponse(response => response.url().endsWith("/data/listening-room/songs.json"));
+  releaseCatalog();
+  await catalogResponse;
+  // An evaluation after the response and rendering flush gives the async handler time to settle.
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  assert.equal(await page.locator("#listening-player").isVisible(), false);
+  assert.equal(await page.locator("#player-frame iframe").count(), 0);
+  await page.unroute("**/data/listening-room/songs.json");
+  // A row starts at the chosen recording within the exact visible day list.
+  const visibleIds = await page.locator(".song .track-title").evaluateAll(nodes =>
+    nodes.map(n => new URL(n.href).searchParams.get("v")));
+  const rowPlay = page.locator(".song .track-play").nth(2);
+  assert.match(await rowPlay.getAttribute("aria-label"), /in this list$/);
+  await rowPlay.click();
+  await page.locator("#player-frame iframe").waitFor();
+  const rowUrl = new URL(await page.locator("#player-frame iframe").getAttribute("src"));
+  assert.ok(rowUrl.pathname.endsWith(visibleIds[2]));
+  assert.deepEqual(rowUrl.searchParams.get("playlist").split(","), visibleIds.slice(3));
+  await page.locator("#player-queue-toggle").click();
+  assert.deepEqual(await page.locator(".queue-track").evaluateAll(nodes => nodes.map(n => n.dataset.videoId)), visibleIds);
+  await page.locator("#close-player").click();
   await page.locator("#play-filtered").click();
   await page.locator("#player-frame iframe").waitFor();
   assert.equal(await page.locator("#queue-shuffle").isVisible(), true);
