@@ -284,7 +284,7 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
   await page.locator("#player-frame iframe").waitFor();
   const rowUrl = new URL(await page.locator("#player-frame iframe").getAttribute("src"));
   assert.ok(rowUrl.pathname.endsWith(visibleIds[2]));
-  assert.deepEqual(rowUrl.searchParams.get("playlist").split(","), visibleIds.slice(3));
+  assert.deepEqual(rowUrl.searchParams.get("playlist").split(","), visibleIds.slice(2));
   await page.locator("#player-queue-toggle").click();
   assert.deepEqual(await page.locator(".queue-track").evaluateAll(nodes => nodes.map(n => n.dataset.videoId)), visibleIds);
   await page.locator("#close-player").click();
