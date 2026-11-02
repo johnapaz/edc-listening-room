@@ -233,6 +233,26 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
 
   assert.ok(external.every(url => url.startsWith("https://img.youtube.com/vi/")), "only attributed video thumbnails may load externally"); ok("only official video thumbnail requests");
   assert.deepEqual(errors, []); ok("no console errors");
+  // Play all: provider frame appears only after explicit click and persists across app hash navigation.
+  assert.equal(await page.locator("#player-frame iframe").count(), 0, "no YouTube player before consent");
+  assert.equal(external.some(u => u.includes("youtube-nocookie.com")), false, "no early player requests");
+  await ctx.route("https://www.youtube-nocookie.com/**", r => r.fulfill({ status: 200, contentType: "text/html", body: "<title>YouTube player stub</title>" }));
+  await page.locator("#play-all").click();
+  await page.locator("#player-frame iframe").waitFor();
+  const playerSrc = await page.getAttribute("#player-frame iframe", "src");
+  assert.match(playerSrc, /^https:\/\/www\.youtube-nocookie\.com\/embed\/[A-Za-z0-9_-]{11}\?autoplay=1&playsinline=1&playlist=/);
+  assert.match(await page.textContent("#player-count"), /295 reviewed tracks/);
+  assert.equal(await page.getAttribute("#player-frame iframe", "referrerpolicy"), "strict-origin-when-cross-origin");
+  await page.locator("#tab-listen").click();
+  await page.waitForSelector(".song");
+  assert.equal(await page.getAttribute("#player-frame iframe", "src"), playerSrc, "hash navigation preserves player");
+  await page.setViewportSize({ width: 280, height: 740 });
+  assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), "player adds no horizontal overflow");
+  await page.locator("#close-player").click();
+  assert.equal(await page.locator("#player-frame iframe").count(), 0, "close stops embedded playback");
+  assert.equal(await page.locator("#listening-player").isVisible(), false); ok("Play all loads on demand and persists until stopped");
+
+
 
   // Weak network: data fetch fails
   const p2 = await ctx.newPage();
