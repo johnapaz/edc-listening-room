@@ -382,3 +382,6 @@ a.chip:hover{border-color:var(--mint);color:var(--mint)}
     margin-right:min(450px,32vw);
   }
 }
+
+.track-play{background:var(--mint);color:var(--ink);border:0;font-size:18px;cursor:pointer}
+.track-play:hover{background:var(--mint-hover);color:var(--ink)}

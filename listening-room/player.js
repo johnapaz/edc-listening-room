@@ -82,6 +82,7 @@
     if ([dock, close, host, status, link, count, heading, showQueue,
       queuePanel, queueList, queueDescription, shuffle].some(x => !x)) return;
     let catalogPromise;
+    let requestVersion = 0;
     let queue = [];
     let scope = "all";
     let shuffled = false;
@@ -191,8 +192,9 @@
         "You may need to press play again on mobile.";
       showDock(open);
     }
-    async function chooseMix(nextScope, doPlay, requestedIds = selectedIds, requestedLabel = selectedLabel) {
+    async function chooseMix(nextScope, doPlay, requestedIds = selectedIds, requestedLabel = selectedLabel, startId = null) {
       if (busy) return;
+      const version = ++requestVersion;
       setBusy(true);
       // Close an existing player immediately so changing mixes never overlaps audio.
       if (doPlay) { host.replaceChildren(); playing = false; link.hidden = true; }
@@ -200,11 +202,16 @@
       dock.hidden = false;
       try {
         const data = await loadCatalog();
+        if (version !== requestVersion) return;
         scope = nextScope;
         selectedIds = Array.isArray(requestedIds) ? new Set(requestedIds) : requestedIds instanceof Set ? requestedIds : null;
         selectedLabel = String(requestedLabel || MIX_NAMES[scope]).slice(0, 64);
-        const ordered = buildQueue(data.songs, data.performances, data.artists, scope)
+        let ordered = buildQueue(data.songs, data.performances, data.artists, scope)
           .filter(song => selectedIds === null || selectedIds.has(song.video_id));
+        if (Array.isArray(requestedIds)) {
+          const positions = new Map(requestedIds.map((id, i) => [id, i]));
+          ordered.sort((a, b) => positions.get(a.video_id) - positions.get(b.video_id));
+        }
         queue = shuffled ? shuffleQueue(ordered) : ordered;
         startAt = 0;
         renderQueue();
@@ -216,18 +223,19 @@
           status.textContent = "No reviewed tracks are available for " + MIX_NAMES[scope] + ".";
         } else if (doPlay) {
           setBusy(false);
-          startPlayback();
+          startPlayback(Math.max(0, queue.findIndex(song => song.video_id === startId)));
           return;
         } else {
           status.textContent = "Queue ready. Select a recording to start listening.";
         }
       } catch (_err) {
+        if (version !== requestVersion) return;
         host.replaceChildren();
         playing = false;
         link.hidden = true;
         status.textContent = "Couldn’t load the tracks. Check your connection and try again.";
       } finally {
-        setBusy(false);
+        if (version === requestVersion) setBusy(false);
       }
       showDock(open);
     }
@@ -236,8 +244,8 @@
       const detail = event.detail || {};
       if (!Array.isArray(detail.ids) || !detail.ids.length || busy) return;
       const scopeKey = DAYS.includes(detail.day) ? detail.day : "all";
-      launchButton = document.getElementById("play-filtered");
-      chooseMix(scopeKey, true, detail.ids, detail.label || MIX_NAMES[scopeKey]);
+      launchButton = detail.trigger || document.getElementById("play-filtered");
+      chooseMix(scopeKey, true, detail.ids, detail.label || MIX_NAMES[scopeKey], detail.startId);
     });
     shuffle.addEventListener("click", async () => {
       if (busy) return;
@@ -251,6 +259,8 @@
       reflectControls();
     });
     close.addEventListener("click", () => {
+      requestVersion++;
+      setBusy(false);
       host.replaceChildren();
       dock.hidden = true;
       link.hidden = true;
