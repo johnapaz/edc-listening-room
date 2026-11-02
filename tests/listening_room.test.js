@@ -166,3 +166,21 @@ test("Spotify links are exact open.spotify.com tracks or playlists, and nothing 
   linked.forEach(s => assert.equal(L.safeSpotifyUrl(s.spotify_url, "track"), s.spotify_url));
 });
 
+
+
+test("Play all queues each exact reviewed video once, with breadth before depth", () => {
+  const P = require("../listening-room/player.js");
+  const rows = rd("data/listening-room/songs.json").songs;
+  const queue = P.buildQueue(rows);
+  assert.equal(queue.length, rows.length, "the whole reviewed catalog is queued");
+  assert.equal(new Set(queue.map(s => s.video_id)).size, queue.length);
+  assert.deepEqual(new Set(queue.map(s => s.video_id)), new Set(rows.map(s => s.video_id)));
+  const artists = new Set(rows.map(s => s.artist_ids[0]));
+  const firstTurn = queue.slice(0, artists.size).map(s => rows.find(r => r.video_id === s.video_id).artist_ids[0]);
+  assert.equal(new Set(firstTurn).size, artists.size, "one lead artist each before second turns");
+  const url = P.embedUrl(queue);
+  assert.ok(url.startsWith("https://www.youtube-nocookie.com/embed/" + queue[0].video_id));
+  assert.ok(url.includes("playlist=" + queue[1].video_id));
+  assert.equal(P.embedUrl([]), null);
+  assert.equal(P.buildQueue([...rows, rows[0], { video_id: "javascript:1", url: "javascript:1" }]).length, rows.length);
+});

@@ -73,7 +73,7 @@
       ext(url, "YouTube Music", "btn", "Listen to " + playlist.label + " on YouTube Music")));
     if (official) rows.append(el("div", { class: "playlist-row" }, el("div", {}, el("strong", { text: official.label }), el("p", { class: "muted", text: (official.curator ? "Curated by " + official.curator + " on Spotify. " : "") + "Not made or checked by Listening Room." })),
       ext(official.url, "Spotify", "btn btn-alt", "Open " + official.label + " on Spotify")));
-    if (!url) rows.append(el("p", { class: "muted playlist-pending", text: "Our own event playlist on YouTube Music isn’t ready yet. Until then, open any track below on YouTube or Spotify." }));
+    if (!url) rows.append(el("p", { class: "muted playlist-pending", text: "Press Play all above to hear our reviewed tracks here. A separate YouTube Music playlist isn’t ready yet." }));
     card.append(rows);
     return card;
   }

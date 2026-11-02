@@ -257,3 +257,34 @@ a.chip:hover{border-color:var(--mint);color:var(--mint)}
 
 @media (max-width:360px){.song{grid-template-columns:52px minmax(0,1fr) auto}.song-actions{flex-direction:column;gap:4px}.spotify-link{padding-inline:6px}}
 @media (max-width:300px){.song{grid-template-columns:minmax(0,1fr) auto}}
+
+
+/* P0 #95: explicit, continuous full-catalog listening. Third-party iframe is created only on Play all. */
+.play-all-bar{background:#141f34;border-bottom:1px solid var(--line)}
+.play-all-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding-block:10px}
+.play-all-inner div{display:flex;flex-direction:column;min-width:0}
+.play-all-inner strong{font-size:.9375rem;line-height:1.3}
+.play-all-inner span{color:var(--muted);font-size:.8125rem}
+.play-all-button{min-height:var(--target);flex:none;padding:8px 18px;border:0;border-radius:12px;background:var(--mint);color:var(--ink);font-size:.9375rem;font-weight:800}
+.play-all-button:hover{background:var(--mint-hover)}
+.play-all-button:disabled{opacity:.75;cursor:progress}
+.play-all-button[aria-pressed=true]{background:var(--panel2);color:var(--mint);border:1px solid var(--mint)}
+.player-dock{position:fixed;z-index:30;right:8px;bottom:calc(var(--tabbar) + env(safe-area-inset-bottom) + 8px);width:min(420px,calc(100vw - 16px));max-height:calc(100dvh - var(--tabbar) - env(safe-area-inset-bottom) - 24px);overflow:auto;background:var(--panel);border:2px solid var(--mint);border-radius:14px;padding:10px;box-shadow:0 12px 36px #000a}
+.player-dock[hidden]{display:none}
+.player-dock-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.player-dock-top div{display:flex;flex-direction:column;min-width:0;font-size:.875rem}
+.player-dock-top span{color:var(--muted);font-size:.75rem}
+.player-close{flex:none;min-height:var(--target);padding:8px 12px;background:transparent;border:1px solid var(--line-strong);border-radius:10px;font-size:.875rem;font-weight:700}
+.player-close:hover{border-color:var(--mint);color:var(--mint)}
+.player-frame iframe{display:block;width:100%;height:240px;border:0;border-radius:8px;background:#000}
+.player-dock p{margin:8px 0;font-size:.75rem;color:var(--muted);line-height:1.35}
+.player-dock a{font-size:.8125rem;display:inline-flex;min-height:var(--target);align-items:center;font-weight:650}
+.player-dock a[hidden]{display:none}
+@media(min-width:900px){.player-dock{bottom:16px}}
+@media(max-width:380px){
+  .play-all-inner{gap:6px}
+  .play-all-inner strong{font-size:.875rem}
+  .play-all-inner span{font-size:.75rem;max-width:165px}
+  .play-all-button{padding-inline:10px}
+  .player-frame iframe{height:210px}
+}

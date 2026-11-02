@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="styles.css">
   <script defer src="lib.js"></script>
   <script defer src="app.js"></script>
+  <script defer src="player.js"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -38,9 +39,21 @@
       </div>
     </div>
   </header>
+  <section class="play-all-bar" aria-label="Listen to all reviewed tracks">
+    <div class="wrap play-all-inner">
+      <div><strong>All the tracks. One listen.</strong><span>Every reviewed recording, back-to-back.</span></div>
+      <button id="play-all" class="play-all-button" type="button" aria-controls="listening-player" aria-pressed="false">▶ Play all</button>
+    </div>
+  </section>
+  <section id="listening-player" class="player-dock" aria-label="YouTube continuous playback" tabindex="-1" hidden>
+    <div class="player-dock-top"><div><strong>Listening Room · Play all</strong><span id="player-count"></span></div><button id="close-player" type="button" class="player-close" aria-label="Stop music and close player">Stop ✕</button></div>
+    <div id="player-frame" class="player-frame"></div>
+    <p id="player-status" role="status" aria-live="polite"></p>
+    <a id="player-youtube-link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" hidden>Open first queued recording on YouTube ↗</a>
+  </section>
   <main id="main" class="wrap" tabindex="-1"><p class="status">Loading the lineup…</p></main>
   <footer class="wrap foot">
-    <p>Independent and unofficial. Not affiliated with EDC or Insomniac. Tracks open on YouTube or Spotify; artwork comes from YouTube. No account needed.</p>
+    <p>Independent and unofficial. Not affiliated with EDC or Insomniac. Play all uses an on-demand YouTube player; individual tracks open on YouTube or Spotify. No account needed.</p>
     <p>Created by <a href="https://johnapaz.com/" target="_blank" rel="noopener noreferrer">John A. Paz</a> · © 2026 · <a href="/about/credits/">Credits &amp; licensing</a></p>
     <p id="freshness"></p>
     <p><a href="/about/">About &amp; help</a> · <a href="https://orlando.edc.com/lineup/" target="_blank" rel="noopener noreferrer">Official lineup ↗</a> · <a href="/about/privacy/">Privacy</a></p>

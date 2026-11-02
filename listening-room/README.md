@@ -10,7 +10,7 @@ Public, no-login music discovery at https://listeningroom.app. Independent and u
 - **Type:** headings use self-hosted Bricolage Grotesque 800 (OFL; see `THIRD_PARTY_NOTICES.md`), body text the system sans.
 - **YouTube icon:** play buttons use a generic glyph until YouTube's official icon is committed unmodified from YouTube's brand resources; swap it in `playIcon()` in `app.js`.
 - Spotify: plain outbound links on 255 of 295 tracks, only where the reviewed YouTube match was made against that exact Spotify track ID, plus Insomniac's official Spotify playlist in the Event playlists card. No Spotify API, embeds or assets. CI checks every link through Spotify's public oEmbed (`.github/workflows/spotify-links.yml`). See `docs/SPOTIFY-LINKS-2026-10-31.md`.
-- Our own shared YouTube Music event playlist remains unavailable. No private playlist or Notion data is published.
+- **Play all (#95):** the visitor may start a full public-catalog YouTube embedded queue from the header area. The frame loads only after a click and remains visible while browsing; the browser may require a second tap to play. YouTube controls playback. No saved provider playlist, OAuth, API writes, private data or custom audio streaming. Embedded requests send the site origin for YouTube playback compatibility.\n- Our own separate shared YouTube Music event playlist remains unavailable; the in-page queue does not imply publication. No private playlist or Notion data is published.
 
 ## Build and deploy
 
