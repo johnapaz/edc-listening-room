@@ -322,3 +322,11 @@ a.chip:hover{border-color:var(--mint);color:var(--mint)}
   .tracks-filter-row .days.compact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
   .tracks-filter-row .days.compact button{min-width:0}
 }
+
+/* A playing mini-player must not cover the contextual Play button on wide screens.
+   Give the filter/action row space to the left of the video dock while active. */
+@media(min-width:900px) {
+  body:has(.player-dock:not([hidden])) .tracks-filter-row{
+    margin-right:min(450px,32vw);
+  }
+}
