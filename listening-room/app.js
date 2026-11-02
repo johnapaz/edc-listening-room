@@ -1,5 +1,5 @@
 "use strict";
-// Static, read-only discovery. No visitor credentials or embedded player; YouTube and Spotify are plain outbound links.
+// Static public music discovery. Track playback is a separate opt-in player module.
 (function () {
   const L = window.RoomLib;
   const main = document.getElementById("main");
@@ -73,7 +73,7 @@
       ext(url, "YouTube Music", "btn", "Listen to " + playlist.label + " on YouTube Music")));
     if (official) rows.append(el("div", { class: "playlist-row" }, el("div", {}, el("strong", { text: official.label }), el("p", { class: "muted", text: (official.curator ? "Curated by " + official.curator + " on Spotify. " : "") + "Not made or checked by Listening Room." })),
       ext(official.url, "Spotify", "btn btn-alt", "Open " + official.label + " on Spotify")));
-    if (!url) rows.append(el("p", { class: "muted playlist-pending", text: "Press Play all above to hear our reviewed tracks here. A separate YouTube Music playlist isn’t ready yet." }));
+    if (!url) rows.append(el("p", { class: "muted playlist-pending", text: "Choose a day under Tracks, then press Play beside the filters to hear reviewed recordings here. A separate YouTube Music playlist isn’t ready yet." }));
     card.append(rows);
     return card;
   }
