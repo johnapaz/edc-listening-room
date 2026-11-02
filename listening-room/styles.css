@@ -289,7 +289,7 @@ a.chip:hover{border-color:var(--mint);color:var(--mint)}
 .mix-option:hover,.player-queue-toggle:hover{border-color:var(--mint);color:var(--mint)}
 .mix-option[aria-pressed=true]{color:var(--mint);border-color:var(--mint);background:#6ff0c413}
 .mix-option:disabled,.play-all-button:disabled{opacity:.65;cursor:progress}
-.player-queue-toggle{width:100%;margin-top:8px}
+.player-queue-toggle{width:auto;margin:0}
 .player-queue-toggle[hidden]{display:none}
 .queue-panel{border-top:1px solid var(--line);margin-top:10px;padding-top:8px}
 .queue-panel[hidden]{display:none}
@@ -303,26 +303,78 @@ a.chip:hover{border-color:var(--mint);color:var(--mint)}
 .queue-track strong{grid-column:2;grid-row:1;min-width:0;overflow-wrap:anywhere;font-weight:700}
 .queue-track>span:last-child{grid-column:2;grid-row:2;color:var(--muted);font-size:.75rem;overflow-wrap:anywhere}
 
-/* The play button follows the selected Tracks day and any search query.
-   On desktop it occupies the unused space beside the four filter chips. */
-.tracks-filter-row{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:10px 0}
-.tracks-filter-row .days.compact{flex:1 1 560px;max-width:790px;margin:0;min-width:0}
-.tracks-filter-row .play-results{flex:none;white-space:nowrap;max-width:100%;padding:8px 16px}
+/* Keep All/Fri/Sat/Sun compact, with Play beside them when space permits.
+   On phone / unfolded tablet, Play takes a deliberate full-width row. */
+.tracks-filter-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) max-content;
+  column-gap:12px;
+  row-gap:8px;
+  align-items:stretch;
+  margin:10px 0;
+}
+.tracks-filter-row .days.compact{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:6px;
+  min-width:0;
+  max-width:790px;
+  margin:0;
+}
+.tracks-filter-row .days.compact button{
+  min-width:0;
+  width:100%;
+  min-height:var(--target);
+}
+.tracks-filter-row .play-results{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:0;
+  max-width:100%;
+  padding:8px 16px;
+  line-height:1.25;
+  text-align:center;
+  white-space:normal;
+  overflow-wrap:normal;
+}
 .play-results:disabled{opacity:.55;cursor:not-allowed}
-.player-actions{display:flex;gap:8px;align-items:stretch;margin:10px 0 6px}
-.player-actions>button{flex:1;min-width:0}
+
+/* Equal 50/50 mini-player buttons, including when the Queue label expands. */
+.player-actions{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+  align-items:stretch;
+  margin:10px 0 6px;
+}
+.player-actions>button,
+.player-actions>.player-queue-toggle{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-width:0;
+  min-height:var(--target);
+  margin:0;
+  padding:8px;
+  box-sizing:border-box;
+  text-align:center;
+  line-height:1.25;
+}
+.player-actions>button[hidden]{display:none}
 @media(min-width:900px){.player-dock{max-height:min(72dvh,680px)}}
 @media(max-width:899px){.player-dock{max-height:min(68dvh,580px)}}
-@media(max-width:550px){
-  .tracks-filter-row{gap:8px}
-  .tracks-filter-row .days.compact{flex-basis:100%;max-width:none}
-  .tracks-filter-row .play-results{width:100%;min-height:44px}
+/* A short row of giant filter pills plus a narrow button looks broken on
+   unfolded devices. Commit to an intentional full-width Play row there. */
+@media(max-width:899px){
+  .tracks-filter-row{grid-template-columns:minmax(0,1fr)}
+  .tracks-filter-row .days.compact{width:100%;max-width:none}
+  .tracks-filter-row .play-results{width:100%;min-height:var(--target)}
 }
 @media(max-width:300px){
-  .tracks-filter-row .days.compact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
-  .tracks-filter-row .days.compact button{min-width:0}
+  .tracks-filter-row .days.compact{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-
 /* A playing mini-player must not cover the contextual Play button on wide screens.
    Give the filter/action row space to the left of the video dock while active. */
 @media(min-width:900px) {
