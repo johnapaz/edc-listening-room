@@ -138,6 +138,7 @@
         const button = document.createElement("button");
         button.type = "button";
         button.className = "queue-track";
+        button.dataset.videoId = song.video_id;
         const title = document.createElement("strong");
         title.textContent = song.title;
         const artist = document.createElement("span");
