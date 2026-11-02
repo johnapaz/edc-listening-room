@@ -184,3 +184,57 @@ test("Play all queues each exact reviewed video once, with breadth before depth"
   assert.equal(P.embedUrl([]), null);
   assert.equal(P.buildQueue([...rows, rows[0], { video_id: "javascript:1", url: "javascript:1" }]).length, rows.length);
 });
+
+test("day mixes use currently billed artist identities with no duplicate videos", () => {
+  const P = require("../listening-room/player.js");
+  const rows = rd("data/listening-room/songs.json").songs;
+  const perfs = rd("data/edco-2026/current-lineup.json").performances;
+  const artists = rd("data/edco-2026/artists.json").artists;
+  const all = P.buildQueue(rows, perfs, artists, "all");
+  assert.equal(all.length, 295);
+  for (const [day, expected] of [["2026-11-06", 98], ["2026-11-07", 100], ["2026-11-08", 115]]) {
+    const queue = P.buildQueue(rows, perfs, artists, day);
+    const eligible = new Set(perfs.filter(p => p.event_date === day).flatMap(p => p.artist_ids));
+    const videos = rows.filter(s => s.artist_ids.some(id => eligible.has(id)));
+    assert.equal(queue.length, expected, day);
+    assert.equal(new Set(queue.map(s => s.video_id)).size, queue.length, "no duplicate videos");
+    assert.deepEqual(new Set(queue.map(s => s.video_id)), new Set(videos.map(s => s.video_id)), day);
+    assert.ok(queue.every(s => s.artist && s.title && s.artist.indexOf("undefined") === -1));
+  }
+  assert.equal(P.buildQueue(rows, perfs, artists, "not-a-day").length, all.length);
+});
+
+test("multi-day artists and B2B collaborations appear in each eligible day only once", () => {
+  const P = require("../listening-room/player.js");
+  const ids = ["12345678901", "abcdefghijk", "FGHIJKLMN01"];
+  const songs = [
+    { video_id: ids[0], url: "https://www.youtube.com/watch?v=" + ids[0], title: "Together", artist_ids: ["a", "b"] },
+    { video_id: ids[1], url: "https://www.youtube.com/watch?v=" + ids[1], title: "Other", artist_ids: ["c"] },
+    { video_id: ids[2], url: "https://www.youtube.com/watch?v=" + ids[2], title: "Solo", artist_ids: ["a"] },
+    { video_id: ids[0], url: "https://www.youtube.com/watch?v=" + ids[0], title: "Duplicate", artist_ids: ["a", "b"] }
+  ];
+  const perfs = [
+    { event_date: "2026-11-06", artist_ids: ["a", "b"] },
+    { event_date: "2026-11-07", artist_ids: ["b", "c"] },
+    { event_date: "2026-11-08", artist_ids: ["a"] }
+  ];
+  const artists = ["a", "b", "c"].map(artist_id => ({ artist_id, display_name: artist_id.toUpperCase() }));
+  assert.deepEqual(P.buildQueue(songs, perfs, artists, "2026-11-06").map(x => x.video_id), [ids[0], ids[2]]);
+  assert.deepEqual(P.buildQueue(songs, perfs, artists, "2026-11-07").map(x => x.video_id), [ids[0], ids[1]]);
+  assert.deepEqual(P.buildQueue(songs, perfs, artists, "2026-11-08").map(x => x.video_id), [ids[0], ids[2]]);
+});
+
+test("shuffle preserves every song and start-at selection does not mutate queue", () => {
+  const P = require("../listening-room/player.js");
+  const source = P.buildQueue(rd("data/listening-room/songs.json").songs);
+  const baseline = source.map(s => s.video_id);
+  const randomized = P.shuffleQueue(source, () => 0);
+  assert.equal(randomized.length, source.length);
+  assert.notDeepEqual(randomized.map(s => s.video_id), baseline);
+  assert.deepEqual(new Set(randomized.map(s => s.video_id)), new Set(baseline));
+  assert.deepEqual(source.map(s => s.video_id), baseline);
+  const url = P.embedUrl(source, 2);
+  assert.ok(url.startsWith("https://www.youtube-nocookie.com/embed/" + source[2].video_id));
+  assert.ok(url.includes("playlist=" + source[3].video_id));
+  for (const n of [-1, source.length, 1.5]) assert.equal(P.embedUrl(source, n), null);
+});
