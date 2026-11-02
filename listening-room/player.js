@@ -63,7 +63,7 @@
     // Provider-controlled sequential playback, not a published YouTube Music playlist.
     return "https://www.youtube-nocookie.com/embed/" + remaining[0].video_id +
       "?autoplay=1&playsinline=1&playlist=" +
-      remaining.slice(1).map(s => s.video_id).join(",");
+      remaining.map(s => s.video_id).join(",");
   }
 
   function init() {

@@ -180,7 +180,7 @@ test("Play all queues each exact reviewed video once, with breadth before depth"
   assert.equal(new Set(firstTurn).size, artists.size, "one lead artist each before second turns");
   const url = P.embedUrl(queue);
   assert.ok(url.startsWith("https://www.youtube-nocookie.com/embed/" + queue[0].video_id));
-  assert.ok(url.includes("playlist=" + queue[1].video_id));
+  assert.ok(url.includes("playlist=" + queue[0].video_id));
   assert.equal(P.embedUrl([]), null);
   assert.equal(P.buildQueue([...rows, rows[0], { video_id: "javascript:1", url: "javascript:1" }]).length, rows.length);
 });
@@ -235,6 +235,6 @@ test("shuffle preserves every song and start-at selection does not mutate queue"
   assert.deepEqual(source.map(s => s.video_id), baseline);
   const url = P.embedUrl(source, 2);
   assert.ok(url.startsWith("https://www.youtube-nocookie.com/embed/" + source[2].video_id));
-  assert.ok(url.includes("playlist=" + source[3].video_id));
+  assert.ok(url.includes("playlist=" + source[2].video_id));
   for (const n of [-1, source.length, 1.5]) assert.equal(P.embedUrl(source, n), null);
 });
