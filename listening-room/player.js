@@ -167,6 +167,17 @@
       if (busy || !queue.length) return;
       const url = embedUrl(queue, i);
       if (!url) return;
+      // YouTube requires at least a 200 × 200 video viewport; at extreme zoom
+      // show the provider link rather than rendering a noncompliant tiny frame.
+      if (window.innerWidth < 240) {
+        host.replaceChildren();
+        playing = false;
+        link.href = "https://www.youtube.com/watch?v=" + queue[i].video_id;
+        link.hidden = false;
+        status.textContent = "This screen is too narrow for YouTube's video player. Open the selected track on YouTube instead.";
+        showDock(open);
+        return;
+      }
       // Replacing the old iframe stops its audio before loading the chosen mix/track.
       const frame = document.createElement("iframe");
       frame.title = "YouTube video player for " + MIX_NAMES[scope] + " tracks";
@@ -257,9 +268,9 @@
       link.hidden = true;
       playing = false;
       startAt = 0;
-      playButtons.forEach(button => button.setAttribute("aria-pressed", "false"));
-      toggleQueue.setAttribute("aria-expanded", "false");
-      shuffle.focus();
+      open = false;
+      reflectControls();
+      playButtons.get(scope).focus();
     });
     reflectControls();
   }
