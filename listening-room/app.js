@@ -1,5 +1,5 @@
 "use strict";
-// Static, read-only discovery. No visitor credentials or embedded player; YouTube and Spotify are plain outbound links.
+// Static public music discovery. Track playback is a separate opt-in player module.
 (function () {
   const L = window.RoomLib;
   const main = document.getElementById("main");
@@ -73,7 +73,7 @@
       ext(url, "YouTube Music", "btn", "Listen to " + playlist.label + " on YouTube Music")));
     if (official) rows.append(el("div", { class: "playlist-row" }, el("div", {}, el("strong", { text: official.label }), el("p", { class: "muted", text: (official.curator ? "Curated by " + official.curator + " on Spotify. " : "") + "Not made or checked by Listening Room." })),
       ext(official.url, "Spotify", "btn btn-alt", "Open " + official.label + " on Spotify")));
-    if (!url) rows.append(el("p", { class: "muted playlist-pending", text: "Press Play all above to hear our reviewed tracks here. A separate YouTube Music playlist isn’t ready yet." }));
+    if (!url) rows.append(el("p", { class: "muted playlist-pending", text: "Choose a day under Tracks, then press Play beside the filters to hear reviewed recordings here. A separate YouTube Music playlist isn’t ready yet." }));
     card.append(rows);
     return card;
   }
@@ -319,12 +319,16 @@
     const search = el("input", { id: "tq", type: "search", value: ctx.tq, autocomplete: "off", placeholder: "Track or artist" });
     const days = el("div", { class: "days compact", role: "group", "aria-label": "Filter by day" });
     L.DAYS.forEach(d => days.append(el("button", { type: "button", "data-day": d.key, "aria-label": d.long, text: d.label })));
+    const playResults = el("button", { id: "play-filtered", class: "play-all-button play-results", type: "button", "aria-controls": "listening-player", text: "▶ Play all tracks" });
+    const filters = el("div", { class: "tracks-filter-row" }, days, playResults);
     const count = el("p", { id: "count", class: "status", role: "status", "aria-live": "polite" });
     const ul = el("ul", { class: "list" });
     main.replaceChildren(el("div", { class: "intro" }, el("h1", { text: "Tracks" }), el("p", { class: "muted", text: idx.songs.length + " tracks from " + idx.songsByArtist.size + " lineup artists. Open each on YouTube, or on Spotify where it’s linked." })),
-      el("label", { class: "search-label", for: "tq", text: "Search tracks" }), playlistCard(), search, days, count, ul);
+      el("label", { class: "search-label", for: "tq", text: "Search tracks" }), playlistCard(), search, filters, count, ul);
     main.dataset.view = "listen"; main.dataset.key = "";
     const dayCache = new Map();
+    let filteredVideoIds = [];
+    let filteredLabel = "All tracks";
     const draw = () => {
       days.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.day === ctx.tday)));
       const shown = idx.songs.filter(s => {
@@ -334,6 +338,13 @@
         }
         return songMatches(s, ctx.tq);
       });
+      filteredVideoIds = shown.map(s => s.video_id);
+      filteredLabel = ctx.tq.trim()
+        ? (ctx.tday === "all" ? "Search results" : dayName(ctx.tday) + " search results")
+        : (ctx.tday === "all" ? "All tracks" : dayName(ctx.tday));
+      playResults.disabled = !shown.length;
+      playResults.textContent = "▶ Play " + (ctx.tq.trim() ? shown.length + " results" : ctx.tday === "all" ? "all " + shown.length : dayName(ctx.tday) + " · " + shown.length);
+      playResults.setAttribute("aria-label", "Play " + shown.length + " reviewed tracks from " + filteredLabel + " in Listening Room");
       count.textContent = plural(shown.length, "track", "tracks") + (ctx.tday === "all" ? "" : " from acts on " + day(ctx.tday).long) + ".";
       ul.replaceChildren(...shown.map(s => el("li", {}, songRow(s, idx.artists.get(s.artist_ids[0]), ctx))));
       if (!shown.length) {
@@ -343,6 +354,12 @@
       }
     };
     const sync = () => { history.replaceState(null, "", L.buildHash("listen", ctx)); setTabs(ctx); };
+    playResults.addEventListener("click", () => {
+      if (!filteredVideoIds.length) return;
+      document.dispatchEvent(new CustomEvent("listening-room:play-results", {
+        detail: { day: ctx.tday, ids: filteredVideoIds.slice(), label: filteredLabel }
+      }));
+    });
     search.addEventListener("input", () => { ctx.tq = search.value; sync(); draw(); });
     days.addEventListener("click", e => {
       const b = e.target.closest("button[data-day]"); if (!b) return;

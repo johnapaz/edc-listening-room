@@ -74,20 +74,13 @@
     const link = document.getElementById("player-youtube-link");
     const count = document.getElementById("player-count");
     const heading = document.getElementById("player-mix-name");
-    const toggleQueue = document.getElementById("queue-toggle");
     const showQueue = document.getElementById("player-queue-toggle");
     const queuePanel = document.getElementById("queue-panel");
     const queueList = document.getElementById("queue-list");
     const queueDescription = document.getElementById("queue-description");
     const shuffle = document.getElementById("queue-shuffle");
-    const playButtons = new Map([
-      ["all", document.getElementById("play-all")],
-      [DAYS[0], document.getElementById("play-friday")],
-      [DAYS[1], document.getElementById("play-saturday")],
-      [DAYS[2], document.getElementById("play-sunday")],
-    ]);
-    if ([dock, close, host, status, link, count, heading, toggleQueue, showQueue,
-      queuePanel, queueList, queueDescription, shuffle, ...playButtons.values()].some(x => !x)) return;
+    if ([dock, close, host, status, link, count, heading, showQueue,
+      queuePanel, queueList, queueDescription, shuffle].some(x => !x)) return;
     let catalogPromise;
     let queue = [];
     let scope = "all";
@@ -96,6 +89,9 @@
     let busy = false;
     let open = false;
     let startAt = 0;
+    let selectedIds = null;
+    let selectedLabel = MIX_NAMES[scope];
+    let launchButton = null;
 
     function loadCatalog() {
       if (!catalogPromise) catalogPromise = Promise.all([
@@ -115,20 +111,17 @@
     }
     function setBusy(value) {
       busy = value;
-      playButtons.forEach(button => { button.disabled = value; });
-      toggleQueue.disabled = value;
       shuffle.disabled = value;
+      showQueue.disabled = value;
     }
     function reflectControls() {
-      playButtons.forEach((button, key) => button.setAttribute("aria-pressed", String(playing && key === scope)));
       shuffle.setAttribute("aria-pressed", String(shuffled));
-      toggleQueue.setAttribute("aria-expanded", String(open));
+      shuffle.title = shuffled ? "Turn shuffle off; restarts current mix" : "Shuffle current mix; restarts current mix";
       showQueue.setAttribute("aria-expanded", String(open));
-      toggleQueue.setAttribute("aria-label", open ? "Hide queue" : "View queue");
-      showQueue.textContent = open ? "Hide queue" : "Show queue";
+      showQueue.textContent = open ? "≡ Hide queue" : "≡ Show queue";
       queuePanel.hidden = !open;
       showQueue.hidden = !queue.length;
-      heading.textContent = "Listening Room · " + MIX_NAMES[scope];
+      heading.textContent = "Listening Room · " + selectedLabel;
       count.textContent = queue.length ? queue.length + " reviewed tracks" : "";
     }
     function renderQueue() {
@@ -154,7 +147,7 @@
       });
       queueList.replaceChildren(fragment);
       queueDescription.textContent = queue.length
-        ? MIX_NAMES[scope] + " · " + queue.length + " tracks in " +
+        ? selectedLabel + " · " + queue.length + " tracks in " +
           (shuffled ? "shuffled" : "artist-balanced") + " order. YouTube controls playback; this list does not follow its progress."
         : "No reviewed tracks available for this mix.";
     }
@@ -181,7 +174,7 @@
       }
       // Replacing the old iframe stops its audio before loading the chosen mix/track.
       const frame = document.createElement("iframe");
-      frame.title = "YouTube video player for " + MIX_NAMES[scope] + " tracks";
+      frame.title = "YouTube video player for " + selectedLabel + " tracks";
       frame.src = url;
       frame.width = "420";
       frame.height = "240";
@@ -198,17 +191,20 @@
         "You may need to press play again on mobile.";
       showDock(open);
     }
-    async function chooseMix(nextScope, doPlay) {
+    async function chooseMix(nextScope, doPlay, requestedIds = selectedIds, requestedLabel = selectedLabel) {
       if (busy) return;
       setBusy(true);
       // Close an existing player immediately so changing mixes never overlaps audio.
       if (doPlay) { host.replaceChildren(); playing = false; link.hidden = true; }
-      status.textContent = "Loading " + MIX_NAMES[nextScope] + " tracks…";
+      status.textContent = "Loading " + (requestedLabel || MIX_NAMES[nextScope]) + " tracks…";
       dock.hidden = false;
       try {
         const data = await loadCatalog();
         scope = nextScope;
-        const ordered = buildQueue(data.songs, data.performances, data.artists, scope);
+        selectedIds = Array.isArray(requestedIds) ? new Set(requestedIds) : requestedIds instanceof Set ? requestedIds : null;
+        selectedLabel = String(requestedLabel || MIX_NAMES[scope]).slice(0, 64);
+        const ordered = buildQueue(data.songs, data.performances, data.artists, scope)
+          .filter(song => selectedIds === null || selectedIds.has(song.video_id));
         queue = shuffled ? shuffleQueue(ordered) : ordered;
         startAt = 0;
         renderQueue();
@@ -223,7 +219,7 @@
           startPlayback();
           return;
         } else {
-          status.textContent = "Queue ready. Pick Play all or a festival day to start listening.";
+          status.textContent = "Queue ready. Select a recording to start listening.";
         }
       } catch (_err) {
         host.replaceChildren();
@@ -236,11 +232,12 @@
       showDock(open);
     }
 
-    playButtons.forEach((button, key) => {
-      button.addEventListener("click", () => {
-        if (playing && key === scope) { showDock(open); return; }
-        chooseMix(key, true);
-      });
+    document.addEventListener("listening-room:play-results", event => {
+      const detail = event.detail || {};
+      if (!Array.isArray(detail.ids) || !detail.ids.length || busy) return;
+      const scopeKey = DAYS.includes(detail.day) ? detail.day : "all";
+      launchButton = document.getElementById("play-filtered");
+      chooseMix(scopeKey, true, detail.ids, detail.label || MIX_NAMES[scopeKey]);
     });
     shuffle.addEventListener("click", async () => {
       if (busy) return;
@@ -249,19 +246,9 @@
       // If already playing, changing order intentionally restarts the chosen mix.
       await chooseMix(scope, playing);
     });
-    toggleQueue.addEventListener("click", async () => {
-      if (busy) return;
-      if (!queue.length) {
-        open = true;
-        await chooseMix(scope, false);
-      } else {
-        open = !open;
-        showDock(open);
-      }
-    });
     showQueue.addEventListener("click", () => {
       open = !open;
-      showDock(open);
+      reflectControls();
     });
     close.addEventListener("click", () => {
       host.replaceChildren();
@@ -271,7 +258,8 @@
       startAt = 0;
       open = false;
       reflectControls();
-      playButtons.get(scope).focus();
+      if (launchButton && launchButton.isConnected) launchButton.focus();
+      else document.getElementById("tab-listen").focus();
     });
     reflectControls();
   }
