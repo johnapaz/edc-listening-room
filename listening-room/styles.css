@@ -337,3 +337,21 @@ a.chip:hover{border-color:var(--mint);color:var(--mint)}
 /* Keep the player below the global mix controls on narrow phones; queue scrolls inside. */
 @media(max-width:899px){.player-dock{max-height:min(52dvh,480px)}}
 @media(min-width:900px){.player-dock{max-height:min(72dvh,680px)}}
+
+/* Preserve first-screen lineup visibility: all six controls fit one compact row on regular phones. */
+.play-short{display:none}
+.play-all-inner .play-all-button span,.play-all-inner .mix-option span{color:inherit;font-size:inherit}
+.option-icon{font-size:1rem}
+@media(max-width:430px){
+  .play-all-inner{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:space-between;gap:4px;padding-block:6px;overflow-x:auto;scrollbar-width:none}
+  .play-all-inner::-webkit-scrollbar{display:none}
+  .play-all-inner .mix-intro{display:none}
+  .play-all-inner .mix-buttons{display:flex;flex:none;flex-direction:row;align-items:center;gap:3px}
+  .play-all-inner .mix-options{display:flex;flex:none;flex-direction:row;align-items:center;gap:3px}
+  .play-long{display:none}
+  .play-short{display:inline}
+  .play-all-button{min-height:44px;padding:6px 7px;font-size:.75rem;white-space:nowrap}
+  .mix-option{min-width:44px;min-height:44px;padding:6px}
+  .mix-option .option-text{display:none}
+  .mix-option .option-icon{display:inline;font-size:1.25rem}
+}
