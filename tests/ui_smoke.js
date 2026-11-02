@@ -267,10 +267,13 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
   await page.setViewportSize({ width: 280, height: 740 });
   assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), "open queue adds no 280px overflow");
   await page.locator("#play-saturday").click();
+  await page.waitForFunction(n => document.querySelectorAll("#queue-list li").length === n, 100);
   assert.equal(await page.locator("#queue-list li").count(), 100);
   await page.locator("#play-sunday").click();
+  await page.waitForFunction(n => document.querySelectorAll("#queue-list li").length === n, 115);
   assert.equal(await page.locator("#queue-list li").count(), 115);
   await page.locator("#play-all").click();
+  await page.waitForFunction(n => document.querySelectorAll("#queue-list li").length === n, 295);
   assert.equal(await page.locator("#queue-list li").count(), 295);
   const playerSrc = await page.getAttribute("#player-frame iframe", "src");
   await page.locator("#tab-listen").click();
