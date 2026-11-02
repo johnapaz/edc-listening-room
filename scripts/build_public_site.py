@@ -76,7 +76,7 @@ def build():
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir()
-    for name in ['index.html', 'app.js', 'lib.js', 'styles.css', 'redirect.js', 'youtube-icon.png']:
+    for name in ['index.html', 'app.js', 'lib.js', 'player.js', 'styles.css', 'redirect.js', 'youtube-icon.png']:
         dest = OUT / 'listening-room' / name
         dest.parent.mkdir(exist_ok=True)
         shutil.copyfile(ROOT / 'listening-room' / name, dest)
@@ -90,7 +90,7 @@ def build():
     (OUT / '_redirects').write_text('https://www.listeningroom.app/* https://listeningroom.app/:splat 301\n'
                                     '/listening-room/about /about/ 301\n'
                                     '/listening-room/about.html /about/ 301\n')
-    (OUT / '_headers').write_text('/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: no-referrer\n  X-Frame-Options: DENY\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n  Content-Security-Policy: default-src \'self\'; script-src \'self\'; style-src \'self\' \'unsafe-inline\'; img-src \'self\' https://img.youtube.com; connect-src \'self\'; object-src \'none\'; base-uri \'self\'; frame-ancestors \'none\'\n')
+    (OUT / '_headers').write_text('/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: no-referrer\n  X-Frame-Options: DENY\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n  Content-Security-Policy: default-src \'self\'; script-src \'self\'; style-src \'self\' \'unsafe-inline\'; img-src \'self\' https://img.youtube.com; connect-src \'self\'; frame-src https://www.youtube-nocookie.com https://www.youtube.com; object-src \'none\'; base-uri \'self\'; frame-ancestors \'none\'\n')
     art = load('data/edco-2026/artists.json')
     write('data/edco-2026/artists.json', {'artists': [fields(a, ['artist_id', 'display_name', 'search_name', 'aliases', 'role', 'member_artist_ids']) for a in art['artists']]})
     perf = load('data/edco-2026/current-lineup.json')
