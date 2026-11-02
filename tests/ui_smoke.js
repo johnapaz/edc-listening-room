@@ -259,6 +259,42 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
   assert.equal(await page.locator("#queue-shuffle").isVisible(), true);
   assert.equal(await page.locator("#player-queue-toggle").isVisible(), true);
   assert.match(await page.textContent("#player-count"), /98 reviewed tracks/);
+
+  // Regressions reported from Samsung Fold: Queue and Shuffle must occupy
+  // identically sized grid tracks; Play must wrap intentionally on unfolded/tablet.
+  for (const width of [280, 360, 600, 768, 840, 899, 900, 1024, 1280]) {
+    await page.setViewportSize({ width, height: 860 });
+    const boxes = await page.evaluate(() => {
+      const rect = id => {
+        const r = document.querySelector(id).getBoundingClientRect();
+        return { x:r.x, y:r.y, width:r.width, height:r.height, top:r.top, bottom:r.bottom, left:r.left };
+      };
+      return {
+        days:rect(".tracks-filter-row .days.compact"),
+        play:rect("#play-filtered"),
+        shuffle:rect("#queue-shuffle"),
+        queue:rect("#player-queue-toggle"),
+        overflow:document.documentElement.scrollWidth > innerWidth + 1,
+      };
+    });
+    assert.ok(!boxes.overflow, "no page overflow at " + width);
+    assert.ok(Math.abs(boxes.shuffle.width - boxes.queue.width) <= 1,
+      "equal button widths at " + width + ": " + JSON.stringify(boxes));
+    assert.ok(Math.abs(boxes.shuffle.height - boxes.queue.height) <= 1,
+      "equal button heights at " + width + ": " + JSON.stringify(boxes));
+    assert.ok(boxes.shuffle.height >= 44, "reachable mini controls at " + width);
+    if (width < 900) {
+      assert.ok(boxes.play.top >= boxes.days.bottom - 1, "Play below filter chips on tablet at " + width);
+      assert.ok(Math.abs(boxes.play.width - boxes.days.width) <= 1,
+        "Play fills intentional wrap row at " + width + ": " + JSON.stringify(boxes));
+      assert.ok(Math.abs(boxes.play.left - boxes.days.left) <= 1, "Play aligns with filters at " + width);
+    } else {
+      assert.ok(Math.abs(boxes.play.top - boxes.days.top) <= 1,
+        "Play shares the filter row on desktop at " + width + ": " + JSON.stringify(boxes));
+    }
+  }
+  await page.setViewportSize({ width: 1280, height: 860 });
+  ok("Fold/tablet Play wrap and equally sized in-player Shuffle/Queue controls");
   await page.locator("#player-queue-toggle").click();
   assert.equal(await page.locator("#queue-list li").count(), 98);
   assert.equal(await page.locator("#player-queue-toggle").getAttribute("aria-expanded"), "true");
