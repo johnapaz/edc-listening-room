@@ -118,9 +118,17 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
     await mark.waitFor();
     await mark.evaluate(img => img.decode());
     assert.equal(await mark.getAttribute("alt"), "");
-    assert.equal(Math.round((await mark.boundingBox()).height), 187);
+    // Responsive navigation can replace the artist panel after a viewport change.
+    // Resolve the active visible mark again instead of using a detached locator.
+    await page.waitForFunction(() => {
+      const image = document.querySelector(".youtube-primary .youtube-icon");
+      return image && image.getBoundingClientRect().height === 187;
+    });
+    const box = await page.locator(".youtube-primary .youtube-icon:visible").first().boundingBox();
+    assert.ok(box, "YouTube mark remains visible at " + width);
+    assert.equal(Math.round(box.height), 187);
     // The unchanged 1075px-high canvas contains a 579px-high visible mark.
-    assert.ok((await mark.boundingBox()).height * 579 / 1075 >= 100);
+    assert.ok(box.height * 579 / 1075 >= 100);
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), "no overflow at " + width);
   }
   assert.equal(await page.locator("svg.play-icon").count(), 0);
