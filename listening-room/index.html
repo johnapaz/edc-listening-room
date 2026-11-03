@@ -39,30 +39,18 @@
       </div>
     </div>
   </header>
-  <section class="play-all-bar" aria-label="Listen to the event or a festival day">
-    <div class="wrap play-all-inner">
-      <div class="mix-intro"><strong>Choose your soundtrack.</strong><span>All tracks, or just your festival day.</span></div>
-      <div class="mix-buttons" role="group" aria-label="Start a listening mix">
-        <button id="play-all" class="play-all-button" type="button" aria-controls="listening-player" aria-pressed="false">▶ <span class="play-long">All tracks</span><span class="play-short">All</span></button>
-        <button id="play-friday" class="play-all-button play-day-button" type="button" aria-controls="listening-player" aria-pressed="false">▶ <span class="play-long">Friday</span><span class="play-short">Fri</span></button>
-        <button id="play-saturday" class="play-all-button play-day-button" type="button" aria-controls="listening-player" aria-pressed="false">▶ <span class="play-long">Saturday</span><span class="play-short">Sat</span></button>
-        <button id="play-sunday" class="play-all-button play-day-button" type="button" aria-controls="listening-player" aria-pressed="false">▶ <span class="play-long">Sunday</span><span class="play-short">Sun</span></button>
-      </div>
-      <div class="mix-options">
-        <button id="queue-shuffle" class="mix-option" type="button" aria-pressed="false" aria-label="Shuffle queue order; changing order restarts playback"><span class="option-icon" aria-hidden="true">↝</span><span class="option-text">Shuffle</span></button>
-        <button id="queue-toggle" class="mix-option" type="button" aria-expanded="false" aria-controls="queue-panel" aria-label="View queue"><span class="option-icon" aria-hidden="true">≡</span><span class="option-text">Queue</span></button>
-      </div>
-    </div>
-  </section>
   <section id="listening-player" class="player-dock" aria-label="YouTube continuous playback and queue" tabindex="-1" hidden>
     <div class="player-dock-top">
       <div><strong id="player-mix-name">Listening Room · All tracks</strong><span id="player-count"></span></div>
       <button id="close-player" type="button" class="player-close" aria-label="Stop music and close player">Stop ✕</button>
     </div>
     <div id="player-frame" class="player-frame"></div>
+    <div class="player-actions" role="group" aria-label="Playback queue controls">
+      <button id="queue-shuffle" class="mix-option" type="button" aria-pressed="false" aria-label="Shuffle current mix; changing order restarts playback">↝ Shuffle</button>
+      <button id="player-queue-toggle" class="player-queue-toggle" type="button" aria-expanded="false" aria-controls="queue-panel" hidden>≡ Show queue</button>
+    </div>
     <p id="player-status" role="status" aria-live="polite"></p>
     <a id="player-youtube-link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" hidden>Open first queued recording on YouTube ↗</a>
-    <button id="player-queue-toggle" class="player-queue-toggle" type="button" aria-expanded="false" aria-controls="queue-panel" hidden>Show queue</button>
     <div id="queue-panel" class="queue-panel" hidden>
       <h2>Queue order</h2>
       <p id="queue-description">Tracks in the selected mix.</p>
@@ -71,7 +59,7 @@
   </section>
   <main id="main" class="wrap" tabindex="-1"><p class="status">Loading the lineup…</p></main>
   <footer class="wrap foot">
-    <p>Independent and unofficial. Not affiliated with EDC or Insomniac. Play all uses an on-demand YouTube player; individual tracks open on YouTube or Spotify. No account needed.</p>
+    <p>Independent and unofficial. Not affiliated with EDC or Insomniac. Playing selected Tracks results opens an on-demand YouTube player; individual tracks also open on YouTube or Spotify. No account needed.</p>
     <p>Created by <a href="https://johnapaz.com/" target="_blank" rel="noopener noreferrer">John A. Paz</a> · © 2026 · <a href="/about/credits/">Credits &amp; licensing</a></p>
     <p id="freshness"></p>
     <p><a href="/about/">About &amp; help</a> · <a href="https://orlando.edc.com/lineup/" target="_blank" rel="noopener noreferrer">Official lineup ↗</a> · <a href="/about/privacy/">Privacy</a></p>

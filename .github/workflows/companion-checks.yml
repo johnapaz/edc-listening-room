@@ -44,6 +44,21 @@ jobs:
           python3 -m http.server 8765 --bind 127.0.0.1 --directory public-site > "$RUNNER_TEMP/listening-http.log" 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid"' EXIT
+          # Wait for the HTTP listener before Chromium navigates: background
+          # process creation does not guarantee the socket is already open.
+          ready=0
+          for attempt in $(seq 1 40); do
+            if curl --fail --silent --output /dev/null http://127.0.0.1:8765/listening-room/; then
+              ready=1
+              break
+            fi
+            sleep 0.25
+          done
+          if [ "$ready" -ne 1 ]; then
+            cat "$RUNNER_TEMP/listening-http.log"
+            echo "Listening Room test server did not become ready" >&2
+            exit 1
+          fi
           node tests/ui_smoke.js
       - name: Save sanitized review build (not a deployment)
         uses: actions/upload-artifact@v4

@@ -118,9 +118,17 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
     await mark.waitFor();
     await mark.evaluate(img => img.decode());
     assert.equal(await mark.getAttribute("alt"), "");
-    assert.equal(Math.round((await mark.boundingBox()).height), 187);
+    // Responsive navigation can replace the artist panel after a viewport change.
+    // Resolve the active visible mark again instead of using a detached locator.
+    await page.waitForFunction(() => {
+      const image = document.querySelector(".youtube-primary .youtube-icon");
+      return image && image.getBoundingClientRect().height === 187;
+    });
+    const box = await page.locator(".youtube-primary .youtube-icon:visible").first().boundingBox();
+    assert.ok(box, "YouTube mark remains visible at " + width);
+    assert.equal(Math.round(box.height), 187);
     // The unchanged 1075px-high canvas contains a 579px-high visible mark.
-    assert.ok((await mark.boundingBox()).height * 579 / 1075 >= 100);
+    assert.ok(box.height * 579 / 1075 >= 100);
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), "no overflow at " + width);
   }
   assert.equal(await page.locator("svg.play-icon").count(), 0);
@@ -233,58 +241,137 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
 
   assert.ok(external.every(url => url.startsWith("https://img.youtube.com/vi/")), "only attributed video thumbnails may load externally"); ok("only official video thumbnail requests");
   assert.deepEqual(errors, []); ok("no console errors");
-  // Day mixes + queue preview: no third-party YouTube player until an explicit play action.
-  assert.equal(await page.locator("#player-frame iframe").count(), 0, "no YouTube frame before consent");
+  // Contextual Play sits with Track day filters; queue tools live inside player.
+  await page.goto(BASE + "#/listen");
+  await page.waitForSelector("#play-filtered");
+  assert.equal(await page.locator(".play-all-bar").count(), 0, "no global player toolbar");
+  assert.equal(await page.locator(".tracks-filter-row #play-filtered").count(), 1, "contextual Play beside day chips");
+  assert.ok((await page.locator("#play-filtered").textContent()).includes("295"));
+  assert.equal(await page.locator("#player-frame iframe").count(), 0, "player not loaded before Play");
   assert.equal(external.some(u => u.includes("youtube-nocookie.com")), false);
-  await page.locator("#queue-toggle").click();
-  await page.locator("#queue-list li").first().waitFor();
-  assert.equal(await page.locator("#queue-list li").count(), 295, "preview all reviewed videos");
-  assert.equal(await page.locator("#player-frame iframe").count(), 0, "queue preview does not load YouTube");
-  assert.equal(external.some(u => u.includes("youtube-nocookie.com")), false, "no provider request during preview");
-  assert.equal(await page.locator("#queue-toggle").getAttribute("aria-expanded"), "true");
+  await page.locator(".tracks-filter-row button[data-day='" + FRI + "']").click();
+  assert.match(await page.locator("#play-filtered").textContent(), /Play Friday.*98/);
+  assert.equal(await page.locator(".song").count(), 98);
+  assert.equal(await page.locator("#queue-shuffle").isVisible(), false, "shuffle stays in closed mini player");
   await ctx.route("https://www.youtube-nocookie.com/**", r => r.fulfill({ status: 200, contentType: "text/html", body: "<title>YouTube player stub</title>" }));
-
-  await page.locator("#play-friday").click();
+  // Stop cancels a pending catalog load; its late response cannot reopen playback.
+  let releaseCatalog;
+  const heldCatalog = new Promise(resolve => { releaseCatalog = resolve; });
+  let sawCatalog;
+  const catalogRequested = new Promise(resolve => { sawCatalog = resolve; });
+  await page.route("**/data/listening-room/songs.json", async route => {
+    sawCatalog();
+    await heldCatalog;
+    await route.continue();
+  });
+  await page.locator("#play-filtered").click();
+  await catalogRequested;
+  await page.locator("#close-player").click();
+  const catalogResponse = page.waitForResponse(response => response.url().endsWith("/data/listening-room/songs.json"));
+  releaseCatalog();
+  await catalogResponse;
+  // An evaluation after the response and rendering flush gives the async handler time to settle.
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  assert.equal(await page.locator("#listening-player").isVisible(), false);
+  assert.equal(await page.locator("#player-frame iframe").count(), 0);
+  await page.unroute("**/data/listening-room/songs.json");
+  // A row starts at the chosen recording within the exact visible day list.
+  const visibleIds = await page.locator(".song .track-title").evaluateAll(nodes =>
+    nodes.map(n => new URL(n.href).searchParams.get("v")));
+  const rowPlay = page.locator(".song .track-play").nth(2);
+  assert.match(await rowPlay.getAttribute("aria-label"), /in this list$/);
+  await rowPlay.click();
   await page.locator("#player-frame iframe").waitFor();
-  assert.match(await page.getAttribute("#player-frame iframe", "src"), /^https:\/\/www\.youtube-nocookie\.com\/embed\/[A-Za-z0-9_-]{11}\?autoplay=1&playsinline=1&playlist=/);
+  const rowUrl = new URL(await page.locator("#player-frame iframe").getAttribute("src"));
+  assert.ok(rowUrl.pathname.endsWith(visibleIds[2]));
+  assert.deepEqual(rowUrl.searchParams.get("playlist").split(","), visibleIds.slice(2));
+  await page.locator("#player-queue-toggle").click();
+  assert.deepEqual(await page.locator(".queue-track").evaluateAll(nodes => nodes.map(n => n.dataset.videoId)), visibleIds);
+  await page.locator("#close-player").click();
+  await page.locator("#play-filtered").click();
+  await page.locator("#player-frame iframe").waitFor();
+  assert.equal(await page.locator("#queue-shuffle").isVisible(), true);
+  assert.equal(await page.locator("#player-queue-toggle").isVisible(), true);
   assert.match(await page.textContent("#player-count"), /98 reviewed tracks/);
-  assert.equal(await page.locator("#queue-list li").count(), 98, "Friday mix uses Friday artists");
-  assert.equal(await page.getAttribute("#play-friday", "aria-pressed"), "true");
+
+  // Regressions reported from Samsung Fold: Queue and Shuffle must occupy
+  // identically sized grid tracks; Play must wrap intentionally on unfolded/tablet.
+  for (const width of [280, 360, 600, 768, 840, 899, 900, 1024, 1280]) {
+    await page.setViewportSize({ width, height: 860 });
+    const boxes = await page.evaluate(() => {
+      const rect = id => {
+        const r = document.querySelector(id).getBoundingClientRect();
+        return { x:r.x, y:r.y, width:r.width, height:r.height, top:r.top, bottom:r.bottom, left:r.left };
+      };
+      return {
+        days:rect(".tracks-filter-row .days.compact"),
+        play:rect("#play-filtered"),
+        shuffle:rect("#queue-shuffle"),
+        queue:rect("#player-queue-toggle"),
+        overflow:document.documentElement.scrollWidth > innerWidth + 1,
+      };
+    });
+    assert.ok(!boxes.overflow, "no page overflow at " + width);
+    assert.ok(Math.abs(boxes.shuffle.width - boxes.queue.width) <= 1,
+      "equal button widths at " + width + ": " + JSON.stringify(boxes));
+    assert.ok(Math.abs(boxes.shuffle.height - boxes.queue.height) <= 1,
+      "equal button heights at " + width + ": " + JSON.stringify(boxes));
+    assert.ok(boxes.shuffle.height >= 44, "reachable mini controls at " + width);
+    if (width < 900) {
+      assert.ok(boxes.play.top >= boxes.days.bottom - 1, "Play below filter chips on tablet at " + width);
+      assert.ok(Math.abs(boxes.play.width - boxes.days.width) <= 1,
+        "Play fills intentional wrap row at " + width + ": " + JSON.stringify(boxes));
+      assert.ok(Math.abs(boxes.play.left - boxes.days.left) <= 1, "Play aligns with filters at " + width);
+    } else {
+      assert.ok(Math.abs(boxes.play.top - boxes.days.top) <= 1,
+        "Play shares the filter row on desktop at " + width + ": " + JSON.stringify(boxes));
+    }
+  }
+  await page.setViewportSize({ width: 1280, height: 860 });
+  ok("Fold/tablet Play wrap and equally sized in-player Shuffle/Queue controls");
+  await page.locator("#player-queue-toggle").click();
+  assert.equal(await page.locator("#queue-list li").count(), 98);
+  assert.equal(await page.locator("#player-queue-toggle").getAttribute("aria-expanded"), "true");
   const ordered = await page.locator("#queue-list .queue-track").evaluateAll(els => els.map(el => el.dataset.videoId));
   const srcBeforeShuffle = await page.getAttribute("#player-frame iframe", "src");
   await page.locator("#queue-shuffle").click();
   await page.locator("#player-frame iframe").waitFor();
-  assert.equal(await page.getAttribute("#queue-shuffle", "aria-pressed"), "true");
   const shuffled = await page.locator("#queue-list .queue-track").evaluateAll(els => els.map(el => el.dataset.videoId));
-  assert.notDeepEqual(shuffled, ordered, "shuffle changes the queue");
-  assert.deepEqual(new Set(shuffled), new Set(ordered), "shuffle preserves every track");
-  assert.notEqual(await page.getAttribute("#player-frame iframe", "src"), srcBeforeShuffle, "shuffle restarts provider queue");
-
-  const srcBeforeJump = await page.getAttribute("#player-frame iframe", "src");
+  assert.equal(await page.locator("#queue-shuffle").getAttribute("aria-pressed"), "true");
+  assert.notDeepEqual(shuffled, ordered);
+  assert.deepEqual(new Set(shuffled), new Set(ordered), "shuffle preserves each recording");
+  assert.notEqual(await page.getAttribute("#player-frame iframe", "src"), srcBeforeShuffle);
   await page.locator("#queue-list .queue-track").nth(5).click();
   assert.match(await page.textContent("#player-status"), /Started queue at track 6 of 98/);
-  assert.notEqual(await page.getAttribute("#player-frame iframe", "src"), srcBeforeJump);
-  await page.setViewportSize({ width: 280, height: 740 });
-  assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), "open queue adds no 280px overflow");
-  await page.locator("#play-saturday").click();
-  await page.waitForFunction(n => document.querySelectorAll("#queue-list li").length === n, 100);
-  assert.equal(await page.locator("#queue-list li").count(), 100);
-  await page.locator("#play-sunday").click();
-  await page.waitForFunction(n => document.querySelectorAll("#queue-list li").length === n, 115);
-  assert.equal(await page.locator("#queue-list li").count(), 115);
-  await page.locator("#play-all").click();
-  await page.waitForFunction(n => document.querySelectorAll("#queue-list li").length === n, 295);
-  assert.equal(await page.locator("#queue-list li").count(), 295);
+
+  // Changing the visible filter alone does not interrupt an existing player.
+  const oldSrc = await page.getAttribute("#player-frame iframe", "src");
+  await page.locator(".tracks-filter-row button[data-day='" + SAT + "']").click();
+  assert.equal(await page.locator(".song").count(), 100);
+  assert.equal(await page.getAttribute("#player-frame iframe", "src"), oldSrc);
+  await page.locator("#play-filtered").click();
+  await page.waitForFunction(() => document.querySelectorAll("#queue-list li").length === 100);
+  await page.locator(".tracks-filter-row button[data-day='" + SUN + "']").click();
+  assert.equal(await page.locator(".song").count(), 115);
+  await page.locator("#play-filtered").click();
+  await page.waitForFunction(() => document.querySelectorAll("#queue-list li").length === 115);
+  await page.locator('.tracks-filter-row button[data-day="all"]').click();
+  await page.fill("#tq", "carry you");
+  const matches = await page.locator(".song").count();
+  assert.ok(matches > 0 && matches < 295, "search narrows visible results");
+  await page.locator("#play-filtered").click();
+  await page.waitForFunction(n => document.querySelectorAll("#queue-list li").length === n, matches);
+  assert.equal(await page.locator("#queue-list li").count(), matches, "queue contains only searched recordings");
   const playerSrc = await page.getAttribute("#player-frame iframe", "src");
-  await page.locator("#tab-listen").click();
-  await page.waitForSelector(".song");
-  assert.equal(await page.getAttribute("#player-frame iframe", "src"), playerSrc, "navigation preserves playback");
-  assert.equal(await page.getAttribute("#player-frame iframe", "referrerpolicy"), "strict-origin-when-cross-origin");
+  await page.locator("#tab-lineup").click();
+  await page.waitForSelector("#list .lineup-row");
+  assert.equal(await page.getAttribute("#player-frame iframe", "src"), playerSrc, "navigation preserves audio");
+  await page.setViewportSize({ width: 280, height: 740 });
+  assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), "mini-player no 280px overflow");
   await page.locator("#close-player").click();
   assert.equal(await page.locator("#player-frame iframe").count(), 0, "Stop removes iframe");
   assert.equal(await page.locator("#listening-player").isVisible(), false);
-  assert.equal(await page.locator("#queue-toggle").getAttribute("aria-expanded"), "false");
-  ok("day mixes, opt-in queue preview, shuffle, jump, navigation and stop");
+  ok("contextual Play, in-player Shuffle/Queue, filtered search, navigation and Stop");
 
   // Weak network: data fetch fails
   const p2 = await ctx.newPage();
