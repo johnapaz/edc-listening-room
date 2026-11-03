@@ -79,6 +79,7 @@
     const queueList = document.getElementById("queue-list");
     const queueDescription = document.getElementById("queue-description");
     const shuffle = document.getElementById("queue-shuffle");
+    const popout = document.getElementById("player-popout");
     if ([dock, close, host, status, link, count, heading, showQueue,
       queuePanel, queueList, queueDescription, shuffle].some(x => !x)) return;
     let catalogPromise;
@@ -93,6 +94,67 @@
     let selectedIds = null;
     let selectedLabel = MIX_NAMES[scope];
     let launchButton = null;
+    let floatingWindow = null;
+    let popoutPending = false;
+    const dockHome = document.createComment("Player returns here after picture-in-picture");
+    dock.before(dockHome);
+
+    // No access to YouTube's cross-origin video element: use the browser's
+    // public Document PiP API, or try its native fullscreen-to-PiP path.
+    // Reparenting an iframe may reload it; we do not claim position continuity.
+    if (popout) popout.addEventListener("click", async () => {
+      if (popoutPending) return;
+      if (floatingWindow && !floatingWindow.closed) {
+        floatingWindow.close();
+        return;
+      }
+      const frame = host.querySelector("iframe");
+      if (!frame) {
+        status.textContent = "Play a track first, then try pop-out.";
+        return;
+      }
+      const version = requestVersion;
+      popoutPending = true;
+      try {
+        if (window.documentPictureInPicture && window.documentPictureInPicture.requestWindow) {
+          const pip = await window.documentPictureInPicture.requestWindow({ width: 440, height: 580 });
+          if (version !== requestVersion || dock.hidden) { pip.close(); return; }
+          floatingWindow = pip;
+          pip.document.title = "Listening Room · Floating player";
+          for (const sheet of document.querySelectorAll('link[rel="stylesheet"]')) {
+            const copy = pip.document.createElement("link");
+            copy.rel = "stylesheet";
+            copy.href = sheet.href;
+            pip.document.head.append(copy);
+          }
+          const style = pip.document.createElement("style");
+          style.textContent = "body{margin:0;padding:8px;min-width:240px}.player-dock{position:static;width:100%;max-height:none;margin:0;box-shadow:none}.player-frame iframe{height:240px;min-width:200px;min-height:200px}";
+          pip.document.head.append(style);
+          pip.addEventListener("pagehide", () => {
+            dockHome.after(dock);
+            floatingWindow = null;
+            popout.textContent = "▣ Try pop-out";
+            if (!dock.hidden) {
+              status.textContent = "Player returned to this tab. YouTube may restart playback after moving windows.";
+              popout.focus();
+            }
+          }, { once: true });
+          pip.document.body.append(dock);
+          popout.textContent = "↙ Return to tab";
+          status.textContent = "Floating window opened. Keep the original tab open. YouTube may restart playback; press Play inside the video if needed.";
+        } else {
+          const help = dock.querySelector(".popout-help");
+          if (help) help.open = true;
+          status.textContent = "Trying fullscreen. Keep the video playing, then go Home to test your browser’s floating player. If it does not float, try YouTube’s own fullscreen control. This is not a confirmed PiP session.";
+          if (typeof frame.requestFullscreen === "function") await frame.requestFullscreen();
+          else status.textContent = "This browser cannot open a floating window directly. Use the video’s fullscreen or picture-in-picture control, then go Home. See the steps above.";
+        }
+      } catch (_err) {
+        status.textContent = "The browser could not open this player mode. Try YouTube’s fullscreen control, then go Home, or open the recording on YouTube.";
+      } finally {
+        popoutPending = false;
+      }
+    });
 
     function loadCatalog() {
       if (!catalogPromise) catalogPromise = Promise.all([
@@ -164,7 +226,7 @@
       if (!url) return;
       // YouTube requires at least a 200 × 200 video viewport; at extreme zoom
       // show the provider link rather than rendering a noncompliant tiny frame.
-      if (window.innerWidth < 240) {
+      if (dock.ownerDocument.defaultView.innerWidth < 240) {
         host.replaceChildren();
         playing = false;
         link.href = "https://www.youtube.com/watch?v=" + queue[i].video_id;
@@ -260,6 +322,7 @@
     });
     close.addEventListener("click", () => {
       requestVersion++;
+      if (floatingWindow && !floatingWindow.closed) floatingWindow.close();
       setBusy(false);
       host.replaceChildren();
       dock.hidden = true;

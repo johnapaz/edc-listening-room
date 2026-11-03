@@ -48,7 +48,13 @@
     <div class="player-actions" role="group" aria-label="Playback queue controls">
       <button id="queue-shuffle" class="mix-option" type="button" aria-pressed="false" aria-label="Shuffle current mix; changing order restarts playback">↝ Shuffle</button>
       <button id="player-queue-toggle" class="player-queue-toggle" type="button" aria-expanded="false" aria-controls="queue-panel" hidden>≡ Show queue</button>
+      <button id="player-popout" type="button" aria-describedby="player-popout-help">▣ Try pop-out</button>
     </div>
+    <details class="popout-help">
+      <summary>Play above other apps · experimental</summary>
+      <p id="player-popout-help">On supported desktop browsers, Try pop-out opens an always-on-top window. Moving the YouTube player may restart the queue. Keep this tab open.</p>
+      <p>On Android: keep the video playing, tap YouTube’s fullscreen control, then go Home. Your browser may turn the video into a floating player. Allow picture-in-picture for your browser in Android Settings if needed. Try pop-out can request fullscreen, but only your browser and YouTube can activate mobile picture-in-picture. Screen-off playback is not guaranteed.</p>
+    </details>
     <p id="player-status" role="status" aria-live="polite"></p>
     <a id="player-youtube-link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" hidden>Open first queued recording on YouTube ↗</a>
     <div id="queue-panel" class="queue-panel" hidden>
