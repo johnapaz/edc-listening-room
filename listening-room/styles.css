@@ -363,6 +363,8 @@ a.chip:hover{border-color:var(--mint);color:var(--mint)}
   line-height:1.25;
 }
 .player-actions>button[hidden]{display:none}
+.popout-help{font-size:.8125rem;margin-top:8px}
+.popout-help summary{cursor:pointer;min-height:44px;display:flex;align-items:center;text-decoration:underline;text-underline-offset:3px}
 @media(min-width:900px){.player-dock{max-height:min(72dvh,680px)}}
 @media(max-width:899px){.player-dock{max-height:min(68dvh,580px)}}
 /* A short row of giant filter pills plus a narrow button looks broken on
