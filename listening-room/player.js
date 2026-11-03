@@ -121,6 +121,10 @@
           if (version !== requestVersion || dock.hidden) { pip.close(); return; }
           floatingWindow = pip;
           pip.document.title = "Listening Room · Floating player";
+          const referrer = pip.document.createElement("meta");
+          referrer.name = "referrer";
+          referrer.content = "strict-origin-when-cross-origin";
+          pip.document.head.append(referrer);
           for (const sheet of document.querySelectorAll('link[rel="stylesheet"]')) {
             const copy = pip.document.createElement("link");
             copy.rel = "stylesheet";
@@ -238,7 +242,10 @@
       // Replacing the old iframe stops its audio before loading the chosen mix/track.
       const frame = document.createElement("iframe");
       frame.title = "YouTube video player for " + selectedLabel + " tracks";
-      frame.src = url;
+      // Document PiP uses about:blank. Supply YouTube's documented client
+      // identity as well as the referrer policy for that browser-owned window.
+      frame.src = url + "&origin=" + encodeURIComponent(window.location.origin) +
+        "&widget_referrer=" + encodeURIComponent(window.location.origin + "/listening-room/");
       frame.width = "420";
       frame.height = "240";
       frame.setAttribute("allow", "autoplay; encrypted-media; picture-in-picture; fullscreen");
