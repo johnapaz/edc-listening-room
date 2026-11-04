@@ -394,7 +394,7 @@
         : (ctx.tday === "all" ? "All tracks" : dayName(ctx.tday));
       if (ctx.liked) filteredLabel = "Liked · " + filteredLabel;
       playResults.disabled = !filteredVideoIds.length;
-      playResults.textContent = "▶ Play " + filteredVideoIds.length + (ctx.liked ? " liked" : ctx.tq.trim() ? " results" : "");
+      playResults.textContent = "▶ Play " + (ctx.liked ? "liked · " + filteredVideoIds.length : ctx.tq.trim() ? filteredVideoIds.length + " results" : ctx.tday === "all" ? "all " + filteredVideoIds.length : dayName(ctx.tday) + " · " + filteredVideoIds.length);
       playResults.setAttribute("aria-label", "Play " + filteredVideoIds.length + " reviewed tracks from " + filteredLabel + " in Listening Room, excluding dislikes");
       count.textContent = plural(shown.length, "track", "tracks") + (ctx.tday === "all" ? "" : " from acts on " + day(ctx.tday).long) + "." + (skipped ? " " + plural(skipped, "disliked track", "disliked tracks") + " skipped in mixes." : "");
       ul.replaceChildren(...shown.map(s => el("li", {}, songRow(s, idx.artists.get(s.artist_ids[0]), ctx, { ids: filteredVideoIds.slice(), label: filteredLabel, day: ctx.tday }))));
