@@ -62,6 +62,15 @@ test("By time sorts on poster start times with unknown times last; A-Z sorts by 
   assert.notStrictEqual(L.sortRows(fri, "az"), fri, "sorting never mutates the filtered list");
 });
 
+test("liked filter round-trips in the Tracks route without affecting default routes", () => {
+  const ctx = L.parseHash("#/listen?liked=1&tday=2026-11-07&tq=house").ctx;
+  assert.equal(ctx.liked, true);
+  assert.equal(ctx.tday, "2026-11-07");
+  assert.equal(ctx.tq, "house");
+  assert.equal(L.parseHash(L.buildHash("listen", ctx)).ctx.liked, true);
+  assert.equal(L.parseHash("#/listen").ctx.liked, undefined);
+});
+
 test("lineup and Tracks searches are separate route state", () => {
   const ctx = { day: "2026-11-07", sort: "time", q: "acraze", tq: "carry you", tday: "2026-11-08", stage: "" };
   const r = L.parseHash(L.buildHash("listen", ctx));
