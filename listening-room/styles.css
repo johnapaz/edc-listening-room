@@ -405,3 +405,44 @@ a.chip:hover{border-color:var(--mint);color:var(--mint)}
 @media(max-width:300px){
   .song{grid-template-columns:minmax(0,1fr) auto}
 }
+
+
+/* Personal track reactions: quiet until selected, accessible at narrow Fold widths. */
+.reaction-note{font-size:.8125rem!important;color:var(--muted);margin-top:10px!important}
+.reaction-actions,.queue-reactions{display:inline-flex;align-items:center;gap:3px;flex:none}
+.reaction-btn{display:inline-grid;place-items:center;width:40px;min-width:40px;min-height:44px;border:1px solid var(--line-strong);border-radius:10px;background:transparent;font-size:18px;line-height:1}
+.reaction-btn:hover{border-color:var(--mint);background:var(--panel2)}
+.reaction-btn[aria-pressed=true][data-rating=like]{border-color:var(--mint);background:#6ff0c429;box-shadow:inset 0 0 0 1px var(--mint)}
+.reaction-btn[aria-pressed=true][data-rating=dislike]{border-color:var(--coral);background:#ff8a7829;box-shadow:inset 0 0 0 1px var(--coral)}
+.song-actions{flex-wrap:wrap;justify-content:flex-end;gap:5px}
+.tracks-filter-row{grid-template-columns:minmax(0,1fr) auto max-content}
+.liked-only{min-height:var(--target);padding:8px 12px;border:1px solid var(--line-strong);border-radius:10px;background:var(--panel);font-size:.875rem;font-weight:700}
+.liked-only:hover{border-color:var(--mint)}
+.liked-only[aria-pressed=true]{border-color:var(--mint);color:var(--ink);background:var(--mint)}
+.queue-list li{display:flex;align-items:center;gap:2px;padding-right:4px}
+.queue-track{width:auto;flex:1;min-width:0}
+.queue-reactions .reaction-btn{width:36px;min-width:36px;min-height:44px}
+@media(max-width:899px){
+  .tracks-filter-row{grid-template-columns:minmax(0,1fr)}
+  .tracks-filter-row .days.compact{grid-column:1}
+  .tracks-filter-row .liked-only{grid-column:1;justify-self:start}
+  .tracks-filter-row .play-results{grid-column:1}
+}
+@media(max-width:600px){
+  .song{grid-template-columns:72px minmax(0,1fr);grid-template-areas:"art copy" "actions actions";row-gap:4px}
+  .song>.art-link{grid-area:art;min-height:70px}
+  .song-copy{grid-area:copy}
+  .song-actions{grid-area:actions;flex-direction:row;justify-content:flex-end;gap:6px}
+  .song-actions .spotify-link{min-height:44px}
+}
+@media(max-width:360px){
+  .song{grid-template-columns:64px minmax(0,1fr)}
+  .song-actions{flex-direction:row}
+}
+@media(max-width:300px){
+  .song{grid-template-columns:minmax(0,1fr);grid-template-areas:"copy" "actions"}
+  .song>.art-link{display:none}
+  .tracks-filter-row{grid-template-columns:1fr}
+  .tracks-filter-row .days.compact,.tracks-filter-row .liked-only,.tracks-filter-row .play-results{grid-column:1}
+  .queue-reactions .reaction-btn{width:32px;min-width:32px}
+}

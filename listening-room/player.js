@@ -67,6 +67,7 @@
   }
 
   function init() {
+    const R = window.RoomRatings;
     const dock = document.getElementById("listening-player");
     const close = document.getElementById("close-player");
     const host = document.getElementById("player-frame");
@@ -205,7 +206,24 @@
         button.append(number, title, artist);
         button.setAttribute("aria-label", "Play from track " + (i + 1) + ": " + song.title + " by " + song.artist);
         button.addEventListener("click", () => startPlayback(i));
-        item.append(button);
+        const reactions = document.createElement("div");
+        reactions.className = "queue-reactions";
+        reactions.setAttribute("role", "group");
+        reactions.setAttribute("aria-label", "Your reaction to " + song.title);
+        for (const [rating, label, symbol] of [["like", "Like", "👍"], ["dislike", "Dislike", "👎"]]) {
+          const reaction = document.createElement("button");
+          reaction.type = "button";
+          reaction.className = "reaction-btn";
+          reaction.dataset.videoId = song.video_id;
+          reaction.dataset.rating = rating;
+          reaction.textContent = symbol;
+          reaction.setAttribute("aria-label", label + " " + song.title);
+          reaction.setAttribute("aria-pressed", String(R.get(song.video_id) === rating));
+          reaction.title = label + " this track (saved only in this browser)";
+          reaction.addEventListener("click", () => R.toggle(song.video_id, rating));
+          reactions.append(reaction);
+        }
+        item.append(button, reactions);
         fragment.append(item);
       });
       queueList.replaceChildren(fragment);
@@ -269,7 +287,8 @@
         selectedIds = Array.isArray(requestedIds) ? new Set(requestedIds) : requestedIds instanceof Set ? requestedIds : null;
         selectedLabel = String(requestedLabel || MIX_NAMES[scope]).slice(0, 64);
         let ordered = buildQueue(data.songs, data.performances, data.artists, scope)
-          .filter(song => selectedIds === null || selectedIds.has(song.video_id));
+          .filter(song => (selectedIds === null || selectedIds.has(song.video_id)) &&
+            (R.get(song.video_id) !== "dislike" || song.video_id === startId));
         if (Array.isArray(requestedIds)) {
           const positions = new Map(requestedIds.map((id, i) => [id, i]));
           ordered.sort((a, b) => positions.get(a.video_id) - positions.get(b.video_id));
@@ -302,6 +321,14 @@
       showDock(open);
     }
 
+    document.addEventListener("listening-room:rating-changed", event => {
+      const { videoId } = event.detail || {};
+      queueList.querySelectorAll(".reaction-btn").forEach(button => {
+        if (button.dataset.videoId === videoId)
+          button.setAttribute("aria-pressed", String(R.get(videoId) === button.dataset.rating));
+      });
+      // Do not mutate a running YouTube iframe: next mix rebuild excludes dislikes.
+    });
     document.addEventListener("listening-room:play-results", event => {
       const detail = event.detail || {};
       if (!Array.isArray(detail.ids) || !detail.ids.length || busy) return;

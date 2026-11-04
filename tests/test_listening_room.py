@@ -125,7 +125,7 @@ class AppContract(unittest.TestCase):
 
     @unittest.skipUnless(shutil.which("node"), "node not installed")
     def test_node_logic_suite(self):
-        result = subprocess.run(["node", "--test", str(ROOT / "tests" / "listening_room.test.js")],
+        result = subprocess.run(["node", "--test", str(ROOT / "tests" / "listening_room.test.js"), str(ROOT / "tests" / "ratings.test.js")],
                                 capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
@@ -140,7 +140,7 @@ class PublicBuild(unittest.TestCase):
         self.assertRegex(app_html, r'app\.js\?v=[a-f0-9]{12}')
         self.assertRegex(app_html, r'lib\.js\?v=[a-f0-9]{12}')
         self.assertRegex(app_html, r'styles\.css\?v=[a-f0-9]{12}')
-        expected = {"listening-room/youtube-icon.png", "listening-room/redirect.js", "index.html", "404.html", "_headers", "_redirects", "listening-room/index.html", "listening-room/app.js", "listening-room/lib.js", "listening-room/player.js", "listening-room/styles.css", "listening-room/fonts/bricolage-grotesque-latin-800.woff2", "data/edco-2026/artists.json", "data/edco-2026/performances.json", "data/edco-2026/venues.json", "data/edco-2026/event.json", "data/listening-room/songs.json", "data/listening-room/playlist.json"}
+        expected = {"listening-room/youtube-icon.png", "listening-room/redirect.js", "index.html", "404.html", "_headers", "_redirects", "listening-room/index.html", "listening-room/app.js", "listening-room/lib.js", "listening-room/player.js", "listening-room/ratings.js", "listening-room/styles.css", "listening-room/fonts/bricolage-grotesque-latin-800.woff2", "data/edco-2026/artists.json", "data/edco-2026/performances.json", "data/edco-2026/venues.json", "data/edco-2026/event.json", "data/listening-room/songs.json", "data/listening-room/playlist.json"}
         # About & Help (scripts/build_about.py): pages, assets and screenshots enumerated from their sources.
         src = ROOT / "about-site"
         slugs = [re.search(r"^slug:(.*)$", p.read_text(encoding="utf-8"), re.M).group(1).strip() for p in (src / "pages").glob("*.html")]

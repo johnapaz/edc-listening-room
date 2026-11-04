@@ -142,6 +142,7 @@
     catch (_e) { parts = []; }
     const ctx = { day: eventDay(params.get("day"), now), sort: params.get("sort") === "az" ? "az" : "time",
       q: params.get("q") || "", tq: params.get("tq") || "", tday: validDay(params.get("tday") || "all"), stage: params.get("stage") || "" };
+    if (params.get("liked") === "1") ctx.liked = true;
     if (parts[0] === "artist" && parts[1]) return { view: "artist", id: parts[1], ctx };
     if (parts[0] === "listen") return { view: "listen", ctx };
     return { view: "lineup", ctx };
@@ -155,6 +156,7 @@
     if (ctx && ctx.tq) params.set("tq", ctx.tq);
     if (ctx && ctx.tday && ctx.tday !== "all") params.set("tday", ctx.tday);
     if (ctx && ctx.stage) params.set("stage", ctx.stage);
+    if (ctx && ctx.liked) params.set("liked", "1");
     const qs = params.toString();
     const path = view === "artist" ? "artist/" + encodeURIComponent(id) : view;
     return "#/" + path + (qs ? "?" + qs : "");

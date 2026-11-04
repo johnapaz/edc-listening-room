@@ -2,6 +2,8 @@
 // Static public music discovery. Track playback is a separate opt-in player module.
 (function () {
   const L = window.RoomLib;
+  const R = window.RoomRatings;
+  let currentTracksDraw = null;
   const main = document.getElementById("main");
   const wide = window.matchMedia("(min-width: 1100px)");
   let idx, playlist;
@@ -83,6 +85,37 @@
     const url = L.safeSpotifyUrl(s.spotify_url, "track");
     return url ? el("a", { class: cls || "spotify-link", href: url, target: "_blank", rel: "noopener noreferrer", "aria-label": "Open " + s.title + " by " + a.display_name + " on Spotify (opens in a new tab)", text: "Spotify" }) : null;
   }
+  // Ratings are attached to the recording, not one artist/performance occurrence.
+  function reactionButtons(s) {
+    const group = el("div", { class: "reaction-actions", role: "group", "aria-label": "Your reaction to " + s.title });
+    for (const [rating, symbol, name] of [["like", "👍", "Like"], ["dislike", "👎", "Dislike"]]) {
+      const button = el("button", { type: "button", class: "reaction-btn",
+        "data-video-id": s.video_id, "data-rating": rating,
+        "aria-label": name + " " + s.title,
+        "aria-pressed": String(R.get(s.video_id) === rating),
+        title: name + " this track (saved only in this browser)",
+        text: symbol });
+      button.addEventListener("click", () => R.toggle(s.video_id, rating));
+      group.append(button);
+    }
+    return group;
+  }
+  document.addEventListener("listening-room:rating-changed", event => {
+    const { videoId } = event.detail || {};
+    const focused = main.contains(document.activeElement) && document.activeElement?.classList.contains("reaction-btn") &&
+      document.activeElement.dataset.videoId === videoId ? document.activeElement.dataset.rating : null;
+    document.querySelectorAll(".reaction-btn").forEach(button => {
+      if (button.dataset.videoId === videoId)
+        button.setAttribute("aria-pressed", String(R.get(videoId) === button.dataset.rating));
+    });
+    if (main.dataset.view === "listen" && currentTracksDraw) {
+      currentTracksDraw();
+      if (focused) {
+        const next = [...main.querySelectorAll(".reaction-btn")].find(b => b.dataset.videoId === videoId && b.dataset.rating === focused);
+        (next || document.getElementById("liked-only"))?.focus({ preventScroll: true });
+      }
+    }
+  });
   function songRow(s, a, ctx, playback) {
     const play = el("button", { type: "button", class: "play-btn track-play",
       "aria-label": "Play " + s.title + " by " + a.display_name + " in this list",
@@ -93,7 +126,7 @@
         label: a.display_name, day: "all"
       };
       document.dispatchEvent(new CustomEvent("listening-room:play-results", {
-        detail: { ...context, startId: s.video_id, trigger: play }
+        detail: { ...context, ids: context.ids.includes(s.video_id) ? context.ids : [s.video_id, ...context.ids], startId: s.video_id, trigger: play }
       }));
     });
     const credited = s.artist_ids.map(id => idx.artists.get(id)).filter(Boolean);
@@ -102,7 +135,7 @@
         el("a", { class: "track-title", href: s.url, target: "_blank", rel: "noopener noreferrer", "aria-label": playLabel(s, a.display_name), text: s.title }),
         el("div", { class: "song-credits" }, credited.flatMap((artist, i) => i ? [document.createTextNode(" · "), artistLink(artist, ctx)] : [artistLink(artist, ctx)])),
         s.review_status !== "strong" && s.verification !== "source_reviewed" ? el("small", { class: "muted version", text: "Version may differ from the original release." }) : null),
-      el("div", { class: "song-actions" }, spotifyLink(s, a), play));
+      el("div", { class: "song-actions" }, reactionButtons(s), spotifyLink(s, a), play));
   }
 
   // ---------- Lineup ----------
@@ -332,10 +365,13 @@
     const days = el("div", { class: "days compact", role: "group", "aria-label": "Filter by day" });
     L.DAYS.forEach(d => days.append(el("button", { type: "button", "data-day": d.key, "aria-label": d.long, text: d.label })));
     const playResults = el("button", { id: "play-filtered", class: "play-all-button play-results", type: "button", "aria-controls": "listening-player", text: "▶ Play all tracks" });
-    const filters = el("div", { class: "tracks-filter-row" }, days, playResults);
+    const likedOnly = el("button", { id: "liked-only", class: "liked-only", type: "button",
+      "aria-pressed": String(Boolean(ctx.liked)), text: "👍 Liked" });
+    const filters = el("div", { class: "tracks-filter-row" }, days, likedOnly, playResults);
     const count = el("p", { id: "count", class: "status", role: "status", "aria-live": "polite" });
     const ul = el("ul", { class: "list" });
-    main.replaceChildren(el("div", { class: "intro" }, el("h1", { text: "Tracks" }), el("p", { class: "muted", text: idx.songs.length + " tracks from " + idx.songsByArtist.size + " lineup artists. Play a track here and continue through your current list, or open Spotify where it’s linked." })),
+    main.replaceChildren(el("div", { class: "intro" }, el("h1", { text: "Tracks" }), el("p", { class: "muted", text: idx.songs.length + " tracks from " + idx.songsByArtist.size + " lineup artists. Play a track here and continue through your current list, or open Spotify where it’s linked." }),
+        el("p", { class: "reaction-note", text: "👍 Like tracks to revisit them. 👎 Disliked tracks stay visible but are skipped in new mixes. Choices are saved only in this browser, not on YouTube." })),
       el("label", { class: "search-label", for: "tq", text: "Search tracks" }), playlistCard(), search, filters, count, ul);
     main.dataset.view = "listen"; main.dataset.key = "";
     const dayCache = new Map();
@@ -343,26 +379,29 @@
     let filteredLabel = "All tracks";
     const draw = () => {
       days.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.day === ctx.tday)));
+      likedOnly.setAttribute("aria-pressed", String(Boolean(ctx.liked)));
       const shown = idx.songs.filter(s => {
         if (ctx.tday !== "all") {
           if (!dayCache.has(s)) dayCache.set(s, songDays(s));
           if (!dayCache.get(s).has(ctx.tday)) return false;
         }
-        return songMatches(s, ctx.tq);
+        return (!ctx.liked || R.get(s.video_id) === "like") && songMatches(s, ctx.tq);
       });
-      filteredVideoIds = shown.map(s => s.video_id);
+      filteredVideoIds = shown.filter(s => R.get(s.video_id) !== "dislike").map(s => s.video_id);
+      const skipped = shown.length - filteredVideoIds.length;
       filteredLabel = ctx.tq.trim()
         ? (ctx.tday === "all" ? "Search results" : dayName(ctx.tday) + " search results")
         : (ctx.tday === "all" ? "All tracks" : dayName(ctx.tday));
-      playResults.disabled = !shown.length;
-      playResults.textContent = "▶ Play " + (ctx.tq.trim() ? shown.length + " results" : ctx.tday === "all" ? "all " + shown.length : dayName(ctx.tday) + " · " + shown.length);
-      playResults.setAttribute("aria-label", "Play " + shown.length + " reviewed tracks from " + filteredLabel + " in Listening Room");
-      count.textContent = plural(shown.length, "track", "tracks") + (ctx.tday === "all" ? "" : " from acts on " + day(ctx.tday).long) + ".";
+      if (ctx.liked) filteredLabel = "Liked · " + filteredLabel;
+      playResults.disabled = !filteredVideoIds.length;
+      playResults.textContent = "▶ Play " + (ctx.liked ? "liked · " + filteredVideoIds.length : ctx.tq.trim() ? filteredVideoIds.length + " results" : ctx.tday === "all" ? "all " + filteredVideoIds.length : dayName(ctx.tday) + " · " + filteredVideoIds.length);
+      playResults.setAttribute("aria-label", "Play " + filteredVideoIds.length + " reviewed tracks from " + filteredLabel + " in Listening Room, excluding dislikes");
+      count.textContent = plural(shown.length, "track", "tracks") + (ctx.tday === "all" ? "" : " from acts on " + day(ctx.tday).long) + "." + (skipped ? " " + plural(skipped, "disliked track", "disliked tracks") + " skipped in mixes." : "");
       ul.replaceChildren(...shown.map(s => el("li", {}, songRow(s, idx.artists.get(s.artist_ids[0]), ctx, { ids: filteredVideoIds.slice(), label: filteredLabel, day: ctx.tday }))));
       if (!shown.length) {
         const reset = el("button", { class: "reset-filters", type: "button", text: "Clear filters" });
-        reset.addEventListener("click", () => { ctx.tq = ""; ctx.tday = "all"; search.value = ""; sync(); draw(); });
-        ul.append(el("li", { class: "empty" }, el("p", { text: "No tracks match these filters." }), reset));
+        reset.addEventListener("click", () => { ctx.tq = ""; ctx.tday = "all"; ctx.liked = false; search.value = ""; sync(); draw(); });
+        ul.append(el("li", { class: "empty" }, el("p", { text: ctx.liked ? "No liked tracks match these filters yet. Tap 👍 beside a track to save it here." : "No tracks match these filters." }), reset));
       }
     };
     const sync = () => { history.replaceState(null, "", L.buildHash("listen", ctx)); setTabs(ctx); };
@@ -372,11 +411,13 @@
         detail: { day: ctx.tday, ids: filteredVideoIds.slice(), label: filteredLabel }
       }));
     });
+    likedOnly.addEventListener("click", () => { ctx.liked = !ctx.liked; sync(); draw(); });
     search.addEventListener("input", () => { ctx.tq = search.value; sync(); draw(); });
     days.addEventListener("click", e => {
       const b = e.target.closest("button[data-day]"); if (!b) return;
       ctx.tday = b.dataset.day; sync(); draw();
     });
+    currentTracksDraw = draw;
     draw();
   }
 
@@ -388,6 +429,7 @@
   function route() {
     if (!idx) return;
     const r = L.parseHash(location.hash);
+    currentTracksDraw = null;
     const full = /[?&]full=1/.test(location.hash);
     setTabs(r.ctx);
     document.querySelectorAll(".tabs a").forEach(a => a.removeAttribute("aria-current"));
