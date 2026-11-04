@@ -102,7 +102,7 @@
   }
   document.addEventListener("listening-room:rating-changed", event => {
     const { videoId } = event.detail || {};
-    const focused = document.activeElement?.classList.contains("reaction-btn") &&
+    const focused = main.contains(document.activeElement) && document.activeElement?.classList.contains("reaction-btn") &&
       document.activeElement.dataset.videoId === videoId ? document.activeElement.dataset.rating : null;
     document.querySelectorAll(".reaction-btn").forEach(button => {
       if (button.dataset.videoId === videoId)
