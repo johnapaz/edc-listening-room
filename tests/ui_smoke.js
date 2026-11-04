@@ -124,7 +124,9 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
       const image = document.querySelector(".youtube-primary .youtube-icon");
       return image && image.getBoundingClientRect().height === 187;
     });
-    const box = await page.locator(".youtube-primary .youtube-icon:visible").first().boundingBox();
+    const visibleMark = page.locator(".youtube-primary .youtube-icon:visible").first();
+    await visibleMark.waitFor({ state: "visible", timeout: 3000 });
+    const box = await visibleMark.boundingBox();
     assert.ok(box, "YouTube mark remains visible at " + width);
     assert.equal(Math.round(box.height), 187);
     // The unchanged 1075px-high canvas contains a 579px-high visible mark.
