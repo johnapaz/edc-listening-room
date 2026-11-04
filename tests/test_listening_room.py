@@ -125,7 +125,7 @@ class AppContract(unittest.TestCase):
 
     @unittest.skipUnless(shutil.which("node"), "node not installed")
     def test_node_logic_suite(self):
-        result = subprocess.run(["node", "--test", str(ROOT / "tests" / "listening_room.test.js")],
+        result = subprocess.run(["node", "--test", str(ROOT / "tests" / "listening_room.test.js"), str(ROOT / "tests" / "ratings.test.js")],
                                 capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
