@@ -423,10 +423,10 @@ a.chip:hover{border-color:var(--mint);color:var(--mint)}
 .queue-track{width:auto;flex:1;min-width:0}
 .queue-reactions .reaction-btn{width:36px;min-width:36px;min-height:44px}
 @media(max-width:899px){
-  .tracks-filter-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-  .tracks-filter-row .days.compact{grid-column:1/-1}
-  .tracks-filter-row .liked-only{grid-column:1}
-  .tracks-filter-row .play-results{grid-column:2}
+  .tracks-filter-row{grid-template-columns:minmax(0,1fr)}
+  .tracks-filter-row .days.compact{grid-column:1}
+  .tracks-filter-row .liked-only{grid-column:1;justify-self:start}
+  .tracks-filter-row .play-results{grid-column:1}
 }
 @media(max-width:600px){
   .song{grid-template-columns:72px minmax(0,1fr);grid-template-areas:"art copy" "actions actions";row-gap:4px}
