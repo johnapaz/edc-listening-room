@@ -373,6 +373,36 @@ const PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR
   assert.equal(await page.locator("#listening-player").isVisible(), false);
   ok("contextual Play, in-player Shuffle/Queue, filtered search, navigation and Stop");
 
+  // Reactions are local, reversible and respected by new mixes without account access.
+  await page.goto(BASE + "#/listen");
+  await page.waitForSelector(".song .reaction-btn");
+  const ratedVideoId = await page.locator(".song .reaction-btn[data-rating=like]").first().getAttribute("data-video-id");
+  await page.locator(".song .reaction-btn[data-rating=like]").first().click();
+  assert.equal(await page.locator('.song .reaction-btn[data-rating=like][data-video-id="' + ratedVideoId + '"]').getAttribute("aria-pressed"), "true");
+  await page.reload();
+  await page.waitForSelector(".song .reaction-btn");
+  assert.equal(await page.locator('.song .reaction-btn[data-rating=like][data-video-id="' + ratedVideoId + '"]').getAttribute("aria-pressed"), "true", "reaction persisted across reload");
+  await page.locator("#liked-only").click();
+  assert.equal(await page.locator(".song").count(), 1, "liked filter finds saved song");
+  assert.match(page.url(), /liked=1/);
+  await page.locator('.song .reaction-btn[data-rating=dislike]').click();
+  assert.equal(await page.locator(".song").count(), 0, "disliking a liked track removes it from liked results");
+  await page.locator("#liked-only").click();
+  assert.equal(await page.locator(".song").count(), 295, "disliked tracks are still visible");
+  assert.match(await page.locator("#play-filtered").textContent(), /294/);
+  await page.locator("#play-filtered").click();
+  await page.locator("#player-frame iframe").waitFor();
+  const mixIds = new URL(await page.locator("#player-frame iframe").getAttribute("src")).searchParams.get("playlist").split(",");
+  assert.equal(mixIds.includes(ratedVideoId), false, "new mix excludes dislikes");
+  await page.locator("#close-player").click();
+  await page.locator('.song:has(.reaction-btn[data-video-id="' + ratedVideoId + '"]) .track-play').click();
+  await page.locator("#player-frame iframe").waitFor();
+  assert.ok((await page.locator("#player-frame iframe").getAttribute("src")).includes(ratedVideoId), "explicit play overrides dislike");
+  await page.locator("#close-player").click();
+  await page.locator('.song .reaction-btn[data-video-id="' + ratedVideoId + '"][data-rating=dislike]').click();
+  assert.equal(await page.locator('.song .reaction-btn[data-video-id="' + ratedVideoId + '"][data-rating=dislike]').getAttribute("aria-pressed"), "false");
+  ok("track reactions persist, Liked filters, dislikes skip new mixes and explicit Play still works");
+
   // Weak network: data fetch fails
   const p2 = await ctx.newPage();
   await p2.route("**/data/**", r => r.abort());
